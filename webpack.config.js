@@ -15,7 +15,7 @@ module.exports = {
     },
     target: "web",
     output: {
-        path: path.join(__dirname, '/build'),
+        path: path.join(__dirname, '/weboacked'),
         filename: 'index.js', //まとめた結果出力されるファイル名
         library:{
             type: "module",

@@ -5,6 +5,15 @@
 import { Playground } from "../vm/playground";
 import { Entity } from "../entity/entity";
 
+export class Threads {
+    static get THROW_STOP_THIS_SCRIPTS(){
+        return "throwStopThisScripts";
+    } 
+    static get THROW_FORCE_STOP_THIS_SCRIPTS(){
+        return "throwForceStopThisScripts";
+    }  
+}
+
 class ThreadBank {
     static threadArr: Thread[] = [];
     static add(thread: Thread) {

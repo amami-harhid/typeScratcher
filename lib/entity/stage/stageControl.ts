@@ -1,3 +1,5 @@
+import { Timer } from '../../utils/timer';
+import * as Wait from '../../utils/wait';
 import { Stage} from '../stage';
 /**
  * Stage Control(制御)
@@ -16,7 +18,7 @@ export class StageControl {
      * @param sec 
      */
     async wait(sec: number): Promise<void>{
-        await this.entity.$waitSeconds(sec);
+        await Timer.wait(sec);
     }
     /**
      * 条件が成立する迄、待つ。
@@ -29,10 +31,10 @@ export class StageControl {
      * await this.Control.waitUntil(condition);
      * 
      * ```
-     * @param condition {CallableFunction} - 条件結果を返す関数
+     * @param condition {Wait.ConditionFunction} - 条件結果を返す関数
      */
-    async waitUntil(condition: CallableFunction): Promise<void> {
-        await this.entity.$waitUntil(condition);
+    async waitUntil(condition: Wait.ConditionFunction): Promise<void> {
+        await Wait.untilCondition(condition);
     }
     /**
      * 条件が成立する間、待つ。
@@ -45,28 +47,28 @@ export class StageControl {
      * await this.Control.waitWhile(condition);
      * 
      * ```
-     * @param condition {CallableFunction} - 条件結果を返す関数
+     * @param condition {Wait.ConditionFunction} - 条件結果を返す関数
      */
-    async waitWhile(condition: CallableFunction): Promise<void> {
-        await this.entity.$waitWhile(condition);
+    async waitWhile(condition: Wait.ConditionFunction): Promise<void> {
+        await Wait.whileCondition(condition);
     }
     /**
      * 全てのスプライトの動作を停止する
      */
     stopAll() : void {
-        this.entity.$stopAll();
+
     }
     /**
      * このスクリプトを停止する
      */
     stopThisScript() : void {
-        this.entity.$stopThisScript();
+
     }
     /**
      * このスプライトの他のスクリプトを停止する
      */
     stopOtherScripts() : void {
-        this.entity.$stopOtherScripts();
+
     }
 
 };

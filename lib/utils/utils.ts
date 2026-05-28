@@ -166,5 +166,20 @@ export class Utils {
     
         return uuid;  
     }
-
+    /**
+     * 変数定義の名称を返す
+     * 
+     * @param vars  { 変数 }
+     * @returns 変数名の文字列
+     */
+    static varNameValues( vars: Object ) : [string, any] {
+        let _key = '';
+        let _value: any = undefined;
+        for (const [key, value] of Object.entries(vars)) {
+            _key = `${key}`;
+            _value = value;
+            break;
+        }
+        return [_key, _value ];
+    }
 };

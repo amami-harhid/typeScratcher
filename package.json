@@ -33,6 +33,7 @@
     "core-js": "^3.49.0",
     "events": "^3.3.0",
     "regenerator-runtime": "^0.14.1",
+    "scratch-audio": "^2.0.139",
     "scratch-render": "^2.0.356",
     "twgl.js": "^4.4.0"
   }

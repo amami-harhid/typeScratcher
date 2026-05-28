@@ -9,10 +9,13 @@ import { SpriteCostume } from "./sprite/spriteCostume";
 import { SpriteEvent } from "./sprite/spriteEvent";
 import { Timer } from "../utils/timer";
 import { SpriteProperties } from "./sprite/spriteProperties";
+import { SpriteLooks } from "./sprite/spriteLooks";
+import { Playground } from "../vm/playground";
 
 export class Sprite extends Entity {
     private _costume : SpriteCostume;
     private _motion: SpriteMotion;
+    private _looks: SpriteLooks;
     private _control: SpriteControl;
     private _event: SpriteEvent;
     constructor(name: string) {
@@ -21,9 +24,11 @@ export class Sprite extends Entity {
         this._name = name;
         this._costume = new SpriteCostume(this);
         this._motion = new SpriteMotion(this);
+        this._looks = new SpriteLooks(this);
         this._control = new SpriteControl(this);
         this._event = new SpriteEvent(this);
         this._properties = new SpriteProperties(this);
+        Playground.addSprite(this);
         
     }
     get Costume(): SpriteCostume {
@@ -32,9 +37,13 @@ export class Sprite extends Entity {
     get Motion() : SpriteMotion {
         return this._motion;
     }
+    get Looks() : SpriteLooks {
+        return this._looks;
+    }
     get Control() : SpriteControl {
         return this._control;
     }
+    
     get Event(): SpriteEvent {
         return this._event;
     }

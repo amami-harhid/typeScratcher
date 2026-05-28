@@ -1,12 +1,9 @@
 /**
  * Image
  */
-import { Playground } from "../vm/playground";
 import { ImageLoader } from "../loader/imageLoader";
-import { Timer } from "../utils/timer";
-
-//import { Timer } from "../utils/timer";
-
+import { Utils } from "../utils/utils";
+type ArgStringObject = { path: string };
 export class Image {
     private _name: string;
     private _imagePath:string;
@@ -14,9 +11,11 @@ export class Image {
     private _loadCompleted: boolean = false;
     private _skinId = -1;
 
-    constructor(name: string, imagePath:string) {
-        this._name = name;
-        this._imagePath = imagePath;
+    constructor( image: ArgStringObject ) {
+        const path = image.path;
+        const info = Utils.varNameValues({path});
+        this._name = info[0];
+        this._imagePath = info[1];
     }
     async load() {
         //await Timer.wait(2); // For Debug

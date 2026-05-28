@@ -3,21 +3,26 @@ import { VM } from '../src/index';
 
 import { Constant } from './constant';
 
+const varNameValues = (args:Object) => {
+    for (const [key, value] of Object.entries(args)) {
+        return `${key}`;
+    }
+}
+
 import AppleSvg from './assets/Apple.svg' assert { type: 'image/svg+xml' };
 import ArrowSvg from './assets/Arrow1-a.svg' assert { type: 'image/svg+xml' };
 
-const appleImage = new VM.Image(Constant.Apple, AppleSvg); 
-const arrowImage = new VM.Image(Constant.Arrow, ArrowSvg); 
+const appleImage = new VM.Image( {path: AppleSvg} ); 
+const arrowImage = new VM.Image( {path: ArrowSvg} ); 
 
 const apple = new VM.Sprite('apple');
 apple.Image.add([appleImage, arrowImage]);
 apple.Properties.scale = [400, 400];
 apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
-await apple.init();
 
-apple.update();
+//await apple.init();
+//apple.update();
 
-VM.Playground.start();
 
 // apple.Event.whenFlag(async function*(){
 
@@ -46,4 +51,5 @@ apple.Event.whenFlag(async function*(){
     }
 });
 
+VM.Playground.start();
 

@@ -38,6 +38,7 @@ import { Sprite } from '../lib/entity/sprite';
 import { Stage } from '../lib/entity/stage';
 import { Image } from '../lib/image/image';
 import { RotationStyle } from '@Type/entity/RotationStyle';
+import { Utils } from '../lib/utils/utils';
 const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
 window.Buffer = window.Buffer || Buffer
 
