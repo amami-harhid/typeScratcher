@@ -1,0 +1,66 @@
+/**
+ * Sprite
+ */
+import { Entity } from "./entity";
+import { StageLayering } from '@Type/stage/CStageLayering';
+import { SpriteControl } from "./sprite/spriteControl";
+import { SpriteMotion } from "./sprite/spriteMotion";
+import { SpriteCostume } from "./sprite/spriteCostume";
+import { SpriteEvent } from "./sprite/spriteEvent";
+import { Timer } from "../utils/timer";
+import { SpriteProperties } from "./sprite/spriteProperties";
+
+export class Sprite extends Entity {
+    private _costume : SpriteCostume;
+    private _motion: SpriteMotion;
+    private _control: SpriteControl;
+    private _event: SpriteEvent;
+    constructor(name: string) {
+        super();
+        this.createDrawable(StageLayering.SPRITE_LAYER);
+        this._name = name;
+        this._costume = new SpriteCostume(this);
+        this._motion = new SpriteMotion(this);
+        this._control = new SpriteControl(this);
+        this._event = new SpriteEvent(this);
+        this._properties = new SpriteProperties(this);
+        
+    }
+    get Costume(): SpriteCostume {
+        return this._costume;
+    }
+    get Motion() : SpriteMotion {
+        return this._motion;
+    }
+    get Control() : SpriteControl {
+        return this._control;
+    }
+    get Event(): SpriteEvent {
+        return this._event;
+    }
+
+    async init() {
+        return new Promise<void>((resolve)=>{
+            const loadArr: Promise<void>[] = [];
+            for(const img of this._image.images){
+                loadArr.push(img.load());
+            }
+            Promise.all(loadArr).then(async ()=>{                
+                for(const img of this._image.images){
+                    const svgText = img.image;
+                    const skinId = this.render.renderer.createSVGSkin(svgText);
+                    await Timer.wait(0.1);
+                    img.skinId = skinId;
+                    this.Costume.add(img);
+                }
+                resolve(); // 完了
+            });
+        })
+    }
+
+    update() {
+        this.Properties.update(); 
+    }
+
+
+}

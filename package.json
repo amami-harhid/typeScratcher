@@ -1,0 +1,39 @@
+{
+  "name": "trials",
+  "version": "1.0.0",
+  "main": "./src.",
+  "scripts": {
+    "dev": "vite --open",
+    "webpack": "npx webpack --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@types/events": "^3.0.3",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^25.9.1",
+    "babel-loader": "^10.0.0",
+    "esbuild": "^0.28.0",
+    "exports-loader": "^5.0.0",
+    "node-polyfill-webpack-plugin": "^4.1.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^6.0.3",
+    "vite": "^6.3.5",
+    "vite-plugin-static-copy": "^3.1.0",
+    "vite-plugin-top-level-await": "^1.5.0",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.27.1",
+    "buffer": "^6.0.3",
+    "core-js": "^3.49.0",
+    "events": "^3.3.0",
+    "regenerator-runtime": "^0.14.1",
+    "scratch-render": "^2.0.356",
+    "twgl.js": "^4.4.0"
+  }
+}
