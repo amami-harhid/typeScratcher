@@ -23,20 +23,44 @@ export class EntitySound {
             this.sounds.push(s);
         }
     }
-    
+    /**
+     * 名前で Soundを取得する ( 使わないほうがよさそう )
+     * @param soundName 
+     * @returns 
+     */
+    getSound(soundName: string) : Sound | undefined {
+        let _sound: Sound|undefined = undefined;
+        for(const sound of this.sounds) {
+            if(sound.name == soundName){
+                _sound = sound;
+                break;
+            }
+        }
+        return _sound;
+    }
     /**
      * 音を鳴らす
      * @param soundName {string} - 音の名前
      */
     play(soundName: string): void {
-        this.entity.$soundPlay(soundName);
+        for(const sound of this.sounds) {
+            if(sound.name == soundName){
+                sound.play();
+                break;
+            }
+        }
     }
     /**
      * 終わるまで音を鳴らす
      * @param soundName {string} - 音の名前
      */
     async playUntilDone(soundName: string): Promise<void> {
-        await this.entity.$startSoundUntilDone(soundName);
+        for(const sound of this.sounds) {
+            if(sound.name == soundName){
+                await sound.startSoundUntilDone();
+                break;
+            }
+        }
     }
     /**
      * サウンドオプションを設定する
@@ -46,6 +70,12 @@ export class EntitySound {
      * {@link SoundOption}
      */
     setOption(key: SoundOption, value:number): void{
+        for(const sound of this.sounds) {
+            if(sound.name == soundName){
+                await sound.startSoundUntilDone();
+                break;
+            }
+        }
         this.entity.$setOption(key, value);
     }
     /**
@@ -68,13 +98,21 @@ export class EntitySound {
      * 鳴っている音を止める
      */
     stop(): void {
-        this.entity.$soundStop();
+        for(const sound of this.sounds) {
+            if(sound.isPlaying === true){
+                sound.stop();
+            }
+        }
     }
     /**
      * 鳴っている音を「すぐに」止める
      */
     stopImmediately(): void {
-        this.entity.$soundStopImmediately();
+        for(const sound of this.sounds) {
+            if(sound.isPlaying === true){
+                sound.stopImmediately();
+            }
+        }
     }
     /** 音量 */
     get volume() : number {
