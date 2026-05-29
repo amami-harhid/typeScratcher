@@ -59,6 +59,7 @@ export class Sprite extends Entity {
                 loadArr.push(sound.load());
             }
             Promise.all(loadArr).then(async ()=>{                
+                // イメージごとに Skinを作る
                 for(const img of this._image.images){
                     const svgText = img.image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);

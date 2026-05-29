@@ -3,7 +3,7 @@
  */
 import { ImageLoader } from "../loader/imageLoader";
 import { Utils } from "../utils/utils";
-type ArgStringObject = { path: string };
+type ImageArgStringObject = { [key:string]:string };
 export class Image {
     private _name: string;
     private _imagePath:string;
@@ -11,9 +11,8 @@ export class Image {
     private _loadCompleted: boolean = false;
     private _skinId = -1;
 
-    constructor( image: ArgStringObject ) {
-        const path = image.path;
-        const info = Utils.varNameValues({path});
+    constructor( image: ImageArgStringObject ) {
+        const info = Utils.varNameValues(image);
         this._name = info[0];
         this._imagePath = info[1];
     }

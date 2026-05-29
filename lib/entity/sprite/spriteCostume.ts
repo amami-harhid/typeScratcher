@@ -1,5 +1,3 @@
-import { ScratchRenderProperties } from '@Type/render/IRenderWebGL';
-import { Timer } from '../../utils/timer';
 import { Sprite } from '../sprite';
 import type { ISpriteCostume } from '@Type/sprite/ISpriteCostume';
 import { Image } from '../../image/image';
@@ -53,6 +51,9 @@ export class SpriteCostume implements ISpriteCostume {
             this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
         }
     }
+    /**
+     * 使用中のSkinId
+     */
     get currentSkinId() : number {
         if(this.currentConstumeNo == -1) return -1;
         const image = this.imageArr[this.currentConstumeNo];
@@ -66,7 +67,8 @@ export class SpriteCostume implements ISpriteCostume {
      * ```
      */
     get name(): string {
-        return "";
+        const image = this.imageArr[this.currentConstumeNo];
+        return image.name;
     }
     /**
      * コスチューム名
@@ -76,7 +78,14 @@ export class SpriteCostume implements ISpriteCostume {
      * ```
      */
     set name(name:string) {
-        
+        let no = -1;
+        for(const image of this.imageArr) {
+            no += 1;
+            if( image.name == name) {
+                this.no = no;
+                break;
+            }
+        }
     }
     /**
      * 次のコスチュームにする

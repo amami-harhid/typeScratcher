@@ -61,7 +61,6 @@ export class Renderer {
      */
     stageResize(w: number = Renderer.W , h: number = Renderer.H): void {
         if(this._renderer){
-            console.log('resize w=', w, ', h=', h);
             this._renderer.resize( w, h ); // stage(canvas)のサイズ property(width,height)の値をリサイズ
 //            const main = document.querySelector(`#${GUI_CONST.main_id}`) as HTMLElement;
 //            main!.style.width = `${window.innerWidth}px`;

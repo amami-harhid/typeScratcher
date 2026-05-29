@@ -4,12 +4,14 @@ import { Entity } from '../entity';
 export class EntityBroadCast {
 
     private entity: Entity;
+    private _modules: Map<string, Promise<void>>;
     /**
      * @internal
      * @param entity {Entity}
      */
     constructor(entity:Entity){
         this.entity = entity;
+        this._modules = new Map<string,Promise<void>>();
     }
     /**
      * メッセージを送る
@@ -25,8 +27,11 @@ export class EntityBroadCast {
      * @param messageId 
      * @param args 
      */
-    async broadcastAndWait(messageId: string, ...args:any[]): Promise<void>{
-        
+    broadcastAndWait(messageId: string, ...args:any[]): Promise<void>{
+        const eventId = `message_${messageId}`;
+        return new Promise<void>(resolve=>{
+            
+        });
         //await this.entity.$broadcastAndWait(messageId, ...args);
     }
     /**

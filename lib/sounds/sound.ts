@@ -8,8 +8,7 @@ import { playground } from "../vm/playground";
 import { SoundPlayer } from "./soundPlayer";
 import { ScratchEvent } from '../vm/scratchEvent';
 import { Utils } from "../utils/utils";
-type ArgStringObject = { path: string };
-
+type SoundArgStringObject = { [key:string]:string };
 export class Sound extends EventEmitter {
     static get SOUND_FORCE_STOP() {
         return "SOUND_FORCE_STOP";
@@ -19,11 +18,9 @@ export class Sound extends EventEmitter {
     private _data!:Uint8Array<ArrayBuffer>;
     private _loadCompleted: boolean = false;
     private _soundPlayer!: SoundPlayer;
-    private _isPlaying: boolean = false;
-    constructor(sound:ArgStringObject) {
+    constructor(sound: SoundArgStringObject) {
         super();
-        const path = sound.path;
-        const info = Utils.varNameValues({path});
+        const info = Utils.varNameValues(sound);
         this._name = info[0];
         this._soundPath = info[1];
     }
@@ -36,9 +33,7 @@ export class Sound extends EventEmitter {
         }
         const sound = await SoundLoader.loadSound(this._soundPath, this._name);
         const data = this._data = sound.data;
-        console.log('sound loaded');
         playground.runtime.scratchEvent.once(ScratchEvent.START_AUDIO_ENGINE, async()=>{
-            console.log('START_AUDIO_ENGINE');
             const audioEngine = playground.runtime.audioEngine;
             const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data});
             const _effects = audioEngine.createEffectChain();
@@ -61,34 +56,32 @@ export class Sound extends EventEmitter {
         return this._loadCompleted;
     }
 
-    play() {
+    play2() {
         if ( this._soundPlayer == null) return;
-        this._soundPlayer.connect();
+        //this._soundPlayer.connect();
         this._soundPlayer.play();
     }
-    async startSoundUntilDone(self?: Entity): Promise<void> {
-        if ( this._soundPlayer == null) return;
-        if( self ) {
-            const me = this;
-            return new Promise<void>(async resolve=>{
-                if(me._soundPlayer == undefined) {
-                    resolve();
-                }else{
-                    // speechStopImmediately() からEmit
-                    const _f = _=>{
-                        me.stopImmediately();
-                        resolve();
-                    }
-                    const EMIT_ID = Sound.SOUND_FORCE_STOP;
-                    self.once(EMIT_ID,_f);
-                    await me._soundPlayer.startSoundUntilDone(); // 終わるまで待つ
-                    self.removeListener(EMIT_ID, _f);
+    play() : Promise<void> {
+        return this.startSoundUntilDone();
+    }
+    startSoundUntilDone(): Promise<void> {
+        const me = this;
+        return new Promise<void>(async resolve=>{
+            if(me._soundPlayer == undefined) {
+                resolve();
+            }else{
+                // speechStopImmediately() からEmit
+                const _f = _=>{
+                    me.stopImmediately();
                     resolve();
                 }
-            });
-        }else{
-
-        }
+                const EMIT_ID = Sound.SOUND_FORCE_STOP;
+                me.once(EMIT_ID,_f);
+                await me._soundPlayer.startSoundUntilDone(); // 終わるまで待つ
+                me.removeListener(EMIT_ID, _f);
+                resolve();
+            }
+        });
     }
     stop() {
         if ( this._soundPlayer == null) return;

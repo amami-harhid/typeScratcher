@@ -22,6 +22,10 @@ export class SpriteMotionDirection {
      * @param degree {number} - 向き
      */
     set degree(degree: number) {
-        this.entity.Properties.degree = degree;
+        let _degree = degree % 360;
+        if( _degree > 180 ) {
+            _degree -= 360; // 179 => 180 => -179 => -178
+        }
+        this.entity.Properties.degree = _degree;
     }
 };

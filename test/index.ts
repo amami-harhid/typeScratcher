@@ -5,14 +5,16 @@ import type { TSprite } from '@Type/sprite';
 import AppleSvg from './assets/Apple.svg' assert { type: 'image/svg+xml' };
 import ArrowSvg from './assets/Arrow1-a.svg' assert { type: 'image/svg+xml' };
 import CatWav from './assets/Cat.wav';
+import ChillWav from './assets/Chill.wav';
 
-const appleImage = new VM.Image( {path: AppleSvg} ); 
-const arrowImage = new VM.Image( {path: ArrowSvg} ); 
-const catSound = new VM.Sound({path: CatWav});
-
+const appleImage = new VM.Image( {AppleSvg} ); 
+const arrowImage = new VM.Image( {ArrowSvg} ); 
+const catSound = new VM.Sound({CatWav});
+const chillSound = new VM.Sound({ChillWav})
+console.log(catSound.name);
 const apple = new VM.Sprite('apple');
 apple.Image.add([appleImage, arrowImage]);
-apple.Sound.add([catSound]);
+apple.Sound.add([catSound, chillSound]);
 apple.Properties.scale = [200, 200];
 apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
 
@@ -42,7 +44,16 @@ apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
 
 apple.Event.whenflagger = async function*(this: TSprite) {
     for(;;) {
-        this.Motion.Direction.degree += 5;
+        if(this.Motion.Direction.degree == 0) {
+            catSound.play2();
+        }
+        this.Motion.Direction.degree += 10;
+        yield;
+    }
+}
+apple.Event.whenflagger = async function*(this: TSprite) {
+    for(;;) {
+        await chillSound.play();
         yield;
     }
 }

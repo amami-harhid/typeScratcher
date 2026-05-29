@@ -4,6 +4,7 @@
 
 import { Playground } from "../vm/playground";
 import { Entity } from "../entity/entity";
+import { TThreadObj } from "./TThreadObj";
 
 export class Threads {
     static get THROW_STOP_THIS_SCRIPTS(){
@@ -12,7 +13,22 @@ export class Threads {
     static get THROW_FORCE_STOP_THIS_SCRIPTS(){
         return "throwForceStopThisScripts";
     }  
+    static get RUNNING(){
+        return 'running';
+    }
+    static get YIELD(){
+        return 'yield';
+    }
+    static get STOP(){
+        return 'stop';
+    }
+    private _running: boolean = false;
+    private _startSwitch: boolean = false;
+    private _intervalId!: NodeJS.Timeout;
+    private threadArr: TThreadObj[] = [];
+
 }
+export const thread = new Threads();
 
 class ThreadBank {
     static threadArr: Thread[] = [];
@@ -45,7 +61,7 @@ export class Thread {
 
 }
 const INTERVAL = 1000/30;
-class ThreadManager {
+export class ThreadManager {
     private intervalId: NodeJS.Timeout|undefined;
     add(f: CallableFunction, me: Entity) {
         const _f = f.bind(me);

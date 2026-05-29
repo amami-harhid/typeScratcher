@@ -52,9 +52,13 @@ export class EntitySound {
      * 終わるまで音を鳴らす
      * @param soundName {string} - 音の名前
      */
-    async playUntilDone(soundName: string): Promise<void> {
-        const sound = this.getSound(soundName);
-        sound.play();
+    playUntilDone(soundName: string): Promise<void> {
+        return new Promise<void>(resolve=>{
+            const sound = this.getSound(soundName);
+            sound.startSoundUntilDone().then(()=>{
+                resolve();
+            });
+        });
     }
     /**
      * サウンドオプションをクリアする
@@ -91,10 +95,21 @@ export class EntitySound {
         }
     }
     /** 音量 */
-    getVolume(soundName: string) : number {
-        if(this.soundKeys.includes(soundName)) {
-            const sound = this.soundMap[soundName];
-            return sound.volume;
+    getVolume(sound?: Sound | string) : number {
+        if(sound == undefined){
+            if(this.currentSound != undefined){
+                return this.currentSound.volume;
+            }
+        }else if(typeof sound == 'string'){
+            const soundName = sound;
+            if(this.soundKeys.includes(soundName)) {
+                const sound = this.soundMap[soundName];
+                return sound.volume;
+            }
+        }else{
+            if(this.soundKeys.includes( sound.name )) {
+                return sound.volume;
+            }
         }
         return -Infinity;
     }
