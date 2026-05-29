@@ -54,6 +54,10 @@ export class Sprite extends Entity {
             for(const img of this._image.images){
                 loadArr.push(img.load());
             }
+            for(const sndKey of this._sound.soundKeys){
+                const sound = this._sound.soundMap[sndKey];
+                loadArr.push(sound.load());
+            }
             Promise.all(loadArr).then(async ()=>{                
                 for(const img of this._image.images){
                     const svgText = img.image;

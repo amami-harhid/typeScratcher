@@ -1,7 +1,7 @@
 /**
  * Element
  */
-import { GUI_CONST } from "./const";
+import { GUI_CONST } from "./gui_const";
 
 const GreenFlagImage = "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNi42MyAxNy41Ij48ZGVmcz48c3R5bGU+LmNscy0xLC5jbHMtMntmaWxsOiM0Y2JmNTY7c3Ryb2tlOiM0NTk5M2Q7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO30uY2xzLTJ7c3Ryb2tlLXdpZHRoOjEuNXB4O308L3N0eWxlPjwvZGVmcz48dGl0bGU+aWNvbi0tZ3JlZW4tZmxhZzwvdGl0bGU+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNLjc1LDJBNi40NCw2LjQ0LDAsMCwxLDguNDQsMmgwYTYuNDQsNi40NCwwLDAsMCw3LjY5LDBWMTIuNGE2LjQ0LDYuNDQsMCwwLDEtNy42OSwwaDBhNi40NCw2LjQ0LDAsMCwwLTcuNjksMCIvPjxsaW5lIGNsYXNzPSJjbHMtMiIgeDE9IjAuNzUiIHkxPSIxNi43NSIgeDI9IjAuNzUiIHkyPSIwLjc1Ii8+PC9zdmc+";
 
@@ -88,8 +88,10 @@ export class Element {
 		scratchCanvasDiv.classList.add(ScratchCanvasDivClassName);
 		stageCanvasWrapper.appendChild(scratchCanvasDiv);
 
-		scratchCanvas = document.createElement('canvas');
+		scratchCanvas = document.createElement('canvas') as HTMLCanvasElement;
 		scratchCanvas.id = ScratchCanvasID;
+		scratchCanvas.classList.add(GUI_CONST.canvas_class);
+		//scratchCanvas.
 		scratchCanvasDiv.appendChild(scratchCanvas);
 		return scratchCanvas as HTMLCanvasElement;
 	}

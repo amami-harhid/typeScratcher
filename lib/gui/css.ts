@@ -180,16 +180,14 @@ html, body{
     align-items: center;
 }
 .likeScratch-canvas {
-        display: block;
-        border: 1px solid #141414;
-        border-radius: 15px;
-        width: 100%;
-        height: 100%;
+    display: block;
+    border: 1px solid #141414;
+    border-radius: 15px;
   }  
 `,
     textCanvasCss : `
 .likeScratch-text-canvas {
-        pointer-events: none;
+    pointer-events: none;
   }
 `,
     mainTmpCss : `

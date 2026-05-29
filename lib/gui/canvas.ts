@@ -2,9 +2,9 @@
  * Canvas
  */
 
-import { GUI_CONST } from "./const";
+import { GUI_CONST } from "./gui_const";
 
-export const getMain = () : HTMLDivElement => {
+export const getMain2 = () : HTMLDivElement => {
     const MainID = GUI_CONST.main_id;
     let main = document.querySelector(`#${MainID}`);
     if(main == undefined) {
@@ -15,7 +15,7 @@ export const getMain = () : HTMLDivElement => {
     return main as HTMLDivElement;
 }
 
-export const getStageCanvasWrapper = (main: HTMLDivElement): HTMLDivElement => {
+export const getStageCanvasWrapper2 = (main: HTMLDivElement): HTMLDivElement => {
     const StageCanvasWrapperID = GUI_CONST.stageCanvasWrapper;
     let stageCanvasWrapper = document.querySelector(`#${StageCanvasWrapperID}`);
     if(stageCanvasWrapper == undefined) {
@@ -27,10 +27,10 @@ export const getStageCanvasWrapper = (main: HTMLDivElement): HTMLDivElement => {
     return stageCanvasWrapper as HTMLDivElement;
 }
 
-export const getScratchCanvas = (): HTMLCanvasElement => {
+export const getScratchCanvas2 = (): HTMLCanvasElement => {
 
-    const main = getMain();
-    const stageCanvasWrapper = getStageCanvasWrapper(main);
+    const main = getMain2();
+    const stageCanvasWrapper = getStageCanvasWrapper2(main);
 
     const ScratchCanvasID = GUI_CONST.canvas_id;
     let scratchCanvas = document.querySelector( `#${ScratchCanvasID}` )

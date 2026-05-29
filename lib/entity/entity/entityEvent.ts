@@ -1,4 +1,5 @@
-import { Playground } from '../../vm/playground';
+import { Playground, playground } from '../../vm/playground';
+import { ScratchEvent } from '../../vm/scratchEvent';
 import { Entity } from '../entity';
 import { EntityBroadCast } from './entityBroadcast';
 import { Element } from '../../gui/element';
@@ -19,18 +20,24 @@ export class EntityEvent{
     get Broadcast() {
         return this._broadcast;
     }
-
+    set whenflagger(func: CallableFunction) {
+        this.whenFlag(func);
+    }
     /**
      * 旗が押されたときの動作を定義
      * @param func 
      */
     whenFlag(func: CallableFunction) : void {
+        playground.runtime.scratchEvent.once(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
+            Playground.addThread(func, this._entity);
+
+        })
         const greenFlag = Element.getGreenFlag();
         const clickFunc = async(e:MouseEvent)=>{
             Playground.addThread(func, this._entity);
             e.stopPropagation();
         }
-        greenFlag.addEventListener('click', clickFunc);
+//        greenFlag.addEventListener('click', clickFunc);
     }
     /**
      * 指定したキーが押されたときの動作を定義

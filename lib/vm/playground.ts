@@ -30,7 +30,8 @@ export class Playground {
     static addSprite(sprite: Sprite) {
         Playground._sprites.push(sprite);
     }
-    static async start(): Promise<void> {
+    async start(): Promise<void> {
+        this._runtime.scratchEvent.greenFlagClick();
         for(const s of Playground._sprites){
             await s.init();
             s.update();

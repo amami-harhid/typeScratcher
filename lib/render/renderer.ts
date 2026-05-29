@@ -4,14 +4,69 @@
 import { default as ScratchRender} from 'scratch-render';
 import { StageLayering, LAYER_GROUPS } from '@Type/stage/CStageLayering';
 import { IRenderWebGL } from '@Type/render/IRenderWebGL';
-import * as Element from '../gui/element';
+import { Element } from '../gui/element';
+import { GUI_CONST } from '../gui/gui_const';
 
 export class Renderer {
+    /**
+     * ステージ縦横比(縦÷高さの率)
+     */
+    static get WHRate(): number {
+        return 0.75;
+    }
+    /**
+     * ステージの横ピクセル数(CSSピクセル)
+     */
+    static get W(): number {
+        const WHRate = Renderer.WHRate; // 縦横比率 = 3 :  4
+        // 上部にコントロールバースペースを確保するため少しだけ縮小する
+        // 縮小率は試行錯誤して決めた。
+        const InnerWidthRate = 0.95; // やや小さめに
+        const InnerHeightRate = 0.95; // やや小さめに
+        // devicePixelRatio:CSSピクセルが何個の物理ピクセルで表示されるのかという値
+        const wrapper = document.querySelector(`#${GUI_CONST.stageCanvasWrapper}`) as HTMLElement;
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const _devicePixelRatio = window.devicePixelRatio;
+        // ブラウザビューポートの幅
+        const _innerWidth = wrapperRect.width; //window.innerWidth;
+        // ブラウザビューポートの高さ
+        const _innerHeight = wrapperRect.height; //window.innerHeight;
+        let w = (_innerWidth / _devicePixelRatio) * InnerWidthRate;
+        let h = w * WHRate;
+        const hLimit = (_innerHeight / _devicePixelRatio) * InnerHeightRate;
+        if( h > hLimit ) {
+            h = hLimit;
+            w = h / WHRate;
+        }
+        return w;
+    }
+    /**
+     * ステージの縦ピクセル数(CSSピクセル)
+     */
+    static get H() {
+        return Renderer.W * Renderer.WHRate;
+    }    
     private layerGroups: StageLayering[];
     private canvas! : HTMLCanvasElement;
     private _renderer!: IRenderWebGL;
+    public stageWidth: number =0;
+    public stageHeight: number =0;
     constructor() {
         this.layerGroups = LAYER_GROUPS();
+    }
+    /**
+     * ステージをリサイズする
+     * @param w {number} - 横
+     * @param h {number} - 縦
+     */
+    stageResize(w: number = Renderer.W , h: number = Renderer.H): void {
+        if(this._renderer){
+            console.log('resize w=', w, ', h=', h);
+            this._renderer.resize( w, h ); // stage(canvas)のサイズ property(width,height)の値をリサイズ
+//            const main = document.querySelector(`#${GUI_CONST.main_id}`) as HTMLElement;
+//            main!.style.width = `${window.innerWidth}px`;
+//            main!.style.height = `${window.innerHeight}px`;
+        }
     }
     /**
      * Rendererを作成する
@@ -23,8 +78,16 @@ export class Renderer {
         console.log(this.canvas);
         this._renderer = new ScratchRender(canvas);
         this._renderer.setLayerGroupOrdering(this.layerGroups);
-        this._renderer.resize( 500, 500);
-        //this.stageResize(w,h);    
+        const w = this.canvas.clientWidth;
+        const h = this.canvas.clientHeight;
+        this._renderer.resize( w, h);
+        // 自動リサイズ処理
+        this.stageResize();
+        const me = this;
+        window.addEventListener('resize', ()=>{
+            console.log('resize')
+            me.stageResize();
+        });
     }
     createDrawable(layer: StageLayering) : number {
         if(this._renderer){

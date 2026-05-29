@@ -2,11 +2,14 @@ import { Entity } from '../entity';
 import type { IEntitySound } from '@Type/entity/IEntitySound';
 import { SoundOption } from '@Type/entity/SoundOption';
 import { Sound } from '../../sounds/sound';
+import { Timer } from '../../utils/timer';
 /** イベント */
 export class EntitySound {
 
     protected entity: Entity;
-    protected sounds!: Sound[];
+    public soundMap: {[key:string]: Sound} = {};
+    public soundKeys: string[] = [];
+    protected currentSound!: Sound;
     /**
      * @internal
      * @param entity {Entity}
@@ -18,87 +21,59 @@ export class EntitySound {
      * 音を追加する
      * @param soundName {string} - 音の名前
      */
-    add(sounds: Sound[]) : void {
+    add(sounds: Sound[]) : void {        
         for(const s of sounds) {
-            this.sounds.push(s);
+            if(this.currentSound == undefined){
+                this.currentSound = s;
+            }
+            const soundName = s.name;
+            this.soundMap[soundName] = s;
+            this.soundKeys.push(s.name);
         }
     }
-    /**
-     * 名前で Soundを取得する ( 使わないほうがよさそう )
-     * @param soundName 
-     * @returns 
-     */
-    getSound(soundName: string) : Sound | undefined {
-        let _sound: Sound|undefined = undefined;
-        for(const sound of this.sounds) {
-            if(sound.name == soundName){
-                _sound = sound;
-                break;
-            }
+    private getSound(soundName:string):Sound {
+        if(this.currentSound != undefined && this.currentSound.name == soundName){            
+            return this.currentSound;
         }
-        return _sound;
+        const sound = this.soundMap[soundName];
+        this.currentSound = sound;
+        return sound;
+
     }
     /**
      * 音を鳴らす
      * @param soundName {string} - 音の名前
      */
     play(soundName: string): void {
-        for(const sound of this.sounds) {
-            if(sound.name == soundName){
-                sound.play();
-                break;
-            }
-        }
+        const sound = this.getSound(soundName);
+        sound.play();
     }
     /**
      * 終わるまで音を鳴らす
      * @param soundName {string} - 音の名前
      */
     async playUntilDone(soundName: string): Promise<void> {
-        for(const sound of this.sounds) {
-            if(sound.name == soundName){
-                await sound.startSoundUntilDone();
-                break;
-            }
-        }
-    }
-    /**
-     * サウンドオプションを設定する
-     * @param key {SoundOption} - サウンドオプションキー
-     * @param value {number} - オプション値
-     * 
-     * {@link SoundOption}
-     */
-    setOption(key: SoundOption, value:number): void{
-        for(const sound of this.sounds) {
-            if(sound.name == soundName){
-                await sound.startSoundUntilDone();
-                break;
-            }
-        }
-        this.entity.$setOption(key, value);
-    }
-    /**
-     * サウンドオプションを指定値ずつ変える
-     * @param key {SoundOption} - サウンドオプションキー
-     * @param value {number} - オプション値
-     * 
-     * {@link SoundOption}
-     */
-    async changeOptionValue(key: SoundOption, value:number): Promise<void>{
-        await this.entity.$changeOptionValue(key,value);
+        const sound = this.getSound(soundName);
+        sound.play();
     }
     /**
      * サウンドオプションをクリアする
      */
-    async clearEffects(): Promise<void> {
-        await this.entity.$clearSoundEffect();
+    async clearEffects(soundName?: string): Promise<void> {
+        for(const soundKey of this.soundKeys) {
+            const sound = this.soundMap[soundKey];
+            sound.volume = 100;
+            sound.pitch = 0;
+        }
+        // 反映されるまで少し待つ
+        await Timer.wait(1/30);
     }
     /**
      * 鳴っている音を止める
      */
     stop(): void {
-        for(const sound of this.sounds) {
+        for(const soundKey of this.soundKeys) {
+            const sound = this.soundMap[soundKey];
             if(sound.isPlaying === true){
                 sound.stop();
             }
@@ -108,21 +83,43 @@ export class EntitySound {
      * 鳴っている音を「すぐに」止める
      */
     stopImmediately(): void {
-        for(const sound of this.sounds) {
+        for(const soundKey of this.soundKeys) {
+            const sound = this.soundMap[soundKey];
             if(sound.isPlaying === true){
                 sound.stopImmediately();
             }
         }
     }
     /** 音量 */
-    get volume() : number {
-        const volume = this.entity.$getOptionValue(SoundOption.VOLUME);
-        return volume;
+    getVolume(soundName: string) : number {
+        if(this.soundKeys.includes(soundName)) {
+            const sound = this.soundMap[soundName];
+            return sound.volume;
+        }
+        return -Infinity;
+    }
+    setVolume(soundName: string, volume: number) : void {
+        if(this.soundKeys.includes(soundName)) {
+            const sound = this.soundMap[soundName];
+            sound.volume = volume;
+        }else{
+            return;
+        }
     }
     /** ピッチ */
-    get pitch() : number {
-        const pitch = this.entity.$getOptionValue(SoundOption.PITCH);
-        return pitch;
-
+    getPitch(soundName: string) : number {
+        if(this.soundKeys.includes(soundName)) {
+            const sound = this.soundMap[soundName];
+            return sound.pitch;
+        }
+        return -Infinity;
+    }
+    setPitch(soundName: string, pitch: number) : void {
+        if(this.soundKeys.includes(soundName)) {
+            const sound = this.soundMap[soundName];
+            sound.pitch = pitch;
+        }else{
+            return;
+        }
     }
 }

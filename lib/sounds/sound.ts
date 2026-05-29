@@ -6,6 +6,9 @@ import { Entity } from "../entity/entity";
 import { SoundLoader } from "../loader/soundLoader";
 import { playground } from "../vm/playground";
 import { SoundPlayer } from "./soundPlayer";
+import { ScratchEvent } from '../vm/scratchEvent';
+import { Utils } from "../utils/utils";
+type ArgStringObject = { path: string };
 
 export class Sound extends EventEmitter {
     static get SOUND_FORCE_STOP() {
@@ -17,10 +20,12 @@ export class Sound extends EventEmitter {
     private _loadCompleted: boolean = false;
     private _soundPlayer!: SoundPlayer;
     private _isPlaying: boolean = false;
-    constructor(name: string, soundPath:string) {
+    constructor(sound:ArgStringObject) {
         super();
-        this._name = name;
-        this._soundPath = soundPath;
+        const path = sound.path;
+        const info = Utils.varNameValues({path});
+        this._name = info[0];
+        this._soundPath = info[1];
     }
     async load() {
         if(this.loadCompleted === true) {
@@ -31,13 +36,18 @@ export class Sound extends EventEmitter {
         }
         const sound = await SoundLoader.loadSound(this._soundPath, this._name);
         const data = this._data = sound.data;
-        const audioEngine = playground.runtime.audioEngine;
-        const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data});
-        const _effects = audioEngine.createEffectChain();
-        const options = {effects: _effects};
-        const soundPlayer = new SoundPlayer(this.name, decodeSoundPlayer, options);
-        soundPlayer.connect(); // effects は インスタンスを作るときに渡しているので引数省略
-        this._soundPlayer = soundPlayer;
+        console.log('sound loaded');
+        playground.runtime.scratchEvent.once(ScratchEvent.START_AUDIO_ENGINE, async()=>{
+            console.log('START_AUDIO_ENGINE');
+            const audioEngine = playground.runtime.audioEngine;
+            const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data});
+            const _effects = audioEngine.createEffectChain();
+            const options = {effects: _effects};
+            const soundPlayer = new SoundPlayer(this.name, decodeSoundPlayer, options);
+            soundPlayer.connect(); // effects は インスタンスを作るときに渡しているので引数省略
+            this._soundPlayer = soundPlayer;
+
+        });
         this._loadCompleted = true;
     }
     get name() {

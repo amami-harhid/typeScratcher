@@ -1,28 +1,23 @@
 import { VM } from '../src/index';
+import type { TSprite } from '@Type/sprite';
 //import { VM } from '../build/index.js';
-
-import { Constant } from './constant';
-
-const varNameValues = (args:Object) => {
-    for (const [key, value] of Object.entries(args)) {
-        return `${key}`;
-    }
-}
 
 import AppleSvg from './assets/Apple.svg' assert { type: 'image/svg+xml' };
 import ArrowSvg from './assets/Arrow1-a.svg' assert { type: 'image/svg+xml' };
+import CatWav from './assets/Cat.wav';
 
 const appleImage = new VM.Image( {path: AppleSvg} ); 
 const arrowImage = new VM.Image( {path: ArrowSvg} ); 
+const catSound = new VM.Sound({path: CatWav});
 
 const apple = new VM.Sprite('apple');
 apple.Image.add([appleImage, arrowImage]);
-apple.Properties.scale = [400, 400];
+apple.Sound.add([catSound]);
+apple.Properties.scale = [200, 200];
 apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
 
 //await apple.init();
 //apple.update();
-
 
 // apple.Event.whenFlag(async function*(){
 
@@ -44,12 +39,18 @@ apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
 //         }
 //     }
 // });
-apple.Event.whenFlag(async function*(){
+
+apple.Event.whenflagger = async function*(this: TSprite) {
     for(;;) {
-        apple.Motion.Direction.degree += 5;
+        this.Motion.Direction.degree += 5;
         yield;
     }
-});
+}
+// apple.Event.whenFlag(async function*(){
+//     for(;;) {
+//         apple.Motion.Direction.degree += 5;
+//         yield;
+//     }
+// });
 
-VM.Playground.start();
-
+VM.playground.start();
