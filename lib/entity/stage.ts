@@ -7,6 +7,7 @@ import { StageLayering } from '@Type/stage/CStageLayering';
 import type { TMouse } from "@Type/mouse";
 import { Playground } from "../vm/playground";
 import { StageProperties } from "./stage/stageProperties";
+import { Mouse } from "lib/vm/mouse";
 
 export class Stage extends Entity {
     public mouse!: TMouse;
@@ -21,6 +22,24 @@ export class Stage extends Entity {
     }
     mouseEventStart() {
         this.mouse = {scratchX:0, scratchY:0, x:0, y:0, down: false, pageX: 0, pageY: 0, clientX: 0, clientY: 0};
+        const body = document.querySelector('#main') as HTMLElement;
+        body?.addEventListener('mousedown', (e:MouseEvent)=>{
+            me.mouse.pageX = e.pageX;
+            me.mouse.pageY = e.pageY;
+            me.mouse.down = true;
+            e.stopPropagation()
+        });
+        body?.addEventListener('mousemove', (e:MouseEvent) => {
+            me.mouse.pageX = e.pageX;
+            me.mouse.pageY = e.pageY;
+            e.stopPropagation()        
+        });
+        body?.addEventListener('mouseup', (e:MouseEvent)=>{
+            me.mouse.pageX = e.pageX;
+            me.mouse.pageY = e.pageY;
+            me.mouse.down = false;
+            e.stopPropagation()
+        });
         const canvas = Element.getScratchCanvas();
         const me = this;
         canvas.addEventListener('mousemove', (e:MouseEvent)=>{
@@ -32,8 +51,21 @@ export class Stage extends Entity {
             
             me.mouse.scratchX = e.offsetX - canvas.width/2;
             me.mouse.scratchY = canvas.height/2 - e.offsetY;
-        }, {});
+        });
+        canvas.addEventListener('mousedown', (e:MouseEvent) => {
+            me.mouse.x = e.offsetX;
+            me.mouse.y = e.offsetY;
+            me.mouse.down = true;
+            e.stopPropagation();
+        });
+        canvas.addEventListener('mouseup', (e:MouseEvent) => {
+            me.mouse.x = e.offsetX;
+            me.mouse.y = e.offsetY;
+            me.mouse.down = false;
+            e.stopPropagation();        
+        });
     }
+    
     get Properties() {
         return this._properties;
     }

@@ -41,9 +41,10 @@ export class SoundPlayer {
     }
     set volume( volume) {
         if(this._effects && this._effects.set && this._effects.volume){
+            console.log('#222')
             this._volume = volume;
             this._effects.set(this._effects.volume.name, this._volume);
-            this._effects.volume.update();    
+            this._effects.volume.update();
         }
     }
     get volume() {

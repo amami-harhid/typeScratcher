@@ -21,7 +21,6 @@ export class Runtime extends EventEmitter {
         }
         this.ioDevices = ioDevice;
         this.scratchEvent.once(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
-            console.log('GREEN FLAG CLICKED')
             this.audioEngine = new AudioEngine();
             this.scratchEvent.emit(ScratchEvent.START_AUDIO_ENGINE);
 

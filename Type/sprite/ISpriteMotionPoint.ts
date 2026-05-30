@@ -6,6 +6,10 @@ export interface ISpriteMotionPoint {
     /**
      * マウスカーソルへ向く
      */
+    toMouseInStage(): void;
+    /**
+     * マウスカーソルへ向く(ステージ外でもOK)
+     */
     toMouse(): void;
     /**
      * ターゲットの位置へ向く

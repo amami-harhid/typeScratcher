@@ -1,4 +1,5 @@
-import { SoundOption } from "./SoundOption";
+import { ISoundOption, SoundOption } from "./SoundOption";
+import { type ISound } from "../sound/ISound";
 /** イベント */
 export interface IEntitySound {
 
@@ -12,28 +13,12 @@ export interface IEntitySound {
      * 音を鳴らす
      * @param soundName {string} - 音の名前
      */
-    play(soundName: string): void;
+    play(sound: ISound): Promise<void>;
     /**
      * 終わるまで音を鳴らす
      * @param soundName {string} - 音の名前
      */
     playUntilDone(soundName: string): Promise<void>;
-    /**
-     * サウンドオプションを設定する
-     * @param key {TypeSoundOption} - サウンドオプションキー
-     * @param value {number} - オプション値
-     * 
-     * {@link SoundOption}
-     */
-    setOption(key: SoundOption, value:number): void;
-    /**
-     * サウンドオプションを指定値ずつ変える
-     * @param key {TypeSoundOption} - サウンドオプションキー
-     * @param value {number} - オプション値
-     * 
-     * {@link TypeSoundOption}
-     */
-    changeOptionValue(key: SoundOption, value:number): Promise<void>;
     /**
      * サウンドオプションをクリアする
      */

@@ -18,12 +18,17 @@ apple.Looks.Size.scale = {w: 500, h:200};
 apple.Motion.Direction.degree = 0;
 apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
 
+
+
 apple.Event.flagPresser().func = async function*(this: TSprite) {
+    await apple.Sound.setVolume(chillSound, 100);
+    await apple.Sound.setPitch(chillSound, 0.3);
+    console.log(apple.Sound.getPitch(chillSound));
     for(;;) {
-        if(this.Motion.Direction.degree == 90) {
+        const degree = Math.floor(this.Motion.Direction.degree);
+        if(degree == 90) {
             catSound.play();
         }
-
         yield;
     }
 }
@@ -37,13 +42,14 @@ apple.Event.keyPresser("A").func = async function*(this:TSprite){
 }
 apple.Event.keyPresser("B").func = async function*(this:TSprite){
     for(;;){
-        await chillSound.play();
+        console.log('chillSound loop')
+        await this.Sound.play(chillSound);
         yield;
     }
 }
 apple.Event.keyPresser("C").func = async function*(this:TSprite){
     for(;;){
-        await chillSound.play();
+        //await chillSound.play();
         yield;
     }
 }

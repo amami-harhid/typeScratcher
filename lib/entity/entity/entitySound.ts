@@ -31,30 +31,21 @@ export class EntitySound {
             this.soundKeys.push(s.name);
         }
     }
-    private getSound(soundName:string):Sound {
-        if(this.currentSound != undefined && this.currentSound.name == soundName){            
-            return this.currentSound;
-        }
-        const sound = this.soundMap[soundName];
-        this.currentSound = sound;
-        return sound;
-
-    }
     /**
      * 音を鳴らす
-     * @param soundName {string} - 音の名前
+     * @param sound {Sound} - 音
      */
-    play(soundName: string): void {
-        const sound = this.getSound(soundName);
-        sound.play();
+    async play(sound: Sound): Promise<void> {
+        if(this.soundKeys.includes( sound.name )) {
+            await sound.play();
+        }
     }
     /**
      * 終わるまで音を鳴らす
-     * @param soundName {string} - 音の名前
+     * @param sound {Sound} - 音
      */
-    playUntilDone(soundName: string): Promise<void> {
+    playUntilDone(sound: Sound): Promise<void> {
         return new Promise<void>(resolve=>{
-            const sound = this.getSound(soundName);
             sound.startSoundUntilDone().then(()=>{
                 resolve();
             });
@@ -63,11 +54,11 @@ export class EntitySound {
     /**
      * サウンドオプションをクリアする
      */
-    async clearEffects(soundName?: string): Promise<void> {
+    async clearEffects(): Promise<void> {
         for(const soundKey of this.soundKeys) {
             const sound = this.soundMap[soundKey];
-            sound.volume = 100;
-            sound.pitch = 0;
+            await sound.setVolume(100);
+            await sound.setPitch(0);
         }
         // 反映されるまで少し待つ
         await Timer.wait(1/30);
@@ -95,44 +86,30 @@ export class EntitySound {
         }
     }
     /** 音量 */
-    getVolume(sound?: Sound | string) : number {
-        if(sound == undefined){
-            if(this.currentSound != undefined){
-                return this.currentSound.volume;
-            }
-        }else if(typeof sound == 'string'){
-            const soundName = sound;
-            if(this.soundKeys.includes(soundName)) {
-                const sound = this.soundMap[soundName];
-                return sound.volume;
-            }
-        }else{
-            if(this.soundKeys.includes( sound.name )) {
-                return sound.volume;
-            }
+    getVolume(sound: Sound) : number {
+        if(this.soundKeys.includes( sound.name )) {
+             return sound.volume;
         }
         return -Infinity;
     }
-    setVolume(soundName: string, volume: number) : void {
-        if(this.soundKeys.includes(soundName)) {
-            const sound = this.soundMap[soundName];
-            sound.volume = volume;
+    async setVolume(sound: Sound, volume: number) : Promise<void> {
+        if(this.soundKeys.includes(sound.name)) {
+            console.log('---- set Volume', volume);
+            await sound.setVolume(volume);
         }else{
             return;
         }
     }
     /** ピッチ */
-    getPitch(soundName: string) : number {
-        if(this.soundKeys.includes(soundName)) {
-            const sound = this.soundMap[soundName];
+    getPitch(sound: Sound) : number {
+        if(this.soundKeys.includes(sound.name)) {
             return sound.pitch;
         }
         return -Infinity;
     }
-    setPitch(soundName: string, pitch: number) : void {
-        if(this.soundKeys.includes(soundName)) {
-            const sound = this.soundMap[soundName];
-            sound.pitch = pitch;
+    async setPitch(sound: Sound, pitch: number) : Promise<void> {
+        if(this.soundKeys.includes(sound.name)) {
+            await sound.setPitch(pitch);
         }else{
             return;
         }
