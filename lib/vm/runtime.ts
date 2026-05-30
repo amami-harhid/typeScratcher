@@ -20,11 +20,11 @@ export class Runtime extends EventEmitter {
             keyboard: new Keyboard(this),
         }
         this.ioDevices = ioDevice;
-        this.scratchEvent.once(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
+        const greenFlagClick = ()=>{
             this.audioEngine = new AudioEngine();
-            this.scratchEvent.emit(ScratchEvent.START_AUDIO_ENGINE);
-
-        })
+            this.scratchEvent.emit(ScratchEvent.READY_AUDIO_ENGINE);
+        };
+        this.scratchEvent.once(ScratchEvent.START_AUDIO_ENGINE, greenFlagClick);
     }
     /**
      * 指定したキーが押されているかの判定

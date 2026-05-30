@@ -18,17 +18,25 @@ apple.Looks.Size.scale = {w: 500, h:200};
 apple.Motion.Direction.degree = 0;
 apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
 
+// TODO
+// ここでAUDIO関連の設定を可能にしたい。警告を出さずに。
+// たとえば・・・
+// 旗マークをクリックするとAUDIO関連の設定が開始されるようにしたい。
+// ２回目の旗クリックで 旗イベント処理が動き出す・・・とか。
+await apple.Sound.setVolume(chillSound, 100);
+await apple.Sound.setPitch(chillSound, 1.0);
+await apple.Sound.setVolume(catSound, 10);
 
 
 apple.Event.flagPresser().func = async function*(this: TSprite) {
-    await apple.Sound.setVolume(chillSound, 100);
-    await apple.Sound.setPitch(chillSound, 0.3);
     console.log(apple.Sound.getPitch(chillSound));
     for(;;) {
         const degree = Math.floor(this.Motion.Direction.degree);
         if(degree == 90) {
-            catSound.play();
-        }
+            this.Sound.play(catSound);
+            apple.Sound.addVolume(catSound, 5);
+            apple.Sound.addPitch(catSound, 0.05);
+        }        
         yield;
     }
 }
@@ -49,7 +57,9 @@ apple.Event.keyPresser("B").func = async function*(this:TSprite){
 }
 apple.Event.keyPresser("C").func = async function*(this:TSprite){
     for(;;){
-        //await chillSound.play();
+        apple.Sound.addVolume(chillSound, 1);
+        apple.Sound.addPitch(chillSound, 0.05);
+        await VM.Utils.Timer.wait(1);
         yield;
     }
 }

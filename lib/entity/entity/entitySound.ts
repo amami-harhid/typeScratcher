@@ -92,10 +92,18 @@ export class EntitySound {
         }
         return -Infinity;
     }
-    async setVolume(sound: Sound, volume: number) : Promise<void> {
+    addVolume(sound: Sound, volume: number) : void {
+        if(this.soundKeys.includes(sound.name)) {
+            console.log('---- add Volume', volume);
+            sound.addVolume(volume);
+        }else{
+            return;
+        }
+    }
+    setVolume(sound: Sound, volume: number) : void {
         if(this.soundKeys.includes(sound.name)) {
             console.log('---- set Volume', volume);
-            await sound.setVolume(volume);
+            sound.setVolume(volume);
         }else{
             return;
         }
@@ -107,9 +115,16 @@ export class EntitySound {
         }
         return -Infinity;
     }
-    async setPitch(sound: Sound, pitch: number) : Promise<void> {
+    addPitch(sound: Sound, pitch: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            await sound.setPitch(pitch);
+            sound.addPitch(pitch);
+        }else{
+            return;
+        }
+    }
+    setPitch(sound: Sound, pitch: number) : void {
+        if(this.soundKeys.includes(sound.name)) {
+            sound.setPitch(pitch);
         }else{
             return;
         }

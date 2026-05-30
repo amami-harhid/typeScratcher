@@ -12,15 +12,24 @@ export class ScratchEvent extends EventEmitter {
     static get START_AUDIO_ENGINE(): string {
         return "START_AUDIO_ENGINE";
     }
+    static get READY_AUDIO_ENGINE(): string {
+        return "READY_AUDIO_ENGINE";
+    }
     constructor() {
         super();
     }
 
     public greenFlagClick() {
         const greenFlag = Element.getGreenFlag();
-
+        let counter = 0;
         greenFlag.addEventListener('click',(event:MouseEvent)=>{
-            this.emit(ScratchEvent.GREEN_FLAG_CLICKED);
+            if(counter == 0){
+                this.emit(ScratchEvent.START_AUDIO_ENGINE);
+                counter+=1;
+            }else{
+                this.emit(ScratchEvent.GREEN_FLAG_CLICKED);
+
+            }
             event.stopPropagation();
         })
     }

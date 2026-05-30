@@ -18,6 +18,8 @@ export class Sound extends EventEmitter {
     private _data!:Uint8Array<ArrayBuffer>;
     private _loadCompleted: boolean = false;
     private _soundPlayer!: SoundPlayer;
+    private _volume: number = 100;
+    private _pitch: number = 1.0;
     constructor(sound: SoundArgStringObject) {
         super();
         const info = Utils.varNameValues(sound);
@@ -33,7 +35,7 @@ export class Sound extends EventEmitter {
         }
         const sound = await SoundLoader.loadSound(this._soundPath, this._name);
         this._data = sound.data;
-        playground.runtime.scratchEvent.once(ScratchEvent.START_AUDIO_ENGINE, async()=>{
+        playground.runtime.scratchEvent.once(ScratchEvent.READY_AUDIO_ENGINE, async()=>{
             console.log("ScratchEvent.START_AUDIO_ENGINE")
             await this.createSoundPlayer();
         });
@@ -52,6 +54,8 @@ export class Sound extends EventEmitter {
             const soundPlayer = new SoundPlayer(this.name, decodeSoundPlayer, options);
             soundPlayer.connect(); // effects は インスタンスを作るときに渡しているので引数省略
             this._soundPlayer = soundPlayer;
+            await this.setVolume(this._volume);
+            await this.setPitch(this._pitch);
     }
     get name() {
         return this._name;
@@ -102,20 +106,32 @@ export class Sound extends EventEmitter {
         this.emit(Sound.SOUND_FORCE_STOP);
     }
     get volume() {
-        if ( this._soundPlayer == null) return -1;
+        if ( this._soundPlayer == null) return this._volume;
         return this._soundPlayer.volume;
     }
-    async setVolume(volume: number) {
-        await this.createSoundPlayer();
-        console.log("set Volume ---->");
+    addVolume(volume: number) {
+        this._volume += volume;
+        if ( this._soundPlayer == null) return;
+        this._soundPlayer.volume += volume;
+
+    }
+    setVolume(volume: number) {
+        this._volume = volume;
+        if ( this._soundPlayer == null) return;
         this._soundPlayer.volume = volume;
     }
     get pitch() {
-        if ( this._soundPlayer == null) return Infinity;
+        if ( this._soundPlayer == null) return this._pitch;
         return this._soundPlayer.pitch;
     }
-    async setPitch(pitch:number): Promise<void> {
-        await this.createSoundPlayer();
+    addPitch(pitch:number): void {
+        this._pitch += pitch;
+        if ( this._soundPlayer == null) return;
+        this._soundPlayer.pitch += pitch;
+    }
+    setPitch(pitch:number): void {
+        this._pitch = pitch;
+        if ( this._soundPlayer == null) return;
         this._soundPlayer.pitch = pitch;
     }
     get isPlaying():boolean {
