@@ -23,9 +23,9 @@ apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
 // たとえば・・・
 // 旗マークをクリックするとAUDIO関連の設定が開始されるようにしたい。
 // ２回目の旗クリックで 旗イベント処理が動き出す・・・とか。
-await apple.Sound.setVolume(chillSound, 100);
-await apple.Sound.setPitch(chillSound, 1.0);
-await apple.Sound.setVolume(catSound, 10);
+apple.Sound.setVolume(chillSound, 100);
+apple.Sound.setPitch(chillSound, 1.0);
+apple.Sound.setVolume(catSound, 10);
 
 
 apple.Event.flagPresser().func = async function*(this: TSprite) {
