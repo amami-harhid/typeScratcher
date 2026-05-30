@@ -3,7 +3,7 @@ import { Entity } from '../entity';
 /** メッセージ送受信 */
 export class EntityBroadCast {
 
-    private entity: Entity;
+    protected entity: Entity;
     private _modules: Map<string, Promise<void>>;
     /**
      * @internal

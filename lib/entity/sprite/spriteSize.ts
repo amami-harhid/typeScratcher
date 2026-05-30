@@ -1,6 +1,6 @@
 //import { Utils } from '../../utils/utils';
 import { Sprite } from '../sprite';
-import { TScaleArr } from '@Type/common/typeCommon';
+import { TBounds, TScaleArr } from '@Type/common/typeCommon';
 import { ISpriteSize } from '@Type/sprite/ISpriteSize';
 
 /** サイズ */
@@ -24,7 +24,7 @@ export class SpriteSize {
      * ```
      */
     get w () : number {
-        return this._w;
+        return this.entity.Properties.scale.w;
     }
     /**
      * 横サイズ
@@ -34,7 +34,7 @@ export class SpriteSize {
      * ```
      */
     set w (width: number) {
-        this._w = width;
+        this.entity.Properties.scale.w = width;
     }
     /**
      * 縦サイズ
@@ -43,7 +43,7 @@ export class SpriteSize {
      * ```
      */
     get h () : number {
-        return this._h;
+        return this.entity.Properties.scale.h;
     }
     /**
      * 縦サイズ
@@ -53,7 +53,7 @@ export class SpriteSize {
      * ```
      */
     set h (height: number) {
-        this._h = height;
+        this.entity.Properties.scale.h = height;
     }
     /**
      * 縦横サイズ
@@ -65,7 +65,7 @@ export class SpriteSize {
      * ```
      */
     get scale() : {w:number,h:number} {
-        return {w: this._w, h: this._h};
+        return {w: this.entity.Properties.scale.w, h: this.entity.Properties.scale.h};
     }
     /**
      * 縦横サイズ
@@ -80,8 +80,8 @@ export class SpriteSize {
      * ```
      */
     set scale( scale : { w:number, h:number} ) {
-        this._w = scale.w;
-        this._h = scale.h;
+        this.entity.Properties.scale.w = scale.w;
+        this.entity.Properties.scale.h = scale.h;
     }
 
     /**
@@ -92,7 +92,7 @@ export class SpriteSize {
      *  const {w,h} = this.Looks.Size.drawingSize;
      * ```
      */
-    get drawingSize() : {w: number, h: number}{
+    get drawingSize() : TBounds{
         const bounds = this.entity.render.renderer.getBounds(this.entity.drawableID);
         return bounds;
     }

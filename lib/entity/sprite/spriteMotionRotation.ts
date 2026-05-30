@@ -16,7 +16,7 @@ export class SpriteMotionRotation {
      * {@link RotationStyle}
      */
     get style(): RotationStyle {
-        return RotationStyle.ALL_AROUND;
+        return this.entity.Properties.rotationStyle;
     }
     /**
      * 回転方法
@@ -24,6 +24,6 @@ export class SpriteMotionRotation {
      * {@link RotationStyle}
      */
     set style(style: RotationStyle) {
-
+        this.entity.Properties.rotationStyle = style;
     }
 };

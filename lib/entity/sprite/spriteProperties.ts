@@ -2,11 +2,14 @@ import { ScratchRenderProperties } from "@Type/render/IRenderWebGL";
 import { EntityProperties } from "../entity/entityProperties";
 import { Sprite } from "../sprite";
 import { RotationStyle } from "@Type/entity/RotationStyle";
+import { Entity } from "../entity";
 
 export class SpriteProperties extends EntityProperties {
-
+    constructor(sprite: Sprite){
+        super(sprite as unknown as Entity)
+    }
     update() {
-        const _entity = this.entity as Sprite;
+        const entity : Sprite = this.entity as unknown as Sprite;
         let _degree = this.degree;
         let _scale = {w: this.scale.w, h: this.scale.h};
         if( this._rotationStyle == RotationStyle.DONT_ROTATE) {
@@ -20,9 +23,8 @@ export class SpriteProperties extends EntityProperties {
                 _scale.w = Math.abs( _scale.w );
             }
         }
-
         const prop: ScratchRenderProperties = {
-            skinId: _entity.Costume.currentSkinId,
+            skinId: entity.Costume.currentSkinId,
             position: [this.position.x, this.position.y],
             scale: [_scale.w, _scale.h],
             direction: _degree,

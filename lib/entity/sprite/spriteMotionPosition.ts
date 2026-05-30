@@ -4,8 +4,6 @@ import type { ISpriteMotionPosition } from '@Type/sprite/ISpriteMotionPosition';
 
 export class SpriteMotionPosition implements ISpriteMotionPosition {
     private entity: Sprite;
-    private _x: number = 0;
-    private _y: number = 0;
     /**
      * @internal
      * @param entity {Sprite}
@@ -14,22 +12,23 @@ export class SpriteMotionPosition implements ISpriteMotionPosition {
         this.entity = entity;
     }
     get x() : number {
-        return this._x;
+        return this.entity.Properties.position.x;
     }
     get y() : number {
-        return this._y;
+        return this.entity.Properties.position.y;
     }
     get xy() : {x:number, y:number} {
-        return {x: this._x, y: this._y };
+        return {x: this.entity.Properties.position.x, y: this.entity.Properties.position.y };
     }
     set x(x: number) {
-        this._x = x;
+        this.entity.Properties.position.x = x;
     }
     set y(y: number) {
-        this._y = y;
+        this.entity.Properties.position.y = y;
     }
-    set xy( xy: {x:number, y:number} | {} | TPositionArray)  {
-
+    set xy( xy: {x:number, y:number})  {
+        this.entity.Properties.position.x = xy.x;
+        this.entity.Properties.position.y = xy.y;
     }
 
 };

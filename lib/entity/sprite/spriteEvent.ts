@@ -9,7 +9,7 @@ export class SpriteEvent extends EntityEvent {
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Entity){
-        super(entity);
+    constructor(entity:Sprite){
+        super(entity as unknown as Entity);
     }
 };

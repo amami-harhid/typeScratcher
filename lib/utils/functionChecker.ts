@@ -3,7 +3,8 @@
  * Functionの種類を判定する
  * 新しめのJavascript構文を扱える@babel/parserを使用する
  */
-const { parse } = require("@babel/parser");
+//const { parse } = require("@babel/parser");
+import { parse } from '@babel/parser';
 declare type TFunctionChecker = {
     isArrow: boolean,
     isAsync: boolean,

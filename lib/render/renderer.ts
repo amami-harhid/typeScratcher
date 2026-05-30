@@ -62,6 +62,10 @@ export class Renderer {
     stageResize(w: number = Renderer.W , h: number = Renderer.H): void {
         if(this._renderer){
             this._renderer.resize( w, h ); // stage(canvas)のサイズ property(width,height)の値をリサイズ
+            const _nativeSize = this._renderer.getNativeSize ();
+            this.stageWidth = _nativeSize[0];
+            this.stageHeight = _nativeSize[1];
+
 //            const main = document.querySelector(`#${GUI_CONST.main_id}`) as HTMLElement;
 //            main!.style.width = `${window.innerWidth}px`;
 //            main!.style.height = `${window.innerHeight}px`;
@@ -73,8 +77,7 @@ export class Renderer {
      * @param h 
      */
     createRenderer ( canvas: HTMLCanvasElement ) {
-        this.canvas = canvas;//Element.getScratchCanvas();
-        console.log(this.canvas);
+        this.canvas = canvas;
         this._renderer = new ScratchRender(canvas);
         this._renderer.setLayerGroupOrdering(this.layerGroups);
         const w = this.canvas.clientWidth;

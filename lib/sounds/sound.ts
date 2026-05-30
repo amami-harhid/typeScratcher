@@ -56,11 +56,6 @@ export class Sound extends EventEmitter {
         return this._loadCompleted;
     }
 
-    play2() {
-        if ( this._soundPlayer == null) return;
-        //this._soundPlayer.connect();
-        this._soundPlayer.play();
-    }
     play() : Promise<void> {
         return this.startSoundUntilDone();
     }

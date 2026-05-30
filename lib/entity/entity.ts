@@ -22,22 +22,21 @@ export class Entity extends EventEmitter{
     public drawableID: number = -1;
     protected _render: Renderer;
 
-    protected _properties!: EntityProperties;
+    //protected _properties!: EntityProperties;
     protected _image: EntityImage;
     protected _sound: EntitySound;
-
     constructor() {
         super();
         this._render = Playground.renderer;
         this.id = this._generateUUID();
         this._image = new EntityImage(this);
         this._sound = new EntitySound(this);
+        //this._properties = new EntityProperties(this);
     }
     createDrawable(layer: StageLayering) {
         this.drawableID = this._render.createDrawable(layer);
     }
     update():void {
-        this.Properties.update();
     }
     get name(): string {
         return this._name;
@@ -53,9 +52,6 @@ export class Entity extends EventEmitter{
     }
     get Sound() {
         return this._sound;
-    }
-    get Properties() {
-        return this._properties;
     }
     imageLoadCompleteAll() : boolean {
         for( const _img of this._images){

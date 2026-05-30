@@ -18,6 +18,7 @@ export class Sprite extends Entity {
     private _looks: SpriteLooks;
     private _control: SpriteControl;
     private _event: SpriteEvent;
+    private _properties: SpriteProperties;
     constructor(name: string) {
         super();
         this.createDrawable(StageLayering.SPRITE_LAYER);
@@ -71,9 +72,11 @@ export class Sprite extends Entity {
             });
         })
     }
-
+    get Properties() {
+        return this._properties;
+    }
     update() {
-        this.Properties.update(); 
+        this._properties.update(); 
     }
 
 
