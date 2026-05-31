@@ -2,7 +2,7 @@
  * Threads
  */
 
-import { Playground } from "../vm/playground";
+import { playground } from "../vm/playground";
 import { Entity } from "../entity/entity";
 import { TThreadObj } from "./TThreadObj";
 import { Utils } from "../utils/utils";
@@ -80,15 +80,15 @@ export class ThreadManager {
                 newArr.push(thread);
             }
         }
-        for(const sprite of Playground.getSprites()){
+        for(const sprite of playground.getSprites()){
             sprite.Properties.update();
         }
-        const stage = Playground.getStage();
+        const stage = playground.getStage();
         if(stage){
             stage.Properties.update();
         }
 
-        Playground.renderer.renderer.draw();
+        playground.renderer.renderer.draw();
 
         if(ThreadBank.threadArr.length > newArr.length) {
             ThreadBank.threadArr.slice(0, ThreadBank.threadArr.length);

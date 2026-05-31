@@ -1,3 +1,4 @@
+import { playground } from '../../vm/playground';
 import { Stage} from '../stage';
 import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
 /**
@@ -16,13 +17,13 @@ export class StageSensingTimer implements IEntitySensingTimer {
      * タイマー値
      */
     get timer() {
-        return this.entity.$timer;
+        return playground.timer;
     }
     /**
      * タイマーリセット
      */
     reset() {
-        this.entity.$resetTimer();
+        playground.resetTimer();
     }
 
 };

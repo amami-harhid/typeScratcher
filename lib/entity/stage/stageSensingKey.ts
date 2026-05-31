@@ -1,7 +1,6 @@
 import { Stage} from '../stage';
-import type { IStageSensing } from '@Type/stage/IStageSensing';
-import type { IEntitySensingMouse } from '@Type/entity/IEntitySensingMouse';
 import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
+import { playground } from '../../vm/playground';
 /**
  * Stage Sensing(調べる) Key
  */
@@ -21,7 +20,7 @@ export class StageSensingKey implements IEntitySensingKey {
      * @returns {boolean} キー押下判定
      */
     isDown(key: string) : boolean {
-        return this.entity.$isKeyDown(key);
+        return playground.runtime.keyIsDown(key);
     }
     /**
      * キーが押されていないことの判定
@@ -29,7 +28,8 @@ export class StageSensingKey implements IEntitySensingKey {
      * @returns {boolean} キー押下判定
      */
     isNotDown(key: string) : boolean {
-        return this.entity.$isKeyNotDown(key);
+        const down =  playground.runtime.keyIsDown(key);
+        return !down;
     }
 
 };

@@ -3,14 +3,13 @@
  */
 import { EventEmitter } from "events";
 import { Image } from "../image/image";
-import { Playground } from "../vm/playground";
+import { playground } from "../vm/playground";
 import { Renderer } from "../render/renderer";
 import { StageLayering } from '@Type/stage/CStageLayering';
-import type { IEntity } from '@Type/entity/IEntity';
 import { Utils } from "../utils/utils";
 import { EntityImage } from "./entity/entityImage";
-import { EntityProperties } from "./entity/entityProperties";
 import { EntitySound } from "./entity/entitySound";
+import { TMouse } from "@Type/mouse";
 
 export class Entity extends EventEmitter{
     public get SOUND_FORCE_STOP() {
@@ -25,13 +24,16 @@ export class Entity extends EventEmitter{
     //protected _properties!: EntityProperties;
     protected _image: EntityImage;
     protected _sound: EntitySound;
+    protected _mouse: TMouse;
+    protected _isSprite: boolean;
     constructor() {
         super();
-        this._render = Playground.renderer;
+        this._render = playground.renderer;
         this.id = this._generateUUID();
         this._image = new EntityImage(this);
         this._sound = new EntitySound(this);
-        //this._properties = new EntityProperties(this);
+        this._mouse = playground.mouse;
+        this._isSprite = false;
     }
     createDrawable(layer: StageLayering) {
         this.drawableID = this._render.createDrawable(layer);
@@ -52,6 +54,12 @@ export class Entity extends EventEmitter{
     }
     get Sound() {
         return this._sound;
+    }
+    get Mouse() {
+        return this._mouse;
+    }
+    get isSprite() {
+        return this._isSprite;
     }
     imageLoadCompleteAll() : boolean {
         for( const _img of this._images){

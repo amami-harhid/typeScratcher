@@ -40,7 +40,6 @@ export class Keyboard {
         if (scratchKey === '') return;
         const index = this._keysPressed.indexOf(scratchKey);
         if (data.isDown) {
-            console.log('KEY_PRESSED', scratchKey);
             this._runtime.emit('KEY_PRESSED', scratchKey);
             if (index < 0) {
                 this._keysPressed.push(scratchKey);

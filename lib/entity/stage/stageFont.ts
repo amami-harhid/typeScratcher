@@ -14,10 +14,11 @@ export class StageFont implements IStageFont {
     }
 
     add(fontName: string) : void {
-        this.entity.$addFont(fontName);
+//        this.entity.$addFont(fontName);
     }
 
     get names() : string[] {
-        return this.entity.$getImageNames();
+//        return this.entity.$getImageNames();
+        return [];
     }
 };

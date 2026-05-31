@@ -4,7 +4,6 @@
 import { default as ScratchRender} from 'scratch-render';
 import { StageLayering, LAYER_GROUPS } from '@Type/stage/CStageLayering';
 import { IRenderWebGL } from '@Type/render/IRenderWebGL';
-import { Element } from '../gui/element';
 import { GUI_CONST } from '../gui/gui_const';
 
 export class Renderer {

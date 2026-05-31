@@ -51,7 +51,81 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      * もし端に振れたら跳ね返る
      */
     ifOnEdgeBounce(): void {
+        const touch = this.entity.Sensing.Edge.isTouchingEdge()
+        if(touch.touch === true){
+            const radians = MathUtil.degToRad(90 - this.entity.Properties.degree);
+            let dx = Math.cos(radians);
+            let dy = -Math.sin(radians);
+            let _dx = dx;
+            let _dy = dy;
+            const nearestEdge = touch.judge.nearestEdge;
+            if (nearestEdge === 'left') {
+                _dx = Math.max(0.2, Math.abs(dx));
+            } else if (nearestEdge === 'top') {
+                _dy = Math.max(0.2, Math.abs(dy));
+            } else if (nearestEdge === 'right') {
+                _dx = 0 - Math.max(0.2, Math.abs(dx));
+            } else if (nearestEdge === 'bottom') {
+                _dy = 0 - Math.max(0.2, Math.abs(dy));
+            }
+            const newDirection = MathUtil.radToDeg(Math.atan2(_dy, _dx)) + 90;
+            this.entity.Properties.degree = newDirection;
+            const position = this.entity.Properties.position;
+            this._keepInFence(position.x+_dx, position.y+_dy);
+        }
 
+
+    }
+    private _keepInFence( x: number, y: number): void {
+        const fencedPosition = this._keepInFencePosition(x, y);
+        if(fencedPosition){
+            this.entity.Properties.position.x = fencedPosition[0];
+            this.entity.Properties.position.y = fencedPosition[1];
+        }
+    }
+    private _keepInFencePosition(newX: number, newY: number): [number, number] {
+        const render = this.entity.render;
+        const renderer = render.renderer;
+        const drawableID = this.entity.drawableID;
+        const drawable = renderer._allDrawables[drawableID];
+        if(drawable == undefined || drawable.skin == undefined) {
+            return [newX, newY];
+        }
+        const bounds = renderer.getBounds(drawableID);
+        if(bounds == undefined) {
+            return [newX, newY];
+        }
+        const stageWidth = render.stageWidth;
+        const stageHeight = render.stageHeight;
+        const fence = {
+            left: -(stageWidth/2),
+            top: stageHeight/2,
+            right: stageWidth/2,
+            bottom: -(stageHeight/2),
+        };
+        // Adjust the known bounds to the target position.
+        const position = this.entity.Properties.position;
+        bounds.left += (newX - position.x);
+        bounds.right += (newX - position.x);
+        bounds.top += (newY - position.y);
+        bounds.bottom += (newY - position.y);
+        // Find how far we need to move the target position.
+        let dx = 0;
+        let dy = 0;
+        if (bounds.left < fence.left) {
+            dx += fence.left - bounds.left;
+        }
+        if (bounds.right > fence.right) {
+            dx += fence.right - bounds.right;
+        }
+        if (bounds.top > fence.top) {
+            dy += fence.top - bounds.top;
+        }
+        if (bounds.bottom < fence.bottom) {
+            //dy += fence.bottom - bounds.bottom +hosei;
+            dy += fence.bottom - bounds.bottom;
+        }
+        return [newX + dx , newY + dy];
     }
     /**
      * ステージ上のランダムな位置へ移動する

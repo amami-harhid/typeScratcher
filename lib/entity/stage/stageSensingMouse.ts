@@ -20,7 +20,7 @@ export class StageSensingMouse implements IEntitySensingMouse {
      * @returns {boolean} - マウスが押されている判定
      */
     get isDown() : boolean {
-        return this.entity.$isMouseDown();
+        return this.entity.Mouse.down;
     }
 
     /**

@@ -1,6 +1,4 @@
 import { Entity } from '../entity';
-import type { IEntitySound } from '@Type/entity/IEntitySound';
-import { SoundOption } from '@Type/entity/SoundOption';
 import { Sound } from '../../sounds/sound';
 import { Timer } from '../../utils/timer';
 /** イベント */
@@ -57,8 +55,8 @@ export class EntitySound {
     async clearEffects(): Promise<void> {
         for(const soundKey of this.soundKeys) {
             const sound = this.soundMap[soundKey];
-            await sound.setVolume(100);
-            await sound.setPitch(0);
+            sound.setVolume(100);
+            sound.setPitch(0);
         }
         // 反映されるまで少し待つ
         await Timer.wait(1/30);
@@ -94,7 +92,6 @@ export class EntitySound {
     }
     addVolume(sound: Sound, volume: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            console.log('---- add Volume', volume);
             sound.addVolume(volume);
         }else{
             return;
@@ -102,7 +99,6 @@ export class EntitySound {
     }
     setVolume(sound: Sound, volume: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            console.log('---- set Volume', volume);
             sound.setVolume(volume);
         }else{
             return;

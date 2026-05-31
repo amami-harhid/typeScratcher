@@ -1,22 +1,26 @@
 import { VM } from '../src/index';
+//import { VM } from '../weboacked/index.js';
 import type { TSprite } from '@Type/sprite';
 
 import AppleSvg from './assets/Apple.svg' assert { type: 'image/svg+xml' };
 import ArrowSvg from './assets/Arrow1-a.svg' assert { type: 'image/svg+xml' };
+import CatSvg from './assets/cat.svg' assert { type: 'image/svg+xml' };
 import CatWav from './assets/Cat.wav';
 import ChillWav from './assets/Chill.wav';
 
 const appleImage = new VM.Image( {AppleSvg} ); 
 const arrowImage = new VM.Image( {ArrowSvg} ); 
+const catImage = new VM.Image( {CatSvg});
 const catSound = new VM.Sound({CatWav});
 const chillSound = new VM.Sound({ChillWav});
 const stage = new VM.Stage();
 const apple = new VM.Sprite('apple');
-apple.Image.add([appleImage, arrowImage]);
+apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
-apple.Looks.Size.scale = {w: 500, h:200};
-apple.Motion.Direction.degree = 0;
-apple.Motion.Rotation.style = VM.RotationStyle.ALL_AROUND;
+apple.Looks.Size.scale = {w: 100, h:100};
+apple.Motion.Direction.degree = 45;
+apple.Motion.Rotation.style = VM.RotationStyle.DONT_ROTATE;
+apple.Motion.Position.xy = {x:0, y:0};
 
 // TODO
 // ここでAUDIO関連の設定を可能にしたい。警告を出さずに。
@@ -60,6 +64,33 @@ apple.Event.keyPresser("C").func = async function*(this:TSprite){
         apple.Sound.addVolume(chillSound, 1);
         apple.Sound.addPitch(chillSound, 0.05);
         await VM.Utils.Timer.wait(1);
+        yield;
+    }
+}
+apple.Event.keyPresser("D").func = async function*(this:TSprite){
+    this.Motion.Direction.degree = 90;
+    let counter = 0;
+    let steps = 1;
+    const stageWidth = apple.render.stageWidth;
+    const stageHeight = apple.render.stageHeight;
+    console.log(`stageWidth=${stageWidth},stageHeight=${stageHeight}`)
+    for(;;){
+        this.Motion.Move.steps(steps);
+        const touch = this.Sensing.Edge.isTouching;
+        if(touch===true){
+            console.log('Edge touching', counter++)
+            await VM.Utils.Timer.wait(1);
+            steps *= -1;
+            //this.Motion.Move.steps(steps)
+        }
+        yield;
+    }
+}
+apple.Event.keyPresser("E").func = async function*(this:TSprite){
+    let steps = 1;
+    for(;;){
+        this.Motion.Move.steps(steps);
+        this.Motion.Move.ifOnEdgeBounce();
         yield;
     }
 }

@@ -10,7 +10,11 @@ import { SpriteEvent } from "./sprite/spriteEvent";
 import { Timer } from "../utils/timer";
 import { SpriteProperties } from "./sprite/spriteProperties";
 import { SpriteLooks } from "./sprite/spriteLooks";
-import { Playground } from "../vm/playground";
+import { playground } from "../vm/playground";
+import { SpriteSensing } from "./sprite/spriteSensing";
+import { SpriteDragMode } from "./sprite/spriteDragMode";
+import { DragSprite } from "./drag/dragSprite";
+import { PenSprite } from "./pen/penSprite";
 
 export class Sprite extends Entity {
     private _costume : SpriteCostume;
@@ -19,6 +23,9 @@ export class Sprite extends Entity {
     private _control: SpriteControl;
     private _event: SpriteEvent;
     private _properties: SpriteProperties;
+    private _sensing: SpriteSensing;
+    private _penSprite: PenSprite;
+    private _dragMode : SpriteDragMode;
     constructor(name: string) {
         super();
         this.createDrawable(StageLayering.SPRITE_LAYER);
@@ -29,7 +36,11 @@ export class Sprite extends Entity {
         this._control = new SpriteControl(this);
         this._event = new SpriteEvent(this);
         this._properties = new SpriteProperties(this);
-        Playground.addSprite(this);
+        this._sensing = new SpriteSensing(this);
+        this._dragMode = new SpriteDragMode(this);
+        this._penSprite = new PenSprite(this);
+        this._isSprite = true; // これはスプライトです！
+        playground.addSprite(this);
         
     }
     get Costume(): SpriteCostume {
@@ -47,6 +58,15 @@ export class Sprite extends Entity {
     
     get Event(): SpriteEvent {
         return this._event;
+    }
+    get DragMode() :SpriteDragMode {
+        return this._dragMode;
+    }
+    get Sensing(): SpriteSensing {
+        return this._sensing;
+    }
+    get Pen(): PenSprite {
+        return this._penSprite;
     }
 
     async init() {

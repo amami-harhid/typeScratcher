@@ -81,7 +81,6 @@ export class EntityEvent{
         threadManager.registThread(threadObj);
         playground.runtime.on("KEY_PRESSED", function(pressedKey: string){
             if( key == pressedKey ) {
-                console.log('threadObj.isStarted=',threadObj.isStarted)
                 if(threadObj.isStarted) {
                     // スレッドが実行中に再度キーが押されたとき
                     // 音がなっていたら止め、最初からやり直す。

@@ -6,6 +6,7 @@ import type { IStageSensing } from '@Type/stage/IStageSensing';
 import type { IEntitySensingMouse } from '@Type/entity/IEntitySensingMouse';
 import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
 import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
+import { QuestionBoxElement } from '../../vm/questionBoxElement';
 /**
  * Stage Sensing(調べる)
  */
@@ -30,8 +31,12 @@ export class StageSensing implements IStageSensing {
      * @returns {Promise<string>} - answer
      */
     async askAndWait(question:string): Promise<string>{
-        const answer = await this.entity.$askAndWait(question);
-        return answer;
+        const questionBox = new QuestionBoxElement();
+        const me = this.entity;
+        return new Promise<string>(async (resolve)=>{
+            const answer = await questionBox.ask(me, question);
+            resolve(answer);
+        });
     }
     /**
      * Key 関連

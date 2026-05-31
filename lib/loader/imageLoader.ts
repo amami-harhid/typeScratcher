@@ -7,7 +7,7 @@ export class ImageLoader {
     /**
      * 与えたアドレスをもとにイメージを取り出し返す。
      * エラーが起きたときは文字列("ERROR")を返す。
-     * @param {string} image 
+     * @param image {string}  
      * @returns Promise<string>
      */
     static async _svgText(image: string) :Promise<string>{

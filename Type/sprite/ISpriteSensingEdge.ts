@@ -20,4 +20,9 @@ export interface ISpriteSensingEdge{
      */
     readonly isTouchingHorizontal: boolean;
 
+    /**
+     * 端タッチ情報を取得する
+     */
+    isTouchingEdge(): {touch:boolean, judge:{'minDist': number, 'nearestEdge': string}};
+
 };
