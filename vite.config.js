@@ -6,8 +6,9 @@ import { defineConfig } from 'vite'
 import glob from 'glob'
 import topLevelAwait from 'vite-plugin-top-level-await';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
-
-const version = JSON.stringify(require('./package.json').version);
+import pkg from './package.json';
+//const version = JSON.stringify(require('./package.json').version);
+const version = JSON.stringify(pkg.version);
 
 // ルートとするディレクトリー
 const root = resolve(__dirname, './test/')
