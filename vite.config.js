@@ -46,7 +46,7 @@ export default defineConfig({
             target: "esnext",
         }
     },
-    root: resolve(__dirname, './'),
+    root: resolve(__dirname, './test'),
     plugins: [
         topLevelAwait(),
         viteStaticCopy({
