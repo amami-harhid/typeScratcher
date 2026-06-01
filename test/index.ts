@@ -1,5 +1,5 @@
 import { VM } from '../src/index';
-//import { VM } from '../weboacked/index.js';
+//import { VM } from '../dist/index.js';
 import type { TSprite } from '@Type/sprite';
 
 import AppleSvg from './assets/Apple.svg' assert { type: 'image/svg+xml' };
@@ -13,7 +13,7 @@ const arrowImage = new VM.Image( {ArrowSvg} );
 const catImage = new VM.Image( {CatSvg});
 const catSound = new VM.Sound({CatWav});
 const chillSound = new VM.Sound({ChillWav});
-const stage = new VM.Stage();
+//const stage = new VM.Stage();
 const apple = new VM.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
@@ -44,7 +44,7 @@ apple.Event.flagPresser().func = async function*(this: TSprite) {
         yield;
     }
 }
-apple.Event.keyPresser("A").func = async function*(this:TSprite){
+apple.Event.keyPresser("a").func = async function*(this:TSprite){
     //this.Motion.Rotation.style = VM.RotationStyle.LEFT_RIGHT;
     this.Motion.Direction.degree = 0;
     for(;;){
@@ -52,14 +52,14 @@ apple.Event.keyPresser("A").func = async function*(this:TSprite){
         yield;
     }
 }
-apple.Event.keyPresser("B").func = async function*(this:TSprite){
+apple.Event.keyPresser("b").func = async function*(this:TSprite){
     for(;;){
         console.log('chillSound loop')
         await this.Sound.play(chillSound);
         yield;
     }
 }
-apple.Event.keyPresser("C").func = async function*(this:TSprite){
+apple.Event.keyPresser("c").func = async function*(this:TSprite){
     for(;;){
         apple.Sound.addVolume(chillSound, 1);
         apple.Sound.addPitch(chillSound, 0.05);
@@ -67,7 +67,7 @@ apple.Event.keyPresser("C").func = async function*(this:TSprite){
         yield;
     }
 }
-apple.Event.keyPresser("D").func = async function*(this:TSprite){
+apple.Event.keyPresser("d").func = async function*(this:TSprite){
     this.Motion.Direction.degree = 90;
     let counter = 0;
     let steps = 1;
@@ -86,7 +86,7 @@ apple.Event.keyPresser("D").func = async function*(this:TSprite){
         yield;
     }
 }
-apple.Event.keyPresser("E").func = async function*(this:TSprite){
+apple.Event.keyPresser(VM.IO.KEYBOARD_KEYS.SPACE).func = async function*(this:TSprite){
     let steps = 1;
     for(;;){
         this.Motion.Move.steps(steps);

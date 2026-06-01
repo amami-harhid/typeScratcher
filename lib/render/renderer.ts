@@ -64,10 +64,6 @@ export class Renderer {
             const _nativeSize = this._renderer.getNativeSize ();
             this.stageWidth = _nativeSize[0];
             this.stageHeight = _nativeSize[1];
-
-//            const main = document.querySelector(`#${GUI_CONST.main_id}`) as HTMLElement;
-//            main!.style.width = `${window.innerWidth}px`;
-//            main!.style.height = `${window.innerHeight}px`;
         }
     }
     /**
@@ -86,7 +82,6 @@ export class Renderer {
         this.stageResize();
         const me = this;
         window.addEventListener('resize', ()=>{
-            console.log('resize')
             me.stageResize();
         });
     }

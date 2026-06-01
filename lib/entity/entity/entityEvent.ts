@@ -1,13 +1,9 @@
-import { Playground, playground } from '../../vm/playground';
+import { playground } from '../../vm/playground';
 import { ScratchEvent } from '../../vm/scratchEvent';
 import { Entity } from '../entity';
 import { EntityBroadCast } from './entityBroadcast';
-import { Element } from '../../gui/element';
-import { Utils } from '../../utils/utils';
-import { EntityProxyExt } from '../entityProxyExt';
 import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '../../controls/threads';
-import { FunctionChecker } from '../../utils/functionChecker';
-import { TThreadObj } from '../../controls/TThreadObj';
+import { KEYBOARD_KEYS } from '../../vm/keyboad';
 
 const DoubleRunning = {
     TRUE: true,
@@ -58,11 +54,14 @@ export class EntityEvent{
             threadObj.status = ThreadStatus.YIELD;
         })
     }
-    keyPresser( key: string ) {
+    keyPresser( key: string | KEYBOARD_KEYS ) {
         const me = this;
         class KeyPresser {
             static set func(func: CallableFunction) {
-                me.whenKeyPressed(key, func);
+                if(key.length > 0){
+                    me.whenKeyPressed(key, func);
+
+                }
             }
         }
         return KeyPresser;
@@ -73,14 +72,21 @@ export class EntityEvent{
      * @param key 
      * @param func 
      */
-    whenKeyPressed( key: string, func: CallableFunction ): void {
+    whenKeyPressed( key: string|KEYBOARD_KEYS, func: CallableFunction ): void {
         const me = this;
         const threadObj = new ThreadObj(me.entity, DoubleRunning.FALSE);
         threadObj.entityId += `_keyPressed_${key}`;
         threadObj.setFunc(func);
         threadManager.registThread(threadObj);
         playground.runtime.on("KEY_PRESSED", function(pressedKey: string){
-            if( key == pressedKey ) {
+            let _key;
+            if(key.length == 1) {
+                _key = key.toUpperCase();
+            }else{
+                _key = key; 
+            }
+            if( _key == pressedKey ) {
+                console.log("KEY_PRESSED =[", pressedKey, "], key=[", _key, "]")
                 if(threadObj.isStarted) {
                     // スレッドが実行中に再度キーが押されたとき
                     // 音がなっていたら止め、最初からやり直す。

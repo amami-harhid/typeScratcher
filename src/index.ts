@@ -40,7 +40,7 @@ import { Stage } from '../lib/entity/stage';
 import { Image } from '../lib/image/image';
 import { Sound } from '../lib/sounds/sound';
 import { RotationStyle } from '@Type/entity/RotationStyle';
-import { Utils } from '../lib/utils/utils';
+import { KEYBOARD_KEYS } from '../lib/vm/keyboad';
 const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
 window.Buffer = window.Buffer || Buffer
 
@@ -62,6 +62,9 @@ await Initialize();
 export const VM = {
     Utils: {
         Timer: Timer,
+    },
+    IO: {
+        KEYBOARD_KEYS:KEYBOARD_KEYS,
     },
     Sprite: Sprite,
     Stage: Stage,

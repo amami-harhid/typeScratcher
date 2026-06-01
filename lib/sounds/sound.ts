@@ -36,26 +36,24 @@ export class Sound extends EventEmitter {
         const sound = await SoundLoader.loadSound(this._soundPath, this._name);
         this._data = sound.data;
         playground.runtime.scratchEvent.once(ScratchEvent.READY_AUDIO_ENGINE, async()=>{
-            console.log("ScratchEvent.START_AUDIO_ENGINE")
             await this.createSoundPlayer();
         });
         this._loadCompleted = true;
     }
     private async createSoundPlayer() {
         if(this._soundPlayer) {
-            console.log('this._soundPlayer=', this._soundPlayer);
             return;
         }
         const data = this._data;
-            const audioEngine = playground.runtime.audioEngine;
-            const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data});
-            const _effects = audioEngine.createEffectChain();
-            const options = {effects: _effects};
-            const soundPlayer = new SoundPlayer(this.name, decodeSoundPlayer, options);
-            soundPlayer.connect(); // effects は インスタンスを作るときに渡しているので引数省略
-            this._soundPlayer = soundPlayer;
-            await this.setVolume(this._volume);
-            await this.setPitch(this._pitch);
+        const audioEngine = playground.runtime.audioEngine;
+        const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data});
+        const _effects = audioEngine.createEffectChain();
+        const options = {effects: _effects};
+        const soundPlayer = new SoundPlayer(this.name, decodeSoundPlayer, options);
+        soundPlayer.connect(); // effects は インスタンスを作るときに渡しているので引数省略
+        this._soundPlayer = soundPlayer;
+        this.setVolume(this._volume);
+        this.setPitch(this._pitch);
     }
     get name() {
         return this._name;
