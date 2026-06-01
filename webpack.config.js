@@ -1,13 +1,23 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const path = require('path');
+//const path = require('path');
+import path from 'path';
+import url from 'url';
+const dirname = path.dirname;
+const fileURLToPath = url.fileURLToPath;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const webpack = require('webpack');
+//const webpack = require('webpack');
+import webpack from 'webpack';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
+//const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const version = JSON.stringify(require('./package.json').version);
-module.exports = {
+import pkg from './package.json' with { type: 'json' };
+const version = JSON.stringify(pkg.version);
+const config = {
     mode: 'production',
     context: `${__dirname}/src`,
     entry: {
@@ -15,7 +25,7 @@ module.exports = {
     },
     target: "web",
     output: {
-        path: path.join(__dirname, '/weboacked'),
+        path: path.join(__dirname, '/dist'),
         filename: 'index.js', //まとめた結果出力されるファイル名
         library:{
             type: "module",
@@ -57,3 +67,4 @@ module.exports = {
         ]
     }
 }
+export default config;
