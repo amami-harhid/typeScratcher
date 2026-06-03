@@ -1,7 +1,7 @@
 import { playground } from '@Lib/vm/playground';
 import { ScratchEvent } from '@Lib/vm/scratchEvent';
 import { Entity } from '@Lib/entity/entity';
-import { EntityBroadCast } from '@Lib/entity/entityBroadcast';
+import { EntityBroadCast } from '@Lib/entity/entity/entityBroadcast';
 import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '@Lib/controls/threads';
 import { KEYBOARD_KEYS } from '@Lib/vm/keyboad';
 import type { IEntityEvent } from '@Type/entity/IEntityEvent';

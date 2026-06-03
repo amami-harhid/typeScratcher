@@ -5,7 +5,7 @@ import type { IImage } from "@Type/image/IImage";
 export interface IEntityImage {
     /**
      * 画像を追加する
-     * @param name 
+     * @param images {IImages[]} 
      * ```ts
      *  // スプライトへ画像を追加
      *  // Cat01の名前の画像を追加する
@@ -17,7 +17,7 @@ export interface IEntityImage {
      *  await stage.Image.add('Jurassic');
      * ```
      */
-    add(name: string): void;
+    add(images: IImage[]): void;
     /**
      * 追加されている画像名を配列で受け取る
      * ```ts

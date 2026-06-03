@@ -8,7 +8,7 @@ export interface IEntitySound {
      * 音を追加する
      * @param soundName {string} - 音の名前
      */
-    add(soundName: string) : void;
+    add(sounds: ISound[]) : void;
 
     /**
      * 音を鳴らす
@@ -19,7 +19,7 @@ export interface IEntitySound {
      * 終わるまで音を鳴らす
      * @param soundName {string} - 音の名前
      */
-    playUntilDone(soundName: string): Promise<void>;
+    playUntilDone(sound: ISound): Promise<void>;
     /**
      * サウンドオプションをクリアする
      */

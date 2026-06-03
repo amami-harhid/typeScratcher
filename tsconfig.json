@@ -5,8 +5,9 @@
     "target": "esnext",         /* es2018,es2019,es2020,esnext が適している */
     "module": "esnext",
     "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     "types": ["node"],
-//    "baseUrl": "./",
+    "baseUrl": "./",
     "paths": {
       "@Type/*": ["./Type/*"],
       "@Lib/*": ["./lib/*"],

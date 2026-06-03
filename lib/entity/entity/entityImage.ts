@@ -7,7 +7,7 @@ import type { IImage } from '@Type/image/IImage';
 export class EntityImage {
 
     private entity: Entity;
-    private _images: Image[] = [];
+    private _images: IImage[] = [];
     /**
      * @internal
      * @param entity {Entity}
@@ -16,13 +16,13 @@ export class EntityImage {
         this.entity = entity;
     }
 
-    add( images: Image[]): void {
+    add( images: IImage[]): void {
         for(const img of images) {
             ImageBank.add(img);
             this._images.push(img);
         }
     }
-    get images(): Image[] {
+    get images(): IImage[] {
         return this._images;
     }
     get names(): string[] {
