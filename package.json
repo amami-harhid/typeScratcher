@@ -1,5 +1,5 @@
 {
-  "name": "trials",
+  "name": "@amami-harhid/typescratcher",
   "version": "0.0.1",
   "description": "scratch3-like-js library, written by Typescript",
   "repository": {
