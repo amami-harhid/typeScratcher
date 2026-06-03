@@ -56,6 +56,7 @@ apple.Event.keyPresser("b").func = async function*(this:ISprite){
     for(;;){
         console.log('chillSound loop')
         await this.Sound.play(chillSound);
+        await this.Sensing.askAndWait("aaaaa");
         yield;
     }
 }
@@ -81,13 +82,12 @@ apple.Event.keyPresser("d").func = async function*(this:ISprite){
             console.log('Edge touching', counter++)
             await VM.Utils.Timer.wait(1);
             steps *= -1;
-            //this.Motion.Move.steps(steps)
         }
         yield;
     }
 }
 apple.Event.keyPresser(VM.IO.KEYBOARD_KEYS.SPACE).func = async function*(this:ISprite){
-    let steps = 1;
+    const steps = 1;
     for(;;){
         this.Motion.Move.steps(steps);
         this.Motion.Move.ifOnEdgeBounce();
@@ -96,3 +96,4 @@ apple.Event.keyPresser(VM.IO.KEYBOARD_KEYS.SPACE).func = async function*(this:IS
 }
 
 VM.playground.start();
+
