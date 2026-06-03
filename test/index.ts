@@ -1,5 +1,5 @@
-import { VM } from '../src/index';
-//import { VM } from '../dist/index.js';
+//import { VM } from '../src/index';
+import { VM } from '../dist/index.js';
 import type { TSprite } from '@Type/sprite';
 
 import AppleSvg from './assets/Apple.svg' assert { type: 'image/svg+xml' };

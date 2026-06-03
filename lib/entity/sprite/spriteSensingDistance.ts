@@ -2,12 +2,11 @@ import { Sprite } from '../sprite';
 import { ISprite } from '@Type/sprite';
 import { Utils } from "../../utils/utils";
 import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
-import { playground } from 'lib/vm/playground';
 
 /** 距離 */
 export class SpriteSensingDistance implements ISpriteSensingDistance{
 
-    private entity: Sprite;
+    private entity: ISprite;
     /**
      * @internal
      * @param entity {Sprite}

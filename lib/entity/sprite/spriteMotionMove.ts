@@ -1,17 +1,16 @@
-import { Sprite } from '../sprite';
+import { MathUtil } from '../../utils/math-util';
 import type { ISprite } from '@Type/sprite';
 import type { ISpriteMotionMove } from '@Type/sprite/ISpriteMotionMove';
-import { MathUtil } from '../../utils/math-util';
-import { EntityProperties } from '../entity/entityProperties';
+import type { IEntityProperties } from '@Type/entity/IEntityProperties';
 
 export class SpriteMotionMove implements ISpriteMotionMove {
-    private entity: Sprite;
-    private prop: EntityProperties;
+    private entity: ISprite;
+    private prop: IEntityProperties;
     /**
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
         this.prop = entity.Properties;
     }

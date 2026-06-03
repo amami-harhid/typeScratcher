@@ -32,8 +32,14 @@ export interface IRender {
      * @param h {number} - 縦
      */
     stageResize(w?: number, h?: number): void;
-
-
+    /**
+     * ステージ幅
+     */
+    readonly stageWidth: number;
+    /**
+     * ステージ高さ
+     */
+    readonly stageHeight: number;
     /**
      * Rendererを作成する
      * @param canvas: HTMLCanvasElement

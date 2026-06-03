@@ -23,6 +23,7 @@ import type { ISvgText } from "@Type/svgText/ISvgText";
 import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
 import type { ISpriteLooks } from "@Type/sprite/ISpriteLooks";
 import type { ISpriteControl } from "@Type/sprite/ISpriteControl";
+import type { ISvgSkin } from "@Type/render/ISvgSkin";
 
 export class Sprite extends Entity implements ISprite {
     private _costume : SpriteCostume;
@@ -108,9 +109,20 @@ export class Sprite extends Entity implements ISprite {
             }
             Promise.all(loadArr).then(async ()=>{                
                 // イメージごとに Skinを作る
+                let _canvasRemake :HTMLCanvasElement|undefined = undefined;
                 for(const img of this._image.images){
                     const svgText = img.image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
+                    if(_canvasRemake == undefined){
+                        _canvasRemake = document.createElement('canvas');
+                    }
+                    // willReadFrequently を設定するために SKINインスタンスを取り出し、
+                    // SVGSkinのコンストラクターで実施すみの下記【A】２行をやり直す。
+                    const _skin = this._render.renderer._allSkins[skinId];
+                    if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
+                    /*【A】*/const _svgSkin: ISvgSkin = _skin as ISvgSkin;
+                    /*【A】*/_svgSkin._canvas = _canvasRemake;
+                    /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
                     await Timer.wait(0.1);
                     img.skinId = skinId;
                     this._costume.add(img);

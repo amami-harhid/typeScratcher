@@ -24,26 +24,17 @@ export class SvgText implements ISvgText {
     private addImage(name:string, image:string): void {
         if(this._entity instanceof Sprite) {
             const sprite = this._entity as Sprite;
-            const costumes = sprite.costumes;
-            if(sprite.imageDatas){
-                sprite.imageDatas.push({name:name, data:image, skinId:-1});
-            }
-            this._entity._addImage(name, image, costumes);
+            // TODO
         }else if(this._entity instanceof Stage){
             const stage = this._entity as Stage;
-            const backdrops = stage.backdrops;
-            this._entity._addImage(name, image, backdrops);
+            // TODO
         }
     }
     addTexts(name: string, texts: string[], option?: TAddOption): void {
         const svgOption:TSvgOption = {};
         if(option){
             if(option.fontFamily){
-                const fontUrl = this._entity.getFontData(option.fontFamily);
-                if(fontUrl){
-                    const font: TSvgOptionFont = {fontFamily: option.fontFamily, fontUrl: fontUrl};
-                    svgOption.font = font; 
-                }
+                // TODO
             }
             if(option.fontSize){
                 svgOption.fontSize = option.fontSize;
