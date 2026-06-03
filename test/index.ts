@@ -96,4 +96,3 @@ apple.Event.keyPresser(VM.IO.KEYBOARD_KEYS.SPACE).func = async function*(this:IS
 }
 
 VM.playground.start();
-
