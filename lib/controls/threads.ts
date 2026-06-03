@@ -2,12 +2,12 @@
  * Threads
  */
 
-import { playground } from "../vm/playground";
-import { Entity } from "../entity/entity";
-import { TThreadObj } from "./TThreadObj";
-import { Utils } from "../utils/utils";
-import { EntityProxyExt } from "../entity/entityProxyExt";
-import { FunctionChecker } from "../utils/functionChecker";
+import { playground } from "@Lib/vm/playground";
+import { Entity } from "@Lib/entity/entity";
+import type { TThreadObj } from "./TThreadObj";
+import { Utils } from "@Lib/utils/utils";
+import { EntityProxyExt } from "@Lib/entity/entityProxyExt";
+import { FunctionChecker } from "@Lib/utils/functionChecker";
 import EventEmitter from "events";
 
 const INTERVAL = 1000/30;

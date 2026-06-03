@@ -1,3 +1,4 @@
+import type { IImage } from "@Type/image/IImage";
 /**
  * Entity Image(イメージ)
  */
@@ -30,5 +31,7 @@ export interface IEntityImage {
      *  console.log( backdropNames ); // --> ['Jurassic','Backdrops']
      * ```
      */
-    names(): string[];
+    readonly names: string[];
+
+    readonly images: IImage[];
 };

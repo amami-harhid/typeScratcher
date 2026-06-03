@@ -3,8 +3,11 @@
  */
 import { ImageLoader } from "../loader/imageLoader";
 import { Utils } from "../utils/utils";
+import type { IImage } from "@Type/image/IImage";
+
 type ImageArgStringObject = { [key:string]:string };
-export class Image {
+
+export class Image implements IImage{
     private _name: string;
     private _imagePath:string;
     private _img!:string;

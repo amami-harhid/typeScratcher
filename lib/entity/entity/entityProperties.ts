@@ -1,8 +1,9 @@
 import { ScratchRenderProperties } from "@Type/render/IRenderWebGL";
-import { Entity } from "../entity";
+import type { IEntity } from "@Type/entity/IEntity";
 import { RotationStyle } from "@Type/entity/RotationStyle";
+import type { IEntityProperties, IPosition, IScale } from '@Type/entity/IEntityProperties';
 
-export class Scale {
+export class Scale implements IScale {
     private _scale : { w: number, h: number} = { w:100, h:100 };
     get w() {
         return this._scale.w;
@@ -17,7 +18,7 @@ export class Scale {
         this._scale.h = h;
     }
 }
-export class Position {
+export class Position implements IPosition {
     private _position : { x: number, y: number} = { x:0, y:0 };
     get x() {
         return this._position.x;
@@ -32,22 +33,22 @@ export class Position {
         this._position.y = y;
     }
 }
-export class EntityProperties {
-    protected entity:Entity;
-    private _position : Position;
+export class EntityProperties implements IEntityProperties {
+    protected entity:IEntity;
+    private _position : IPosition;
     private _scale : Scale;
     private _degree: number = 90;
     private _visible: boolean = true;
     protected _rotationStyle: RotationStyle;
     
-    constructor(entity: Entity) {
+    constructor(entity: IEntity) {
         this.entity = entity;
         this._position = new Position();
         this._scale = new Scale();
         this._rotationStyle = RotationStyle.ALL_AROUND;
     }
 
-    get position(): Position {
+    get position(): IPosition {
         return this._position;
     }
     set position(pos:[number, number]) {

@@ -36,7 +36,8 @@ const config = {
     },
     resolve: {
         alias: {
-            '@Type': path.resolve(__dirname, 'Type')
+            '@Type': path.resolve(__dirname, 'Type'),
+            '@Lib': path.resolve(__dirname, 'lib')
         },
         extensions: ['.ts','.js']
     },

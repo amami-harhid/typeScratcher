@@ -1,7 +1,7 @@
 /**
  * Type ThreadObj
  */
-import { Entity } from "../entity/entity";
+import { Entity } from "@Lib/entity/entity";
 export type TThreadObj = {
     f: AsyncGenerator<any, void, any>|null,
     originalF: CallableFunction|null,

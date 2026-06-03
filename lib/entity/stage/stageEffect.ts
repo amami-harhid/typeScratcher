@@ -1,4 +1,4 @@
-import { Stage } from '../stage';
+import type { IStage } from '@Type/stage';
 import { EntityEffect } from '../entity/entityEffect';
 import { IStageEffect } from '@Type/stage/IStageEffect';
 
@@ -7,9 +7,9 @@ export class StageEffect extends EntityEffect implements IStageEffect{
 
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         super(entity);
     }
 

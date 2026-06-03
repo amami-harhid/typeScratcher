@@ -1,11 +1,13 @@
 import { Sprite } from '../sprite';
-import type { TEntityOptions } from '@Type/entity/TEntityOptions';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
+import type { TEntityOptions } from '@Type/entity/TEntityOptions';
+import type { ISprite } from '@Type/sprite';
+import type { ISpriteControl } from '@Type/sprite/ISpriteControl';
 /**
  * Sprite Control(制御)
  */
-export class SpriteControl {
+export class SpriteControl implements ISpriteControl {
     private entity: Sprite;
     /**
      * @internal
@@ -101,7 +103,7 @@ export class SpriteControl {
     /**
      * このスプライトの他のスクリプトを停止する
      */
-    stopOtherScripts(proxy:Sprite) : void {
+    stopOtherScripts(proxy:ISprite) : void {
 
     }
 

@@ -1,7 +1,8 @@
 import { Entity } from '../entity';
+import type { IEntityBroadCast } from '@Type/entity/IEntityBroadcast';
 
 /** メッセージ送受信 */
-export class EntityBroadCast {
+export class EntityBroadCast implements IEntityBroadCast {
 
     protected entity: Entity;
     private _modules: Map<string, Promise<void>>;

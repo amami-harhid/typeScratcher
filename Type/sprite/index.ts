@@ -12,16 +12,20 @@ import type { ISpriteTextToSpeech } from './ISpriteTextToSpeech';
 import type { ISpriteDragMode } from './ISpriteDragMode';
 import type { ISpritePen } from './ISpritePen';
 import type { ISvgText } from '../svgText/ISvgText';
+import type { IEntityProperties } from '@Type/entity/IEntityProperties'; 
 /**
  * Sprite
  */
-export type TSprite = ISprite;
+export interface TSprite extends ISprite {
+
+};
+
 export interface SSprite{
     /**
      * @param name
      * @param options 
      */
-    new(name?:string, options?:TEntityOptions):ISprite;
+    new(name:string, options?:TEntityOptions):ISprite;
 
 };
 export interface ISprite extends IEntity {
@@ -67,6 +71,10 @@ export interface ISprite extends IEntity {
      * サウンド
      */
     readonly Sound: ISpriteSound;
+    /**
+     * プロパティ
+     */
+    readonly Properties: IEntityProperties;
 
     /**
      * Font
@@ -91,10 +99,7 @@ export interface ISprite extends IEntity {
      * ペン機能
      */
     readonly Pen : ISpritePen;
-    /**
-     * 生存期間 ( およその秒数 )
-     */
-    life : number;
+
     /**
      * クローンの配列
      */

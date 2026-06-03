@@ -1,25 +1,27 @@
-import { Entity } from '../entity';
 import { Sound } from '../../sounds/sound';
 import { Timer } from '../../utils/timer';
+import type { IEntity } from '@Type/entity/IEntity';
+import type { ISound } from '@Type/sound/ISound';
+
 /** イベント */
 export class EntitySound {
 
-    protected entity: Entity;
-    public soundMap: {[key:string]: Sound} = {};
+    protected entity: IEntity;
+    public soundMap: {[key:string]: ISound} = {};
     public soundKeys: string[] = [];
-    protected currentSound!: Sound;
+    protected currentSound!: ISound;
     /**
      * @internal
      * @param entity {Entity}
      */
-    constructor(entity:Entity){
+    constructor(entity:IEntity){
         this.entity = entity;
     }
     /**
      * 音を追加する
      * @param soundName {string} - 音の名前
      */
-    add(sounds: Sound[]) : void {        
+    add(sounds: ISound[]) : void {        
         for(const s of sounds) {
             if(this.currentSound == undefined){
                 this.currentSound = s;
@@ -33,7 +35,7 @@ export class EntitySound {
      * 音を鳴らす
      * @param sound {Sound} - 音
      */
-    async play(sound: Sound): Promise<void> {
+    async play(sound: ISound): Promise<void> {
         if(this.soundKeys.includes( sound.name )) {
             await sound.play();
         }
@@ -84,13 +86,13 @@ export class EntitySound {
         }
     }
     /** 音量 */
-    getVolume(sound: Sound) : number {
+    getVolume(sound: ISound) : number {
         if(this.soundKeys.includes( sound.name )) {
              return sound.volume;
         }
         return -Infinity;
     }
-    addVolume(sound: Sound, volume: number) : void {
+    addVolume(sound: ISound, volume: number) : void {
         if(this.soundKeys.includes(sound.name)) {
             sound.addVolume(volume);
         }else{

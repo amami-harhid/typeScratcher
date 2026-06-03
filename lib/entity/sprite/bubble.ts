@@ -5,14 +5,17 @@ import { uid } from "../../utils/uid";
 import type { IRenderWebGL } from "@Type/render/IRenderWebGL";
 import { Sprite } from "../sprite";
 import { StageLayering } from "../../../Type/stage/CStageLayering";
+import { Timer } from "@Lib/utils/timer";
+import type { ISprite } from "@Type/sprite";
 import type { TScale } from "@Type/common/typeCommon";
 import type { BubbleState, BubbleProperties } from "@Type/sprite/TBubble";
-export class Bubble {
+
+export class Bubble  {
     private bubbleState: BubbleState;
     private sprite: any;
     private _scale: TScale;
     private _direction: number;
-    constructor( sprite: Sprite ) {
+    constructor( sprite: ISprite ) {
         this.bubbleState = this._createBubbleState();
         this.sprite = sprite;
         this._scale = {w:100, h:100};
@@ -57,7 +60,7 @@ export class Bubble {
         let _h = Math.abs(h);
         this._scale.w = _w;
         this._scale.h = _h;    
-}
+    }
     async createDrawable() {
         if(this.bubbleState.drawableID == -1 ) {
             const bubbleDrawableID = this.sprite.renderer.createDrawable( StageLayering.SPRITE_LAYER );
@@ -80,11 +83,21 @@ export class Bubble {
         this.bubbleState.text = text;
         await this._renderBubble(properties);
     }
+    // async sayForSecs(text: string, sec:number, properties?: BubbleProperties): Promise<void>{
+    //     this.say(text, properties);
+    //     await Timer.wait(sec);
+    //     this.destroyBubble();
+    // }
     async think(text: string, properties: BubbleProperties ={}) {
         this.bubbleState.type = 'think';
         this.bubbleState.text = text;
         await this._renderBubble(properties);
     }
+    // async thinkForSecs(text: string, sec: number, properties?: BubbleProperties): Promise<void> {
+    //     this.think(text, properties);
+    //     await Timer.wait(sec);
+    //     this.destroyBubble();
+    // }
     updateScale( w:number, h:number ): void { 
         if(this.bubbleState.drawableID != -1){
             if( w == 0 || h == 0 ) {

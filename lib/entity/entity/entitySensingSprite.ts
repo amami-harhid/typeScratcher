@@ -1,12 +1,14 @@
+import { ISprite } from "@Type/sprite";
 import { MathUtil } from "../../utils/math-util";
-import { Entity } from "../entity";
 import { Sprite } from "../sprite";
+import { IEntity } from "@Type/entity/IEntity";
+import { IEntitySensingSprite } from "@Type/entity/IEntitySensingSprite";
 
-export class EntitySensingSprite {
+export class EntitySensingSprite implements IEntitySensingSprite {
 
-    protected entity: Entity;
+    protected entity: IEntity;
 
-    constructor(entity: Entity) {
+    constructor(entity: IEntity) {
         this.entity = entity;
     }
     /**
@@ -14,17 +16,16 @@ export class EntitySensingSprite {
      * @param targets 
      * @returns 
      */
-    protected isTouchingTargetToTarget(targets: Sprite[]) {
+    protected isTouchingTargetToTarget(targets: ISprite[]) {
         const targetIds: number[] = [];
         for(const t of targets){
-            
             if(t.Properties.visible === true) {
                 const targetDrawableID = t.drawableID;
                 targetIds.push(targetDrawableID);
             }
         }
         if(targetIds.length>0){
-            const me:Sprite = this.entity as Sprite;
+            const me:ISprite = this.entity as ISprite;
             try{
                 const touching = me.render.renderer.isTouchingDrawables(me.drawableID, targetIds);
                 return touching;
@@ -35,8 +36,8 @@ export class EntitySensingSprite {
         return false;
     }
 
-    degreeToTarget(target: Sprite) {
-        const me = this.entity as Sprite;
+    degreeToTarget(target: ISprite) {
+        const me = this.entity as ISprite;
         let dx = target.Properties.position.x - me.Properties.position.x;
         let dy = target.Properties.position.y - me.Properties.position.y;
         let direction = 90 - MathUtil.radToDeg(Math.atan2(dy, dx));
@@ -46,9 +47,9 @@ export class EntitySensingSprite {
         return direction;
     }
 
-    getTouchingTarget(targets: Sprite[]) : Sprite[]{
-        const touchings: Sprite[] = [];
-        const me = this.entity as Sprite;
+    getTouchingTarget(targets: ISprite[]) : ISprite[]{
+        const touchings: ISprite[] = [];
+        const me = this.entity as ISprite;
         for(const t of targets){
             if(me.id != t.id) {
                 const touch = this.isTouchingTargetToTarget([t]);

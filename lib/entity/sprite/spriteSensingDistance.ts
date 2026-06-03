@@ -12,7 +12,7 @@ export class SpriteSensingDistance implements ISpriteSensingDistance{
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity: Sprite){
+    constructor(entity: ISprite){
         this.entity = entity;
     }
     /**

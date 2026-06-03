@@ -1,4 +1,4 @@
-import { Sprite } from '../sprite';
+import type { ISprite } from '@Type/sprite';
 import { EntityEffect } from '../entity/entityEffect';
 import type {ISpriteEffect} from '@Type/sprite/ISpriteEffect';
 
@@ -7,9 +7,9 @@ export class SpriteEffect extends EntityEffect implements ISpriteEffect {
 
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         super(entity);
     }
 

@@ -2,14 +2,16 @@
  * Entity
  */
 import { EventEmitter } from "events";
-import { Image } from "../image/image";
-import { playground } from "../vm/playground";
-import { Renderer } from "../render/renderer";
+import { Image } from "@Lib/image/image";
+import { playground } from "@Lib/vm/playground";
+import { Renderer } from "@Lib/render/renderer";
 import { StageLayering } from '@Type/stage/CStageLayering';
-import { Utils } from "../utils/utils";
-import { EntityImage } from "./entity/entityImage";
-import { EntitySound } from "./entity/entitySound";
-import { TMouse } from "@Type/mouse";
+import { Utils } from "@Lib/utils/utils";
+import { EntityImage } from "@Lib/entity/entityImage";
+import type { IEntityImage } from "@Type/entity/IEntityImage";
+import { EntitySound } from "@Lib/entity/entitySound";
+import type { IEntitySound } from "@Type/entity/IEntitySound";
+import type { TMouse } from "@Type/mouse";
 
 export class Entity extends EventEmitter{
     public get SOUND_FORCE_STOP() {
@@ -22,8 +24,8 @@ export class Entity extends EventEmitter{
     protected _render: Renderer;
 
     //protected _properties!: EntityProperties;
-    protected _image: EntityImage;
-    protected _sound: EntitySound;
+    protected _image: IEntityImage;
+    protected _sound: IEntitySound;
     protected _mouse: TMouse;
     protected _isSprite: boolean;
     constructor() {
@@ -46,16 +48,16 @@ export class Entity extends EventEmitter{
     get render(): Renderer {
         return this._render;
     }
-    get Image() {
+    get Image():IEntityImage {
         return this._image;
     }
     get images() {
         return this._images;
     }
-    get Sound() {
+    get Sound():IEntitySound {
         return this._sound;
     }
-    get Mouse() {
+    get Mouse():TMouse {
         return this._mouse;
     }
     get isSprite() {

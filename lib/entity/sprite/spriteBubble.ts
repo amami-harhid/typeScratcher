@@ -1,17 +1,18 @@
-import { Sprite } from '../sprite';
 import { Bubble } from './bubble';
 import type { BubbleProperties } from '@Type/sprite/TBubble';
 import type { ISpriteBubble } from '@Type/sprite/ISpriteBubble';
+import { ISprite } from '@Type/sprite';
+import { Timer } from '@Lib/utils/timer';
 /** 吹き出し */
 export class SpriteBubble implements ISpriteBubble{
 
-    private entity: Sprite;
+    private entity: ISprite;
     private bubble: Bubble;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
         this.bubble = new Bubble(this.entity);
     }
@@ -42,12 +43,8 @@ export class SpriteBubble implements ISpriteBubble{
      */
     async sayForSecs(text: string, sec:number, properties?: BubbleProperties): Promise<void>{
         this.say(text, properties);
-        return new Promise<void>((resolve)=>{
-            setTimeout(()=>{
-                this.bubble.destroyBubble();
-                resolve();
-            }, sec * 1000);
-        });
+        await Timer.wait(sec);
+        this.bubble.destroyBubble();
     }
     /**
      * 考える
@@ -71,12 +68,8 @@ export class SpriteBubble implements ISpriteBubble{
      */
     async thinkForSecs(text: string, sec: number, properties?: BubbleProperties): Promise<void>{
         this.think(text, properties);
-        return new Promise<void>((resolve)=>{
-            setTimeout(()=>{
-                this.bubble.destroyBubble();
-                resolve();
-            }, sec*1000);
-        });
+        await Timer.wait(sec);
+        this.bubble.destroyBubble();
     }
 
 }

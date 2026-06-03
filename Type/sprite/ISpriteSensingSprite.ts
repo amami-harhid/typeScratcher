@@ -1,9 +1,10 @@
-import type { ISprite } from ".";
+import type { IEntitySensingSprite } from '../entity/IEntitySensingSprite';
+import type { ISprite } from '.';
 /**
  * Sprite Sensing(調べる)Sprite
  */
-export interface ISpriteSensingSprite{
- 
+export interface ISpriteSensingSprite extends IEntitySensingSprite{
+
     /**
      * スプライトに触れていることを判定する
      * @param sprites 
@@ -28,5 +29,5 @@ export interface ISpriteSensingSprite{
      * @param to
      */
     degree( to: ISprite ): number;
-
+    
 };

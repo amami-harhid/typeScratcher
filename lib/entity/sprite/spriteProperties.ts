@@ -3,10 +3,11 @@ import { EntityProperties } from "../entity/entityProperties";
 import { Sprite } from "../sprite";
 import { RotationStyle } from "@Type/entity/RotationStyle";
 import { Entity } from "../entity";
-
+import type { ISprite } from "@Type/sprite";
+import type { IEntity } from "@Type/entity/IEntity";
 export class SpriteProperties extends EntityProperties {
     constructor(sprite: Sprite){
-        super(sprite as unknown as Entity)
+        super(sprite as unknown as IEntity)
     }
     update() {
         const entity : Sprite = this.entity as unknown as Sprite;

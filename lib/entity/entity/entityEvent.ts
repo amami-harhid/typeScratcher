@@ -1,19 +1,25 @@
-import { playground } from '../../vm/playground';
-import { ScratchEvent } from '../../vm/scratchEvent';
-import { Entity } from '../entity';
-import { EntityBroadCast } from './entityBroadcast';
-import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '../../controls/threads';
-import { KEYBOARD_KEYS } from '../../vm/keyboad';
+import { playground } from '@Lib/vm/playground';
+import { ScratchEvent } from '@Lib/vm/scratchEvent';
+import { Entity } from '@Lib/entity/entity';
+import { EntityBroadCast } from '@Lib/entity/entityBroadcast';
+import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '@Lib/controls/threads';
+import { KEYBOARD_KEYS } from '@Lib/vm/keyboad';
+import type { IEntityEvent } from '@Type/entity/IEntityEvent';
+import type { IEntityBroadCast } from '@Type/entity/IEntityBroadcast';
+import { IEntity } from '@Type/entity/IEntity';
 
+/**
+ * 二重起動指定
+ */
 const DoubleRunning = {
     TRUE: true,
     FALSE: false,
 } as const;
 
 /** イベント */
-export class EntityEvent{
+export class EntityEvent implements IEntityEvent{
 
-    private _broadcast: EntityBroadCast;
+    private _broadcast: IEntityBroadCast;
     protected entity: Entity;
     private threads: ThreadManager;
     /**
@@ -25,27 +31,32 @@ export class EntityEvent{
         this._broadcast = new EntityBroadCast(entity);
         this.threads = threadManager;
     }
-
-    get Broadcast() {
+    /**
+     * BroadCast
+     */
+    get Broadcast() : IEntityBroadCast{
         return this._broadcast;
     }
+    /**
+     * 旗が押されたときのイベントセッターを返す
+     * @returns イベントセッター
+     */
     flagPresser() {
         const me = this;
-        class FlagPresser {
+        return class {
             static set func(func: CallableFunction) {
-                me.whenFlag(func);
+                me._whenFlag(func);
             }
         }
-        return FlagPresser;
     }
-    protected startThreadMessageRecieved( func, entity , doubleRunable=true, ...args) {
+    protected startThreadMessageRecieved( func:CallableFunction, entity:IEntity , doubleRunable=true, ...args: any[]) {
 
     }
     /**
      * 旗が押されたときの動作を定義
      * @param func 
      */
-    whenFlag(func: CallableFunction) : void {
+    private _whenFlag(func: CallableFunction) : void {
         const threadObj = new ThreadObj(this.entity, DoubleRunning.TRUE);
         threadObj.setFunc(func);
         threadManager.registThread(threadObj);
@@ -54,17 +65,19 @@ export class EntityEvent{
             threadObj.status = ThreadStatus.YIELD;
         })
     }
+    /**
+     * キー押下イベントのセッターを返す
+     * @returns イベントセッター
+     */
     keyPresser( key: string | KEYBOARD_KEYS ) {
         const me = this;
-        class KeyPresser {
+        return class {
             static set func(func: CallableFunction) {
                 if(key.length > 0){
-                    me.whenKeyPressed(key, func);
-
+                    me._whenKeyPressed(key, func);
                 }
             }
         }
-        return KeyPresser;
     }
     
     /**
@@ -72,7 +85,7 @@ export class EntityEvent{
      * @param key 
      * @param func 
      */
-    whenKeyPressed( key: string|KEYBOARD_KEYS, func: CallableFunction ): void {
+    private _whenKeyPressed( key: string|KEYBOARD_KEYS, func: CallableFunction ): void {
         const me = this;
         const threadObj = new ThreadObj(me.entity, DoubleRunning.FALSE);
         threadObj.entityId += `_keyPressed_${key}`;
@@ -98,17 +111,42 @@ export class EntityEvent{
         });
 
     }
+    /**
+     * クリックイベントのセッターを返す
+     * @returns イベントセッター
+     */
+    clicker() {
+        const me = this;
+        return class {
+            static set func(func: CallableFunction) {
+                me._whenClicked(func);
+            }
+        }
+    }
 
-    whenClicked(func: CallableFunction): void {
+    private _whenClicked(func: CallableFunction): void {
 
 
+    }
+    /**
+     * 背景が〇〇になったときのイベントセッターを返す
+     * @param backdropName 
+     * @returns イベントセッター
+     */
+    backdropSwitcher(backdropName: string) {
+        const me = this;
+        return class {
+            static set func(func: CallableFunction) {
+                me._whenBackdropSwitches(backdropName, func);
+            }
+        }
     }
     /**
      * 背景が〇〇になったときの動作を定義
      * @param {*} backdropName 
      * @param {*} func 
      */
-    whenBackdropSwitches(backdropName: string, func: CallableFunction): void {
+    private _whenBackdropSwitches(backdropName: string, func: CallableFunction): void {
 
 
     }

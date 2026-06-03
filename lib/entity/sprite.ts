@@ -1,13 +1,13 @@
 /**
  * Sprite
  */
-import { Entity } from "./entity";
+import { Entity } from "@Lib/entity/entity";
 import { StageLayering } from '@Type/stage/CStageLayering';
 import { SpriteControl } from "./sprite/spriteControl";
 import { SpriteMotion } from "./sprite/spriteMotion";
 import { SpriteCostume } from "./sprite/spriteCostume";
 import { SpriteEvent } from "./sprite/spriteEvent";
-import { Timer } from "../utils/timer";
+import { SpriteFont } from "./sprite/spriteFont";
 import { SpriteProperties } from "./sprite/spriteProperties";
 import { SpriteLooks } from "./sprite/spriteLooks";
 import { playground } from "../vm/playground";
@@ -15,6 +15,12 @@ import { SpriteSensing } from "./sprite/spriteSensing";
 import { SpriteDragMode } from "./sprite/spriteDragMode";
 import { DragSprite } from "./drag/dragSprite";
 import { PenSprite } from "./pen/penSprite";
+import { Timer } from "../utils/timer";
+import type { IEntityProperties } from "@Type/entity/IEntityProperties";
+import type { ISprite } from "@Type/sprite";
+import type { ISpriteFont } from "@Type/sprite/ISpriteFont";
+import type { ISvgText } from "@Type/svgText/ISvgText";
+import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
 
 export class Sprite extends Entity {
     private _costume : SpriteCostume;
@@ -22,10 +28,18 @@ export class Sprite extends Entity {
     private _looks: SpriteLooks;
     private _control: SpriteControl;
     private _event: SpriteEvent;
-    private _properties: SpriteProperties;
+    private _properties: IEntityProperties;
     private _sensing: SpriteSensing;
     private _penSprite: PenSprite;
+    //private _font : ISpriteFont;
     private _dragMode : SpriteDragMode;
+    //private _svgText : ISvgText;
+    //private _textToSpeech : ISpriteTextToSpeech;
+    private _isClone: boolean = false;
+    private _clones: ISprite[] = [];
+    /**
+     * @param name
+     */
     constructor(name: string) {
         super();
         this.createDrawable(StageLayering.SPRITE_LAYER);
@@ -39,6 +53,9 @@ export class Sprite extends Entity {
         this._sensing = new SpriteSensing(this);
         this._dragMode = new SpriteDragMode(this);
         this._penSprite = new PenSprite(this);
+        //this._font = new SpriteFont(this);
+        //this._svgText = new SvgText(this);
+        //this._textToSpeech = new TextToSpeech(this);
         this._isSprite = true; // これはスプライトです！
         playground.addSprite(this);
         
@@ -52,9 +69,9 @@ export class Sprite extends Entity {
     get Looks() : SpriteLooks {
         return this._looks;
     }
-    get Control() : SpriteControl {
-        return this._control;
-    }
+    //get Control() : SpriteControl {
+    //    return this._control;
+    //}
     
     get Event(): SpriteEvent {
         return this._event;
@@ -68,7 +85,15 @@ export class Sprite extends Entity {
     get Pen(): PenSprite {
         return this._penSprite;
     }
-
+    //get Font(): ISpriteFont {
+    //    return this._font;
+    //}
+    get clones() {
+        return this._clones;
+    }
+    get isClone() {
+        return this._isClone;
+    }
     async init() {
         return new Promise<void>((resolve)=>{
             const loadArr: Promise<void>[] = [];
@@ -86,7 +111,7 @@ export class Sprite extends Entity {
                     const skinId = this.render.renderer.createSVGSkin(svgText);
                     await Timer.wait(0.1);
                     img.skinId = skinId;
-                    this.Costume.add(img);
+                    this._costume.add(img);
                 }
                 resolve(); // 完了
             });
@@ -98,6 +123,7 @@ export class Sprite extends Entity {
     update() {
         this._properties.update(); 
     }
+
 
 
 }

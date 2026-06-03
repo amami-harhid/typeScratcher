@@ -6,8 +6,10 @@ import { threadManager } from "../controls/threads";
 import { Runtime } from "./runtime";
 import { Sprite } from "../entity/sprite";
 import { Stage } from "../entity/stage";
-import { TMouse } from "@Type/mouse";
 import { Element } from "../gui/element";
+import type { ISprite } from "@Type/sprite";
+import type { TMouse } from "@Type/mouse";
+
 export class Playground {
     private _renderer!: Renderer;
     private _runtime: Runtime;
@@ -108,8 +110,9 @@ export class Playground {
     async start(): Promise<void> {
         this._runtime.scratchEvent.greenFlagClick();
         for(const s of this._sprites){
-            await s.init();
-            s.update();
+            const _s = s as unknown as Sprite;
+            await _s.init();
+            _s.update();
         }        
         threadManager.start();
 

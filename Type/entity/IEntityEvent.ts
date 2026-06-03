@@ -1,53 +1,38 @@
 import type { IEntityBroadCast } from '../entity/IEntityBroadcast';
 /** イベント */
-export interface IEntityEvent extends IEntityBroadCast {
+export interface IEntityEvent {
 
+    /** BroadCast */
+    readonly Broadcast: IEntityBroadCast;
     /**
-     * 旗が押されたときの動作を定義
-     * @param func 
-     * ```ts
-     *  stage.whenFlag(async function(this:Stage){
-     *      console.log('旗が押された');
-     *  });
-     * ```
+     * 旗が押されたイベントのセッターを返す
+     * @returns イベントセッター
      */
-    whenFlag(func: CallableFunction) : void;
-
+    flagPresser(): {
+        set func(func: CallableFunction);
+    };
     /**
-     * 指定したキーが押されたときの動作を定義
-     * @param key 
-     * @param func 
-     * ```ts
-     *  // スペースキーが押されたときの動作
-     *  stage.whenKeyPressed(Lib.Keyboard.SPACE, async function(this:Stage){
-     *      console.log('スペースキーが押された');
-     *  });
-     * ```
+     * キー押下イベントのセッターを返す
+     * @param key キーの指定
+     * @returns イベントセッター
      */
-    whenKeyPressed( key: string, func: CallableFunction ): void;
-
+    keyPresser( key: string ): {
+        set func(func: CallableFunction);
+    };
     /**
-     * クリック（タッチ）されたときの動作を定義
-     * @param func 
-     * ```ts
-     *  // クリックされたときの動作
-     *  stage.whenClicked(async function(this:Stage){
-     *      console.log('クリックされた');
-     *  });
-     * ```
+     * クリックイベントのセッターを返す
+     * @returns イベントセッター
      */
-    whenClicked(func: CallableFunction): void;
-
+    clicker(): {
+        set func(func: CallableFunction);
+    };
     /**
-     * 背景が切り替わったときの動作を定義
-     * @param {*} backdropName 
-     * @param {*} func 
-     * ```ts
-     *  // 背景がJurassicに切り替わったときの動作
-     *  stage.whenBackdropSwitches('Jurassic', async function(this:Stage){
-     *      console.log('背景がJurassicになった');
-     *  });
-     * ```
+     * 背景が〇〇になったときのイベントセッターを返す
+     * @param backdropName 
+     * @returns イベントセッター
      */
-    whenBackdropSwitches(backdropName: string, func: CallableFunction): void;
+    backdropSwitcher(backdropName: string) : {
+        set func(func: CallableFunction);
+    };
+    
 }

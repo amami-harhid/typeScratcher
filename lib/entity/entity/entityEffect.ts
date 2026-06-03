@@ -1,9 +1,9 @@
-import { Entity } from '../entity';
+import { Entity } from '@Lib/entity/entity';
 import type { IEntity } from '@Type/entity/IEntity';
-import { ImageEffective } from '../../../Type/entity/ImageEffective';
-
+import { ImageEffective } from '@Type/entity/ImageEffective';
+import type { IEntityEffect } from '@Type/entity/IEntityEffect';
 /** 効果 */
-export class EntityEffect {
+export class EntityEffect implements IEntityEffect {
 
     protected entity: Entity;
     /**

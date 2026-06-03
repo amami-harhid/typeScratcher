@@ -1,10 +1,11 @@
 import { Sprite } from '../sprite';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteSensingSprite } from '@Type/sprite/ISpriteSensingSprite';
-import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { EntitySensingSprite } from '../entity/entitySensingSprite';
 import { playground } from '../../vm/playground';
+import type { IEntity } from '@Type/entity/IEntity';
+import type { ISprite } from '@Type/sprite';
+import type { ISpriteSensingSprite } from '@Type/sprite/ISpriteSensingSprite';
+import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
 /**
  * Sprite Sensing(調べる) Sprite
  */
@@ -12,15 +13,14 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
     private Distance: ISpriteSensingDistance;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         super(entity);
         this.Distance = new SpriteSensingDistance(entity);
     }
     isTouching(sprites: ISprite[]): boolean {
-        const _sprites = sprites as unknown as Sprite[];
-        return this.isTouchingTargetToTarget(_sprites);
+        return this.isTouchingTargetToTarget(sprites);
     }
     /**
      * スプライトまでの距離
@@ -35,7 +35,7 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
      * @param target 
      */
     degree(target:ISprite): number {
-        const _target:Sprite = target as unknown as Sprite;
+        const _target:ISprite = target as unknown as ISprite;
         return this.degreeToTarget(_target);
     }
     /**
@@ -46,6 +46,6 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
     getTouching() : ISprite[] {
         const targetSprites = playground.getSprites();
         const entities = this.getTouchingTarget(targetSprites);
-        return entities as unknown as ISprite[];
+        return entities;
     }
 };
