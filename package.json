@@ -4,7 +4,7 @@
   "description": "scratch3-like-js library, written by Typescript",
   "repository": {
     "type": "git",
-    "url": "git://github.com/amami-harhid/typescratcher.git"
+    "url": "https://github.com/amami-harhid/typeScratcher.git"
   },
   "publishConfig": {
     "access": "public"
