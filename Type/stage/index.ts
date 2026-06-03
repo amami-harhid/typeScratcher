@@ -9,11 +9,11 @@ import type { IStageSensing } from './IStageSensing';
 import type { IStageEvent } from './IStageEvent';
 import type { IStageImage } from './IStageImage';
 import type { IStageSound } from './IStageSound';
-import type { ISvgText } from '@Type/svgText/ISvgText';
-import type { IStageFont } from './IStageFont';
+//import type { ISvgText } from '@Type/svgText/ISvgText';
+//import type { IStageFont } from './IStageFont';
 
 export type TStage = IStage;
-export interface SStage extends IStage{
+export interface SStage {
     new(options?:TEntityOptions):IStage;
 }
 export interface IStage extends IEntity {

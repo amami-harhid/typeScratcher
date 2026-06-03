@@ -39,7 +39,8 @@ import { Stage } from '../lib/entity/stage';
 import { Image } from '../lib/image/image';
 import { Sound } from '../lib/sounds/sound';
 import { RotationStyle } from '../Type/entity/RotationStyle';
-import { KEYBOARD_KEYS } from '../lib/vm/keyboad';
+import { KEYBOARD_KEYS } from '../Type/vm/keyboad';
+
 //const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
 //window.Buffer = window.Buffer || Buffer
 
@@ -59,17 +60,13 @@ await Initialize();
 
 
 export const VM = {
-    Utils: {
-        Timer: Timer,
-    },
-    IO: {
-        KEYBOARD_KEYS:KEYBOARD_KEYS,
-    },
-    Sprite: Sprite,
-    Stage: Stage,
-    Image: Image,
-    Sound: Sound,
-    RotationStyle: RotationStyle,
+    Sprite:Sprite,
+    Stage:Stage,
+    Image:Image,
+    Sound:Sound,
+    RotationStyle:RotationStyle,
+    KEYBOARD_KEYS:KEYBOARD_KEYS,
+    Timer:Timer,
     Playground: Playground,
     playground: playground,
 }

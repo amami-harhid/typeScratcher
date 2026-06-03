@@ -1,5 +1,6 @@
 //import { VM } from '../src/index';
-import { VM } from '../dist/index.js';
+//import { VM } from '../dist/index.js';
+import { VM } from '../VM';
 import type { ISprite } from '@Type/sprite';
 
 import AppleSvg from './assets/Apple.svg';
@@ -64,7 +65,7 @@ apple.Event.keyPresser("c").func = async function*(this:ISprite){
     for(;;){
         apple.Sound.addVolume(chillSound, 1);
         apple.Sound.addPitch(chillSound, 0.05);
-        await VM.Utils.Timer.wait(1);
+        await VM.Timer.wait(1);
         yield;
     }
 }
@@ -80,13 +81,13 @@ apple.Event.keyPresser("d").func = async function*(this:ISprite){
         const touch = this.Sensing.Edge.isTouching;
         if(touch===true){
             console.log('Edge touching', counter++)
-            await VM.Utils.Timer.wait(1);
+            await VM.Timer.wait(1);
             steps *= -1;
         }
         yield;
     }
 }
-apple.Event.keyPresser(VM.IO.KEYBOARD_KEYS.SPACE).func = async function*(this:ISprite){
+apple.Event.keyPresser(VM.KEYBOARD_KEYS.SPACE).func = async function*(this:ISprite){
     const steps = 1;
     for(;;){
         this.Motion.Move.steps(steps);

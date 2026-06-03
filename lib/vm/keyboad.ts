@@ -1,19 +1,9 @@
 import { Cast } from "../utils/cast";
 import { Runtime } from "./runtime";
-
+import { KEYBOARD_KEYS, type TKEYBOARD_KEYS } from "@Type/vm/keyboad";
 declare type POST_DATA = {
     isDown: boolean,
     key : string,
-};
-
-export enum KEYBOARD_KEYS {
-    SPACE = 'Space',
-    LEFT = 'LeftArrow',
-    UP = 'UpArrow',
-    RIGHT = 'RightArrow',
-    DOWN = 'DownArrow',
-    ENTER = 'Enter',
-    ESCAPE = 'Escape',
 };
 
 const KEY_NAME_LIST:string[] = Object.keys(KEYBOARD_KEYS).map(name => KEYBOARD_KEYS[name]);

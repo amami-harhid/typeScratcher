@@ -3,7 +3,7 @@ import { ScratchEvent } from '@Lib/vm/scratchEvent';
 import { Entity } from '@Lib/entity/entity';
 import { EntityBroadCast } from '@Lib/entity/entity/entityBroadcast';
 import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '@Lib/controls/threads';
-import { KEYBOARD_KEYS } from '@Lib/vm/keyboad';
+import { KEYBOARD_KEYS, type TKEYBOARD_KEYS } from '@Type/vm/keyboad';
 import type { IEntityEvent } from '@Type/entity/IEntityEvent';
 import type { IEntityBroadCast } from '@Type/entity/IEntityBroadcast';
 import type { IEntity } from '@Type/entity/IEntity';
@@ -69,7 +69,7 @@ export class EntityEvent implements IEntityEvent{
      * キー押下イベントのセッターを返す
      * @returns イベントセッター
      */
-    keyPresser( key: string | KEYBOARD_KEYS ) {
+    keyPresser( key: string ) {
         const me = this;
         return class {
             static set func(func: CallableFunction) {
@@ -85,7 +85,7 @@ export class EntityEvent implements IEntityEvent{
      * @param key 
      * @param func 
      */
-    private _whenKeyPressed( key: string|KEYBOARD_KEYS, func: CallableFunction ): void {
+    private _whenKeyPressed( key: string, func: CallableFunction ): void {
         const me = this;
         const threadObj = new ThreadObj(me.entity, DoubleRunning.FALSE);
         threadObj.entityId += `_keyPressed_${key}`;
