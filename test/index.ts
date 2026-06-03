@@ -1,10 +1,10 @@
 //import { VM } from '../src/index';
 import { VM } from '../dist/index.js';
-import type { TSprite } from '@Type/sprite';
+import type { ISprite } from '@Type/sprite';
 
-import AppleSvg from './assets/Apple.svg' assert { type: 'image/svg+xml' };
-import ArrowSvg from './assets/Arrow1-a.svg' assert { type: 'image/svg+xml' };
-import CatSvg from './assets/cat.svg' assert { type: 'image/svg+xml' };
+import AppleSvg from './assets/Apple.svg';
+import ArrowSvg from './assets/Arrow1-a.svg';
+import CatSvg from './assets/cat.svg';
 import CatWav from './assets/Cat.wav';
 import ChillWav from './assets/Chill.wav';
 
@@ -14,7 +14,7 @@ const catImage = new VM.Image( {CatSvg});
 const catSound = new VM.Sound({CatWav});
 const chillSound = new VM.Sound({ChillWav});
 //const stage = new VM.Stage();
-const apple = new VM.Sprite('apple');
+const apple:ISprite = new VM.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
 apple.Looks.Size.scale = {w: 100, h:100};
@@ -32,7 +32,7 @@ apple.Sound.setPitch(chillSound, 1.0);
 apple.Sound.setVolume(catSound, 10);
 
 
-apple.Event.flagPresser().func = async function*(this: TSprite) {
+apple.Event.flagPresser().func = async function*(this: ISprite) {
     console.log(apple.Sound.getPitch(chillSound));
     for(;;) {
         const degree = Math.floor(this.Motion.Direction.degree);
@@ -44,7 +44,7 @@ apple.Event.flagPresser().func = async function*(this: TSprite) {
         yield;
     }
 }
-apple.Event.keyPresser("a").func = async function*(this:TSprite){
+apple.Event.keyPresser("a").func = async function*(this:ISprite){
     //this.Motion.Rotation.style = VM.RotationStyle.LEFT_RIGHT;
     this.Motion.Direction.degree = 0;
     for(;;){
@@ -52,14 +52,14 @@ apple.Event.keyPresser("a").func = async function*(this:TSprite){
         yield;
     }
 }
-apple.Event.keyPresser("b").func = async function*(this:TSprite){
+apple.Event.keyPresser("b").func = async function*(this:ISprite){
     for(;;){
         console.log('chillSound loop')
         await this.Sound.play(chillSound);
         yield;
     }
 }
-apple.Event.keyPresser("c").func = async function*(this:TSprite){
+apple.Event.keyPresser("c").func = async function*(this:ISprite){
     for(;;){
         apple.Sound.addVolume(chillSound, 1);
         apple.Sound.addPitch(chillSound, 0.05);
@@ -67,7 +67,7 @@ apple.Event.keyPresser("c").func = async function*(this:TSprite){
         yield;
     }
 }
-apple.Event.keyPresser("d").func = async function*(this:TSprite){
+apple.Event.keyPresser("d").func = async function*(this:ISprite){
     this.Motion.Direction.degree = 90;
     let counter = 0;
     let steps = 1;
@@ -86,7 +86,7 @@ apple.Event.keyPresser("d").func = async function*(this:TSprite){
         yield;
     }
 }
-apple.Event.keyPresser(VM.IO.KEYBOARD_KEYS.SPACE).func = async function*(this:TSprite){
+apple.Event.keyPresser(VM.IO.KEYBOARD_KEYS.SPACE).func = async function*(this:ISprite){
     let steps = 1;
     for(;;){
         this.Motion.Move.steps(steps);
