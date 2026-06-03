@@ -1,5 +1,5 @@
 # @amami-harhid@typeScratcher
-scratch3-like-js library, written by Typescript
+This is a TypeScript library that generates Scratch 3-style drawings.
 
 # 準備
 
