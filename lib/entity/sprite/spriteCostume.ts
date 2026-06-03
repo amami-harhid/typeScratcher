@@ -1,23 +1,23 @@
 import { Sprite } from '../sprite';
+import { Image } from '@Lib/image/image';
 import type { ISpriteCostume } from '@Type/sprite/ISpriteCostume';
 import type { IImage } from '@Type/image/IImage';
 import type { ISprite } from '@Type/sprite';
-import { Image } from '@Lib/image/image';
 
 /** サイズ */
 export class SpriteCostume implements ISpriteCostume {
 
-    private entity: Sprite;
+    private entity: ISprite;
     public currentConstumeNo: number = -1;
-    private imageArr: Image[] = [];
+    private imageArr: IImage[] = [];
     /**
      * @internal
      * @param entity {Stage}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
     }
-    add(image: Image) {
+    add(image: IImage) {
         this.imageArr.push(image);
         if(this.currentConstumeNo == -1){
             this.currentConstumeNo = 0;

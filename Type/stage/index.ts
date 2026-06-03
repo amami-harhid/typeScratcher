@@ -58,9 +58,9 @@ export interface IStage extends IEntity {
     /**
      * Font
      */
-    readonly Font : IStageFont;
+    //readonly Font : IStageFont;
     /**
      * SvgText
      */
-    readonly SvgText: ISvgText;
+    //readonly SvgText: ISvgText;
 };

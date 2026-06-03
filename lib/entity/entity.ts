@@ -12,8 +12,9 @@ import type { IEntityImage } from "@Type/entity/IEntityImage";
 import { EntitySound } from "@Lib/entity/entitySound";
 import type { IEntitySound } from "@Type/entity/IEntitySound";
 import type { TMouse } from "@Type/mouse";
+import type { IEntity } from "@Type/entity/IEntity";
 
-export class Entity extends EventEmitter{
+export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
         return "sound_force_stop";
     }
@@ -22,7 +23,6 @@ export class Entity extends EventEmitter{
     public id: string;
     public drawableID: number = -1;
     protected _render: Renderer;
-
     //protected _properties!: EntityProperties;
     protected _image: IEntityImage;
     protected _sound: IEntitySound;

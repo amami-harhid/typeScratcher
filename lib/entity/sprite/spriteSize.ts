@@ -1,20 +1,21 @@
 //import { Utils } from '../../utils/utils';
 import { Sprite } from '../sprite';
-import { TBounds, TScaleArr } from '@Type/common/typeCommon';
-import { ISpriteSize } from '@Type/sprite/ISpriteSize';
+import type { TBounds, TScaleArr } from '@Type/common/typeCommon';
+import type { ISprite } from '@Type/sprite';
+import type { ISpriteSize } from '@Type/sprite/ISpriteSize';
 
 /** サイズ */
-export class SpriteSize {
+export class SpriteSize implements ISpriteSize{
 
-    private entity: Sprite;
+    private entity: ISprite;
     private _w: number = 100;
     private _h: number = 100;
 
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
     }
     /**

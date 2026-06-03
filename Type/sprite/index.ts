@@ -79,16 +79,16 @@ export interface ISprite extends IEntity {
     /**
      * Font
      */
-    readonly Font : ISpriteFont;
+    //readonly Font : ISpriteFont;
     /**
      * SvgText
      */
-    readonly SvgText: ISvgText;
+    //readonly SvgText: ISvgText;
 
     /**
      * 音声合成
      */
-    readonly TextToSpeech: ISpriteTextToSpeech;
+    //readonly TextToSpeech: ISpriteTextToSpeech;
 
     /**
      * DragModeを設定するためのオブジェクト
@@ -98,7 +98,7 @@ export interface ISprite extends IEntity {
     /**
      * ペン機能
      */
-    readonly Pen : ISpritePen;
+    //readonly Pen : ISpritePen;
 
     /**
      * クローンの配列

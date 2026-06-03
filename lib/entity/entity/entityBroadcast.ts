@@ -1,16 +1,17 @@
 import { Entity } from '../entity';
+import type { IEntity } from '@Type/entity/IEntity';
 import type { IEntityBroadCast } from '@Type/entity/IEntityBroadcast';
 
 /** メッセージ送受信 */
 export class EntityBroadCast implements IEntityBroadCast {
 
-    protected entity: Entity;
+    protected entity: IEntity;
     private _modules: Map<string, Promise<void>>;
     /**
      * @internal
-     * @param entity {Entity}
+     * @param entity {IEntity}
      */
-    constructor(entity:Entity){
+    constructor(entity:IEntity){
         this.entity = entity;
         this._modules = new Map<string,Promise<void>>();
     }

@@ -3,38 +3,39 @@ import { SpriteSize } from './spriteSize';
 import { SpriteLayer } from './spriteLayer';
 import { SpriteEffect } from '../sprite/spriteEffect';
 import { SpriteBubble } from './spriteBubble';
+import { SpriteBackdrop } from './spriteBackdrop';
+import { SpriteCostume } from './spriteCostume';
+import type { ISpriteEffect } from '@Type/sprite/ISpriteEffect';
+import type { ISpriteSize } from '@Type/sprite/ISpriteSize';
 import type { ISprite } from '@Type/sprite';
 import type { ISpriteBubble } from '@Type/sprite/ISpriteBubble';
 import type { ISpriteLooks } from '@Type/sprite/ISpriteLooks';
-import { ISpriteCostume } from '@Type/sprite/ISpriteCostume';
-import { SpriteCostume } from './spriteCostume';
-import { ISpriteBackdrop } from '@Type/sprite/ISpriteBackdrop';
-//import { SpriteBackdrop } from './spriteBackdrop';
-import { ISpriteEffect } from '@Type/sprite/ISpriteEffect';
-import { ISpriteSize } from '@Type/sprite/ISpriteSize';
+import type { ISpriteCostume } from '@Type/sprite/ISpriteCostume';
+import type { ISpriteBackdrop } from '@Type/sprite/ISpriteBackdrop';
+
 /**
  * Sprite Looks(見た目)
  */
-export class SpriteLooks {
-    private entity: Sprite;
+export class SpriteLooks implements ISpriteLooks{
+    private entity: ISprite;
     private layer: SpriteLayer;
     private effect: ISpriteEffect;
-    private _size : SpriteSize;
+    private _size : ISpriteSize;
     private bubble: ISpriteBubble;
     private costume: SpriteCostume;
-    //private backdrop: ISpriteBackdrop;
+    private backdrop: ISpriteBackdrop;
     /**
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
         this.layer = new SpriteLayer(entity);
         this.effect = new SpriteEffect(entity);
         this._size = new SpriteSize(entity);
         this.bubble = new SpriteBubble(entity);
         this.costume = new SpriteCostume(entity);
-        //this.backdrop = new SpriteBackdrop(entity);
+        this.backdrop = new SpriteBackdrop(entity);
     }
     /**
      * コスチューム番号、コスチューム名を取り出すためのオブジェクト
@@ -45,13 +46,13 @@ export class SpriteLooks {
     // /**
     //  * 背景番号、背景名を取り出すためのオブジェクト
     //  */
-    // get Backdrop(): ISpriteBackdrop{
-    //     return this.backdrop;
-    // }
+    get Backdrop(): ISpriteBackdrop{
+        return this.backdrop;
+    }
     /**
      * サイズ
      */
-    get Size() : SpriteSize {
+    get Size() : ISpriteSize {
         return this._size;
     }
     /**

@@ -21,12 +21,14 @@ import type { ISprite } from "@Type/sprite";
 import type { ISpriteFont } from "@Type/sprite/ISpriteFont";
 import type { ISvgText } from "@Type/svgText/ISvgText";
 import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
+import type { ISpriteLooks } from "@Type/sprite/ISpriteLooks";
+import type { ISpriteControl } from "@Type/sprite/ISpriteControl";
 
-export class Sprite extends Entity {
+export class Sprite extends Entity implements ISprite {
     private _costume : SpriteCostume;
     private _motion: SpriteMotion;
-    private _looks: SpriteLooks;
-    private _control: SpriteControl;
+    private _looks: ISpriteLooks;
+    private _control: ISpriteControl;
     private _event: SpriteEvent;
     private _properties: IEntityProperties;
     private _sensing: SpriteSensing;
@@ -66,12 +68,12 @@ export class Sprite extends Entity {
     get Motion() : SpriteMotion {
         return this._motion;
     }
-    get Looks() : SpriteLooks {
+    get Looks() : ISpriteLooks {
         return this._looks;
     }
-    //get Control() : SpriteControl {
-    //    return this._control;
-    //}
+    get Control() : ISpriteControl {
+        return this._control;
+    }
     
     get Event(): SpriteEvent {
         return this._event;

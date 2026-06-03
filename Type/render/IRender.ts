@@ -36,10 +36,9 @@ export interface IRender {
 
     /**
      * Rendererを作成する
-     * @param w 
-     * @param h 
+     * @param canvas: HTMLCanvasElement
      */
-    createRenderer (w?: number, h?: number): void;
+    createRenderer (canvas: HTMLCanvasElement): void;
     /**
      * Drawableを作成する
      * @param layer {StageLayering} - layer name

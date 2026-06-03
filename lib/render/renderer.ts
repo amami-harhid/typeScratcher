@@ -68,8 +68,7 @@ export class Renderer {
     }
     /**
      * Rendererを作成する
-     * @param w 
-     * @param h 
+     * @param canvas: HTMLCanvasElement
      */
     createRenderer ( canvas: HTMLCanvasElement ) {
         this.canvas = canvas;

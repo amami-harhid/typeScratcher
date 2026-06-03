@@ -9,6 +9,7 @@ import { Utils } from "@Lib/utils/utils";
 import { EntityProxyExt } from "@Lib/entity/entityProxyExt";
 import { FunctionChecker } from "@Lib/utils/functionChecker";
 import EventEmitter from "events";
+import type { IEntity } from "@Type/entity/IEntity";
 
 const INTERVAL = 1000/30;
 
@@ -107,14 +108,14 @@ export class ThreadObj extends EventEmitter{
     private _originalF!: CallableFunction;
     public done: boolean = false; 
     public status: ThreadStatus = ThreadStatus.NONE;
-    private _entity: Entity|null = null;
+    private _entity: IEntity|null = null;
     public threadId: string|null = null;
     public entityId: string;;
     // public childObj: ThreadObj|null = null; 
     // public parentObj: TThreadObj|null = null;
     private _doubleRunable: boolean = false;
     private _isStarted: boolean = false;
-    constructor(entity:Entity, doubleRunable=false) {
+    constructor(entity:IEntity, doubleRunable=false) {
         super();
         this.threadId = Utils.generateUUID();
         const proxy = EntityProxyExt.getProxy(entity, _=>{

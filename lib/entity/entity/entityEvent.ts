@@ -6,7 +6,7 @@ import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '
 import { KEYBOARD_KEYS } from '@Lib/vm/keyboad';
 import type { IEntityEvent } from '@Type/entity/IEntityEvent';
 import type { IEntityBroadCast } from '@Type/entity/IEntityBroadcast';
-import { IEntity } from '@Type/entity/IEntity';
+import type { IEntity } from '@Type/entity/IEntity';
 
 /**
  * 二重起動指定
@@ -20,13 +20,13 @@ const DoubleRunning = {
 export class EntityEvent implements IEntityEvent{
 
     private _broadcast: IEntityBroadCast;
-    protected entity: Entity;
+    protected entity: IEntity;
     private threads: ThreadManager;
     /**
      * @internal
      * @param entity {Entity}
      */
-    constructor(entity:Entity){
+    constructor(entity:IEntity){
         this.entity = entity;
         this._broadcast = new EntityBroadCast(entity);
         this.threads = threadManager;

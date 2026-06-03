@@ -1,17 +1,17 @@
 import { Entity } from '@Lib/entity/entity';
-import type { IEntity } from '@Type/entity/IEntity';
 import { ImageEffective } from '@Type/entity/ImageEffective';
+import type { IEntity } from '@Type/entity/IEntity';
 import type { IEntityEffect } from '@Type/entity/IEntityEffect';
 /** 効果 */
 export class EntityEffect implements IEntityEffect {
 
-    protected entity: Entity;
+    protected entity: IEntity;
     /**
      * @internal
      * @param entity {Entity}
      */
     constructor(entity:IEntity){
-        this.entity = entity as unknown as Entity;
+        this.entity = entity;
     }
     /**
      * イメージ効果を指定量だけ変える。

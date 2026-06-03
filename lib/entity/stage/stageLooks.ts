@@ -3,6 +3,7 @@ import { StageEffect } from './stageEffect';
 import { StageBackdrop } from './stageBackdrop';
 import { IStageBackdrop } from '@Type/stage/IStageBackdrop';
 import { IStageEffect } from '@Type/stage/IStageEffect';
+import { IStage } from '@Type/stage';
 /**
  * Sprite Looks(見た目)
  */
@@ -13,7 +14,7 @@ export class StageLooks {
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         this.effect = new StageEffect(entity);
         this.backdrop = new StageBackdrop(entity);
     }

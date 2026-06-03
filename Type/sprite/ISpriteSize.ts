@@ -1,4 +1,4 @@
-import type { TScaleArr } from "../common/typeCommon";
+import type { TBounds, TScaleArr } from "../common/typeCommon";
 
 /**
  * スプライトのサイズ
@@ -63,22 +63,22 @@ export interface ISpriteSize {
      * 大きさ 
      * 横/縦の大きさが違うときは小さいほうを返す 
      */
-    get size(): number;
+    //get size(): number;
 
     /** 
      * 大きさ
      * 横/縦に同じ大きさを設定する 
      */
-    set size(size:number);
+    //set size(size:number);
 
     /**
      * 自分自身の縦横表示サイズを得る
-     * @returns dimensions {w: number, h: number}
+     * @returns TBounds
      * ```ts
      *  // スプライトの表示サイズを得る
      *  const {w,h} = this.Looks.Size.drawingSize;
      * ```
      */
-    get drawingSize() : {w: number, h: number};
+    get drawingSize() : TBounds;
 
 }
