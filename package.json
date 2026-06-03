@@ -1,7 +1,7 @@
 {
-  "name": "@amami-harhid/typescratcher",
-  "version": "0.0.1",
-  "description": "scratch3-like-js library, written by Typescript",
+  "name": "@tscratch3/typescratcher",
+  "version": "0.0.2",
+  "description": "TypeScript library that generates Scratch 3-style drawings",
   "repository": {
     "type": "git",
     "url": "https://github.com/amami-harhid/typeScratcher.git"

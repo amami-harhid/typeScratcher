@@ -35,14 +35,13 @@ import 'core-js';
 import { Version } from './version';
 
 import { Sprite } from '../lib/entity/sprite';
-import { TSprite } from '@Type/sprite';
 import { Stage } from '../lib/entity/stage';
 import { Image } from '../lib/image/image';
 import { Sound } from '../lib/sounds/sound';
-import { RotationStyle } from '@Type/entity/RotationStyle';
+import { RotationStyle } from '../Type/entity/RotationStyle';
 import { KEYBOARD_KEYS } from '../lib/vm/keyboad';
-const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
-window.Buffer = window.Buffer || Buffer
+//const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
+//window.Buffer = window.Buffer || Buffer
 
 import { Timer } from '../lib/utils/timer';
 

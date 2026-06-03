@@ -5,20 +5,17 @@ import type { ISpriteLooks } from './ISpriteLooks';
 import type { ISpriteControl } from './ISpriteControl';
 import type { ISpriteSound } from './ISpriteSound';
 import type { ISpriteImage } from './ISpriteImage';
-import type { ISpriteFont } from './ISpriteFont';
+//import type { ISpriteFont } from './ISpriteFont';
 import type { ISpriteSensing } from './ISpriteSensing';
 import type { ISpriteEvent } from './ISpriteEvent';
-import type { ISpriteTextToSpeech } from './ISpriteTextToSpeech';
+//import type { ISpriteTextToSpeech } from './ISpriteTextToSpeech';
 import type { ISpriteDragMode } from './ISpriteDragMode';
-import type { ISpritePen } from './ISpritePen';
-import type { ISvgText } from '../svgText/ISvgText';
+//import type { ISpritePen } from './ISpritePen';
+//import type { ISvgText } from '../svgText/ISvgText';
 import type { IEntityProperties } from '@Type/entity/IEntityProperties'; 
 /**
  * Sprite
  */
-export interface TSprite extends ISprite {
-
-};
 
 export interface SSprite{
     /**
