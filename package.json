@@ -1,18 +1,32 @@
 {
   "name": "trials",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "description": "scratch3-like-js library, written by Typescript",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amami-harhid/typescratcher.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "eslint-plugin",
+    "s3lib-importer",
+    "Type"
+  ],
+  "author": "amami-harhid",
+  "license": "AGPL-3.0-only",
   "main": "./src.",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
     "webpack": "npx webpack --mode development"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
+    "@eslint/js": "^9.26.0",
     "@types/events": "^3.0.3",
     "@types/glob": "^8.1.0",
     "@types/node": "^25.9.1",

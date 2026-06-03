@@ -1,0 +1,23 @@
+{
+  "name": "@typescratcher/eslint-plugin",
+  "version": "0.0.1",
+  "description": "TypeScript eslint plugin",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Amami Harhid",
+      "githubUsername": "amami-harhid",
+      "url": "https://github.com/amami-harhid"
+    }
+  ],
+  "main": "index.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amami-harhid/typeScratcher.git",
+    "directory": "eslint-plugin"
+  },
+  "scripts": {},
+  "devDependencies": {},
+  "typeScriptVersion": "5.7"
+}
