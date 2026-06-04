@@ -15,9 +15,11 @@ export class Image implements IImage{
     private _skinId = -1;
 
     constructor( image: ImageArgStringObject ) {
+        console.log('===========')
         const info = Utils.varNameValues(image);
         this._name = info[0];
         this._imagePath = info[1];
+        console.log(this._imagePath);
     }
     async load() {
         //await Timer.wait(2); // For Debug

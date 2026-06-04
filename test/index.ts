@@ -2,7 +2,8 @@
 import { typeScratcher as TS } from '../VM/debug';
 import type { ISprite } from '@Type/sprite';
 
-import AppleSvg from './assets/Apple.svg';
+//import AppleSvg from './assets/Apple.svg';
+import AppleSvg from 'https://amami-harhid.github.io/tscratch3assets/assets/Apple.svg' with {type: 'image/svg+xml'};
 import ArrowSvg from './assets/Arrow1-a.svg';
 import CatSvg from './assets/cat.svg';
 import CatWav from './assets/Cat.wav';
