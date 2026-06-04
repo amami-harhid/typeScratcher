@@ -1,14 +1,14 @@
-import { Sprite } from '../sprite';
+import type { ISprite } from '@Type/sprite';
 
 export class SpriteMotionDirection {
-    private entity: Sprite;
-    private _degree: number = 90;
+    private entity: ISprite;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
+        this.entity.Properties.degree = 90;
     }
     /**
      * 向き

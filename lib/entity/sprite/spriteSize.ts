@@ -1,5 +1,3 @@
-//import { Utils } from '../../utils/utils';
-import { Sprite } from '../sprite';
 import type { TBounds, TScaleArr } from '@Type/common/typeCommon';
 import type { ISprite } from '@Type/sprite';
 import type { ISpriteSize } from '@Type/sprite/ISpriteSize';

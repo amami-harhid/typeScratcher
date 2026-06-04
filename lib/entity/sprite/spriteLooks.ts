@@ -1,4 +1,3 @@
-import { Sprite } from '../sprite';
 import { SpriteSize } from './spriteSize';
 import { SpriteLayer } from './spriteLayer';
 import { SpriteEffect } from '../sprite/spriteEffect';
@@ -17,13 +16,13 @@ import type { ISpriteBackdrop } from '@Type/sprite/ISpriteBackdrop';
  * Sprite Looks(見た目)
  */
 export class SpriteLooks implements ISpriteLooks{
-    private entity: ISprite;
+    protected entity: ISprite;
     private layer: SpriteLayer;
     private effect: ISpriteEffect;
     private _size : ISpriteSize;
-    private bubble: ISpriteBubble;
-    private costume: SpriteCostume;
-    private backdrop: ISpriteBackdrop;
+    private _bubble: ISpriteBubble;
+    private _costume: SpriteCostume;
+    private _backdrop: ISpriteBackdrop;
     /**
      * @internal
      * @param entity {Sprite}
@@ -33,21 +32,21 @@ export class SpriteLooks implements ISpriteLooks{
         this.layer = new SpriteLayer(entity);
         this.effect = new SpriteEffect(entity);
         this._size = new SpriteSize(entity);
-        this.bubble = new SpriteBubble(entity);
-        this.costume = new SpriteCostume(entity);
-        this.backdrop = new SpriteBackdrop(entity);
+        this._bubble = new SpriteBubble(entity);
+        this._costume = new SpriteCostume(entity);
+        this._backdrop = new SpriteBackdrop(entity);
     }
     /**
      * コスチューム番号、コスチューム名を取り出すためのオブジェクト
      */
     get Costume() : ISpriteCostume {
-        return this.costume;
+        return this._costume;
     }
     // /**
     //  * 背景番号、背景名を取り出すためのオブジェクト
     //  */
     get Backdrop(): ISpriteBackdrop{
-        return this.backdrop;
+        return this._backdrop;
     }
     /**
      * サイズ
@@ -85,7 +84,7 @@ export class SpriteLooks implements ISpriteLooks{
      * フキダシ
      */
     get Bubble() : ISpriteBubble {
-        return this.bubble;
+        return this._bubble;
     }
 
 };

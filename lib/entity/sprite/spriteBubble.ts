@@ -6,7 +6,7 @@ import { Timer } from '@Lib/utils/timer';
 /** 吹き出し */
 export class SpriteBubble implements ISpriteBubble{
 
-    private entity: ISprite;
+    protected entity: ISprite;
     private bubble: Bubble;
     /**
      * @internal

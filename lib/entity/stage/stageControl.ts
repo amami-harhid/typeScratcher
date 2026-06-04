@@ -1,16 +1,16 @@
 import { Timer } from '../../utils/timer';
 import * as Wait from '../../utils/wait';
-import { Stage} from '../stage';
+import type { IStage } from '@Type/stage';
 /**
  * Stage Control(制御)
  */
 export class StageControl {
-    private entity: Stage;
+    protected entity: IStage;
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         this.entity = entity;
     }
     /**

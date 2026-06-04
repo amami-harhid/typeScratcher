@@ -1,4 +1,3 @@
-import { Entity } from '@Lib/entity/entity';
 import { ImageEffective } from '@Type/entity/ImageEffective';
 import type { IEntity } from '@Type/entity/IEntity';
 import type { IEntityEffect } from '@Type/entity/IEntityEffect';
@@ -8,7 +7,7 @@ export class EntityEffect implements IEntityEffect {
     protected entity: IEntity;
     /**
      * @internal
-     * @param entity {Entity}
+     * @param entity {IEntity}
      */
     constructor(entity:IEntity){
         this.entity = entity;

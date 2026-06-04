@@ -2,17 +2,14 @@
  * Bubble
  */
 import { uid } from "../../utils/uid";
-import type { IRenderWebGL } from "@Type/render/IRenderWebGL";
-import { Sprite } from "../sprite";
 import { StageLayering } from "../../../Type/stage/CStageLayering";
-import { Timer } from "@Lib/utils/timer";
 import type { ISprite } from "@Type/sprite";
 import type { TScale } from "@Type/common/typeCommon";
 import type { BubbleState, BubbleProperties } from "@Type/sprite/TBubble";
 
 export class Bubble  {
     private bubbleState: BubbleState;
-    private sprite: any;
+    protected sprite: any;
     private _scale: TScale;
     private _direction: number;
     constructor( sprite: ISprite ) {

@@ -7,17 +7,17 @@ import type { ISprite } from '@Type/sprite';
 /** サイズ */
 export class SpriteCostume implements ISpriteCostume {
 
-    private entity: ISprite;
+    protected entity: ISprite;
     public currentConstumeNo: number = -1;
     private imageArr: IImage[] = [];
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {ISprite}
      */
     constructor(entity:ISprite){
         this.entity = entity;
     }
-    add(image: IImage) {
+    add(image: IImage) : void{
         this.imageArr.push(image);
         if(this.currentConstumeNo == -1){
             this.currentConstumeNo = 0;

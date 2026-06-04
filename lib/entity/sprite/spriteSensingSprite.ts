@@ -1,8 +1,6 @@
-import { Sprite } from '../sprite';
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { EntitySensingSprite } from '../entity/entitySensingSprite';
 import { playground } from '../../vm/playground';
-import type { IEntity } from '@Type/entity/IEntity';
 import type { ISprite } from '@Type/sprite';
 import type { ISpriteSensingSprite } from '@Type/sprite/ISpriteSensingSprite';
 import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';

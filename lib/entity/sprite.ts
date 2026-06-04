@@ -6,6 +6,7 @@ import { StageLayering } from '@Type/stage/CStageLayering';
 import { SpriteControl } from "./sprite/spriteControl";
 import { SpriteMotion } from "./sprite/spriteMotion";
 import { SpriteCostume } from "./sprite/spriteCostume";
+import { SpriteBackdrop } from "./sprite/spriteBackdrop";
 import { SpriteEvent } from "./sprite/spriteEvent";
 import { SpriteFont } from "./sprite/spriteFont";
 import { SpriteProperties } from "./sprite/spriteProperties";
@@ -13,7 +14,6 @@ import { SpriteLooks } from "./sprite/spriteLooks";
 import { playground } from "../vm/playground";
 import { SpriteSensing } from "./sprite/spriteSensing";
 import { SpriteDragMode } from "./sprite/spriteDragMode";
-import { DragSprite } from "./drag/dragSprite";
 import { PenSprite } from "./pen/penSprite";
 import { Timer } from "../utils/timer";
 import type { IEntityProperties } from "@Type/entity/IEntityProperties";
@@ -24,10 +24,14 @@ import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
 import type { ISpriteLooks } from "@Type/sprite/ISpriteLooks";
 import type { ISpriteControl } from "@Type/sprite/ISpriteControl";
 import type { ISvgSkin } from "@Type/render/ISvgSkin";
+import type { ISpriteCostume } from "@Type/sprite/ISpriteCostume";
+import type { ISpriteMotion } from "@Type/sprite/ISpriteMotion";
+import type { ISpriteBackdrop } from "@Type/sprite/ISpriteBackdrop";
 
 export class Sprite extends Entity implements ISprite {
-    private _costume : SpriteCostume;
-    private _motion: SpriteMotion;
+    private _costume : ISpriteCostume;
+    private _backdrop: ISpriteBackdrop;
+    private _motion: ISpriteMotion;
     private _looks: ISpriteLooks;
     private _control: ISpriteControl;
     private _event: SpriteEvent;
@@ -48,6 +52,7 @@ export class Sprite extends Entity implements ISprite {
         this.createDrawable(StageLayering.SPRITE_LAYER);
         this._name = name;
         this._costume = new SpriteCostume(this);
+        this._backdrop = new SpriteBackdrop(this);
         this._motion = new SpriteMotion(this);
         this._looks = new SpriteLooks(this);
         this._control = new SpriteControl(this);
@@ -63,10 +68,13 @@ export class Sprite extends Entity implements ISprite {
         playground.addSprite(this);
         
     }
-    get Costume(): SpriteCostume {
+    get Costume(): ISpriteCostume {
         return this._costume;
     }
-    get Motion() : SpriteMotion {
+    get Backdrop(): ISpriteBackdrop {
+        return this._backdrop;
+    }
+    get Motion() : ISpriteMotion {
         return this._motion;
     }
     get Looks() : ISpriteLooks {

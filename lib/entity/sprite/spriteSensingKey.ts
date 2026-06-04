@@ -1,16 +1,17 @@
-import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
 import { Sprite } from '../sprite';
 import { playground } from '../../vm/playground';
+import type { ISprite } from '@Type/sprite';
+import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
 /**
  * Sprite Sensing(調べる) Key
  */
 export class SpriteSensingKey implements IEntitySensingKey {
-    private entity: Sprite;
+    protected entity: ISprite;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
     }
 

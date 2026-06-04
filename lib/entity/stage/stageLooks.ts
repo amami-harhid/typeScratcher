@@ -1,20 +1,21 @@
-import { Stage } from '../stage';
 import { StageEffect } from './stageEffect';
 import { StageBackdrop } from './stageBackdrop';
 import { IStageBackdrop } from '@Type/stage/IStageBackdrop';
 import { IStageEffect } from '@Type/stage/IStageEffect';
-import { IStage } from '@Type/stage';
+import type { IStage } from '@Type/stage';
 /**
  * Sprite Looks(見た目)
  */
 export class StageLooks {
+    protected entity: IStage;
     private effect: IStageEffect;
     private backdrop: IStageBackdrop;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {IStage}
      */
     constructor(entity:IStage){
+        this.entity = entity;
         this.effect = new StageEffect(entity);
         this.backdrop = new StageBackdrop(entity);
     }

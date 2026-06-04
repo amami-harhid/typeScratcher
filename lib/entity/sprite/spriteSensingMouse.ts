@@ -1,20 +1,20 @@
-import { Sprite } from '../sprite';
-import type { ISpriteSensingMouse } from '@Type/sprite/ISpriteSensingMouse';
-import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { MathUtil } from '../../utils/math-util';
 import { Element } from '../../gui/element';
+import type { ISprite } from '@Type/sprite';
+import type { ISpriteSensingMouse } from '@Type/sprite/ISpriteSensingMouse';
+import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
 /**
  * Sprite Sensing(調べる) Mouse
  */
 export class SpriteSensingMouse implements ISpriteSensingMouse {
-    private entity: Sprite;
+    protected entity: ISprite;
     private Distance: ISpriteSensingDistance;
     /**
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
         this.Distance = new SpriteSensingDistance(entity);
     }

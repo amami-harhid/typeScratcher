@@ -1,18 +1,15 @@
-import { Stage} from '../stage';
-import { StageSensingKey } from './stageSensingKey';
-import type { IStageSensing } from '@Type/stage/IStageSensing';
 import type { IEntitySensingMouse } from '@Type/entity/IEntitySensingMouse';
-import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
+import type { IStage } from '@Type/stage';
 /**
  * Stage Sensing(調べる) Mouse
  */
 export class StageSensingMouse implements IEntitySensingMouse {
-    private entity: Stage;
+    protected entity: IStage;
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         this.entity = entity;
     }
     /**

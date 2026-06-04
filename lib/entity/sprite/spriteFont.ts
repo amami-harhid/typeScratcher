@@ -2,7 +2,7 @@ import type { ISprite } from '@Type/sprite';
 import type { ISpriteFont } from '@Type/sprite/ISpriteFont';
 
 export class SpriteFont implements ISpriteFont {
-    private entity: ISprite;
+    protected entity: ISprite;
     /**
      * @internal
      * @param entity {Sprite}

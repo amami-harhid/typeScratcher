@@ -1,16 +1,17 @@
 import type { ISpriteDragMode } from '@Type/sprite/ISpriteDragMode';
 import { DragSprite } from '../drag/dragSprite';
 import { Sprite } from '../sprite';
+import { ISprite } from '@Type/sprite';
 
 /** サイズ */
 export class SpriteDragMode implements ISpriteDragMode{
 
-    private dragSprite: DragSprite;
+    protected dragSprite: DragSprite;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(sprite: Sprite){
+    constructor(sprite: ISprite){
         this.dragSprite = new DragSprite(sprite);
     }
     get dragging() : boolean {

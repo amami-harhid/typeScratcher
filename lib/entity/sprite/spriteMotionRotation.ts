@@ -1,13 +1,13 @@
-import { Sprite } from '../sprite';
 import { RotationStyle } from '@Type/entity/RotationStyle';
+import type { ISprite } from '@Type/sprite';
 
 export class SpriteMotionRotation {
-    private entity: Sprite;
+    private entity: ISprite;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
     }
     /**

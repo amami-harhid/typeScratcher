@@ -2,10 +2,10 @@
  * QuestionBoxElement
  */
 import { EventEmitter } from 'events';
-import { Entity } from '../entity/entity';
-import { Sprite } from '../entity/sprite';
 import { Utils } from '../utils/utils';
-import { playground } from './playground';
+import { playground } from '../vm/playground';
+import type { IEntity } from '@Type/entity/IEntity';
+import { ISprite } from '@Type/sprite';
 
 /** div include canvas */
 const CanvasDiv = 'canvasDiv';
@@ -49,7 +49,7 @@ export class QuestionBoxElement extends EventEmitter {
      * @param entity 
      * @returns Promise<void>
      */
-    async askWait(entity) : Promise<boolean>{
+    async askWait(entity: IEntity) : Promise<boolean>{
         const me = this;
         const stage = playground.getStage();
         return new Promise<boolean>(async resolve=>{
@@ -86,7 +86,7 @@ export class QuestionBoxElement extends EventEmitter {
      * @param {*} entity 
      * @returns Spriteの場合 True
      */
-    static isSprite(entity: Entity) {
+    static isSprite(entity: IEntity) {
         if(entity.isSprite === true ){
             return true;
         }
@@ -94,11 +94,11 @@ export class QuestionBoxElement extends EventEmitter {
     }
     /**
      * 質問を表示して答えの入力を待つ
-     * @param entity {Entity}
+     * @param entity {IEntity}
      * @param text {string}
      * @returns 答え {Promise<string>}
      */
-    async ask( entity: Entity, text: string ) : Promise<string>{
+    async ask( entity: IEntity, text: string ) : Promise<string>{
         this.forceComplete = false;
         const result = await this.askWait(entity);
         // @ts-ignore : this.forceComplete is changed to true in askWait(). 
@@ -137,7 +137,7 @@ export class QuestionBoxElement extends EventEmitter {
                 questionContainer.appendChild(questionLabel);
             }else {
                 // スプライトの場合
-                const sprite = entity as Sprite;
+                const sprite = entity as ISprite;
                 sprite.Looks.Bubble.say(text);
             }    
         }
@@ -201,10 +201,10 @@ export class QuestionBoxElement extends EventEmitter {
      * 質問を消す
      * @param entity {Entity}
      */
-    static removeAsk(entity: Entity) : void {
+    static removeAsk(entity: IEntity) : void {
         if( entity && QuestionBoxElement.isSprite(entity)){
             // スプライトの場合、フキダシを消す
-            const sprite = entity as Sprite;
+            const sprite = entity as ISprite;
             sprite.Looks.Bubble.say('');
         }
         const _stageOverlays = document.getElementById(StageOverlays);

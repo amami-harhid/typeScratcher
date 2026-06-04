@@ -1,18 +1,17 @@
 import { ImageBank } from '../../image/imageBank';
-import { Image } from '../../image/image';
-import { Entity } from '../entity';
 import type { IImage } from '@Type/image/IImage';
+import type { IEntity } from '@Type/entity/IEntity';
 
 /** メッセージ送受信 */
 export class EntityImage {
 
-    private entity: Entity;
+    protected entity: IEntity;
     private _images: IImage[] = [];
     /**
      * @internal
-     * @param entity {Entity}
+     * @param entity {IEntity}
      */
-    constructor(entity:Entity){
+    constructor(entity:IEntity){
         this.entity = entity;
     }
 

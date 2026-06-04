@@ -4,10 +4,10 @@ import type { ISprite } from '@Type/sprite';
 /** 背景 */
 export class SpriteBackdrop implements ISpriteBackdrop {
 
-    private entity: ISprite;
+    protected entity: ISprite;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
     constructor(entity:ISprite){
         this.entity = entity;

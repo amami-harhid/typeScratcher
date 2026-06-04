@@ -1,15 +1,14 @@
-import { Stage} from '../stage';
 import { EntityEvent } from '../entity/entityEvent';
+import { IStage } from '@Type/stage';
 /**
  * Stage Event(イベント)
  */
 export class StageEvent extends EntityEvent {
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         super(entity);
-        this.entity = entity;
     }
 };

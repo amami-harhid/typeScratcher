@@ -1,4 +1,4 @@
-import { Stage} from '../stage';
+import { QuestionBoxElement } from '../../gui/questionBoxElement';
 import { StageSensingKey } from './stageSensingKey';
 import { StageSensingMouse } from './stageSensingMouse';
 import { StageSensingTimer } from './stageSensingTimer';
@@ -6,20 +6,20 @@ import type { IStageSensing } from '@Type/stage/IStageSensing';
 import type { IEntitySensingMouse } from '@Type/entity/IEntitySensingMouse';
 import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
 import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
-import { QuestionBoxElement } from '../../vm/questionBoxElement';
+import type { IStage } from '@Type/stage';
 /**
  * Stage Sensing(調べる)
  */
 export class StageSensing implements IStageSensing {
-    private entity: Stage;
+    private entity: IStage;
     private key: IEntitySensingKey;
     private mouse: IEntitySensingMouse;
     private timer: IEntitySensingTimer;
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         this.entity = entity;
         this.key = new StageSensingKey(entity);
         this.mouse = new StageSensingMouse(entity);

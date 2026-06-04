@@ -1,16 +1,16 @@
 import { playground } from '../../vm/playground';
-import { Stage} from '../stage';
+import type { IStage } from '@Type/stage';
 import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
 /**
  * Stage Sensing(調べる) Timer
  */
 export class StageSensingTimer implements IEntitySensingTimer {
-    private entity: Stage;
+    protected entity: IStage;
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         this.entity = entity;
     }
     /**

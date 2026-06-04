@@ -1,24 +1,24 @@
-import { Sprite } from '../sprite';
+import { SpriteSensingTimer } from './spriteSensingTimer';
+import { SpriteSensingMouse } from './spriteSensingMouse';
+import { SpriteSensingKey } from './spriteSensingKey';
+import { SpriteSensingEdge } from './spriteSensingEdge';
+import { SpriteSensingColor } from './spriteSensingColor';
+import { SpriteSensingSprite } from './spriteSensingSprite';
+import { QuestionBoxElement } from '../../gui/questionBoxElement';
+import type { ISprite } from '@Type/sprite';
 import type { ISpriteSensing } from '@Type/sprite/ISpriteSensing';
 import type { ISpriteDragMode } from '@Type/sprite/ISpriteDragMode';
 import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
-import { SpriteSensingTimer } from './spriteSensingTimer';
 import type { ISpriteSensingMouse } from '@Type/sprite/ISpriteSensingMouse';
-import { SpriteSensingMouse } from './spriteSensingMouse';
 import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
-import { SpriteSensingKey } from './spriteSensingKey';
 import type { ISpriteSensingEdge } from '@Type/sprite/ISpriteSensingEdge';
-import { SpriteSensingEdge } from './spriteSensingEdge';
 import type { ISpriteSensingColor } from '@Type/sprite/ISpriteSensingColor';
-import { SpriteSensingColor } from './spriteSensingColor';
-import { ISpriteSensingSprite } from '@Type/sprite/ISpriteSensingSprite';
-import { SpriteSensingSprite } from './spriteSensingSprite';
-import { QuestionBoxElement } from '../../vm/questionBoxElement';
+import type { ISpriteSensingSprite } from '@Type/sprite/ISpriteSensingSprite';
 /**
  * Sprite Sensing(調べる)
  */
 export class SpriteSensing implements ISpriteSensing {
-    private entity: Sprite;
+    protected entity: ISprite;
     private mouse: ISpriteSensingMouse;
     private timer: IEntitySensingTimer;
     private key: IEntitySensingKey;
@@ -29,7 +29,7 @@ export class SpriteSensing implements ISpriteSensing {
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
         this.mouse = new SpriteSensingMouse(entity);
         this.timer = new SpriteSensingTimer(entity);

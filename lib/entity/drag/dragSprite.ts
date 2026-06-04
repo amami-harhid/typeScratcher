@@ -1,14 +1,14 @@
-import { Sprite } from '../sprite';
 import { StageLayering } from '../../../Type/stage/CStageLayering';
 import { playground } from '../../vm/playground';
 import { Element } from '../../gui/element';
+import type { ISprite } from '@Type/sprite';
 /**
  * DragSprite
  */
 export class DragSprite {
     /** @internal */
     static PROPERTIES_CHANGE = "properties_change";
-    private sprite: Sprite;
+    private sprite: ISprite;
     /**
      * draggable {boolean} - trueのときDragできる。デフォルト値はfalse.
      * 
@@ -34,7 +34,7 @@ export class DragSprite {
      * @internal
      * @constructor
      */
-    constructor(sprite: Sprite) {
+    constructor(sprite: ISprite) {
         this.sprite = sprite;
         this.draggable = false;
         this.drag = null;

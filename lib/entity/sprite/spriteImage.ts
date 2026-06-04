@@ -1,6 +1,5 @@
-import { Image } from "../../image/image";
 import { EntityImage } from "../entity/entityImage";
-import { Sprite } from "../sprite";
+import type { ISprite } from "@Type/sprite";
 
 /**
  * Sprite Image(イメージ)
@@ -11,7 +10,7 @@ export class SpriteImage extends EntityImage {
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         super(entity);
     }
 

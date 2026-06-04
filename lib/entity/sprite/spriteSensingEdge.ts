@@ -14,13 +14,13 @@ import type { ISpriteSensingEdge } from '@Type/sprite/ISpriteSensingEdge';
  * Sprite Sensing(調べる) Edge
  */
 export class SpriteSensingEdge implements ISpriteSensingEdge {
-    private entity: Sprite;
+    protected entity: ISprite;
     private _touchingEdge:boolean;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
         this._touchingEdge = false;
     }

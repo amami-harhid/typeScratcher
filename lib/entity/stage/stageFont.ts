@@ -1,15 +1,15 @@
+import type { IStage } from '@Type/stage';
 import type { IStageFont } from '@Type/stage/IStageFont';
-import { Stage } from '../stage';
 /**
  * StageFont
  */
 export class StageFont implements IStageFont {
-    private entity: Stage;
+    protected entity: IStage;
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         this.entity = entity;
     }
 

@@ -1,16 +1,16 @@
-import { Stage} from '../stage';
-import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
 import { playground } from '../../vm/playground';
+import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
+import type { IStage } from '@Type/stage';
 /**
  * Stage Sensing(調べる) Key
  */
 export class StageSensingKey implements IEntitySensingKey {
-    private entity: Stage;
+    protected entity: IStage;
     /**
      * @internal
-     * @param entity {Stage}
+     * @param entity {IStage}
      */
-    constructor(entity:Stage){
+    constructor(entity:IStage){
         this.entity = entity;
     }
 

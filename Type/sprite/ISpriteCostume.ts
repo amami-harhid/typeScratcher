@@ -1,5 +1,12 @@
+import type { IImage } from "@Type/image/IImage";
+
 /** コスチューム */
 export interface ISpriteCostume {
+    /**
+     * 画像を追加
+     * @param image 
+     */
+    add(image: IImage) : void;
 
     /**
      * コスチューム名 配列
@@ -13,6 +20,12 @@ export interface ISpriteCostume {
      * ```
      */
     get no(): number;
+
+    /**
+     * 現在のSkinID
+     */
+    get currentSkinId() : number;
+
     /**
      * コスチューム番号
      * ```ts

@@ -22,10 +22,6 @@ export type TSoundPlayerOption = {
     volume?: number,
     pitch?: number,
 }
-export type TSoundOption = {
-    volume?: number,
-    pitch?: number,
-}
 export type TEffectChain = {
     volume?: IScratchSoundPlayer,
     pitch?: IScratchSoundPlayer,

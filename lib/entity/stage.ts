@@ -7,6 +7,7 @@ import { playground } from "../vm/playground";
 import { StageProperties } from "./stage/stageProperties";
 import { StageLooks } from "./stage/stageLooks";
 import { StageControl } from "./stage/stageControl";
+import { StageBackdrop } from "./stage/stageBackdrop";
 import { threadId } from "node:worker_threads";
 import { StageEvent } from "./stage/stageEvent";
 import { StageSensing } from "./stage/stageSensing";
@@ -16,7 +17,6 @@ import type { IStageControl } from "@Type/stage/IStageControl";
 import type { IStageEvent } from "@Type/stage/IStageEvent";
 import type { IStageSensing } from "@Type/stage/IStageSensing";
 import type { IStageBackdrop } from "@Type/stage/IStageBackdrop";
-import { StageBackdrop } from "./stage/stageBackdrop";
 
 export class Stage extends Entity implements IStage{
     protected _properties: StageProperties;

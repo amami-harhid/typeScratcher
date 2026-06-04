@@ -13,6 +13,8 @@ import type { ISpriteDragMode } from './ISpriteDragMode';
 //import type { ISpritePen } from './ISpritePen';
 //import type { ISvgText } from '../svgText/ISvgText';
 import type { IEntityProperties } from '@Type/entity/IEntityProperties'; 
+import type { ISpriteCostume } from './ISpriteCostume';
+import type { ISpriteBackdrop } from './ISpriteBackdrop';
 /**
  * Sprite
  */
@@ -26,23 +28,27 @@ export interface SSprite{
 
 };
 export interface ISprite extends IEntity {
+    /**
+     * プロパティをレンダーへ反映する
+     */
+    update(): void;
 
     /**
      * 動き
      */
     readonly Motion: ISpriteMotion;
 
-    // /**
-    //  * コスチューム番号、コスチューム名を取り出すためのオブジェクト
-    //  * 使用例：this.Costume.no, this.Costume.name
-    //  * @returns
-    //  */
-    // get Costume(): ISpriteCostume;
+    /**
+     * コスチューム番号、コスチューム名を取り出すためのオブジェクト
+     * 使用例：this.Costume.no, this.Costume.name
+     * @returns
+     */
+    get Costume(): ISpriteCostume;
     
-    // /**
-    //  * 背景番号、背景名を取り出すためのオブジェクト
-    //  */
-    // get Backdrop(): ISpriteBackdrop;
+    /**
+     * 背景番号、背景名を取り出すためのオブジェクト
+     */
+    get Backdrop(): ISpriteBackdrop;
 
     /**
      * 見た目
@@ -103,4 +109,5 @@ export interface ISprite extends IEntity {
     clones? : ISprite[];
 
     isClone: boolean;
+
 };

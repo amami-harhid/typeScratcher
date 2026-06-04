@@ -13,7 +13,7 @@ import type { TMouse } from "@Type/mouse";
 export class Playground {
     private _renderer!: Renderer;
     private _runtime: Runtime;
-    private _sprites: Sprite[] = [];
+    private _sprites: ISprite[] = [];
     private _stage!: Stage;
     private _timer: number;
     private _mouse!: TMouse;
@@ -95,7 +95,7 @@ export class Playground {
     get renderer(): Renderer {
         return this._renderer;
     }
-    addSprite(sprite: Sprite) {
+    addSprite(sprite: ISprite) {
         this._sprites.push(sprite);
     }
     getSprites() {
@@ -110,7 +110,7 @@ export class Playground {
     async start(): Promise<void> {
         this._runtime.scratchEvent.greenFlagClick();
         for(const s of this._sprites){
-            const _s = s as unknown as Sprite;
+            const _s = s as Sprite;
             await _s.init();
             _s.update();
         }        

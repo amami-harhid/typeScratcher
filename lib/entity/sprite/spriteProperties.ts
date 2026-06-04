@@ -1,16 +1,13 @@
 import { ScratchRenderProperties } from "@Type/render/IRenderWebGL";
 import { EntityProperties } from "../entity/entityProperties";
-import { Sprite } from "../sprite";
 import { RotationStyle } from "@Type/entity/RotationStyle";
-import { Entity } from "../entity";
 import type { ISprite } from "@Type/sprite";
-import type { IEntity } from "@Type/entity/IEntity";
 export class SpriteProperties extends EntityProperties {
-    constructor(sprite: Sprite){
-        super(sprite as unknown as IEntity)
+    constructor(sprite: ISprite){
+        super(sprite);
     }
     update() {
-        const entity : Sprite = this.entity as unknown as Sprite;
+        const entity = this.entity as ISprite;
         let _degree = this.degree;
         let _scale = {w: this.scale.w, h: this.scale.h};
         if( this._rotationStyle == RotationStyle.DONT_ROTATE) {

@@ -3,13 +3,14 @@ import { SpriteMotionMove } from './spriteMotionMove';
 import { SpriteMotionPoint } from './spriteMotionPoint';
 import { SpriteMotionDirection} from './spriteMotionDirection';
 import { SpriteMotionRotation } from './spriteMotionRotation';
-import { ISpriteMotion } from '@Type/sprite/ISpriteMotion';
+import { SpriteMotionPosition } from './spriteMotionPosition';
+import type { ISpriteMotion } from '@Type/sprite/ISpriteMotion';
 import type { ISpriteMotionMove } from '@Type/sprite/ISpriteMotionMove';
 import type { ISpriteMotionPoint } from '@Type/sprite/ISpriteMotionPoint';
-import { ISpriteMotionPosition } from '@Type/sprite/ISpriteMotionPosition';
-import { SpriteMotionPosition } from './spriteMotionPosition';
+import type { ISpriteMotionPosition } from '@Type/sprite/ISpriteMotionPosition';
+import type { ISprite } from '@Type/sprite';
 export class SpriteMotion implements ISpriteMotion {
-    private entity: Sprite;
+    protected entity: ISprite;
     private move: SpriteMotionMove;
     private point: SpriteMotionPoint;
     private position: SpriteMotionPosition;
@@ -17,9 +18,9 @@ export class SpriteMotion implements ISpriteMotion {
     private rotation: SpriteMotionRotation;
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
         this.move = new SpriteMotionMove(entity);
         this.point = new SpriteMotionPoint(entity);

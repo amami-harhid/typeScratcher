@@ -5,7 +5,7 @@ import type { ISprite } from '@Type/sprite';
 /** 階層 */
 export class SpriteLayer {
  
-    private entity: ISprite;
+    protected entity: ISprite;
     /**
      * @internal
      * @param entity {Sprite}

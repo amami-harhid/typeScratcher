@@ -1,4 +1,3 @@
-import { Sprite } from '../sprite';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
 import type { TEntityOptions } from '@Type/entity/TEntityOptions';
@@ -8,12 +7,12 @@ import type { ISpriteControl } from '@Type/sprite/ISpriteControl';
  * Sprite Control(制御)
  */
 export class SpriteControl implements ISpriteControl {
-    private entity: Sprite;
+    protected entity: ISprite;
     /**
      * @internal
      * @param entity {Sprite}
      */
-    constructor(entity:Sprite){
+    constructor(entity:ISprite){
         this.entity = entity;
     }
     /**

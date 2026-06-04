@@ -1,15 +1,15 @@
-import { Sprite } from '../sprite';
 import { EntityEvent } from '../entity/entityEvent';
 import { Entity } from '../entity';
+import type { ISprite } from '@Type/sprite';
 /**
  * Sprite Event(イベント)
  */
 export class SpriteEvent extends EntityEvent {
     /**
      * @internal
-     * @param entity {Sprite}
+     * @param entity {ISprite}
      */
-    constructor(entity:Sprite){
-        super(entity as unknown as Entity);
+    constructor(entity:ISprite){
+        super(entity);
     }
 };
