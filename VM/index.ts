@@ -6,12 +6,13 @@ import type {SSound} from "@Type/sound/ISound";
 import type {IPlayground} from "@Type/vm/playground";
 import type {STimer} from "@Type/util/ITimer.js";
 import type { TKEYBOARD_KEYS } from '@Type/vm/keyboad.js';
+import { type RotationStyle } from '@Type/entity/RotationStyle.js';
 const Sprite:SSprite = vm.Sprite;
 const Stage:SStage = vm.Stage;
 const Image:SImage = vm.Image;
 const Sound:SSound = vm.Sound;
 const Timer:STimer = vm.Timer;
-const RotationStyle = vm.RotationStyle;
+const Rotation:RotationStyle = vm.Rotation;
 const KEYBOARD_KEYS:TKEYBOARD_KEYS = vm.KEYBOARD_KEYS;
 const playground:IPlayground = vm.playground;
 
@@ -21,7 +22,7 @@ export const VM = {
     Image:Image, 
     Sound: Sound, 
     Timer: Timer,
-    RotationStyle: RotationStyle,
+    Rotation: Rotation,
     KEYBOARD_KEYS: KEYBOARD_KEYS,
     playground: playground
 };

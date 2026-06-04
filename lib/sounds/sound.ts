@@ -36,6 +36,7 @@ export class Sound extends EventEmitter {
         const sound = await SoundLoader.loadSound(this._soundPath, this._name);
         this._data = sound.data;
         playground.runtime.scratchEvent.once(ScratchEvent.READY_AUDIO_ENGINE, async()=>{
+            // AudioEngineの準備完了した時点で、各音のSoundPlayerを作る。
             await this.createSoundPlayer();
         });
         this._loadCompleted = true;

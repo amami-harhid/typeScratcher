@@ -55,7 +55,8 @@ export class Element {
 		imgGreenFlag.setAttribute("draggable","false");
 		imgGreenFlag.setAttribute('src', GreenFlagImage)
 		imgGreenFlag.setAttribute('title', "実行");
-		imgGreenFlag.style.padding = "0.375rem"
+		imgGreenFlag.style.padding = "0.375rem";
+		imgGreenFlag.classList.add("not-ready");
 		menuControl.appendChild(imgGreenFlag);
 
 		return header as HTMLDivElement;

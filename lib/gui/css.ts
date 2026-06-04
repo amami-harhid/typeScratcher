@@ -48,29 +48,29 @@ html, body{
         z-index:2147483647;
   }
 .likeScratch-flag {
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 75px;
-        line-height: 65px;
-        padding: 32px;
-        color: #005e00;
-        background: #2eff2e;
-        border: 2px solid #007900;
-        border-radius: 65px;
-        cursor: pointer;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    line-height: 65px;
+    padding: 32px;
+    color: #005e00;
+    background: #2eff2e;
+    border: 2px solid #007900;
+    border-radius: 65px;
+    cursor: pointer;
   }
 
 .green-flag.is-active {
     background-color: $looks-transparent;
 }
 #main {
-        position: absolute;
-        width:100%;
-        height:100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #e0ffff;
+    position: absolute;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e0ffff;
   }
 `,
     scratch3Header : `
@@ -119,6 +119,9 @@ html, body{
 }
 .green-flag_green-flag.not-running {
     opacity: 1.0;
+}
+.green-flag_green-flag.not-ready {
+    opacity: 0.5;
 }
 
 

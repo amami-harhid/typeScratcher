@@ -1,7 +1,8 @@
-import { RotationStyle } from '@Type/entity/RotationStyle';
+import type { RotationValue, RotationStyle } from '@Type/entity/RotationStyle';
 import type { ISprite } from '@Type/sprite';
+import type { ISpriteMotionRotation } from '@Type/sprite/ISpriteMotionRotation';
 
-export class SpriteMotionRotation {
+export class SpriteMotionRotation implements ISpriteMotionRotation{
     private entity: ISprite;
     /**
      * @internal
@@ -15,7 +16,7 @@ export class SpriteMotionRotation {
      * 
      * {@link RotationStyle}
      */
-    get style(): RotationStyle {
+    get style(): RotationValue {
         return this.entity.Properties.rotationStyle;
     }
     /**
@@ -23,7 +24,7 @@ export class SpriteMotionRotation {
      * 
      * {@link RotationStyle}
      */
-    set style(style: RotationStyle) {
+    set style(style: RotationValue) {
         this.entity.Properties.rotationStyle = style;
     }
 };

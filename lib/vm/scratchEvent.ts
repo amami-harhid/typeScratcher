@@ -18,18 +18,24 @@ export class ScratchEvent extends EventEmitter {
     constructor() {
         super();
     }
-
+    public stageFirstClick() {
+        const body = document.body;
+        const me = this;
+        const f = (event:MouseEvent)=>{
+            me.emit(ScratchEvent.START_AUDIO_ENGINE);
+            event.stopPropagation();
+            body.removeEventListener('click', f);
+        }
+        body.addEventListener('click', f);
+    }
     public greenFlagClick() {
         const greenFlag = Element.getGreenFlag();
-        let counter = 0;
+        const me = this;
+        greenFlag.classList.remove('not-ready');
+        greenFlag.classList.add('not-running');
         greenFlag.addEventListener('click',(event:MouseEvent)=>{
-            if(counter == 0){
-                this.emit(ScratchEvent.START_AUDIO_ENGINE);
-                counter+=1;
-            }else{
-                this.emit(ScratchEvent.GREEN_FLAG_CLICKED);
-
-            }
+            me.emit(ScratchEvent.GREEN_FLAG_CLICKED);
+            greenFlag.classList.remove('running');
             event.stopPropagation();
         })
     }

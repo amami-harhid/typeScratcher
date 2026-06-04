@@ -108,21 +108,13 @@ export class Playground {
         return this._stage;
     }
     async start(): Promise<void> {
-        this._runtime.scratchEvent.greenFlagClick();
+        this._runtime.scratchEvent.stageFirstClick();
         for(const s of this._sprites){
             const _s = s as Sprite;
             await _s.init();
             _s.update();
         }        
         threadManager.start();
-
-        // const greenFlag = Element.getGreenFlag();
-        // const threadStart = (e:MouseEvent) => {
-        //     e.stopPropagation();
-        // }
-
-        // greenFlag.removeEventListener('click', threadStart);
-        // greenFlag.addEventListener('click', threadStart);
     }
     get renderRate(): {x:number, y:number} {
         const canvas = Element.getScratchCanvas();

@@ -20,14 +20,15 @@ apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
 apple.Looks.Size.scale = {w: 100, h:100};
 apple.Motion.Direction.degree = 45;
-apple.Motion.Rotation.style = VM.RotationStyle.DONT_ROTATE;
+apple.Motion.Rotation.style = VM.Rotation.LEFT_RIGHT;
 apple.Motion.Position.xy = {x:0, y:0};
 
 // TODO
 // ここでAUDIO関連の設定を可能にしたい。警告を出さずに。
 // たとえば・・・
-// 旗マークをクリックするとAUDIO関連の設定が開始されるようにしたい。
-// ２回目の旗クリックで 旗イベント処理が動き出す・・・とか。
+// 旗マークは最初は非表示（押せない）、どこかをクリックすると、
+// 旗マークが表示されて押せるようになる。
+// 旗クリックで 旗イベント処理が動き出す・・・とか。
 apple.Sound.setVolume(chillSound, 100);
 apple.Sound.setPitch(chillSound, 1.0);
 apple.Sound.setVolume(catSound, 10);

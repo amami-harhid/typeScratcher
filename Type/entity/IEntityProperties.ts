@@ -1,5 +1,5 @@
 import { ScratchRenderProperties } from "@Type/render/IRenderWebGL";
-import { RotationStyle } from "./RotationStyle";
+import { type RotationValue } from "./RotationStyle";
 
 /** 座標 */
 export interface IPosition {
@@ -22,7 +22,7 @@ export interface IEntityProperties {
     /** 表示・非表示 */
     visible: boolean;
     /** 回転方法 */
-    rotationStyle: RotationStyle;
+    rotationStyle: RotationValue;
     /** プロパティをレンダラーへ反映 */
     update():void;
     /** プロパティをレンダラーへ反映 */

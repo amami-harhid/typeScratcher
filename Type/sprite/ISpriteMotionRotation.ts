@@ -1,4 +1,4 @@
-import { RotationStyle } from '../entity/RotationStyle';
+import type { RotationValue } from '../entity/RotationStyle';
 /**
  * スプライトの動き（回転方法）
  */
@@ -8,11 +8,11 @@ export interface ISpriteMotionRotation {
      * 
      * {@link TypeRotationStyle}
      */
-    get style(): RotationStyle;
+    get style(): RotationValue;
     /**
      * 回転方法
      * 
      * {@link TypeRotationStyle}
      */
-    set style(style: RotationStyle);
+    set style(style: RotationValue);
 };

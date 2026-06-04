@@ -38,16 +38,16 @@ import { Sprite } from '../lib/entity/sprite';
 import { Stage } from '../lib/entity/stage';
 import { Image } from '../lib/image/image';
 import { Sound } from '../lib/sounds/sound';
-import { RotationStyle } from '../Type/entity/RotationStyle';
+import { Rotation } from '../Type/entity/RotationStyle';
 import { KEYBOARD_KEYS } from '../Type/vm/keyboad';
+import { Timer } from '../lib/utils/timer';
+import * as GUI from '../lib/gui/gui';
+import { Playground, playground } from '../lib/vm/playground';
 
 //const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
 //window.Buffer = window.Buffer || Buffer
 
-import { Timer } from '../lib/utils/timer';
 
-import * as GUI from '../lib/gui/gui';
-import { Playground, playground } from '../lib/vm/playground';
 const Initialize = async function() {
 
     console.log(`Library Version = "${Version}"`);
@@ -57,14 +57,12 @@ const Initialize = async function() {
 
 await Initialize();
 
-
-
 export const VM = {
     Sprite:Sprite,
     Stage:Stage,
     Image:Image,
     Sound:Sound,
-    RotationStyle:RotationStyle,
+    Rotation:Rotation,
     KEYBOARD_KEYS:KEYBOARD_KEYS,
     Timer:Timer,
     Playground: Playground,

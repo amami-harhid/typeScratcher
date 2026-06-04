@@ -9,13 +9,15 @@ import type { ISpriteMotionMove } from '@Type/sprite/ISpriteMotionMove';
 import type { ISpriteMotionPoint } from '@Type/sprite/ISpriteMotionPoint';
 import type { ISpriteMotionPosition } from '@Type/sprite/ISpriteMotionPosition';
 import type { ISprite } from '@Type/sprite';
+import type { ISpriteMotionDirection } from '@Type/sprite/ISpriteMotionDirection';
+import type { ISpriteMotionRotation } from '@Type/sprite/ISpriteMotionRotation';
 export class SpriteMotion implements ISpriteMotion {
     protected entity: ISprite;
-    private move: SpriteMotionMove;
-    private point: SpriteMotionPoint;
-    private position: SpriteMotionPosition;
-    private direction: SpriteMotionDirection;
-    private rotation: SpriteMotionRotation;
+    private move: ISpriteMotionMove;
+    private point: ISpriteMotionPoint;
+    private position: ISpriteMotionPosition;
+    private direction: ISpriteMotionDirection;
+    private rotation: ISpriteMotionRotation;
     /**
      * @internal
      * @param entity {ISprite}
@@ -31,10 +33,10 @@ export class SpriteMotion implements ISpriteMotion {
     get Position(): ISpriteMotionPosition {
         return this.position;
     }
-    get Direction(): SpriteMotionDirection {
+    get Direction(): ISpriteMotionDirection {
         return this.direction;
     }
-    get Rotation() {
+    get Rotation() :ISpriteMotionRotation{
         return this.rotation;
     }
     get Move(): ISpriteMotionMove {
