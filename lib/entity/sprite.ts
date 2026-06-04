@@ -27,6 +27,7 @@ import type { ISvgSkin } from "@Type/render/ISvgSkin";
 import type { ISpriteCostume } from "@Type/sprite/ISpriteCostume";
 import type { ISpriteMotion } from "@Type/sprite/ISpriteMotion";
 import type { ISpriteBackdrop } from "@Type/sprite/ISpriteBackdrop";
+import type { ISpriteProperties } from "@Type/sprite/ISpriteProperties";
 
 export class Sprite extends Entity implements ISprite {
     private _costume : ISpriteCostume;
@@ -35,7 +36,7 @@ export class Sprite extends Entity implements ISprite {
     private _looks: ISpriteLooks;
     private _control: ISpriteControl;
     private _event: SpriteEvent;
-    private _properties: IEntityProperties;
+    private _properties: ISpriteProperties;
     private _sensing: SpriteSensing;
     private _penSprite: PenSprite;
     //private _font : ISpriteFont;

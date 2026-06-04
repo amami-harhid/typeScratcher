@@ -1,6 +1,6 @@
-//import { VM } from '../src/index';
+import { VM } from '../src/index';
 //import { VM } from '../dist/index.js';
-import { VM } from '../VM';
+//import { VM } from '../VM';
 import type { ISprite } from '@Type/sprite';
 
 import AppleSvg from './assets/Apple.svg';
