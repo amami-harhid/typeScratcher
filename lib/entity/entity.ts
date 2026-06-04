@@ -23,7 +23,6 @@ export class Entity extends EventEmitter implements IEntity{
     public id: string;
     public drawableID: number = -1;
     protected _render: Renderer;
-    //protected _properties!: EntityProperties;
     protected _image: IEntityImage;
     protected _sound: IEntitySound;
     protected _mouse: TMouse;

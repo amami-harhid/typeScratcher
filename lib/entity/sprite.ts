@@ -52,13 +52,13 @@ export class Sprite extends Entity implements ISprite {
         super();
         this.createDrawable(StageLayering.SPRITE_LAYER);
         this._name = name;
+        this._properties = new SpriteProperties(this);
         this._costume = new SpriteCostume(this);
         this._backdrop = new SpriteBackdrop(this);
         this._motion = new SpriteMotion(this);
         this._looks = new SpriteLooks(this);
         this._control = new SpriteControl(this);
         this._event = new SpriteEvent(this);
-        this._properties = new SpriteProperties(this);
         this._sensing = new SpriteSensing(this);
         this._dragMode = new SpriteDragMode(this);
         this._penSprite = new PenSprite(this);
