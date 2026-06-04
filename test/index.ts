@@ -1,6 +1,5 @@
-import { VM } from '../src/index';
-//import { VM } from '../dist/index.js';
-//import { VM } from '../VM';
+//import { typeScratcher as TS } from '../VM';
+import { typeScratcher as TS } from '../VM/debug';
 import type { ISprite } from '@Type/sprite';
 
 import AppleSvg from './assets/Apple.svg';
@@ -9,18 +8,18 @@ import CatSvg from './assets/cat.svg';
 import CatWav from './assets/Cat.wav';
 import ChillWav from './assets/Chill.wav';
 
-const appleImage = new VM.Image( {AppleSvg} ); 
-const arrowImage = new VM.Image( {ArrowSvg} ); 
-const catImage = new VM.Image( {CatSvg});
-const catSound = new VM.Sound({CatWav});
-const chillSound = new VM.Sound({ChillWav});
+const appleImage = new TS.Image( {AppleSvg} ); 
+const arrowImage = new TS.Image( {ArrowSvg} ); 
+const catImage = new TS.Image( {CatSvg});
+const catSound = new TS.Sound({CatWav});
+const chillSound = new TS.Sound({ChillWav});
 //const stage = new VM.Stage();
-const apple:ISprite = new VM.Sprite('apple');
+const apple:ISprite = new TS.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
 apple.Looks.Size.scale = {w: 100, h:100};
 apple.Motion.Direction.degree = 45;
-apple.Motion.Rotation.style = VM.Rotation.LEFT_RIGHT;
+apple.Motion.Rotation.style = TS.Rotation.LEFT_RIGHT;
 apple.Motion.Position.xy = {x:0, y:0};
 
 // TODO
@@ -47,7 +46,6 @@ apple.Event.flagPresser().func = async function*(this: ISprite) {
     }
 }
 apple.Event.keyPresser("a").func = async function*(this:ISprite){
-    //this.Motion.Rotation.style = VM.RotationStyle.LEFT_RIGHT;
     this.Motion.Direction.degree = 0;
     for(;;){
         this.Motion.Point.toMouse();
@@ -66,7 +64,7 @@ apple.Event.keyPresser("c").func = async function*(this:ISprite){
     for(;;){
         apple.Sound.addVolume(chillSound, 1);
         apple.Sound.addPitch(chillSound, 0.05);
-        await VM.Timer.wait(1);
+        await TS.Timer.wait(1);
         yield;
     }
 }
@@ -82,13 +80,20 @@ apple.Event.keyPresser("d").func = async function*(this:ISprite){
         const touch = this.Sensing.Edge.isTouching;
         if(touch===true){
             console.log('Edge touching', counter++)
-            await VM.Timer.wait(1);
+            await TS.Timer.wait(1);
             steps *= -1;
         }
         yield;
     }
 }
-apple.Event.keyPresser(VM.KEYBOARD_KEYS.SPACE).func = async function*(this:ISprite){
+apple.Event.keyPresser("e").func = async function*(this:ISprite){
+    for(;;){
+        const answer = await this.Sensing.askAndWait("質問をするよ");
+        console.log(`answer=${answer}`);
+        yield;
+    }
+}
+apple.Event.keyPresser(TS.Key.SPACE).func = async function*(this:ISprite){
     const steps = 1;
     for(;;){
         this.Motion.Move.steps(steps);
@@ -97,4 +102,4 @@ apple.Event.keyPresser(VM.KEYBOARD_KEYS.SPACE).func = async function*(this:ISpri
     }
 }
 
-VM.playground.start();
+TS.playground.start();

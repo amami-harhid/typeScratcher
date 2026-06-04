@@ -5,7 +5,7 @@ import { EventEmitter } from 'events';
 import { Utils } from '../utils/utils';
 import { playground } from '../vm/playground';
 import type { IEntity } from '@Type/entity/IEntity';
-import { ISprite } from '@Type/sprite';
+import type { ISprite } from '@Type/sprite';
 
 /** div include canvas */
 const CanvasDiv = 'canvasDiv';
@@ -51,15 +51,14 @@ export class QuestionBoxElement extends EventEmitter {
      */
     async askWait(entity: IEntity) : Promise<boolean>{
         const me = this;
-        const stage = playground.getStage();
+        //const stage = playground.getStage();
+        //console.log(`stage=${stage}`);
+        const scratchEvent = playground.runtime.scratchEvent;
         return new Promise<boolean>(async resolve=>{
-            if(stage == undefined) {
-                resolve(false); // ステージを作成していないときは何もしない。
-            }
             const f = function() {
                 me.forceComplete = true;
             }
-            stage.once(QuestionBoxElement.QuestionBoxForceComplete,f);
+            scratchEvent.once(QuestionBoxElement.QuestionBoxForceComplete,f)
             let stage_stage_overlays = document.getElementById(StageOverlays);
             for(;;){
                 if(me.forceComplete === true){
@@ -75,7 +74,7 @@ export class QuestionBoxElement extends EventEmitter {
             if(me.forceComplete === true){
                 resolve(false);
             }else{
-                stage.removeListener(QuestionBoxElement.QuestionBoxForceComplete,f);
+                scratchEvent.removeListener(QuestionBoxElement.QuestionBoxForceComplete,f);
                 resolve(true);
             }
         })

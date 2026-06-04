@@ -1,4 +1,4 @@
-import {VM as _vm} from '../dist/index.js';
+import {VM as _vm} from '../../src';
 import type {SSprite} from "@Type/sprite";
 import type {SStage} from "@Type/stage";
 import type {SImage} from "@Type/image/IImage";

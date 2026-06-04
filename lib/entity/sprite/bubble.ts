@@ -9,7 +9,7 @@ import type { BubbleState, BubbleProperties } from "@Type/sprite/TBubble";
 
 export class Bubble  {
     private bubbleState: BubbleState;
-    protected sprite: any;
+    protected sprite: ISprite;
     private _scale: TScale;
     private _direction: number;
     constructor( sprite: ISprite ) {
@@ -60,14 +60,14 @@ export class Bubble  {
     }
     async createDrawable() {
         if(this.bubbleState.drawableID == -1 ) {
-            const bubbleDrawableID = this.sprite.renderer.createDrawable( StageLayering.SPRITE_LAYER );
+            const bubbleDrawableID = this.sprite.render.renderer.createDrawable( StageLayering.SPRITE_LAYER );
             this.bubbleState.drawableID = bubbleDrawableID;
         }
     }
 
     async createTextSkin() {
         if(this.bubbleState.skinId == -1 ) {
-            this.bubbleState.skinId = this.sprite.renderer.createTextSkin(
+            this.bubbleState.skinId = this.sprite.render.renderer.createTextSkin(
                 this.bubbleState.type, 
                 this.bubbleState.text, 
                 this.bubbleState.onSpriteRight
@@ -106,11 +106,12 @@ export class Bubble  {
             let _h = Math.abs(h);
             this._scale.w = _w;
             this._scale.h = _h;
-            this.sprite.renderer.updateDrawableScale ( this.bubbleState.drawableID , [_w, _h] );
+            this.sprite.render.renderer.updateDrawableScale ( this.bubbleState.drawableID , [_w, _h] );
        }
     }
     async _renderBubble(_properties: BubbleProperties ={}) {
-        if(this.sprite.visible == false || this.bubbleState.text === '') {
+        const renderer = this.sprite.render.renderer;
+        if(this.sprite.Properties.visible == false || this.bubbleState.text === '') {
             if( this.bubbleState.uid != '' ) {
                 this.destroyBubble();
             }
@@ -123,14 +124,14 @@ export class Bubble  {
                 if( _properties.scale ) {
                     this.updateScale( _properties.scale.w, _properties.scale.h );
                 }                }
-            this.sprite.renderer.updateDrawableSkinId(this.bubbleState.drawableID, this.bubbleState.skinId);
+            renderer.updateDrawableSkinId(this.bubbleState.drawableID, this.bubbleState.skinId);
         }else if(this.bubbleState.skinId) {
             if( Object.keys(_properties).length > 0 ) {
                 if( _properties.scale ) {
                     this.updateScale( _properties.scale.w, _properties.scale.h );
                 }
             }
-            this.sprite.renderer.updateTextSkin(this.bubbleState.skinId, this.bubbleState.type, this.bubbleState.text, this.bubbleState.onSpriteRight);
+            renderer.updateTextSkin(this.bubbleState.skinId, this.bubbleState.type, this.bubbleState.text, this.bubbleState.onSpriteRight);
         }    
         this._positionBubble();
         return;
@@ -139,13 +140,14 @@ export class Bubble  {
         this._positionBubble();
     }
     _positionBubble() : void {
+        const renderer = this.sprite.render.renderer;
         if(this.bubbleState.skinId) {
             try{
-                const [_bubbleWidth, _bubbleHeight] = this.sprite.renderer.getCurrentSkinSize( this.bubbleState.drawableID );
+                const [_bubbleWidth, _bubbleHeight] = renderer.getCurrentSkinSize( this.bubbleState.drawableID );
                 const bubbleWidth = _bubbleWidth * this._scale.w / 100; 
                 const bubbleHeight = _bubbleHeight * this._scale.h / 100;
-                const targetBounds = this.sprite.renderer.getBoundsForBubble( this.sprite.drawableID );
-                const stageSize = this.sprite.renderer.getNativeSize();
+                const targetBounds = renderer.getBoundsForBubble( this.sprite.drawableID );
+                const stageSize = renderer.getNativeSize();
                 const stageBounds = {
                     left: -stageSize[0] / 2,
                     right: stageSize[0] / 2,
@@ -159,7 +161,7 @@ export class Bubble  {
                     } else {
                         this.bubbleState.onSpriteRight = false;
                     }
-                    this.sprite.renderer.updateTextSkin(this.bubbleState.skinId, this.bubbleState.type, this.bubbleState.text, this.bubbleState.onSpriteRight);
+                    renderer.updateTextSkin(this.bubbleState.skinId, this.bubbleState.type, this.bubbleState.text, this.bubbleState.onSpriteRight);
                 } else if( this.bubbleState.onSpriteRight === false 
                     && targetBounds.left - bubbleWidth < stageBounds.left && (bubbleWidth + targetBounds.right < stageBounds.right) ) {
                     if( this._scale.w > 0) {
@@ -167,13 +169,13 @@ export class Bubble  {
                     } else {
                         this.bubbleState.onSpriteRight = false;
                     }
-                    this.sprite.renderer.updateTextSkin(this.bubbleState.skinId, this.bubbleState.type, this.bubbleState.text, this.bubbleState.onSpriteRight);
+                    renderer.updateTextSkin(this.bubbleState.skinId, this.bubbleState.type, this.bubbleState.text, this.bubbleState.onSpriteRight);
                 } else {
                     const positionX = (this.bubbleState.onSpriteRight)? 
                         (Math.max(stageBounds.left,Math.min(stageBounds.right - bubbleWidth, targetBounds.right)))
                         :(Math.min(stageBounds.right - bubbleWidth, Math.max(stageBounds.left, targetBounds.left - bubbleWidth )));
                     const positionY = Math.min(stageBounds.top, targetBounds.bottom + bubbleHeight);
-                    this.sprite.renderer.updateDrawablePosition(this.bubbleState.drawableID, [positionX, positionY]);
+                    renderer.updateDrawablePosition(this.bubbleState.drawableID, [positionX, positionY]);
                 }
         
             } catch(e) {
@@ -182,9 +184,10 @@ export class Bubble  {
         }
     }
     destroyBubble(): void {
+        const renderer = this.sprite.render.renderer;
         if(this.isBubbleActive() && this.bubbleState.drawableID > -1) {
-            this.sprite.renderer.destroyDrawable( this.bubbleState.drawableID, StageLayering.SPRITE_LAYER);
-            this.sprite.renderer.destroySkin( this.bubbleState.skinId )
+            renderer.destroyDrawable( this.bubbleState.drawableID, StageLayering.SPRITE_LAYER);
+            renderer.destroySkin( this.bubbleState.skinId )
             this._createBubbleState();
 
             // destroy されたので初期化

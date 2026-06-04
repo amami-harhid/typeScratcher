@@ -10,9 +10,9 @@ export class SpriteProperties extends EntityProperties {
         const entity = this.entity as ISprite;
         let _degree = this.degree;
         let _scale = {w: this.scale.w, h: this.scale.h};
-        if( this._rotationStyle == Rotation.DONT_ROTATE) {
+        if( this._rotation == Rotation.DONT_ROTATE) {
             _degree = 90;
-        }else if( this._rotationStyle == Rotation.LEFT_RIGHT) {
+        }else if( this._rotation == Rotation.LEFT_RIGHT) {
             if( _degree < 0 || _degree > 180 ) {
                 _degree = 90;
                 _scale.w = - Math.abs( _scale.w );
