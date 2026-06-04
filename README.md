@@ -12,3 +12,9 @@ npm run dev /test/
 # ビルド
 
 npm run webpack
+
+
+# npm publish
+
+- npm adduser
+- npm publish

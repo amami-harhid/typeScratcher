@@ -4,7 +4,7 @@
   "description": "TypeScript library that generates Scratch 3-style drawings",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amami-harhid/typeScratcher.git"
+    "url": "git://github.com/amami-harhid/typeScratcher.git"
   },
   "publishConfig": {
     "access": "public"
