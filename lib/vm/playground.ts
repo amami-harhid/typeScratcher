@@ -9,12 +9,13 @@ import { Stage } from "../entity/stage";
 import { Element } from "../gui/element";
 import type { ISprite } from "@Type/sprite";
 import type { TMouse } from "@Type/mouse";
+import { IStage } from "@Type/stage";
 
 export class Playground {
     private _renderer!: Renderer;
     private _runtime: Runtime;
     private _sprites: ISprite[] = [];
-    private _stage!: Stage;
+    private _stage!: IStage;
     private _timer: number;
     private _mouse!: TMouse;
     constructor() {
@@ -113,7 +114,9 @@ export class Playground {
             const _s = s as Sprite;
             await _s.init();
             _s.update();
-        }        
+        }
+        const stage = this._stage as Stage;
+        stage.init();
         threadManager.start();
     }
     get renderRate(): {x:number, y:number} {

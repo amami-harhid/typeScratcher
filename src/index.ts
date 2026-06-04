@@ -44,9 +44,9 @@ import { Timer } from '../lib/utils/timer';
 import * as GUI from '../lib/gui/gui';
 import { Playground, playground } from '../lib/vm/playground';
 
-//const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
-//window.Buffer = window.Buffer || Buffer
-
+const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
+window.Buffer = window.Buffer || Buffer
+console.log('Buffer')
 
 const Initialize = async function() {
 

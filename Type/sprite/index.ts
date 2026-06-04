@@ -34,6 +34,11 @@ export interface ISprite extends IEntity {
     update(): void;
 
     /**
+     * プロパティ
+     */
+    readonly Properties: IEntityProperties;
+
+    /**
      * 動き
      */
     readonly Motion: ISpriteMotion;
@@ -74,10 +79,6 @@ export interface ISprite extends IEntity {
      * サウンド
      */
     readonly Sound: ISpriteSound;
-    /**
-     * プロパティ
-     */
-    readonly Properties: IEntityProperties;
 
     /**
      * Font

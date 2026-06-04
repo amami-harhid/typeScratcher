@@ -9,6 +9,7 @@ import type { IStageSensing } from './IStageSensing';
 import type { IStageEvent } from './IStageEvent';
 import type { IStageImage } from './IStageImage';
 import type { IStageSound } from './IStageSound';
+import type { IStageProperties } from './IStageProperties';
 //import type { ISvgText } from '@Type/svgText/ISvgText';
 //import type { IStageFont } from './IStageFont';
 
@@ -29,7 +30,7 @@ export interface IStage extends IEntity {
     // removeSprite ( sprite: ISprite ): void;
     // update(): void;
     // draw(): void;
-
+    readonly Properties: IStageProperties;
     /**
      * 見た目
      */

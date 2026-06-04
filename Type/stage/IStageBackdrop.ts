@@ -1,5 +1,6 @@
 /** 背景 */
 import type { IEntityBackdrop } from "@Type/entity/IEntityBackdrop";
+import type { IImage } from "@Type/image/IImage";
 /**
  * StageBackdrop
  */
@@ -9,6 +10,8 @@ export interface IStageBackdrop extends IEntityBackdrop {
      */
     readonly names : string[];
     
+    add(image: IImage): void;
+
     switchAndWait(name: string): Promise<void>;
 
     nextAndWait(): Promise<void>;

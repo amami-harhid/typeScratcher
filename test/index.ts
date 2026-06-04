@@ -3,21 +3,25 @@ import { typeScratcher as TS } from '../VM/debug';
 import type { ISprite } from '@Type/sprite';
 
 //import AppleSvg from './assets/Apple.svg';
-import AppleSvg from 'https://amami-harhid.github.io/tscratch3assets/assets/Apple.svg' with {type: 'image/svg+xml'};
+// 外部パス(https://など)を import xxx from '外部パス'; は
+// ブラウザ制約によりエラーになる。const XXX = '外部パス'とすべき。
+const AppleSvg = 'https://amami-harhid.github.io/tscratch3assets/assets/Apple.svg';
 import ArrowSvg from './assets/Arrow1-a.svg';
 import CatSvg from './assets/cat.svg';
 import CatWav from './assets/Cat.wav';
 import ChillWav from './assets/Chill.wav';
+import { IStage } from '@Type/stage';
 
 const appleImage = new TS.Image( {AppleSvg} ); 
 const arrowImage = new TS.Image( {ArrowSvg} ); 
 const catImage = new TS.Image( {CatSvg});
 const catSound = new TS.Sound({CatWav});
 const chillSound = new TS.Sound({ChillWav});
-//const stage = new VM.Stage();
+const stage = new TS.Stage();
+stage.Sound.add([chillSound]);
 const apple:ISprite = new TS.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
-apple.Sound.add([catSound, chillSound]);
+apple.Sound.add([catSound]);
 apple.Looks.Size.scale = {w: 100, h:100};
 apple.Motion.Direction.degree = 45;
 apple.Motion.Rotation.style = TS.Rotation.LEFT_RIGHT;
@@ -35,7 +39,6 @@ apple.Sound.setVolume(catSound, 10);
 
 
 apple.Event.flagPresser().func = async function*(this: ISprite) {
-    console.log(apple.Sound.getPitch(chillSound));
     for(;;) {
         const degree = Math.floor(this.Motion.Direction.degree);
         if(degree == 90) {
@@ -46,10 +49,17 @@ apple.Event.flagPresser().func = async function*(this: ISprite) {
         yield;
     }
 }
-apple.Event.keyPresser("a").func = async function*(this:ISprite){
-    this.Motion.Direction.degree = 0;
+apple.Event.flagPresser().func = async function*(this:ISprite){
     for(;;){
-        this.Motion.Point.toMouse();
+        this.Motion.Move.steps(10);
+        this.Motion.Move.ifOnEdgeBounce();
+        yield;
+    }
+}
+stage.Event.flagPresser().func = async function*(this:IStage){
+    for(;;){
+        await this.Sound.play(chillSound);
+        await this.Sensing.askAndWait("aaaaa");
         yield;
     }
 }

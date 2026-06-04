@@ -69,6 +69,9 @@ export class Sprite extends Entity implements ISprite {
         playground.addSprite(this);
         
     }
+    get Properties() {
+        return this._properties;
+    }
     get Costume(): ISpriteCostume {
         return this._costume;
     }
@@ -139,9 +142,6 @@ export class Sprite extends Entity implements ISprite {
                 resolve(); // 完了
             });
         })
-    }
-    get Properties() {
-        return this._properties;
     }
     update() {
         this._properties.update(); 

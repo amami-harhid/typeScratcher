@@ -17,6 +17,8 @@ import type { IStageControl } from "@Type/stage/IStageControl";
 import type { IStageEvent } from "@Type/stage/IStageEvent";
 import type { IStageSensing } from "@Type/stage/IStageSensing";
 import type { IStageBackdrop } from "@Type/stage/IStageBackdrop";
+import { ISvgSkin } from "@Type/render/ISvgSkin";
+import { Timer } from "@Lib/utils/timer";
 
 export class Stage extends Entity implements IStage{
     protected _properties: StageProperties;
@@ -42,9 +44,6 @@ export class Stage extends Entity implements IStage{
     get Properties() {
         return this._properties;
     }
-    update() {
-        this._properties.update(); 
-    }
     get Backdrop(): IStageBackdrop {
         return this._backdrop;
     }
@@ -59,6 +58,43 @@ export class Stage extends Entity implements IStage{
     }
     get Sensing(): IStageSensing {
         return this._sensing;
+    }
+    async init() {
+        return new Promise<void>((resolve)=>{
+            const loadArr: Promise<void>[] = [];
+            for(const img of this._image.images){
+                loadArr.push(img.load());
+            }
+            for(const sndKey of this._sound.soundKeys){
+                const sound = this._sound.soundMap[sndKey];
+                loadArr.push(sound.load());
+            }
+            Promise.all(loadArr).then(async ()=>{                
+                // イメージごとに Skinを作る
+                let _canvasRemake :HTMLCanvasElement|undefined = undefined;
+                for(const img of this._image.images){
+                    const svgText = img.image;
+                    const skinId = this.render.renderer.createSVGSkin(svgText);
+                    if(_canvasRemake == undefined){
+                        _canvasRemake = document.createElement('canvas');
+                    }
+                    // willReadFrequently を設定するために SKINインスタンスを取り出し、
+                    // SVGSkinのコンストラクターで実施すみの下記【A】２行をやり直す。
+                    const _skin = this._render.renderer._allSkins[skinId];
+                    if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
+                    /*【A】*/const _svgSkin: ISvgSkin = _skin as ISvgSkin;
+                    /*【A】*/_svgSkin._canvas = _canvasRemake;
+                    /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
+                    await Timer.wait(0.1);
+                    img.skinId = skinId;
+                    this._backdrop.add(img);
+                }
+                resolve(); // 完了
+            });
+        })
+    }
+    update() {
+        this._properties.update(); 
     }
 
 }
