@@ -116,7 +116,9 @@ export class Playground {
             _s.update();
         }
         const stage = this._stage as Stage;
-        stage.init();
+        if(stage){
+            stage.init();
+        }
         threadManager.start();
     }
     get renderRate(): {x:number, y:number} {

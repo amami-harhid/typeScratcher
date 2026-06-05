@@ -10,15 +10,15 @@ import ArrowSvg from './assets/Arrow1-a.svg';
 import CatSvg from './assets/cat.svg';
 import CatWav from './assets/Cat.wav';
 import ChillWav from './assets/Chill.wav';
-import { IStage } from '@Type/stage';
+//import { IStage } from '@Type/stage';
 
 const appleImage = new TS.Image( {AppleSvg} ); 
 const arrowImage = new TS.Image( {ArrowSvg} ); 
 const catImage = new TS.Image( {CatSvg});
 const catSound = new TS.Sound({CatWav});
 const chillSound = new TS.Sound({ChillWav});
-const stage = new TS.Stage();
-stage.Sound.add([chillSound]);
+//const stage = new TS.Stage();
+//stage.Sound.add([chillSound]);
 const apple:ISprite = new TS.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound]);
@@ -56,13 +56,13 @@ apple.Event.flagPresser().func = async function*(this:ISprite){
         yield;
     }
 }
-stage.Event.flagPresser().func = async function*(this:IStage){
-    for(;;){
-        await this.Sound.play(chillSound);
-        await this.Sensing.askAndWait("aaaaa");
-        yield;
-    }
-}
+// stage.Event.flagPresser().func = async function*(this:IStage){
+//     for(;;){
+//         await this.Sound.play(chillSound);
+//         await this.Sensing.askAndWait("aaaaa");
+//         yield;
+//     }
+// }
 apple.Event.keyPresser("b").func = async function*(this:ISprite){
     for(;;){
         console.log('chillSound loop')

@@ -18,3 +18,9 @@ npm run webpack
 
 - npm adduser
 - npm publish
+
+# TODO
+
+## 全スレッドが終了したとき
+赤い停止マークを 半透明にする --> リリース予定 0.0.10 
+
