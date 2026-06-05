@@ -55,11 +55,12 @@ export class EntityEvent implements IEntityEvent{
      * @param func 
      */
     private _whenFlag(func: CallableFunction) : void {
+
         const threadObj = new ThreadObj(this.entity, DoubleRunning.TRUE);
         threadObj.setFunc(func);
         threadManager.registThread(threadObj);
         // 緑の旗がおされたときに「YIELD」にする、スレッドが実行されはじめる
-        playground.runtime.scratchEvent.once(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
+        playground.runtime.scratchEvent.on(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
             threadObj.status = ThreadStatus.YIELD;
         })
     }

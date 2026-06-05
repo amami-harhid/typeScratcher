@@ -2,9 +2,14 @@
  * IAudioEngin
  */
 import {EventEmitter} from 'events';
+import type { IAudioContext } from './IAudioContext';
 export interface IAudioEngine {
+    /** Effectチェーンを生成する */
     createEffectChain(): TEffectChain;
+    /** SoundPlayer をデコードする */
     decodeSoundPlayer(sound: {data: Uint8Array<ArrayBuffer>}): Promise<IScratchSoundPlayer>;
+    /** Audioコンテキスト */
+    readonly audioContext : IAudioContext;
 }
 export interface IScratchSoundPlayer extends EventEmitter {
     name: string;

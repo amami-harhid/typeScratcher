@@ -62,7 +62,7 @@ export class QuestionBoxElement extends EventEmitter {
             let stage_stage_overlays = document.getElementById(StageOverlays);
             for(;;){
                 if(me.forceComplete === true){
-                    QuestionBoxElement.removeAsk(entity);
+                    QuestionBoxElement.removeTargetAsk(entity);
                     break;
                 }
                 if(stage_stage_overlays == undefined) {
@@ -102,7 +102,7 @@ export class QuestionBoxElement extends EventEmitter {
         const result = await this.askWait(entity);
         // @ts-ignore : this.forceComplete is changed to true in askWait(). 
         if(result === false || this.forceComplete === true) {
-            QuestionBoxElement.removeAsk(entity);
+            QuestionBoxElement.removeTargetAsk(entity);
             return '';
         }
         const canvasDiv = document.getElementById(CanvasDiv);
@@ -188,7 +188,7 @@ export class QuestionBoxElement extends EventEmitter {
         return new Promise<string>(resolve=>{
             me.once(QuestionBoxElement.TextInputComplete, ()=>{
                 // 質問の枠を消す    
-                QuestionBoxElement.removeAsk(entity);
+                QuestionBoxElement.removeQuestionOverlay();
                 // 半角スページ入力抑止
                 keyboard.spaceStopPropagation = true;
                 // Promise を解決、入力文字列を戻す
@@ -196,20 +196,29 @@ export class QuestionBoxElement extends EventEmitter {
             })
         })
     }
-    /**
-     * 質問を消す
-     * @param entity {Entity}
-     */
-    static removeAsk(entity: IEntity) : void {
-        if( entity && QuestionBoxElement.isSprite(entity)){
-            // スプライトの場合、フキダシを消す
-            const sprite = entity as ISprite;
-            sprite.Looks.Bubble.say('');
+    static removeTargetAsk(entity: IEntity) {
+        if(QuestionBoxElement.isSprite(entity)) {
+            const s = entity as ISprite;
+            s.Looks.Bubble.say(""); // バブルを消す
         }
+        QuestionBoxElement.removeQuestionOverlay();
+
+    }
+    static removeQuestionOverlay() {
         const _stageOverlays = document.getElementById(StageOverlays);
         if(_stageOverlays){
             // 質問のDOMを削除する
             _stageOverlays.remove();
         }
+    }
+    /**
+     * 質問を消す
+     */
+    static removeAsk() : void {
+        const sprites = playground.getSprites();
+        for(const s of sprites) {
+            s.Looks.Bubble.say(""); // バブルを消す
+        }
+        QuestionBoxElement.removeQuestionOverlay();
     }
 };

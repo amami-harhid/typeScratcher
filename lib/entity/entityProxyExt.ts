@@ -2,6 +2,8 @@
  * EntityProxyExt
  */
 import { Threads } from '../controls/threads';
+import type { IEntity } from '@Type/entity/IEntity';
+import type { IEntityProxy } from '@Type/entity/IEntityProxy';
 /**
  * エンティティのプロキシ拡張
  */
@@ -23,13 +25,23 @@ export class EntityProxyExt {
 
     
     /** プロキシの定義 */
-    static getProxy(obj, callback) {
+    static getProxy(obj:IEntity, callback:CallableFunction): IEntityProxy {
 
         const proxy = new Proxy(obj, {
-            get(target, name, receiver) {
+            /**
+             * 
+             * @param target 元のオブジェクト
+             * @param name アクセスされたプロパティ名
+             * @param receiver プロキシまたは継承オブジェクト
+             * @returns 
+             */
+            get(target:IEntity, name: string, receiver:IEntity) {
                 // 実体がプロキシであるかをチェックする
                 if(name == EntityProxyExt.IS_PROXY_TEST){
                     return (_=>true);
+                }
+                if(name == 'entity') {
+                    return obj;
                 }
                 // スレッドＩＤを返す
                 if (name == EntityProxyExt.THREAD_ID) {
@@ -88,7 +100,14 @@ export class EntityProxyExt {
                 // @ts-ignore : ...arguments は任意のメソッドに対応させるため。 
                 return Reflect.get(...arguments);
             },
-            set(target, name, value) {
+            /**
+             * 
+             * @param target 元のオブジェクト
+             * @param name アクセスされたプロパティ名
+             * @param value セットする値
+             * @returns 
+             */
+            set(target:IEntity, name: string, value: any) {
                 // スレッドＩＤのセッター
                 if(name == EntityProxyExt.THREAD_ID){
                     // @ts-ignore : threadId は定義なしだがOK 
@@ -117,6 +136,6 @@ export class EntityProxyExt {
             }
         });
         
-        return proxy;
+        return proxy as IEntityProxy;
     }
 };

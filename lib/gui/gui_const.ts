@@ -11,6 +11,10 @@ export const GUI_CONST = {
     canvas_div_id: 'canvasDiv',
     canvas_div_class : 'likeScratch-canvas',
     stageCanvasWrapper: 'stageCanvasWrapper',
-
+    ControlStopMark:"stop-all_stop-all_pluqe",
+    ControlPauseMark : "pause-button",
+    Overlay: "scratch3-overlay",
+    Overlay_image: "scratch3-overlay-image",
+    Overlay_image_image: "scratch3-overlay-image-image",
     
 }

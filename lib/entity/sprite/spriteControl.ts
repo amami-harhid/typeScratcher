@@ -1,8 +1,12 @@
+import { IEntity } from '@Type/entity/IEntity';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
 import type { TEntityOptions } from '@Type/entity/TEntityOptions';
 import type { ISprite } from '@Type/sprite';
 import type { ISpriteControl } from '@Type/sprite/ISpriteControl';
+import { IEntityProxy } from '@Type/entity/IEntityProxy';
+import { playground } from '@Lib/vm/playground';
+import { threadManager } from '@Lib/controls/threads';
 /**
  * Sprite Control(制御)
  */
@@ -96,14 +100,14 @@ export class SpriteControl implements ISpriteControl {
     /**
      * このスクリプトを停止する
      */
-    stopThisScript() : void {
-        
+    stopThisScript(proxy:IEntityProxy) : void {
+        proxy.setStopThisScriptSwitch(true);
     }
     /**
      * このスプライトの他のスクリプトを停止する
      */
-    stopOtherScripts(proxy:ISprite) : void {
-
+    stopOtherScripts(proxy:IEntityProxy) : void {
+        threadManager.stopOtherScripts(proxy);
     }
 
 };

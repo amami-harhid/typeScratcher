@@ -1,3 +1,5 @@
+import type { IEntityProxy } from "./IEntityProxy";
+
 /**
  * Entity Control(制御)
  */
@@ -42,10 +44,10 @@ export interface IEntityControl {
     /**
      * このスクリプトを停止する
      */
-    stopThisScript() : void;
+    stopThisScript(proxy: IEntityProxy) : void;
     /**
      * このスプライトの他のスクリプトを停止する
      */
-    stopOtherScripts() : void;
+    stopOtherScripts(proxy: IEntityProxy) : void;
 
 };

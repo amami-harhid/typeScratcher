@@ -72,16 +72,40 @@ html, body{
     align-items: center;
     background: #e0ffff;
   }
+.scratch3-overlay {
+    position: absolute;
+    display:flex;
+    width:100%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50000;
+}
+.scratch3-overlay-image {
+    position: relative;
+    width:100%;
+    height:100%;
+    display:inline-block;
+    justify-content: center;
+}
+.scratch3-overlay-image-image {
+    width: 100%;
+    height:100%;
+}
 `,
     scratch3Header : `
 .scratch3Header {
-        position: fixed;
-        background-color: rgb(232, 237, 241);
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 5000;
-        width: 100%;
+    position: fixed;
+    background-color: rgb(232, 237, 241);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5000;
+    width: 100%;
   }
 .scratch3HeaderMenu {
     display: flex;
@@ -136,6 +160,14 @@ html, body{
     user-select: none;
     user-drag: none;
     cursor: pointer;
+}
+.pause-button.is-not-active {
+    opacity: 0.5;
+    filter:brightness(1.2);
+    transform:none;
+}
+.pause-button.is-active {
+    opacity: 1.0;
 }
 .stop-all_stop-all_pluqe {
     width: 2rem;

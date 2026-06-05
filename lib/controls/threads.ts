@@ -3,6 +3,7 @@
  */
 
 import { playground } from "@Lib/vm/playground";
+import { ScratchEvent } from "@Lib/vm/scratchEvent";
 import { Entity } from "@Lib/entity/entity";
 import type { TThreadObj } from "./TThreadObj";
 import { Utils } from "@Lib/utils/utils";
@@ -10,6 +11,9 @@ import { EntityProxyExt } from "@Lib/entity/entityProxyExt";
 import { FunctionChecker } from "@Lib/utils/functionChecker";
 import EventEmitter from "events";
 import type { IEntity } from "@Type/entity/IEntity";
+import type { IEntityProxy } from "@Type/entity/IEntityProxy";
+import { QuestionBoxElement } from "@Lib/gui/questionBoxElement";
+
 
 const INTERVAL = 1000/30;
 
@@ -58,7 +62,13 @@ class ThreadBank {
 
 
 export class ThreadManager {
-    private intervalId!: NodeJS.Timeout;
+    private intervalId!: NodeJS.Timeout | undefined;
+    private _pauser:boolean;
+    private _running:boolean;
+    constructor(){
+        this._pauser = false;
+        this._running = false;
+    }
     add(threadObj: ThreadObj) {
         ThreadBank.add(threadObj);
     }
@@ -68,11 +78,48 @@ export class ThreadManager {
     start() {
         if( this.intervalId != undefined) {
             clearInterval(this.intervalId);
+            this.intervalId = undefined;
         }
         this.intervalId = setInterval(this.interval, INTERVAL, this);
+        this._running = true;
+
+        // 一時停止イベント定義
+        const me = this;
+        const _scratchEvent = playground.runtime.scratchEvent;
+        const _runtime = playground.runtime;
+        const _pause = ()=>{
+            me._pauser = true;
+            if(_runtime.audioEngine){
+                const audioContext = _runtime.audioEngine.audioContext;
+                audioContext.suspend(); // 一時停止
+            }
+        }
+        _scratchEvent.on(ScratchEvent.PAUSE_CLICKED, _pause);
+        const _restart = () => {
+            me._pauser = false;
+            if(_runtime.audioEngine){
+                const audioContext = _runtime.audioEngine.audioContext;
+                audioContext.resume(); // 一時停止を再開
+            }
+        }
+        _scratchEvent.on(ScratchEvent.RESTART_CLICKED, _restart);
+        const _stop = () => {
+            if(me._running === true) { // pause中でも実行してよいとする
+                clearInterval(me.intervalId);
+                this.intervalId = undefined;
+                // フキダシ、質問欄表示中のときは消す
+                QuestionBoxElement.removeAsk();
+                // すべてのスレッドを停止する
+                this.stopAllScripts();
+                // TODO クローンを消す
+
+            }
+        }
+        _scratchEvent.on(ScratchEvent.STOP_CLICKED, _stop);
     }
     async interval(me: ThreadManager):Promise<void> {
         const newArr: ThreadObj[] = [];
+        if(me._pauser === true) return; // PAUSE中はスレッドを実行しない
         for(const thread of ThreadBank.threadArr){
             if(thread.status == ThreadStatus.YIELD) {
                 thread.next();
@@ -96,8 +143,59 @@ export class ThreadManager {
             ThreadBank.threadArr.concat(newArr);
         }
     }
+    stopThisScript(proxy: IEntityProxy) :void {
+        const ownEntityID = proxy.id;
+        for(const thread of ThreadBank.threadArr){
+            const entityID = thread.entityId;
+            if(entityID == ownEntityID){
+                const _proxy = thread.proxy;
+                if(_proxy){
+                    if(proxy.threadId == _proxy.threadId){
+                        proxy.setStopThisScriptSwitch(true);
+                        this.stopSounds(_proxy);
+                    }
+                }
+            }
+        }
 
-
+    }
+    stopOtherScripts(proxy: IEntityProxy) : void {
+        const ownEntityID = proxy.id;
+        for(const thread of ThreadBank.threadArr){
+            const entityID = thread.entityId;
+            if(entityID == ownEntityID){
+                const _proxy = thread.proxy;
+                if(_proxy){
+                    if(proxy.threadId != _proxy.threadId) {
+                        _proxy.setStopThisScriptSwitch(true);
+                        this.stopSounds(_proxy);
+                    }
+                }
+            }
+        }
+    }
+    
+    stopAllScripts() : void {
+        for(const thread of ThreadBank.threadArr){
+            const _proxy = thread.proxy;
+            if(_proxy){
+                _proxy.setStopThisScriptSwitch(true);
+                this.stopSounds(_proxy);
+            }
+        }
+    }
+    stopSounds(proxy:IEntityProxy) {
+        const entity = proxy.entity;
+        // ステージ音がなっているときは止める
+        const sounds = entity.Sound.soundMap;
+        const soundKeys = entity.Sound.soundKeys;
+        for(const key of soundKeys){
+            const sound = sounds[key];
+            if(sound.isPlaying === true){
+                sound.stopImmediately();
+            }
+        }
+    }
     registThread( thread: ThreadObj ) : void{
         ThreadBank.add(thread);
     }
@@ -108,7 +206,8 @@ export class ThreadObj extends EventEmitter{
     private _originalF!: CallableFunction;
     public done: boolean = false; 
     public status: ThreadStatus = ThreadStatus.NONE;
-    private _entity: IEntity|null = null;
+    private _entity: IEntity;
+    private _proxy: IEntityProxy;
     public threadId: string|null = null;
     public entityId: string;;
     // public childObj: ThreadObj|null = null; 
@@ -117,12 +216,13 @@ export class ThreadObj extends EventEmitter{
     private _isStarted: boolean = false;
     constructor(entity:IEntity, doubleRunable=false) {
         super();
+        this._entity = entity;
         this.threadId = Utils.generateUUID();
         const proxy = EntityProxyExt.getProxy(entity, _=>{
             throw "NOT FOUND PROPERTY in TARGET";
         });
         proxy.threadId = this.threadId;
-        this._entity = proxy;
+        this._proxy = proxy;
         this.entityId = entity.id;
         this._doubleRunable = doubleRunable;
     }
@@ -138,15 +238,15 @@ export class ThreadObj extends EventEmitter{
             throw "イベントで宣言する関数は async をつけてください。";
         }
         if(functionDeclareType.isGenerator){
-            const _func = func.bind(this._entity);
+            const _func = func.bind(this._proxy);
             const _func2 = _func(...args);
             const _f = async function* <T>(...args:T[]){
                 try{
                     yield *_func2; // generator()
                 }catch(e){
-                    if(e!== Threads.THROW_STOP_THIS_SCRIPTS){
-                        console.log(e);
-                    }
+                    if(e== Threads.THROW_STOP_THIS_SCRIPTS){
+                        return;
+                    }                    
                     throw e;
                 }
             }
@@ -159,6 +259,9 @@ export class ThreadObj extends EventEmitter{
     }
     get entity() {
         return this._entity;
+    }
+    get proxy() {
+        return this._proxy;
     }
     get originalF() {
         return this._originalF;
@@ -174,23 +277,40 @@ export class ThreadObj extends EventEmitter{
     }
     public forceExit() {
         this.status = ThreadStatus.STOP;
-        this._entity?.Sound.stopImmediately();
+        this._proxy?.Sound.stopImmediately();
 
     }
     public async next() {
         const me = this;
         me._isStarted = true; // 実行開始済
         me.status = ThreadStatus.RUNNING;
-        this._generatorfunc.next().then((value: IteratorResult<any, void>)=>{
-            me.done = value.done || false;
-            if(me.done === true){
+        try{
+            const next = this._generatorfunc.next();
+            next.then((value: IteratorResult<any, void>)=>{
+                me.done = value.done || false;
+                if(me.done === true){
+                    me.status = ThreadStatus.STOP;
+                }else{
+                    me.status = ThreadStatus.YIELD;
+                }
+            }).catch(e=>{
+                console.log('[1]=====================')
                 me.status = ThreadStatus.STOP;
-            }else{
-                me.status = ThreadStatus.YIELD;
-            }
-        }).catch(e=>{
+                me._proxy?.Sound.stopImmediately();
+                if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
+                    // throwせず
+                    console.log("next() CATCH", e)
+                }else{
+                    const f= me._originalF;
+                    console.error(e);
+                    console.error(f.toString());
+                    throw e;
+                }
+            });
+        }catch(e){
+            console.log('[2]=====================')
             me.status = ThreadStatus.STOP;
-            me._entity?.Sound.stopImmediately();
+            me._proxy?.Sound.stopImmediately();
             if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
                 // throwせず
                 console.log("next() CATCH", e)
@@ -200,6 +320,27 @@ export class ThreadObj extends EventEmitter{
                 console.error(f.toString());
                 throw e;
             }
-        });
+        };
+        // this._generatorfunc.next().then((value: IteratorResult<any, void>)=>{
+        //     me.done = value.done || false;
+        //     if(me.done === true){
+        //         me.status = ThreadStatus.STOP;
+        //     }else{
+        //         me.status = ThreadStatus.YIELD;
+        //     }
+        // }).catch(e=>{
+        //     console.log('=====================')
+        //     me.status = ThreadStatus.STOP;
+        //     me._entity?.Sound.stopImmediately();
+        //     if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
+        //         // throwせず
+        //         console.log("next() CATCH", e)
+        //     }else{
+        //         const f= me._originalF;
+        //         console.error(e);
+        //         console.error(f.toString());
+        //         throw e;
+        //     }
+        // });
     }
 }
