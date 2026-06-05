@@ -277,38 +277,21 @@ export class ThreadObj extends EventEmitter{
     }
     public forceExit() {
         this.status = ThreadStatus.STOP;
-        this._proxy?.Sound.stopImmediately();
+        this._proxy.Sound.stopImmediately();
 
     }
     public async next() {
         const me = this;
         me._isStarted = true; // 実行開始済
         me.status = ThreadStatus.RUNNING;
-        try{
-            const next = this._generatorfunc.next();
-            next.then((value: IteratorResult<any, void>)=>{
-                me.done = value.done || false;
-                if(me.done === true){
-                    me.status = ThreadStatus.STOP;
-                }else{
-                    me.status = ThreadStatus.YIELD;
-                }
-            }).catch(e=>{
-                console.log('[1]=====================')
+        this._generatorfunc.next().then((value: IteratorResult<any, void>)=>{
+            me.done = value.done || false;
+            if(me.done === true){
                 me.status = ThreadStatus.STOP;
-                me._proxy?.Sound.stopImmediately();
-                if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
-                    // throwせず
-                    console.log("next() CATCH", e)
-                }else{
-                    const f= me._originalF;
-                    console.error(e);
-                    console.error(f.toString());
-                    throw e;
-                }
-            });
-        }catch(e){
-            console.log('[2]=====================')
+            }else{
+                me.status = ThreadStatus.YIELD;
+            }
+        }).catch(e=>{
             me.status = ThreadStatus.STOP;
             me._proxy?.Sound.stopImmediately();
             if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
@@ -320,27 +303,6 @@ export class ThreadObj extends EventEmitter{
                 console.error(f.toString());
                 throw e;
             }
-        };
-        // this._generatorfunc.next().then((value: IteratorResult<any, void>)=>{
-        //     me.done = value.done || false;
-        //     if(me.done === true){
-        //         me.status = ThreadStatus.STOP;
-        //     }else{
-        //         me.status = ThreadStatus.YIELD;
-        //     }
-        // }).catch(e=>{
-        //     console.log('=====================')
-        //     me.status = ThreadStatus.STOP;
-        //     me._entity?.Sound.stopImmediately();
-        //     if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
-        //         // throwせず
-        //         console.log("next() CATCH", e)
-        //     }else{
-        //         const f= me._originalF;
-        //         console.error(e);
-        //         console.error(f.toString());
-        //         throw e;
-        //     }
-        // });
+        });
     }
 }

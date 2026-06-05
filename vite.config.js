@@ -52,8 +52,8 @@ export default defineConfig({
         viteStaticCopy({
             targets: [
                 {
-                    src: "./CNAME",
-                    dest: "./", // <--- outDir の下
+                    src: resolve(__dirname, './CNAME'),
+                    dest: resolve(__dirname, 'dist/'),
                 },
             ],
         }),
