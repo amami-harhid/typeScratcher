@@ -2,7 +2,7 @@
  * Render
  */
 import type { IRenderWebGL } from './IRenderWebGL';
-import { StageLayering } from '../entity/stage/CStageLayering';
+import type { StageLayeringValue } from '../entity/stage/CStageLayering';
 
 export type TRender = {
     /**
@@ -50,7 +50,7 @@ export interface IRender {
      * @param layer {StageLayering} - layer name
      * @returns {number} - drawableID.
      */
-    createDrawable(layer: StageLayering) : number;
+    createDrawable(layer: StageLayeringValue) : number;
     /**
      * Rendererを取得する
      */

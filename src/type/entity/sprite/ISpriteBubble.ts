@@ -1,4 +1,4 @@
-import type { BubbleProperties } from '@Type/sprite/TBubble';
+import type { BubbleProperties } from '../TBubble';
 
 /** 吹き出し */
 export interface ISpriteBubble {
@@ -30,5 +30,8 @@ export interface ISpriteBubble {
      * @param properties {BubbleProperties}
      */
     thinkForSecs(text: string, sec: number, properties?: BubbleProperties): Promise<void>;
-
+    /**
+     * 位置情報などを更新する
+     */
+    update(): void;
 }

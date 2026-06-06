@@ -1,6 +1,5 @@
-//import { typeScratcher as TS } from '../VM';
-import { Typescratcher as TS } from '@Lib';
-import type { ISprite } from '@Type/sprite';
+import { Typescratcher as TS } from '../index';
+import type { Sprite, Stage } from '../index';
 
 //import AppleSvg from './assets/Apple.svg';
 // 外部パス(https://など)を import xxx from '外部パス'; は
@@ -17,15 +16,15 @@ const arrowImage = new TS.Image( {ArrowSvg} );
 const catImage = new TS.Image( {CatSvg});
 const catSound = new TS.Sound({CatWav});
 const chillSound = new TS.Sound({ChillWav});
-//const stage = new TS.Stage();
-//stage.Sound.add([chillSound]);
-const apple:ISprite = new TS.Sprite('apple');
+const stage = new TS.Stage();
+stage.Sound.add([chillSound]);
+const apple = new TS.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound]);
 apple.Looks.Size.scale = {w: 100, h:100};
 apple.Motion.Direction.degree = 45;
 apple.Motion.Rotation.style = TS.Rotation.LEFT_RIGHT;
-apple.Motion.Position.xy = {x:0, y:0};
+apple.Motion.Position.xy = [0,0];
 
 // TODO
 // ここでAUDIO関連の設定を可能にしたい。警告を出さずに。
@@ -38,40 +37,30 @@ apple.Sound.setPitch(chillSound, 1.0);
 apple.Sound.setVolume(catSound, 10);
 
 
-apple.Event.flagPresser().func = async function*(this: ISprite) {
-    for(;;) {
-        const degree = Math.floor(this.Motion.Direction.degree);
-        if(degree == 90) {
-            this.Sound.play(catSound);
-            apple.Sound.addVolume(catSound, 5);
-            apple.Sound.addPitch(catSound, 0.05);
-        }        
+apple.Event.flagPresser().func = async function*(this: Sprite) {
+    this.Motion.Position.xy = [0,0];
+    for(;;){
+        this.Sound.play(catSound);
+        this.Sound.addVolume(catSound, 0.5);
+        this.Sound.addPitch(catSound, 0.005);
+        await TS.Timer.wait(1);
         yield;
     }
 }
-apple.Event.flagPresser().func = async function*(this:ISprite){
+apple.Event.flagPresser().func = async function*(this: Sprite){
     for(;;){
         this.Motion.Move.steps(10);
         this.Motion.Move.ifOnEdgeBounce();
         yield;
     }
 }
-// stage.Event.flagPresser().func = async function*(this:IStage){
-//     for(;;){
-//         await this.Sound.play(chillSound);
-//         await this.Sensing.askAndWait("aaaaa");
-//         yield;
-//     }
-// }
-apple.Event.keyPresser("b").func = async function*(this:ISprite){
+stage.Event.flagPresser().func = async function*(this: Stage){
     for(;;){
-        console.log('chillSound loop')
         await this.Sound.play(chillSound);
-        await this.Sensing.askAndWait("aaaaa");
         yield;
     }
 }
-apple.Event.keyPresser("c").func = async function*(this:ISprite){
+apple.Event.keyPresser("a").func = async function*(this: Sprite){
     for(;;){
         apple.Sound.addVolume(chillSound, 1);
         apple.Sound.addPitch(chillSound, 0.05);
@@ -79,7 +68,7 @@ apple.Event.keyPresser("c").func = async function*(this:ISprite){
         yield;
     }
 }
-apple.Event.keyPresser("d").func = async function*(this:ISprite){
+apple.Event.keyPresser("b").func = async function*(this: Sprite){
     this.Motion.Direction.degree = 90;
     let counter = 0;
     let steps = 1;
@@ -97,20 +86,28 @@ apple.Event.keyPresser("d").func = async function*(this:ISprite){
         yield;
     }
 }
-apple.Event.keyPresser("e").func = async function*(this:ISprite){
+apple.Event.keyPresser("c").func = async function*(this: Sprite){
     for(;;){
         const answer = await this.Sensing.askAndWait("質問をするよ");
-        console.log(`answer=${answer}`);
+        console.log(answer);
+        if(answer == 'y') {
+            break;
+        }
         yield;
     }
 }
-apple.Event.keyPresser(TS.KEYBOARD_KEYS.SPACE).func = async function*(this:ISprite){
-    const steps = 1;
+stage.Event.keyPresser("d").func = async function*(this: Stage){
     for(;;){
-        this.Motion.Move.steps(steps);
-        this.Motion.Move.ifOnEdgeBounce();
+        const answer = await this.Sensing.askAndWait("ステージが質問をするよ");
+        console.log(answer);
+        if(answer == 'y') {
+            break;
+        }
         yield;
     }
+}
+apple.Event.keyPresser(TS.KEYBOARD_KEYS.SPACE).func = async function*(this: Sprite){
+    this.Control.stopAll();
 }
 
 TS.playground.start();

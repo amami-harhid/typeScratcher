@@ -1,5 +1,5 @@
-import type { IPenSpriteSize } from '@Type/sprite/pen/IPenSpriteSize';
-import type { IPenSpriteHSVColor } from '@Type/sprite/pen/IPenSpriteHSVColor';
+import type { IPenSpriteSize } from './pen/IPenSpriteSize';
+import type { IPenSpriteHSVColor } from './pen/IPenSpriteHSVColor';
 /** 
  * SpritePen 
  */

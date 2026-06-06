@@ -1,5 +1,5 @@
 {
-  "include": ["test/**/*.ts", "src/**/*.ts"],
+  "include": ["test/**/*.ts", "src/**/*.ts", "version.ts", "index.ts"],
   "exclude": ["./node_modules/*"],
   "compilerOptions": {
     "target": "esnext",         /* es2018,es2019,es2020,esnext が適している */
@@ -9,7 +9,7 @@
     "types": ["node"],
     "baseUrl": "./",
     "paths": {
-      "@Type/*": ["./Type/*"],
+      "@Type/*": ["src/type/*"],
       "@Lib/*": ["src/*"],
     },
     "sourceMap": true,
@@ -19,6 +19,9 @@
     "strict": true,
     "noImplicitAny": false,     /* 暗黙的な「any」型を許可。 */
     "noImplicitThis": true,     /* 暗黙的なthisの型推定を「禁止」。 */
-    "skipLibCheck": true        /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,       /* Skip type checking all .d.ts files. */
+
+    "resolveJsonModule": true
   }
+
 }

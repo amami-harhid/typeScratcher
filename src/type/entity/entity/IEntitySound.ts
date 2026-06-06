@@ -1,4 +1,4 @@
-import { type ISound } from "@Type/sound/ISound";
+import { type ISound } from "../../sound";
 /** イベント */
 export interface IEntitySound {
     /** 音の名前のリスト */

@@ -1,6 +1,6 @@
 /** 背景 */
-import type { IEntityBackdrop } from "@Type/entity/IEntityBackdrop";
-import type { IImage } from "@Type/image/IImage";
+import type { IEntityBackdrop } from "../entity/IEntityBackdrop";
+import type { IImage } from "../../image";
 /**
  * StageBackdrop
  */

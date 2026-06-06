@@ -1,4 +1,4 @@
-import type { IEntityControl } from "@Type/entity/IEntityControl";
+import type { IEntityControl } from "../entity/IEntityControl";
 
 /**
  * Sprite Control(制御)

@@ -11,4 +11,4 @@ export const KEYBOARD_KEYS = {
     ESCAPE : 'Escape',
 } as const;
 
-export type TKEYBOARD_KEYS = typeof KEYBOARD_KEYS;
+export type KEYBOARD_KEYS_Type = typeof KEYBOARD_KEYS;

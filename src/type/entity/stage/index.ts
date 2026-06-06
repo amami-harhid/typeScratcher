@@ -28,7 +28,9 @@ export interface IStage extends IEntity {
     //  * @param sprite 
     //  */
     // removeSprite ( sprite: ISprite ): void;
-    // update(): void;
+    
+    /** プロパティなどを反映させる */
+    update(): void;
     // draw(): void;
     readonly Properties: IStageProperties;
     /**

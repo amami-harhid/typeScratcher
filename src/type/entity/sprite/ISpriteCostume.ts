@@ -1,4 +1,4 @@
-import type { IImage } from "@Type/image/IImage";
+import type { IImage } from "../../image";
 
 /** コスチューム */
 export interface ISpriteCostume {

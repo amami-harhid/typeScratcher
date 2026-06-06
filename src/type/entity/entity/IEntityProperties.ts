@@ -1,4 +1,4 @@
-import { ScratchRenderProperties } from "@Type/render/IRenderWebGL";
+import { ScratchRenderProperties } from "../../render/IRenderWebGL";
 import type { RotationValue } from "../RotationStyle";
 
 /** 座標 */

@@ -1,6 +1,6 @@
 {
   "name": "@tscratch3/typescratcher",
-  "version": "0.0.10",
+  "version": "0.0.15",
   "description": "TypeScript library that generates Scratch 3-style drawings",
   "repository": {
     "type": "git",
@@ -10,12 +10,14 @@
     "access": "public"
   },
   "files": [
+    "index.ts",
+    "version.ts",
     "src",
     "eslint-plugin"
   ],
   "author": "amami-harhid",
   "license": "AGPL-3.0-only",
-  "main": "./src.",
+  "main": "./index.ts",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
