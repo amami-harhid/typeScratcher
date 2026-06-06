@@ -2,7 +2,7 @@
  * ImageBank
  */
 import { Loader } from "../loader/loader";
-import type { IImage } from "@Type/image/IImage";
+import type { IImage } from "../type/image/IImage";
 export class ImageBank {
 
     private static _images: IImage[] = [];

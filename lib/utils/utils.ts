@@ -1,7 +1,7 @@
 /**
  * Utils
  */
-import { TPosition } from "@Type/common/typeCommon";
+import { TPosition } from "../type/common/typeCommon";
 import { Entity } from "../entity/entity";
 
 export class Utils {

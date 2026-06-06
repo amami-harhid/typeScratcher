@@ -1,6 +1,6 @@
-import type { IStage } from '@Type/stage';
-import type { IStageBackdrop } from '@Type/stage/IStageBackdrop';
-import type { IImage } from '@Type/image/IImage';
+import type { IStage } from '../../type/stage';
+import type { IStageBackdrop } from '../../type/stage/IStageBackdrop';
+import type { IImage } from '../../type/image/IImage';
 
 /** サイズ */
 export class StageBackdrop implements IStageBackdrop {

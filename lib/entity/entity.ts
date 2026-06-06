@@ -2,17 +2,17 @@
  * Entity
  */
 import { EventEmitter } from "events";
-import { Image } from "@Lib/image/image";
-import { playground } from "@Lib/vm/playground";
-import { Renderer } from "@Lib/render/renderer";
-import { StageLayering } from '@Type/stage/CStageLayering';
-import { Utils } from "@Lib/utils/utils";
-import { EntityImage } from "@Lib/entity/entity/entityImage";
-import type { IEntityImage } from "@Type/entity/IEntityImage";
-import { EntitySound } from "@Lib/entity/entity/entitySound";
-import type { IEntitySound } from "@Type/entity/IEntitySound";
-import type { TMouse } from "@Type/mouse";
-import type { IEntity } from "@Type/entity/IEntity";
+import { Image } from "../image/image";
+import { playground } from "../vm/playground";
+import { Renderer } from "../render/renderer";
+import { type StageLayeringValue } from '../type/stage/CStageLayering';
+import { Utils } from "../utils/utils";
+import { EntityImage } from "../entity/entity/entityImage";
+import type { IEntityImage } from "../type/entity/IEntityImage";
+import { EntitySound } from "../entity/entity/entitySound";
+import type { IEntitySound } from "../type/entity/IEntitySound";
+import type { TMouse } from "../type/mouse";
+import type { IEntity } from "../type/entity/IEntity";
 
 export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
@@ -36,7 +36,7 @@ export class Entity extends EventEmitter implements IEntity{
         this._mouse = playground.mouse;
         this._isSprite = false;
     }
-    createDrawable(layer: StageLayering) {
+    createDrawable(layer: StageLayeringValue) {
         this.drawableID = this._render.createDrawable(layer);
     }
     update():void {

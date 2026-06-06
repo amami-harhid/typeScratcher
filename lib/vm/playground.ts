@@ -1,16 +1,16 @@
-/**
- * PlayGround
- */
 import { Renderer } from "../render/renderer";
 import { threadManager } from "../controls/threads";
 import { Runtime } from "./runtime";
 import { Sprite } from "../entity/sprite";
 import { Stage } from "../entity/stage";
 import { Element } from "../gui/element";
-import type { ISprite } from "@Type/sprite";
-import type { TMouse } from "@Type/mouse";
-import { IStage } from "@Type/stage";
+import type { ISprite } from "../type/sprite";
+import type { TMouse } from "../type/mouse";
+import { IStage } from "../type/stage";
 
+/**
+ * PlayGround
+ */
 export class Playground {
     private _renderer!: Renderer;
     private _runtime: Runtime;

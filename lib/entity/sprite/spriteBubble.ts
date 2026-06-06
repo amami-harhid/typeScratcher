@@ -1,8 +1,8 @@
 import { Bubble } from './bubble';
-import type { BubbleProperties } from '@Type/sprite/TBubble';
-import type { ISpriteBubble } from '@Type/sprite/ISpriteBubble';
-import { ISprite } from '@Type/sprite';
-import { Timer } from '@Lib/utils/timer';
+import { Timer } from '../../utils/timer';
+import type { BubbleProperties } from '../../type/sprite/TBubble';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteBubble } from '../../type/sprite/ISpriteBubble';
 /** 吹き出し */
 export class SpriteBubble implements ISpriteBubble{
 

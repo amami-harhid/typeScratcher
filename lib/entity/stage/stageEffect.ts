@@ -1,6 +1,6 @@
 import { EntityEffect } from '../entity/entityEffect';
-import { IStageEffect } from '@Type/stage/IStageEffect';
-import type { IStage } from '@Type/stage';
+import { IStageEffect } from '../../type/stage/IStageEffect';
+import type { IStage } from '../../type/stage';
 
 /** 効果 */
 export class StageEffect extends EntityEffect implements IStageEffect{

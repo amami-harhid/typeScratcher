@@ -21,14 +21,31 @@ npm run webpack
 
 # TODO
 
+# 緑の旗を連続でクリック
+以前のスレッドと並行動作する
+
 ## 全スレッドが終了したとき
 赤い停止マークを 半透明にする --> リリース予定 0.0.10 
 
-## 緑の旗を連続クリック
-旗をクリックされたときのイベントを停止したうえで
-旗をクリックされたときのイベントを最初から実行
+## TSソースをPUBLISH
+libフォルダーのなかにindex.tsをつくる
 
-## 停止ボタンをクリック後の旗クリック
-旗をクリックされたときのイベントを最初から実行
-～停止ボタンでインターバル実行が停止しているかも
-～繰返しが停止していたら再度繰返しタイマーを起動
+## Sprite/StageをEntity内に入れる
+
+## Typeフォルダー内をlib階層に合わせる
+
+## index.ts のexport
+
+```
+export const Typescratcher = {
+    Sprite,
+    Stage,
+    Image,
+    Sound,
+    Rotation,
+    KEYBOARD_KEYS,
+    Timer,
+    Playground,
+    playground,
+}
+```

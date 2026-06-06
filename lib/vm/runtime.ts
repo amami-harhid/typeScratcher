@@ -5,7 +5,7 @@ import { EventEmitter } from 'events';
 import { ScratchEvent } from './scratchEvent';
 import { default as AudioEngine} from "scratch-audio";
 import { Keyboard } from './keyboad';
-import type { IAudioEngine } from '@Type/sound/IAudioEngine';
+import type { IAudioEngine } from '../type/sound/IAudioEngine';
 declare type IODEVICES = {
     keyboard: Keyboard,
 }

@@ -1,7 +1,7 @@
-import { StageLayering } from '../../../Type/stage/CStageLayering';
+import { StageLayering } from '../../type/stage/CStageLayering';
 import { playground } from '../../vm/playground';
 import { Element } from '../../gui/element';
-import type { ISprite } from '@Type/sprite';
+import type { ISprite } from '../../type/sprite';
 /**
  * DragSprite
  */

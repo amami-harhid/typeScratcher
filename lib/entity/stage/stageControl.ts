@@ -1,6 +1,6 @@
 import { Timer } from '../../utils/timer';
 import * as Wait from '../../utils/wait';
-import type { IStage } from '@Type/stage';
+import type { IStage } from '../../type/stage';
 /**
  * Stage Control(制御)
  */

@@ -1,5 +1,5 @@
-import type { IStage } from '@Type/stage';
-import type { IStageFont } from '@Type/stage/IStageFont';
+import type { IStage } from '../../type/stage';
+import type { IStageFont } from '../../type/stage/IStageFont';
 /**
  * StageFont
  */

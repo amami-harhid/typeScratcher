@@ -1,5 +1,5 @@
 const { NowLoadingSVG } = await import(/* webpackMode: "eager" */ './nowLoading');
-import type { TS3CSS } from '@Type/elements/IS3Element';
+import type { TS3CSS } from '../type/elements/IS3Element';
 
 export const insertCss = (css: TS3CSS) => {
     const style = document.createElement('style');

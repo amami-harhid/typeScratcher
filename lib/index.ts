@@ -34,15 +34,15 @@ import 'regenerator-runtime';
 import 'core-js';
 import { Version } from './version';
 
-import { Sprite } from '../lib/entity/sprite';
-import { Stage } from '../lib/entity/stage';
-import { Image } from '../lib/image/image';
-import { Sound } from '../lib/sounds/sound';
-import { Rotation } from '../Type/entity/RotationStyle';
-import { KEYBOARD_KEYS } from '../Type/vm/keyboad';
-import { Timer } from '../lib/utils/timer';
-import * as GUI from '../lib/gui/gui';
-import { Playground, playground } from '../lib/vm/playground';
+import { Sprite } from './entity/sprite';
+import { Stage } from './entity/stage';
+import { Image } from './image/image';
+import { Sound } from './sounds/sound';
+import { Rotation } from '../lib/type/entity/RotationStyle';
+import { KEYBOARD_KEYS } from '../lib/type/vm/keyboad';
+import { Timer } from './utils/timer';
+import * as GUI from './gui/gui';
+import { Playground, playground } from './vm/playground';
 
 const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');
 window.Buffer = window.Buffer || Buffer
@@ -57,7 +57,7 @@ const Initialize = async function() {
 
 await Initialize();
 
-export const VM = {
+export const Typescratcher = {
     Sprite:Sprite,
     Stage:Stage,
     Image:Image,

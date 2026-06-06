@@ -1,8 +1,8 @@
 /**
  * Stage
  */
-import type { IEntity } from '@Type/entity/IEntity';
-import type { TEntityOptions } from '@Type/entity/TEntityOptions';
+import type { IEntity } from '../entity/IEntity';
+import type { TEntityOptions } from '../entity/TEntityOptions';
 import type { IStageLooks } from './IStageLooks';
 import type { IStageControl } from './IStageControl';
 import type { IStageSensing } from './IStageSensing';

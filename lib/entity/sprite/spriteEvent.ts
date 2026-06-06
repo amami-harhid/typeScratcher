@@ -1,6 +1,5 @@
 import { EntityEvent } from '../entity/entityEvent';
-import { Entity } from '../entity';
-import type { ISprite } from '@Type/sprite';
+import type { ISprite } from '../../type/sprite';
 /**
  * Sprite Event(イベント)
  */

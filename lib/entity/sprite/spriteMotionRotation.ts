@@ -1,7 +1,10 @@
-import type { RotationValue } from '@Type/entity/RotationStyle';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteMotionRotation } from '@Type/sprite/ISpriteMotionRotation';
+import type { RotationValue } from '../../type/entity/RotationStyle';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteMotionRotation } from '../../type/sprite/ISpriteMotionRotation';
 
+/**
+ * SpriteMotionRotation
+ */
 export class SpriteMotionRotation implements ISpriteMotionRotation{
     private entity: ISprite;
     /**

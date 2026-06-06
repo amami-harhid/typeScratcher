@@ -1,7 +1,6 @@
-import { Sprite } from '../sprite';
 import { playground } from '../../vm/playground';
-import type { ISprite } from '@Type/sprite';
-import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
+import type { ISprite } from '../../type/sprite';
+import type { IEntitySensingKey } from '../../type/entity/IEntitySensingKey';
 /**
  * Sprite Sensing(調べる) Key
  */

@@ -1,13 +1,12 @@
-import type { ISvgText, TAddOption } from '@Type/svgText/ISvgText';
-import { Entity } from '../entity';
-import { Sprite } from '../sprite';
-import { Stage } from '../stage';
+import { Sprite } from '../entity/sprite';
+import { Stage } from '../entity/stage';
 import { SvgTextError } from './svgTextError';
 import { SvgTextCreator } from './svgTextCreator';
 import { SvgTextMesure } from './svgTexMesure';
-import type { ISvgTextCreator, TSvgOption, TSvgOptionFont } from '@Type/svgText/ISvgTextCreator';
-import type { ISvgTextMesure } from '@Type/svgText/ISvgTextMesure';
-import type { IEntity } from '@Type/entity/IEntity';
+import type { ISvgText, TAddOption } from '../type/svgText/ISvgText';
+import type { ISvgTextCreator, TSvgOption, TSvgOptionFont } from '../type/svgText/ISvgTextCreator';
+import type { ISvgTextMesure } from '../type/svgText/ISvgTextMesure';
+import type { IEntity } from '../type/entity/IEntity';
 
 
 

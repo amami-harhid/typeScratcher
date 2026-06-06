@@ -1,9 +1,9 @@
-import { StageLayering } from '../stage/CStageLayering';
-import { S3MonitorSkin } from '../monitors/s3MonitorSkin';
-import type { IPenAttribues } from '../entity/pen/IPenAttributes';
+import type { StageLayeringValue } from '../stage/CStageLayering';
+import type { IMonitorSkin } from '../monitors/IMonitorSkin';
+import type { TPenAttributes } from '../pen';
 import type { ISkin } from './ISkin';
 import type { IDrawable } from './IDrawable';
-import type { TBounds, TPosition, TPositionArray, TScaleCanEmpty, TSizeXY } from '../common/typeCommon';
+import type { TBounds, TPosition, TPositionArray, TScaleArr, TScaleCanEmpty, TSizeXY } from '../common/typeCommon';
 import type { RGBColorArray } from '../util/cast';
 
 export declare type ScratchRenderProperties = {
@@ -30,7 +30,7 @@ export declare interface IRenderWebGL {
      * @param costumeResolution {number} - The resolution to use for this bitmap
      * @param rotationCenter {TPositionArray} - rotation center of the skin
      */
-    createBitmapSkin(bitmapData: HTMLImageElement, costumeResolution?:number, rotationCenter?:TPositionArray): nubmer;
+    createBitmapSkin(bitmapData: HTMLImageElement, costumeResolution?:number, rotationCenter?:TPositionArray): number;
     /**
      * Create a new PenSkin - a skin which implements a Scratch pen layer.
      */
@@ -73,14 +73,14 @@ export declare interface IRenderWebGL {
      * モニター用スキンを取得する
      * @param skinId {number}
      */
-    getS3Skin(skinId:number): S3MonitorSkin;
+    getS3Skin(skinId:number): IMonitorSkin;
     
     /**
      * Drawableを作成する
-     * @param group {StageLayering}
+     * @param group {StageLayeringValue}
      * @returns {number} - drawableID
      */
-    createDrawable(group: StageLayering): number;
+    createDrawable(group: StageLayeringValue): number;
     /**
      * 
      * @param type {string} - "say" or "think"
@@ -92,9 +92,9 @@ export declare interface IRenderWebGL {
     /**
      * 
      * @param drawableID {number} - drawable id
-     * @param group {StageLayering} - Group name that the drawable belongs to.
+     * @param group {StageLayeringValue} - Group name that the drawable belongs to.
      */
-    destroyDrawable(drawableID: number, group: StageLayering): void;
+    destroyDrawable(drawableID: number, group: StageLayeringValue): void;
     /**
      * Destroy an existing skin. 
      * Do not use the skin or its ID after calling this.
@@ -139,7 +139,7 @@ export declare interface IRenderWebGL {
      * @param x1 {number} - the X coordinate of the end of the line.
      * @param y1 {number} - the Y coordinate of the end of the line.
      */
-    penLine (penSkinID: number, penAttributes: IPenAttribues, x0:number, y0:number, x1:number, y1:number): void;
+    penLine (penSkinID: number, penAttributes: TPenAttributes, x0:number, y0:number, x1:number, y1:number): void;
     /**
      * Draw a point on a pen layer.
      * @param penSkinID {number} - the unique ID of a Pen Skin.
@@ -147,7 +147,7 @@ export declare interface IRenderWebGL {
      * @param x {number} - the X coordinate of the point to draw.
      * @param y {number} - the Y coordinate of the point to draw.
      */
-    penPoint (penSkinID: number, penAttributes: IPenAttribues, x:number, y:number): void;
+    penPoint (penSkinID: number, penAttributes: TPenAttributes, x:number, y:number): void;
     /**
      * Stamp a Drawable onto a pen layer.
      * @param penSkinID {number} - the unique ID of a Pen Skin.
@@ -187,16 +187,16 @@ export declare interface IRenderWebGL {
      * 
      * @param drawableID {number}
      * @param order {number} - order New absolute order or relative order adjusment.
-     * @param group {StageLayering} - group Name of layer group drawable belongs to.
+     * @param group {StageLayeringValue} - group Name of layer group drawable belongs to.
      * @param optIsRelative {boolean} - If set, `order` refers to a relative change.
      * @param optMin {?number} - New order if changed, or null. 
      */
-    setDrawableOrder(drawableID: number, order: number, group: StageLayering, optIsRelative: boolean, optMin?: number): void;
+    setDrawableOrder(drawableID: number, order: number, group: StageLayeringValue, optIsRelative: boolean, optMin?: number): void;
     /**
      * Set the layer group ordering for the renderer.
-     * @param groupOrdering {StageLayering[]} - The ordered array of layer group
+     * @param groupOrdering {StageLayeringValue[]} - The ordered array of layer group
      */
-    setLayerGroupOrdering(groupOrdering: StageLayering[]): void;
+    setLayerGroupOrdering(groupOrdering: StageLayeringValue[]): void;
     /**
      * Update a drawable's position.
      * @param drawableID {number} - drawable id.

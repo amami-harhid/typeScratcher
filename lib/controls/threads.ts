@@ -2,20 +2,17 @@
  * Threads
  */
 
-import { playground } from "@Lib/vm/playground";
-import { ScratchEvent } from "@Lib/vm/scratchEvent";
-import { Entity } from "@Lib/entity/entity";
-import type { TThreadObj } from "./TThreadObj";
-import { Utils } from "@Lib/utils/utils";
-import { EntityProxyExt } from "@Lib/entity/entityProxyExt";
-import { FunctionChecker } from "@Lib/utils/functionChecker";
 import EventEmitter from "events";
-import type { IEntity } from "@Type/entity/IEntity";
-import type { IEntityProxy } from "@Type/entity/IEntityProxy";
-import { QuestionBoxElement } from "@Lib/gui/questionBoxElement";
+import { INTERVAL } from "./interval";
+import { playground } from "../vm/playground";
+import { ScratchEvent } from "../vm/scratchEvent";
+import { Utils } from "../utils/utils";
+import { EntityProxyExt } from "../entity/entityProxyExt";
+import { FunctionChecker } from "../utils/functionChecker";
+import { QuestionBoxElement } from "../gui/questionBoxElement";
+import type { IEntity } from "../type/entity/IEntity";
+import type { IEntityProxy } from "../type/ent\ity/IEntityProxy";
 
-
-const INTERVAL = 1000/30;
 
 export enum ThreadStatus {
     RUNNING,

@@ -1,6 +1,6 @@
-import type { ISprite } from '@Type/sprite';
 import { EntityEffect } from '../entity/entityEffect';
-import type {ISpriteEffect} from '@Type/sprite/ISpriteEffect';
+import type { ISprite } from '../../type/sprite';
+import type {ISpriteEffect} from '../../type/sprite/ISpriteEffect';
 
 /** 効果 */
 export class SpriteEffect extends EntityEffect implements ISpriteEffect {

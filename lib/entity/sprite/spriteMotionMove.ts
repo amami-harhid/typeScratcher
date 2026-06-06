@@ -1,7 +1,7 @@
 import { MathUtil } from '../../utils/math-util';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteMotionMove } from '@Type/sprite/ISpriteMotionMove';
-import type { IEntityProperties } from '@Type/entity/IEntityProperties';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteMotionMove } from '../../type/sprite/ISpriteMotionMove';
+import type { IEntityProperties } from '../../type/entity/IEntityProperties';
 
 export class SpriteMotionMove implements ISpriteMotionMove {
     private entity: ISprite;

@@ -2,8 +2,8 @@
  * Render
  */
 import { default as ScratchRender} from 'scratch-render';
-import { StageLayering, LAYER_GROUPS } from '@Type/stage/CStageLayering';
-import { IRenderWebGL } from '@Type/render/IRenderWebGL';
+import { type TStageLayering, type StageLayeringValue, LAYER_GROUPS } from '../type/stage/CStageLayering';
+import { IRenderWebGL } from '../type/render/IRenderWebGL';
 import { GUI_CONST } from '../gui/gui_const';
 
 export class Renderer {
@@ -45,7 +45,7 @@ export class Renderer {
     static get H() {
         return Renderer.W * Renderer.WHRate;
     }    
-    private layerGroups: StageLayering[];
+    private layerGroups: StageLayeringValue[];
     private canvas! : HTMLCanvasElement;
     private _renderer!: IRenderWebGL;
     public stageWidth: number =0;
@@ -84,7 +84,7 @@ export class Renderer {
             me.stageResize();
         });
     }
-    createDrawable(layer: StageLayering) : number {
+    createDrawable(layer: StageLayeringValue) : number {
         if(this._renderer){
             const drawableID = this._renderer.createDrawable(layer);
             return drawableID;

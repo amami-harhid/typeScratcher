@@ -1,10 +1,10 @@
-import { playground } from '@Lib/vm/playground';
-import { ScratchEvent } from '@Lib/vm/scratchEvent';
-import { EntityBroadCast } from '@Lib/entity/entity/entityBroadcast';
-import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '@Lib/controls/threads';
-import type { IEntityEvent } from '@Type/entity/IEntityEvent';
-import type { IEntityBroadCast } from '@Type/entity/IEntityBroadcast';
-import type { IEntity } from '@Type/entity/IEntity';
+import { playground } from '../../vm/playground';
+import { ScratchEvent } from '../../vm/scratchEvent';
+import { EntityBroadCast } from '../../entity/entity/entityBroadcast';
+import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '../../controls/threads';
+import type { IEntityEvent } from '../../type/entity/IEntityEvent';
+import type { IEntityBroadCast } from '../../type/entity/IEntityBroadcast';
+import type { IEntity } from '../../type/entity/IEntity';
 
 /**
  * 二重起動指定

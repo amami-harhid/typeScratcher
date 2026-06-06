@@ -1,8 +1,8 @@
 import { Sprite } from '../sprite';
 import { Element } from '../../gui/element';
 import { MathUtil } from '../../utils/math-util';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteMotionPoint } from '@Type/sprite/ISpriteMotionPoint';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteMotionPoint } from '../../type/sprite/ISpriteMotionPoint';
 export class SpriteMotionPoint implements ISpriteMotionPoint{
     private entity: ISprite;
     /**

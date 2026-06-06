@@ -1,9 +1,11 @@
-import { ISprite } from "@Type/sprite";
 import { MathUtil } from "../../utils/math-util";
-import { Sprite } from "../sprite";
-import { IEntity } from "@Type/entity/IEntity";
-import { IEntitySensingSprite } from "@Type/entity/IEntitySensingSprite";
+import type { IEntity } from "../../type/entity/IEntity";
+import type { IEntitySensingSprite } from "../../type/entity/IEntitySensingSprite";
+import type { ISprite } from "../../type/sprite";
 
+/**
+ * EntitySensingSprite
+ */
 export class EntitySensingSprite implements IEntitySensingSprite {
 
     protected entity: IEntity;

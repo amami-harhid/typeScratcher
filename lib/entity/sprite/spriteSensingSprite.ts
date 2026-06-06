@@ -1,9 +1,9 @@
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { EntitySensingSprite } from '../entity/entitySensingSprite';
 import { playground } from '../../vm/playground';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteSensingSprite } from '@Type/sprite/ISpriteSensingSprite';
-import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteSensingSprite } from '../../type/sprite/ISpriteSensingSprite';
+import type { ISpriteSensingDistance } from '../../type/sprite/ISpriteSensingDistance';
 /**
  * Sprite Sensing(調べる) Sprite
  */

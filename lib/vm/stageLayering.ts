@@ -1,30 +1,27 @@
 /**
  * レイアー
  */
-export enum StageLayering {
+export const StageLayering = {
     /** 背景 */
-    BACKGROUND_LAYER = 'background',
+    BACKGROUND_LAYER : 'background',
     
     /** ビデオ */
-    VIDEO_LAYER = 'video',
+    VIDEO_LAYER : 'video',
     
     /** ペン */
-    PEN_LAYER = 'pen',
+    PEN_LAYER : 'pen',
 
     /** スプライト */
-    SPRITE_LAYER = 'sprite',
+    SPRITE_LAYER : 'sprite',
 
     /** テキスト */
-    TEXT_LAYER = 'text',
+    TEXT_LAYER : 'text',
 
     /** モニター */
-    MONITOR_LAYER = 'monitor',
+    MONITOR_LAYER : 'monitor',
 
 
-};
-type EnumKeys = keyof typeof StageLayering;
-type EnumKeyFields = {[key in EnumKeys]:string};
-export type IStageLayering = EnumKeyFields
+} as const;
 
 // Order of layer groups relative to each other,
 export const LAYER_GROUPS = function () {
@@ -37,3 +34,6 @@ export const LAYER_GROUPS = function () {
         StageLayering.MONITOR_LAYER
     ];
 }
+
+
+

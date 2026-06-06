@@ -1,7 +1,7 @@
 import { Sprite } from '../sprite';
-import { ISprite } from '@Type/sprite';
+import { ISprite } from '../../type/sprite';
 import { Utils } from "../../utils/utils";
-import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
+import type { ISpriteSensingDistance } from '../../type/sprite/ISpriteSensingDistance';
 
 /** 距離 */
 export class SpriteSensingDistance implements ISpriteSensingDistance{

@@ -5,15 +5,15 @@ import { SpriteSensingEdge } from './spriteSensingEdge';
 import { SpriteSensingColor } from './spriteSensingColor';
 import { SpriteSensingSprite } from './spriteSensingSprite';
 import { QuestionBoxElement } from '../../gui/questionBoxElement';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteSensing } from '@Type/sprite/ISpriteSensing';
-import type { ISpriteDragMode } from '@Type/sprite/ISpriteDragMode';
-import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
-import type { ISpriteSensingMouse } from '@Type/sprite/ISpriteSensingMouse';
-import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
-import type { ISpriteSensingEdge } from '@Type/sprite/ISpriteSensingEdge';
-import type { ISpriteSensingColor } from '@Type/sprite/ISpriteSensingColor';
-import type { ISpriteSensingSprite } from '@Type/sprite/ISpriteSensingSprite';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteSensing } from '../../type/sprite/ISpriteSensing';
+import type { ISpriteDragMode } from '../../type/sprite/ISpriteDragMode';
+import type { IEntitySensingTimer } from '../../type/entity/IEntitySensingTimer';
+import type { ISpriteSensingMouse } from '../../type/sprite/ISpriteSensingMouse';
+import type { IEntitySensingKey } from '../../type/entity/IEntitySensingKey';
+import type { ISpriteSensingEdge } from '../../type/sprite/ISpriteSensingEdge';
+import type { ISpriteSensingColor } from '../../type/sprite/ISpriteSensingColor';
+import type { ISpriteSensingSprite } from '../../type/sprite/ISpriteSensingSprite';
 /**
  * Sprite Sensing(調べる)
  */

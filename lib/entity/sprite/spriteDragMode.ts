@@ -1,7 +1,6 @@
-import type { ISpriteDragMode } from '@Type/sprite/ISpriteDragMode';
+import type { ISpriteDragMode } from '../../type/sprite/ISpriteDragMode';
 import { DragSprite } from '../drag/dragSprite';
-import { Sprite } from '../sprite';
-import { ISprite } from '@Type/sprite';
+import { ISprite } from '../../type/sprite';
 
 /** サイズ */
 export class SpriteDragMode implements ISpriteDragMode{

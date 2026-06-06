@@ -3,7 +3,7 @@
  */
 import { ImageLoader } from "../loader/imageLoader";
 import { Utils } from "../utils/utils";
-import type { IImage } from "@Type/image/IImage";
+import type { IImage } from "../type/image/IImage";
 
 type ImageArgStringObject = { [key:string]:string };
 

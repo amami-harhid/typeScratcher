@@ -1,6 +1,6 @@
-import type { TBounds, TScaleArr } from '@Type/common/typeCommon';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteSize } from '@Type/sprite/ISpriteSize';
+import type { TBounds } from '../../type/common/typeCommon';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteSize } from '../../type/sprite/ISpriteSize';
 
 /** サイズ */
 export class SpriteSize implements ISpriteSize{

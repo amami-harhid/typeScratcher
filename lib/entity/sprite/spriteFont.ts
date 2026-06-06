@@ -1,5 +1,5 @@
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteFont } from '@Type/sprite/ISpriteFont';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteFont } from '../../type/sprite/ISpriteFont';
 
 export class SpriteFont implements ISpriteFont {
     protected entity: ISprite;

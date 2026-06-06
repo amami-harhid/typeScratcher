@@ -1,9 +1,9 @@
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { MathUtil } from '../../utils/math-util';
 import { Element } from '../../gui/element';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteSensingMouse } from '@Type/sprite/ISpriteSensingMouse';
-import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteSensingMouse } from '../../type/sprite/ISpriteSensingMouse';
+import type { ISpriteSensingDistance } from '../../type/sprite/ISpriteSensingDistance';
 /**
  * Sprite Sensing(調べる) Mouse
  */

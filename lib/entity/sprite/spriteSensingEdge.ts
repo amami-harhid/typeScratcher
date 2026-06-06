@@ -1,15 +1,5 @@
-import { Sprite } from '../sprite';
-import type { ISprite } from '@Type/sprite';
-import type { ISpriteSensing } from '@Type/sprite/ISpriteSensing';
-import type { ISpriteDragMode } from '@Type/sprite/ISpriteDragMode';
-import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
-import { SpriteSensingTimer } from './spriteSensingTimer';
-import type { ISpriteSensingMouse } from '@Type/sprite/ISpriteSensingMouse';
-import { SpriteSensingMouse } from './spriteSensingMouse';
-import type { ISpriteSensingDistance } from '@Type/sprite/ISpriteSensingDistance';
-import type { IEntitySensingKey } from '@Type/entity/IEntitySensingKey';
-import { SpriteSensingKey } from './spriteSensingKey';
-import type { ISpriteSensingEdge } from '@Type/sprite/ISpriteSensingEdge';
+import type { ISprite } from '../../type/sprite';
+import type { ISpriteSensingEdge } from '../../type/sprite/ISpriteSensingEdge';
 /**
  * Sprite Sensing(調べる) Edge
  */

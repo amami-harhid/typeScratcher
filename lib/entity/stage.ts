@@ -2,23 +2,23 @@
  * Stage
  */
 import { Entity } from "./entity";
-import { StageLayering } from '@Type/stage/CStageLayering';
 import { playground } from "../vm/playground";
+import { StageLayering } from '../type/stage/CStageLayering';
 import { StageProperties } from "./stage/stageProperties";
 import { StageLooks } from "./stage/stageLooks";
 import { StageControl } from "./stage/stageControl";
 import { StageBackdrop } from "./stage/stageBackdrop";
-import { threadId } from "node:worker_threads";
+//import { threadId } from "node:worker_threads";
 import { StageEvent } from "./stage/stageEvent";
 import { StageSensing } from "./stage/stageSensing";
-import type { IStage } from "@Type/stage";
-import type { IStageLooks } from "@Type/stage/IStageLooks";
-import type { IStageControl } from "@Type/stage/IStageControl";
-import type { IStageEvent } from "@Type/stage/IStageEvent";
-import type { IStageSensing } from "@Type/stage/IStageSensing";
-import type { IStageBackdrop } from "@Type/stage/IStageBackdrop";
-import { ISvgSkin } from "@Type/render/ISvgSkin";
-import { Timer } from "@Lib/utils/timer";
+import { Timer } from "../utils/timer";
+import type { IStage } from "../type/stage";
+import type { IStageLooks } from "../type/stage/IStageLooks";
+import type { IStageControl } from "../type/stage/IStageControl";
+import type { IStageEvent } from "../type/stage/IStageEvent";
+import type { IStageSensing } from "../type/stage/IStageSensing";
+import type { IStageBackdrop } from "../type/stage/IStageBackdrop";
+import { ISvgSkin } from "../type/render/ISvgSkin";
 
 export class Stage extends Entity implements IStage{
     protected _properties: StageProperties;

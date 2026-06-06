@@ -1,8 +1,6 @@
-import { Sprite } from '../sprite';
-import { Image } from '@Lib/image/image';
-import type { ISpriteCostume } from '@Type/sprite/ISpriteCostume';
-import type { IImage } from '@Type/image/IImage';
-import type { ISprite } from '@Type/sprite';
+import type { ISpriteCostume } from '../../type/sprite/ISpriteCostume';
+import type { IImage } from '../../type/image/IImage';
+import type { ISprite } from '../../type/sprite';
 
 /** サイズ */
 export class SpriteCostume implements ISpriteCostume {

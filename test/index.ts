@@ -1,5 +1,5 @@
 //import { typeScratcher as TS } from '../VM';
-import { typeScratcher as TS } from '../VM/debug';
+import { Typescratcher as TS } from '@Lib';
 import type { ISprite } from '@Type/sprite';
 
 //import AppleSvg from './assets/Apple.svg';
@@ -104,7 +104,7 @@ apple.Event.keyPresser("e").func = async function*(this:ISprite){
         yield;
     }
 }
-apple.Event.keyPresser(TS.Key.SPACE).func = async function*(this:ISprite){
+apple.Event.keyPresser(TS.KEYBOARD_KEYS.SPACE).func = async function*(this:ISprite){
     const steps = 1;
     for(;;){
         this.Motion.Move.steps(steps);

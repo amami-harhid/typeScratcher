@@ -1,4 +1,4 @@
-import type { IEntityBroadCast } from '../entity/IEntityBroadcast';
+import type { IEntityBroadCast } from './IEntityBroadcast';
 /** イベント */
 export interface IEntityEvent {
 

@@ -1,7 +1,10 @@
-import { ScratchRenderProperties } from "@Type/render/IRenderWebGL";
 import { EntityProperties } from "../entity/entityProperties";
-import { Rotation } from "@Type/entity/RotationStyle";
-import type { ISprite } from "@Type/sprite";
+import { Rotation } from "../../type/entity/RotationStyle";
+import type { ISprite } from "../../type/sprite";
+import type { ScratchRenderProperties } from "../../type/render/IRenderWebGL";
+/**
+ * SpriteProperties
+ */
 export class SpriteProperties extends EntityProperties {
     constructor(sprite: ISprite){
         super(sprite);

@@ -2,10 +2,10 @@
  * Bubble
  */
 import { uid } from "../../utils/uid";
-import { StageLayering } from "../../../Type/stage/CStageLayering";
-import type { ISprite } from "@Type/sprite";
-import type { TScale } from "@Type/common/typeCommon";
-import type { BubbleState, BubbleProperties } from "@Type/sprite/TBubble";
+import { StageLayering } from "../../type/stage/CStageLayering";
+import type { ISprite } from "../../type/sprite";
+import type { TScale } from "../../type/common/typeCommon";
+import type { BubbleState, BubbleProperties } from "../../type/sprite/TBubble";
 
 export class Bubble  {
     private bubbleState: BubbleState;

@@ -1,5 +1,5 @@
 import type { IEntity } from '../entity/IEntity';
-import type { TEntityOptions } from '@Type/entity/TEntityOptions';
+import type { TEntityOptions } from '../entity/TEntityOptions';
 import type { ISpriteMotion } from './ISpriteMotion';
 import type { ISpriteLooks } from './ISpriteLooks';
 import type { ISpriteControl } from './ISpriteControl';
@@ -12,7 +12,7 @@ import type { ISpriteEvent } from './ISpriteEvent';
 import type { ISpriteDragMode } from './ISpriteDragMode';
 //import type { ISpritePen } from './ISpritePen';
 //import type { ISvgText } from '../svgText/ISvgText';
-import type { IEntityProperties } from '@Type/entity/IEntityProperties'; 
+import type { IEntityProperties } from '../entity/IEntityProperties'; 
 import type { ISpriteCostume } from './ISpriteCostume';
 import type { ISpriteBackdrop } from './ISpriteBackdrop';
 /**

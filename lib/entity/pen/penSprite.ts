@@ -1,13 +1,12 @@
+import { playground } from '../../vm/playground';
 import { Color } from '../../utils/color';
 import { Renderer } from '../../render/renderer';
 import { Sprite } from '../sprite';
 import { PenSpriteSize } from './penSpriteSize';
 import { PenSpriteHSVColor } from './penSpriteHSVColor';
-import { StageLayering } from '../../../Type/stage/CStageLayering';
-import type { TPenAttributes } from '@Type/pen';
-//import { SpriteDragMode } from '../sprite/spriteDragMode';
-import { IPenSprite } from '@Type/sprite/pen/IPenSprite';
-import { playground } from '../../vm/playground';
+import { StageLayering } from '../../type/stage/CStageLayering';
+import type { TPenAttributes } from '../../type/pen';
+import type { IPenSprite } from '../../type/sprite/pen/IPenSprite';
 
 const NotPrepareMessage = 'prepareが行われていません';
 class PenDrawable {

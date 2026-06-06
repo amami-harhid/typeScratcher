@@ -2,20 +2,8 @@
  * Cast
  */
 import { Color } from "./color";
+import type { RGBColorArray, RGBObject, HSVObject } from '../type/util/cast';
 
-declare type RGBColorArray = number[];
-
-declare type RGBObject = {
-    r: number,
-    g: number,
-    b: number,
-    a?: number,
-}
-declare type HSVObject = {
-    h: number, 
-    s: number,
-    v: number,
-}
 /**
  * @fileoverview
  * Utilities for casting and comparing Scratch data-types.

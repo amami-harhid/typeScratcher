@@ -1,6 +1,6 @@
 import { Cast } from "../utils/cast";
 import { Runtime } from "./runtime";
-import { KEYBOARD_KEYS, type TKEYBOARD_KEYS } from "@Type/vm/keyboad";
+import { KEYBOARD_KEYS, type TKEYBOARD_KEYS } from "../type/vm/keyboad";
 declare type POST_DATA = {
     isDown: boolean,
     key : string,

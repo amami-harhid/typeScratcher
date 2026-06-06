@@ -4,7 +4,7 @@
 import type { 
     IScratchSoundPlayer, 
     TSoundPlayerOption, 
-    TEffectChain } from "@Type/sound/IAudioEngine";
+    TEffectChain } from "../type/sound/IAudioEngine";
 
 export class SoundPlayer {
     private _name : string;

@@ -1,6 +1,5 @@
-import { Sprite } from '../sprite';
-import type { ISpriteBackdrop } from '@Type/sprite/ISpriteBackdrop';
-import type { ISprite } from '@Type/sprite';
+import type { ISpriteBackdrop } from '../../type/sprite/ISpriteBackdrop';
+import type { ISprite } from '../../type/sprite';
 /** 背景 */
 export class SpriteBackdrop implements ISpriteBackdrop {
 

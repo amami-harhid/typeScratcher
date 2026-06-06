@@ -1,7 +1,6 @@
 import { playground } from '../../vm/playground';
-import { Sprite } from '../sprite';
-import type { IEntitySensingTimer } from '@Type/entity/IEntitySensingTimer';
-import type { ISprite } from '@Type/sprite';
+import type { IEntitySensingTimer } from '../../type/entity/IEntitySensingTimer';
+import type { ISprite } from '../../type/sprite';
 /**
  * Sprite Sensing(調べる) Timer
  */

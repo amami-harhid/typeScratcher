@@ -2,7 +2,6 @@
  * Sound
  */
 import EventEmitter from "events";
-import { Entity } from "../entity/entity";
 import { SoundLoader } from "../loader/soundLoader";
 import { playground } from "../vm/playground";
 import { SoundPlayer } from "./soundPlayer";
