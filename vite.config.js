@@ -60,8 +60,6 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@Type': resolve(__dirname, './src/type'),
-            '@Lib': resolve(__dirname, './src'),
         }
     },
     define: {

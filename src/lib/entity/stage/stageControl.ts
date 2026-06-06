@@ -1,10 +1,15 @@
 import { Timer } from '../../utils/timer';
 import * as Wait from '../../utils/wait';
+import { threadManager } from '../../thread/threads';
+import { playground } from '../../vm/playground';
+import { ScratchEvent } from '../../vm/scratchEvent';
 import type { IStage } from '../../../type/entity/stage';
+import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
+import type { IStageControl } from '../../../type/entity/stage/IStageControl';
 /**
  * Stage Control(制御)
  */
-export class StageControl {
+export class StageControl implements IStageControl{
     protected entity: IStage;
     /**
      * @internal
@@ -56,19 +61,19 @@ export class StageControl {
      * 全てのスプライトの動作を停止する
      */
     stopAll() : void {
-
+        playground.runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
     }
     /**
      * このスクリプトを停止する
      */
-    stopThisScript() : void {
-
+    stopThisScript(proxy:IEntityProxy) : void {
+        proxy.setStopThisScriptSwitch(true);
     }
     /**
      * このスプライトの他のスクリプトを停止する
      */
-    stopOtherScripts() : void {
-
+    stopOtherScripts(proxy:IEntityProxy) : void {
+        threadManager.stopOtherScripts(proxy);
     }
 
 };

@@ -9,8 +9,6 @@
     "types": ["node"],
     "baseUrl": "./",
     "paths": {
-      "@Type/*": ["src/type/*"],
-      "@Lib/*": ["src/*"],
     },
     "sourceMap": true,
     "importHelpers": true,
