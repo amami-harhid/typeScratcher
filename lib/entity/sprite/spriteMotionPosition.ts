@@ -1,5 +1,5 @@
-import type { ISprite } from '../../type/sprite';
-import type { ISpriteMotionPosition } from '../../type/sprite/ISpriteMotionPosition';
+import type { ISprite } from '../../type/entity/sprite';
+import type { ISpriteMotionPosition } from '../../type/entity/sprite/ISpriteMotionPosition';
 
 export class SpriteMotionPosition implements ISpriteMotionPosition {
     private entity: ISprite;

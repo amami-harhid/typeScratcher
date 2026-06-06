@@ -1,6 +1,6 @@
 import { playground } from '../../vm/playground';
-import type { IStage } from '../../type/stage';
-import type { IEntitySensingTimer } from '../../type/entity/IEntitySensingTimer';
+import type { IStage } from '../../type/entity/stage';
+import type { IEntitySensingTimer } from '../../type/entity/entity/IEntitySensingTimer';
 /**
  * Stage Sensing(調べる) Timer
  */

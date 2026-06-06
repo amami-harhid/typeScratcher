@@ -1,18 +1,18 @@
-import { Renderer } from "../render/renderer";
+import { Render } from "../render";
 import { threadManager } from "../controls/threads";
 import { Runtime } from "./runtime";
 import { Sprite } from "../entity/sprite";
 import { Stage } from "../entity/stage";
 import { Element } from "../gui/element";
-import type { ISprite } from "../type/sprite";
+import type { ISprite } from "../type/entity/sprite";
 import type { TMouse } from "../type/mouse";
-import { IStage } from "../type/stage";
+import { IStage } from "../type/entity/stage";
 
 /**
  * PlayGround
  */
 export class Playground {
-    private _renderer!: Renderer;
+    private _renderer!: Render;
     private _runtime: Runtime;
     private _sprites: ISprite[] = [];
     private _stage!: IStage;
@@ -39,7 +39,7 @@ export class Playground {
         this._timer = performance.now();
     }
     createRenderer(canvas: HTMLCanvasElement) {
-        this._renderer = new Renderer( );
+        this._renderer = new Render( );
         this._renderer.createRenderer(canvas);
     }
     private initMouseInfo() {
@@ -93,7 +93,7 @@ export class Playground {
             e.stopPropagation();        
         });
     }
-    get renderer(): Renderer {
+    get renderer(): Render {
         return this._renderer;
     }
     addSprite(sprite: ISprite) {

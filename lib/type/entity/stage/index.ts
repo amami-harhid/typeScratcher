@@ -1,7 +1,7 @@
 /**
  * Stage
  */
-import type { IEntity } from '../entity/IEntity';
+import type { IEntity } from '../entity';
 import type { TEntityOptions } from '../entity/TEntityOptions';
 import type { IStageLooks } from './IStageLooks';
 import type { IStageControl } from './IStageControl';

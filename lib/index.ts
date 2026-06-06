@@ -36,12 +36,12 @@ import { Version } from './version';
 
 import { Sprite } from './entity/sprite';
 import { Stage } from './entity/stage';
-import { Image } from './image/image';
-import { Sound } from './sounds/sound';
+import { Image } from './image';
+import { Sound } from './sounds';
 import { Rotation } from '../lib/type/entity/RotationStyle';
 import { KEYBOARD_KEYS } from '../lib/type/vm/keyboad';
 import { Timer } from './utils/timer';
-import * as GUI from './gui/gui';
+import * as GUI from './gui';
 import { Playground, playground } from './vm/playground';
 
 const { Buffer } = await import(/* webpackMode: "eager" */ 'buffer');

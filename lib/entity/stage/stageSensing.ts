@@ -2,11 +2,11 @@ import { QuestionBoxElement } from '../../gui/questionBoxElement';
 import { StageSensingKey } from './stageSensingKey';
 import { StageSensingMouse } from './stageSensingMouse';
 import { StageSensingTimer } from './stageSensingTimer';
-import type { IStageSensing } from '../../type/stage/IStageSensing';
-import type { IEntitySensingMouse } from '../../type/entity/IEntitySensingMouse';
-import type { IEntitySensingKey } from '../../type/entity/IEntitySensingKey';
-import type { IEntitySensingTimer } from '../../type/entity/IEntitySensingTimer';
-import type { IStage } from '../../type/stage';
+import type { IStageSensing } from '../../type/entity/stage/IStageSensing';
+import type { IEntitySensingMouse } from '../../type/entity/entity/IEntitySensingMouse';
+import type { IEntitySensingKey } from '../../type/entity/entity/IEntitySensingKey';
+import type { IEntitySensingTimer } from '../../type/entity/entity/IEntitySensingTimer';
+import type { IStage } from '../../type/entity/stage';
 /**
  * Stage Sensing(調べる)
  */

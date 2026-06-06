@@ -1,5 +1,5 @@
-import type { ISprite } from '../../type/sprite';
-import type { ISpriteSensingEdge } from '../../type/sprite/ISpriteSensingEdge';
+import type { ISprite } from '../../type/entity/sprite';
+import type { ISpriteSensingEdge } from '../../type/entity/sprite/ISpriteSensingEdge';
 /**
  * Sprite Sensing(調べる) Edge
  */

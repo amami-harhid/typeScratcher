@@ -1,5 +1,5 @@
-import { StageLayering } from '../../type/stage/CStageLayering';
-import type { ISprite } from '../../type/sprite';
+import { StageLayering } from '../../type/entity/stage/CStageLayering';
+import type { ISprite } from '../../type/entity/sprite';
 
 /** 階層 */
 export class SpriteLayer {

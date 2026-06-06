@@ -6,7 +6,7 @@ import { SvgTextMesure } from './svgTexMesure';
 import type { ISvgText, TAddOption } from '../type/svgText/ISvgText';
 import type { ISvgTextCreator, TSvgOption, TSvgOptionFont } from '../type/svgText/ISvgTextCreator';
 import type { ISvgTextMesure } from '../type/svgText/ISvgTextMesure';
-import type { IEntity } from '../type/entity/IEntity';
+import type { IEntity } from '../type/entity/entity';
 
 
 

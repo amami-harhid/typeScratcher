@@ -1,5 +1,5 @@
-import type { TMouse } from "../mouse";
-import type { IRender } from "../render/IRender";
+import type { TMouse } from "../../mouse";
+import type { IRender } from "../../render/IRender";
 import type { IEntitySound } from "./IEntitySound";
 export declare interface IEntity {
     readonly drawableID: number;

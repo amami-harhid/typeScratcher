@@ -1,6 +1,6 @@
 import type { TBounds } from '../../type/common/typeCommon';
-import type { ISprite } from '../../type/sprite';
-import type { ISpriteSize } from '../../type/sprite/ISpriteSize';
+import type { ISprite } from '../../type/entity/sprite';
+import type { ISpriteSize } from '../../type/entity/sprite/ISpriteSize';
 
 /** サイズ */
 export class SpriteSize implements ISpriteSize{

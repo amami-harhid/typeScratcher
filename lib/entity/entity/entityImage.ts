@@ -1,6 +1,6 @@
 import { ImageBank } from '../../image/imageBank';
 import type { IImage } from '../../type/image/IImage';
-import type { IEntity } from '../../type/entity/IEntity';
+import type { IEntity } from '../../type/entity/entity';
 
 /** メッセージ送受信 */
 export class EntityImage {

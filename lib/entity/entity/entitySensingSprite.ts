@@ -1,7 +1,7 @@
 import { MathUtil } from "../../utils/math-util";
-import type { IEntity } from "../../type/entity/IEntity";
-import type { IEntitySensingSprite } from "../../type/entity/IEntitySensingSprite";
-import type { ISprite } from "../../type/sprite";
+import type { IEntity } from "../../type/entity/entity";
+import type { IEntitySensingSprite } from "../../type/entity/entity/IEntitySensingSprite";
+import type { ISprite } from "../../type/entity/sprite";
 
 /**
  * EntitySensingSprite

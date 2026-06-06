@@ -2,17 +2,17 @@
  * Entity
  */
 import { EventEmitter } from "events";
-import { Image } from "../image/image";
-import { playground } from "../vm/playground";
-import { Renderer } from "../render/renderer";
-import { type StageLayeringValue } from '../type/stage/CStageLayering';
-import { Utils } from "../utils/utils";
-import { EntityImage } from "../entity/entity/entityImage";
-import type { IEntityImage } from "../type/entity/IEntityImage";
-import { EntitySound } from "../entity/entity/entitySound";
-import type { IEntitySound } from "../type/entity/IEntitySound";
-import type { TMouse } from "../type/mouse";
-import type { IEntity } from "../type/entity/IEntity";
+import { Image } from "../../image";
+import { playground } from "../../vm/playground";
+import { Render } from "../../render";
+import { type StageLayeringValue } from '../../type/entity/stage/CStageLayering';
+import { Utils } from "../../utils/utils";
+import { EntityImage } from "./entityImage";
+import type { IEntityImage } from "../../type/entity/entity/IEntityImage";
+import { EntitySound } from "./entitySound";
+import type { IEntitySound } from "../../type/entity/entity/IEntitySound";
+import type { TMouse } from "../../type/mouse";
+import type { IEntity } from "../../type/entity/entity";
 
 export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
@@ -22,7 +22,7 @@ export class Entity extends EventEmitter implements IEntity{
     private _images: Image[] = [];
     public id: string;
     public drawableID: number = -1;
-    protected _render: Renderer;
+    protected _render: Render;
     protected _image: IEntityImage;
     protected _sound: IEntitySound;
     protected _mouse: TMouse;
@@ -44,7 +44,7 @@ export class Entity extends EventEmitter implements IEntity{
     get name(): string {
         return this._name;
     }
-    get render(): Renderer {
+    get render(): Render {
         return this._render;
     }
     get Image():IEntityImage {

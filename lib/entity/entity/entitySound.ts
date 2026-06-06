@@ -1,7 +1,7 @@
-import { Sound } from '../../sounds/sound';
+import { Sound } from '../../sounds';
 import { Timer } from '../../utils/timer';
-import type { IEntity } from '../../type/entity/IEntity';
-import type { ISound } from '../../type/sound/ISound';
+import type { IEntity } from '../../type/entity/entity';
+import type { ISound } from '../../type/sound';
 
 /** イベント */
 export class EntitySound {

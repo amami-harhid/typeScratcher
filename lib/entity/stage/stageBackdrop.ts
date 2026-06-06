@@ -1,5 +1,5 @@
-import type { IStage } from '../../type/stage';
-import type { IStageBackdrop } from '../../type/stage/IStageBackdrop';
+import type { IStage } from '../../type/entity/stage';
+import type { IStageBackdrop } from '../../type/entity/stage/IStageBackdrop';
 import type { IImage } from '../../type/image/IImage';
 
 /** サイズ */

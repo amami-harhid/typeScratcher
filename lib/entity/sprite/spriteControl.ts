@@ -1,10 +1,10 @@
 import { threadManager } from '../../controls/threads';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
-import type { TEntityOptions } from '../../type/entity/TEntityOptions';
-import type { ISprite } from '../../type/sprite';
-import type { ISpriteControl } from '../../type/sprite/ISpriteControl';
-import type { IEntityProxy } from '../../type/entity/IEntityProxy';
+import type { TEntityOptions } from '../../type/entity/entity/TEntityOptions';
+import type { ISprite } from '../../type/entity/sprite';
+import type { ISpriteControl } from '../../type/entity/sprite/ISpriteControl';
+import type { IEntityProxy } from '../../type/entity/entity/IEntityProxy';
 /**
  * Sprite Control(制御)
  */

@@ -1,4 +1,4 @@
-import type { TPositionArray } from "../common/typeCommon";
+import type { TPositionArray } from "../../common/typeCommon";
 
 /**
  * スプライトの動き（位置）

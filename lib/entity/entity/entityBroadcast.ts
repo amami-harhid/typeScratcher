@@ -1,5 +1,5 @@
-import type { IEntity } from '../../type/entity/IEntity';
-import type { IEntityBroadCast } from '../../type/entity/IEntityBroadcast';
+import type { IEntity } from '../../type/entity/entity';
+import type { IEntityBroadCast } from '../../type/entity/entity/IEntityBroadcast';
 
 /** メッセージ送受信 */
 export class EntityBroadCast implements IEntityBroadCast {

@@ -1,12 +1,12 @@
-import { playground } from '../../vm/playground';
-import { Color } from '../../utils/color';
-import { Renderer } from '../../render/renderer';
-import { Sprite } from '../sprite';
+import { playground } from '../../../vm/playground';
+import { Color } from '../../../utils/color';
+import { Render } from '../../../render';
+import { Sprite } from '..';
 import { PenSpriteSize } from './penSpriteSize';
 import { PenSpriteHSVColor } from './penSpriteHSVColor';
-import { StageLayering } from '../../type/stage/CStageLayering';
-import type { TPenAttributes } from '../../type/pen';
-import type { IPenSprite } from '../../type/sprite/pen/IPenSprite';
+import { StageLayering } from '../../../type/entity/stage/CStageLayering';
+import type { TPenAttributes } from '../../../type/pen';
+import type { IPenSprite } from '../../../type/entity/sprite/pen/IPenSprite';
 
 const NotPrepareMessage = 'prepareが行われていません';
 class PenDrawable {
@@ -25,7 +25,7 @@ class PenDrawable {
         return PenDrawable.instance;
     }
 
-    createPen(render: Renderer): number{
+    createPen(render: Render): number{
         if(this._skinId == -1){
             const penDrawableId = render.renderer.createDrawable(StageLayering.PEN_LAYER);
             const skinId = render.renderer.createPenSkin();
@@ -36,7 +36,7 @@ class PenDrawable {
     }
 }
 export class PenSprite implements IPenSprite {
-    private render: Renderer;
+    private render: Render;
     private _skinId: number
     private _penDown: boolean;
     private _prepareDone: boolean;

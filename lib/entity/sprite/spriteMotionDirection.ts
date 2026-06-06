@@ -1,4 +1,4 @@
-import type { ISprite } from '../../type/sprite';
+import type { ISprite } from '../../type/entity/sprite';
 
 export class SpriteMotionDirection {
     private entity: ISprite;

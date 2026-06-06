@@ -1,24 +1,24 @@
 /**
  * Stage
  */
-import { Entity } from "./entity";
-import { playground } from "../vm/playground";
-import { StageLayering } from '../type/stage/CStageLayering';
-import { StageProperties } from "./stage/stageProperties";
-import { StageLooks } from "./stage/stageLooks";
-import { StageControl } from "./stage/stageControl";
-import { StageBackdrop } from "./stage/stageBackdrop";
+import { Entity } from "../entity";
+import { playground } from "../../vm/playground";
+import { StageLayering } from '../../type/entity/stage/CStageLayering';
+import { StageProperties } from "./stageProperties";
+import { StageLooks } from "./stageLooks";
+import { StageControl } from "./stageControl";
+import { StageBackdrop } from "./stageBackdrop";
 //import { threadId } from "node:worker_threads";
-import { StageEvent } from "./stage/stageEvent";
-import { StageSensing } from "./stage/stageSensing";
-import { Timer } from "../utils/timer";
-import type { IStage } from "../type/stage";
-import type { IStageLooks } from "../type/stage/IStageLooks";
-import type { IStageControl } from "../type/stage/IStageControl";
-import type { IStageEvent } from "../type/stage/IStageEvent";
-import type { IStageSensing } from "../type/stage/IStageSensing";
-import type { IStageBackdrop } from "../type/stage/IStageBackdrop";
-import { ISvgSkin } from "../type/render/ISvgSkin";
+import { StageEvent } from "./stageEvent";
+import { StageSensing } from "./stageSensing";
+import { Timer } from "../../utils/timer";
+import type { IStage } from "../../type/entity/stage";
+import type { IStageLooks } from "../../type/entity/stage/IStageLooks";
+import type { IStageControl } from "../../type/entity/stage/IStageControl";
+import type { IStageEvent } from "../../type/entity/stage/IStageEvent";
+import type { IStageSensing } from "../../type/entity/stage/IStageSensing";
+import type { IStageBackdrop } from "../../type/entity/stage/IStageBackdrop";
+import { ISvgSkin } from "../../type/render/ISvgSkin";
 
 export class Stage extends Entity implements IStage{
     protected _properties: StageProperties;

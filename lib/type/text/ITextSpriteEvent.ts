@@ -1,4 +1,4 @@
-import type { IEntityEvent } from '../entity/IEntityEvent';
+import type { IEntityEvent } from '../entity/entity/IEntityEvent';
 /**
  * Sprite Event(イベント)
  */

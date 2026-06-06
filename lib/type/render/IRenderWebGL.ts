@@ -1,4 +1,4 @@
-import type { StageLayeringValue } from '../stage/CStageLayering';
+import type { StageLayeringValue } from '../entity/stage/CStageLayering';
 import type { IMonitorSkin } from '../monitors/IMonitorSkin';
 import type { TPenAttributes } from '../pen';
 import type { ISkin } from './ISkin';

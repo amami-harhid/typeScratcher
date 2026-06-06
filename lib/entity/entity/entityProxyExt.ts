@@ -1,9 +1,9 @@
 /**
  * EntityProxyExt
  */
-import { Threads } from '../controls/threads';
-import type { IEntity } from '../type/entity/IEntity';
-import type { IEntityProxy } from '../type/entity/IEntityProxy';
+import { Threads } from '../../controls/threads';
+import type { IEntity } from '../../type/entity/entity';
+import type { IEntityProxy } from '../../type/entity/entity/IEntityProxy';
 /**
  * エンティティのプロキシ拡張
  */

@@ -2,11 +2,11 @@
  * Render
  */
 import { default as ScratchRender} from 'scratch-render';
-import { type TStageLayering, type StageLayeringValue, LAYER_GROUPS } from '../type/stage/CStageLayering';
+import { type TStageLayering, type StageLayeringValue, LAYER_GROUPS } from '../type/entity/stage/CStageLayering';
 import { IRenderWebGL } from '../type/render/IRenderWebGL';
 import { GUI_CONST } from '../gui/gui_const';
 
-export class Renderer {
+export class Render {
     /**
      * ステージ縦横比(縦÷高さの率)
      */
@@ -17,7 +17,7 @@ export class Renderer {
      * ステージの横ピクセル数(CSSピクセル)
      */
     static get W(): number {
-        const WHRate = Renderer.WHRate; // 縦横比率 = 3 :  4
+        const WHRate = Render.WHRate; // 縦横比率 = 3 :  4
         // 上部にコントロールバースペースを確保するため少しだけ縮小する
         // 縮小率は試行錯誤して決めた。
         const InnerWidthRate = 0.95; // やや小さめに
@@ -43,7 +43,7 @@ export class Renderer {
      * ステージの縦ピクセル数(CSSピクセル)
      */
     static get H() {
-        return Renderer.W * Renderer.WHRate;
+        return Render.W * Render.WHRate;
     }    
     private layerGroups: StageLayeringValue[];
     private canvas! : HTMLCanvasElement;
@@ -58,7 +58,7 @@ export class Renderer {
      * @param w {number} - 横
      * @param h {number} - 縦
      */
-    stageResize(w: number = Renderer.W , h: number = Renderer.H): void {
+    stageResize(w: number = Render.W , h: number = Render.H): void {
         if(this._renderer){
             this._renderer.resize( w, h ); // stage(canvas)のサイズ property(width,height)の値をリサイズ
             const _nativeSize = this._renderer.getNativeSize ();

@@ -1,5 +1,5 @@
 import type { TScale } from '../common/typeCommon';
-import type { TEntityOptions } from '../entity/TEntityOptions';
+import type { TEntityOptions } from '../entity/entity/TEntityOptions';
 import type { ITextSpriteControl } from './ITextSpriteControl';
 import type { ITextSpriteEvent } from './ITextSpriteEvent';
 import type { ITextSpriteLooks } from './ITextSpriteLooks';

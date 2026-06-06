@@ -1,6 +1,6 @@
 import { Cast } from '../../utils/cast';
-import type { ISpriteSensingColor } from '../../type/sprite/ISpriteSensingColor';
-import type { ISprite } from '../../type/sprite';
+import type { ISpriteSensingColor } from '../../type/entity/sprite/ISpriteSensingColor';
+import type { ISprite } from '../../type/entity/sprite';
 /**
  * Sprite Sensing(調べる) Color
  */

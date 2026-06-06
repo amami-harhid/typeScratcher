@@ -1,7 +1,7 @@
 import type { ScratchRenderProperties } from "../../type/render/IRenderWebGL";
-import type { IEntity } from "../../type/entity/IEntity";
+import type { IEntity } from "../../type/entity/entity";
 import { Rotation, type RotationValue } from "../../type/entity/RotationStyle";
-import type { IEntityProperties, IPosition, IScale } from '../../type/entity/IEntityProperties';
+import type { IEntityProperties, IPosition, IScale } from '../../type/entity/entity/IEntityProperties';
 
 export class Scale implements IScale {
     private _scale : { w: number, h: number} = { w:100, h:100 };

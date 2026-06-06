@@ -4,13 +4,13 @@ import { SpriteEffect } from '../sprite/spriteEffect';
 import { SpriteBubble } from './spriteBubble';
 import { SpriteBackdrop } from './spriteBackdrop';
 import { SpriteCostume } from './spriteCostume';
-import type { ISpriteEffect } from '../../type/sprite/ISpriteEffect';
-import type { ISpriteSize } from '../../type/sprite/ISpriteSize';
-import type { ISprite } from '../../type/sprite';
-import type { ISpriteBubble } from '../../type/sprite/ISpriteBubble';
-import type { ISpriteLooks } from '../../type/sprite/ISpriteLooks';
-import type { ISpriteCostume } from '../../type/sprite/ISpriteCostume';
-import type { ISpriteBackdrop } from '../../type/sprite/ISpriteBackdrop';
+import type { ISpriteEffect } from '../../type/entity/sprite/ISpriteEffect';
+import type { ISpriteSize } from '../../type/entity/sprite/ISpriteSize';
+import type { ISprite } from '../../type/entity/sprite';
+import type { ISpriteBubble } from '../../type/entity/sprite/ISpriteBubble';
+import type { ISpriteLooks } from '../../type/entity/sprite/ISpriteLooks';
+import type { ISpriteCostume } from '../../type/entity/sprite/ISpriteCostume';
+import type { ISpriteBackdrop } from '../../type/entity/sprite/ISpriteBackdrop';
 
 /**
  * Sprite Looks(見た目)

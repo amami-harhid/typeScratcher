@@ -1,5 +1,5 @@
 import { EntityImage } from "../entity/entityImage";
-import type { ISprite } from "../../type/sprite";
+import type { ISprite } from "../../type/entity/sprite";
 
 /**
  * Sprite Image(イメージ)

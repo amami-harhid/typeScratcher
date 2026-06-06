@@ -2,7 +2,7 @@
  * Render
  */
 import type { IRenderWebGL } from './IRenderWebGL';
-import { StageLayering } from '../stage/CStageLayering';
+import { StageLayering } from '../entity/stage/CStageLayering';
 
 export type TRender = {
     /**

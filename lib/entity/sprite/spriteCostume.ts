@@ -1,6 +1,6 @@
-import type { ISpriteCostume } from '../../type/sprite/ISpriteCostume';
+import type { ISpriteCostume } from '../../type/entity/sprite/ISpriteCostume';
 import type { IImage } from '../../type/image/IImage';
-import type { ISprite } from '../../type/sprite';
+import type { ISprite } from '../../type/entity/sprite';
 
 /** サイズ */
 export class SpriteCostume implements ISpriteCostume {

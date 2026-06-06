@@ -7,11 +7,11 @@ import { INTERVAL } from "./interval";
 import { playground } from "../vm/playground";
 import { ScratchEvent } from "../vm/scratchEvent";
 import { Utils } from "../utils/utils";
-import { EntityProxyExt } from "../entity/entityProxyExt";
+import { EntityProxyExt } from "../entity/entity/entityProxyExt";
 import { FunctionChecker } from "../utils/functionChecker";
 import { QuestionBoxElement } from "../gui/questionBoxElement";
-import type { IEntity } from "../type/entity/IEntity";
-import type { IEntityProxy } from "../type/ent\ity/IEntityProxy";
+import type { IEntity } from "../type/entity/entity";
+import type { IEntityProxy } from "../type/entity/entity/IEntityProxy";
 
 
 export enum ThreadStatus {

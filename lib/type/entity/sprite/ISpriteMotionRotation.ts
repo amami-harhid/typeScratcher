@@ -1,4 +1,4 @@
-import type { RotationValue } from '../entity/RotationStyle';
+import type { RotationValue } from '../RotationStyle';
 /**
  * スプライトの動き（回転方法）
  */

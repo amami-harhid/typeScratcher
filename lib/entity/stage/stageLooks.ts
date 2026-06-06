@@ -1,8 +1,8 @@
 import { StageEffect } from './stageEffect';
 import { StageBackdrop } from './stageBackdrop';
-import type { IStageBackdrop } from '../../type/stage/IStageBackdrop';
-import type { IStageEffect } from '../../type/stage/IStageEffect';
-import type { IStage } from '../../type/stage';
+import type { IStageBackdrop } from '../../type/entity/stage/IStageBackdrop';
+import type { IStageEffect } from '../../type/entity/stage/IStageEffect';
+import type { IStage } from '../../type/entity/stage';
 /**
  * Sprite Looks(見た目)
  */

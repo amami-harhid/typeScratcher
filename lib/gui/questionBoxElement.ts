@@ -1,8 +1,8 @@
 import { EventEmitter } from 'events';
 import { Utils } from '../utils/utils';
 import { playground } from '../vm/playground';
-import type { IEntity } from '../type/entity/IEntity';
-import type { ISprite } from '../type/sprite';
+import type { IEntity } from '../type/entity/entity';
+import type { ISprite } from '../type/entity/sprite';
 
 /** div include canvas */
 const CanvasDiv = 'canvasDiv';

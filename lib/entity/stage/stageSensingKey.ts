@@ -1,6 +1,6 @@
 import { playground } from '../../vm/playground';
-import type { IEntitySensingKey } from '../../type/entity/IEntitySensingKey';
-import type { IStage } from '../../type/stage';
+import type { IEntitySensingKey } from '../../type/entity/entity/IEntitySensingKey';
+import type { IStage } from '../../type/entity/stage';
 /**
  * Stage Sensing(調べる) Key
  */

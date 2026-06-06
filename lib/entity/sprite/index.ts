@@ -1,33 +1,33 @@
 /**
  * Sprite
  */
-import { Entity } from "./entity";
-import { StageLayering } from '../type/stage/CStageLayering';
-import { SpriteControl } from "./sprite/spriteControl";
-import { SpriteMotion } from "./sprite/spriteMotion";
-import { SpriteCostume } from "./sprite/spriteCostume";
-import { SpriteBackdrop } from "./sprite/spriteBackdrop";
-import { SpriteEvent } from "./sprite/spriteEvent";
+import { Entity } from "../entity";
+import { StageLayering } from '../../type/entity/stage/CStageLayering';
+import { SpriteControl } from "./spriteControl";
+import { SpriteMotion } from "./spriteMotion";
+import { SpriteCostume } from "./spriteCostume";
+import { SpriteBackdrop } from "./spriteBackdrop";
+import { SpriteEvent } from "./spriteEvent";
 //import { SpriteFont } from "./sprite/spriteFont";
-import { SpriteProperties } from "./sprite/spriteProperties";
-import { SpriteLooks } from "./sprite/spriteLooks";
-import { playground } from "../vm/playground";
-import { SpriteSensing } from "./sprite/spriteSensing";
-import { SpriteDragMode } from "./sprite/spriteDragMode";
-import { PenSprite } from "./pen/penSprite";
-import { Timer } from "../utils/timer";
+import { SpriteProperties } from "./spriteProperties";
+import { SpriteLooks } from "./spriteLooks";
+import { playground } from "../../vm/playground";
+import { SpriteSensing } from "./spriteSensing";
+import { SpriteDragMode } from "./spriteDragMode";
+import { PenSprite } from "./pen";
+import { Timer } from "../../utils/timer";
 //import type { IEntityProperties } from "@Type/entity/IEntityProperties";
-import type { ISprite } from "../type/sprite";
+import type { ISprite } from "../../type/entity/sprite";
 //import type { ISpriteFont } from "@Type/sprite/ISpriteFont";
 //import type { ISvgText } from "@Type/svgText/ISvgText";
 //import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
-import type { ISpriteLooks } from "../type/sprite/ISpriteLooks";
-import type { ISpriteControl } from "../type/sprite/ISpriteControl";
-import type { ISvgSkin } from "../type/render/ISvgSkin";
-import type { ISpriteCostume } from "../type/sprite/ISpriteCostume";
-import type { ISpriteMotion } from "../type/sprite/ISpriteMotion";
-import type { ISpriteBackdrop } from "../type/sprite/ISpriteBackdrop";
-import type { ISpriteProperties } from "../type/sprite/ISpriteProperties";
+import type { ISpriteLooks } from "../../type/entity/sprite/ISpriteLooks";
+import type { ISpriteControl } from "../../type/entity/sprite/ISpriteControl";
+import type { ISvgSkin } from "../../type/render/ISvgSkin";
+import type { ISpriteCostume } from "../../type/entity/sprite/ISpriteCostume";
+import type { ISpriteMotion } from "../../type/entity/sprite/ISpriteMotion";
+import type { ISpriteBackdrop } from "../../type/entity/sprite/ISpriteBackdrop";
+import type { ISpriteProperties } from "../../type/entity/sprite/ISpriteProperties";
 
 export class Sprite extends Entity implements ISprite {
     private _costume : ISpriteCostume;

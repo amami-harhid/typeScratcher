@@ -1,6 +1,6 @@
 import { ImageEffective } from '../../type/entity/ImageEffective';
-import type { IEntity } from '../../type/entity/IEntity';
-import type { IEntityEffect } from '../../type/entity/IEntityEffect';
+import type { IEntity } from '../../type/entity/entity';
+import type { IEntityEffect } from '../../type/entity/entity/IEntityEffect';
 /** 効果 */
 export class EntityEffect implements IEntityEffect {
 

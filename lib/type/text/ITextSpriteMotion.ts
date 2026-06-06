@@ -1,6 +1,6 @@
-import type { ISpriteMotionPosition } from '../sprite/ISpriteMotionPosition';
+import type { ISpriteMotionPosition } from '../entity/sprite/ISpriteMotionPosition';
 import type { ITextSpriteMotionMove } from './ITextSpriteMotionMove';
-import type { ISpriteMotionDirection} from '../sprite/ISpriteMotionDirection';
+import type { ISpriteMotionDirection} from '../entity/sprite/ISpriteMotionDirection';
 /**
  * テキストの動き
  */

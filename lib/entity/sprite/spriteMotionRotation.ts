@@ -1,6 +1,6 @@
 import type { RotationValue } from '../../type/entity/RotationStyle';
-import type { ISprite } from '../../type/sprite';
-import type { ISpriteMotionRotation } from '../../type/sprite/ISpriteMotionRotation';
+import type { ISprite } from '../../type/entity/sprite';
+import type { ISpriteMotionRotation } from '../../type/entity/sprite/ISpriteMotionRotation';
 
 /**
  * SpriteMotionRotation

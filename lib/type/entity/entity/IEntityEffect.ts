@@ -1,4 +1,4 @@
-import { ImageEffective } from './ImageEffective';
+import { ImageEffective } from '../ImageEffective';
 /** 効果 */
 export interface IEntityEffect {
 

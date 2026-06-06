@@ -1,4 +1,4 @@
-import type { IEntity } from '../entity/IEntity';
+import type { IEntity } from '../entity';
 import type { TEntityOptions } from '../entity/TEntityOptions';
 import type { ISpriteMotion } from './ISpriteMotion';
 import type { ISpriteLooks } from './ISpriteLooks';

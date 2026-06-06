@@ -1,7 +1,7 @@
 /**
  * プロキシ
  */
-import { IEntity } from './IEntity';
+import { IEntity } from '.';
 export interface IEntityProxy extends IEntity {
     readonly isProxyTest:boolean;
     entity:IEntity;

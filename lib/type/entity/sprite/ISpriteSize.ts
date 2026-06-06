@@ -1,4 +1,4 @@
-import type { TBounds, TScaleArr } from "../common/typeCommon";
+import type { TBounds, TScaleArr } from "../../common/typeCommon";
 
 /**
  * スプライトのサイズ
