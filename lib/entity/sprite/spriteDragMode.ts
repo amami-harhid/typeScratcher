@@ -1,5 +1,5 @@
 import type { ISpriteDragMode } from '../../type/entity/sprite/ISpriteDragMode';
-import { DragSprite } from '../drag';
+import { DragSprite } from './drag';
 import { ISprite } from '../../type/entity/sprite';
 
 /** サイズ */
