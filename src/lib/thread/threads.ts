@@ -76,13 +76,7 @@ export class ThreadManager {
         ThreadBank.removeByEntityId(entityId);
     }
     start() {
-        if( this.intervalId != undefined) {
-            clearInterval(this.intervalId);
-            this.intervalId = undefined;
-        }
-        this.intervalId = setInterval(this.interval, INTERVAL, this);
-        this._running = true;
-
+        this.intervalStart()
         // 一時停止イベント定義
         const me = this;
         const _scratchEvent = playground.runtime.scratchEvent;
@@ -105,36 +99,48 @@ export class ThreadManager {
         _scratchEvent.on(ScratchEvent.RESTART_CLICKED, _restart);
         const _stop = () => {
             if(me._running === true) { // pause中でも実行してよいとする
-//                for(const thread of ThreadBank.threadArr) {
-//                    thread.status = ThreadStatus.STOP;
-//                }
-//                clearInterval(me.intervalId);
-//                this.intervalId = undefined;
                 // フキダシ、質問欄表示中のときは消す
                 QuestionBoxElement.removeAsk();
                 // すべてのスレッドを停止する
-                console.log('STOP')
-                this.stopAllScripts();
+                me.stopAllScripts();
                 // TODO クローンを消す
 
+                //me._running = false;
             }
         }
         _scratchEvent.on(ScratchEvent.STOP_CLICKED, _stop);
     }
+    intervalStart() : void {
+        if( this.intervalId != undefined) {
+            clearInterval(this.intervalId);
+            this.intervalId = undefined;
+        }
+        this.intervalId = setInterval(this.interval, INTERVAL, this);
+        this._running = true;
+    }
+    private _timer(): number {
+        return performance.now();
+    }
     async interval(me: ThreadManager):Promise<void> {
-        const newArr: ThreadObj[] = [];
+        //const newArr: ThreadObj[] = [];
+        let count = 0;
+        let thread_count = 0;
         if(me._pauser === true) return; // PAUSE中はスレッドを実行しない
         for(const thread of ThreadBank.threadArr){
+            thread_count+=1;
             //console.log(thread.status)
             if(thread.status == ThreadStatus.YIELD) {
+                count+=1;
                 // 実行待ちのときは スレッドを実行する
                 thread.next();
             }
-            if(thread.status != ThreadStatus.STOP) {
-                // 停止されたスレッド以外を退避する
-                newArr.push(thread);
-            }
+            //if(thread.status != ThreadStatus.STOP) {
+            //    // 停止されたスレッド以外を退避する
+            //    newArr.push(thread);
+            //}
         }
+        console.log(me._timer());
+        console.log('thread_count=',thread_count,',count=',count);
         for(const sprite of playground.getSprites()){
             sprite.update();
         }
@@ -146,9 +152,9 @@ export class ThreadManager {
         playground.render.renderer.draw();
 
         //console.log('ThreadBank.threadArr.length=',ThreadBank.threadArr.length, 'newArr.length=',newArr.length)
-        if(ThreadBank.threadArr.length > newArr.length) {
-            ThreadBank.threadArr = [...newArr];
-        }
+        //if(ThreadBank.threadArr.length > newArr.length) {
+        //    ThreadBank.threadArr = [...newArr];
+        //}
     }
     stopThisScript(proxy: IEntityProxy) :void {
         const ownEntityID = proxy.id;
@@ -217,8 +223,8 @@ export class ThreadObj extends EventEmitter{
     public done: boolean = false; 
     public status: ThreadStatusType = ThreadStatus.NONE;
     private _entity: IEntity;
-    private _proxy: IEntityProxy;
-    public threadId: string|null = null;
+    private _proxy?: IEntityProxy;
+    public threadId: string;
     public entityId: string;;
     // public childObj: ThreadObj|null = null; 
     // public parentObj: TThreadObj|null = null;
@@ -228,16 +234,20 @@ export class ThreadObj extends EventEmitter{
         super();
         this._entity = entity;
         this.threadId = Utils.generateUUID();
-        const proxy = EntityProxyExt.getProxy(entity, _=>{
+        this.genProxy();
+        this.entityId = entity.id;
+        this._doubleRunable = doubleRunable;
+    }
+    genProxy() : void {
+        const proxy = EntityProxyExt.getProxy(this._entity, _=>{
             throw "NOT FOUND PROPERTY in TARGET";
         });
         proxy.threadId = this.threadId;
         this._proxy = proxy;
-        this.entityId = entity.id;
-        this._doubleRunable = doubleRunable;
     }
     setFunc<T> (func: CallableFunction, ...args:T[]) {
         const me = this;
+        me.genProxy();
         me._isStarted = false;
         this._originalF = func;
         const functionDeclareType = FunctionChecker.getFunctionDeclares(func);
@@ -285,9 +295,12 @@ export class ThreadObj extends EventEmitter{
     get isStarted() {
         return this._isStarted;
     }
+    set isStarted(started: boolean) {
+        this._isStarted = started;
+    }
     public forceExit() {
         this.status = ThreadStatus.STOP;
-        this._proxy.Sound.stopImmediately();
+        this._proxy?.Sound.stopImmediately();
 
     }
     public async next() {
