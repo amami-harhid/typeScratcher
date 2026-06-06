@@ -1,5 +1,5 @@
 {
-  "include": ["test/**/*.ts", "test/**/*.ts","lib/**/*.ts", "s3lib-importer/**/*.ts", "test/index.ts", "VM/debug/*.ts"],
+  "include": ["test/**/*.ts", "test/**/*.ts","src/**/*.ts", "s3lib-importer/**/*.ts", "test/index.ts", "VM/debug/*.ts"],
   "exclude": ["./node_modules/*"],
   "compilerOptions": {
     "target": "esnext",         /* es2018,es2019,es2020,esnext が適している */
@@ -10,7 +10,7 @@
     "baseUrl": "./",
     "paths": {
       "@Type/*": ["./Type/*"],
-      "@Lib/*": ["./lib/*"],
+      "@Lib/*": ["src/*"],
     },
     "sourceMap": true,
     "importHelpers": true,

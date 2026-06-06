@@ -1,6 +1,6 @@
 import { SpriteSize } from './spriteSize';
 import { SpriteLayer } from './spriteLayer';
-import { SpriteEffect } from '../sprite/spriteEffect';
+import { SpriteEffect } from './spriteEffect';
 import { SpriteBubble } from './spriteBubble';
 import { SpriteBackdrop } from './spriteBackdrop';
 import { SpriteCostume } from './spriteCostume';

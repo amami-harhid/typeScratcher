@@ -1,6 +1,6 @@
 import { playground } from '../../vm/playground';
 import { ScratchEvent } from '../../vm/scratchEvent';
-import { EntityBroadCast } from '../../entity/entity/entityBroadcast';
+import { EntityBroadCast } from './entityBroadcast';
 import { ThreadStatus, ThreadManager, threadManager, ThreadObj, Threads } from '../../controls/threads';
 import type { IEntityEvent } from '../../type/entity/entity/IEntityEvent';
 import type { IEntityBroadCast } from '../../type/entity/entity/IEntityBroadcast';
