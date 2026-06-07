@@ -107,5 +107,22 @@ apple.Event.clicker().func = async function*(this: Sprite) {
 apple.Event.clicker().func = async function*(this: Sprite) {
     this.Sound.play(catSound);
 };
+apple.Event.keyPresser('e').func = async function*(this: Sprite){
+    console.log('KEY e')
+    this.Event.Broadcast.broadcast('AAA');
+}
+apple.Event.keyPresser('f').func = async function*(this: Sprite){
+    console.log('KEY f')
+    await this.Event.Broadcast.broadcastAndWait('AAA');
+    console.log('KEY f completed')
+}
+apple.Event.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
+    console.log('Received [1]');
+}
+apple.Event.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
+    console.log('Received [2]');
+    await TS.Timer.wait(5);
+}
+
 
 TS.playground.start();

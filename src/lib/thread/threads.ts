@@ -13,20 +13,7 @@ import { ScratchEvent } from "../vm/scratchEvent";
 import { Utils } from "../utils/utils";
 import type { IEntity } from "../../type/entity/entity";
 import type { IEntityProxy } from "../../type/entity/entity/IEntityProxy";
-
-
-export const ThreadStatus = {
-    /** 初期化中 */
-    INITIALIZING: 'INITIALIZING',
-    /** 待機中 */
-    YIELD: 'YIELD',
-    /** 実行中 */
-    RUNNING: 'RUNNING',
-    /** 終了 */
-    COMPLETED: 'COMPLETED',
-} as const;
-
-type ThreadStatusType = keyof typeof ThreadStatus;
+import { ThreadStatus, type IThreadObj, type ThreadStatusType } from "../../type/thread/threads";
 
 export class Threads {
     static get THROW_STOP_THIS_SCRIPTS(){
@@ -227,13 +214,13 @@ export class ThreadManager {
     }
 }
 export const threadManager = new ThreadManager();
-export class ThreadObj extends EventEmitter{
+export class ThreadObj extends EventEmitter implements IThreadObj{
     private _generatorfunc!: AsyncGenerator<any, void, any>;
     private _originalF!: CallableFunction;
     public done: boolean = false; 
     public status: ThreadStatusType = ThreadStatus.INITIALIZING;
     private _entity: IEntity;
-    private _proxy?: IEntityProxy;
+    private _proxy: IEntityProxy;
     public threadId: string;
     public entityId: string;;
     // public childObj: ThreadObj|null = null; 
@@ -247,13 +234,14 @@ export class ThreadObj extends EventEmitter{
         this.genProxy();
         this.entityId = entity.id;
         this._doubleRunable = doubleRunable;
+        this._proxy = this.genProxy();
     }
-    genProxy() : void {
+    genProxy() : IEntityProxy {
         const proxy = EntityProxyExt.getProxy(this._entity, _=>{
             throw "NOT FOUND PROPERTY in TARGET";
         });
         proxy.threadId = this.threadId;
-        this._proxy = proxy;
+        return proxy;
     }
     setFunc<T> (func: CallableFunction, ...args:T[]) {
         const me = this;
@@ -287,10 +275,10 @@ export class ThreadObj extends EventEmitter{
 
         }
     }
-    get entity() {
+    get entity() : IEntity{
         return this._entity;
     }
-    get proxy() {
+    get proxy() : IEntityProxy{
         return this._proxy;
     }
     get originalF() {

@@ -1,15 +1,13 @@
-import { IEntity } from ".";
 import { EventFunctionSetter } from "./IEntityEvent";
-
+import type { IThreadObj } from "../../../type/thread/threads";
 /** メッセージ受信処理 */
 export type TBroadcastElementFunc = {
+    thread: IThreadObj,
     func: CallableFunction,
-    threadId: string,
-    target: IEntity,
 }
 /** メッセージ受信エレメント  */
 export type TBroadcastElement = {
-    "eventId": string, 
+    "messageId": string, 
     "funcArr": TBroadcastElementFunc[],
 }
 
@@ -45,5 +43,11 @@ export interface IEntityBroadCast {
      * @param messageId 
      */
     broadcasReceiver(messageId: string): EventFunctionSetter;
+    
+    /**
+     * 対応するメッセージ受信イベントスレッドを起動
+     * @param messageId 
+     */
+    broadcastReceivedKick(messageId: string) :void;
 
 }

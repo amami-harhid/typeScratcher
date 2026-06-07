@@ -31,6 +31,7 @@ export class ScratchEvent extends EventEmitter {
 
     private _running:boolean;
     private _restart:boolean;
+    private _messageReceiverIdsPool: string[];
     constructor() {
         super();
         this._running= false;
@@ -41,6 +42,7 @@ export class ScratchEvent extends EventEmitter {
         this.on(ScratchEvent.STOP_CLICKED,()=>{
             this._running = false;
         });
+        this._messageReceiverIdsPool = [];
     }
     public get running(): boolean {
         return this._running;
@@ -121,6 +123,27 @@ export class ScratchEvent extends EventEmitter {
                 s.Event.clickEventer();
             }            
             event.stopPropagation();
+        })
+    }
+    public messageReceiverRegist(messageId: string): void {
+        if( !this._messageReceiverIdsPool.includes(messageId)){
+            // 登録されていないとき
+            // 登録する
+            this._messageReceiverIdsPool.push(messageId);
+            // イベント登録
+            this._onMessageReceiverKick(messageId);
+        }
+    }
+    private _onMessageReceiverKick(messageId: string) {
+        this.on(messageId, ()=> {
+            const sprites = playground.getSprites();
+            for(const s of sprites) {
+                s.Event.Broadcast.broadcastReceivedKick(messageId);
+            }
+            const stage = playground.getStage();
+            if(stage){
+                stage.Event.Broadcast.broadcastReceivedKick(messageId);
+            }
         })
     }
 }
