@@ -57,7 +57,7 @@ export interface ISpriteSize {
      *  this.Looks.Size.scale = {w:scale.w +10, h:scale.h +20};
      * ```
      */
-    set scale(scale:{w:number,h:number}|TScaleArr);
+    set scale(scale:TScaleArr);
 
     /** 
      * 大きさ 

@@ -21,7 +21,7 @@ stage.Sound.add([chillSound]);
 const apple = new TS.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
-apple.Looks.Size.scale = {w: 100, h:100};
+apple.Looks.Size.scale = [300,300];
 apple.Motion.Direction.degree = 45;
 apple.Motion.Rotation.style = TS.Rotation.LEFT_RIGHT;
 apple.Motion.Position.xy = [0,0];

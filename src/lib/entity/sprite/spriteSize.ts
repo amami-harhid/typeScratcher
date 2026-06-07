@@ -1,4 +1,4 @@
-import type { TBounds } from '../../../type/common/typeCommon';
+import type { TBounds, TScaleArr } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSize } from '../../../type/entity/sprite/ISpriteSize';
 
@@ -6,8 +6,6 @@ import type { ISpriteSize } from '../../../type/entity/sprite/ISpriteSize';
 export class SpriteSize implements ISpriteSize{
 
     private entity: ISprite;
-    private _w: number = 100;
-    private _h: number = 100;
 
     /**
      * @internal
@@ -64,7 +62,7 @@ export class SpriteSize implements ISpriteSize{
      * ```
      */
     get scale() : {w:number,h:number} {
-        return {w: this.entity.Properties.scale.w, h: this.entity.Properties.scale.h};
+        return {w:this.entity.Properties.scale.w, h:this.entity.Properties.scale.h};
     }
     /**
      * 縦横サイズ
@@ -78,9 +76,9 @@ export class SpriteSize implements ISpriteSize{
      *  this.Looks.Size.scale = {w:scale.w +10, h:scale.h +20};
      * ```
      */
-    set scale( scale : { w:number, h:number} ) {
-        this.entity.Properties.scale.w = scale.w;
-        this.entity.Properties.scale.h = scale.h;
+    set scale( scale : TScaleArr ) {
+        this.entity.Properties.scale.w = scale[0];
+        this.entity.Properties.scale.h = scale[1];
     }
 
     /**

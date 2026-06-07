@@ -51,3 +51,15 @@ Threads.ts 修正
 
 「終わるまで音を鳴らす」の実行中に同じ音で「終わるまで音を鳴らす」をすると前回の再生が止まる（新しく先頭から鳴り出す）
 これは正解か？ →　Scratch3本家の同じ動作であるので正解とする。
+
+## Sprite#Scale 設定変更
+0.0.19
+
+## メッセージ受信処理
+作成中(EntityBroadcast.ts)
+threadObjを作り出しステータスはYIELDにせずに threadManager.registThread() をする
+メッセージIDに紐づく 配列へthreadObjを追加していく
+メッセージIDのScratchEventを受信(on)したとき(※1)
+・配列からthreadObjを取り出し、取り出したすべてのthreadObjへ対して、
+・・ステータスが実行中の場合、強制終了
+・・ステータス(YIELD以外)の場合、YIELD (待機中)にする

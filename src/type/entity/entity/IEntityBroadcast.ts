@@ -1,3 +1,18 @@
+import { IEntity } from ".";
+import { EventFunctionSetter } from "./IEntityEvent";
+
+/** メッセージ受信処理 */
+export type TBroadcastElementFunc = {
+    func: CallableFunction,
+    threadId: string,
+    target: IEntity,
+}
+/** メッセージ受信エレメント  */
+export type TBroadcastElement = {
+    "eventId": string, 
+    "funcArr": TBroadcastElementFunc[],
+}
+
 /** メッセージ送受信 */
 export interface IEntityBroadCast {
 
@@ -26,22 +41,9 @@ export interface IEntityBroadCast {
     broadcastAndWait(messageId: string, ...args:unknown[]): Promise<void>;
 
     /**
-     * messageId を使い EventEmitter.on を宣言する
-     * （他方からemitされたとき受け付け func を実行するため）
-     * なお、本メソッドが呼び出される都度、funcを配列に蓄積し、
-     * emitされたときは 蓄積したfuncをPromiseとして実行する。
-     * 
+     * メッセージ受信時のイベント定義セッター
      * @param messageId 
-     * @param func 
-     * ```ts
-     *  stage.Event.whenBroadcastReceived('Start', 
-     *                  async function(this:Stage, count:number, mouseDown:boolean ){
-     *      console.log('count', count);
-     *      console.log('mouseDown', mouseDown);
-     *      // 5秒経過したあとに終了する
-     *      await Lib.await(5); 
-     *  });
-     * ```
      */
-    whenBroadcastReceived(messageId:string, func: CallableFunction): void;
+    broadcasReceiver(messageId: string): EventFunctionSetter;
+
 }

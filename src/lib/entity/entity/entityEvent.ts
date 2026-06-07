@@ -2,7 +2,7 @@ import { playground } from '../../vm/playground';
 import { ScratchEvent } from '../../vm/scratchEvent';
 import { EntityBroadCast } from './entityBroadcast';
 import { ThreadStatus, ThreadManager, threadManager, ThreadObj } from '../../thread/threads';
-import type { IEntityEvent } from '../../../type/entity/entity/IEntityEvent';
+import type { IEntityEvent, EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
 import type { IEntityBroadCast } from '../../../type/entity/entity/IEntityBroadcast';
 import type { IEntity } from '../../../type/entity/entity';
 import { Entity } from '.';
@@ -10,7 +10,7 @@ import { Entity } from '.';
 /**
  * 二重起動指定
  */
-const DoubleRunning = {
+export const DoubleRunning = {
     TRUE: true,
     FALSE: false,
 } as const;
@@ -49,13 +49,13 @@ export class EntityEvent implements IEntityEvent{
      * 旗が押されたときのイベントセッターを返す
      * @returns イベントセッター
      */
-    flagPresser() {
+    flagPresser() : EventFunctionSetter{
         const me = this;
         return class {
             static set func(func: CallableFunction) {
                 me._whenFlag(func);
             }
-        }
+        };
     }
     /**
      * 旗が押されたときの動作を定義
@@ -76,7 +76,7 @@ export class EntityEvent implements IEntityEvent{
      * キー押下イベントのセッターを返す
      * @returns イベントセッター
      */
-    keyPresser( key: string ) {
+    keyPresser( key: string ) :EventFunctionSetter{
         const me = this;
         return class {
             static set func(func: CallableFunction) {
@@ -84,7 +84,7 @@ export class EntityEvent implements IEntityEvent{
                     me._whenKeyPressed(key, func);
                 }
             }
-        }
+        };
     }
     
     /**
@@ -122,7 +122,7 @@ export class EntityEvent implements IEntityEvent{
      * クリックイベントのセッターを返す
      * @returns イベントセッター
      */
-    clicker() {
+    clicker() : EventFunctionSetter {
         const me = this;
         return class {
             static set func(func: CallableFunction) {
@@ -187,7 +187,7 @@ export class EntityEvent implements IEntityEvent{
      * @param backdropName 
      * @returns イベントセッター
      */
-    backdropSwitcher(backdropName: string) {
+    backdropSwitcher(backdropName: string) : EventFunctionSetter{
         const me = this;
         return class {
             static set func(func: CallableFunction) {

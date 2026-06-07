@@ -1,4 +1,9 @@
 import type { IEntityBroadCast } from './IEntityBroadcast';
+
+export interface EventFunctionSetter {
+    set func(func: CallableFunction);
+}
+
 /** イベント */
 export interface IEntityEvent {
 
@@ -8,9 +13,7 @@ export interface IEntityEvent {
      * 旗が押されたイベントのセッターを返す
      * @returns イベントセッター
      */
-    flagPresser(): {
-        set func(func: CallableFunction);
-    };
+    flagPresser(): EventFunctionSetter;
     /**
      * キー押下イベントのセッターを返す
      * @param key キーの指定
@@ -23,17 +26,13 @@ export interface IEntityEvent {
      * クリックイベントのセッターを返す
      * @returns イベントセッター
      */
-    clicker(): {
-        set func(func: CallableFunction);
-    };
+    clicker(): EventFunctionSetter;
     /**
      * 背景が〇〇になったときのイベントセッターを返す
      * @param backdropName 
      * @returns イベントセッター
      */
-    backdropSwitcher(backdropName: string) : {
-        set func(func: CallableFunction);
-    };
+    backdropSwitcher(backdropName: string) :EventFunctionSetter;
 
     /** クリックされたときのイベント起動 */
     clickEventer(): Promise<void>;

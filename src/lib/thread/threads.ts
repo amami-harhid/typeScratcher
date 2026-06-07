@@ -200,10 +200,13 @@ export class ThreadManager {
         stopMark.classList.remove('is-active');
         stopMark.classList.add('is-not-active');
         for(const thread of ThreadBank.threadArr){
-            const _proxy = thread.proxy;
-            if(_proxy){
-                _proxy.setStopThisScriptSwitch(true);
-                this.stopSounds(_proxy);
+            if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.YIELD){
+                // 実行中、実行待ちのスレッドは強制修正する。
+                const _proxy = thread.proxy;
+                if(_proxy){
+                    _proxy.setStopThisScriptSwitch(true);
+                    this.stopSounds(_proxy);
+                }
             }
         }
     }
@@ -324,9 +327,12 @@ export class ThreadObj extends EventEmitter{
         }).catch(e=>{
             me.status = ThreadStatus.COMPLETED;
             me._proxy?.Sound.stopImmediately();
-            if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
+            if( e==Threads.THROW_STOP_THIS_SCRIPTS){
                 // throwせず
-                console.log("next() CATCH", e)
+                me._proxy?.setStopThisScriptSwitch(false);// 一度強制スローしたので元に戻す
+            }else if( e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS){
+                // throwせず
+
             }else{
                 const f= me._originalF;
                 console.error(e);
