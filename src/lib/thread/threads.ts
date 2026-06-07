@@ -16,10 +16,14 @@ import type { IEntityProxy } from "../../type/entity/entity/IEntityProxy";
 
 
 export const ThreadStatus = {
-    RUNNING: 'RUNNING',
+    /** 初期化中 */
+    INITIALIZING: 'INITIALIZING',
+    /** 待機中 */
     YIELD: 'YIELD',
-    STOP: 'STOP',
-    NONE: 'NONE',
+    /** 実行中 */
+    RUNNING: 'RUNNING',
+    /** 終了 */
+    COMPLETED: 'COMPLETED',
 } as const;
 
 type ThreadStatusType = keyof typeof ThreadStatus;
@@ -54,7 +58,7 @@ class ThreadBank {
         for(const threadObj of ThreadBank.threadArr) {
             if(entityId == threadObj.entityId) {
                 // 停止状態にするので、自動的に抹消される。
-                threadObj.status = ThreadStatus.STOP;
+                threadObj.status = ThreadStatus.COMPLETED;
             }
         }
     }
@@ -221,7 +225,7 @@ export class ThreadObj extends EventEmitter{
     private _generatorfunc!: AsyncGenerator<any, void, any>;
     private _originalF!: CallableFunction;
     public done: boolean = false; 
-    public status: ThreadStatusType = ThreadStatus.NONE;
+    public status: ThreadStatusType = ThreadStatus.INITIALIZING;
     private _entity: IEntity;
     private _proxy?: IEntityProxy;
     public threadId: string;
@@ -299,7 +303,7 @@ export class ThreadObj extends EventEmitter{
         this._isStarted = started;
     }
     public forceExit() {
-        this.status = ThreadStatus.STOP;
+        this.status = ThreadStatus.COMPLETED;
         this._proxy?.Sound.stopImmediately();
 
     }
@@ -310,12 +314,12 @@ export class ThreadObj extends EventEmitter{
         this._generatorfunc.next().then((value: IteratorResult<any, void>)=>{
             me.done = value.done || false;
             if(me.done === true){
-                me.status = ThreadStatus.STOP;
+                me.status = ThreadStatus.COMPLETED;
             }else{
                 me.status = ThreadStatus.YIELD;
             }
         }).catch(e=>{
-            me.status = ThreadStatus.STOP;
+            me.status = ThreadStatus.COMPLETED;
             me._proxy?.Sound.stopImmediately();
             if(e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS || e==Threads.THROW_STOP_THIS_SCRIPTS){
                 // throwせず

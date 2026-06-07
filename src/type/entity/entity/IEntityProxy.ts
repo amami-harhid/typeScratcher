@@ -7,7 +7,7 @@ export interface IEntityProxy extends IEntity {
     entity:IEntity;
     threadId:string;
     threadName: string;
-    threadCounter: string;
+    threadCounter: number;
     /** このスクリプトを止めるスイッチを設定する */
     setStopThisScriptSwitch(stop:boolean): void;
     /** このスクリプトを止めるスイッチ */

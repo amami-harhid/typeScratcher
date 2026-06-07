@@ -24,8 +24,24 @@ export class ScratchEvent extends EventEmitter {
     static get STOP_CLICKED() : string {
         return "STOP_CLICKED";
     }
+    static get CANVAS_CLICKED() : string {
+        return "CANVAS_CLICKED";
+    }
+
+    private _running:boolean;
+
     constructor() {
         super();
+        this._running= false;
+        this.on(ScratchEvent.GREEN_FLAG_CLICKED,()=>{
+            this._running = true;
+        });
+        this.on(ScratchEvent.STOP_CLICKED,()=>{
+            this._running = false;
+        });
+    }
+    public get running(): boolean {
+        return this._running;
     }
     public stageFirstClick() {
         const main = Element.getMain();
@@ -87,5 +103,12 @@ export class ScratchEvent extends EventEmitter {
         })
 
     }
-
+    public canvasClick() {
+        const canvas = Element.getScratchCanvas();
+        const me = this;
+        canvas.addEventListener('click', (event:MouseEvent)=>{
+            me.emit(ScratchEvent.CANVAS_CLICKED);
+            event.stopPropagation();
+        })
+    }
 }

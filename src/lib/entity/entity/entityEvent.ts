@@ -5,6 +5,7 @@ import { ThreadStatus, ThreadManager, threadManager, ThreadObj } from '../../thr
 import type { IEntityEvent } from '../../../type/entity/entity/IEntityEvent';
 import type { IEntityBroadCast } from '../../../type/entity/entity/IEntityBroadcast';
 import type { IEntity } from '../../../type/entity/entity';
+import { Entity } from '.';
 
 /**
  * 二重起動指定
@@ -14,9 +15,15 @@ const DoubleRunning = {
     FALSE: false,
 } as const;
 
+/**
+ * クリックイベント定義
+ */
+declare type CLICK_EVENT_FUNCTION = (e: MouseEvent, _counter: number) => Promise<void>;
+
 /** イベント */
 export class EntityEvent implements IEntityEvent{
-
+    static eventFuncArray: CLICK_EVENT_FUNCTION[] = [];
+    static clickFirstRegist: boolean = false;
     private _broadcast: IEntityBroadCast;
     protected entity: IEntity;
     private threads: ThreadManager;
@@ -60,7 +67,7 @@ export class EntityEvent implements IEntityEvent{
         threadManager.registThread(threadObj);
         // 緑の旗がおされたときに「YIELD」にする、スレッドが実行されはじめる
         playground.runtime.scratchEvent.on(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
-            threadObj.setFunc(func);
+            threadObj.setFunc(func); // 旗クリックされたときに作り直す
             threadObj.isStarted = false;
             threadObj.status = ThreadStatus.YIELD;
         })
@@ -125,8 +132,57 @@ export class EntityEvent implements IEntityEvent{
     }
 
     private _whenClicked(func: CallableFunction): void {
+        const me = this;
+        const scratchEvent = playground.runtime.scratchEvent;
+        const threadObj = new ThreadObj(me.entity, DoubleRunning.FALSE);
+        const addId = '_clicked';
+        const _clickEventF = async (e: MouseEvent)=>{
+            e.stopPropagation();
+            // 緑の旗押されていないときは何もしない。
+            if(scratchEvent.running === false) {
+                return;
+            }
+            let _counter = 0;
+            for(const eventf of EntityEvent.eventFuncArray){
+                _counter += 1;
+                eventf(e, _counter); // 意図的にawaitしていない
+            }
+        }
+        const eventf: CLICK_EVENT_FUNCTION = async (e:MouseEvent, _counter:number):Promise<void>=>{
+            const CLICK_COUNTER = _counter;
+            const entityId = me.entity.id + addId;
+            e.stopPropagation();
+            if(scratchEvent.running === false) {
+                return;
+            }
 
+            const mouseX = e.offsetX;
+            const mouseY = e.offsetY;
 
+            /** マウス位置範囲(範囲をすこしだけ広くしておく) */ 
+            const _touchRange = { 
+                touchWidth : 3, 
+                touchHeight : 3,
+            };
+            // クリックしたポイントにあるDrawableのうち一番前面にあるものを返す。
+            // そのポイントにDrawableがないときは Falseが返る。
+            // 第五引数を省略することで全ての「表示中Drawable」から探す。
+            const _touchDrawableId = me.entity.render.renderer.pick(mouseX, mouseY, _touchRange.touchWidth, _touchRange.touchHeight);
+            if(me.entity.drawableID == _touchDrawableId){
+                // 音がなっていたら止め、最初からやり直す。
+                me.entity.Sound.stopImmediately();
+                threadObj.setFunc(func); // 作り直す
+                const proxy = threadObj.proxy;
+                if(proxy){
+                    proxy.threadCounter = CLICK_COUNTER;
+                }
+                threadManager.registThread(threadObj);
+                threadObj.status = ThreadStatus.YIELD;
+            }
+        }
+        EntityEvent.eventFuncArray.push(eventf);
+        // Canvasがクリックされたときに、配列にためたイベントを実行する
+        scratchEvent.on(ScratchEvent.CANVAS_CLICKED, _clickEventF);
     }
     /**
      * 背景が〇〇になったときのイベントセッターを返す
