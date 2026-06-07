@@ -56,7 +56,8 @@ Threads.ts 修正
 0.0.19
 
 ## メッセージ受信処理
-作成中(EntityBroadcast.ts)
+0.0.19
+
 threadObjを作り出しステータスはYIELDにせずに threadManager.registThread() をする
 メッセージIDに紐づく 配列へthreadObjを追加していく
 メッセージIDのScratchEventを受信(on)したとき(※1)
