@@ -30,10 +30,11 @@ export class ScratchEvent extends EventEmitter {
     }
 
     private _running:boolean;
-
+    private _restart:boolean;
     constructor() {
         super();
         this._running= false;
+        this._restart= false;
         this.on(ScratchEvent.GREEN_FLAG_CLICKED,()=>{
             this._running = true;
         });
@@ -67,6 +68,8 @@ export class ScratchEvent extends EventEmitter {
             pauseMark.classList.remove('is-not-active');
             stopMark.classList.add('is-active');
             pauseMark.classList.add('is-active');
+            Element.changeToPauseMarkActive(pauseMark);
+            me._restart = false;
             me.emit(ScratchEvent.GREEN_FLAG_CLICKED);
             greenFlag.classList.remove('running');
             event.stopPropagation();
@@ -79,10 +82,13 @@ export class ScratchEvent extends EventEmitter {
     }
     public stopMarkClick() {
         const stopMark = Element.getControlStopMark();
+        const pauseMark = Element.getControlPauseMark();
         const me = this;
         stopMark.addEventListener('click',(event:MouseEvent)=>{
             stopMark.classList.remove('is-active');
             stopMark.classList.add('is-not-active');
+            Element.changeToPauseMarkActive(pauseMark);
+            me._restart = false;
             me.emit(ScratchEvent.STOP_CLICKED);
             event.stopPropagation();
         })
@@ -91,9 +97,9 @@ export class ScratchEvent extends EventEmitter {
     public pauseMarkClick() {
         const pauseMark = Element.getControlPauseMark();
         const me = this;
-        let restart = false;
+        //let restart = false;
         pauseMark.addEventListener('click',(event:MouseEvent)=>{
-            if(restart===true){
+            if(this._restart===true){
                 me.emit(ScratchEvent.RESTART_CLICKED);
                 Element.changeToPauseMarkActive(pauseMark);
             }else{
@@ -101,7 +107,7 @@ export class ScratchEvent extends EventEmitter {
                 Element.changeToRestartMark(pauseMark);
             }
             event.stopPropagation();
-            restart = !restart;
+            me._restart = !this._restart;
         })
 
     }

@@ -85,6 +85,10 @@ export class ThreadManager {
         const me = this;
         const _scratchEvent = playground.runtime.scratchEvent;
         const _runtime = playground.runtime;
+        const _flagClick = () => {
+            this._pauser = false;
+        }
+        _scratchEvent.on(ScratchEvent.GREEN_FLAG_CLICKED, _flagClick);
         const _pause = ()=>{
             me._pauser = true;
             if(_runtime.audioEngine){
