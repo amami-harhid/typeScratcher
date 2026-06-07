@@ -34,5 +34,9 @@ export interface IEntityEvent {
     backdropSwitcher(backdropName: string) : {
         set func(func: CallableFunction);
     };
+
+    /** クリックされたときのイベント起動 */
+    clickEventer(): Promise<void>;
+
     
 }

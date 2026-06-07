@@ -20,7 +20,7 @@ const stage = new TS.Stage();
 stage.Sound.add([chillSound]);
 const apple = new TS.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
-apple.Sound.add([catSound]);
+apple.Sound.add([catSound, chillSound]);
 apple.Looks.Size.scale = {w: 100, h:100};
 apple.Motion.Direction.degree = 45;
 apple.Motion.Rotation.style = TS.Rotation.LEFT_RIGHT;
@@ -37,26 +37,17 @@ apple.Sound.setPitch(chillSound, 1.0);
 apple.Sound.setVolume(catSound, 10);
 
 
-apple.Event.flagPresser().func = async function*(this: Sprite) {
+apple.Event.flagPresser().func = async function*(this: Sprite){
     this.Motion.Position.xy = [0,0];
     for(;;){
-        this.Sound.play(catSound);
-        this.Sound.addVolume(catSound, 0.5);
-        this.Sound.addPitch(catSound, 0.005);
-        await TS.Timer.wait(1);
-        yield;
-    }
-}
-apple.Event.flagPresser().func = async function*(this: Sprite){
-    for(;;){
-        this.Motion.Move.steps(10);
+        this.Motion.Move.steps(1);
         this.Motion.Move.ifOnEdgeBounce();
         yield;
     }
 }
 stage.Event.flagPresser().func = async function*(this: Stage){
     for(;;){
-        await this.Sound.play(chillSound);
+        //await this.Sound.play(chillSound);
         yield;
     }
 }
@@ -109,5 +100,12 @@ stage.Event.keyPresser("d").func = async function*(this: Stage){
 apple.Event.keyPresser(TS.KEYBOARD_KEYS.SPACE).func = async function*(this: Sprite){
     this.Control.stopAll();
 }
+
+apple.Event.clicker().func = async function*(this: Sprite) {
+    this.Sound.play(chillSound);
+};
+apple.Event.clicker().func = async function*(this: Sprite) {
+    this.Sound.play(catSound);
+};
 
 TS.playground.start();

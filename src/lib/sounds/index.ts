@@ -7,7 +7,10 @@ import { playground } from "../vm/playground";
 import { SoundPlayer } from "./soundPlayer";
 import { ScratchEvent } from '../vm/scratchEvent';
 import { Utils } from "../utils/utils";
+import { ISoundPlayer } from "../../type/sound/ISoundPlayer";
+
 type SoundArgStringObject = { [key:string]:string };
+
 export class Sound extends EventEmitter {
     static get SOUND_FORCE_STOP() {
         return "SOUND_FORCE_STOP";
@@ -16,7 +19,7 @@ export class Sound extends EventEmitter {
     private _soundPath:string;
     private _data!:Uint8Array<ArrayBuffer>;
     private _loadCompleted: boolean = false;
-    private _soundPlayer!: SoundPlayer;
+    private _soundPlayer!: ISoundPlayer;
     private _volume: number = 100;
     private _pitch: number = 1.0;
     constructor(sound: SoundArgStringObject) {

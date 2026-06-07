@@ -3,6 +3,7 @@
  */
 import { EventEmitter } from "events";
 import { Element } from "../gui/element";
+import { playground } from "./playground";
 
 export class ScratchEvent extends EventEmitter {
 
@@ -73,6 +74,7 @@ export class ScratchEvent extends EventEmitter {
 
         this.pauseMarkClick();
         this.stopMarkClick();
+        this.canvasClick();
 
     }
     public stopMarkClick() {
@@ -107,7 +109,11 @@ export class ScratchEvent extends EventEmitter {
         const canvas = Element.getScratchCanvas();
         const me = this;
         canvas.addEventListener('click', (event:MouseEvent)=>{
-            me.emit(ScratchEvent.CANVAS_CLICKED);
+            //me.emit(ScratchEvent.CANVAS_CLICKED);
+            const sprites = playground.getSprites();
+            for(const s of sprites){
+                s.Event.clickEventer();
+            }            
             event.stopPropagation();
         })
     }

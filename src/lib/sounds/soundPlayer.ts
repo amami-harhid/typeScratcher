@@ -1,12 +1,13 @@
 /**
  * SoundPlayer
  */
+import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
 import type { 
     IScratchSoundPlayer, 
     TSoundPlayerOption, 
     TEffectChain } from "../../type/sound/IAudioEngine";
 
-export class SoundPlayer {
+export class SoundPlayer implements ISoundPlayer{
     private _name : string;
     private _soundPlayer: IScratchSoundPlayer;
     private _options: TSoundPlayerOption;
@@ -74,7 +75,10 @@ export class SoundPlayer {
     play() {
         this._soundPlayer.play();
     }
-    async startSoundUntilDone() {
+    get isPlaying(): boolean {
+        return this._soundPlayer.isPlaying;
+    }
+    async startSoundUntilDone() : Promise<void> {
 
         const __soundPlayer = this._soundPlayer;
         // --- replace finished.
@@ -95,7 +99,7 @@ export class SoundPlayer {
     stop() {
         this._soundPlayer.stop();
     }
-    stopImmediately() {
+    stopImmediately() : void{
         this._soundPlayer.stopImmediately();
     }
 

@@ -132,7 +132,6 @@ export class ThreadManager {
         if(me._pauser === true) return; // PAUSE中はスレッドを実行しない
         for(const thread of ThreadBank.threadArr){
             thread_count+=1;
-            //console.log(thread.status)
             if(thread.status == ThreadStatus.YIELD) {
                 count+=1;
                 // 実行待ちのときは スレッドを実行する
@@ -143,8 +142,8 @@ export class ThreadManager {
             //    newArr.push(thread);
             //}
         }
-        console.log(me._timer());
-        console.log('thread_count=',thread_count,',count=',count);
+        //console.log(me._timer());
+        //console.log('thread_count=',thread_count,',count=',count);
         for(const sprite of playground.getSprites()){
             sprite.update();
         }
