@@ -64,3 +64,7 @@ threadObjを作り出しステータスはYIELDにせずに threadManager.regist
 ・配列からthreadObjを取り出し、取り出したすべてのthreadObjへ対して、
 ・・ステータスが実行中の場合、強制終了
 ・・ステータス(YIELD以外)の場合、YIELD (待機中)にする
+
+## ImageEffect テスト
+
+色、幽霊、ピクセルなど
