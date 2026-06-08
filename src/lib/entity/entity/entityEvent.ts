@@ -6,7 +6,6 @@ import { ThreadStatus } from '../../../type/engine/thread/threads';
 import type { IEntityEvent, EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
 import type { IEntityBroadCast } from '../../../type/entity/entity/IEntityBroadcast';
 import type { IEntity } from '../../../type/entity/entity';
-import { Entity } from '.';
 
 /**
  * 二重起動指定

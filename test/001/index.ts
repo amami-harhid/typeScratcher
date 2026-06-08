@@ -1,5 +1,8 @@
-import { Typescratcher as TS } from '../index';
-import type { Sprite, Stage } from '../index';
+/**
+ * TEST 001
+ */
+import { Typescratcher as TS } from '../../index';
+import type { Sprite, Stage } from '../../index';
 
 //import AppleSvg from './assets/Apple.svg';
 // 外部パス(https://など)を import xxx from '外部パス'; は

@@ -5,16 +5,13 @@ import type { ISpriteLooks } from './ISpriteLooks';
 import type { ISpriteControl } from './ISpriteControl';
 import type { ISpriteSound } from './ISpriteSound';
 import type { ISpriteImage } from './ISpriteImage';
-//import type { ISpriteFont } from './ISpriteFont';
 import type { ISpriteSensing } from './ISpriteSensing';
 import type { ISpriteEvent } from './ISpriteEvent';
-//import type { ISpriteTextToSpeech } from './ISpriteTextToSpeech';
 import type { ISpriteDragMode } from './ISpriteDragMode';
-//import type { ISpritePen } from './ISpritePen';
-//import type { ISvgText } from '../svgText/ISvgText';
 import type { IEntityProperties } from '../entity/IEntityProperties'; 
 import type { ISpriteCostume } from './ISpriteCostume';
 import type { ISpriteBackdrop } from './ISpriteBackdrop';
+import type { IPenSprite } from './pen';
 /**
  * Sprite
  */
@@ -42,6 +39,11 @@ export interface ISprite extends IEntity {
      * 動き
      */
     readonly Motion: ISpriteMotion;
+
+    /**
+     * PEN
+     */
+    readonly Pen: IPenSprite;
 
     /**
      * コスチューム番号、コスチューム名を取り出すためのオブジェクト

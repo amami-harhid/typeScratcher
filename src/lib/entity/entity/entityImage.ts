@@ -1,8 +1,8 @@
+import { EntityEffect } from './entityEffect';
 import { ImageBank } from '../../image/imageBank';
 import type { IImage } from '../../../type/image';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityEffect } from '../../../type/entity/entity/IEntityEffect';
-import { EntityEffect } from './entityEffect';
 
 /** メッセージ送受信 */
 export class EntityImage {

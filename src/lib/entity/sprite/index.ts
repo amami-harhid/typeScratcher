@@ -144,6 +144,7 @@ export class Sprite extends Entity implements ISprite {
         })
     }
     update() {
+        this._penSprite.update();
         this._looks.Bubble.update();
         this._properties.update(); 
     }

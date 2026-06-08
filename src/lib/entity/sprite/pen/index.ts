@@ -6,7 +6,7 @@ import { PenSpriteSize } from './penSpriteSize';
 import { PenSpriteHSVColor } from './penSpriteHSVColor';
 import { StageLayering } from '../../../../type/entity/stage/CStageLayering';
 import type { TPenAttributes } from '../../../../type/pen';
-import type { IPenSprite } from '../../../../type/entity/sprite/pen/IPenSprite';
+import type { IPenSprite } from '../../../../type/entity/sprite/pen';
 
 const NotPrepareMessage = 'prepareが行われていません';
 class PenDrawable {
@@ -48,7 +48,7 @@ export class PenSprite implements IPenSprite {
     private _x0?: number;
     private _y0?: number;
     private _sprite: Sprite;
-    //private _penDrawableId: number;
+    private _penDrawableId: number;
     private _Size: PenSpriteSize;
     private _HSVColor : PenSpriteHSVColor;
     private _penDrawable: PenDrawable;
@@ -64,7 +64,7 @@ export class PenSprite implements IPenSprite {
         this._penAttributes = {color4f:[240,1,1,1], diameter: 1};
         this._penRgbAttributes = {color4f:[0,0,1,1], diameter: 1};
         this._penSize = 1;
-        //this._penDrawableId = -1;
+        this._penDrawableId = -1;
         //this._skinId = -1;
         this._Size = new PenSpriteSize(this);
         this._HSVColor = new PenSpriteHSVColor(this);
@@ -73,12 +73,11 @@ export class PenSprite implements IPenSprite {
     }
     _createPen() : void {
         this._skinId = this._penDrawable.createPen(this.render);
-        // this._penDrawableId = this.render.renderer.createDrawable(StageLayering.PEN_LAYER);
-        // this._skinId = this.render.renderer.createPenSkin();
-        // this.render.renderer.updateDrawableSkinId(this._penDrawableId, this._skinId);
+        this._penDrawableId = this.render.renderer.createDrawable(StageLayering.PEN_LAYER);
+        this._skinId = this.render.renderer.createPenSkin();
+        this.render.renderer.updateDrawableSkinId(this._penDrawableId, this._skinId);
     }
     dispose(): void {
-        // destroySkin(skinId)
         if(this._skinId>-1){
             this.render.renderer.destroySkin(this._skinId);
         }
@@ -265,6 +264,7 @@ export class PenSprite implements IPenSprite {
     }
     /** @internal */
     drawPoint() : void {
+        console.log(this._skinId)
         if(this._skinId == -1){
             console.error(NotPrepareMessage);
             return;
@@ -292,6 +292,12 @@ export class PenSprite implements IPenSprite {
         this._penSize = (penSize<1)? 1: penSize;
         this._penAttributes.diameter = this._penSize;
         this.convertAttribues2Rgb();
+    }
+
+    update(): void {
+        if(this.isPenDown() === true) {
+            this.drawLine();
+        }
     }
 
 }

@@ -7,6 +7,11 @@ import type { IPenSpriteHSVColor } from './IPenSpriteHSVColor';
 export interface IPenSprite {
 
     /**
+     * 更新
+     */
+    update(): void;
+
+    /**
      * ペンを準備する
      */
     prepare(): void;

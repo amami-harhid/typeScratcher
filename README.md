@@ -67,3 +67,6 @@ threadObjを作り出しステータスはYIELDにせずに threadManager.regist
 
 ## ImageEffect 実装
 実装：　色、幽霊、ピクセルなど(0.0.20)
+
+## PEN機能 (+Stamp)
+実装： 0.0.21
