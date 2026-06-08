@@ -3,7 +3,7 @@
  */
 import { EventEmitter } from "events";
 import { Image } from "../../image";
-import { playground } from "../../vm/playground";
+import { playground } from "../../engine/playground";
 import { Render } from "../../render";
 import { type StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
 import { Utils } from "../../utils/utils";

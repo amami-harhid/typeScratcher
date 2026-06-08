@@ -1,6 +1,6 @@
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { EntitySensingSprite } from '../entity/entitySensingSprite';
-import { playground } from '../../vm/playground';
+import { playground } from '../../engine/playground';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSensingSprite } from '../../../type/entity/sprite/ISpriteSensingSprite';
 import type { ISpriteSensingDistance } from '../../../type/entity/sprite/ISpriteSensingDistance';

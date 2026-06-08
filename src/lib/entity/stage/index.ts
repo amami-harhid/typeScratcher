@@ -2,7 +2,7 @@
  * Stage
  */
 import { Entity } from "../entity";
-import { playground } from "../../vm/playground";
+import { playground } from "../../engine/playground";
 import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import { StageProperties } from "./stageProperties";
 import { StageLooks } from "./stageLooks";

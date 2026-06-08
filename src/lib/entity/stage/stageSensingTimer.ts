@@ -1,4 +1,4 @@
-import { playground } from '../../vm/playground';
+import { playground } from '../../engine/playground';
 import type { IStage } from '../../../type/entity/stage';
 import type { IEntitySensingTimer } from '../../../type/entity/entity/IEntitySensingTimer';
 /**

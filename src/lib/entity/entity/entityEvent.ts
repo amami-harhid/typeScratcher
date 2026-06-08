@@ -1,8 +1,8 @@
-import { playground } from '../../vm/playground';
-import { ScratchEvent } from '../../vm/scratchEvent';
+import { playground } from '../../engine/playground';
+import { ScratchEvent } from '../../engine/scratchEvent';
 import { EntityBroadCast } from './entityBroadcast';
-import { ThreadManager, threadManager, ThreadObj } from '../../thread/threads';
-import { ThreadStatus } from '../../../type/thread/threads';
+import { ThreadManager, threadManager, ThreadObj } from '../../engine/thread/threads';
+import { ThreadStatus } from '../../../type/engine/thread/threads';
 import type { IEntityEvent, EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
 import type { IEntityBroadCast } from '../../../type/entity/entity/IEntityBroadcast';
 import type { IEntity } from '../../../type/entity/entity';

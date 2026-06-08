@@ -37,15 +37,15 @@ import { Stage as _Stage } from './src/lib/entity/stage';
 import { Image } from './src/lib/image';
 import { Sound } from './src/lib/sounds';
 import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
-import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './src/type/vm/keyboad';
+import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './src/type/engine/keyboad';
 import { Timer } from './src/lib/utils/timer';
-import { playground } from './src/lib/vm/playground';
+import { playground } from './src/lib/engine/playground';
 import type { ISprite, SSprite } from './src/type/entity/sprite';
 import type { IStage, SStage } from './src/type/entity/stage';
 import type { SImage } from './src/type/image';
 import type { SSound } from './src/type/sound';
 import type { STimer } from './src/type/util/timer';
-import type { IPlayground } from './src/type/vm/playground';
+import type { IPlayground } from './src/type/engine/playground';
 
 /**
  * 【2026/06/06】

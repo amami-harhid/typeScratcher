@@ -1,8 +1,8 @@
 import { lineBreaker } from './svgTexUtil';
+import { playground } from '../engine/playground';
 import { SvgTextError } from './svgTextError';
 import { SvgTextMesure } from './svgTexMesure';
 import type { ISvgTextCreator, TSvgOption } from '../../type/svgText/ISvgTextCreator';
-import { playground } from '@Lib/lib/vm/playground';
 /**
  * SvgTextCreator
  */

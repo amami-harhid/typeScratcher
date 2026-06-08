@@ -3,9 +3,9 @@
  */
 import EventEmitter from "events";
 import { SoundLoader } from "../loader/soundLoader";
-import { playground } from "../vm/playground";
+import { playground } from "../engine/playground";
 import { SoundPlayer } from "./soundPlayer";
-import { ScratchEvent } from '../vm/scratchEvent';
+import { ScratchEvent } from '../engine/scratchEvent';
 import { Utils } from "../utils/utils";
 import { ISoundPlayer } from "../../type/sound/ISoundPlayer";
 

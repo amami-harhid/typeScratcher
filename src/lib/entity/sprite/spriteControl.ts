@@ -1,12 +1,12 @@
-import { threadManager } from '../../thread/threads';
+import { threadManager } from '../../engine/thread/threads';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
 import type { TEntityOptions } from '../../../type/entity/entity/TEntityOptions';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteControl } from '../../../type/entity/sprite/ISpriteControl';
 import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
-import { ScratchEvent } from '../../vm/scratchEvent';
-import { playground } from '../../vm/playground';
+import { ScratchEvent } from '../../engine/scratchEvent';
+import { playground } from '../../engine/playground';
 /**
  * Sprite Control(制御)
  */

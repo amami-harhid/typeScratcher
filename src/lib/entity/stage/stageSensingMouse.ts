@@ -1,5 +1,5 @@
-import type { IEntitySensingMouse } from '@Type/entity/IEntitySensingMouse';
-import type { IStage } from '@Type/stage';
+import type { IEntitySensingMouse } from '../../../type/entity/entity/IEntitySensingMouse';
+import type { IStage } from '../../../type/entity/stage';
 /**
  * Stage Sensing(調べる) Mouse
  */

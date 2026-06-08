@@ -1,6 +1,6 @@
 const { S3CSS, insertCss } = await import(/* webpackMode: "eager" */ './css');
 import {Element} from './element';
-import { playground } from '../vm/playground';
+import { playground } from '../engine/playground';
 
 /**
  * Scratch GUI

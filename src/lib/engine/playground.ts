@@ -1,5 +1,5 @@
 import { Render } from "../render";
-import { threadManager } from "../thread/threads";
+import { threadManager } from "./thread/threads";
 import { Runtime } from "./runtime";
 import { Sprite } from "../entity/sprite";
 import { Stage } from "../entity/stage";

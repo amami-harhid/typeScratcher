@@ -1,5 +1,5 @@
-import { IEntity } from "../entity/entity";
-import { IEntityProxy } from "../entity/entity/IEntityProxy";
+import { IEntity } from "../../entity/entity";
+import { IEntityProxy } from "../../entity/entity/IEntityProxy";
 
 export const ThreadStatus = {
     /** 初期化中 */

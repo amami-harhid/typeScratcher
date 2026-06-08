@@ -11,7 +11,7 @@ import { SpriteEvent } from "./spriteEvent";
 //import { SpriteFont } from "./sprite/spriteFont";
 import { SpriteProperties } from "./spriteProperties";
 import { SpriteLooks } from "./spriteLooks";
-import { playground } from "../../vm/playground";
+import { playground } from "../../engine/playground";
 import { SpriteSensing } from "./spriteSensing";
 import { SpriteDragMode } from "./spriteDragMode";
 import { PenSprite } from "./pen";

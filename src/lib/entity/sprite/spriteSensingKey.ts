@@ -1,4 +1,4 @@
-import { playground } from '../../vm/playground';
+import { playground } from '../../engine/playground';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { IEntitySensingKey } from '../../../type/entity/entity/IEntitySensingKey';
 /**

@@ -1,10 +1,10 @@
 import { DoubleRunning } from './entityEvent';
-import { playground } from '../../vm/playground';
-import { threadManager, ThreadObj } from '../../thread/threads';
+import { playground } from '../../engine/playground';
+import { threadManager, ThreadObj } from '../../engine/thread/threads';
 import type { IEntity } from '../../../type/entity/entity';
 import type { EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
 import type { IEntityBroadCast, TBroadcastElement, TBroadcastElementFunc } from '../../../type/entity/entity/IEntityBroadcast';
-import { ThreadStatus } from '../../../type/thread/threads';
+import { ThreadStatus } from '../../../type/engine/thread/threads';
 import { Timer } from '../../utils/timer';
 
 

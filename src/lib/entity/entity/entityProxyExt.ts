@@ -1,7 +1,7 @@
 /**
  * EntityProxyExt
  */
-import { Threads } from '../../thread/threads';
+import { Threads } from '../../engine/thread/threads';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 /**

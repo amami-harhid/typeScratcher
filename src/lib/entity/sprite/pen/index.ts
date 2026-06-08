@@ -1,4 +1,4 @@
-import { playground } from '../../../vm/playground';
+import { playground } from '../../../engine/playground';
 import { Color } from '../../../utils/color';
 import { Render } from '../../../render';
 import { Sprite } from '..';

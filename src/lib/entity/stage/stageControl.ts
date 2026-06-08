@@ -1,8 +1,8 @@
 import { Timer } from '../../utils/timer';
 import * as Wait from '../../utils/wait';
-import { threadManager } from '../../thread/threads';
-import { playground } from '../../vm/playground';
-import { ScratchEvent } from '../../vm/scratchEvent';
+import { threadManager } from '../../engine/thread/threads';
+import { playground } from '../../engine/playground';
+import { ScratchEvent } from '../../engine/scratchEvent';
 import type { IStage } from '../../../type/entity/stage';
 import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 import type { IStageControl } from '../../../type/entity/stage/IStageControl';

@@ -2,7 +2,7 @@
  * Render
  */
 import { default as ScratchRender} from 'scratch-render';
-import { type TStageLayering, type StageLayeringValue, LAYER_GROUPS } from '../../type/entity/stage/CStageLayering';
+import { type StageLayeringValue, LAYER_GROUPS } from '../../type/entity/stage/CStageLayering';
 import { IRenderWebGL } from '../../type/render/IRenderWebGL';
 import { GUI_CONST } from '../gui/gui_const';
 

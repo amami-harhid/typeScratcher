@@ -3,17 +3,17 @@
  */
 
 import EventEmitter from "events";
-import { Element } from "../gui/element";
-import { EntityProxyExt } from "../entity/entity/entityProxyExt";
-import { FunctionChecker } from "../utils/functionChecker";
+import { Element } from "../../gui/element";
+import { EntityProxyExt } from "../../entity/entity/entityProxyExt";
+import { FunctionChecker } from "../../utils/functionChecker";
 import { INTERVAL } from "./interval";
-import { playground } from "../vm/playground";
-import { QuestionBoxElement } from "../gui/questionBoxElement";
-import { ScratchEvent } from "../vm/scratchEvent";
-import { Utils } from "../utils/utils";
-import type { IEntity } from "../../type/entity/entity";
-import type { IEntityProxy } from "../../type/entity/entity/IEntityProxy";
-import { ThreadStatus, type IThreadObj, type ThreadStatusType } from "../../type/thread/threads";
+import { playground } from "../../engine/playground";
+import { QuestionBoxElement } from "../../gui/questionBoxElement";
+import { ScratchEvent } from "../../engine/scratchEvent";
+import { Utils } from "../../utils/utils";
+import type { IEntity } from "../../../type/entity/entity";
+import type { IEntityProxy } from "../../../type/entity/entity/IEntityProxy";
+import { ThreadStatus, type IThreadObj, type ThreadStatusType } from "../../../type/engine/thread/threads";
 
 export class Threads {
     static get THROW_STOP_THIS_SCRIPTS(){

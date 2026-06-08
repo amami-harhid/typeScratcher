@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import { Utils } from '../utils/utils';
-import { playground } from '../vm/playground';
+import { playground } from '../engine/playground';
 import type { IEntity } from '../../type/entity/entity';
 import type { ISprite } from '../../type/entity/sprite';
 

@@ -1,4 +1,4 @@
-import { playground } from '../../vm/playground';
+import { playground } from '../../engine/playground';
 import type { IEntitySensingKey } from '../../../type/entity/entity/IEntitySensingKey';
 import type { IStage } from '../../../type/entity/stage';
 /**
