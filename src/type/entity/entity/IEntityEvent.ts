@@ -34,8 +34,14 @@ export interface IEntityEvent {
      */
     backdropSwitcher(backdropName: string) :EventFunctionSetter;
 
+    /** 旗おされたときのイベント起動 */
+    flagPresserKick(): Promise<void>;
+
+    /** キープレスされたときのイベント起動 */
+    keyPresserKick(key: string): Promise<void>;
+
     /** クリックされたときのイベント起動 */
-    clickEventer(): Promise<void>;
+    clickEventerKick(): Promise<void>;
 
     
 }

@@ -245,7 +245,7 @@ export class ThreadObj extends EventEmitter implements IThreadObj{
     }
     setFunc<T> (func: CallableFunction, ...args:T[]) {
         const me = this;
-        me.genProxy();
+        this._proxy = me.genProxy();
         me._isStarted = false;
         this._originalF = func;
         const functionDeclareType = FunctionChecker.getFunctionDeclares(func);

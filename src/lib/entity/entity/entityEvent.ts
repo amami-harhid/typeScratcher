@@ -20,11 +20,13 @@ export const DoubleRunning = {
  * クリックイベント定義
  */
 declare type CLICK_EVENT_FUNCTION = (_counter: number) => Promise<void>;
-
+declare type KEYPRESS_EVENT_ELEMENT = {key: string, threadArr: ThreadObj[]};
 /** イベント */
 export class EntityEvent implements IEntityEvent{
-    static eventFuncArray: CLICK_EVENT_FUNCTION[] = [];
-    static clickFirstRegist: boolean = false;
+    private static flagPressEventFuncArray: ThreadObj[] = [];
+    private static keyPressEventFuncArray: KEYPRESS_EVENT_ELEMENT[] = [];
+    private static clickEventFuncArray: CLICK_EVENT_FUNCTION[] = [];
+    private static clickFirstRegist: boolean = false;
     private _broadcast: IEntityBroadCast;
     protected entity: IEntity;
     private threads: ThreadManager;
@@ -73,6 +75,14 @@ export class EntityEvent implements IEntityEvent{
             threadObj.status = ThreadStatus.YIELD;
         })
     }
+    async flagPresserKick(): Promise<void> {
+        for(const threadObj of EntityEvent.flagPressEventFuncArray) {
+            const func = threadObj.originalF;
+            threadObj.setFunc(func);
+            // 待機中にする
+            threadObj.status = ThreadStatus.YIELD;
+        }
+    }
     /**
      * キー押下イベントのセッターを返す
      * @returns イベントセッター
@@ -99,25 +109,51 @@ export class EntityEvent implements IEntityEvent{
         threadObj.entityId += `_keyPressed_${key}`;
         threadObj.setFunc(func);
         threadManager.registThread(threadObj);
-        playground.runtime.on("KEY_PRESSED", function(pressedKey: string){
-            let _key;
-            if(key.length == 1) {
-                _key = key.toUpperCase();
-            }else{
-                _key = key; 
-            }
-            if( _key == pressedKey ) {
-                console.log("KEY_PRESSED =[", pressedKey, "], key=[", _key, "]")
-                if(threadObj.isStarted) {
-                    // スレッドが実行中に再度キーが押されたとき
-                    // 音がなっていたら止め、最初からやり直す。
-                    me.entity.Sound.stopImmediately();
-                    threadObj.setFunc(func); // 作り直す
-                }
-                threadObj.status = ThreadStatus.YIELD;
-            }
-        });
+        
+        const element = this._getKeyPressEventFunc(key);
+        element.threadArr.push(threadObj);
+        
+        playground.runtime.scratchEvent.keyClick(key);
+        // playground.runtime.on("KEY_PRESSED", function(pressedKey: string){
+        //     let _key;
+        //     if(key.length == 1) {
+        //         _key = key.toUpperCase();
+        //     }else{
+        //         _key = key; 
+        //     }
+        //     if( _key == pressedKey ) {
+        //         if(threadObj.isStarted) {
+        //             // スレッドが実行中に再度キーが押されたとき
+        //             // 音がなっていたら止め、最初からやり直す。
+        //             me.entity.Sound.stopImmediately();
+        //             threadObj.setFunc(func); // 作り直す
+        //         }
+        //         threadObj.status = ThreadStatus.YIELD;
+        //     }
+        // });
 
+    }
+    private _getKeyPressEventFunc(key: string):KEYPRESS_EVENT_ELEMENT {
+        for(const element of EntityEvent.keyPressEventFuncArray) {
+            if(element.key == key) {
+                return element;
+            }
+        }
+        const element :KEYPRESS_EVENT_ELEMENT = {
+            key: key,
+            threadArr: [],
+        }
+        EntityEvent.keyPressEventFuncArray.push(element);
+        return element;
+    }
+    async keyPresserKick( key: string ) :Promise<void> {
+        const element = this._getKeyPressEventFunc(key);
+        for(const threadObj of element.threadArr) {
+            const func = threadObj.originalF;
+            threadObj.setFunc(func);
+            // 待機中にする
+            threadObj.status = ThreadStatus.YIELD;
+        }
     }
     /**
      * クリックイベントのセッターを返す
@@ -131,14 +167,14 @@ export class EntityEvent implements IEntityEvent{
             }
         }
     }
-    async clickEventer(): Promise<void> {
+    async clickEventerKick(): Promise<void> {
         const scratchEvent = playground.runtime.scratchEvent;
         // 緑の旗押されていないときは何もしない。
         if(scratchEvent.running === false) {
             return;
         }
         let _counter = 0;
-        for(const eventf of EntityEvent.eventFuncArray){
+        for(const eventf of EntityEvent.clickEventFuncArray){
             _counter += 1;
             eventf(_counter); // 意図的にawaitしていない
         }
@@ -175,13 +211,7 @@ export class EntityEvent implements IEntityEvent{
                 threadObj.status = ThreadStatus.YIELD;
             }
         }
-        EntityEvent.eventFuncArray.push(eventf);
-        // Canvasがクリックされたときに、配列にためたイベントを実行する
-        // TODO onで待つコード
-        // スプライトが多数あるとエラーになるのでは？
-        // システムで１個だけにしたいので playground内で待ち
-        // 
-        //scratchEvent.on(ScratchEvent.CANVAS_CLICKED, this.clickEventer);
+        EntityEvent.clickEventFuncArray.push(eventf);
     }
     /**
      * 背景が〇〇になったときのイベントセッターを返す

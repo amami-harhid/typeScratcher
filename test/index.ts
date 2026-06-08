@@ -47,7 +47,7 @@ apple.Event.flagPresser().func = async function*(this: Sprite){
 }
 stage.Event.flagPresser().func = async function*(this: Stage){
     for(;;){
-        //await this.Sound.play(chillSound);
+        await this.Sound.play(chillSound);
         yield;
     }
 }
@@ -105,7 +105,7 @@ apple.Event.clicker().func = async function*(this: Sprite) {
     this.Sound.play(chillSound);
 };
 apple.Event.clicker().func = async function*(this: Sprite) {
-    this.Sound.play(catSound);
+    //this.Sound.play(catSound);
 };
 apple.Event.keyPresser('e').func = async function*(this: Sprite){
     console.log('KEY e')

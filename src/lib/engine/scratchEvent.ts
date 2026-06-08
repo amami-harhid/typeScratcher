@@ -31,6 +31,7 @@ export class ScratchEvent extends EventEmitter {
 
     private _running:boolean;
     private _restart:boolean;
+    private _keyPressedPool: string[];
     private _messageReceiverIdsPool: string[];
     constructor() {
         super();
@@ -43,6 +44,7 @@ export class ScratchEvent extends EventEmitter {
             this._running = false;
         });
         this._messageReceiverIdsPool = [];
+        this._keyPressedPool = [];
     }
     public get running(): boolean {
         return this._running;
@@ -75,11 +77,19 @@ export class ScratchEvent extends EventEmitter {
             me.emit(ScratchEvent.GREEN_FLAG_CLICKED);
             greenFlag.classList.remove('running');
             event.stopPropagation();
+            // for sprite 
+            for(const s of playground.getSprites()) {
+                s.Event.flagPresserKick();
+            }
+            const stage = playground.getStage();
+            if(stage) {
+                stage.Event.flagPresserKick();
+            }
         });
 
         this.pauseMarkClick();
         this.stopMarkClick();
-        this.canvasClick();
+        this.spliteClick();
 
     }
     public stopMarkClick() {
@@ -113,17 +123,40 @@ export class ScratchEvent extends EventEmitter {
         })
 
     }
-    public canvasClick() {
+    public spliteClick() {
         const canvas = Element.getScratchCanvas();
         const me = this;
         canvas.addEventListener('click', (event:MouseEvent)=>{
             //me.emit(ScratchEvent.CANVAS_CLICKED);
             const sprites = playground.getSprites();
             for(const s of sprites){
-                s.Event.clickEventer();
+                s.Event.clickEventerKick();
             }            
             event.stopPropagation();
         })
+    }
+    public keyClick(key: string) {
+        const f = (pressedKey: string) => {
+            let _key;
+            if(key.length == 1) {
+                _key = key.toUpperCase();
+            }else{
+                _key = key; 
+            }
+            if( _key == pressedKey ) {
+                const sprites = playground.getSprites();
+                for(const s of sprites) {
+                    s.Event.keyPresserKick(key);
+                }
+                const stage = playground.getStage();
+                if(stage){
+                    stage.Event.keyPresserKick(key);
+                }
+            }
+        };        
+        if( !this._keyPressedPool.includes(key)) {
+            playground.runtime.on("KEY_PRESSED", f);
+        }
     }
     public messageReceiverRegist(messageId: string): void {
         if( !this._messageReceiverIdsPool.includes(messageId)){
