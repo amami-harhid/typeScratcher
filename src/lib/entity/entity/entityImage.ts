@@ -1,18 +1,26 @@
 import { ImageBank } from '../../image/imageBank';
 import type { IImage } from '../../../type/image';
 import type { IEntity } from '../../../type/entity/entity';
+import type { IEntityEffect } from '../../../type/entity/entity/IEntityEffect';
+import { EntityEffect } from './entityEffect';
 
 /** メッセージ送受信 */
 export class EntityImage {
 
     protected entity: IEntity;
     private _images: IImage[] = [];
+    protected _effects: IEntityEffect;
     /**
      * @internal
      * @param entity {IEntity}
      */
     constructor(entity:IEntity){
         this.entity = entity;
+        this._effects = new EntityEffect(entity); 
+    }
+    
+    get Effect(): IEntityEffect {
+        return this._effects;
     }
 
     add( images: IImage[]): void {

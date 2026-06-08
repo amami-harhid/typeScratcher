@@ -116,12 +116,22 @@ apple.Event.keyPresser('f').func = async function*(this: Sprite){
     await this.Event.Broadcast.broadcastAndWait('AAA');
     console.log('KEY f completed')
 }
+apple.Event.keyPresser('g').func = async function*(this: Sprite){
+    console.log('KEY g')
+    this.Event.Broadcast.broadcast('BBB');
+    console.log('KEY g completed')
+}
 apple.Event.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
     console.log('Received [1]');
+    apple.Image.Effect.change(TS.ImageEffective.COLOR, 15);
+    apple.Image.Effect.change(TS.ImageEffective.FISHEYE, 15);
 }
 apple.Event.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
     console.log('Received [2]');
     await TS.Timer.wait(5);
+}
+apple.Event.Broadcast.broadcasReceiver('BBB').func = async function*(this:Sprite){
+    apple.Image.Effect.clear();
 }
 
 

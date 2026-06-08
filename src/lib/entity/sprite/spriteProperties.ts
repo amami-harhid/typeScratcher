@@ -24,6 +24,7 @@ export class SpriteProperties extends EntityProperties {
                 _scale.w = Math.abs( _scale.w );
             }
         }
+        const effect = this.entity.Image.Effect.effect;
         const prop: ScratchRenderProperties = {
             skinId: entity.Costume.currentSkinId,
             position: [this.position.x, this.position.y],

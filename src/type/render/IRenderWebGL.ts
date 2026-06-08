@@ -12,6 +12,13 @@ export declare type ScratchRenderProperties = {
     direction?: number,
     scale?: TScaleArr,
     visible? : boolean,
+    color?: number,
+    fisheye?: number,
+    whirl?: number,
+    pixelate?: number,
+    mosaic?: number,
+    brightness?:number,
+    ghost?: number,
 }
 
 

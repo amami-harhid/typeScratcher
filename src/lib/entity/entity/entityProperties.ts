@@ -85,6 +85,8 @@ export class EntityProperties implements IEntityProperties {
     }
 
     updateDrawableProperties(prop: ScratchRenderProperties){
+        const effect = this.entity.Image.Effect.effect;
+        Object.assign( prop, effect );
         this.entity.render.renderer.updateDrawableProperties(this.entity.drawableID, prop);
     }
 }

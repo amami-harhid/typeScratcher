@@ -36,6 +36,7 @@ import { Sprite as _Sprite } from './src/lib/entity/sprite';
 import { Stage as _Stage } from './src/lib/entity/stage';
 import { Image } from './src/lib/image';
 import { Sound } from './src/lib/sounds';
+import { ImageEffective, type ImageEffectiveType } from './src/type/entity/ImageEffective';
 import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './src/type/engine/keyboad';
 import { Timer } from './src/lib/utils/timer';
@@ -71,6 +72,7 @@ type ExportType = {
     Image: SImage,
     Sound: SSound,
     Rotation: RotationStyle,
+    ImageEffective: ImageEffectiveType,
     KEYBOARD_KEYS: KEYBOARD_KEYS_Type
     Timer: STimer,
     playground: IPlayground,
@@ -80,6 +82,7 @@ export const Typescratcher: ExportType = {
     Stage: _Stage as SStage,
     Image: Image as SImage,
     Sound: Sound as SSound,
+    ImageEffective: ImageEffective as ImageEffectiveType,
     Rotation: Rotation as RotationStyle,
     KEYBOARD_KEYS: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     Timer: Timer as STimer,

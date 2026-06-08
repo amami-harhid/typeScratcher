@@ -1,8 +1,12 @@
-import type { IImage } from "@Type/image";
+import type { IImage } from "../../image";
+import type { IEntityEffect } from "./IEntityEffect";
 /**
  * Entity Image(イメージ)
  */
 export interface IEntityImage {
+
+    readonly Effect: IEntityEffect;
+
     /**
      * 画像を追加する
      * @param images {IImages[]} 
