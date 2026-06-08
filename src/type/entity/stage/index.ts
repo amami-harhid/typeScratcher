@@ -10,6 +10,7 @@ import type { IStageEvent } from './IStageEvent';
 import type { IStageImage } from './IStageImage';
 import type { IStageSound } from './IStageSound';
 import type { IStageProperties } from './IStageProperties';
+import type { IStageBackdrop } from './IStageBackdrop';
 //import type { ISvgText } from '@Type/svgText/ISvgText';
 //import type { IStageFont } from './IStageFont';
 
@@ -58,6 +59,10 @@ export interface IStage extends IEntity {
      * サウンド
      */
     readonly Sound : IStageSound;
+    /**
+     * 背景
+     */
+    readonly Backdrop: IStageBackdrop;
     /**
      * Font
      */

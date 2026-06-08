@@ -69,7 +69,7 @@ export class Stage extends Entity implements IStage{
                 const sound = this._sound.soundMap[sndKey];
                 loadArr.push(sound.load());
             }
-            Promise.all(loadArr).then(async ()=>{                
+            Promise.all(loadArr).then(async ()=>{
                 // イメージごとに Skinを作る
                 let _canvasRemake :HTMLCanvasElement|undefined = undefined;
                 for(const img of this._image.images){

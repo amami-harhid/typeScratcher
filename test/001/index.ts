@@ -8,10 +8,10 @@ import type { Sprite, Stage } from '../../index';
 // 外部パス(https://など)を import xxx from '外部パス'; は
 // ブラウザ制約によりエラーになる。const XXX = '外部パス'とすべき。
 const AppleSvg = 'https://amami-harhid.github.io/tscratch3assets/assets/Apple.svg';
-import ArrowSvg from './assets/Arrow1-a.svg';
-import CatSvg from './assets/cat.svg';
-import CatWav from './assets/Cat.wav';
-import ChillWav from './assets/Chill.wav';
+import ArrowSvg from '../assets/Arrow1-a.svg';
+import CatSvg from '../assets/cat.svg';
+import CatWav from '../assets/Cat.wav';
+import ChillWav from '../assets/Chill.wav';
 //import { IStage } from '@Type/stage';
 
 const appleImage = new TS.Image( {AppleSvg} ); 
@@ -24,17 +24,11 @@ stage.Sound.add([chillSound]);
 const apple = new TS.Sprite('apple');
 apple.Image.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
-apple.Looks.Size.scale = [300,300];
+apple.Looks.Size.scale = [100,100];
 apple.Motion.Direction.degree = 45;
 apple.Motion.Rotation.style = TS.Rotation.LEFT_RIGHT;
 apple.Motion.Position.xy = [0,0];
 
-// TODO
-// ここでAUDIO関連の設定を可能にしたい。警告を出さずに。
-// たとえば・・・
-// 旗マークは最初は非表示（押せない）、どこかをクリックすると、
-// 旗マークが表示されて押せるようになる。
-// 旗クリックで 旗イベント処理が動き出す・・・とか。
 apple.Sound.setVolume(chillSound, 100);
 apple.Sound.setPitch(chillSound, 1.0);
 apple.Sound.setVolume(catSound, 10);

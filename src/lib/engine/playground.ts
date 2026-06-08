@@ -117,7 +117,8 @@ export class Playground {
         }
         const stage = this._stage as Stage;
         if(stage){
-            stage.init();
+            await stage.init();
+            stage.update();
         }
         threadManager.start();
     }

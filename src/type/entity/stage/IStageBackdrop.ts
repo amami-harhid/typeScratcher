@@ -9,7 +9,11 @@ export interface IStageBackdrop extends IEntityBackdrop {
      * コスチューム名 配列
      */
     readonly names : string[];
-    
+    /**
+     * 現在のSkinID
+     */
+    readonly currentSkinId: number;
+
     add(image: IImage): void;
 
     switchAndWait(name: string): Promise<void>;

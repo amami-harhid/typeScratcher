@@ -8,6 +8,7 @@ import type { IImage } from "../../type/image";
 type ImageArgStringObject = { [key:string]:string };
 
 export class Image implements IImage{
+
     private _name: string;
     private _imagePath:string;
     private _img!:string;
@@ -27,7 +28,7 @@ export class Image implements IImage{
             // 想定し、すでにロード済であれば再ロードはしないとする。
             return;
         }
-        const svgText = await ImageLoader._svgText(this._imagePath);
+        const svgText = await ImageLoader.loader(this._imagePath);
         this._img = svgText;
         this._loadCompleted = true;
     }

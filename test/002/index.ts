@@ -4,13 +4,12 @@
 import { Typescratcher as TS } from '../../index';
 import type { Sprite } from '../../index';
 
-import AppleSvg from '../assets/Apple.svg';
+import AmonPng from '../assets/Amon.png';
 
-const appleImage = new TS.Image( {AppleSvg} ); 
+const appleImage = new TS.Image( {AmonPng} ); 
 const apple = new TS.Sprite('apple');
 apple.Image.add([appleImage]);
-apple.Looks.Size.scale = [300,300];
-apple.Motion.Direction.degree = 43;
+apple.Motion.Direction.degree = 95;
 
 apple.Pen.prepare();
 apple.Pen.penDown();
