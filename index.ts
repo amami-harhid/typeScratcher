@@ -39,13 +39,11 @@ import { Sound } from './src/lib/sounds';
 import { ImageEffective, type ImageEffectiveType } from './src/type/entity/ImageEffective';
 import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './src/type/engine/keyboad';
-import { Timer } from './src/lib/utils/timer';
 import { playground } from './src/lib/engine/playground';
 import type { ISprite, SSprite } from './src/type/entity/sprite';
 import type { IStage, SStage } from './src/type/entity/stage';
 import type { SImage } from './src/type/image';
 import type { SSound } from './src/type/sound';
-import type { STimer } from './src/type/util/timer';
 import type { IPlayground } from './src/type/engine/playground';
 
 /**
@@ -73,8 +71,7 @@ type ExportType = {
     Sound: SSound,
     Rotation: RotationStyle,
     ImageEffective: ImageEffectiveType,
-    KEYBOARD_KEYS: KEYBOARD_KEYS_Type
-    Timer: STimer,
+    Keyboard: KEYBOARD_KEYS_Type
     playground: IPlayground,
 }
 export const Typescratcher: ExportType = {
@@ -84,8 +81,7 @@ export const Typescratcher: ExportType = {
     Sound: Sound as SSound,
     ImageEffective: ImageEffective as ImageEffectiveType,
     Rotation: Rotation as RotationStyle,
-    KEYBOARD_KEYS: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
-    Timer: Timer as STimer,
+    Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     playground: playground as IPlayground,
 } as const;
 

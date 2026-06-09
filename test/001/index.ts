@@ -50,7 +50,7 @@ apple.Event.flagPresser().func = async function*(this: Sprite){
 apple.Event.flagPresser().func = async function*(this: Sprite){
     for(;;){
         this.Costume.next();
-        await TS.Timer.wait(0.5);
+        await this.Control.wait(0.5);
         yield;
     }
 }
@@ -63,15 +63,15 @@ stage.Event.flagPresser().func = async function*(this: Stage){
 stage.Event.flagPresser().func = async function*(this: Stage){
     for(;;){
         this.Backdrop.next();
-        await TS.Timer.wait(0.1);
+        await this.Control.wait(0.1);
         yield;
     }
 }
 apple.Event.keyPresser("a").func = async function*(this: Sprite){
     for(;;){
-        apple.Sound.addVolume(chillSound, 1);
-        apple.Sound.addPitch(chillSound, 0.05);
-        await TS.Timer.wait(1);
+        this.Sound.addVolume(chillSound, 1);
+        this.Sound.addPitch(chillSound, 0.05);
+        await this.Control.wait(1);
         yield;
     }
 }
@@ -84,7 +84,7 @@ apple.Event.keyPresser("b").func = async function*(this: Sprite){
         const touch = this.Sensing.edge.isTouching;
         if(touch===true){
             console.log('Edge touching', counter++)
-            await TS.Timer.wait(1);
+            await this.Control.wait(1);
             steps *= -1;
         }
         yield;
@@ -110,7 +110,7 @@ stage.Event.keyPresser("d").func = async function*(this: Stage){
         yield;
     }
 }
-apple.Event.keyPresser(TS.KEYBOARD_KEYS.SPACE).func = async function*(this: Sprite){
+apple.Event.keyPresser(TS.Keyboard.SPACE).func = async function*(this: Sprite){
     this.Control.stopAll();
 }
 
@@ -141,7 +141,7 @@ apple.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
 }
 apple.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
     console.log('Received [2]');
-    await TS.Timer.wait(5);
+    await this.Control.wait(1);
 }
 apple.Broadcast.broadcasReceiver('BBB').func = async function*(this:Sprite){
     apple.Looks.effect.clear();

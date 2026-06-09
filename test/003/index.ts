@@ -34,7 +34,7 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
     let count = 0;
     for(;;) {
         this.Backdrop.next();
-        await TS.Timer.wait(0.5);
+        await this.Control.wait(0.5);
         if(count > 10){
             fugo *= -1;
             count = 0;

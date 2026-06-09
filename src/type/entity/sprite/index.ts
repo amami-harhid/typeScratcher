@@ -50,12 +50,12 @@ export interface ISprite extends IEntity {
      * 使用例：this.Costume.no, this.Costume.name
      * @returns
      */
-    get Costume(): ISpriteCostume;
+    readonly Costume: ISpriteCostume;
     
     /**
      * 背景番号、背景名を取り出すためのオブジェクト
      */
-    get Backdrop(): ISpriteBackdrop;
+    readonly Backdrop: ISpriteBackdrop;
 
     /**
      * 見た目

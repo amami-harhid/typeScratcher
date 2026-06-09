@@ -26,7 +26,7 @@ cat.Event.flagPresser().func=async function*(this:Sprite) {
     let counter = 0;
     for(;;){
         this.Backdrop.next();
-        await TS.Timer.wait(1);
+        await this.Control.wait(1);
         counter+=1;
         if(counter>5){
             this.Broadcast.broadcast('STAGE');
