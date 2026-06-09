@@ -40,6 +40,10 @@ export interface IEntityBackdrop {
      */
     next() : void;
     /**
+     * 次の背景にして待つ
+     */
+    nextAndWait(): Promise<void>
+    /**
      * 前の背景にする
      * ```ts
      *  this.Looks.Backdrop.previous();
@@ -47,10 +51,25 @@ export interface IEntityBackdrop {
      */
     previous(): void;
     /**
+     * 前の背景にして待つ
+     */
+    previousAndWait(): Promise<void>;
+    /**
      * どれかの背景にする
      * ```ts
      *  this.Looks.Backdrop.random();
      * ```
      */
     random(): void;
+    /**
+     * どれかの背景にして待つ
+     */
+    randomAndWait(): Promise<void>;
+    /**
+     * 背景を変えて待つ
+     * @param backdropName 
+     */
+    switchAndWait(backdropName: string): Promise<void>;
+
+
 }

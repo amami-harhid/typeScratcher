@@ -105,3 +105,6 @@ apple.Looks.effect.clear()
 ## playground → engine と名称変更
 ～ engine.start() のみを公開
 0.0.22 #05
+
+## 背景切り替え時のイベント処理
+0.0.22 #06 (実装未)

@@ -1,3 +1,5 @@
+import { IImage } from "../../image";
+
 export interface EventFunctionSetter {
     set func(func: CallableFunction);
 }
@@ -28,7 +30,7 @@ export interface IEntityEvent {
      * @param backdropName 
      * @returns イベントセッター
      */
-    backdropSwitcher(backdropName: string) :EventFunctionSetter;
+    backdropSwitcher(backdrop: IImage) :EventFunctionSetter;
 
     /** 旗おされたときのイベント起動 */
     flagPresserKick(): Promise<void>;

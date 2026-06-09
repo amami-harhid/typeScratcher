@@ -7,6 +7,7 @@ import { ThreadStatus } from '../../../type/engine/thread/threads';
 import type { IEntityEvent, EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
 import type { IEntityBroadCast } from '../../../type/entity/entity/IEntityBroadcast';
 import type { IEntity } from '../../../type/entity/entity';
+import type { IImage } from '../../../type/image';
 
 /**
  * 二重起動指定
@@ -21,15 +22,21 @@ export const DoubleRunning = {
  */
 declare type CLICK_EVENT_FUNCTION = (_counter: number) => Promise<void>;
 declare type KEYPRESS_EVENT_ELEMENT = {key: string, threadArr: ThreadObj[]};
+export type BACKDROP_EVENT_ELEMENT = {backdropName: string, threadArr: ThreadObj[]};
 /** イベント */
 export class EntityEvent implements IEntityEvent{
-    private static flagPressEventFuncArray: ThreadObj[] = [];
-    private static keyPressEventFuncArray: KEYPRESS_EVENT_ELEMENT[] = [];
-    private static clickEventFuncArray: CLICK_EVENT_FUNCTION[] = [];
-    private static clickFirstRegist: boolean = false;
+    private static _flagPressEventFuncArray: ThreadObj[] = [];
+    private static _keyPressEventFuncArray: KEYPRESS_EVENT_ELEMENT[] = [];
+    private static _backdropEventFuncArray: BACKDROP_EVENT_ELEMENT[] = [];
+    private static _clickEventFuncArray: CLICK_EVENT_FUNCTION[] = [];
+
+    /** 背景切替イベント配列 */
+    public static get backdropEventFuncArray() : BACKDROP_EVENT_ELEMENT[]{
+        return EntityEvent._backdropEventFuncArray;
+    } 
+
     private _broadcast: IEntityBroadCast;
     protected entity: IEntity;
-    private threads: ThreadManager;
     /**
      * @internal
      * @param entity {Entity}
@@ -37,7 +44,6 @@ export class EntityEvent implements IEntityEvent{
     constructor(entity:IEntity){
         this.entity = entity;
         this._broadcast = new EntityBroadCast(entity);
-        this.threads = threadManager;
     }
     /**
      * BroadCast
@@ -45,9 +51,7 @@ export class EntityEvent implements IEntityEvent{
     get Broadcast() : IEntityBroadCast{
         return this._broadcast;
     }
-    protected startThreadMessageRecieved( func:CallableFunction, entity:IEntity , doubleRunable=true, ...args: any[]) {
 
-    }
     /**
      * 旗が押されたときのイベントセッターを返す
      * @returns イベントセッター
@@ -76,7 +80,7 @@ export class EntityEvent implements IEntityEvent{
         })
     }
     async flagPresserKick(): Promise<void> {
-        for(const threadObj of EntityEvent.flagPressEventFuncArray) {
+        for(const threadObj of EntityEvent._flagPressEventFuncArray) {
             const func = threadObj.originalF;
             threadObj.setFunc(func);
             // 待機中にする
@@ -114,27 +118,10 @@ export class EntityEvent implements IEntityEvent{
         element.threadArr.push(threadObj);
         
         (engine as Engine).runtime.scratchEvent.keyClick(key);
-        // playground.runtime.on("KEY_PRESSED", function(pressedKey: string){
-        //     let _key;
-        //     if(key.length == 1) {
-        //         _key = key.toUpperCase();
-        //     }else{
-        //         _key = key; 
-        //     }
-        //     if( _key == pressedKey ) {
-        //         if(threadObj.isStarted) {
-        //             // スレッドが実行中に再度キーが押されたとき
-        //             // 音がなっていたら止め、最初からやり直す。
-        //             me.entity.Sound.stopImmediately();
-        //             threadObj.setFunc(func); // 作り直す
-        //         }
-        //         threadObj.status = ThreadStatus.YIELD;
-        //     }
-        // });
 
     }
     private _getKeyPressEventFunc(key: string):KEYPRESS_EVENT_ELEMENT {
-        for(const element of EntityEvent.keyPressEventFuncArray) {
+        for(const element of EntityEvent._keyPressEventFuncArray) {
             if(element.key == key) {
                 return element;
             }
@@ -143,7 +130,7 @@ export class EntityEvent implements IEntityEvent{
             key: key,
             threadArr: [],
         }
-        EntityEvent.keyPressEventFuncArray.push(element);
+        EntityEvent._keyPressEventFuncArray.push(element);
         return element;
     }
     async keyPresserKick( key: string ) :Promise<void> {
@@ -174,7 +161,7 @@ export class EntityEvent implements IEntityEvent{
             return;
         }
         let _counter = 0;
-        for(const eventf of EntityEvent.clickEventFuncArray){
+        for(const eventf of EntityEvent._clickEventFuncArray){
             _counter += 1;
             eventf(_counter); // 意図的にawaitしていない
         }
@@ -212,18 +199,18 @@ export class EntityEvent implements IEntityEvent{
                 threadObj.status = ThreadStatus.YIELD;
             }
         }
-        EntityEvent.clickEventFuncArray.push(eventf);
+        EntityEvent._clickEventFuncArray.push(eventf);
     }
     /**
      * 背景が〇〇になったときのイベントセッターを返す
-     * @param backdropName 
+     * @param backdrop 
      * @returns イベントセッター
      */
-    backdropSwitcher(backdropName: string) : EventFunctionSetter{
+    backdropSwitcher(backdrop: IImage) : EventFunctionSetter{
         const me = this;
         return class {
             static set func(func: CallableFunction) {
-                me._whenBackdropSwitches(backdropName, func);
+                me._whenBackdropSwitches(backdrop, func);
             }
         }
     }
@@ -232,9 +219,39 @@ export class EntityEvent implements IEntityEvent{
      * @param {*} backdropName 
      * @param {*} func 
      */
-    private _whenBackdropSwitches(backdropName: string, func: CallableFunction): void {
-        // TODO
+    private _whenBackdropSwitches(backdrop: IImage, func: CallableFunction): void {
+        const backdropName = backdrop.name;
+        const me = this;
+        const threadObj = new ThreadObj(me.entity, DoubleRunning.FALSE);
+        threadObj.entityId += `_backdrop_${backdropName}`;
+        threadObj.setFunc(func);
+        threadManager.registThread(threadObj);
 
+        const element = this._getBackdropElement(backdropName);
+        element.threadArr.push(threadObj);
+    }
+
+    async backdropEventKick(backdropName: string) : Promise<void>{
+        const element = this._getBackdropElement(backdropName);
+        for(const threadObj of element.threadArr) {
+            const f = threadObj.originalF;
+            threadObj.setFunc(f); // 再生成
+            threadObj.status = ThreadStatus.YIELD; // 待機中
+        }
+    }
+
+    private _getBackdropElement(backdropName: string) {
+        for( const element of EntityEvent._backdropEventFuncArray) {
+            if( element.backdropName == backdropName) {
+                return element;
+            }
+        }
+        const element: BACKDROP_EVENT_ELEMENT = {
+            backdropName: backdropName,
+            threadArr: [],
+        }
+        EntityEvent._backdropEventFuncArray.push(element);
+        return element;
     }
 
 }
