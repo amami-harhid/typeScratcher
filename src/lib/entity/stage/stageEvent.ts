@@ -1,5 +1,5 @@
 import { EntityEvent } from '../entity/entityEvent';
-import { IStage } from '../../../type/entity/stage';
+import type { IStage } from '../../../type/entity/stage';
 /**
  * Stage Event(イベント)
  */

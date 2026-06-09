@@ -1,3 +1,4 @@
+import { Sprite } from '../sprite';
 import type { TBounds, TScaleArr } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSize } from '../../../type/entity/sprite/ISpriteSize';
@@ -5,14 +6,14 @@ import type { ISpriteSize } from '../../../type/entity/sprite/ISpriteSize';
 /** サイズ */
 export class SpriteSize implements ISpriteSize{
 
-    private entity: ISprite;
+    private entity: Sprite;
 
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
     /**
      * 横サイズ

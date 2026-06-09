@@ -1,16 +1,15 @@
+import { engine, Engine } from "../engine";
+import EventEmitter from "events";
+import { ScratchEvent } from '../engine/scratchEvent';
+import { SoundLoader } from "../loader/soundLoader";
+import { SoundPlayer } from "./soundPlayer";
+import { Utils } from "../utils/utils";
+import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
+type SoundArgStringObject = { [key:string]:string };
+
 /**
  * Sound
  */
-import EventEmitter from "events";
-import { SoundLoader } from "../loader/soundLoader";
-import { playground } from "../engine/playground";
-import { SoundPlayer } from "./soundPlayer";
-import { ScratchEvent } from '../engine/scratchEvent';
-import { Utils } from "../utils/utils";
-import { ISoundPlayer } from "../../type/sound/ISoundPlayer";
-
-type SoundArgStringObject = { [key:string]:string };
-
 export class Sound extends EventEmitter {
     static get SOUND_FORCE_STOP() {
         return "SOUND_FORCE_STOP";
@@ -37,7 +36,7 @@ export class Sound extends EventEmitter {
         }
         const sound = await SoundLoader.loadSound(this._soundPath, this._name);
         this._data = sound.data;
-        playground.runtime.scratchEvent.once(ScratchEvent.READY_AUDIO_ENGINE, async()=>{
+        (engine as Engine).runtime.scratchEvent.once(ScratchEvent.READY_AUDIO_ENGINE, async()=>{
             // AudioEngineの準備完了した時点で、各音のSoundPlayerを作る。
             await this.createSoundPlayer();
         });
@@ -48,7 +47,7 @@ export class Sound extends EventEmitter {
             return;
         }
         const data = this._data;
-        const audioEngine = playground.runtime.audioEngine;
+        const audioEngine = (engine as Engine).runtime.audioEngine;
         const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data});
         const _effects = audioEngine.createEffectChain();
         const options = {effects: _effects};

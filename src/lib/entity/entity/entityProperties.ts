@@ -1,9 +1,9 @@
+import { Entity } from "../entity";
 import { EntityImage } from "./entityImage";
 import { Rotation, type RotationValue } from "../../../type/entity/RotationStyle";
-import type { ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityProperties, IPosition, IScale } from '../../../type/entity/entity/IEntityProperties';
-import { Entity } from ".";
+import type { ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
 
 export class Scale implements IScale {
     private _scale : { w: number, h: number} = { w:100, h:100 };
@@ -91,6 +91,6 @@ export class EntityProperties implements IEntityProperties {
         const _image = _entity.$image as EntityImage;
         const effect = _image.effect.get();
         Object.assign( prop, effect );
-        this.entity.render.renderer.updateDrawableProperties(this.entity.drawableID, prop);
+        _entity.render.renderer.updateDrawableProperties(_entity.drawableID, prop);
     }
 }

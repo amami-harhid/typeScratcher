@@ -1,3 +1,4 @@
+import { engine, Engine } from '../../engine';
 import { threadManager } from '../../engine/thread/threads';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
@@ -6,7 +7,7 @@ import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteControl } from '../../../type/entity/sprite/ISpriteControl';
 import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 import { ScratchEvent } from '../../engine/scratchEvent';
-import { playground } from '../../engine/playground';
+
 /**
  * Sprite Control(制御)
  */
@@ -82,7 +83,7 @@ export class SpriteControl implements ISpriteControl {
      * 全てのスプライトの動作を停止する
      */
     stopAll() : void {
-        playground.runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
+        (engine as Engine).runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
     }
     /**
      * スプライトを抹消する

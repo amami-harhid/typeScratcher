@@ -1,12 +1,13 @@
-import { playground } from '../../../engine/playground';
+import { engine, Engine } from '../../../engine';
 import { Color } from '../../../utils/color';
 import { Render } from '../../../render';
-import { Sprite } from '..';
+import { Sprite } from '../../sprite';
 import { PenSpriteSize } from './penSpriteSize';
 import { PenSpriteHSVColor } from './penSpriteHSVColor';
 import { StageLayering } from '../../../../type/entity/stage/CStageLayering';
 import type { TPenAttributes } from '../../../../type/pen';
 import type { IPenSprite } from '../../../../type/entity/sprite/pen';
+
 
 const NotPrepareMessage = 'prepareが行われていません';
 class PenDrawable {
@@ -229,7 +230,7 @@ export class PenSprite implements IPenSprite {
      * @returns 
      */
     stampStage(): void {
-        const stage = playground.getStage();
+        const stage = (engine as Engine).getStage();
         if(stage == undefined){
             return; // ステージがないときは何もしない。
         }

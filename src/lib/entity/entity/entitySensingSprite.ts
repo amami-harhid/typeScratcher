@@ -1,4 +1,5 @@
 import { MathUtil } from "../../utils/math-util";
+import { Sprite } from "../sprite";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntitySensingSprite } from "../../../type/entity/entity/IEntitySensingSprite";
 import type { ISprite } from "../../../type/entity/sprite";
@@ -21,13 +22,15 @@ export class EntitySensingSprite implements IEntitySensingSprite {
     protected isTouchingTargetToTarget(targets: ISprite[]) {
         const targetIds: number[] = [];
         for(const t of targets){
-            if(t.Properties.visible === true) {
-                const targetDrawableID = t.drawableID;
+            const _e = t as IEntity;
+            const _s = t as Sprite;
+            if(_s.Properties.visible === true) {
+                const targetDrawableID = _s.drawableID;
                 targetIds.push(targetDrawableID);
             }
         }
         if(targetIds.length>0){
-            const me:ISprite = this.entity as ISprite;
+            const me:Sprite = this.entity as Sprite;
             try{
                 const touching = me.render.renderer.isTouchingDrawables(me.drawableID, targetIds);
                 return touching;
@@ -39,9 +42,10 @@ export class EntitySensingSprite implements IEntitySensingSprite {
     }
 
     degreeToTarget(target: ISprite) {
-        const me = this.entity as ISprite;
-        let dx = target.Properties.position.x - me.Properties.position.x;
-        let dy = target.Properties.position.y - me.Properties.position.y;
+        const me = this.entity as Sprite;
+        const _target = target as Sprite;
+        let dx = _target.Properties.position.x - me.Properties.position.x;
+        let dy = _target.Properties.position.y - me.Properties.position.y;
         let direction = 90 - MathUtil.radToDeg(Math.atan2(dy, dx));
         if(direction > 180){
             direction -= 360;

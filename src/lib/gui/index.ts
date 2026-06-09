@@ -1,6 +1,6 @@
+import { engine, Engine } from '../engine';
 const { S3CSS, insertCss } = await import(/* webpackMode: "eager" */ './css');
 import {ScratchElement} from './scratchElement';
-import { playground } from '../engine/playground';
 
 /**
  * Scratch GUI
@@ -12,8 +12,8 @@ export const guiInitialize = () => {
 
     insertCss(S3CSS);
     const canvas = ScratchElement.getScratchCanvas();
-    playground.createRenderer(canvas);
-    playground.mouseEventStart();
+    (engine as Engine).createRenderer(canvas);
+    (engine as Engine).mouseEventStart();
 
 }
 

@@ -1,21 +1,19 @@
-/**
- * Sprite
- */
-import { ScratchElement } from "../../gui/scratchElement";
 import { Entity } from "../entity";
-import { StageLayering } from '../../../type/entity/stage/CStageLayering';
-import { SpriteControl } from "./spriteControl";
-import { SpriteMotion } from "./spriteMotion";
-import { SpriteCostume } from "./spriteCostume";
+import { PenSprite } from "./pen";
+import { engine, Engine } from "../../engine";
+import { ScratchElement } from "../../gui/scratchElement";
 import { SpriteBackdrop } from "./spriteBackdrop";
+import { SpriteControl } from "./spriteControl";
+import { SpriteCostume } from "./spriteCostume";
+import { SpriteDragMode } from "./spriteDragMode";
 import { SpriteEvent } from "./spriteEvent";
 //import { SpriteFont } from "./sprite/spriteFont";
-import { SpriteProperties } from "./spriteProperties";
 import { SpriteLooks } from "./spriteLooks";
-import { playground } from "../../engine/playground";
+import { SpriteMotion } from "./spriteMotion";
+import { SpriteProperties } from "./spriteProperties";
 import { SpriteSensing } from "./spriteSensing";
-import { SpriteDragMode } from "./spriteDragMode";
-import { PenSprite } from "./pen";
+import { Sound } from "../../sounds";
+import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import { Timer } from "../../utils/timer";
 //import type { IEntityProperties } from "@Type/entity/IEntityProperties";
 import type { ISprite } from "../../../type/entity/sprite";
@@ -31,6 +29,10 @@ import type { ISpriteMotion } from "../../../type/entity/sprite/ISpriteMotion";
 import type { ISpriteBackdrop } from "../../../type/entity/sprite/ISpriteBackdrop";
 import type { ISpriteProperties } from "../../../type/entity/sprite/ISpriteProperties";
 
+
+/**
+ * Sprite
+ */
 export class Sprite extends Entity implements ISprite {
     private _costume : ISpriteCostume;
     private _backdrop: ISpriteBackdrop;
@@ -68,7 +70,8 @@ export class Sprite extends Entity implements ISprite {
         //this._svgText = new SvgText(this);
         //this._textToSpeech = new TextToSpeech(this);
         this._isSprite = true; // これはスプライトです！
-        playground.addSprite(this);
+        const _engine = engine as Engine;
+        _engine.addSprite(this);
         
     }
     get Properties() {
@@ -119,7 +122,8 @@ export class Sprite extends Entity implements ISprite {
             }
             for(const sndKey of this._sound.soundKeys){
                 const sound = this._sound.soundMap[sndKey];
-                loadArr.push(sound.load());
+                const _sound = sound as Sound;
+                loadArr.push(_sound.load());
             }
             Promise.all(loadArr).then(async ()=>{                
                 // イメージごとに Skinを作る

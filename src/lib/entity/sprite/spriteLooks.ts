@@ -1,11 +1,10 @@
 import { EntityLooks } from '../entity/entityLooks';
+import { Sprite } from '../sprite';
 import { SpriteSize } from './spriteSize';
 import { SpriteLayer } from './spriteLayer';
-import { SpriteEffect } from './spriteEffect';
 import { SpriteBubble } from './spriteBubble';
 import { SpriteBackdrop } from './spriteBackdrop';
 import { SpriteCostume } from './spriteCostume';
-import type { ISpriteEffect } from '../../../type/entity/sprite/ISpriteEffect';
 import type { ISpriteSize } from '../../../type/entity/sprite/ISpriteSize';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteBubble } from '../../../type/entity/sprite/ISpriteBubble';
@@ -72,13 +71,15 @@ export class SpriteLooks extends EntityLooks implements ISpriteLooks{
      * 表示する
      */
     show() : void {
-        this.entity.render.renderer.updateDrawableVisible(this.entity.drawableID, true);
+        const sprite = this.entity as Sprite;
+        sprite.render.renderer.updateDrawableVisible(sprite.drawableID, true);
     }
     /**
      * 隠す
      */
     hide() : void {
-        this.entity.render.renderer.updateDrawableVisible(this.entity.drawableID, false);
+        const sprite = this.entity as Sprite;
+        sprite.render.renderer.updateDrawableVisible(sprite.drawableID, false);
     }
 
 };

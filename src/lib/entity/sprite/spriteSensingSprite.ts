@@ -1,6 +1,6 @@
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { EntitySensingSprite } from '../entity/entitySensingSprite';
-import { playground } from '../../engine/playground';
+import { engine, Engine } from '../../engine';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSensingSprite } from '../../../type/entity/sprite/ISpriteSensingSprite';
 import type { ISpriteSensingDistance } from '../../../type/entity/sprite/ISpriteSensingDistance';
@@ -42,7 +42,7 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
      * @returns 
      */
     getTouching() : ISprite[] {
-        const targetSprites = playground.getSprites();
+        const targetSprites = (engine as Engine).getSprites();
         const entities = this.getTouchingTarget(targetSprites);
         return entities;
     }

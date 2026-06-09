@@ -25,15 +25,7 @@ export interface SSprite{
 
 };
 export interface ISprite extends IEntity {
-    /**
-     * プロパティをレンダーへ反映する
-     */
-    update(): void;
 
-    /**
-     * プロパティ
-     */
-    readonly Properties: IEntityProperties;
 
     /**
      * 動き

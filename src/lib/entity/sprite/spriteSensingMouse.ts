@@ -1,6 +1,7 @@
-import { SpriteSensingDistance } from './spriteSensingDistance';
 import { MathUtil } from '../../utils/math-util';
 import { ScratchElement } from '../../gui/scratchElement';
+import { Sprite } from '../sprite';
+import { SpriteSensingDistance } from './spriteSensingDistance';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSensingMouse } from '../../../type/entity/sprite/ISpriteSensingMouse';
 import type { ISpriteSensingDistance } from '../../../type/entity/sprite/ISpriteSensingDistance';
@@ -8,14 +9,14 @@ import type { ISpriteSensingDistance } from '../../../type/entity/sprite/ISprite
  * Sprite Sensing(調べる) Mouse
  */
 export class SpriteSensingMouse implements ISpriteSensingMouse {
-    protected entity: ISprite;
+    protected entity: Sprite;
     private Distance: ISpriteSensingDistance;
     /**
      * @internal
      * @param entity {Sprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
         this.Distance = new SpriteSensingDistance(entity);
     }
     /**
@@ -23,19 +24,19 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
      * @returns {boolean} - マウスが押されている判定
      */
     get isDown() : boolean {
-        return this.entity.Mouse.down;
+        return this.entity.mouse.down;
     }
     /**
      * マウス情報(x座標)
      */
     get x() {
-        return this.entity.Mouse.x;
+        return this.entity.mouse.x;
     }
     /**
      * マウス情報(y座標)
      */
     get y() {
-        return this.entity.Mouse.y;
+        return this.entity.mouse.y;
     }
     /**
      * 距離
@@ -55,8 +56,8 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
         const rect = canvas.getBoundingClientRect();
         const canvasGlobalCenterX = rect.x + rect.width/2;
         const canvasGlobalCenterY = rect.y + rect.height/2;
-        const pageX = this.entity.Mouse.pageX;
-        const pageY = this.entity.Mouse.pageY;
+        const pageX = this.entity.mouse.pageX;
+        const pageY = this.entity.mouse.pageY;
         const _mouseXG = (pageX - canvasGlobalCenterX );
         const _mouseYG = (canvasGlobalCenterY - pageY);
 
@@ -85,8 +86,8 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
      * @returns 
      */
     get isTouching(): boolean {
-        const mouseX = this.entity.Mouse.x +1; // TODO: +1 は暫定、理由不明
-        const mouseY = this.entity.Mouse.y +1; // TODO: +1 は暫定、理由不明
+        const mouseX = this.entity.mouse.x +1; // TODO: +1 は暫定、理由不明
+        const mouseY = this.entity.mouse.y +1; // TODO: +1 は暫定、理由不明
         // 自分自身だけを対象にしてマウスタッチしているDrawableのIDを取得する
         // マウスタッチしていれば自分自身のDrawableIDが返るはず。
         const touchDrawableId = this.entity.render.renderer.pick(mouseX,mouseY, 2, 2, [this.entity.drawableID]);

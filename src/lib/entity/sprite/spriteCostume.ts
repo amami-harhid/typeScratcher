@@ -1,4 +1,4 @@
-import { Sprite } from '.';
+import { Sprite } from '../sprite';
 import type { ISpriteCostume } from '../../../type/entity/sprite/ISpriteCostume';
 import type { IImage } from '../../../type/image';
 import type { ISprite } from '../../../type/entity/sprite';
@@ -51,7 +51,7 @@ export class SpriteCostume implements ISpriteCostume {
         if(this.currentConstumeNo != no ) {
             this.currentConstumeNo = no;
             const image = _sprite.$image.images[no];
-            this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
+            _sprite.render.renderer.updateDrawableProperties( _sprite.drawableID, {skinId: image.skinId});
         }
     }
     /**

@@ -1,8 +1,9 @@
+import { engine, Engine } from '../engine';
 import { lineBreaker } from './svgTexUtil';
-import { playground } from '../engine/playground';
 import { SvgTextError } from './svgTextError';
 import { SvgTextMesure } from './svgTexMesure';
 import type { ISvgTextCreator, TSvgOption } from '../../type/svgText/ISvgTextCreator';
+
 /**
  * SvgTextCreator
  */
@@ -50,7 +51,7 @@ export class SvgTextCreator implements ISvgTextCreator {
  * @returns 
  */
 export const svgTextCreator2 = function(texts: string[], fontSize?:number, fontStyle?:string, color?: string, fontFamily?:string): string {
-    const renderRate = playground.renderRate;
+    const renderRate = (engine as Engine).renderRate;
     //console.log('renderRate', renderRate)
     const _fontSize = (fontSize)? fontSize: 12;
     //console.log('_fontSize', _fontSize);
@@ -151,7 +152,7 @@ const MesureSmallSizeStr = '.';
 /** 大きい文字 */
 const MesureBigSizeStr = 'あ';
 export const svgTextCreator = function(texts: string[], option?: TSvgOption): string {
-    const renderRate = playground.renderRate;
+    const renderRate = (engine as Engine).renderRate;
     //console.log('renderRate', renderRate)
     const _fontSize = (option && option.fontSize)? option.fontSize: 12;
     //console.log('_fontSize', _fontSize);

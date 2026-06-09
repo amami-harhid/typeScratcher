@@ -1,6 +1,6 @@
-import { Entity } from '.';
+import { Entity } from '../entity';
 import { EntityBroadCast } from './entityBroadcast';
-import { playground } from '../../engine/playground';
+import { engine, Engine } from '../../engine';
 import { ScratchEvent } from '../../engine/scratchEvent';
 import { ThreadManager, threadManager, ThreadObj } from '../../engine/thread/threads';
 import { ThreadStatus } from '../../../type/engine/thread/threads';
@@ -69,7 +69,7 @@ export class EntityEvent implements IEntityEvent{
         const threadObj = new ThreadObj(this.entity, DoubleRunning.FALSE);
         threadManager.registThread(threadObj);
         // 緑の旗がおされたときに「YIELD」にする、スレッドが実行されはじめる
-        playground.runtime.scratchEvent.on(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
+        (engine as Engine).runtime.scratchEvent.on(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
             threadObj.setFunc(func); // 旗クリックされたときに作り直す
             threadObj.isStarted = false;
             threadObj.status = ThreadStatus.YIELD;
@@ -113,7 +113,7 @@ export class EntityEvent implements IEntityEvent{
         const element = this._getKeyPressEventFunc(key);
         element.threadArr.push(threadObj);
         
-        playground.runtime.scratchEvent.keyClick(key);
+        (engine as Engine).runtime.scratchEvent.keyClick(key);
         // playground.runtime.on("KEY_PRESSED", function(pressedKey: string){
         //     let _key;
         //     if(key.length == 1) {
@@ -168,7 +168,7 @@ export class EntityEvent implements IEntityEvent{
         }
     }
     async clickEventerKick(): Promise<void> {
-        const scratchEvent = playground.runtime.scratchEvent;
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
         // 緑の旗押されていないときは何もしない。
         if(scratchEvent.running === false) {
             return;
@@ -181,15 +181,15 @@ export class EntityEvent implements IEntityEvent{
     }
     private _whenClicked(func: CallableFunction): void {
         const me = this;
-        const scratchEvent = playground.runtime.scratchEvent;
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
         const threadObj = new ThreadObj(me.entity, DoubleRunning.FALSE);
         const eventf: CLICK_EVENT_FUNCTION = async (_counter:number):Promise<void>=>{
             const CLICK_COUNTER = _counter;
             if(scratchEvent.running === false) {
                 return;
             }
-            const mouseX = playground.mouse.x; //e.offsetX;
-            const mouseY = playground.mouse.y; //e.offsetY;
+            const mouseX = (engine as Engine).mouse.x; //e.offsetX;
+            const mouseY = (engine as Engine).mouse.y; //e.offsetY;
 
             /** マウス位置範囲(範囲をすこしだけ広くしておく) */ 
             const _touchRange = { 
@@ -233,7 +233,7 @@ export class EntityEvent implements IEntityEvent{
      * @param {*} func 
      */
     private _whenBackdropSwitches(backdropName: string, func: CallableFunction): void {
-
+        // TODO
 
     }
 

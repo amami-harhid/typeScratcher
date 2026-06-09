@@ -1,4 +1,4 @@
-import { Stage } from '.';
+import { Stage } from '../stage';
 import type { IStage } from '../../../type/entity/stage';
 import type { IStageBackdrop } from '../../../type/entity/stage/IStageBackdrop';
 import type { IImage } from '../../../type/image';
@@ -6,14 +6,14 @@ import type { IImage } from '../../../type/image';
 /** サイズ */
 export class StageBackdrop implements IStageBackdrop {
 
-    private entity: IStage;
+    private entity: Stage;
     public currentBackdropNo: number = -1;
     /**
      * @internal
      * @param entity {Stage}
      */
     constructor(entity:IStage){
-        this.entity = entity;
+        this.entity = entity as Stage;
     }
     add(images: IImage[]) {
         const _stage = this.entity as Stage;

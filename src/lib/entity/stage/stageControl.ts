@@ -1,22 +1,24 @@
+import { engine, Engine } from '../../engine';
+import { ScratchEvent } from '../../engine/scratchEvent';
+import { Stage } from '../stage';
+import { threadManager } from '../../engine/thread/threads';
 import { Timer } from '../../utils/timer';
 import * as Wait from '../../utils/wait';
-import { threadManager } from '../../engine/thread/threads';
-import { playground } from '../../engine/playground';
-import { ScratchEvent } from '../../engine/scratchEvent';
 import type { IStage } from '../../../type/entity/stage';
 import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 import type { IStageControl } from '../../../type/entity/stage/IStageControl';
+
 /**
  * Stage Control(制御)
  */
 export class StageControl implements IStageControl{
-    protected entity: IStage;
+    protected entity: Stage;
     /**
      * @internal
      * @param entity {IStage}
      */
     constructor(entity:IStage){
-        this.entity = entity;
+        this.entity = entity as Stage;
     }
     /**
      * 指定秒数分、待つ。
@@ -61,7 +63,7 @@ export class StageControl implements IStageControl{
      * 全てのスプライトの動作を停止する
      */
     stopAll() : void {
-        playground.runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
+        (engine as Engine).runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
     }
     /**
      * このスクリプトを停止する

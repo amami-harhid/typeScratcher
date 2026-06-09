@@ -1,8 +1,11 @@
-import { playground } from '../../engine/playground';
+import { engine, Engine } from '../../engine';
 import { Stage } from '../stage';
 import type { ISpriteBackdrop } from '../../../type/entity/sprite/ISpriteBackdrop';
 import type { ISprite } from '../../../type/entity/sprite';
-/** 背景 */
+
+/** 
+ * 背景 
+ **/
 export class SpriteBackdrop implements ISpriteBackdrop {
 
     protected entity: ISprite;
@@ -21,7 +24,7 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     get no(): number {
-        const _stage = playground.getStage() as Stage;
+        const _stage = (engine as Engine).getStage() as Stage;
         if(_stage) {
             return _stage.Backdrop.no;
         }
@@ -35,7 +38,7 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     set no(no:number) {
-        const _stage = playground.getStage() as Stage;
+        const _stage = (engine as Engine).getStage() as Stage;
         if(_stage) {
             _stage.Backdrop.no = no;
         }        
@@ -48,7 +51,7 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     get name(): string {
-        const _stage = playground.getStage() as Stage;
+        const _stage = (engine as Engine).getStage() as Stage;
         return _stage.Backdrop.name;
     }
     /**
@@ -59,7 +62,7 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     set name(name:string) {
-        const _stage = playground.getStage() as Stage;
+        const _stage = (engine as Engine).getStage() as Stage;
         _stage.Backdrop.name = name;
     }
     /**
@@ -69,21 +72,21 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     next() : void {
-        const _stage = playground.getStage() as Stage;
+        const _stage = (engine as Engine).getStage() as Stage;
         _stage.Backdrop.next();
     }
     /**
      * 前の背景にする
      */
     previous(): void {
-        const _stage = playground.getStage() as Stage;
+        const _stage = (engine as Engine).getStage() as Stage;
         _stage.Backdrop.previous();
     }
     /**
      * どれかの背景にする
      */
     random(): void {
-        const _stage = playground.getStage() as Stage;
+        const _stage = (engine as Engine).getStage() as Stage;
         _stage.Backdrop.random();
     }
 }

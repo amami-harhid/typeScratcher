@@ -1,5 +1,5 @@
 import { EntityEffect } from '../entity/entityEffect';
-import { IStageEffect } from '../../../type/entity/stage/IStageEffect';
+import type { IStageEffect } from '../../../type/entity/stage/IStageEffect';
 import type { IStage } from '../../../type/entity/stage';
 
 /** 効果 */

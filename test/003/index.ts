@@ -45,4 +45,4 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
         yield;
     }
 }
-TS.playground.start();
+TS.engine.start();

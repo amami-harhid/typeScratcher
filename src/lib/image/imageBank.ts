@@ -1,8 +1,9 @@
+import { Loader } from "../loader/loader";
+import type { IImage } from "../../type/image";
+
 /**
  * ImageBank
  */
-import { Loader } from "../loader/loader";
-import type { IImage } from "../../type/image";
 export class ImageBank {
 
     private static _images: IImage[] = [];

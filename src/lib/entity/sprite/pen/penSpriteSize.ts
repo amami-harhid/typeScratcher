@@ -1,5 +1,5 @@
 import { MathUtil } from '../../../utils/math-util';
-import { PenSprite } from '.';
+import { PenSprite } from '../pen';
 export class PenSpriteSize {
 
     private sprite: PenSprite;

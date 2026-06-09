@@ -1,17 +1,18 @@
 import { Cast } from '../../utils/cast';
+import { Sprite } from '../sprite';
 import type { ISpriteSensingColor } from '../../../type/entity/sprite/ISpriteSensingColor';
 import type { ISprite } from '../../../type/entity/sprite';
 /**
  * Sprite Sensing(調べる) Color
  */
 export class SpriteSensingColor implements ISpriteSensingColor {
-    private entity: ISprite;
+    private entity: Sprite;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
     /**
      * 指定した色に触れたことを判定する

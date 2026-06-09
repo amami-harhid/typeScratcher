@@ -1,7 +1,7 @@
 /**
  * playground
  */
-export interface IPlayground {
+export interface IEngine {
     /** スタート */
     start(): void;
 }

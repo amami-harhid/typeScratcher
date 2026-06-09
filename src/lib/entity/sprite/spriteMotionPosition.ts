@@ -1,15 +1,16 @@
+import { Sprite } from '../sprite';
 import type { TPositionArray } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionPosition } from '../../../type/entity/sprite/ISpriteMotionPosition';
 
 export class SpriteMotionPosition implements ISpriteMotionPosition {
-    private entity: ISprite;
+    private entity: Sprite;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
     get x() : number {
         return this.entity.Properties.position.x;

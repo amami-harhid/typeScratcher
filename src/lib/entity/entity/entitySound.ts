@@ -3,7 +3,9 @@ import { Timer } from '../../utils/timer';
 import type { IEntity } from '../../../type/entity/entity';
 import type { ISound } from '../../../type/sound';
 
-/** イベント */
+/** 
+ * サウンド 
+ */
 export class EntitySound {
 
     protected entity: IEntity;
@@ -36,8 +38,9 @@ export class EntitySound {
      * @param sound {Sound} - 音
      */
     async play(sound: ISound): Promise<void> {
-        if(this.soundKeys.includes( sound.name )) {
-            await sound.play();
+        const _sound = sound as Sound;
+        if(this.soundKeys.includes( _sound.name )) {
+            await _sound.play();
         }
     }
     /**
@@ -57,8 +60,9 @@ export class EntitySound {
     async clearEffects(): Promise<void> {
         for(const soundKey of this.soundKeys) {
             const sound = this.soundMap[soundKey];
-            sound.setVolume(100);
-            sound.setPitch(0);
+            const _sound = sound as Sound;
+            _sound.setVolume(100);
+            _sound.setPitch(0);
         }
         // 反映されるまで少し待つ
         await Timer.wait(1/30);
@@ -69,8 +73,9 @@ export class EntitySound {
     stop(): void {
         for(const soundKey of this.soundKeys) {
             const sound = this.soundMap[soundKey];
-            if(sound.isPlaying === true){
-                sound.stop();
+            const _sound = sound as Sound;
+            if(_sound.isPlaying === true){
+                _sound.stop();
             }
         }
     }
@@ -80,8 +85,9 @@ export class EntitySound {
     stopImmediately(): void {
         for(const soundKey of this.soundKeys) {
             const sound = this.soundMap[soundKey];
-            if(sound.isPlaying === true){
-                sound.stopImmediately();
+            const _sound = sound as Sound;
+            if(_sound.isPlaying === true){
+                _sound.stopImmediately();
             }
         }
     }
@@ -93,8 +99,9 @@ export class EntitySound {
         return -Infinity;
     }
     addVolume(sound: ISound, volume: number) : void {
-        if(this.soundKeys.includes(sound.name)) {
-            sound.addVolume(volume);
+        const _sound = sound as Sound;
+        if(this.soundKeys.includes(_sound.name)) {
+            _sound.addVolume(volume);
         }else{
             return;
         }

@@ -1,10 +1,10 @@
+import { EventEmitter } from "events";
+import { ScratchElement } from "../gui/scratchElement";
+import { Engine, engine } from ".";
+
 /**
  * Scratch Event
  */
-import { EventEmitter } from "events";
-import { ScratchElement } from "../gui/scratchElement";
-import { playground } from "./playground";
-
 export class ScratchEvent extends EventEmitter {
 
     static get GREEN_FLAG_CLICKED() : string {
@@ -78,10 +78,10 @@ export class ScratchEvent extends EventEmitter {
             greenFlag.classList.remove('running');
             event.stopPropagation();
             // for sprite 
-            for(const s of playground.getSprites()) {
+            for(const s of (engine as Engine).getSprites()) {
                 s.Event.flagPresserKick();
             }
-            const stage = playground.getStage();
+            const stage = (engine as Engine).getStage();
             if(stage) {
                 stage.Event.flagPresserKick();
             }
@@ -128,7 +128,7 @@ export class ScratchEvent extends EventEmitter {
         const me = this;
         canvas.addEventListener('click', (event:MouseEvent)=>{
             //me.emit(ScratchEvent.CANVAS_CLICKED);
-            const sprites = playground.getSprites();
+            const sprites = (engine as Engine).getSprites();
             for(const s of sprites){
                 s.Event.clickEventerKick();
             }            
@@ -144,18 +144,18 @@ export class ScratchEvent extends EventEmitter {
                 _key = key; 
             }
             if( _key == pressedKey ) {
-                const sprites = playground.getSprites();
+                const sprites = (engine as Engine).getSprites();
                 for(const s of sprites) {
                     s.Event.keyPresserKick(key);
                 }
-                const stage = playground.getStage();
+                const stage = (engine as Engine).getStage();
                 if(stage){
                     stage.Event.keyPresserKick(key);
                 }
             }
         };        
         if( !this._keyPressedPool.includes(key)) {
-            playground.runtime.on("KEY_PRESSED", f);
+            (engine as Engine).runtime.on("KEY_PRESSED", f);
         }
     }
     public messageReceiverRegist(messageId: string): void {
@@ -169,13 +169,13 @@ export class ScratchEvent extends EventEmitter {
     }
     private _onMessageReceiverKick(messageId: string) {
         this.on(messageId, ()=> {
-            const sprites = playground.getSprites();
+            const sprites = (engine as Engine).getSprites();
             for(const s of sprites) {
-                s.Event.Broadcast.broadcastReceivedKick(messageId);
+                s.Broadcast.broadcastReceivedKick(messageId);
             }
-            const stage = playground.getStage();
+            const stage = (engine as Engine).getStage();
             if(stage){
-                stage.Event.Broadcast.broadcastReceivedKick(messageId);
+                stage.Broadcast.broadcastReceivedKick(messageId);
             }
         })
     }

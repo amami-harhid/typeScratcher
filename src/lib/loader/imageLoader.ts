@@ -1,8 +1,9 @@
+import { engine, Engine } from "../engine";
+import { ImageToBase64Util } from "../utils/base64Util";
+
 /**
  * Image Loader
  */
-import { playground } from "../engine/playground";
-import { ImageToBase64Util } from "../utils/base64Util";
 export class ImageLoader {
     /**
      * REGEX_SVG_DATA_IMAGE_FILE
@@ -47,7 +48,7 @@ export class ImageLoader {
     }
 
     static async _bitmapLoad(path: string): Promise<string>{
-        const render = playground.render;
+        const render = (engine as Engine).render;
         const StageSize = {W: render.stageWidth, H: render.stageHeight};
         const imageInfo = await ImageToBase64Util.getLoadInfo(path);
         const w = imageInfo.size.width;

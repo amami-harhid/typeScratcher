@@ -101,3 +101,7 @@ apple.Looks.effect.clear()
 
 ## Timer.wait を使用不可にする
 0.0.22 #04
+
+## playground → engine と名称変更
+～ engine.start() のみを公開
+0.0.22 #05

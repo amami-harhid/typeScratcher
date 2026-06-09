@@ -5,7 +5,7 @@ import { EntityImage } from "./entityImage";
 import { EntitySound } from "./entitySound";
 import { EventEmitter } from "events";
 import { Image } from "../../image";
-import { playground } from "../../engine/playground";
+import { engine, Engine } from "../../engine";
 import { Render } from "../../render";
 import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
@@ -15,6 +15,8 @@ import type { IEntitySound } from "../../../type/entity/entity/IEntitySound";
 import type { TMouse } from "../../../type/mouse";
 import { type StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
 import { EntityBroadCast } from "./entityBroadcast";
+
+const _engine = engine as Engine;
 
 export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
@@ -32,12 +34,12 @@ export class Entity extends EventEmitter implements IEntity{
     protected _isSprite: boolean;
     constructor() {
         super();
-        this._render = playground.render;
+        this._render = _engine.render;
         this.id = this._generateUUID();
         this._image = new EntityImage(this);
         this._sound = new EntitySound(this);
         this._broadcast = new EntityBroadCast(this);
-        this._mouse = playground.mouse;
+        this._mouse = _engine.mouse;
         this._isSprite = false;
     }
     createDrawable(layer: StageLayeringValue) {

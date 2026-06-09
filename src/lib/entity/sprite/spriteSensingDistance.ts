@@ -1,18 +1,18 @@
-import { Sprite } from '.';
-import { ISprite } from '../../../type/entity/sprite';
+import { Sprite } from '../sprite';
 import { Utils } from "../../utils/utils";
+import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSensingDistance } from '../../../type/entity/sprite/ISpriteSensingDistance';
 
 /** 距離 */
 export class SpriteSensingDistance implements ISpriteSensingDistance{
 
-    private entity: ISprite;
+    private entity: Sprite;
     /**
      * @internal
      * @param entity {Sprite}
      */
     constructor(entity: ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
     /**
      * マウスカーソルとの距離
@@ -36,7 +36,7 @@ export class SpriteSensingDistance implements ISpriteSensingDistance{
      * @returns 
      */
     to(targetSprite:ISprite) : number {
-        const _targetSprite: Sprite = targetSprite as unknown as Sprite;
+        const _targetSprite: Sprite = targetSprite as Sprite;
         const obj1 = {
             x: this.entity.Properties.position.x,
             y: this.entity.Properties.position.y,

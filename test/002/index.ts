@@ -33,4 +33,4 @@ apple.Event.keyPresser("s").func = async function*(this: Sprite){
     this.Pen.stamp();
 }
 
-TS.playground.start();
+TS.engine.start();

@@ -1,13 +1,14 @@
+import { Sprite } from '../sprite';
 import type { ISprite } from '../../../type/entity/sprite';
 
 export class SpriteMotionDirection {
-    private entity: ISprite;
+    private entity: Sprite;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
     /**
      * 向き

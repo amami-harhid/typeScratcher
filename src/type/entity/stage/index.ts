@@ -19,20 +19,7 @@ export interface SStage {
     new(options?:TEntityOptions):IStage;
 }
 export interface IStage extends IEntity {
-    // /**
-    //  * 全てのスプライトを配列で受け取る
-    //  */
-    // get sprites (): ISprite[];
-    // /**
-    //  * スプライトを削除する
-    //  * @interface
-    //  * @param sprite 
-    //  */
-    // removeSprite ( sprite: ISprite ): void;
     
-    /** プロパティなどを反映させる */
-    update(): void;
-    // draw(): void;
     readonly Properties: IStageProperties;
     /**
      * 見た目

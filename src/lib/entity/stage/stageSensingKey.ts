@@ -1,6 +1,7 @@
-import { playground } from '../../engine/playground';
+import { engine, Engine } from '../../engine';
 import type { IEntitySensingKey } from '../../../type/entity/entity/IEntitySensingKey';
 import type { IStage } from '../../../type/entity/stage';
+
 /**
  * Stage Sensing(調べる) Key
  */
@@ -20,7 +21,7 @@ export class StageSensingKey implements IEntitySensingKey {
      * @returns {boolean} キー押下判定
      */
     isDown(key: string) : boolean {
-        return playground.runtime.keyIsDown(key);
+        return (engine as Engine).runtime.keyIsDown(key);
     }
     /**
      * キーが押されていないことの判定
@@ -28,7 +29,7 @@ export class StageSensingKey implements IEntitySensingKey {
      * @returns {boolean} キー押下判定
      */
     isNotDown(key: string) : boolean {
-        const down =  playground.runtime.keyIsDown(key);
+        const down =  (engine as Engine).runtime.keyIsDown(key);
         return !down;
     }
 

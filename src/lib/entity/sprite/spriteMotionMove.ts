@@ -1,18 +1,19 @@
 import { MathUtil } from '../../utils/math-util';
+import { Sprite } from '../sprite';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionMove } from '../../../type/entity/sprite/ISpriteMotionMove';
 import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
 
 export class SpriteMotionMove implements ISpriteMotionMove {
-    private entity: ISprite;
+    private entity: Sprite;
     private prop: IEntityProperties;
     /**
      * @internal
      * @param entity {Sprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
-        this.prop = entity.Properties;
+        this.entity = entity as Sprite;
+        this.prop = this.entity.Properties;
     }
     get x(): number {
         return this.prop.position.x

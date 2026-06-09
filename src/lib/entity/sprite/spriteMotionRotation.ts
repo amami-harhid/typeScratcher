@@ -1,3 +1,4 @@
+import { Sprite } from '../sprite';
 import type { RotationValue } from '../../../type/entity/RotationStyle';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionRotation } from '../../../type/entity/sprite/ISpriteMotionRotation';
@@ -6,13 +7,13 @@ import type { ISpriteMotionRotation } from '../../../type/entity/sprite/ISpriteM
  * SpriteMotionRotation
  */
 export class SpriteMotionRotation implements ISpriteMotionRotation{
-    private entity: ISprite;
+    private entity: Sprite;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
     /**
      * 回転方法

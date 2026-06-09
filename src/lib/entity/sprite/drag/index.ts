@@ -1,7 +1,9 @@
-import { StageLayering } from '../../../../type/entity/stage/CStageLayering';
-import { playground } from '../../../engine/playground';
+import { engine, Engine } from '../../../engine';
 import { ScratchElement } from '../../../gui/scratchElement';
+import { Sprite } from '../../sprite';
+import { StageLayering } from '../../../../type/entity/stage/CStageLayering';
 import type { ISprite } from '../../../../type/entity/sprite';
+
 /**
  * DragSprite
  */
@@ -46,16 +48,16 @@ export class DragSprite {
      * ドラッグ開始処理
      */
     dragStart(): void {
-        const sprite = this.sprite;
+        const sprite = this.sprite as Sprite;
         // DROP開始したスプライトは階層最上位にする
         sprite.render.renderer.setDrawableOrder(sprite.drawableID, Infinity, StageLayering.SPRITE_LAYER, true);
         // マウスが触った場所とスプライト中心との差分（位置関係）を記録する。
         // スプライト DROP時に利用する
-        const renderRate = playground.renderRate;
+        const renderRate = (engine as Engine).renderRate;
         
         // body 基準のマウスの位置
-        const mouseX = this.sprite.Mouse.pageX;
-        const mouseY = this.sprite.Mouse.pageY;
+        const mouseX = sprite.mouse.pageX;
+        const mouseY = sprite.mouse.pageY;
         // canvasの位置
         const canvas = ScratchElement.getScratchCanvas();
         // getBoundingClientRect();
@@ -63,8 +65,8 @@ export class DragSprite {
         const canvasX = canvasRect.x;
         const canvasY = canvasRect.y;
         // ステージの大きさ
-        const stageWidthHalf = playground.render.stageWidth/2;
-        const stageHeightHalf = playground.render.stageHeight/2;
+        const stageWidthHalf = (engine as Engine).render.stageWidth/2;
+        const stageHeightHalf = (engine as Engine).render.stageHeight/2;
         // canvas基準に直したマウス位置
         const canvasMouse = {x:mouseX-canvasX, y:mouseY-canvasY};
 
@@ -96,10 +98,10 @@ export class DragSprite {
      * @returns 
      */
     async update() : Promise<void> {
-        const sprite = this.sprite;
+        const sprite = this.sprite as Sprite;
         if(this.draggable === false) return;
-        if(this.dragging === false && sprite.Sensing.Mouse.isTouching) {
-            const mouse = this.sprite.Mouse;
+        if(this.dragging === false && sprite.Sensing.mouse.isTouching) {
+            const mouse = sprite.mouse;
             if(!mouse.down) return;
             if(this.drag == null) {
                 this.dragStart();
@@ -107,12 +109,12 @@ export class DragSprite {
             }
         }
         if(this.drag && this.moveDistance) {
-            sprite.Motion.Position.x = this.sprite.Mouse.pageX - this.moveDistance.x;
-            sprite.Motion.Position.y = this.sprite.Mouse.pageY - this.moveDistance.y;
+            sprite.Motion.position.x = sprite.mouse.pageX - this.moveDistance.x;
+            sprite.Motion.position.y = sprite.mouse.pageY - this.moveDistance.y;
             const ret = this.drag.next();
             if(ret.done === true) {
-                sprite.Motion.Position.x = this.sprite.Mouse.pageX - this.moveDistance.x;
-                sprite.Motion.Position.y = this.sprite.Mouse.pageY - this.moveDistance.y;
+                sprite.Motion.position.x = sprite.mouse.pageX - this.moveDistance.x;
+                sprite.Motion.position.y = sprite.mouse.pageY - this.moveDistance.y;
                 this.dragComplete();
                 this.drag = null;
                 return;
@@ -125,7 +127,8 @@ export class DragSprite {
      * マウスダウンしている間、スプライト画像をドラッグする
      */
     *dragger() : Generator {
-        const mouse = this.sprite.Mouse;
+        const sprite = this.sprite as Sprite;
+        const mouse = sprite.mouse;
         while(this.draggable===true && mouse.down===true){
             yield;
         }

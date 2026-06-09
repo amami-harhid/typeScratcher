@@ -3,12 +3,13 @@
  */
 
 import EventEmitter from "events";
-import { ScratchElement } from "../../gui/scratchElement";
 import { EntityProxyExt } from "../../entity/entity/entityProxyExt";
 import { FunctionChecker } from "../../utils/functionChecker";
 import { INTERVAL } from "./interval";
-import { playground } from "../../engine/playground";
+import { engine, Engine } from "..";
 import { QuestionBoxElement } from "../../gui/questionBoxElement";
+import { ScratchElement } from "../../gui/scratchElement";
+import { Sound } from "../../sounds";
 import { ScratchEvent } from "../../engine/scratchEvent";
 import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
@@ -70,8 +71,8 @@ export class ThreadManager {
         this.intervalStart()
         // 一時停止イベント定義
         const me = this;
-        const _scratchEvent = playground.runtime.scratchEvent;
-        const _runtime = playground.runtime;
+        const _scratchEvent = (engine as Engine).runtime.scratchEvent;
+        const _runtime = (engine as Engine).runtime;
         const _flagClick = () => {
             this._pauser = false;
         }
@@ -125,15 +126,15 @@ export class ThreadManager {
                 thread.next();
             }
         }
-        for(const sprite of playground.getSprites()){
+        for(const sprite of (engine as Engine).getSprites()){
             sprite.update();
         }
-        const stage = playground.getStage();
+        const stage = (engine as Engine).getStage();
         if(stage){
             stage.update();
         }
 
-        playground.render.renderer.draw();
+        (engine as Engine).render.renderer.draw();
 
         if(ThreadBank.threadArr.length == _completed_count) {
             me.stopMarkToNotactive();
@@ -197,7 +198,7 @@ export class ThreadManager {
         const sounds = entity.Sound.soundMap;
         const soundKeys = entity.Sound.soundKeys;
         for(const key of soundKeys){
-            const sound = sounds[key];
+            const sound = sounds[key] as Sound;
             if(sound.isPlaying === true){
                 sound.stopImmediately();
             }

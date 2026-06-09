@@ -1,12 +1,12 @@
-/**
- * Image
- */
 import { ImageLoader } from "../loader/imageLoader";
 import { Utils } from "../utils/utils";
 import type { IImage } from "../../type/image";
 
 type ImageArgStringObject = { [key:string]:string };
 
+/**
+ * Image
+ */
 export class Image implements IImage{
 
     private _name: string;

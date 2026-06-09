@@ -1,16 +1,17 @@
+import { Sprite } from '../sprite';
 import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import type { ISprite } from '../../../type/entity/sprite';
 
 /** 階層 */
 export class SpriteLayer {
  
-    protected entity: ISprite;
+    protected entity: Sprite;
     /**
      * @internal
      * @param entity {Sprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
 
     /**

@@ -1,4 +1,3 @@
-import { Sprite } from '.';
 import { SpriteMotionMove } from './spriteMotionMove';
 import { SpriteMotionPoint } from './spriteMotionPoint';
 import { SpriteMotionDirection} from './spriteMotionDirection';

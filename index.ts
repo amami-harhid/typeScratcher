@@ -39,12 +39,12 @@ import { Sound } from './src/lib/sounds';
 import { ImageEffective, type ImageEffectiveType } from './src/type/entity/ImageEffective';
 import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './src/type/engine/keyboad';
-import { playground } from './src/lib/engine/playground';
+import { engine } from './src/lib/engine';
 import type { ISprite, SSprite } from './src/type/entity/sprite';
 import type { IStage, SStage } from './src/type/entity/stage';
 import type { SImage } from './src/type/image';
 import type { SSound } from './src/type/sound';
-import type { IPlayground } from './src/type/engine/playground';
+import type { IEngine } from './src/type/engine';
 
 /**
  * 【2026/06/06】
@@ -72,7 +72,7 @@ type ExportType = {
     Rotation: RotationStyle,
     ImageEffective: ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS_Type
-    playground: IPlayground,
+    engine: IEngine,
 }
 export const Typescratcher: ExportType = {
     Sprite: _Sprite as SSprite,
@@ -82,7 +82,7 @@ export const Typescratcher: ExportType = {
     ImageEffective: ImageEffective as ImageEffectiveType,
     Rotation: Rotation as RotationStyle,
     Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
-    playground: playground as IPlayground,
+    engine: engine as IEngine,
 } as const;
 
 export type Sprite = ISprite;

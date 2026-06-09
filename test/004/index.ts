@@ -54,4 +54,4 @@ cat.Event.flagPresser().func=async function*(this:Sprite) {
     }
 }
 
-TS.playground.start();
+TS.engine.start();

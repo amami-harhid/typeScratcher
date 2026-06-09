@@ -2,8 +2,9 @@
  * Bubble
  */
 import { ScratchElement } from "../../gui/scratchElement";
-import { uid } from "../../utils/uid";
+import { Sprite } from "../sprite";
 import { StageLayering } from "../../../type/entity/stage/CStageLayering";
+import { uid } from "../../utils/uid";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { TScale } from "../../../type/common/typeCommon";
 import type { BubbleState, BubbleProperties } from "../../../type/entity/TBubble";
@@ -65,20 +66,22 @@ export class Bubble  {
     }
     async createDrawable() {
         if(this._bubbleState.drawableID == -1 ) {
-            const bubbleDrawableID = this.sprite.render.renderer.createDrawable( StageLayering.SPRITE_LAYER );
+            const sprite = this.sprite as Sprite;
+            const bubbleDrawableID = sprite.render.renderer.createDrawable( StageLayering.SPRITE_LAYER );
             this._bubbleState.drawableID = bubbleDrawableID;
         }
     }
 
     async createTextSkin() {
         if(this._bubbleState.skinId == -1 ) {
-            this._bubbleState.skinId = this.sprite.render.renderer.createTextSkin(
+            const sprite = this.sprite as Sprite;
+            this._bubbleState.skinId = sprite.render.renderer.createTextSkin(
                 this._bubbleState.type, 
                 this._bubbleState.text, 
                 this._bubbleState.onSpriteRight
             );
             // CTX willReadFrequent対応
-            const _skin = this.sprite.render.renderer._allSkins[this._bubbleState.skinId];
+            const _skin = sprite.render.renderer._allSkins[this._bubbleState.skinId];
             //if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
             const _svgSkin: ISvgSkin = _skin as ISvgSkin;
             _svgSkin._canvas = ScratchElement.RemakeCanvasWillReadFrequentlyTrue;
@@ -113,17 +116,19 @@ export class Bubble  {
                 // ゼロスケールではDrawできないので回避する。
                 return;
             }
+            const sprite = this.sprite as Sprite;
             // マイナススケールのとき 文字が反転（鏡文字）となるのでそれを回避する。
             let _w = Math.abs(w);
             let _h = Math.abs(h);
             this._scale.w = _w;
             this._scale.h = _h;
-            this.sprite.render.renderer.updateDrawableScale ( this._bubbleState.drawableID , [_w, _h] );
+            sprite.render.renderer.updateDrawableScale ( this._bubbleState.drawableID , [_w, _h] );
        }
     }
     async _renderBubble(_properties: BubbleProperties ={}) {
-        const renderer = this.sprite.render.renderer;
-        if(this.sprite.Properties.visible == false || this._bubbleState.text === '') {
+        const sprite = this.sprite as Sprite;
+        const renderer = sprite.render.renderer;
+        if(sprite.Properties.visible == false || this._bubbleState.text === '') {
             if( this._bubbleState.uid != '' ) {
                 this.destroyBubble();
             }
@@ -152,13 +157,14 @@ export class Bubble  {
         this._positionBubble();
     }
     _positionBubble() : void {
-        const renderer = this.sprite.render.renderer;
+        const sprite = this.sprite as Sprite;
+        const renderer = sprite.render.renderer;
         if(this._bubbleState.skinId && this._bubbleState.skinId > -1) {
             try{
                 const [_bubbleWidth, _bubbleHeight] = renderer.getCurrentSkinSize( this._bubbleState.drawableID );
                 const bubbleWidth = _bubbleWidth * this._scale.w / 100; 
                 const bubbleHeight = _bubbleHeight * this._scale.h / 100;
-                const targetBounds = renderer.getBoundsForBubble( this.sprite.drawableID );
+                const targetBounds = renderer.getBoundsForBubble( sprite.drawableID );
                 const stageSize = renderer.getNativeSize();
                 const stageBounds = {
                     left: -stageSize[0] / 2,
@@ -196,7 +202,8 @@ export class Bubble  {
         }
     }
     destroyBubble(): void {
-        const renderer = this.sprite.render.renderer;
+        const sprite = this.sprite as Sprite;
+        const renderer = sprite.render.renderer;
         if(this.isBubbleActive && this._bubbleState.drawableID > -1) {
             renderer.destroyDrawable( this._bubbleState.drawableID, StageLayering.SPRITE_LAYER);
             renderer.destroySkin( this._bubbleState.skinId )

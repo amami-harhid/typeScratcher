@@ -1,17 +1,18 @@
-import { playground } from '../../engine/playground';
+import { engine, Engine } from '../../engine';
+import { Sprite } from '../sprite';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { IEntitySensingKey } from '../../../type/entity/entity/IEntitySensingKey';
 /**
  * Sprite Sensing(調べる) Key
  */
 export class SpriteSensingKey implements IEntitySensingKey {
-    protected entity: ISprite;
+    protected entity: Sprite;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
+        this.entity = entity as Sprite;
     }
 
     /**
@@ -20,7 +21,7 @@ export class SpriteSensingKey implements IEntitySensingKey {
      * @returns {boolean} キー押下判定
      */
     isDown(key: string) : boolean {
-        return playground.runtime.keyIsDown(key);
+        return (engine as Engine).runtime.keyIsDown(key);
     }
     /**
      * キーが押されていないことの判定
@@ -28,7 +29,7 @@ export class SpriteSensingKey implements IEntitySensingKey {
      * @returns {boolean} キー押下判定
      */
     isNotDown(key: string) : boolean {
-        const down = playground.runtime.keyIsDown(key);
+        const down = (engine as Engine).runtime.keyIsDown(key);
         return !down;
     }
 };

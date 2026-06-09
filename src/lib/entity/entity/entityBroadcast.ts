@@ -1,5 +1,5 @@
 import { DoubleRunning } from './entityEvent';
-import { playground } from '../../engine/playground';
+import { engine, Engine } from '../../engine';
 import { threadManager, ThreadObj } from '../../engine/thread/threads';
 import type { IEntity } from '../../../type/entity/entity';
 import type { EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
@@ -7,8 +7,9 @@ import type { IEntityBroadCast, TBroadcastElement, TBroadcastElementFunc } from 
 import { ThreadStatus } from '../../../type/engine/thread/threads';
 import { Timer } from '../../utils/timer';
 
-
-/** メッセージ送受信 */
+/** 
+ * メッセージ送受信 
+ */
 export class EntityBroadCast implements IEntityBroadCast {
 
     private static _broadcastReceivedFuncArr: TBroadcastElement[] = [];
@@ -30,7 +31,7 @@ export class EntityBroadCast implements IEntityBroadCast {
         const _messageId = this.getMessageId(messageId);
         const element = EntityBroadCast.getBroadcastElement(_messageId);
         if(element.funcArr.length > 0){
-            playground.runtime.scratchEvent.emit(_messageId, ...args);
+            (engine as Engine).runtime.scratchEvent.emit(_messageId, ...args);
         }
     }
     /**
@@ -43,7 +44,7 @@ export class EntityBroadCast implements IEntityBroadCast {
         return new Promise<void>( async resolve=>{
             const element = EntityBroadCast.getBroadcastElement(_messageId);
             if(element.funcArr.length > 0){
-                playground.runtime.scratchEvent.emit(_messageId, ...args);
+                (engine as Engine).runtime.scratchEvent.emit(_messageId, ...args);
                 for(;;){
                     let _allDone = true;
                     for(const f of element.funcArr){
@@ -104,7 +105,7 @@ export class EntityBroadCast implements IEntityBroadCast {
             func: func,
         }
         element.funcArr.push(elementFunc);
-        const scratchEvent = playground.runtime.scratchEvent;
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
         scratchEvent.messageReceiverRegist(_messageId);
     }
     private getMessageId(messageId: string): string {

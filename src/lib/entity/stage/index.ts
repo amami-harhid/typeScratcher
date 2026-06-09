@@ -1,26 +1,26 @@
-/**
- * Stage
- */
+import { engine, Engine } from "../../engine";
 import { Entity } from "../entity";
-import { playground } from "../../engine/playground";
-import { StageLayering } from '../../../type/entity/stage/CStageLayering';
-import { StageProperties } from "./stageProperties";
-import { StageLooks } from "./stageLooks";
-import { StageControl } from "./stageControl";
+import { Sound } from "../../sounds";
 import { StageBackdrop } from "./stageBackdrop";
-//import { threadId } from "node:worker_threads";
+import { StageControl } from "./stageControl";
 import { StageEvent } from "./stageEvent";
+import { StageLayering } from '../../../type/entity/stage/CStageLayering';
+import { StageLooks } from "./stageLooks";
+import { StageProperties } from "./stageProperties";
 import { StageSensing } from "./stageSensing";
 import { Timer } from "../../utils/timer";
 import type { IStage } from "../../../type/entity/stage";
-import type { IStageLooks } from "../../../type/entity/stage/IStageLooks";
+import type { IStageBackdrop } from "../../../type/entity/stage/IStageBackdrop";
 import type { IStageControl } from "../../../type/entity/stage/IStageControl";
 import type { IStageEvent } from "../../../type/entity/stage/IStageEvent";
+import type { IStageLooks } from "../../../type/entity/stage/IStageLooks";
 import type { IStageSensing } from "../../../type/entity/stage/IStageSensing";
-import type { IStageBackdrop } from "../../../type/entity/stage/IStageBackdrop";
-import { ISvgSkin } from "../../../type/render/ISvgSkin";
-import { ScratchElement } from "../../gui/scratchElement";
+import type { ISvgSkin } from "../../../type/render/ISvgSkin";
 
+
+/**
+ * Stage
+ */
 export class Stage extends Entity implements IStage{
     protected _properties: StageProperties;
     private _looks: IStageLooks;
@@ -34,7 +34,7 @@ export class Stage extends Entity implements IStage{
         this._name = 'STAGE';
         this._properties = new StageProperties(this);
         this._isSprite = false; // これはスプライトではありません。
-        playground.setStage(this);
+        (engine as Engine).setStage(this);
         this._looks = new StageLooks(this);
         this._control = new StageControl(this);
         this._event = new StageEvent(this);
@@ -68,7 +68,8 @@ export class Stage extends Entity implements IStage{
             }
             for(const sndKey of this._sound.soundKeys){
                 const sound = this._sound.soundMap[sndKey];
-                loadArr.push(sound.load());
+                const _sound = sound as Sound;
+                loadArr.push(_sound.load());
             }
             Promise.all(loadArr).then(async ()=>{
                 // イメージごとに Skinを作る

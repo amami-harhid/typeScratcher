@@ -1,4 +1,4 @@
-import { Entity } from '.';
+import { Entity } from '../entity';
 import { EntityEffect } from './entityEffect';
 import { EntityImage } from './entityImage';
 import type { IEntity } from '../../../type/entity/entity';

@@ -1,6 +1,8 @@
+import { engine, Engine } from '../engine';
+import { Entity } from '../entity/entity';
 import { EventEmitter } from 'events';
+import { Sprite } from '../entity/sprite';
 import { Utils } from '../utils/utils';
-import { playground } from '../engine/playground';
 import type { IEntity } from '../../type/entity/entity';
 import type { ISprite } from '../../type/entity/sprite';
 
@@ -53,7 +55,7 @@ export class QuestionBoxElement extends EventEmitter {
         const me = this;
         //const stage = playground.getStage();
         //console.log(`stage=${stage}`);
-        const scratchEvent = playground.runtime.scratchEvent;
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
         return new Promise<boolean>(async resolve=>{
             const f = function() {
                 me.forceComplete = true;
@@ -86,7 +88,8 @@ export class QuestionBoxElement extends EventEmitter {
      * @returns Spriteの場合 True
      */
     static isSprite(entity: IEntity) {
-        if(entity.isSprite === true ){
+        const _entity = entity as Entity;
+        if(_entity.isSprite === true ){
             return true;
         }
         return false;
@@ -98,6 +101,7 @@ export class QuestionBoxElement extends EventEmitter {
      * @returns 答え {Promise<string>}
      */
     async ask( entity: IEntity, text: string ) : Promise<string>{
+        const _entity = entity as Entity;
         this.forceComplete = false;
         const result = await this.askWait(entity);
         // @ts-ignore : this.forceComplete is changed to true in askWait(). 
@@ -127,19 +131,17 @@ export class QuestionBoxElement extends EventEmitter {
         const questionContainer = document.createElement('div');
         questionContainer.classList.add(QuestionContainer);
         div.appendChild(questionContainer);
-        if(entity){
-            if( entity.isSprite === false ){
-                // ステージの場合
-                const questionLabel = document.createElement('div');
-                questionLabel.classList.add(QuestionLabel);
-                questionLabel.innerHTML = text;
-                questionContainer.appendChild(questionLabel);
-            }else {
-                // スプライトの場合
-                const sprite = entity as ISprite;
-                sprite.Looks.bubble.say(text);
-            }    
-        }
+        if( _entity.isSprite === false ){
+            // ステージの場合
+            const questionLabel = document.createElement('div');
+            questionLabel.classList.add(QuestionLabel);
+            questionLabel.innerHTML = text;
+            questionContainer.appendChild(questionLabel);
+        }else {
+            // スプライトの場合
+            const sprite = entity as ISprite;
+            sprite.Looks.bubble.say(text);
+        }    
 
         const questionInputDiv = document.createElement('div');
         questionInputDiv.classList.add(QuestionInput);
@@ -157,7 +159,7 @@ export class QuestionBoxElement extends EventEmitter {
         img.src = ButtonIconSrc;
         button.appendChild(img);
         questionInputDiv.appendChild(button);
-        const runtime = playground.runtime;
+        const runtime = (engine as Engine).runtime;
         if(runtime == undefined) throw 'runtime is undefined error';
         const keyboard = runtime.ioDevices.keyboard;
         // 半角スペースの入力を許可する
@@ -189,7 +191,7 @@ export class QuestionBoxElement extends EventEmitter {
             me.once(QuestionBoxElement.TextInputComplete, ()=>{
                 // 質問の枠を消す    
                 QuestionBoxElement.removeQuestionOverlay();
-                if(entity.isSprite===true){
+                if(_entity.isSprite===true){
                     const sprite = entity as ISprite;
                     sprite.Looks.bubble.say(""); // Bubbleを消す
                 }
@@ -203,7 +205,7 @@ export class QuestionBoxElement extends EventEmitter {
     }
     static removeTargetAsk(entity: IEntity) {
         if(QuestionBoxElement.isSprite(entity)) {
-            const s = entity as ISprite;
+            const s = entity as Sprite;
             s.Looks.bubble.say(""); // バブルを消す
         }
         QuestionBoxElement.removeQuestionOverlay();
@@ -220,7 +222,7 @@ export class QuestionBoxElement extends EventEmitter {
      * 質問を消す
      */
     static removeAsk() : void {
-        const sprites = playground.getSprites();
+        const sprites = (engine as Engine).getSprites();
         for(const s of sprites) {
             s.Looks.bubble.say(""); // バブルを消す
         }

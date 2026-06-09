@@ -1,4 +1,4 @@
-import { PenSprite } from '.';
+import { PenSprite } from '../pen';
 /**
  * PenSpriteHSVColor
  */

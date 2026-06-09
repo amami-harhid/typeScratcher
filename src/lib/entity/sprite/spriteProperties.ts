@@ -1,9 +1,9 @@
 import { EntityProperties } from "../entity/entityProperties";
 import { Rotation } from "../../../type/entity/RotationStyle";
+import { Sprite } from "../sprite";
 import { SpriteImage } from "./spriteImage";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
-import { Sprite } from ".";
 /**
  * SpriteProperties
  */

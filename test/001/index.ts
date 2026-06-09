@@ -17,7 +17,7 @@ import ChillWav from '../assets/Chill.wav';
 //import { IStage } from '@Type/stage';
 
 const appleImage = new TS.Image( {AppleSvg} ); 
-const arrowImage = new TS.Image( {ArrowSvg} ); 
+const arrowImage = new TS.Image( {ArrowSvg} );
 const catImage = new TS.Image( {CatSvg});
 const blueskyImage = new TS.Image( {BlueskySvg} );
 const basketballImage = new TS.Image( {BasketballPng} );
@@ -148,4 +148,4 @@ apple.Broadcast.broadcasReceiver('BBB').func = async function*(this:Sprite){
 }
 
 
-TS.playground.start();
+TS.engine.start();

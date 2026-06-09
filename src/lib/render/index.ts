@@ -1,10 +1,10 @@
 /**
  * Render
  */
+import { GUI_CONST } from '../gui/gui_const';
 import { default as ScratchRender} from 'scratch-render';
 import { type StageLayeringValue, LAYER_GROUPS } from '../../type/entity/stage/CStageLayering';
-import { IRenderWebGL } from '../../type/render/IRenderWebGL';
-import { GUI_CONST } from '../gui/gui_const';
+import type { IRenderWebGL } from '../../type/render/IRenderWebGL';
 
 export class Render {
     /**

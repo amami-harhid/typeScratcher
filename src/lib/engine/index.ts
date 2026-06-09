@@ -4,18 +4,17 @@ import { Runtime } from "./runtime";
 import { Sprite } from "../entity/sprite";
 import { Stage } from "../entity/stage";
 import { ScratchElement } from "../gui/scratchElement";
-import type { ISprite } from "../../type/entity/sprite";
 import type { TMouse } from "../../type/mouse";
-import { IStage } from "../../type/entity/stage";
+import type { IEngine } from "../../type/engine";
 
 /**
  * PlayGround
  */
-export class Playground {
+export class Engine implements IEngine {
     private _render!: Render;
     private _runtime: Runtime;
-    private _sprites: ISprite[] = [];
-    private _stage!: IStage;
+    private _sprites: Sprite[] = [];
+    private _stage!: Stage;
     private _timer: number;
     private _mouse!: TMouse;
     constructor() {
@@ -96,10 +95,10 @@ export class Playground {
     get render(): Render {
         return this._render;
     }
-    addSprite(sprite: ISprite) {
+    addSprite(sprite: Sprite) {
         this._sprites.push(sprite);
     }
-    getSprites() {
+    getSprites() : Sprite[]{
         return this._sprites;
     }
     setStage(stage: Stage) {
@@ -131,4 +130,4 @@ export class Playground {
     }
 }
 
-export const playground = new Playground();
+export const engine:IEngine = new Engine();

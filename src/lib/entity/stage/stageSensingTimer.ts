@@ -1,6 +1,7 @@
-import { playground } from '../../engine/playground';
+import { engine, Engine } from '../../engine';
 import type { IStage } from '../../../type/entity/stage';
 import type { IEntitySensingTimer } from '../../../type/entity/entity/IEntitySensingTimer';
+
 /**
  * Stage Sensing(調べる) Timer
  */
@@ -17,13 +18,13 @@ export class StageSensingTimer implements IEntitySensingTimer {
      * タイマー値
      */
     get timer() {
-        return playground.timer;
+        return (engine as Engine).timer;
     }
     /**
      * タイマーリセット
      */
     reset() {
-        playground.resetTimer();
+        (engine as Engine).resetTimer();
     }
 
 };
