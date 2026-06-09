@@ -136,6 +136,7 @@ export class EntityBackdrop implements IEntityBackdrop {
             currentBackdropNo += 1;
             this.no = currentBackdropNo % length;
         }
+        console.log(prevNo, this.no)
         if(prevNo != this.no) {
             const backdropName = this.name;
             this.backdropChangeEmit(backdropName);
@@ -238,6 +239,7 @@ export class EntityBackdrop implements IEntityBackdrop {
     private backdropChangeEmit( backdropName: string ) : void {
         const scratchEvent = (engine as Engine).runtime.scratchEvent;
         if(scratchEvent.isBackdropChangerExist( backdropName)){
+            console.log('Emit GO ', backdropName)
             scratchEvent.emit( backdropName );
         }
     }

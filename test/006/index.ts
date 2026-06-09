@@ -20,34 +20,27 @@ cat.Costume.add([CatImage]);
 const stage = new TS.Stage();
 stage.Backdrop.add([BlueskyImage, BasketballImage]);
 
+cat.Event.keyPresser("a").func = async function*(this: Sprite) {
 
+    this.Backdrop.next();
 
-cat.Event.flagPresser().func=async function*(this:Sprite) {
-    let counter = 0;
-    for(;;){
-        this.Backdrop.next();
-        await this.Control.wait(1);
-        counter+=1;
-        if(counter>5){
-            this.Broadcast.broadcast('STAGE');
-            break;
-        }
-        yield;
-    }
 }
-cat.Event.backdropSwitcher(BasketballImage).func = async function*(this:Sprite){
-    
+
+cat.Event.backdropSwitcher(BlueskyImage).func = async function*(this:Sprite) {
+
+    this.Looks.bubble.say(BlueskyImage.name);
+    await this.Control.wait(0.5);
+    this.Looks.bubble.say('');
 }
-stage.Broadcast.broadcasReceiver('STAGE').func = async function*(this: Stage) {
-    let counter = 0;
-    for(;;){
-        this.Backdrop.next();
-        counter+=1;
-        if(counter>5){
-            break;
-        }
-        yield;
-    }
+
+stage.Event.backdropSwitcher(BasketballImage).func = async function*(this:Stage) {
+
+    cat.Looks.bubble.say("かわっちゃった");
+    await this.Control.wait(0.5);
+    cat.Looks.bubble.say('');
+    await this.Control.wait(1);
+    this.Backdrop.next();
+
 }
 
 TS.engine.start();

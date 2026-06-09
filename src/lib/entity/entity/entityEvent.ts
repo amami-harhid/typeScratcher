@@ -229,6 +229,7 @@ export class EntityEvent implements IEntityEvent{
 
         const element = this._getBackdropElement(backdropName);
         element.threadArr.push(threadObj);
+        (engine as Engine).runtime.scratchEvent.backdropChangerRegist(backdropName);
     }
 
     async backdropEventKick(backdropName: string) : Promise<void>{

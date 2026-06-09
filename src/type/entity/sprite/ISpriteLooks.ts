@@ -12,10 +12,6 @@ export interface ISpriteLooks extends IEntityLooks {
      * コスチューム番号、コスチューム名を取り出すためのオブジェクト
      */
     readonly costume: ISpriteCostume;
-    /**
-     * 背景番号、背景名を取り出すためのオブジェクト
-     */
-    readonly backdrop: ISpriteBackdrop;
 
     /**
      * サイズ

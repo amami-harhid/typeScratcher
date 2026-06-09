@@ -1,6 +1,8 @@
 import { EventEmitter } from "events";
 import { ScratchElement } from "../gui/scratchElement";
 import { Engine, engine } from ".";
+import { SpriteEvent } from "../entity/sprite/spriteEvent";
+import { StageEvent } from "../entity/stage/stageEvent";
 
 /**
  * Scratch Event
@@ -81,11 +83,11 @@ export class ScratchEvent extends EventEmitter {
             event.stopPropagation();
             // for sprite 
             for(const s of (engine as Engine).getSprites()) {
-                s.Event.flagPresserKick();
+                (s.Event as SpriteEvent).flagPresserKick();
             }
             const stage = (engine as Engine).getStage();
             if(stage) {
-                stage.Event.flagPresserKick();
+                (stage.Event as StageEvent).flagPresserKick();
             }
         });
 
@@ -132,7 +134,7 @@ export class ScratchEvent extends EventEmitter {
             //me.emit(ScratchEvent.CANVAS_CLICKED);
             const sprites = (engine as Engine).getSprites();
             for(const s of sprites){
-                s.Event.clickEventerKick();
+                (s.Event as SpriteEvent).clickEventerKick();
             }            
             event.stopPropagation();
         })
@@ -148,11 +150,11 @@ export class ScratchEvent extends EventEmitter {
             if( _key == pressedKey ) {
                 const sprites = (engine as Engine).getSprites();
                 for(const s of sprites) {
-                    s.Event.keyPresserKick(key);
+                    (s.Event as SpriteEvent).keyPresserKick(key);
                 }
                 const stage = (engine as Engine).getStage();
                 if(stage){
-                    stage.Event.keyPresserKick(key);
+                    (stage.Event as StageEvent).keyPresserKick(key);
                 }
             }
         };        
@@ -182,6 +184,7 @@ export class ScratchEvent extends EventEmitter {
         })
     }
     public backdropChangerRegist(backdropName: string): void {
+        console.log('backdropChangerRegist')
         if( this.isBackdropChangerExist(backdropName) === false) {
             // 登録されていないとき
             this._backdropChangerNamesPool.push(backdropName);
@@ -190,6 +193,8 @@ export class ScratchEvent extends EventEmitter {
         }
     }
     public isBackdropChangerExist(backdropName: string): boolean {
+        console.log(backdropName);
+        console.log(this._backdropChangerNamesPool);
         if( this._backdropChangerNamesPool.includes(backdropName)) {
             return true;
         }
@@ -199,11 +204,11 @@ export class ScratchEvent extends EventEmitter {
         this.on(backdropName, ()=>{
             const sprites = (engine as Engine).getSprites();
             for(const s of sprites) {
-                s.Event.backdropEventKick(backdropName);
+                (s.Event as SpriteEvent).backdropEventKick(backdropName);
             }
             const stage = (engine as Engine).getStage();
             if(stage){
-                stage.Event.backdropEventKick(backdropName);
+                (stage.Event as StageEvent).backdropEventKick(backdropName);
             }
         })
     }
