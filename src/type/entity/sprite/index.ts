@@ -74,10 +74,6 @@ export interface ISprite extends IEntity {
      */
     readonly Event: ISpriteEvent;
     /**
-     * イメージ
-     */
-    readonly Image: ISpriteImage;
-    /**
      * サウンド
      */
     readonly Sound: ISpriteSound;

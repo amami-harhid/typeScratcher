@@ -1,6 +1,7 @@
 /**
  * Sprite
  */
+import { ScratchElement } from "../../gui/scratchElement";
 import { Entity } from "../entity";
 import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import { SpriteControl } from "./spriteControl";
@@ -21,6 +22,7 @@ import type { ISprite } from "../../../type/entity/sprite";
 //import type { ISpriteFont } from "@Type/sprite/ISpriteFont";
 //import type { ISvgText } from "@Type/svgText/ISvgText";
 //import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
+import type { IImage } from "../../../type/image";
 import type { ISpriteLooks } from "../../../type/entity/sprite/ISpriteLooks";
 import type { ISpriteControl } from "../../../type/entity/sprite/ISpriteControl";
 import type { ISvgSkin } from "../../../type/render/ISvgSkin";
@@ -121,23 +123,18 @@ export class Sprite extends Entity implements ISprite {
             }
             Promise.all(loadArr).then(async ()=>{                
                 // イメージごとに Skinを作る
-                let _canvasRemake :HTMLCanvasElement|undefined = undefined;
                 for(const img of this._image.images){
                     const svgText = img.image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
-                    if(_canvasRemake == undefined){
-                        _canvasRemake = document.createElement('canvas');
-                    }
+                    const _skin = this._render.renderer._allSkins[skinId];
                     // willReadFrequently を設定するために SKINインスタンスを取り出し、
                     // SVGSkinのコンストラクターで実施すみの下記【A】２行をやり直す。
-                    const _skin = this._render.renderer._allSkins[skinId];
-                    if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
+                    //if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
                     /*【A】*/const _svgSkin: ISvgSkin = _skin as ISvgSkin;
-                    /*【A】*/_svgSkin._canvas = _canvasRemake;
+                    /*【A】*/_svgSkin._canvas = ScratchElement.RemakeCanvasWillReadFrequentlyTrue;
                     /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
                     await Timer.wait(0.1);
                     img.skinId = skinId;
-                    this._costume.add(img);
                 }
                 resolve(); // 完了
             });
@@ -145,7 +142,7 @@ export class Sprite extends Entity implements ISprite {
     }
     update() {
         this._penSprite.update();
-        this._looks.Bubble.update();
+        this._looks.bubble.update();
         this._properties.update(); 
     }
 

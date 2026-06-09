@@ -3,7 +3,7 @@
  */
 
 import EventEmitter from "events";
-import { Element } from "../../gui/element";
+import { ScratchElement } from "../../gui/scratchElement";
 import { EntityProxyExt } from "../../entity/entity/entityProxyExt";
 import { FunctionChecker } from "../../utils/functionChecker";
 import { INTERVAL } from "./interval";
@@ -183,7 +183,7 @@ export class ThreadManager {
     }
     
     stopAllScripts() : void {
-        const stopMark = Element.getControlStopMark();
+        const stopMark = ScratchElement.getControlStopMark();
         stopMark.classList.remove('is-active');
         stopMark.classList.add('is-not-active');
         for(const thread of ThreadBank.threadArr){

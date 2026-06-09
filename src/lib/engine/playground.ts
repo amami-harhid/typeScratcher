@@ -3,7 +3,7 @@ import { threadManager } from "./thread/threads";
 import { Runtime } from "./runtime";
 import { Sprite } from "../entity/sprite";
 import { Stage } from "../entity/stage";
-import { Element } from "../gui/element";
+import { ScratchElement } from "../gui/scratchElement";
 import type { ISprite } from "../../type/entity/sprite";
 import type { TMouse } from "../../type/mouse";
 import { IStage } from "../../type/entity/stage";
@@ -68,7 +68,7 @@ export class Playground {
             me._mouse.down = false;
             e.stopPropagation()
         });
-        const canvas = Element.getScratchCanvas();
+        const canvas = ScratchElement.getScratchCanvas();
         const me = this;
         canvas.addEventListener('mousemove', (e:MouseEvent)=>{
             me._mouse.x = e.offsetX;
@@ -123,7 +123,7 @@ export class Playground {
         threadManager.start();
     }
     get renderRate(): {x:number, y:number} {
-        const canvas = Element.getScratchCanvas();
+        const canvas = ScratchElement.getScratchCanvas();
         const render = this.render;
         const rateX = render.stageWidth / canvas.width;
         const rateY = render.stageHeight / canvas.height;

@@ -1,6 +1,6 @@
 import { StageLayering } from '../../../../type/entity/stage/CStageLayering';
 import { playground } from '../../../engine/playground';
-import { Element } from '../../../gui/element';
+import { ScratchElement } from '../../../gui/scratchElement';
 import type { ISprite } from '../../../../type/entity/sprite';
 /**
  * DragSprite
@@ -57,7 +57,7 @@ export class DragSprite {
         const mouseX = this.sprite.Mouse.pageX;
         const mouseY = this.sprite.Mouse.pageY;
         // canvasの位置
-        const canvas = Element.getScratchCanvas();
+        const canvas = ScratchElement.getScratchCanvas();
         // getBoundingClientRect();
         const canvasRect = canvas.getBoundingClientRect();
         const canvasX = canvasRect.x;

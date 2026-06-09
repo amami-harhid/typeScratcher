@@ -1,3 +1,4 @@
+import { Sprite } from '.';
 import type { ISpriteCostume } from '../../../type/entity/sprite/ISpriteCostume';
 import type { IImage } from '../../../type/image';
 import type { ISprite } from '../../../type/entity/sprite';
@@ -7,7 +8,6 @@ export class SpriteCostume implements ISpriteCostume {
 
     protected entity: ISprite;
     public currentConstumeNo: number = -1;
-    private imageArr: IImage[] = [];
     /**
      * @internal
      * @param entity {ISprite}
@@ -15,14 +15,16 @@ export class SpriteCostume implements ISpriteCostume {
     constructor(entity:ISprite){
         this.entity = entity;
     }
-    add(image: IImage) : void{
-        this.imageArr.push(image);
+    add(images: IImage[]) : void{
+        const _sprite = this.entity as Sprite;
+        _sprite.$image.add(images);
         if(this.currentConstumeNo == -1){
             this.currentConstumeNo = 0;
         }
     }
     get names() : string[] {
-        return this.entity.Image.names;
+        const _sprite = this.entity as Sprite;
+        return _sprite.$image.names;
     }
 
     /**
@@ -43,11 +45,12 @@ export class SpriteCostume implements ISpriteCostume {
      * ```
      */
     set no(no:number) {
-        const length = this.entity.Image.images.length;
+        const _sprite = this.entity as Sprite;
+        const length = _sprite.$image.images.length;
         if( no < 0 || (length-1) < no ) return;
         if(this.currentConstumeNo != no ) {
             this.currentConstumeNo = no;
-            const image = this.entity.Image.images[no];
+            const image = _sprite.$image.images[no];
             this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
         }
     }
@@ -56,7 +59,8 @@ export class SpriteCostume implements ISpriteCostume {
      */
     get currentSkinId() : number {
         if(this.currentConstumeNo == -1) return -1;
-        const image = this.imageArr[this.currentConstumeNo];
+        const _sprite = this.entity as Sprite;
+        const image = _sprite.$image.images[this.currentConstumeNo];
         return image.skinId;
     }
     /**
@@ -67,7 +71,8 @@ export class SpriteCostume implements ISpriteCostume {
      * ```
      */
     get name(): string {
-        const image = this.imageArr[this.currentConstumeNo];
+        const _sprite = this.entity as Sprite;
+        const image = _sprite.$image.images[this.currentConstumeNo];
         return image.name;
     }
     /**
@@ -78,8 +83,9 @@ export class SpriteCostume implements ISpriteCostume {
      * ```
      */
     set name(name:string) {
+        const _sprite = this.entity as Sprite;
         let no = -1;
-        for(const image of this.imageArr) {
+        for(const image of _sprite.$image.images) {
             no += 1;
             if( image.name == name) {
                 this.no = no;
@@ -94,7 +100,8 @@ export class SpriteCostume implements ISpriteCostume {
      * ``
      */
     next(): void {
-        const length = this.entity.Image.images.length;
+        const _sprite = this.entity as Sprite;
+        const length = _sprite.$image.images.length;
         if( this.currentConstumeNo < 0 || (length-1) < this.currentConstumeNo ) {
             this.currentConstumeNo = 0;
         }else{

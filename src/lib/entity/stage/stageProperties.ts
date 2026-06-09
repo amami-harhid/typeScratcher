@@ -8,7 +8,6 @@ export class StageProperties extends EntityProperties {
     }
     update() {
         const entity = this.entity as IStage;
-        const effect = this.entity.Image.Effect.effect;
         const prop: ScratchRenderProperties = {
             skinId: entity.Backdrop.currentSkinId,
             visible: this.visible,

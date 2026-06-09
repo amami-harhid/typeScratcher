@@ -1,7 +1,9 @@
 import { EntityProperties } from "../entity/entityProperties";
 import { Rotation } from "../../../type/entity/RotationStyle";
+import { SpriteImage } from "./spriteImage";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
+import { Sprite } from ".";
 /**
  * SpriteProperties
  */
@@ -24,7 +26,9 @@ export class SpriteProperties extends EntityProperties {
                 _scale.w = Math.abs( _scale.w );
             }
         }
-        const effect = this.entity.Image.Effect.effect;
+        const _sprite = this.entity as Sprite;
+        const _spriteImage = _sprite.$image as SpriteImage;
+        const effect = _spriteImage.effect.get();
         const prop: ScratchRenderProperties = {
             skinId: entity.Costume.currentSkinId,
             position: [this.position.x, this.position.y],

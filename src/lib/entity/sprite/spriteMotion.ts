@@ -13,36 +13,36 @@ import type { ISpriteMotionDirection } from '../../../type/entity/sprite/ISprite
 import type { ISpriteMotionRotation } from '../../../type/entity/sprite/ISpriteMotionRotation';
 export class SpriteMotion implements ISpriteMotion {
     protected entity: ISprite;
-    private move: ISpriteMotionMove;
-    private point: ISpriteMotionPoint;
-    private position: ISpriteMotionPosition;
-    private direction: ISpriteMotionDirection;
-    private rotation: ISpriteMotionRotation;
+    private _move: ISpriteMotionMove;
+    private _point: ISpriteMotionPoint;
+    private _position: ISpriteMotionPosition;
+    private _direction: ISpriteMotionDirection;
+    private _rotation: ISpriteMotionRotation;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
         this.entity = entity;
-        this.move = new SpriteMotionMove(entity);
-        this.point = new SpriteMotionPoint(entity);
-        this.position = new SpriteMotionPosition(entity);
-        this.direction = new SpriteMotionDirection(entity);
-        this.rotation = new SpriteMotionRotation(entity);
+        this._move = new SpriteMotionMove(entity);
+        this._point = new SpriteMotionPoint(entity);
+        this._position = new SpriteMotionPosition(entity);
+        this._direction = new SpriteMotionDirection(entity);
+        this._rotation = new SpriteMotionRotation(entity);
     }
-    get Position(): ISpriteMotionPosition {
-        return this.position;
+    get position(): ISpriteMotionPosition {
+        return this._position;
     }
-    get Direction(): ISpriteMotionDirection {
-        return this.direction;
+    get direction(): ISpriteMotionDirection {
+        return this._direction;
     }
-    get Rotation() :ISpriteMotionRotation{
-        return this.rotation;
+    get rotation() :ISpriteMotionRotation{
+        return this._rotation;
     }
-    get Move(): ISpriteMotionMove {
-        return this.move;
+    get move(): ISpriteMotionMove {
+        return this._move;
     }
-    get Point(): ISpriteMotionPoint {
-        return this.point;
+    get point(): ISpriteMotionPoint {
+        return this._point;
     }
 };

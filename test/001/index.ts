@@ -10,6 +10,8 @@ import type { Sprite, Stage } from '../../index';
 const AppleSvg = 'https://amami-harhid.github.io/tscratch3assets/assets/Apple.svg';
 import ArrowSvg from '../assets/Arrow1-a.svg';
 import CatSvg from '../assets/cat.svg';
+import BlueskySvg from '../assets/Blue Sky.svg';
+import BasketballPng from '../assets/Basketball 2.png';
 import CatWav from '../assets/Cat.wav';
 import ChillWav from '../assets/Chill.wav';
 //import { IStage } from '@Type/stage';
@@ -17,17 +19,20 @@ import ChillWav from '../assets/Chill.wav';
 const appleImage = new TS.Image( {AppleSvg} ); 
 const arrowImage = new TS.Image( {ArrowSvg} ); 
 const catImage = new TS.Image( {CatSvg});
+const blueskyImage = new TS.Image( {BlueskySvg} );
+const basketballImage = new TS.Image( {BasketballPng} );
 const catSound = new TS.Sound({CatWav});
 const chillSound = new TS.Sound({ChillWav});
 const stage = new TS.Stage();
+stage.Backdrop.add( [blueskyImage, basketballImage] );
 stage.Sound.add([chillSound]);
 const apple = new TS.Sprite('apple');
-apple.Image.add([appleImage, catImage, arrowImage]);
+apple.Costume.add([appleImage, catImage, arrowImage]);
 apple.Sound.add([catSound, chillSound]);
-apple.Looks.Size.scale = [100,100];
-apple.Motion.Direction.degree = 45;
-apple.Motion.Rotation.style = TS.Rotation.LEFT_RIGHT;
-apple.Motion.Position.xy = [0,0];
+apple.Looks.size.scale = [100,100];
+apple.Motion.direction.degree = 45;
+apple.Motion.rotation.style = TS.Rotation.LEFT_RIGHT;
+apple.Motion.position.xy = [0,0];
 
 apple.Sound.setVolume(chillSound, 100);
 apple.Sound.setPitch(chillSound, 1.0);
@@ -35,16 +40,30 @@ apple.Sound.setVolume(catSound, 10);
 
 
 apple.Event.flagPresser().func = async function*(this: Sprite){
-    this.Motion.Position.xy = [0,0];
+    this.Motion.position.xy = [0,0];
     for(;;){
-        this.Motion.Move.steps(1);
-        this.Motion.Move.ifOnEdgeBounce();
+        this.Motion.move.steps(1);
+        this.Motion.move.ifOnEdgeBounce();
+        yield;
+    }
+}
+apple.Event.flagPresser().func = async function*(this: Sprite){
+    for(;;){
+        this.Costume.next();
+        await TS.Timer.wait(0.5);
         yield;
     }
 }
 stage.Event.flagPresser().func = async function*(this: Stage){
     for(;;){
         await this.Sound.play(chillSound);
+        yield;
+    }
+}
+stage.Event.flagPresser().func = async function*(this: Stage){
+    for(;;){
+        this.Backdrop.next();
+        await TS.Timer.wait(0.1);
         yield;
     }
 }
@@ -57,15 +76,15 @@ apple.Event.keyPresser("a").func = async function*(this: Sprite){
     }
 }
 apple.Event.keyPresser("b").func = async function*(this: Sprite){
-    this.Motion.Direction.degree = 90;
+    this.Motion.direction.degree = 90;
     let counter = 0;
     let steps = 1;
     const stageWidth = apple.render.stageWidth;
     const stageHeight = apple.render.stageHeight;
     console.log(`stageWidth=${stageWidth},stageHeight=${stageHeight}`)
     for(;;){
-        this.Motion.Move.steps(steps);
-        const touch = this.Sensing.Edge.isTouching;
+        this.Motion.move.steps(steps);
+        const touch = this.Sensing.edge.isTouching;
         if(touch===true){
             console.log('Edge touching', counter++)
             await TS.Timer.wait(1);
@@ -120,15 +139,15 @@ apple.Event.keyPresser('g').func = async function*(this: Sprite){
 }
 apple.Event.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
     console.log('Received [1]');
-    apple.Image.Effect.change(TS.ImageEffective.COLOR, 15);
-    apple.Image.Effect.change(TS.ImageEffective.FISHEYE, 15);
+    apple.Looks.effect.change(TS.ImageEffective.COLOR, 15);
+    apple.Looks.effect.change(TS.ImageEffective.FISHEYE, 15);
 }
 apple.Event.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
     console.log('Received [2]');
     await TS.Timer.wait(5);
 }
 apple.Event.Broadcast.broadcasReceiver('BBB').func = async function*(this:Sprite){
-    apple.Image.Effect.clear();
+    apple.Looks.effect.clear();
 }
 
 

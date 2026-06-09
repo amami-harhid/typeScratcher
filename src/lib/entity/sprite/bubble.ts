@@ -1,11 +1,13 @@
 /**
  * Bubble
  */
+import { ScratchElement } from "../../gui/scratchElement";
 import { uid } from "../../utils/uid";
 import { StageLayering } from "../../../type/entity/stage/CStageLayering";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { TScale } from "../../../type/common/typeCommon";
 import type { BubbleState, BubbleProperties } from "../../../type/entity/TBubble";
+import type { ISvgSkin } from "../../../type/render/ISvgSkin";
 
 export class Bubble  {
     private _bubbleState: BubbleState;
@@ -75,7 +77,14 @@ export class Bubble  {
                 this._bubbleState.text, 
                 this._bubbleState.onSpriteRight
             );
-            this._bubbleState.uid = uid();    
+            // CTX willReadFrequent対応
+            const _skin = this.sprite.render.renderer._allSkins[this._bubbleState.skinId];
+            //if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
+            const _svgSkin: ISvgSkin = _skin as ISvgSkin;
+            _svgSkin._canvas = ScratchElement.RemakeCanvasWillReadFrequentlyTrue;
+            _svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
+
+            this._bubbleState.uid = uid();
         }
     }
     async say( text: string, properties: BubbleProperties={}): Promise<void> {

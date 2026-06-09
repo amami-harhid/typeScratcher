@@ -4,9 +4,9 @@ import type { IImage } from "../../image";
 export interface ISpriteCostume {
     /**
      * 画像を追加
-     * @param image 
+     * @param images 
      */
-    add(image: IImage) : void;
+    add(images: IImage[]) : void;
 
     /**
      * コスチューム名 配列

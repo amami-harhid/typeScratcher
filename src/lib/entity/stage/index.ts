@@ -19,6 +19,7 @@ import type { IStageEvent } from "../../../type/entity/stage/IStageEvent";
 import type { IStageSensing } from "../../../type/entity/stage/IStageSensing";
 import type { IStageBackdrop } from "../../../type/entity/stage/IStageBackdrop";
 import { ISvgSkin } from "../../../type/render/ISvgSkin";
+import { ScratchElement } from "../../gui/scratchElement";
 
 export class Stage extends Entity implements IStage{
     protected _properties: StageProperties;
@@ -76,18 +77,17 @@ export class Stage extends Entity implements IStage{
                     const svgText = img.image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
                     if(_canvasRemake == undefined){
-                        _canvasRemake = document.createElement('canvas');
+                        _canvasRemake = document.createElement('canvas');                        
                     }
                     // willReadFrequently を設定するために SKINインスタンスを取り出し、
                     // SVGSkinのコンストラクターで実施すみの下記【A】２行をやり直す。
                     const _skin = this._render.renderer._allSkins[skinId];
-                    if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
+                    //if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
                     /*【A】*/const _svgSkin: ISvgSkin = _skin as ISvgSkin;
                     /*【A】*/_svgSkin._canvas = _canvasRemake;
                     /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
                     await Timer.wait(0.1);
                     img.skinId = skinId;
-                    this._backdrop.add(img);
                 }
                 resolve(); // 完了
             });

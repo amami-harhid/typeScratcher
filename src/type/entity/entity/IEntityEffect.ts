@@ -3,7 +3,7 @@ import type { TEntityEffects } from './TEntityOptions';
 /** 効果 */
 export interface IEntityEffect {
     /** イメージ効果 */
-    readonly effect: TEntityEffects;
+    get(): TEntityEffects;
     /**
      * イメージ効果を指定量だけ変える。
      * @param effective {TImageEffectiveValue} - イメージ効果

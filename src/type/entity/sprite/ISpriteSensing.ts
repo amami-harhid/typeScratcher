@@ -12,23 +12,23 @@ export interface ISpriteSensing extends IEntitySensing{
     /**
      * 端関連
      */
-    readonly Edge: ISpriteSensingEdge;
+    readonly edge: ISpriteSensingEdge;
     /**
      * マウス関連
      */
-    readonly Mouse: ISpriteSensingMouse;
+    readonly mouse: ISpriteSensingMouse;
     /**
      * 色関連
      */
-    readonly Color: ISpriteSensingColor;
+    readonly color: ISpriteSensingColor;
 
     /**
      * スプライト関連
      */
-    readonly Sprite: ISpriteSensingSprite;
+    readonly sprite: ISpriteSensingSprite;
 
     /**
      * Drag Mode
      */
-    readonly DragMode :ISpriteDragMode;
+    readonly dragMode :ISpriteDragMode;
 };

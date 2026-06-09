@@ -1,3 +1,4 @@
+import { Stage } from '.';
 import type { IStage } from '../../../type/entity/stage';
 import type { IStageBackdrop } from '../../../type/entity/stage/IStageBackdrop';
 import type { IImage } from '../../../type/image';
@@ -7,7 +8,6 @@ export class StageBackdrop implements IStageBackdrop {
 
     private entity: IStage;
     public currentBackdropNo: number = -1;
-    private imageArr: IImage[] = [];
     /**
      * @internal
      * @param entity {Stage}
@@ -15,8 +15,9 @@ export class StageBackdrop implements IStageBackdrop {
     constructor(entity:IStage){
         this.entity = entity;
     }
-    add(image: IImage) {
-        this.imageArr.push(image);
+    add(images: IImage[]) {
+        const _stage = this.entity as Stage;
+        _stage.$image.add(images);
         if(this.currentBackdropNo == -1){
             this.currentBackdropNo = 0;
         }
@@ -25,7 +26,8 @@ export class StageBackdrop implements IStageBackdrop {
      * 背景名の配列
      */
     get names() : string[] {
-        return this.entity.Image.names;
+        const _stage = this.entity as Stage;
+        return _stage.$image.names;
     }
     /**
      * 背景番号
@@ -45,11 +47,12 @@ export class StageBackdrop implements IStageBackdrop {
      * ```
      */
     set no(no:number) {
-        const length = this.entity.Image.images.length;
+        const _stage = this.entity as Stage;
+        const length = _stage.$image.images.length;
         if( no < 0 || (length-1) < no ) return;
         if(this.currentBackdropNo != no ) {
             this.currentBackdropNo = no;
-            const image = this.entity.Image.images[no];
+            const image = _stage.$image.images[no];
             this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
         }
     }
@@ -58,7 +61,8 @@ export class StageBackdrop implements IStageBackdrop {
      */
     get currentSkinId() : number {
         if(this.currentBackdropNo == -1) return -1;
-        const image = this.imageArr[this.currentBackdropNo];
+        const _stage = this.entity as Stage;
+        const image = _stage.$image.images[this.currentBackdropNo];
         return image.skinId;
     }    
     /**
@@ -69,7 +73,8 @@ export class StageBackdrop implements IStageBackdrop {
      * ```
      */
     get name(): string {
-        const image = this.imageArr[this.currentBackdropNo];
+        const _stage = this.entity as Stage;
+        const image = _stage.$image.images[this.currentBackdropNo];
         return image.name;
     }
     /**
@@ -80,8 +85,9 @@ export class StageBackdrop implements IStageBackdrop {
      * ```
      */
     set name(name:string) {
+        const _stage = this.entity as Stage;
         let no = -1;
-        for(const image of this.imageArr) {
+        for(const image of _stage.$image.images) {
             no += 1;
             if( image.name == name) {
                 this.no = no;
@@ -94,9 +100,10 @@ export class StageBackdrop implements IStageBackdrop {
      * @param name 
      */
     async switchAndWait(name: string) : Promise<void>{
-        for(const image of this.imageArr) {
+        const _stage = this.entity as Stage;
+        for(const image of _stage.$image.images) {
             if( image.name == name) {
-
+                // TODO
                 
                 break;
             }
@@ -110,7 +117,8 @@ export class StageBackdrop implements IStageBackdrop {
      * ```
      */
     next() : void {
-        const length = this.entity.Image.images.length;
+        const _stage = this.entity as Stage;
+        const length = _stage.$image.images.length;
         if( this.currentBackdropNo < 0 || (length-1) < this.currentBackdropNo ) {
             this.currentBackdropNo = 0;
         }else{

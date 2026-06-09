@@ -78,3 +78,19 @@ threadObjを作り出しステータスはYIELDにせずに threadManager.regist
 ## ステージ背景、PNG画像
 どんな感じになるかを検証すべき
 検証済。 ステージのupdate処理にバグあり。修正済。
+
+## エンティティ.Image.effect 参照NGとした
+0.0.22 #02 
+
+## エンティティ第二階層
+0.0.22 #02 
+
+小文字始まりにする
+例
+apple.Looks.Effect.clear()
+    ↓
+apple.Looks.effect.clear()
+
+## Bubble willReadFrequently対応
+0.0.22 #02 
+同時に、ELementを ScratchElementと名称変更

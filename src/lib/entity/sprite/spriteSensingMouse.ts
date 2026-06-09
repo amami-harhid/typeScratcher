@@ -1,6 +1,6 @@
 import { SpriteSensingDistance } from './spriteSensingDistance';
 import { MathUtil } from '../../utils/math-util';
-import { Element } from '../../gui/element';
+import { ScratchElement } from '../../gui/scratchElement';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSensingMouse } from '../../../type/entity/sprite/ISpriteSensingMouse';
 import type { ISpriteSensingDistance } from '../../../type/entity/sprite/ISpriteSensingDistance';
@@ -51,7 +51,7 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
      * マウスカーソルへの向き
      */
     get degree(): number {
-        const canvas = Element.getScratchCanvas();
+        const canvas = ScratchElement.getScratchCanvas();
         const rect = canvas.getBoundingClientRect();
         const canvasGlobalCenterX = rect.x + rect.width/2;
         const canvasGlobalCenterY = rect.y + rect.height/2;

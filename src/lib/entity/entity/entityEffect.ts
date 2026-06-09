@@ -18,7 +18,7 @@ export class EntityEffect implements IEntityEffect {
         this._effect = {};
         this.clear();
     }
-    get effect(): TEntityEffects {
+    get(): TEntityEffects {
         return this._effect;
     }
     /**
@@ -86,8 +86,9 @@ export class EntityEffect implements IEntityEffect {
     clear() : void {
         this._effect.color = 0;
         this._effect.fisheye = 0;
+        this._effect.whirl = 0;
+        this._effect.pixelate = 0;
         this._effect.mosaic = 0;
-        this._effect.brightness = 0;
         this._effect.brightness = 0;
         this._effect.ghost = 0;
     }

@@ -1,27 +1,40 @@
+import type { IEntityLooks } from '../entity/IEntityLooks';
 import type { ISpriteCostume } from './ISpriteCostume';
 import type { ISpriteBackdrop } from './ISpriteBackdrop';
 import type { ISpriteSize } from './ISpriteSize';
 import type { ISpriteLayer } from './ISpriteLayer';
-import type { ISpriteEffect } from './ISpriteEffect';
 import type { ISpriteBubble } from './ISpriteBubble';
 /**
  * Sprite Looks(見た目)
  */
-export interface ISpriteLooks {
+export interface ISpriteLooks extends IEntityLooks {
     /**
      * コスチューム番号、コスチューム名を取り出すためのオブジェクト
      */
-    readonly Costume: ISpriteCostume;
+    readonly costume: ISpriteCostume;
     /**
      * 背景番号、背景名を取り出すためのオブジェクト
      */
-    readonly Backdrop: ISpriteBackdrop;
+    readonly backdrop: ISpriteBackdrop;
 
     /**
      * サイズ
      */
-    readonly Size : ISpriteSize;
+    readonly size : ISpriteSize;
+
     /**
+     * 階層
+     * 
+     * {@link Layer}
+     */
+    readonly layer : ISpriteLayer;
+
+    /**
+     * フキダシ
+     */
+    readonly bubble : ISpriteBubble;
+
+        /**
      * 表示する
      */
     show() : void;
@@ -29,20 +42,6 @@ export interface ISpriteLooks {
      * 隠す
      */
     hide() : void;
-    /**
-     * 階層
-     * 
-     * {@link Layer}
-     */
-    readonly Layer : ISpriteLayer;
-    /**
-     * 効果
-     */
-    readonly Effect : ISpriteEffect;
-    /**
-     * フキダシ
-     */
-    readonly Bubble : ISpriteBubble;
 
 };
 

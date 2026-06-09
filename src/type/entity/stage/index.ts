@@ -50,10 +50,6 @@ export interface IStage extends IEntity {
      * イベント
      */
     readonly Event : IStageEvent;
-    /**
-     * イメージ
-     */
-    readonly Image : IStageImage;
 
     /**
      * サウンド

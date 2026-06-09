@@ -3,7 +3,7 @@ import type { ISprite } from '../../../type/entity/sprite';
 import type {ISpriteEffect} from '../../../type/entity/sprite/ISpriteEffect';
 
 /** 効果 */
-export class SpriteEffect extends EntityEffect implements ISpriteEffect {
+export class SpriteEffect extends EntityEffect { // implements ISpriteEffect {
 
     /**
      * @internal

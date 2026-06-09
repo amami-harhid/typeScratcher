@@ -47,10 +47,10 @@ export class Entity extends EventEmitter implements IEntity{
     get render(): Render {
         return this._render;
     }
-    get Image():IEntityImage {
+    get $image():IEntityImage {
         return this._image;
     }
-    get images() {
+    get $images() {
         return this._images;
     }
     get Sound():IEntitySound {

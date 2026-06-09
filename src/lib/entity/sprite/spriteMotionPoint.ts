@@ -1,5 +1,5 @@
 import { Sprite } from '.';
-import { Element } from '../../gui/element';
+import { ScratchElement } from '../../gui/scratchElement';
 import { MathUtil } from '../../utils/math-util';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionPoint } from '../../../type/entity/sprite/ISpriteMotionPoint';
@@ -17,11 +17,11 @@ export class SpriteMotionPoint implements ISpriteMotionPoint{
      */
     toMouseInStage(): void {
         const me = this.entity as Sprite;
-        const direction = me.Sensing.Mouse.degree;
+        const direction = me.Sensing.mouse.degree;
         this.entity.Properties.degree = direction;
     }
     toMouse(): void {
-        const canvas = Element.getScratchCanvas();
+        const canvas = ScratchElement.getScratchCanvas();
         const rect = canvas.getBoundingClientRect();
         const canvasGlobalCenterX = rect.x + rect.width/2;
         const canvasGlobalCenterY = rect.y + rect.height/2;
@@ -48,6 +48,13 @@ export class SpriteMotionPoint implements ISpriteMotionPoint{
      * @param target {Sprite} - ターゲット
      */
     toTarget(target: ISprite): void {
-
-    }
+        const _target_position = target.Properties.position;
+          const dx = _target_position.x - this.entity.Properties.position.x;
+        const dy = _target_position.y - this.entity.Properties.position.y;
+        let direction = 90 - MathUtil.radToDeg( Math.atan2(dy, dx));
+        if(direction > 180) {
+            direction -= 360;
+        }
+        this.entity.Properties.degree = direction;
+  }
 };

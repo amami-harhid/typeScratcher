@@ -13,23 +13,23 @@ const BlueskyImage = new TS.Image({BlueskySvg});
 const BasketballImage = new TS.Image({BasketballPng});
 
 const amon = new TS.Sprite('amon');
-amon.Image.add([AmonImage]);
-amon.Motion.Direction.degree = 95;
+amon.Costume.add([AmonImage]);
+amon.Motion.direction.degree = 95;
 
 const stage = new TS.Stage();
-stage.Image.add([BlueskyImage, BasketballImage]);
+stage.Backdrop.add([BlueskyImage, BasketballImage]);
 
 amon.Event.flagPresser().func = async function*(this: Sprite){
-    this.Image.Effect.clear();
-    this.Motion.Position.xy = [0,0];
+    this.Looks.effect.clear();
+    this.Motion.position.xy = [0,0];
     for(;;){
-        this.Motion.Move.steps(10);
-        this.Motion.Move.ifOnEdgeBounce();
+        this.Motion.move.steps(10);
+        this.Motion.move.ifOnEdgeBounce();
         yield;
     }
 }
 stage.Event.flagPresser().func = async function*(this:Stage) {
-    this.Image.Effect.clear();
+    this.Looks.effect.clear();
     let fugo = 1;
     let count = 0;
     for(;;) {
@@ -39,8 +39,8 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
             fugo *= -1;
             count = 0;
         }
-        this.Image.Effect.change(TS.ImageEffective.COLOR, 25*fugo);
-        this.Image.Effect.change(TS.ImageEffective.MOSAIC, 25*fugo);
+        this.Looks.effect.change(TS.ImageEffective.COLOR, 25*fugo);
+        this.Looks.effect.change(TS.ImageEffective.MOSAIC, 25*fugo);
         count+=1;
         yield;
     }

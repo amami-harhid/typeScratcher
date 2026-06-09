@@ -1,3 +1,4 @@
+import { EntityLooks } from '../entity/entityLooks';
 import { SpriteSize } from './spriteSize';
 import { SpriteLayer } from './spriteLayer';
 import { SpriteEffect } from './spriteEffect';
@@ -11,26 +12,24 @@ import type { ISpriteBubble } from '../../../type/entity/sprite/ISpriteBubble';
 import type { ISpriteLooks } from '../../../type/entity/sprite/ISpriteLooks';
 import type { ISpriteCostume } from '../../../type/entity/sprite/ISpriteCostume';
 import type { ISpriteBackdrop } from '../../../type/entity/sprite/ISpriteBackdrop';
+import type { ISpriteLayer } from '../../../type/entity/sprite/ISpriteLayer';
 
 /**
  * Sprite Looks(見た目)
  */
-export class SpriteLooks implements ISpriteLooks{
-    protected entity: ISprite;
-    private layer: SpriteLayer;
-    private effect: ISpriteEffect;
+export class SpriteLooks extends EntityLooks implements ISpriteLooks{
+    private _layer: ISpriteLayer;
     private _size : ISpriteSize;
     private _bubble: ISpriteBubble;
-    private _costume: SpriteCostume;
+    private _costume: ISpriteCostume;
     private _backdrop: ISpriteBackdrop;
     /**
      * @internal
      * @param entity {Sprite}
      */
     constructor(entity:ISprite){
-        this.entity = entity;
-        this.layer = new SpriteLayer(entity);
-        this.effect = new SpriteEffect(entity);
+        super(entity);
+        this._layer = new SpriteLayer(entity);
         this._size = new SpriteSize(entity);
         this._bubble = new SpriteBubble(entity);
         this._costume = new SpriteCostume(entity);
@@ -39,21 +38,36 @@ export class SpriteLooks implements ISpriteLooks{
     /**
      * コスチューム番号、コスチューム名を取り出すためのオブジェクト
      */
-    get Costume() : ISpriteCostume {
+    get costume() : ISpriteCostume {
         return this._costume;
     }
     // /**
     //  * 背景番号、背景名を取り出すためのオブジェクト
     //  */
-    get Backdrop(): ISpriteBackdrop{
+    get backdrop(): ISpriteBackdrop{
         return this._backdrop;
     }
     /**
      * サイズ
      */
-    get Size() : ISpriteSize {
+    get size() : ISpriteSize {
         return this._size;
     }
+    /**
+     * 階層
+     * 
+     * {@link Layer}
+     */
+    get layer() : ISpriteLayer {
+        return this._layer;
+    }
+    /**
+     * フキダシ
+     */
+    get bubble() : ISpriteBubble {
+        return this._bubble;
+    }
+
     /**
      * 表示する
      */
@@ -65,26 +79,6 @@ export class SpriteLooks implements ISpriteLooks{
      */
     hide() : void {
         this.entity.render.renderer.updateDrawableVisible(this.entity.drawableID, false);
-    }
-    /**
-     * 階層
-     * 
-     * {@link Layer}
-     */
-    get Layer() : SpriteLayer {
-        return this.layer;
-    }
-    /**
-     * 効果
-     */
-    get Effect() : ISpriteEffect {
-        return this.effect;
-    }
-    /**
-     * フキダシ
-     */
-    get Bubble() : ISpriteBubble {
-        return this._bubble;
     }
 
 };

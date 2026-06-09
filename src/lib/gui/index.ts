@@ -1,5 +1,5 @@
 const { S3CSS, insertCss } = await import(/* webpackMode: "eager" */ './css');
-import {Element} from './element';
+import {ScratchElement} from './scratchElement';
 import { playground } from '../engine/playground';
 
 /**
@@ -11,7 +11,7 @@ import { playground } from '../engine/playground';
 export const guiInitialize = () => {
 
     insertCss(S3CSS);
-    const canvas = Element.getScratchCanvas();
+    const canvas = ScratchElement.getScratchCanvas();
     playground.createRenderer(canvas);
     playground.mouseEventStart();
 

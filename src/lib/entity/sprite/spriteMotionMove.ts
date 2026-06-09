@@ -37,7 +37,7 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      * @param steps {number} - ステップ数
      */
     steps(steps: number): void {
-        const degree = this.entity.Motion.Direction.degree;
+        const degree = this.entity.Motion.direction.degree;
         const radians = MathUtil.degToRad(90 - degree);
         const dx = steps * Math.cos(radians);
         const dy = steps * Math.sin(radians);
@@ -50,7 +50,7 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      * もし端に振れたら跳ね返る
      */
     ifOnEdgeBounce(): void {
-        const touch = this.entity.Sensing.Edge.isTouchingEdge()
+        const touch = this.entity.Sensing.edge.isTouchingEdge()
         if(touch.touch === true){
             const radians = MathUtil.degToRad(90 - this.entity.Properties.degree);
             let dx = Math.cos(radians);

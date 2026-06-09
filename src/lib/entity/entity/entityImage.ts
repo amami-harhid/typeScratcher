@@ -3,9 +3,10 @@ import { ImageBank } from '../../image/imageBank';
 import type { IImage } from '../../../type/image';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityEffect } from '../../../type/entity/entity/IEntityEffect';
+import type { IEntityImage } from '../../../type/entity/entity/IEntityImage';
 
 /** メッセージ送受信 */
-export class EntityImage {
+export class EntityImage implements IEntityImage{
 
     protected entity: IEntity;
     private _images: IImage[] = [];
@@ -19,7 +20,7 @@ export class EntityImage {
         this._effects = new EntityEffect(entity); 
     }
     
-    get Effect(): IEntityEffect {
+    get effect(): IEntityEffect {
         return this._effects;
     }
 

@@ -8,18 +8,18 @@ import type { ISpriteMotionRotation } from './ISpriteMotionRotation';
  */
 export interface ISpriteMotion {
     /** 位置 */
-    get Position(): ISpriteMotionPosition;
+    get position(): ISpriteMotionPosition;
 
     /** 向き */
-    get Direction(): ISpriteMotionDirection;
+    get direction(): ISpriteMotionDirection;
     
     /** 回転 */
-    get Rotation() : ISpriteMotionRotation;
+    get rotation() : ISpriteMotionRotation;
 
     /** 動き */
-    get Move(): ISpriteMotionMove;
+    get move(): ISpriteMotionMove;
 
     /** 方向へ向く */
-    get Point(): ISpriteMotionPoint;
+    get point(): ISpriteMotionPoint;
 
 };

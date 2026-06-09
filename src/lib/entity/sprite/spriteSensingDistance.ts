@@ -24,8 +24,8 @@ export class SpriteSensingDistance implements ISpriteSensingDistance{
             y: this.entity.Properties.position.y,
         }
         const obj2 = {
-            x: this.entity.Sensing.Mouse.x,
-            y: this.entity.Sensing.Mouse.y,
+            x: this.entity.Sensing.mouse.x,
+            y: this.entity.Sensing.mouse.y,
         }
         const _distance = Utils.distance(obj1, obj2);
         return _distance;

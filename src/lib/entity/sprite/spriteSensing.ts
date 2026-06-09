@@ -19,24 +19,24 @@ import type { ISpriteSensingSprite } from '../../../type/entity/sprite/ISpriteSe
  */
 export class SpriteSensing implements ISpriteSensing {
     protected entity: ISprite;
-    private mouse: ISpriteSensingMouse;
-    private timer: IEntitySensingTimer;
-    private key: IEntitySensingKey;
-    private edge: ISpriteSensingEdge;
-    private color : ISpriteSensingColor;
-    private sprite: ISpriteSensingSprite;
+    private _mouse: ISpriteSensingMouse;
+    private _timer: IEntitySensingTimer;
+    private _key: IEntitySensingKey;
+    private _edge: ISpriteSensingEdge;
+    private _color : ISpriteSensingColor;
+    private _sprite: ISpriteSensingSprite;
     /**
      * @internal
      * @param entity {Sprite}
      */
     constructor(entity:ISprite){
         this.entity = entity;
-        this.mouse = new SpriteSensingMouse(entity);
-        this.timer = new SpriteSensingTimer(entity);
-        this.key = new SpriteSensingKey(entity);
-        this.edge = new SpriteSensingEdge(entity);
-        this.color = new SpriteSensingColor(entity);
-        this.sprite = new SpriteSensingSprite(entity);
+        this._mouse = new SpriteSensingMouse(entity);
+        this._timer = new SpriteSensingTimer(entity);
+        this._key = new SpriteSensingKey(entity);
+        this._edge = new SpriteSensingEdge(entity);
+        this._color = new SpriteSensingColor(entity);
+        this._sprite = new SpriteSensingSprite(entity);
     }
     /**
      * 質問をして答えを待つ
@@ -54,34 +54,34 @@ export class SpriteSensing implements ISpriteSensing {
     /**
      * マウス情報
      */
-    get Mouse() {
-        return this.mouse;
+    get mouse() {
+        return this._mouse;
     }
     /**
      * Key関連
      */
-    get Key() : IEntitySensingKey {
-        return this.key;
+    get keyboard() : IEntitySensingKey {
+        return this._key;
     }
     /**
      * タイマー関連
      */
-    get Timer() : IEntitySensingTimer {
-        return this.timer;
+    get timer() : IEntitySensingTimer {
+        return this._timer;
     }
-    get Edge() : ISpriteSensingEdge {
-        return this.edge;
+    get edge() : ISpriteSensingEdge {
+        return this._edge;
     }
-    get Color(): ISpriteSensingColor {
-        return this.color;
+    get color(): ISpriteSensingColor {
+        return this._color;
     }
-    get Sprite(): ISpriteSensingSprite {
-        return this.sprite;
+    get sprite(): ISpriteSensingSprite {
+        return this._sprite;
     }
     /**
      * Drag Mode
      */
-    get DragMode() :ISpriteDragMode{
+    get dragMode() :ISpriteDragMode{
         return this.entity.DragMode;
     }
 };

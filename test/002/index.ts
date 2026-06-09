@@ -8,18 +8,18 @@ import AmonPng from '../assets/Amon.png';
 
 const appleImage = new TS.Image( {AmonPng} ); 
 const apple = new TS.Sprite('apple');
-apple.Image.add([appleImage]);
-apple.Motion.Direction.degree = 95;
+apple.Costume.add([appleImage]);
+apple.Motion.direction.degree = 95;
 
 apple.Pen.prepare();
 apple.Pen.penDown();
 
 apple.Event.flagPresser().func = async function*(this: Sprite){
     this.Pen.penClear();
-    this.Motion.Position.xy = [0,0];
+    this.Motion.position.xy = [0,0];
     for(;;){
-        this.Motion.Move.steps(10);
-        this.Motion.Move.ifOnEdgeBounce();
+        this.Motion.move.steps(10);
+        this.Motion.move.ifOnEdgeBounce();
         yield;
     }
 }

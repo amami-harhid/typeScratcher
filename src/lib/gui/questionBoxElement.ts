@@ -137,7 +137,7 @@ export class QuestionBoxElement extends EventEmitter {
             }else {
                 // スプライトの場合
                 const sprite = entity as ISprite;
-                sprite.Looks.Bubble.say(text);
+                sprite.Looks.bubble.say(text);
             }    
         }
 
@@ -191,7 +191,7 @@ export class QuestionBoxElement extends EventEmitter {
                 QuestionBoxElement.removeQuestionOverlay();
                 if(entity.isSprite===true){
                     const sprite = entity as ISprite;
-                    sprite.Looks.Bubble.say(""); // Bubbleを消す
+                    sprite.Looks.bubble.say(""); // Bubbleを消す
                 }
                 // TODO 半角スページ入力抑止をする理由を忘れてしまった。 
                 // 半角スページ入力抑止
@@ -204,7 +204,7 @@ export class QuestionBoxElement extends EventEmitter {
     static removeTargetAsk(entity: IEntity) {
         if(QuestionBoxElement.isSprite(entity)) {
             const s = entity as ISprite;
-            s.Looks.Bubble.say(""); // バブルを消す
+            s.Looks.bubble.say(""); // バブルを消す
         }
         QuestionBoxElement.removeQuestionOverlay();
 
@@ -222,7 +222,7 @@ export class QuestionBoxElement extends EventEmitter {
     static removeAsk() : void {
         const sprites = playground.getSprites();
         for(const s of sprites) {
-            s.Looks.Bubble.say(""); // バブルを消す
+            s.Looks.bubble.say(""); // バブルを消す
         }
         QuestionBoxElement.removeQuestionOverlay();
     }

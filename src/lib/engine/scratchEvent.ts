@@ -2,7 +2,7 @@
  * Scratch Event
  */
 import { EventEmitter } from "events";
-import { Element } from "../gui/element";
+import { ScratchElement } from "../gui/scratchElement";
 import { playground } from "./playground";
 
 export class ScratchEvent extends EventEmitter {
@@ -50,8 +50,8 @@ export class ScratchEvent extends EventEmitter {
         return this._running;
     }
     public stageFirstClick() {
-        const main = Element.getMain();
-        const overlay = Element.getOverlay();
+        const main = ScratchElement.getMain();
+        const overlay = ScratchElement.getOverlay();
         const me = this;
         const f = (event:MouseEvent)=>{
             me.emit(ScratchEvent.START_AUDIO_ENGINE);
@@ -62,9 +62,9 @@ export class ScratchEvent extends EventEmitter {
         overlay.addEventListener('click', f);
     }
     public greenFlagClick() {
-        const greenFlag = Element.getGreenFlag();
-        const stopMark = Element.getControlStopMark();
-        const pauseMark = Element.getControlPauseMark();
+        const greenFlag = ScratchElement.getGreenFlag();
+        const stopMark = ScratchElement.getControlStopMark();
+        const pauseMark = ScratchElement.getControlPauseMark();
         const me = this;
         greenFlag.classList.remove('not-ready');
         greenFlag.addEventListener('click',(event:MouseEvent)=>{
@@ -72,7 +72,7 @@ export class ScratchEvent extends EventEmitter {
             pauseMark.classList.remove('is-not-active');
             stopMark.classList.add('is-active');
             pauseMark.classList.add('is-active');
-            Element.changeToPauseMarkActive(pauseMark);
+            ScratchElement.changeToPauseMarkActive(pauseMark);
             me._restart = false;
             me.emit(ScratchEvent.GREEN_FLAG_CLICKED);
             greenFlag.classList.remove('running');
@@ -93,13 +93,13 @@ export class ScratchEvent extends EventEmitter {
 
     }
     public stopMarkClick() {
-        const stopMark = Element.getControlStopMark();
-        const pauseMark = Element.getControlPauseMark();
+        const stopMark = ScratchElement.getControlStopMark();
+        const pauseMark = ScratchElement.getControlPauseMark();
         const me = this;
         stopMark.addEventListener('click',(event:MouseEvent)=>{
             stopMark.classList.remove('is-active');
             stopMark.classList.add('is-not-active');
-            Element.changeToPauseMarkActive(pauseMark);
+            ScratchElement.changeToPauseMarkActive(pauseMark);
             me._restart = false;
             me.emit(ScratchEvent.STOP_CLICKED);
             event.stopPropagation();
@@ -107,16 +107,16 @@ export class ScratchEvent extends EventEmitter {
 
     }
     public pauseMarkClick() {
-        const pauseMark = Element.getControlPauseMark();
+        const pauseMark = ScratchElement.getControlPauseMark();
         const me = this;
         //let restart = false;
         pauseMark.addEventListener('click',(event:MouseEvent)=>{
             if(this._restart===true){
                 me.emit(ScratchEvent.RESTART_CLICKED);
-                Element.changeToPauseMarkActive(pauseMark);
+                ScratchElement.changeToPauseMarkActive(pauseMark);
             }else{
                 me.emit(ScratchEvent.PAUSE_CLICKED);
-                Element.changeToRestartMark(pauseMark);
+                ScratchElement.changeToRestartMark(pauseMark);
             }
             event.stopPropagation();
             me._restart = !this._restart;
@@ -124,7 +124,7 @@ export class ScratchEvent extends EventEmitter {
 
     }
     public spliteClick() {
-        const canvas = Element.getScratchCanvas();
+        const canvas = ScratchElement.getScratchCanvas();
         const me = this;
         canvas.addEventListener('click', (event:MouseEvent)=>{
             //me.emit(ScratchEvent.CANVAS_CLICKED);

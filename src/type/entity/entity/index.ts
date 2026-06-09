@@ -7,7 +7,6 @@ export declare interface IEntity {
     readonly drawableID: number;
     readonly render: IRender;
     readonly id: string;
-    readonly Image: IEntityImage;
     readonly Sound: IEntitySound;
     readonly Mouse: TMouse;
     /** スプライトであることの判定 */

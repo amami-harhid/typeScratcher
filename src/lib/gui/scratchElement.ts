@@ -15,7 +15,9 @@ const PauseMark = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5
 const RestartMark = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTgiIHdpZHRoPSIxOCI+PHBhdGggZD0ibTI0Ni4wNTUgMTgwLTEyLjExIDEyLjExdi0yNC4yMnoiIHRyYW5zZm9ybT0ibWF0cml4KDEuMTM5NDkgMCAwIC42Nzk0MyAtMjY0LjU5NSAtMTEzLjI5OCkiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlPSIjZDg5NDAwIiBmaWxsPSIjZmZhZTAwIiBkYXRhLXBhcGVyLWRhdGE9InsmcXVvdDtpc1BhaW50aW5nTGF5ZXImcXVvdDs6dHJ1ZX0iLz48L3N2Zz4=";
 
 
-export class Element {
+export class ScratchElement {
+
+	static RemakeCanvasWillReadFrequentlyTrue :HTMLCanvasElement = document.createElement('canvas');
 
 	static getGreenFlag(): HTMLImageElement {
 		const greenFlag = document.querySelector(`#${GUI_CONST.greenFlag_id}`);
@@ -33,7 +35,7 @@ export class Element {
 			mainDiv.style.position = 'absolute';
 			mainDiv.style.touchAction = 'manipulation';
 			document.body.appendChild(main);
-			Element.getOverlay();
+			ScratchElement.getOverlay();
 		}
 		return main as HTMLDivElement;
     }
@@ -50,7 +52,7 @@ export class Element {
 			img.classList.add(GUI_CONST.Overlay_image_image);
 			img.setAttribute('src', TypeScratcher);
 			imgDiv.appendChild(img);
-			const main = Element.getMain();
+			const main = ScratchElement.getMain();
 			main.appendChild(overlay);
 		}
 		return overlay;
@@ -93,7 +95,7 @@ export class Element {
         pauseMark.classList.add(GUI_CONST.ControlPauseMark);
         pauseMark.setAttribute("draggable","false");
 		pauseMark.classList.add('is-not-active');
-        Element.changeToPauseMark(pauseMark);
+        ScratchElement.changeToPauseMark(pauseMark);
         menuControl.appendChild(pauseMark);
 
         const imgStopMark = document.createElement("img");
@@ -124,9 +126,9 @@ export class Element {
 		if( scratchCanvas ) {
 			return scratchCanvas as HTMLCanvasElement;
 		}
-		const main = Element.getMain();
-		Element.getHeader(main);
-    	const stageCanvasWrapper = Element.getStageCanvasWrapper(main);
+		const main = ScratchElement.getMain();
+		ScratchElement.getHeader(main);
+    	const stageCanvasWrapper = ScratchElement.getStageCanvasWrapper(main);
 
 		const ScratchCanvasDivId = 'canvasDiv';
 		const ScratchCanvasDivClassName = 'likeScratch-canvas';
@@ -138,7 +140,6 @@ export class Element {
 		scratchCanvas = document.createElement('canvas') as HTMLCanvasElement;
 		scratchCanvas.id = ScratchCanvasID;
 		scratchCanvas.classList.add(GUI_CONST.canvas_class);
-		//scratchCanvas.
 		scratchCanvasDiv.appendChild(scratchCanvas);
 		return scratchCanvas as HTMLCanvasElement;
 	}

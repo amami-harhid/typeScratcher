@@ -12,18 +12,18 @@ import type { IStage } from '../../../type/entity/stage';
  */
 export class StageSensing implements IStageSensing {
     private entity: IStage;
-    private key: IEntitySensingKey;
-    private mouse: IEntitySensingMouse;
-    private timer: IEntitySensingTimer;
+    private _key: IEntitySensingKey;
+    private _mouse: IEntitySensingMouse;
+    private _timer: IEntitySensingTimer;
     /**
      * @internal
      * @param entity {IStage}
      */
     constructor(entity:IStage){
         this.entity = entity;
-        this.key = new StageSensingKey(entity);
-        this.mouse = new StageSensingMouse(entity);
-        this.timer = new StageSensingTimer(entity);
+        this._key = new StageSensingKey(entity);
+        this._mouse = new StageSensingMouse(entity);
+        this._timer = new StageSensingTimer(entity);
     }
     /**
      * 質問をする
@@ -41,19 +41,19 @@ export class StageSensing implements IStageSensing {
     /**
      * Key 関連
      */
-    get Key() : IEntitySensingKey {
-        return this.key;
+    get keyboard() : IEntitySensingKey {
+        return this._key;
     }
     /**
      * マウス関連
      */
-    get Mouse(): IEntitySensingMouse {
-        return this.mouse;
+    get mouse(): IEntitySensingMouse {
+        return this._mouse;
     }
     /**
      * タイマー関連
      */
-    get Timer(): IEntitySensingTimer {
-        return this.timer;
+    get timer(): IEntitySensingTimer {
+        return this._timer;
     }
 };

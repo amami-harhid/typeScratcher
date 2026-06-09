@@ -15,14 +15,14 @@ export interface IEntitySensing {
     /**
      * マウス関連
      */
-    readonly Mouse: IEntitySensingMouse;
+    readonly mouse: IEntitySensingMouse;
 
     /**
      * キーボード関連
      */
-    readonly Key : IEntitySensingKey;
+    readonly keyboard : IEntitySensingKey;
     /**
      * タイマー関連
      */
-    readonly Timer : IEntitySensingTimer;
+    readonly timer : IEntitySensingTimer;
 };
