@@ -1,5 +1,3 @@
-import type { IEntityBroadCast } from './IEntityBroadcast';
-
 export interface EventFunctionSetter {
     set func(func: CallableFunction);
 }
@@ -7,8 +5,6 @@ export interface EventFunctionSetter {
 /** イベント */
 export interface IEntityEvent {
 
-    /** BroadCast */
-    readonly Broadcast: IEntityBroadCast;
     /**
      * 旗が押されたイベントのセッターを返す
      * @returns イベントセッター

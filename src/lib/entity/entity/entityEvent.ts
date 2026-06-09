@@ -1,6 +1,7 @@
+import { Entity } from '.';
+import { EntityBroadCast } from './entityBroadcast';
 import { playground } from '../../engine/playground';
 import { ScratchEvent } from '../../engine/scratchEvent';
-import { EntityBroadCast } from './entityBroadcast';
 import { ThreadManager, threadManager, ThreadObj } from '../../engine/thread/threads';
 import { ThreadStatus } from '../../../type/engine/thread/threads';
 import type { IEntityEvent, EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
@@ -198,8 +199,9 @@ export class EntityEvent implements IEntityEvent{
             // クリックしたポイントにあるDrawableのうち一番前面にあるものを返す。
             // そのポイントにDrawableがないときは Falseが返る。
             // 第五引数を省略することで全ての「表示中Drawable」から探す。
-            const _touchDrawableId = me.entity.render.renderer.pick(mouseX, mouseY, _touchRange.touchWidth, _touchRange.touchHeight);
-            if(me.entity.drawableID == _touchDrawableId){
+            const _entity = me.entity as Entity;
+            const _touchDrawableId = _entity.render.renderer.pick(mouseX, mouseY, _touchRange.touchWidth, _touchRange.touchHeight);
+            if(_entity.drawableID == _touchDrawableId){
                 threadObj.setFunc(func); // 作り直す
                 threadObj.genProxy();
                 const proxy = threadObj.proxy;

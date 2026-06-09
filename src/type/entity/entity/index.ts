@@ -1,14 +1,18 @@
-import type { TMouse } from "../../mouse";
-import type { IRender } from "../../render/IRender";
-import type { IEntityImage } from "./IEntityImage";
+import { IEntityBroadCast } from "./IEntityBroadcast";
 import type { IEntitySound } from "./IEntitySound";
 export declare interface IEntity {
 
-    readonly drawableID: number;
-    readonly render: IRender;
+    /**
+     * エンティティID
+     */
     readonly id: string;
+    /**
+     * サウンド
+     */
     readonly Sound: IEntitySound;
-    readonly Mouse: TMouse;
-    /** スプライトであることの判定 */
-    readonly isSprite: boolean;
+
+    /**
+     * メッセージ送受信
+     */
+    readonly Broadcast: IEntityBroadCast;
 };

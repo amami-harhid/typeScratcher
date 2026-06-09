@@ -1,18 +1,20 @@
 /**
  * Entity
  */
+import { EntityImage } from "./entityImage";
+import { EntitySound } from "./entitySound";
 import { EventEmitter } from "events";
 import { Image } from "../../image";
 import { playground } from "../../engine/playground";
 import { Render } from "../../render";
-import { type StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
 import { Utils } from "../../utils/utils";
-import { EntityImage } from "./entityImage";
+import type { IEntity } from "../../../type/entity/entity";
+import type { IEntityBroadCast } from "../../../type/entity/entity/IEntityBroadcast";
 import type { IEntityImage } from "../../../type/entity/entity/IEntityImage";
-import { EntitySound } from "./entitySound";
 import type { IEntitySound } from "../../../type/entity/entity/IEntitySound";
 import type { TMouse } from "../../../type/mouse";
-import type { IEntity } from "../../../type/entity/entity";
+import { type StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
+import { EntityBroadCast } from "./entityBroadcast";
 
 export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
@@ -25,6 +27,7 @@ export class Entity extends EventEmitter implements IEntity{
     protected _render: Render;
     protected _image: IEntityImage;
     protected _sound: IEntitySound;
+    protected _broadcast : IEntityBroadCast;
     protected _mouse: TMouse;
     protected _isSprite: boolean;
     constructor() {
@@ -33,6 +36,7 @@ export class Entity extends EventEmitter implements IEntity{
         this.id = this._generateUUID();
         this._image = new EntityImage(this);
         this._sound = new EntitySound(this);
+        this._broadcast = new EntityBroadCast(this);
         this._mouse = playground.mouse;
         this._isSprite = false;
     }
@@ -56,7 +60,10 @@ export class Entity extends EventEmitter implements IEntity{
     get Sound():IEntitySound {
         return this._sound;
     }
-    get Mouse():TMouse {
+    get Broadcast(): IEntityBroadCast {
+        return this._broadcast;
+    }
+    get mouse():TMouse {
         return this._mouse;
     }
     get isSprite() {

@@ -73,6 +73,7 @@ export interface ISprite extends IEntity {
      * イベント
      */
     readonly Event: ISpriteEvent;
+
     /**
      * サウンド
      */

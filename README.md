@@ -94,3 +94,7 @@ apple.Looks.effect.clear()
 ## Bubble willReadFrequently対応
 0.0.22 #02 
 同時に、ELementを ScratchElementと名称変更
+
+## 全てのスレッドが終了したとき
+赤ボタンを非活性にする
+0.0.22 #03

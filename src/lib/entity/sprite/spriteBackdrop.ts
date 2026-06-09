@@ -1,3 +1,5 @@
+import { playground } from '../../engine/playground';
+import { Stage } from '../stage';
 import type { ISpriteBackdrop } from '../../../type/entity/sprite/ISpriteBackdrop';
 import type { ISprite } from '../../../type/entity/sprite';
 /** 背景 */
@@ -15,22 +17,28 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * 背景番号
      * ```ts
      *  // 背景番号
-     *  const no = this.Looks.Backdrop.no;
+     *  const no = this.Looks.backdrop.no;
      * ```
      */
     get no(): number {
-        // TODO
+        const _stage = playground.getStage() as Stage;
+        if(_stage) {
+            return _stage.Backdrop.no;
+        }
         return -1;
     }
     /**
      * 背景番号
      * ```ts
      *  // 背景番号
-     *  this.Looks.Backdrop.no = 1;
+     *  this.Looks.backdrop.no = 1;
      * ```
      */
     set no(no:number) {
-        // TODO
+        const _stage = playground.getStage() as Stage;
+        if(_stage) {
+            _stage.Backdrop.no = no;
+        }        
     }
     /**
      * 背景名
@@ -40,8 +48,8 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     get name(): string {
-        // TODO
-        return "";
+        const _stage = playground.getStage() as Stage;
+        return _stage.Backdrop.name;
     }
     /**
      * 背景名
@@ -51,7 +59,8 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     set name(name:string) {
-        // TODO
+        const _stage = playground.getStage() as Stage;
+        _stage.Backdrop.name = name;
     }
     /**
      * 次の背景にする
@@ -60,18 +69,21 @@ export class SpriteBackdrop implements ISpriteBackdrop {
      * ```
      */
     next() : void {
-        // TODO
+        const _stage = playground.getStage() as Stage;
+        _stage.Backdrop.next();
     }
     /**
      * 前の背景にする
      */
     previous(): void {
-        // TODO
+        const _stage = playground.getStage() as Stage;
+        _stage.Backdrop.previous();
     }
     /**
      * どれかの背景にする
      */
     random(): void {
-        // TODO
+        const _stage = playground.getStage() as Stage;
+        _stage.Backdrop.random();
     }
 }

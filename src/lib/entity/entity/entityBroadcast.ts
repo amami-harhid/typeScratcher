@@ -27,10 +27,8 @@ export class EntityBroadCast implements IEntityBroadCast {
      * @param args 
      */
     broadcast(messageId: string, ...args:any[]) {
-        console.log(EntityBroadCast._broadcastReceivedFuncArr);
         const _messageId = this.getMessageId(messageId);
         const element = EntityBroadCast.getBroadcastElement(_messageId);
-        console.log('element.funcArr.length=', element.funcArr.length);
         if(element.funcArr.length > 0){
             playground.runtime.scratchEvent.emit(_messageId, ...args);
         }

@@ -113,28 +113,18 @@ export class ThreadManager {
         this.intervalId = setInterval(this.interval, INTERVAL, this);
         this._running = true;
     }
-    private _timer(): number {
-        return performance.now();
-    }
     async interval(me: ThreadManager):Promise<void> {
-        //const newArr: ThreadObj[] = [];
-        let count = 0;
-        let thread_count = 0;
         if(me._pauser === true) return; // PAUSE中はスレッドを実行しない
+        let _completed_count = 0;
         for(const thread of ThreadBank.threadArr){
-            thread_count+=1;
+            if(thread.status == ThreadStatus.COMPLETED){
+                _completed_count += 1;
+            }
             if(thread.status == ThreadStatus.YIELD) {
-                count+=1;
                 // 実行待ちのときは スレッドを実行する
                 thread.next();
             }
-            //if(thread.status != ThreadStatus.STOP) {
-            //    // 停止されたスレッド以外を退避する
-            //    newArr.push(thread);
-            //}
         }
-        //console.log(me._timer());
-        //console.log('thread_count=',thread_count,',count=',count);
         for(const sprite of playground.getSprites()){
             sprite.update();
         }
@@ -145,10 +135,10 @@ export class ThreadManager {
 
         playground.render.renderer.draw();
 
-        //console.log('ThreadBank.threadArr.length=',ThreadBank.threadArr.length, 'newArr.length=',newArr.length)
-        //if(ThreadBank.threadArr.length > newArr.length) {
-        //    ThreadBank.threadArr = [...newArr];
-        //}
+        if(ThreadBank.threadArr.length == _completed_count) {
+            me.stopMarkToNotactive();
+        }
+
     }
     stopThisScript(proxy: IEntityProxy) :void {
         const ownEntityID = proxy.id;
@@ -183,9 +173,6 @@ export class ThreadManager {
     }
     
     stopAllScripts() : void {
-        const stopMark = ScratchElement.getControlStopMark();
-        stopMark.classList.remove('is-active');
-        stopMark.classList.add('is-not-active');
         for(const thread of ThreadBank.threadArr){
             if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.YIELD){
                 // 実行中、実行待ちのスレッドは強制修正する。
@@ -195,6 +182,13 @@ export class ThreadManager {
                     this.stopSounds(_proxy);
                 }
             }
+        }
+    }
+    stopMarkToNotactive() {
+        const stopMark = ScratchElement.getControlStopMark();
+        if(stopMark.classList.contains('is-active')) {
+            stopMark.classList.remove('is-active');
+            stopMark.classList.add('is-not-active');
         }
     }
     stopSounds(proxy:IEntityProxy) {
