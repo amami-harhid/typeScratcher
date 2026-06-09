@@ -27,7 +27,7 @@ export class EntityBackdrop implements IEntityBackdrop {
             // ステージの場合
             _entity.$image.add(images);
             if(this.currentBackdropNo == -1){
-                this.currentBackdropNo = 0;
+                this.no = 0;
             }
         }
     }
@@ -64,6 +64,7 @@ export class EntityBackdrop implements IEntityBackdrop {
             this.currentBackdropNo = no;
             const image = _entity.$image.images[no];
             this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
+            this.backdropChangeEmit(image.name);
         }
     }
     /**
@@ -94,13 +95,18 @@ export class EntityBackdrop implements IEntityBackdrop {
      *  this.Looks.Backdrop.name = "backdrop";
      * ```
      */
-    set name(name:string) {
+    set name(backdropName:string) {
+        const prevNo = this.no;
         const _entity = this.entity as Entity;
         let no = -1;
         for(const image of _entity.$image.images) {
             no += 1;
-            if( image.name == name) {
-                this.no = no;
+            if( image.name == backdropName) {
+                this.currentBackdropNo = no;
+                if(prevNo != this.currentBackdropNo){
+                    this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
+                    this.backdropChangeEmit(backdropName);
+                }
                 break;
             }
         }
@@ -110,15 +116,89 @@ export class EntityBackdrop implements IEntityBackdrop {
      * @param name 
      */
     async switchAndWait(backdropName: string) : Promise<void>{
+        this.name = backdropName;
+        await this.untilBackdropEventDone(backdropName);                
+    }
+    /**
+     * 次の背景にする
+     * ```ts
+     *  this.Looks.Backdrop.nextBackdrop();
+     * ```
+     */
+    next() : void {
+        const prevNo = this.no;
+        let currentBackdropNo = this.no;
         const _entity = this.entity as Entity;
-        for(const image of _entity.$image.images) {
-            if( image.name == backdropName) {
-                this.name = backdropName;
-                await this.untilBackdropEventDone(backdropName);                
-                break;
-            }
+        const length = _entity.$image.images.length;
+        if( currentBackdropNo < 0 || (length-1) < currentBackdropNo ) {
+            this.no = 0;
+        }else{
+            currentBackdropNo += 1;
+            this.no = currentBackdropNo % length;
+        }
+        if(prevNo != this.no) {
+            const backdropName = this.name;
+            this.backdropChangeEmit(backdropName);
+        }
+    }
+    /**
+     * 次の背景にして待つ
+     */
+    async nextAndWait(): Promise<void> {
+        this.next();
+        const backdropName = this.name;
+        await this.untilBackdropEventDone(backdropName);
+    }
+    /**
+     * 前の背景にする
+     */
+    previous() : void {
+        const prevNo = this.no;
+        const _entity = this.entity as Entity;
+        const length = _entity.$image.images.length;
+        const currentBackdropNo = this.no;
+        if( 0 < currentBackdropNo  && currentBackdropNo < length ) {
+            this.no = currentBackdropNo - 1;
+        }else{
+            this.no = 0;
+        }
+        if( prevNo != this.no) {
+            const backdropName = this.name;
+            this.backdropChangeEmit(backdropName);
         }        
     }
+
+    /**
+     * 前の背景にして待つ。
+     */
+    async previousAndWait() : Promise<void> {
+        this.previous();
+        const backdropName = this.name;
+        await this.untilBackdropEventDone(backdropName);
+    }
+    /**
+     * どれかの背景にする
+     */
+    random(): void {
+        const prevNo = this.no;
+        const _entity = this.entity as Entity;
+        const length = _entity.$image.images.length;
+        const backgroundNo = Utils.randomizeInRange(0, length-1);
+        this.no = backgroundNo;
+        if( prevNo != this.no) {
+            const backdropName = this.name;
+            this.backdropChangeEmit(backdropName);
+        }        
+    }
+    /**
+     * どれかの背景にして待つ
+     */
+    async randomAndWait() : Promise<void>{
+        this.random();
+        const backdropName = this.name;
+        await this.untilBackdropEventDone(backdropName);
+    }
+
     protected async untilBackdropEventDone(backdropName: string) : Promise<void> {
         const element = this.getBackdropEventElement(backdropName);
         if(element) {
@@ -154,68 +234,12 @@ export class EntityBackdrop implements IEntityBackdrop {
         }
         return undefined;
     }
-    /**
-     * 次の背景にする
-     * ```ts
-     *  this.Looks.Backdrop.nextBackdrop();
-     * ```
-     */
-    next() : void {
-        const _entity = this.entity as Entity;
-        const length = _entity.$image.images.length;
-        if( this.currentBackdropNo < 0 || (length-1) < this.currentBackdropNo ) {
-            this.currentBackdropNo = 0;
-        }else{
-            this.currentBackdropNo += 1;
-            this.currentBackdropNo = this.currentBackdropNo % length;
-        }
-    }
-    /**
-     * 次の背景にして待つ
-     */
-    async nextAndWait(): Promise<void> {
-        this.next();
-        const backdropName = this.name;
-        await this.untilBackdropEventDone(backdropName);
-    }
-    /**
-     * 前の背景にする
-     */
-    previous() : void {
-        const _entity = this.entity as Entity;
-        const length = _entity.$image.images.length;
-        const currentBackdropNo = this.currentBackdropNo;
-        if( 0 < currentBackdropNo  && currentBackdropNo < length ) {
-            this.currentBackdropNo = currentBackdropNo - 1;
-        }else{
-            this.currentBackdropNo = 0;
+
+    private backdropChangeEmit( backdropName: string ) : void {
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
+        if(scratchEvent.isBackdropChangerExist( backdropName)){
+            scratchEvent.emit( backdropName );
         }
     }
 
-    /**
-     * 前の背景にして待つ。
-     */
-    async previousAndWait() : Promise<void> {
-        this.previous();
-        const backdropName = this.name;
-        await this.untilBackdropEventDone(backdropName);
-    }
-    /**
-     * どれかの背景にする
-     */
-    random(): void {
-        const _entity = this.entity as Stage;
-        const length = _entity.$image.images.length;
-        const backgroundNo = Utils.randomizeInRange(0, length-1);
-        this.no = backgroundNo;
-        
-    }
-    /**
-     * どれかの背景にして待つ
-     */
-    async randomAndWait() : Promise<void>{
-        this.random();
-        const backdropName = this.name;
-        await this.untilBackdropEventDone(backdropName);
-    }
 }

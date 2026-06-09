@@ -20,14 +20,16 @@ import type { ISprite } from "../../../type/entity/sprite";
 //import type { ISpriteFont } from "@Type/sprite/ISpriteFont";
 //import type { ISvgText } from "@Type/svgText/ISvgText";
 //import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
-import type { IImage } from "../../../type/image";
-import type { ISpriteLooks } from "../../../type/entity/sprite/ISpriteLooks";
-import type { ISpriteControl } from "../../../type/entity/sprite/ISpriteControl";
+//import type { IImage } from "../../../type/image";
 import type { ISvgSkin } from "../../../type/render/ISvgSkin";
-import type { ISpriteCostume } from "../../../type/entity/sprite/ISpriteCostume";
-import type { ISpriteMotion } from "../../../type/entity/sprite/ISpriteMotion";
 import type { ISpriteBackdrop } from "../../../type/entity/sprite/ISpriteBackdrop";
+import type { ISpriteControl } from "../../../type/entity/sprite/ISpriteControl";
+import type { ISpriteCostume } from "../../../type/entity/sprite/ISpriteCostume";
+import type { ISpriteEvent } from "../../../type/entity/sprite/ISpriteEvent";
+import type { ISpriteLooks } from "../../../type/entity/sprite/ISpriteLooks";
+import type { ISpriteMotion } from "../../../type/entity/sprite/ISpriteMotion";
 import type { ISpriteProperties } from "../../../type/entity/sprite/ISpriteProperties";
+import type { ISpriteSensing } from "../../../type/entity/sprite/ISpriteSensing";
 
 
 /**
@@ -39,9 +41,9 @@ export class Sprite extends Entity implements ISprite {
     private _motion: ISpriteMotion;
     private _looks: ISpriteLooks;
     private _control: ISpriteControl;
-    private _event: SpriteEvent;
+    private _event: ISpriteEvent;
     private _properties: ISpriteProperties;
-    private _sensing: SpriteSensing;
+    private _sensing: ISpriteSensing;
     private _penSprite: PenSprite;
     //private _font : ISpriteFont;
     private _dragMode : SpriteDragMode;
@@ -93,13 +95,13 @@ export class Sprite extends Entity implements ISprite {
         return this._control;
     }
     
-    get Event(): SpriteEvent {
+    get Event(): ISpriteEvent {
         return this._event;
     }
     get DragMode() :SpriteDragMode {
         return this._dragMode;
     }
-    get Sensing(): SpriteSensing {
+    get Sensing(): ISpriteSensing {
         return this._sensing;
     }
     get Pen(): PenSprite {

@@ -33,6 +33,7 @@ export class ScratchEvent extends EventEmitter {
     private _restart:boolean;
     private _keyPressedPool: string[];
     private _messageReceiverIdsPool: string[];
+    private _backdropChangerNamesPool: string[];
     constructor() {
         super();
         this._running= false;
@@ -45,6 +46,7 @@ export class ScratchEvent extends EventEmitter {
         });
         this._messageReceiverIdsPool = [];
         this._keyPressedPool = [];
+        this._backdropChangerNamesPool = [];
     }
     public get running(): boolean {
         return this._running;
@@ -176,6 +178,32 @@ export class ScratchEvent extends EventEmitter {
             const stage = (engine as Engine).getStage();
             if(stage){
                 stage.Broadcast.broadcastReceivedKick(messageId);
+            }
+        })
+    }
+    public backdropChangerRegist(backdropName: string): void {
+        if( this.isBackdropChangerExist(backdropName) === false) {
+            // 登録されていないとき
+            this._backdropChangerNamesPool.push(backdropName);
+            // イベント登録
+            this._onBackdropChangerKick(backdropName);
+        }
+    }
+    public isBackdropChangerExist(backdropName: string): boolean {
+        if( this._backdropChangerNamesPool.includes(backdropName)) {
+            return true;
+        }
+        return false;
+    }
+    private _onBackdropChangerKick(backdropName: string) {
+        this.on(backdropName, ()=>{
+            const sprites = (engine as Engine).getSprites();
+            for(const s of sprites) {
+                s.Event.backdropEventKick(backdropName);
+            }
+            const stage = (engine as Engine).getStage();
+            if(stage){
+                stage.Event.backdropEventKick(backdropName);
             }
         })
     }

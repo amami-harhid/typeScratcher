@@ -31,7 +31,7 @@ export interface IEntityBackdrop {
      *  this.Looks.Backdrop.name = "backdrop";
      * ```
      */
-    set name(name:string);
+    set name(backdropName:string);
     /**
      * 次の背景にする
      * ```ts
