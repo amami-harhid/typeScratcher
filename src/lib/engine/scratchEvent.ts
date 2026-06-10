@@ -3,6 +3,7 @@ import { ScratchElement } from "../gui/scratchElement";
 import { Engine, engine } from ".";
 import { SpriteEvent } from "../entity/sprite/spriteEvent";
 import { StageEvent } from "../entity/stage/stageEvent";
+import { EntityBackdrop } from "../entity/entity/entityBackdrop";
 
 /**
  * Scratch Event
@@ -172,19 +173,18 @@ export class ScratchEvent extends EventEmitter {
         }
     }
     private _onMessageReceiverKick(messageId: string) {
-        this.on(messageId, ()=> {
+        this.on(messageId, (...args:any)=> {
             const sprites = (engine as Engine).getSprites();
             for(const s of sprites) {
-                s.Broadcast.broadcastReceivedKick(messageId);
+                s.Broadcast.broadcastReceivedKick(messageId, ...args);
             }
             const stage = (engine as Engine).getStage();
             if(stage){
-                stage.Broadcast.broadcastReceivedKick(messageId);
+                stage.Broadcast.broadcastReceivedKick(messageId, ...args);
             }
         })
     }
     public backdropChangerRegist(backdropName: string): void {
-        console.log('backdropChangerRegist')
         if( this.isBackdropChangerExist(backdropName) === false) {
             // 登録されていないとき
             this._backdropChangerNamesPool.push(backdropName);
@@ -193,15 +193,14 @@ export class ScratchEvent extends EventEmitter {
         }
     }
     public isBackdropChangerExist(backdropName: string): boolean {
-        console.log(backdropName);
-        console.log(this._backdropChangerNamesPool);
         if( this._backdropChangerNamesPool.includes(backdropName)) {
             return true;
         }
         return false;
     }
     private _onBackdropChangerKick(backdropName: string) {
-        this.on(backdropName, ()=>{
+        const eventName = EntityBackdrop.getBackdropChangeMessageId(backdropName);
+        this.on(eventName, ()=>{
             const sprites = (engine as Engine).getSprites();
             for(const s of sprites) {
                 (s.Event as SpriteEvent).backdropEventKick(backdropName);

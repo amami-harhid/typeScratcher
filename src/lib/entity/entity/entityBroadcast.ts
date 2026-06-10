@@ -111,12 +111,12 @@ export class EntityBroadCast implements IEntityBroadCast {
     private getMessageId(messageId: string): string {
         return `message_${messageId}`;
     }
-    public broadcastReceivedKick(messageId: string) :void {
+    public broadcastReceivedKick(messageId: string, ...args:any[]) :void {
         const element = EntityBroadCast.getBroadcastElement(messageId);
         for(const elementFunc of element.funcArr){
             const threadObj = elementFunc.thread;
-            // ジェネレーター再設定
-            threadObj.setFunc(elementFunc.func);
+            // ジェネレーター再設定( 引数付き )
+            threadObj.setFunc<any>(elementFunc.func, ...args);
             // 待機中にする
             threadObj.status = ThreadStatus.YIELD;
         }

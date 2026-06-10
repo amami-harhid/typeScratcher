@@ -9,6 +9,8 @@ import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityBackdrop } from '../../../type/entity/entity/IEntityBackdrop';
 import type { IImage } from '../../../type/image';
 
+const BackdropChangeMessageString = "$_BackdropChange";
+
 /** サイズ */
 export class EntityBackdrop implements IEntityBackdrop {
 
@@ -136,7 +138,6 @@ export class EntityBackdrop implements IEntityBackdrop {
             currentBackdropNo += 1;
             this.no = currentBackdropNo % length;
         }
-        console.log(prevNo, this.no)
         if(prevNo != this.no) {
             const backdropName = this.name;
             this.backdropChangeEmit(backdropName);
@@ -205,7 +206,6 @@ export class EntityBackdrop implements IEntityBackdrop {
         if(element) {
             return new Promise<void>(async resolve=>{
                 if(element.threadArr.length > 0){
-                    (engine as Engine).runtime.scratchEvent.emit(backdropName);
                     for(;;){
                         let _allDone = true;
                         for(const f of element.threadArr){
@@ -238,10 +238,12 @@ export class EntityBackdrop implements IEntityBackdrop {
 
     private backdropChangeEmit( backdropName: string ) : void {
         const scratchEvent = (engine as Engine).runtime.scratchEvent;
+        const eventName = EntityBackdrop.getBackdropChangeMessageId(backdropName);
         if(scratchEvent.isBackdropChangerExist( backdropName)){
-            console.log('Emit GO ', backdropName)
-            scratchEvent.emit( backdropName );
+            scratchEvent.emit( eventName );
         }
     }
-
+    public static getBackdropChangeMessageId( backdropName: string): string {
+        return `${BackdropChangeMessageString}_${backdropName}`;
+    }
 }

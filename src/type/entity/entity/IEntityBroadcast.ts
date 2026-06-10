@@ -1,5 +1,5 @@
 import { EventFunctionSetter } from "./IEntityEvent";
-import type { IThreadObj } from "../../../type/thread/threads";
+import type { IThreadObj } from "../../engine/thread/threads";
 /** メッセージ受信処理 */
 export type TBroadcastElementFunc = {
     thread: IThreadObj,
@@ -48,6 +48,6 @@ export interface IEntityBroadCast {
      * 対応するメッセージ受信イベントスレッドを起動
      * @param messageId 
      */
-    broadcastReceivedKick(messageId: string) :void;
+    broadcastReceivedKick(messageId: string, ...args:any[]) :void;
 
 }

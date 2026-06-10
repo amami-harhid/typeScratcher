@@ -20,26 +20,47 @@ cat.Costume.add([CatImage]);
 const stage = new TS.Stage();
 stage.Backdrop.add([BlueskyImage, BasketballImage]);
 
-cat.Event.keyPresser("a").func = async function*(this: Sprite) {
-
-    this.Backdrop.next();
-
+cat.Event.flagPresser().func = async function*(this: Sprite) {
+    for(;;){
+        // 「次の背景にするよ」と2秒間言う
+        await this.Looks.bubble.sayForSecs("次の背景にするよ",2);
+        await this.Backdrop.nextAndWait();
+        yield;
+    }
 }
 
+// メッセージ受信( 引数付き )
+cat.Broadcast.broadcasReceiver("COUNT").func = async function*(this:Sprite, counter:number) {
+    this.Looks.bubble.say(`${counter}秒`);
+}
+
+// 背景（BlueskyImage）になったときのイベント
 cat.Event.backdropSwitcher(BlueskyImage).func = async function*(this:Sprite) {
-
-    this.Looks.bubble.say(BlueskyImage.name);
-    await this.Control.wait(0.5);
-    this.Looks.bubble.say('');
+    // 2秒後に終了する
+    let counter = 0;
+    for(;;) {
+        counter += 1;
+        // メッセージ送信（引数付き）
+        this.Broadcast.broadcast("COUNT", counter);
+        await this.Control.wait(1);
+        if(counter == 2) break;
+        yield;
+    }
 }
 
+// BasketballImage
 stage.Event.backdropSwitcher(BasketballImage).func = async function*(this:Stage) {
 
-    cat.Looks.bubble.say("かわっちゃった");
-    await this.Control.wait(0.5);
-    cat.Looks.bubble.say('');
-    await this.Control.wait(1);
-    this.Backdrop.next();
+    // 5秒後に終了する
+    let counter = 0;
+    for(;;) {
+        counter += 1;
+        // メッセージ送信（引数付き）
+        this.Broadcast.broadcast("COUNT", counter);
+        await this.Control.wait(1);
+        if(counter == 5) break;
+        yield;
+    }
 
 }
 
