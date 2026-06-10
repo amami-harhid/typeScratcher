@@ -21,7 +21,7 @@ export class TextToSvg implements ITextToSvg {
         }
         this._fontFamily = [];
         this._fontDatas = [];
-        this._padding = 5;
+        this._padding = 25;
     }
 
     public set padding(padding:number) {
@@ -119,11 +119,12 @@ export class TextToSvg implements ITextToSvg {
             svg.appendChild(defs);            
         }
 
-        const text = this.createText(inputText, mesure);
+        const text = this.createText(inputText, mesure);        
         if(this._textAttributes.use && this._textAttributes.use.length>0){
             const defs = document.createElementNS(SVG_NS, "defs");
             const TextID = 'text0';
             text.setAttribute('id', TextID);
+
             defs.appendChild(text);
             svg.appendChild(defs);
             for(const use of this._textAttributes.use){
