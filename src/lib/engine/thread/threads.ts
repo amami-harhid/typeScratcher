@@ -75,6 +75,10 @@ export class ThreadManager {
         const _runtime = (engine as Engine).runtime;
         const _flagClick = () => {
             this._pauser = false;
+            if(_runtime.audioEngine){
+                const audioContext = _runtime.audioEngine.audioContext;
+                audioContext.resume(); // 一時停止を再開
+            }
         }
         _scratchEvent.on(ScratchEvent.GREEN_FLAG_CLICKED, _flagClick);
         const _pause = ()=>{

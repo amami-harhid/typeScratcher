@@ -3,10 +3,11 @@ import type { ISpriteMotionMove } from './ISpriteMotionMove';
 import type { ISpriteMotionPoint } from './ISpriteMotionPoint';
 import type { ISpriteMotionDirection} from './ISpriteMotionDirection';
 import type { ISpriteMotionRotation } from './ISpriteMotionRotation';
+import type { IEntityMotion } from '../entity/IEntityMotion';
 /**
  * スプライトの動き
  */
-export interface ISpriteMotion {
+export interface ISpriteMotion extends IEntityMotion {
     /** 位置 */
     get position(): ISpriteMotionPosition;
 
