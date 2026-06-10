@@ -4,21 +4,20 @@ import { TextAttributes } from 'src/type/text';
 const textAttr: TextAttributes = {
     font_size: 90,
     font_weight: 'bolder',
-    fill: 'white'
+    fill: 'blue',
+    font: 'Marker',
 };
-const TextSvg01 = await TS.textToSvg.createSvgData('1', textAttr);
-const TextSvg02 = await TS.textToSvg.createSvgData('2', textAttr);
-const TextSvg03 = await TS.textToSvg.createSvgData('3', textAttr);
-const TextSvg04 = await TS.textToSvg.createSvgData('4', textAttr);
+const Text_01 = "1";
+const Text_02 = "2";
+const Text_03 = "3";
 
-const TextImage01 = new TS.Image({TextSvg01});
-const TextImage02 = new TS.Image({TextSvg02});
-const TextImage03 = new TS.Image({TextSvg03});
-const TextImage04 = new TS.Image({TextSvg04});
+const image01 = await TS.Image.createSvgImage({Text_01}, textAttr);
+const image02 = await TS.Image.createSvgImage({Text_02}, textAttr);
+const image03 = await TS.Image.createSvgImage({Text_03}, textAttr);
 
 const num = new TS.Sprite('num');
-num.Costume.add( [TextImage01, TextImage02, TextImage03, TextImage04] );
-num.Looks.size.scale = [700,500];
+num.Costume.add( [ image01, image02, image03] );
+num.Looks.size.scale = [400,300];
 num.Looks.effect.set(TS.ImageEffective.GHOST, 20);
 
 export {num};

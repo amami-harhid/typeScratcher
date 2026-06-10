@@ -12,7 +12,8 @@ export class TextToSvg implements ITextToSvg {
     private _fontDatas : {name:string, data: string[] }[];
     private _padding: number;
     constructor() {
-        this._textAttributes = {fill:'#000000', font: 'Sans Serif', font_size:80};
+        //this._textAttributes = {fill:'#000000', font: 'Sans Serif', font_size:80};
+        this._textAttributes = {fill:'#000000', font: 'Handwriting', font_size:80};
         this._debugCanvas = document.createElement('canvas');
         const _ctx = this._debugCanvas.getContext('2d',{ willReadFrequently: true });
         if(_ctx) {

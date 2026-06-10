@@ -33,15 +33,17 @@ import { Version } from './version';
 import * as GUI from './src/lib/gui';
 
 import { engine } from './src/lib/engine';
-import { Image } from './src/lib/image';
+import { Image as _Image } from './src/lib/image';
 import { ImageEffective, type ImageEffectiveType } from './src/type/entity/ImageEffective';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './src/type/engine/keyboad';
 import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
-import { Sound } from './src/lib/sounds';
+import { Sound as _Sound} from './src/lib/sounds';
 import { Sprite as _Sprite } from './src/lib/entity/sprite';
 import { Stage as _Stage } from './src/lib/entity/stage';
 import { textToSvg } from './src/lib/text';
+import { Loop } from './src/lib/engine/loop';
 import type { IEngine } from './src/type/engine';
+import type { IImage } from './src/type/image';
 import type { ISprite, SSprite } from './src/type/entity/sprite';
 import type { IStage, SStage } from './src/type/entity/stage';
 import type { ITextToSvg } from './src/type/text';
@@ -76,18 +78,21 @@ type ExportType = {
     Keyboard: KEYBOARD_KEYS_Type
     engine: IEngine,
     textToSvg: ITextToSvg,
+    Loop: typeof Loop,
 }
 export const Typescratcher: ExportType = {
     Sprite: _Sprite as SSprite,
     Stage: _Stage as SStage,
-    Image: Image as SImage,
-    Sound: Sound as SSound,
+    Image: _Image as SImage,
+    Sound: _Sound as SSound,
     ImageEffective: ImageEffective as ImageEffectiveType,
     Rotation: Rotation as RotationStyle,
     Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     engine: engine as IEngine,
     textToSvg: textToSvg as ITextToSvg,
+    Loop: Loop as typeof Loop,
 } as const;
 
 export type Sprite = ISprite;
 export type Stage = IStage;
+export type Image = IImage;
