@@ -1,5 +1,5 @@
 import { engine, Engine } from '../../engine';
-import { threadManager } from '../../engine/thread/threads';
+import { ThreadManager, threadManager } from '../../engine/thread/threads';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
 import type { TEntityOptions } from '../../../type/entity/entity/TEntityOptions';

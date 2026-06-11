@@ -1,3 +1,5 @@
+import { ScratchFontFamilyValue } from "src/lib/text";
+
 /** SVG Text 属性 */
 export type TextAttributes = {
     fill?: string,
@@ -21,9 +23,11 @@ export interface ITextToSvg {
     /** 余白 */
     set padding( padding: number);
     /** FontFamilyを設定 */
-    setFontFamily(fontFamily: ParmFontFace[]):Promise<void>;
+    setExternalFontFamily(fontFamily: ParmFontFace[]):Promise<void>;
     /** 文字属性 */
     set textAttributes(attr: TextAttributes);
+    /** ScratchFontFamily */
+    set scratchFontFamily(fontFamily: ScratchFontFamilyValue);
     /** SVGデータ作成 */
     createSvgData(inputText: string, textAttr: TextAttributes) :Promise<string>;
 

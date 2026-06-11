@@ -4,6 +4,7 @@ import { Engine, engine } from ".";
 import { SpriteEvent } from "../entity/sprite/spriteEvent";
 import { StageEvent } from "../entity/stage/stageEvent";
 import { EntityBackdrop } from "../entity/entity/entityBackdrop";
+import { EntityBroadCast } from "../entity/entity/entityBroadcast";
 
 /**
  * Scratch Event
@@ -176,11 +177,11 @@ export class ScratchEvent extends EventEmitter {
         this.on(messageId, (...args:any)=> {
             const sprites = (engine as Engine).getSprites();
             for(const s of sprites) {
-                s.Broadcast.broadcastReceivedKick(messageId, ...args);
+                (s.Broadcast as EntityBroadCast).broadcastReceivedKick(messageId, ...args);
             }
             const stage = (engine as Engine).getStage();
             if(stage){
-                stage.Broadcast.broadcastReceivedKick(messageId, ...args);
+                (stage.Broadcast as EntityBroadCast).broadcastReceivedKick(messageId, ...args);
             }
         })
     }

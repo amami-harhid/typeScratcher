@@ -30,7 +30,7 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
 }
 
 // メッセージ受信( 引数付き )
-cat.Broadcast.broadcasReceiver("COUNT").func = async function*(this:Sprite, counter:number) {
+cat.Broadcast.receiver("COUNT").func = async function*(this:Sprite, counter:number) {
     this.Looks.bubble.say(`${counter}秒`);
 }
 
@@ -41,7 +41,7 @@ cat.Event.backdropSwitcher(BlueskyImage).func = async function*(this:Sprite) {
     for(;;) {
         counter += 1;
         // メッセージ送信（引数付き）
-        this.Broadcast.broadcast("COUNT", counter);
+        this.Broadcast.send("COUNT", counter);
         await this.Control.wait(1);
         if(counter == 2) break;
         yield;
@@ -56,7 +56,7 @@ stage.Event.backdropSwitcher(BasketballImage).func = async function*(this:Stage)
     for(;;) {
         counter += 1;
         // メッセージ送信（引数付き）
-        this.Broadcast.broadcast("COUNT", counter);
+        this.Broadcast.send("COUNT", counter);
         await this.Control.wait(1);
         if(counter == 5) break;
         yield;

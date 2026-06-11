@@ -27,7 +27,7 @@ export class EntityBroadCast implements IEntityBroadCast {
      * @param messageId 
      * @param args 
      */
-    broadcast(messageId: string, ...args:any[]) {
+    send(messageId: string, ...args:any[]) {
         const _messageId = this.getMessageId(messageId);
         const element = EntityBroadCast.getBroadcastElement(_messageId);
         if(element.funcArr.length > 0){
@@ -39,7 +39,7 @@ export class EntityBroadCast implements IEntityBroadCast {
      * @param messageId 
      * @param args 
      */
-    broadcastAndWait(messageId: string, ...args:any[]): Promise<void>{
+    sendAndWait(messageId: string, ...args:any[]): Promise<void>{
         const _messageId = this.getMessageId(messageId);
         return new Promise<void>( async resolve=>{
             const element = EntityBroadCast.getBroadcastElement(_messageId);
@@ -72,7 +72,7 @@ export class EntityBroadCast implements IEntityBroadCast {
      * @param messageId 
      * @returns 
      */
-    broadcasReceiver(messageId: string) : EventFunctionSetter{
+    receiver(messageId: string) : EventFunctionSetter{
         const me = this;
         return class {
             static set func(func: CallableFunction){

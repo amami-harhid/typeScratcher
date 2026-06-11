@@ -1,4 +1,4 @@
 /**
  * Interval
  */
-export const INTERVAL = 1000/30;
+export const INTERVAL = Math.floor(1000/30);

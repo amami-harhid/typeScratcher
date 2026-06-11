@@ -30,8 +30,4 @@ export interface ISpriteBubble {
      * @param properties {BubbleProperties}
      */
     thinkForSecs(text: string, sec: number, properties?: BubbleProperties): Promise<void>;
-    /**
-     * 位置情報などを更新する
-     */
-    update(): void;
 }

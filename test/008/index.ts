@@ -1,23 +1,32 @@
 /**
  * TEST 008
- * ◇ 文字列をSVG化してスプライトで表示
- * ◇ "1" ～ "20" の文字 を生成する
+ * ・Test 007 で コスチューム変更、背景変更の同期を合わせる
  */
 import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage as _ } from '../../index';
+import type { Sprite, Stage } from '../../index';
 import { num } from './sub/num';
 import { cat } from './sub/cat';
 import { stage } from './sub/stage';
 
-// 変数 stage を参照しないと './sub/stage' が実行されない
-const _1 = stage;
-
-num.Event.flagPresser().func = async function*(this: Sprite) {
+stage.Event.flagPresser().func = async function*(this:Stage) {
+    let count = 0;
     for(;;){
-        this.Costume.next();
-        await this.Control.wait(0.1);
+        count += 1;
+        if( count % 2 == 0 ) {
+            this.Broadcast.send('COSTUME_NEXT');
+            count = 0;
+        }
+        this.Broadcast.send('BACKDROP_NEXT');
+        await TS.Timer.wait(1);
         yield;
     }
+}
+
+stage.Broadcast.receiver("BACKDROP_NEXT").func = async function*(this:Stage) {
+    this.Backdrop.next();
+}
+num.Broadcast.receiver("COSTUME_NEXT").func = async function*(this: Sprite) {
+    this.Costume.next();
 }
 cat.Event.flagPresser().func = async function*(this: Sprite) {
     this.Motion.direction.degree = 30;
@@ -27,5 +36,14 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
         yield;
     }
 }
-
+cat.Event.flagPresser().func = async function*(this: Sprite) {
+    for(;;){
+        if(this.Sensing.sprite.isTouching([num])){
+            this.Looks.bubble.say("TOUCH");
+        }else{
+            this.Looks.bubble.say("");
+        }
+        yield;
+    }
+}
 TS.engine.start();

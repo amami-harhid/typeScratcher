@@ -40,6 +40,7 @@ import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
 import { Sound as _Sound} from './src/lib/sounds';
 import { Sprite as _Sprite } from './src/lib/entity/sprite';
 import { Stage as _Stage } from './src/lib/entity/stage';
+import { Timer } from './src/lib/utils/timer';
 import { textToSvg } from './src/lib/text';
 import { Loop } from './src/lib/engine/loop';
 import type { IEngine } from './src/type/engine';
@@ -79,6 +80,7 @@ type ExportType = {
     engine: IEngine,
     textToSvg: ITextToSvg,
     Loop: typeof Loop,
+    Timer: typeof Timer,
 }
 export const Typescratcher: ExportType = {
     Sprite: _Sprite as SSprite,
@@ -91,6 +93,7 @@ export const Typescratcher: ExportType = {
     engine: engine as IEngine,
     textToSvg: textToSvg as ITextToSvg,
     Loop: Loop as typeof Loop,
+    Timer: Timer as typeof Timer,
 } as const;
 
 export type Sprite = ISprite;

@@ -29,14 +29,14 @@ cat.Event.flagPresser().func=async function*(this:Sprite) {
         await this.Control.wait(1);
         counter+=1;
         if(counter>5){
-            this.Broadcast.broadcast('STAGE');
+            this.Broadcast.send('STAGE');
             break;
         }
         yield;
     }
 }
 
-stage.Broadcast.broadcasReceiver('STAGE').func = async function*(this: Stage) {
+stage.Broadcast.receiver('STAGE').func = async function*(this: Stage) {
     let counter = 0;
     for(;;){
         this.Backdrop.next();

@@ -1,4 +1,16 @@
-import { TextAttributes } from "../text";
+import { ScratchFontFamilyValue } from "src/lib/text";
+
+export type createSvgImageAttributes = {
+    fill?: string,
+    stroke?: string,
+    stroke_mode?: 'outside'|'inside',
+    stroke_width?: number,
+    scratch_font_family?: ScratchFontFamilyValue,
+    font_family?: string,
+    font_size?: number,
+    font_weight?: 'normal'|'bold'|'bolder'|'lighter',    
+}
+
 
 /**
  * Image(イメージ)
@@ -14,7 +26,7 @@ export interface SImage{
      * @param image
      * @param attributes 
      */
-    createSvgImage(image: ImageArgStringObject, attributes: TextAttributes):Promise<IImage>;
+    createSvgImage(image: ImageArgStringObject, attributes: createSvgImageAttributes):Promise<IImage>;
 
 };
 export interface IImage {

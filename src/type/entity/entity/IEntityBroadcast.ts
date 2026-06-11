@@ -24,7 +24,7 @@ export interface IEntityBroadCast {
      *  this.Event.broadcast('Start', count, mouseDown );
      * ```
      */
-    broadcast(messageId: string, ...args:unknown[]): void;
+    send(messageId: string, ...args:unknown[]): void;
 
     /**
      * メッセージを送り終わるまで待つ
@@ -36,18 +36,12 @@ export interface IEntityBroadCast {
      *  await this.Event.broadcastAndWait('Start', count, mouseDown );
      * ```
      */
-    broadcastAndWait(messageId: string, ...args:unknown[]): Promise<void>;
+    sendAndWait(messageId: string, ...args:unknown[]): Promise<void>;
 
     /**
      * メッセージ受信時のイベント定義セッター
      * @param messageId 
      */
-    broadcasReceiver(messageId: string): EventFunctionSetter;
+    receiver(messageId: string): EventFunctionSetter;
     
-    /**
-     * 対応するメッセージ受信イベントスレッドを起動
-     * @param messageId 
-     */
-    broadcastReceivedKick(messageId: string, ...args:any[]) :void;
-
 }

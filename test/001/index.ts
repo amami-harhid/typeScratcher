@@ -122,28 +122,28 @@ apple.Event.clicker().func = async function*(this: Sprite) {
 };
 apple.Event.keyPresser('e').func = async function*(this: Sprite){
     console.log('KEY e')
-    this.Broadcast.broadcast('AAA');
+    this.Broadcast.send('AAA');
 }
 apple.Event.keyPresser('f').func = async function*(this: Sprite){
     console.log('KEY f')
-    await this.Broadcast.broadcastAndWait('AAA');
+    await this.Broadcast.sendAndWait('AAA');
     console.log('KEY f completed')
 }
 apple.Event.keyPresser('g').func = async function*(this: Sprite){
     console.log('KEY g')
-    this.Broadcast.broadcast('BBB');
+    this.Broadcast.send('BBB');
     console.log('KEY g completed')
 }
-apple.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
+apple.Broadcast.receiver('AAA').func = async function*(this:Sprite){
     console.log('Received [1]');
     apple.Looks.effect.change(TS.ImageEffective.COLOR, 15);
     apple.Looks.effect.change(TS.ImageEffective.FISHEYE, 15);
 }
-apple.Broadcast.broadcasReceiver('AAA').func = async function*(this:Sprite){
+apple.Broadcast.receiver('AAA').func = async function*(this:Sprite){
     console.log('Received [2]');
     await this.Control.wait(1);
 }
-apple.Broadcast.broadcasReceiver('BBB').func = async function*(this:Sprite){
+apple.Broadcast.receiver('BBB').func = async function*(this:Sprite){
     apple.Looks.effect.clear();
 }
 

@@ -1,6 +1,7 @@
 /**
  * TEST 007
- * ◇ 文字列をSVG化してスプライトで表示
+ * ・文字列をSVG化してスプライトで表示
+ * ・ネコが文字に触れたらネコが"TOUCH"と言う
  */
 import { Typescratcher as TS } from '../../index';
 import type { Sprite, Stage } from '../../index';
@@ -12,10 +13,18 @@ import { stage } from './sub/stage';
 const _1 = stage;
 type _2 = Stage;
 
+stage.Event.flagPresser().func = async function*(this:Stage) {
+    //const wait2 = this.Control.wait2(2);
+    for(;;){
+        this.Backdrop.next();
+        await TS.Timer.wait(1);
+        yield;
+    }
+}
 num.Event.flagPresser().func = async function*(this: Sprite) {
     for(;;){
         this.Costume.next();
-        await this.Control.wait(1);
+        await this.Control.wait(2);
         yield;
     }
 }
@@ -27,5 +36,14 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
         yield;
     }
 }
-
+cat.Event.flagPresser().func = async function*(this: Sprite) {
+    for(;;){
+        if(this.Sensing.sprite.isTouching([num])){
+            this.Looks.bubble.say("TOUCH");
+        }else{
+            this.Looks.bubble.say("");
+        }
+        yield;
+    }
+}
 TS.engine.start();

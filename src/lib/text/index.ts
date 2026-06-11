@@ -4,13 +4,25 @@ import { ImageToBase64Util } from "../utils/base64Util";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
 
+export const ScratchFontFamily = {
+    SansSerif: 'Sans Serif',
+    Serif: 'Serif',
+    Handwriting: 'Handwriting',
+    Marker: 'Marker',
+    Curly: 'Curly',
+    Pixel: 'Pixel',
+    Scratch: 'Scratch',
+} as const 
+export type ScratchFontFamilyValue = typeof ScratchFontFamily[keyof typeof ScratchFontFamily];
+
 export class TextToSvg implements ITextToSvg {
     private _textAttributes: TextAttributes;
     private _debugCanvas:HTMLCanvasElement;
     private _debugCtx?:CanvasRenderingContext2D;
-    private _fontFamily: ParmFontFace[];
-    private _fontDatas : {name:string, data: string[] }[];
+    private _external_fontFamily: ParmFontFace[];
+    private _external_fontDatas : {name:string, data: string[] }[];
     private _padding: number;
+    private _scratchFontFamily:ScratchFontFamilyValue;
     constructor() {
         //this._textAttributes = {fill:'#000000', font: 'Sans Serif', font_size:80};
         this._textAttributes = {fill:'#000000', font: 'Handwriting', font_size:80};
@@ -19,22 +31,26 @@ export class TextToSvg implements ITextToSvg {
         if(_ctx) {
             this._debugCtx = _ctx;
         }
-        this._fontFamily = [];
-        this._fontDatas = [];
+        this._external_fontFamily = [];
+        this._external_fontDatas = [];
         this._padding = 25;
+        this._scratchFontFamily = ScratchFontFamily.SansSerif;
     }
 
     public set padding(padding:number) {
         this._padding = padding;
     }
-    public async setFontFamily(fontFamily: ParmFontFace[]): Promise<void>{
-        if(this._fontFamily.length>0){
-            this._fontFamily.slice(0, this._fontFamily.length);
+    public set scratchFontFamily(fontFamily: ScratchFontFamilyValue) {
+        this._scratchFontFamily = fontFamily;
+    }
+    public async setExternalFontFamily(fontFamily: ParmFontFace[]): Promise<void>{
+        if(this._external_fontFamily.length>0){
+            this._external_fontFamily.slice(0, this._external_fontFamily.length);
         }
         for(const font of fontFamily) {
-            this._fontFamily.push(font);
+            this._external_fontFamily.push(font);
             const data = await this.loadFont(font);
-            this._fontDatas.push({name: font.font, data: data});
+            this._external_fontDatas.push({name: font.font, data: data});
         }
         await this.link();
     }
@@ -61,9 +77,9 @@ export class TextToSvg implements ITextToSvg {
         return data;
     }    
     private async link(): Promise<void> {
-        if(this._fontFamily.length > 0){
+        if(this._external_fontFamily.length > 0){
             const promiseArr:Promise<FontFace>[] = []
-            for(const font of this._fontFamily){
+            for(const font of this._external_fontFamily){
                 if(font.href){
                     const fontFace = new FontFace(
                         font.font,
@@ -100,12 +116,11 @@ export class TextToSvg implements ITextToSvg {
         svg.setAttribute("width", `${mesure.w+this._padding*2}`);
         svg.setAttribute("height", `${mesure.h+this._padding*2}`);
         svg.setAttribute("viewBox", `0 0 ${mesure.w+this._padding*2} ${mesure.h+this._padding*2}`);
-
-        if(this._fontDatas.length>0){
+        if(this._external_fontDatas.length>0){
             const defs = document.createElementNS(SVG_NS, "defs");
             const style =  document.createElementNS(SVG_NS, "style");
             let innerStyle = '';
-            for(const fontData of this._fontDatas){
+            for(const fontData of this._external_fontDatas){
                 const fontFace = `
                 @font-face {
                     font-family: '${fontData.name}';
@@ -119,7 +134,10 @@ export class TextToSvg implements ITextToSvg {
             svg.appendChild(defs);            
         }
 
-        const text = this.createText(inputText, mesure);        
+        const text = this.createText(inputText, mesure);
+        if( this._scratchFontFamily) {
+            text.setAttribute('font-family', this._scratchFontFamily);        
+        }
         if(this._textAttributes.use && this._textAttributes.use.length>0){
             const defs = document.createElementNS(SVG_NS, "defs");
             const TextID = 'text0';
@@ -209,4 +227,4 @@ export class TextToSvg implements ITextToSvg {
     }
 }
 
-export const textToSvg = TextToSvg.getInstance();
+export const textToSvg:ITextToSvg = TextToSvg.getInstance();

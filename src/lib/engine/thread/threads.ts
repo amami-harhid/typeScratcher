@@ -54,6 +54,10 @@ class ThreadBank {
 
 
 export class ThreadManager {
+    private static _timer: number = 0;
+    static get timer(): number {
+        return ThreadManager._timer;
+    }
     private intervalId!: NodeJS.Timeout | undefined;
     private _pauser:boolean;
     private _running:boolean;
@@ -115,10 +119,12 @@ export class ThreadManager {
             clearInterval(this.intervalId);
             this.intervalId = undefined;
         }
+        ThreadManager._timer = Math.floor(performance.now());
         this.intervalId = setInterval(this.interval, INTERVAL, this);
         this._running = true;
     }
     async interval(me: ThreadManager):Promise<void> {
+        ThreadManager._timer = Math.floor(performance.now());
         if(me._pauser === true) return; // PAUSE中はスレッドを実行しない
         let _completed_count = 0;
         for(const thread of ThreadBank.threadArr){
@@ -127,7 +133,7 @@ export class ThreadManager {
             }
             if(thread.status == ThreadStatus.YIELD) {
                 // 実行待ちのときは スレッドを実行する
-                thread.next();
+                thread.next(); // 並列動作させる（意図的に await をつけていない）
             }
         }
         for(const sprite of (engine as Engine).getSprites()){

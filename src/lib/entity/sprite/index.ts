@@ -3,11 +3,11 @@ import { PenSprite } from "./pen";
 import { engine, Engine } from "../../engine";
 import { ScratchElement } from "../../gui/scratchElement";
 import { SpriteBackdrop } from "./spriteBackdrop";
+import { SpriteBubble } from "./spriteBubble";
 import { SpriteControl } from "./spriteControl";
 import { SpriteCostume } from "./spriteCostume";
 import { SpriteDragMode } from "./spriteDragMode";
 import { SpriteEvent } from "./spriteEvent";
-//import { SpriteFont } from "./sprite/spriteFont";
 import { SpriteLooks } from "./spriteLooks";
 import { SpriteMotion } from "./spriteMotion";
 import { SpriteProperties } from "./spriteProperties";
@@ -15,12 +15,7 @@ import { SpriteSensing } from "./spriteSensing";
 import { Sound } from "../../sounds";
 import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import { Timer } from "../../utils/timer";
-//import type { IEntityProperties } from "@Type/entity/IEntityProperties";
 import type { ISprite } from "../../../type/entity/sprite";
-//import type { ISpriteFont } from "@Type/sprite/ISpriteFont";
-//import type { ISvgText } from "@Type/svgText/ISvgText";
-//import type { ISpriteTextToSpeech } from "@Type/sprite/ISpriteTextToSpeech";
-//import type { IImage } from "../../../type/image";
 import type { ISvgSkin } from "../../../type/render/ISvgSkin";
 import type { ISpriteBackdrop } from "../../../type/entity/sprite/ISpriteBackdrop";
 import type { ISpriteControl } from "../../../type/entity/sprite/ISpriteControl";
@@ -45,9 +40,7 @@ export class Sprite extends Entity implements ISprite {
     private _properties: ISpriteProperties;
     private _sensing: ISpriteSensing;
     private _penSprite: PenSprite;
-    //private _font : ISpriteFont;
     private _dragMode : SpriteDragMode;
-    //private _svgText : ISvgText;
     //private _textToSpeech : ISpriteTextToSpeech;
     private _isClone: boolean = false;
     private _clones: ISprite[] = [];
@@ -148,7 +141,7 @@ export class Sprite extends Entity implements ISprite {
     }
     update() {
         this._penSprite.update();
-        this._looks.bubble.update();
+        (this._looks.bubble as SpriteBubble).update();
         this._properties.update(); 
     }
 
