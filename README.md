@@ -143,3 +143,10 @@ Scratch3本家の実装に寄せると、yield を使うことになり、利用
 ## マウスがステージの外に出たときの対応
 
 ## Motion.move.glideTo() 実装
+
+glideTo()を同時に並列動作させたときの動作を 本家に寄せられないか？
+
+
+## vite 実行時のエラー
+
+[vite-plugin-static-copy] Error: No file was found to copy on D:\Scratch3\ts\typeScratcher\CNAME src.
