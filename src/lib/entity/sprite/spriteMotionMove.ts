@@ -175,10 +175,8 @@ export class SpriteMotionMove implements ISpriteMotionMove {
         const _xy = {x: _x, y: _y};
         const _count = Math.floor((sec * 1000 ) / INTERVAL);
         const _interval = (sec*1000) / _count;
-        console.log(`_count=${_count}, _interval=${_interval}`)
         const _def_x = ( x - _x ) / _count;
         const _def_y = ( y - _y ) / _count;
-        console.log(`_def_x=${_def_x}, _def_y=${_def_y}`)
         const me = this.entity;
         return new Promise<void>((resolve)=>{
             let counter = 0;
