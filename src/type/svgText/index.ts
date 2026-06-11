@@ -1,4 +1,13 @@
-import { ScratchFontFamilyValue } from "src/lib/text";
+export const ScratchFontFamily = {
+    SansSerif: 'Sans Serif',
+    Serif: 'Serif',
+    Handwriting: 'Handwriting',
+    Marker: 'Marker',
+    Curly: 'Curly',
+    Pixel: 'Pixel',
+    Scratch: 'Scratch',
+} as const 
+export type ScratchFontFamilyValue = typeof ScratchFontFamily[keyof typeof ScratchFontFamily];
 
 /** SVG Text 属性 */
 export type TextAttributes = {
@@ -21,11 +30,11 @@ export type ParmFontFace = {
 
 export interface ITextToSvg {
     /** 余白 */
-    set padding( padding: number);
+    //set padding( padding: number);
     /** FontFamilyを設定 */
-    setExternalFontFamily(fontFamily: ParmFontFace[]):Promise<void>;
+    //setExternalFontFamily(fontFamily: ParmFontFace[]):Promise<void>;
     /** 文字属性 */
-    set textAttributes(attr: TextAttributes);
+    //set textAttributes(attr: TextAttributes);
     /** ScratchFontFamily */
     set scratchFontFamily(fontFamily: ScratchFontFamilyValue);
     /** SVGデータ作成 */

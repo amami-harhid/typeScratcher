@@ -1,7 +1,8 @@
+import { ScratchFontFamily } from '../../../src/lib/svgText';
 import { Typescratcher as TS } from '../../..';
-import type { ICreateSvgImageAttributes } from '../../..';
+import { createSvgImageAttributes } from '../../../src/type/image';
 
-const textAttr: ICreateSvgImageAttributes = {
+const textAttr: createSvgImageAttributes = {
     font_size: 90,
     font_weight: 'bolder',
 };
@@ -15,13 +16,13 @@ const Text_03 = '3';
 // 文字の色、フォントファミリーを指定する。
 const image01 = await TS.Image.createSvgImage(
     {Text_01},
-    {...textAttr, font_size:150 ,fill:"red", scratch_font_family: TS.ScratchFontFamily.Handwriting});
+    {...textAttr, font_size:150 ,fill:"red", scratch_font_family: ScratchFontFamily.Handwriting});
 const image02 = await TS.Image.createSvgImage(
     {Text_02},
-    {...textAttr, font_size: 50, scratch_font_family: TS.ScratchFontFamily.Scratch});
+    {...textAttr, font_size: 50, scratch_font_family: ScratchFontFamily.Scratch});
 const image03 = await TS.Image.createSvgImage(
     {Text_03},
-    {...textAttr, fill:"white", scratch_font_family: TS.ScratchFontFamily.Curly});
+    {...textAttr, fill:"white", scratch_font_family: ScratchFontFamily.Curly});
 
 // 文字スプライトを生成、コスチュームに文字イメージを追加する 
 const num = new TS.Sprite('num');

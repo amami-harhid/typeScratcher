@@ -14,7 +14,7 @@ export interface ISpriteMotionMove {
      * @param x {number} - X座標
      * @param y {number} - Y座標
      */
-    move(x:number, y:number): void;
+    to(x:number, y:number): void;
     /**
      * もし端に振れたら跳ね返る
      */
@@ -22,11 +22,11 @@ export interface ISpriteMotionMove {
     /**
      * ステージ上のどこかに移動させる
      */
-    randomPosition(): void;
+    toRandom(): void;
     /**
      * マウスカーソルの位置へ移動させる
      */
-    mousePosition() : void;
+    toMouse() : void;
     /**
      * 指定したスプライトの位置へ移動させる
      * @param target {Sprite} - 指定スプライト

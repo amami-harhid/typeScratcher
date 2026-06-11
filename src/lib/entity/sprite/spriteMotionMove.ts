@@ -1,5 +1,8 @@
+import { Engine, engine } from '../../engine';
+import { INTERVAL } from '../../engine/thread/interval';
 import { MathUtil } from '../../utils/math-util';
 import { Sprite } from '../sprite';
+import { Utils } from '../../utils/utils';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionMove } from '../../../type/entity/sprite/ISpriteMotionMove';
 import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
@@ -27,7 +30,7 @@ export class SpriteMotionMove implements ISpriteMotionMove {
     set y(y:number){
         this.prop.position.y = y;
     }
-    move(x:number, y:number) : void {
+    to(x:number, y:number) : void {
         const prop = this.entity.Properties;
         prop.position.x = x;
         prop.position.y = y;
@@ -45,7 +48,7 @@ export class SpriteMotionMove implements ISpriteMotionMove {
         const prop = this.entity.Properties;
         prop.position.x += dx;
         prop.position.y += dy;
-        this.move(prop.position.x, prop.position.y);
+        this.to(prop.position.x, prop.position.y);
     }
     /**
      * もし端に振れたら跳ね返る
@@ -130,21 +133,35 @@ export class SpriteMotionMove implements ISpriteMotionMove {
     /**
      * ステージ上のランダムな位置へ移動する
      */
-    randomPosition(): void {
+    toRandom(): void {
+        const width = this.entity.render.stageWidth;
+        const halfWidth = Math.floor(width/2);
+        const x = Utils.randomizeInRange(-halfWidth, halfWidth );
+        const height = this.entity.render.stageHeight;
+        const halfHeight = Math.floor(height/2);
+        const y = Utils.randomizeInRange(-halfHeight, halfHeight);
+
+        this.entity.Properties.position.x = x;
+        this.entity.Properties.position.y = y;
 
     }
     /**
      * マウスカーソルの位置へ移動する
      */
-    mousePosition() : void {
-
+    toMouse() : void {
+        const _mouse = (engine as Engine).mouse;
+        const _rate = (engine as Engine).renderRate;
+        // ステージの外に出たときは 動かない。
+        this.entity.Properties.position.x = _mouse.scratchX * _rate.x;
+        this.entity.Properties.position.y = _mouse.scratchY * _rate.y;
     }
     /**
      * 指定したスプライトの位置へ移動する
      * @param target {Sprite} - 指定スプライト
      */
     toSprite(target: ISprite) : void {
-
+        this.entity.Properties.position.x = (target as Sprite).Properties.position.x;
+        this.entity.Properties.position.y = (target as Sprite).Properties.position.y;
     }
     /**
      * 指定秒数かけて指定座標へ移動する
@@ -153,7 +170,37 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      * @param y {number} - Y座標
      */
     async glideTo(sec:number, x: number, y:number): Promise<void> {
-  
+        const _x = this.entity.Properties.position.x;
+        const _y = this.entity.Properties.position.y;
+        const _xy = {x: _x, y: _y};
+        const _count = Math.floor((sec * 1000 ) / INTERVAL);
+        const _interval = (sec*1000) / _count;
+        console.log(`_count=${_count}, _interval=${_interval}`)
+        const _def_x = ( x - _x ) / _count;
+        const _def_y = ( y - _y ) / _count;
+        console.log(`_def_x=${_def_x}, _def_y=${_def_y}`)
+        const me = this.entity;
+        return new Promise<void>((resolve)=>{
+            let counter = 0;
+            const intervalProcess = () => {
+                setTimeout(()=>{
+                    _xy.x += _def_x;
+                    _xy.y += _def_y;
+                    me.Properties.position.x = _xy.x;
+                    me.Properties.position.y = _xy.y;
+                    counter += 1;
+                    if( counter < (_count-1))
+                        intervalProcess();
+                    else{
+                        me.Properties.position.x = x;
+                        me.Properties.position.y = y;
+                        resolve();
+                    }
+                },_interval);
+            }
+            intervalProcess();
+        });
+
     }
 
 };

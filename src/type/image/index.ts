@@ -1,4 +1,4 @@
-import { ScratchFontFamilyValue } from "src/lib/text";
+import { ScratchFontFamilyValue } from "src/lib/svgText";
 
 export type createSvgImageAttributes = {
     fill?: string,

@@ -40,15 +40,18 @@ import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
 import { Sound as _Sound} from './src/lib/sounds';
 import { Sprite as _Sprite } from './src/lib/entity/sprite';
 import { Stage as _Stage } from './src/lib/entity/stage';
+import { ScratchFontFamily } from './src/type/svgText';
 import { Timer } from './src/lib/utils/timer';
-import { textToSvg } from './src/lib/text';
+import { textToSvg } from './src/lib/svgText';
 import { Loop } from './src/lib/engine/loop';
+import type { createSvgImageAttributes } from './src/type/image';
 import type { IEngine } from './src/type/engine';
 import type { IImage } from './src/type/image';
 import type { ISprite, SSprite } from './src/type/entity/sprite';
 import type { IStage, SStage } from './src/type/entity/stage';
-import type { ITextToSvg } from './src/type/text';
+import type { ITextToSvg } from './src/type/svgText';
 import type { SImage } from './src/type/image';
+import type { SLoop } from './src/lib/engine/loop';
 import type { SSound } from './src/type/sound';
 
 /**
@@ -79,7 +82,8 @@ type ExportType = {
     Keyboard: KEYBOARD_KEYS_Type
     engine: IEngine,
     textToSvg: ITextToSvg,
-    Loop: typeof Loop,
+    Loop: SLoop,
+    ScratchFontFamily: typeof ScratchFontFamily,
     Timer: typeof Timer,
 }
 export const Typescratcher: ExportType = {
@@ -92,10 +96,12 @@ export const Typescratcher: ExportType = {
     Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     engine: engine as IEngine,
     textToSvg: textToSvg as ITextToSvg,
-    Loop: Loop as typeof Loop,
+    Loop: Loop as SLoop,
+    ScratchFontFamily: ScratchFontFamily,
     Timer: Timer as typeof Timer,
 } as const;
 
 export type Sprite = ISprite;
 export type Stage = IStage;
 export type Image = IImage;
+export type ICreateSvgImageAttributes = createSvgImageAttributes;

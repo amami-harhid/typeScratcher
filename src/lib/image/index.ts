@@ -1,8 +1,8 @@
 import { ImageLoader } from "../loader/imageLoader";
 import { Utils } from "../utils/utils";
 import type { createSvgImageAttributes, IImage } from "../../type/image";
-import type { TextAttributes } from "../../type/text";
-import { textToSvg } from "../text";
+import type { TextAttributes } from "../../type/svgText";
+import { textToSvg } from "../svgText";
 
 
 const ScratchFontFamily = {
@@ -22,7 +22,12 @@ type ImageArgStringObject = { [key:string]:string };
  * Image
  */
 export class Image implements IImage{
-
+    /**
+     * 文字データの変数を渡してSVG化し、SVGデータを取り込んだImageを作る
+     * @param image 
+     * @param attributes 
+     * @returns 
+     */
     public static async createSvgImage(image: ImageArgStringObject, attributes: createSvgImageAttributes): Promise<IImage> {
         const _info = Utils.varNameValues(image);
         const _name = _info[0];
@@ -34,6 +39,7 @@ export class Image implements IImage{
         
         const _image = {};
         _image[_name] = textSvgData;
+
         const textImage = new Image( _image );
         return textImage;
     }

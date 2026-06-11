@@ -1,6 +1,6 @@
 import { Typescratcher as TS } from '../../..';
 import type { Image } from '../../..';
-import { TextAttributes } from 'src/type/text';
+import { TextAttributes } from 'src/type/svgText';
 
 const textAttr: TextAttributes = {
     font_size: 90,

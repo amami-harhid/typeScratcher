@@ -1,19 +1,24 @@
 import { FontLoader } from "./fontLoader";
-import type { ITextToSvg, ParmFontFace, TextAttributes } from "../../type/text";
+import { ScratchFontFamily } from "../../type/svgText";
 import { ImageToBase64Util } from "../utils/base64Util";
+import type { ITextToSvg, ParmFontFace, TextAttributes, ScratchFontFamilyValue } from "../../type/svgText";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
-
-export const ScratchFontFamily = {
-    SansSerif: 'Sans Serif',
-    Serif: 'Serif',
-    Handwriting: 'Handwriting',
-    Marker: 'Marker',
-    Curly: 'Curly',
-    Pixel: 'Pixel',
-    Scratch: 'Scratch',
-} as const 
-export type ScratchFontFamilyValue = typeof ScratchFontFamily[keyof typeof ScratchFontFamily];
+const MIMETYPE_SvgImage = "image/svg+xml";
+const SCRATCH_FONT_STYPE_ID = "scratch-font-styles";
+const SANS_SERIF = "sans-serif";
+const WIDTH = "width";
+const HEIGHT = "height";
+const VIEWBOX = "viewBox";
+const FILL = "fill";
+const FONT_SIZE = "font-size";
+const FONT_FAMILY = "font-family";
+const STROKE = "stroke";
+const STROKE_MODE = "stroke-mode";
+const STROKE_WIDTH = "stroke-width";
+const STYLE = "style";
+const DEFS = "defs";
+const USE = "use";
 
 export class TextToSvg implements ITextToSvg {
     private _textAttributes: TextAttributes;
@@ -91,7 +96,7 @@ export class TextToSvg implements ITextToSvg {
                 }
             }
             const fontFaces = await Promise.all(promiseArr);
-            const scratchFontStyles = document.getElementById('scratch-font-styles');
+            const scratchFontStyles = document.getElementById(SCRATCH_FONT_STYPE_ID);
             if(scratchFontStyles){
                 for(const face of fontFaces) {
                     document.fonts.add(face);
@@ -100,25 +105,31 @@ export class TextToSvg implements ITextToSvg {
             }
         }
     }
+    /**
+     * SVGデータを作成する( Base64 )
+     * @param inputText 
+     * @param textAttr 
+     * @returns 
+     */
     public async createSvgData(inputText: string, textAttr: TextAttributes): Promise<string> {
         this.textAttributes = textAttr;
         const svg = this.createSvg(inputText);
         const serializer = new XMLSerializer();
         const svgText = serializer.serializeToString(svg);
-        const blob = new Blob([svgText], { type: "image/svg+xml" });
+        const blob = new Blob([svgText], { type: MIMETYPE_SvgImage });
         const textSvg = await ImageToBase64Util.blobToBase64(blob);
         return textSvg;
     }
-    public createSvg(inputText: string) :SVGSVGElement {
+    private createSvg(inputText: string) :SVGSVGElement {
         const svg = document.createElementNS(SVG_NS, "svg");
         const mesure = this.mesure(inputText);
 
-        svg.setAttribute("width", `${mesure.w+this._padding*2}`);
-        svg.setAttribute("height", `${mesure.h+this._padding*2}`);
-        svg.setAttribute("viewBox", `0 0 ${mesure.w+this._padding*2} ${mesure.h+this._padding*2}`);
+        svg.setAttribute(WIDTH, `${mesure.w+this._padding*2}`);
+        svg.setAttribute(HEIGHT, `${mesure.h+this._padding*2}`);
+        svg.setAttribute(VIEWBOX, `0 0 ${mesure.w+this._padding*2} ${mesure.h+this._padding*2}`);
         if(this._external_fontDatas.length>0){
-            const defs = document.createElementNS(SVG_NS, "defs");
-            const style =  document.createElementNS(SVG_NS, "style");
+            const defs = document.createElementNS(SVG_NS, DEFS);
+            const style =  document.createElementNS(SVG_NS, STYLE);
             let innerStyle = '';
             for(const fontData of this._external_fontDatas){
                 const fontFace = `
@@ -136,31 +147,31 @@ export class TextToSvg implements ITextToSvg {
 
         const text = this.createText(inputText, mesure);
         if( this._scratchFontFamily) {
-            text.setAttribute('font-family', this._scratchFontFamily);        
+            text.setAttribute(FONT_FAMILY, this._scratchFontFamily);        
         }
         if(this._textAttributes.use && this._textAttributes.use.length>0){
-            const defs = document.createElementNS(SVG_NS, "defs");
+            const defs = document.createElementNS(SVG_NS, DEFS);
             const TextID = 'text0';
             text.setAttribute('id', TextID);
 
             defs.appendChild(text);
             svg.appendChild(defs);
             for(const use of this._textAttributes.use){
-                const _use = document.createElementNS(SVG_NS, "use");
+                const _use = document.createElementNS(SVG_NS, USE);
                 _use.setAttribute('href', `#${TextID}`);
                 _use.setAttribute('x', `${use.x}`);
                 _use.setAttribute('y', `${mesure.h + this._padding + use.y}`);
                 if(use.fill){
-                    _use.setAttribute('fill', `${use.fill}`);
+                    _use.setAttribute(FILL, `${use.fill}`);
                 }
                 if(use.stroke){
-                    _use.setAttribute('stroke', `${use.stroke}`);
+                    _use.setAttribute(STROKE, `${use.stroke}`);
                 }
                 if(use.stroke_width){
-                    _use.setAttribute('stroke-width', `${use.stroke_width}`);
+                    _use.setAttribute(STROKE_WIDTH, `${use.stroke_width}`);
                 }
-                _use.setAttribute("font-size", `${this._textAttributes.font_size}px`);
-                _use.setAttribute("font-family", `"${this._textAttributes.font}", sans-serif`);
+                _use.setAttribute(FONT_SIZE, `${this._textAttributes.font_size}px`);
+                _use.setAttribute(FONT_FAMILY, `"${this._textAttributes.font}", ${SANS_SERIF}`);
                 svg.appendChild(_use);
             }
         }else{
@@ -181,18 +192,18 @@ export class TextToSvg implements ITextToSvg {
             // テキストの左下のY座標
             text.setAttribute("y", `${mesure.h + this._padding}`);
             if(this._textAttributes.fill){
-                text.setAttribute("fill", `${this._textAttributes.fill}`);
+                text.setAttribute(FILL, `${this._textAttributes.fill}`);
             }
-            text.setAttribute("font-size", `${this._textAttributes.font_size}px`);
-            text.setAttribute("font-family", `"${this._textAttributes.font}",sans-serif`);
+            text.setAttribute(FONT_SIZE, `${this._textAttributes.font_size}px`);
+            text.setAttribute(FONT_FAMILY, `"${this._textAttributes.font}",${SANS_SERIF}`);
             if(this._textAttributes.stroke){
-                text.setAttribute('stroke', this._textAttributes.stroke);
+                text.setAttribute(STROKE, this._textAttributes.stroke);
             }
             if(this._textAttributes.stroke_mode){
-                text.setAttribute('stroke-mode', this._textAttributes.stroke_mode);
+                text.setAttribute(STROKE_MODE, this._textAttributes.stroke_mode);
             }
             if(this._textAttributes.stroke_width){
-                text.setAttribute('stroke-width', `${this._textAttributes.stroke_width}` );
+                text.setAttribute(STROKE_WIDTH, `${this._textAttributes.stroke_width}` );
             }
         }
         text.textContent = textStr;
@@ -206,9 +217,9 @@ export class TextToSvg implements ITextToSvg {
      */
     private mesure(text:string): {w:number, h:number} {
         const fontFamily  = ((this._textAttributes.font_weight)? this._textAttributes.font_weight: '')
-            +`${this._textAttributes.font_size}px ${this._textAttributes.font}, sans-serif`;
+            +`${this._textAttributes.font_size}px ${this._textAttributes.font}, ${SANS_SERIF}`;
         const fontFamilyCtx  = ((this._textAttributes.font_weight)? this._textAttributes.font_weight: '')
-            +`${this._textAttributes.font_size}px "${this._textAttributes.font}", sans-serif`;
+            +`${this._textAttributes.font_size}px "${this._textAttributes.font}", ${SANS_SERIF}`;
         this._debugCanvas.style.fontFamily = fontFamily;
         if(this._debugCtx == undefined) throw 'Unable to get ctx';
         this._debugCtx.font = fontFamilyCtx;
