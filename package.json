@@ -39,7 +39,6 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.60.1",
     "vite": "^6.3.5",
-    "vite-plugin-static-copy": "^3.1.0",
     "vite-plugin-top-level-await": "^1.5.0",
     "webpack": "^5.99.8",
     "webpack-cli": "^6.0.1"
@@ -49,6 +48,7 @@
     "buffer": "^6.0.3",
     "core-js": "^3.49.0",
     "events": "^3.3.0",
+    "js-beautify": "^1.15.4",
     "regenerator-runtime": "^0.14.1",
     "scratch-audio": "^2.0.139",
     "scratch-render": "^2.0.356",

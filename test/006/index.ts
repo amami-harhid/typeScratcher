@@ -37,7 +37,7 @@ cat.Broadcast.receiver("COUNT").func = async function*(this:Sprite, counter:numb
 // 背景（BlueskyImage）になったときのイベント
 cat.Event.backdropSwitcher(BlueskyImage).func = async function*(this:Sprite) {
     // 2秒後に終了する
-    let counter = 0;
+    let counter = 0; // TEST
     for(;;) {
         counter += 1;
         // メッセージ送信（引数付き）

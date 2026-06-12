@@ -5,7 +5,6 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import glob from 'glob'
 import topLevelAwait from 'vite-plugin-top-level-await';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
 import pkg from './package.json';
 const version = JSON.stringify(pkg.version);
 
@@ -49,14 +48,6 @@ export default defineConfig({
     root: resolve(__dirname, './test'),
     plugins: [
         topLevelAwait(),
-        viteStaticCopy({
-            targets: [
-                {
-                    src: resolve(__dirname, './CNAME'),
-                    dest: resolve(__dirname, 'dist/'),
-                },
-            ],
-        }),
     ],
     resolve: {
         alias: {
