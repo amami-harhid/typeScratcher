@@ -46,6 +46,7 @@ export class Sprite extends Entity implements ISprite {
     //private _textToSpeech : ISpriteTextToSpeech;
     private _isClone: boolean = false;
     private _clones: ISprite[] = [];
+    private _parent?: ISprite;
     /**
      * @param name
      */
@@ -113,6 +114,12 @@ export class Sprite extends Entity implements ISprite {
     }
     set isClone(isClone: boolean) {
         this._isClone = isClone;
+    }
+    get parent() :ISprite | undefined{
+        return this._parent;
+    }
+    set parent(parent:ISprite) {
+        this._parent = parent;
     }
     async init() {
         return new Promise<void>((resolve)=>{

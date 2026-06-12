@@ -117,7 +117,6 @@ export class ThreadManager {
                         (_sprite.Control as SpriteControl).removeAllClones();
                     }
                 }
-                //me._running = false;
             }
         }
         _scratchEvent.on(ScratchEvent.STOP_CLICKED, _stop);

@@ -59,6 +59,7 @@ export class SpriteControl implements ISpriteControl {
         const clone = new Sprite(name);
         clone.isClone = true;
         _sprite.clones.push(clone);
+        clone.parent = this.entity;
         clone.Looks.layer.goBackwardLayers(1);
         // 各種コピー
         (clone.Control as SpriteControl)._propertiesCopyFrom(_sprite);
@@ -68,7 +69,7 @@ export class SpriteControl implements ISpriteControl {
     }
     _propertiesCopyFrom( target: Sprite ) {
         const _sprite = this.entity as Sprite;
-        if(_sprite.isClone) {
+        if(_sprite.isClone === true) {
             // Imageコピー
             const _images = (target as Sprite).$image.images;
             this.entity.Costume.add(_images);
@@ -120,23 +121,19 @@ export class SpriteControl implements ISpriteControl {
      * クローンを抹消する
      */
     removeClone() : void {
-        console.log('removeClone')
         const _sprite = this.entity as Sprite;
         if(_sprite.isClone === true){
-            console.log('[2]removeClone=', _sprite.clones)
-            if(_sprite.clones && _sprite.clones.length > 0){
-                console.log('[3]removeClone');
-                const _engine = engine as Engine;
-                _engine.removeSprites(_sprite);
-                for(const _clone of _sprite.clones){
-                    const $clone = _clone as Sprite;
-                    $clone.render.renderer.destroyDrawable($clone.drawableID, StageLayering.SPRITE_LAYER);
-                }
-                // IDが一致しない要素をフィルターで取得
-                const _clones:ISprite[] = _sprite.clones.filter(entity => (entity as Sprite).id != (this.entity as Sprite).id);
-                // 全削除して要素を追加
-                _sprite.clones.splice(0, _sprite.clones.length).concat(_clones);
-                _sprite.isAlive = false;
+            const _clone = _sprite;
+            const _engine = engine as Engine;
+            _engine.removeSprites(_clone);
+            _clone.render.renderer.destroyDrawable(_clone.drawableID, StageLayering.SPRITE_LAYER);
+            _clone.isAlive = false;
+            const _parent = _clone.parent;
+            if(_parent) {
+                const _parentSprite = (_parent as Sprite);
+                const _clones = _parentSprite.clones.filter((element)=>(element as Sprite).id != _clone.id);
+                _parentSprite.clones.splice(0, _parentSprite.clones.length);
+                _parentSprite.clones.push(..._clones);
             }
         }
     }
@@ -146,7 +143,6 @@ export class SpriteControl implements ISpriteControl {
     removeAllClones() : void {
         const _sprite = this.entity as Sprite;
         const _clones = [..._sprite.clones];
-        console.log('removeAllClones, _clones', _clones);
         for(const _clone of _clones) {
             _clone.Control.removeClone();
         }
