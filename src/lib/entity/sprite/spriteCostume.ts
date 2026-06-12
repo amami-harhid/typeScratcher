@@ -1,3 +1,4 @@
+import { Image } from '../../image';
 import { Sprite } from '../sprite';
 import type { ISpriteCostume } from '../../../type/entity/sprite/ISpriteCostume';
 import type { IImage } from '../../../type/image';
@@ -51,17 +52,21 @@ export class SpriteCostume implements ISpriteCostume {
         if(this.currentConstumeNo != no ) {
             this.currentConstumeNo = no;
             const image = _sprite.$image.images[no];
-            _sprite.render.renderer.updateDrawableProperties( _sprite.drawableID, {skinId: image.skinId});
+            _sprite.render.renderer.updateDrawableProperties( _sprite.drawableID, {skinId: (image as Image).skinId});
         }
     }
     /**
      * 使用中のSkinId
      */
     get currentSkinId() : number {
-        if(this.currentConstumeNo == -1) return -1;
-        const _sprite = this.entity as Sprite;
-        const image = _sprite.$image.images[this.currentConstumeNo];
-        return image.skinId;
+        if(this.currentConstumeNo > -1) {
+            const _sprite = this.entity as Sprite;
+            if(_sprite.$image.images.length > this.currentConstumeNo){
+                const image = _sprite.$image.images[this.currentConstumeNo];
+                return (image as Image).skinId;
+            } 
+        }
+        return -1;
     }
     /**
      * コスチューム名

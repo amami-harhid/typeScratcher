@@ -1,3 +1,4 @@
+import { Image } from ".";
 import { Loader } from "../loader/loader";
 import type { IImage } from "../../type/image";
 
@@ -11,7 +12,7 @@ export class ImageBank {
 
     static add(image: IImage) {
         ImageBank._images.push(image);
-        const load = image.load();
+        const load = (image as Image).load();
         ImageBank._imageLoads.push(load);
         Loader.add(load);
     }

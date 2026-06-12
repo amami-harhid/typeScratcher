@@ -96,8 +96,8 @@ export interface ISprite extends IEntity {
     /**
      * クローンの配列
      */
-    clones? : ISprite[];
+    //clones : ISprite[];
 
-    isClone: boolean;
+    //isClone: boolean;
 
 };

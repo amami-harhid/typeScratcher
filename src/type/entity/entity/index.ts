@@ -5,7 +5,7 @@ export declare interface IEntity {
     /**
      * エンティティID
      */
-    readonly id: string;
+    //readonly id: string;
     /**
      * サウンド
      */

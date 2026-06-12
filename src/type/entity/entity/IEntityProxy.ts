@@ -4,6 +4,7 @@
 import { IEntity } from '.';
 export interface IEntityProxy extends IEntity {
     readonly isProxyTest:boolean;
+    readonly id: string;
     entity:IEntity;
     threadId:string;
     threadName: string;

@@ -1,5 +1,7 @@
 import { engine, Engine } from "../../engine";
 import { Entity } from "../entity";
+import { EntitySound } from "../entity/entitySound";
+import { Image } from "../../image";
 import { Sound } from "../../sounds";
 import { StageBackdrop } from "./stageBackdrop";
 import { StageControl } from "./stageControl";
@@ -64,10 +66,10 @@ export class Stage extends Entity implements IStage{
         return new Promise<void>((resolve)=>{
             const loadArr: Promise<void>[] = [];
             for(const img of this._image.images){
-                loadArr.push(img.load());
+                loadArr.push((img as Image).load());
             }
-            for(const sndKey of this._sound.soundKeys){
-                const sound = this._sound.soundMap[sndKey];
+            for(const sndKey of (this._sound as EntitySound).soundKeys){
+                const sound = (this._sound as EntitySound).soundMap[sndKey];
                 const _sound = sound as Sound;
                 loadArr.push(_sound.load());
             }
@@ -75,7 +77,7 @@ export class Stage extends Entity implements IStage{
                 // イメージごとに Skinを作る
                 let _canvasRemake :HTMLCanvasElement|undefined = undefined;
                 for(const img of this._image.images){
-                    const svgText = img.image;
+                    const svgText = (img as Image).image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
                     if(_canvasRemake == undefined){
                         _canvasRemake = document.createElement('canvas');                        
@@ -88,7 +90,7 @@ export class Stage extends Entity implements IStage{
                     /*【A】*/_svgSkin._canvas = _canvasRemake;
                     /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
                     await Timer.wait(0.1);
-                    img.skinId = skinId;
+                    (img as Image).skinId = skinId;
                 }
                 resolve(); // 完了
             });

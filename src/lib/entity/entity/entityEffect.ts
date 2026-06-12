@@ -18,6 +18,9 @@ export class EntityEffect implements IEntityEffect {
         this._effect = {};
         this.clear();
     }
+    set effect( _effect: TEntityEffects) {
+        this._effect = _effect;
+    }
     get(): TEntityEffects {
         return this._effect;
     }

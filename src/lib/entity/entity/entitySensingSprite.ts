@@ -55,9 +55,10 @@ export class EntitySensingSprite implements IEntitySensingSprite {
 
     getTouchingTarget(targets: ISprite[]) : ISprite[]{
         const touchings: ISprite[] = [];
-        const me = this.entity as ISprite;
+        const me = this.entity as Sprite;
         for(const t of targets){
-            if(me.id != t.id) {
+            const _t = t as Sprite;
+            if(me.id != _t.id) {
                 const touch = this.isTouchingTargetToTarget([t]);
                 if( touch === true ) {
                     touchings.push(t);

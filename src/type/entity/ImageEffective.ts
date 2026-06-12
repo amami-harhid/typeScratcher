@@ -29,8 +29,8 @@ export const ImageEffective = {
      */ 
     GHOST : 'ghost',
 } as const;
-type EnumKeys = keyof typeof ImageEffective;
-type EnumKeyFields = {[key in EnumKeys]:string};
+export type ImageEffectiveKeys = keyof typeof ImageEffective;
+type EnumKeyFields = {[key in ImageEffectiveKeys]:string};
 export type IImageEffective = EnumKeyFields;
 export type ImageEffectiveType = typeof ImageEffective;
 export type TImageEffectiveValue = typeof ImageEffective[keyof ImageEffectiveType];

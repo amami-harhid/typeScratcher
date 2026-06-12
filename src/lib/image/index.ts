@@ -1,8 +1,7 @@
 import { ImageLoader } from "../loader/imageLoader";
+import { textToSvg } from "../svgText";
 import { Utils } from "../utils/utils";
 import type { createSvgImageAttributes, IImage } from "../../type/image";
-import type { TextAttributes } from "../../type/svgText";
-import { textToSvg } from "../svgText";
 
 
 const ScratchFontFamily = {
@@ -14,7 +13,7 @@ const ScratchFontFamily = {
     Pixel: 'Pixel',
     Scratch: 'Scratch',
 } as const;
-const ScratchFontFamilyValArr:string[] = Object.values(ScratchFontFamily);
+//const ScratchFontFamilyValArr:string[] = Object.values(ScratchFontFamily);
 export type ScratchFontFamilyValue = typeof ScratchFontFamily[keyof typeof ScratchFontFamily];
 type ImageArgStringObject = { [key:string]:string };
 

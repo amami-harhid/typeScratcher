@@ -11,6 +11,7 @@ export class EntitySound {
     protected entity: IEntity;
     public soundMap: {[key:string]: ISound} = {};
     public soundKeys: string[] = [];
+    public effectMap: {[key:string]: {volume:number, pitch:number}} = {}
     protected currentSound!: ISound;
     /**
      * @internal
@@ -30,6 +31,7 @@ export class EntitySound {
             }
             const soundName = s.name;
             this.soundMap[soundName] = s;
+            this.effectMap[soundName] = {volume:100, pitch:0};
             this.soundKeys.push(s.name);
         }
     }
@@ -40,6 +42,9 @@ export class EntitySound {
     async play(sound: ISound): Promise<void> {
         const _sound = sound as Sound;
         if(this.soundKeys.includes( _sound.name )) {
+            const effect = this.effectMap[_sound.name];
+            _sound.setVolume(effect.volume);
+            _sound.setPitch(effect.pitch);
             await _sound.play();
         }
     }
@@ -49,9 +54,16 @@ export class EntitySound {
      */
     playUntilDone(sound: Sound): Promise<void> {
         return new Promise<void>(resolve=>{
-            sound.startSoundUntilDone().then(()=>{
+            if(this.soundKeys.includes( sound.name )) {
+                const effect = this.effectMap[sound.name];
+                sound.setVolume(effect.volume);
+                sound.setPitch(effect.pitch);
+                sound.startSoundUntilDone().then(()=>{
+                    resolve();
+                });
+            }else{
                 resolve();
-            });
+            }
         });
     }
     /**
@@ -61,8 +73,11 @@ export class EntitySound {
         for(const soundKey of this.soundKeys) {
             const sound = this.soundMap[soundKey];
             const _sound = sound as Sound;
+            const effect = this.effectMap[soundKey]
             _sound.setVolume(100);
+            effect.volume = 100;
             _sound.setPitch(0);
+            effect.pitch = 0;
         }
         // 反映されるまで少し待つ
         await Timer.wait(1/30);
@@ -94,13 +109,16 @@ export class EntitySound {
     /** 音量 */
     getVolume(sound: ISound) : number {
         if(this.soundKeys.includes( sound.name )) {
-             return sound.volume;
+            const effect = this.effectMap[sound.name]
+            return effect.volume;
         }
         return -Infinity;
     }
     addVolume(sound: ISound, volume: number) : void {
         const _sound = sound as Sound;
         if(this.soundKeys.includes(_sound.name)) {
+            const effect = this.effectMap[sound.name]
+            effect.volume += volume;
             _sound.addVolume(volume);
         }else{
             return;
@@ -108,6 +126,8 @@ export class EntitySound {
     }
     setVolume(sound: Sound, volume: number) : void {
         if(this.soundKeys.includes(sound.name)) {
+            const effect = this.effectMap[sound.name]
+            effect.pitch = volume;
             sound.setVolume(volume);
         }else{
             return;
@@ -116,12 +136,15 @@ export class EntitySound {
     /** ピッチ */
     getPitch(sound: Sound) : number {
         if(this.soundKeys.includes(sound.name)) {
-            return sound.pitch;
+            const effect = this.effectMap[sound.name]
+            return effect.pitch;
         }
         return -Infinity;
     }
     addPitch(sound: Sound, pitch: number) : void {
         if(this.soundKeys.includes(sound.name)) {
+            const effect = this.effectMap[sound.name]
+            effect.pitch += pitch;
             sound.addPitch(pitch);
         }else{
             return;
@@ -129,6 +152,8 @@ export class EntitySound {
     }
     setPitch(sound: Sound, pitch: number) : void {
         if(this.soundKeys.includes(sound.name)) {
+            const effect = this.effectMap[sound.name]
+            effect.pitch = pitch;
             sound.setPitch(pitch);
         }else{
             return;

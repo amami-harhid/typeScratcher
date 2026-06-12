@@ -101,6 +101,10 @@ export class Engine implements IEngine {
     getSprites() : Sprite[]{
         return this._sprites;
     }
+    removeSprites( target: Sprite ) {
+        const _sprites = this._sprites.filter( entity => entity.id != target.id );
+        this._sprites.splice(0, this._sprites.length).concat(_sprites);
+    }
     setStage(stage: Stage) {
         this._stage = stage;
     }

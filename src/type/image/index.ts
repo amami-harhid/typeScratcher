@@ -1,4 +1,4 @@
-import { ScratchFontFamilyValue } from "src/lib/svgText";
+import { ScratchFontFamilyValue } from "../svgText";
 
 export type createSvgImageAttributes = {
     fill?: string,
@@ -30,9 +30,9 @@ export interface SImage{
 
 };
 export interface IImage {
-    skinId: number;
+    //skinId: number;
     name: string;
-    image: string;
-    loadCompleted: boolean;
-    load(): Promise<void>;
+    //image: string;
+    //loadCompleted: boolean;
+    //load(): Promise<void>;
 }

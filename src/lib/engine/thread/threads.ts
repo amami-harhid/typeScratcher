@@ -3,14 +3,17 @@
  */
 
 import EventEmitter from "events";
+import { Entity } from "../../entity/entity";
 import { EntityProxyExt } from "../../entity/entity/entityProxyExt";
+import { EntitySound } from "../../entity/entity/entitySound";
 import { FunctionChecker } from "../../utils/functionChecker";
 import { INTERVAL } from "./interval";
 import { engine, Engine } from "..";
 import { QuestionBoxElement } from "../../gui/questionBoxElement";
 import { ScratchElement } from "../../gui/scratchElement";
-import { Sound } from "../../sounds";
 import { ScratchEvent } from "../../engine/scratchEvent";
+import { Sound } from "../../sounds";
+import { SpriteControl } from "../../entity/sprite/spriteControl";
 import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityProxy } from "../../../type/entity/entity/IEntityProxy";
@@ -107,8 +110,13 @@ export class ThreadManager {
                 QuestionBoxElement.removeAsk();
                 // すべてのスレッドを停止する
                 me.stopAllScripts();
-                // TODO クローンを消す
-
+                // クローンを消す
+                const allSprites = (engine as Engine).getSprites();
+                for(const _sprite of allSprites){
+                    if(_sprite.isClone === false){
+                        (_sprite.Control as SpriteControl).removeAllClones();
+                    }
+                }
                 //me._running = false;
             }
         }
@@ -205,8 +213,8 @@ export class ThreadManager {
     stopSounds(proxy:IEntityProxy) {
         const entity = proxy.entity;
         // ステージ音がなっているときは止める
-        const sounds = entity.Sound.soundMap;
-        const soundKeys = entity.Sound.soundKeys;
+        const sounds = (entity.Sound as EntitySound).soundMap;
+        const soundKeys = (entity.Sound as EntitySound).soundKeys;
         for(const key of soundKeys){
             const sound = sounds[key] as Sound;
             if(sound.isPlaying === true){
@@ -237,7 +245,7 @@ export class ThreadObj extends EventEmitter implements IThreadObj{
         this._entity = entity;
         this.threadId = Utils.generateUUID();
         this.genProxy();
-        this.entityId = entity.id;
+        this.entityId = (entity as Entity).id;
         this._doubleRunable = doubleRunable;
         this._proxy = this.genProxy();
     }

@@ -1,4 +1,5 @@
 import { EntityEffect } from './entityEffect';
+import { Image } from '../../image';
 import { ImageBank } from '../../image/imageBank';
 import type { IImage } from '../../../type/image';
 import type { IEntity } from '../../../type/entity/entity';
@@ -42,7 +43,7 @@ export class EntityImage implements IEntityImage{
     }
     imageLoadCompleteAll() : boolean {
         for( const _img of this._images){
-            if( _img.loadCompleted === false ){
+            if( (_img as Image).loadCompleted === false ){
                 return false;
             }
         }

@@ -1,9 +1,6 @@
 import { type ISound } from "../../sound";
 /** イベント */
 export interface IEntitySound {
-    /** 音の名前のリスト */
-    readonly soundKeys: string[];
-    readonly soundMap: {[key:string]: ISound};
     /**
      * 音を追加する
      * @param soundName {string} - 音の名前

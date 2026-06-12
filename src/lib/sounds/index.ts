@@ -5,6 +5,7 @@ import { SoundLoader } from "../loader/soundLoader";
 import { SoundPlayer } from "./soundPlayer";
 import { Utils } from "../utils/utils";
 import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
+import type { ISound } from "../../type/sound";
 type SoundArgStringObject = { [key:string]:string };
 
 /**
@@ -138,4 +139,10 @@ export class Sound extends EventEmitter {
         if ( this._soundPlayer == null) return false;
         return this._soundPlayer.soundPlayer.isPlaying;
     }
+
+    deepCopy() : ISound {
+        const _sound: ISound = structuredClone(this);
+        return _sound;
+    }
+
 }

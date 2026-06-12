@@ -1,7 +1,10 @@
 import { Entity } from "../entity";
-import { PenSprite } from "./pen";
 import { engine, Engine } from "../../engine";
+import { EntitySound } from "../entity/entitySound";
+import { Image } from "../../image";
+import { PenSprite } from "./pen";
 import { ScratchElement } from "../../gui/scratchElement";
+import { Sound } from "../../sounds";
 import { SpriteBackdrop } from "./spriteBackdrop";
 import { SpriteBubble } from "./spriteBubble";
 import { SpriteControl } from "./spriteControl";
@@ -12,7 +15,6 @@ import { SpriteLooks } from "./spriteLooks";
 import { SpriteMotion } from "./spriteMotion";
 import { SpriteProperties } from "./spriteProperties";
 import { SpriteSensing } from "./spriteSensing";
-import { Sound } from "../../sounds";
 import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import { Timer } from "../../utils/timer";
 import type { ISprite } from "../../../type/entity/sprite";
@@ -109,21 +111,24 @@ export class Sprite extends Entity implements ISprite {
     get isClone() {
         return this._isClone;
     }
+    set isClone(isClone: boolean) {
+        this._isClone = isClone;
+    }
     async init() {
         return new Promise<void>((resolve)=>{
             const loadArr: Promise<void>[] = [];
             for(const img of this._image.images){
-                loadArr.push(img.load());
+                loadArr.push((img as Image).load());
             }
-            for(const sndKey of this._sound.soundKeys){
-                const sound = this._sound.soundMap[sndKey];
+            for(const sndKey of (this._sound as EntitySound).soundKeys){
+                const sound = (this._sound as EntitySound).soundMap[sndKey];
                 const _sound = sound as Sound;
                 loadArr.push(_sound.load());
             }
             Promise.all(loadArr).then(async ()=>{                
                 // イメージごとに Skinを作る
                 for(const img of this._image.images){
-                    const svgText = img.image;
+                    const svgText = (img as Image).image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
                     const _skin = this._render.renderer._allSkins[skinId];
                     // willReadFrequently を設定するために SKINインスタンスを取り出し、
@@ -133,7 +138,7 @@ export class Sprite extends Entity implements ISprite {
                     /*【A】*/_svgSkin._canvas = ScratchElement.RemakeCanvasWillReadFrequentlyTrue;
                     /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
                     await Timer.wait(0.1);
-                    img.skinId = skinId;
+                    (img as Image).skinId = skinId;
                 }
                 resolve(); // 完了
             });
@@ -144,7 +149,5 @@ export class Sprite extends Entity implements ISprite {
         (this._looks.bubble as SpriteBubble).update();
         this._properties.update(); 
     }
-
-
 
 }

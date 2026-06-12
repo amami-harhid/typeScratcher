@@ -1,7 +1,7 @@
 import { Engine, engine } from '../../engine';
 import { Entity } from '.';
 import { EntityEvent, type BACKDROP_EVENT_ELEMENT } from './entityEvent';
-import { Stage } from '../stage';
+import { Image } from '../../image';
 import { ThreadStatus } from '../../../type/engine/thread/threads';
 import { Timer } from '../../utils/timer';
 import { Utils } from '../../utils/utils';
@@ -64,7 +64,7 @@ export class EntityBackdrop implements IEntityBackdrop {
         if( no < 0 || (length-1) < no ) return;
         if(this.currentBackdropNo != no ) {
             this.currentBackdropNo = no;
-            const image = _entity.$image.images[no];
+            const image = (_entity.$image.images[no]) as Image;
             this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
             this.backdropChangeEmit(image.name);
         }
@@ -76,7 +76,7 @@ export class EntityBackdrop implements IEntityBackdrop {
         if(this.currentBackdropNo == -1) return -1;
         const _entity = this.entity as Entity;
         const image = _entity.$image.images[this.currentBackdropNo];
-        return image.skinId;
+        return (image as Image).skinId;
     }    
     /**
      * 背景名
@@ -103,10 +103,11 @@ export class EntityBackdrop implements IEntityBackdrop {
         let no = -1;
         for(const image of _entity.$image.images) {
             no += 1;
-            if( image.name == backdropName) {
+            const _image = image as Image;
+            if( _image.name == backdropName) {
                 this.currentBackdropNo = no;
                 if(prevNo != this.currentBackdropNo){
-                    this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: image.skinId});
+                    this.entity.render.renderer.updateDrawableProperties( this.entity.drawableID, {skinId: _image.skinId});
                     this.backdropChangeEmit(backdropName);
                 }
                 break;

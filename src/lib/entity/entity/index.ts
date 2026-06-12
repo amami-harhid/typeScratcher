@@ -32,6 +32,7 @@ export class Entity extends EventEmitter implements IEntity{
     protected _broadcast : IEntityBroadCast;
     protected _mouse: TMouse;
     protected _isSprite: boolean;
+    protected _isAlive: boolean;
     constructor() {
         super();
         this._render = _engine.render;
@@ -41,6 +42,7 @@ export class Entity extends EventEmitter implements IEntity{
         this._broadcast = new EntityBroadCast(this);
         this._mouse = _engine.mouse;
         this._isSprite = false;
+        this._isAlive = true;
     }
     createDrawable(layer: StageLayeringValue) {
         this.drawableID = this._render.createDrawable(layer);
@@ -70,6 +72,12 @@ export class Entity extends EventEmitter implements IEntity{
     }
     get isSprite() {
         return this._isSprite;
+    }
+    get isAlive(): boolean {
+        return this._isAlive;
+    }
+    set isAlive(isAlive: boolean) {
+        this._isAlive = isAlive;
     }
     imageLoadCompleteAll() : boolean {
         for( const _img of this._images){

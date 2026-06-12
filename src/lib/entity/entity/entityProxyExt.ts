@@ -1,6 +1,7 @@
 import { Threads } from '../../engine/thread/threads';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
+import { Entity } from '.';
 /**
  * エンティティのプロキシ拡張
  */
@@ -94,6 +95,11 @@ export class EntityProxyExt {
                         throw Threads.THROW_FORCE_STOP_THIS_SCRIPTS;
                     }
                 }
+                const _target = target as Entity;
+                if( _target.isAlive === false) {
+                    // 死亡したエンティティで実行されたら終了する
+                    throw Threads.THROW_STOP_THIS_SCRIPTS;
+                }
                 // @ts-ignore : ...arguments は任意のメソッドに対応させるため。 
                 return Reflect.get(...arguments);
             },
@@ -127,6 +133,12 @@ export class EntityProxyExt {
                     // @ts-ignore : threadName は定義なしだがOK 
                     this.threadName = value;
                     return true;
+                }
+
+                const _target = target as Entity;
+                if( _target.isAlive === false) {
+                    // 死亡したエンティティで実行されたら終了する
+                    throw Threads.THROW_STOP_THIS_SCRIPTS;
                 }
                 // @ts-ignore : ...arguments は任意のメソッドに対応させるため。 
                 return Reflect.set(...arguments);
