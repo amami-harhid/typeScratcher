@@ -87,19 +87,22 @@ export class EntityProxyExt {
                     ){
                         // 「このスクリプトを停止」スイッチオンのときは
                         // 例外を発生させる。
+                        console.log('=[entityProxyExt #01]===================')
                         throw Threads.THROW_STOP_THIS_SCRIPTS;
                     }
                 }
                 if(name == Threads.THROW_FORCE_STOP_THIS_SCRIPTS) {
                     return function() {
+                        console.log('=[entityProxyExt #02]===================')
                         throw Threads.THROW_FORCE_STOP_THIS_SCRIPTS;
                     }
                 }
-                const _target = target as Entity;
-                if( _target.isAlive === false) {
-                    // 死亡したエンティティで実行されたら終了する
-                    throw Threads.THROW_STOP_THIS_SCRIPTS;
-                }
+                //const _target = target as Entity;
+                //if( _target.isAlive === false) {
+                //    // 死亡したエンティティで実行されたら終了する
+                //    console.log('=[entityProxyExt #03]===================')
+                //    throw Threads.THROW_STOP_THIS_SCRIPTS;
+                //}
                 // @ts-ignore : ...arguments は任意のメソッドに対応させるため。 
                 return Reflect.get(...arguments);
             },

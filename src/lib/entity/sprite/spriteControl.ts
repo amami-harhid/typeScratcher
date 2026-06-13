@@ -16,6 +16,7 @@ import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteControl } from '../../../type/entity/sprite/ISpriteControl';
 import type { ISound } from '../../../type/sound';
+import { EntityImage } from '../entity/entityImage';
 
 const CLONE_MAX_SIZE = 300;
 
@@ -216,8 +217,10 @@ export class SpriteControl implements ISpriteControl {
             const _engine = engine as Engine;
             _engine.removeSprites(_clone);
             _clone.Sound.stopImmediately(); // <=== thread.next() のなかで止めると落ちる。
-            _clone.isAlive = false;
+            //(_clone.$image as EntityImage).destoryAllSkins();
             _clone.render.renderer.destroyDrawable(_clone.drawableID, StageLayering.SPRITE_LAYER);
+            _clone.isAlive = false;
+
             SpriteControl._cloneCount-=1;
             const _parent = _clone.parent;
             if(_parent) {

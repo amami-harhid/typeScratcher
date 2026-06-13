@@ -122,6 +122,7 @@ export class Sprite extends Entity implements ISprite {
         this._parent = parent;
     }
     async init() {
+        const me = this;
         return new Promise<void>((resolve)=>{
             const loadArr: Promise<void>[] = [];
             for(const img of this._image.images){
@@ -132,7 +133,10 @@ export class Sprite extends Entity implements ISprite {
                 const _sound = sound as Sound;
                 loadArr.push(_sound.load());
             }
-            Promise.all(loadArr).then(async ()=>{                
+            if( me.isClone ){
+                return;
+            }
+            Promise.all(loadArr).then(async ()=>{ 
                 // イメージごとに Skinを作る
                 for(const img of this._image.images){
                     const svgText = (img as Image).image;

@@ -133,7 +133,12 @@ export class ThreadManager {
         this._running = true;
     }
     async interval(me: ThreadManager):Promise<void> {
-        const threadArr = ThreadBank.threadArr.filter(thread=> thread.status != ThreadStatus.COMPLETED );
+        const threadArr = ThreadBank.threadArr.filter(thread=> ((thread.entity as Entity).isAlive === true) );
+        for(const thread of ThreadBank.threadArr){
+            if((thread.entity as Entity).isAlive === false){
+                thread.clear();
+            }
+        }
         // TODO 処理中に追加されたスレッドが消えてしまう。
         ThreadBank.threadArr = [...threadArr];
         me._interval(me, threadArr);
@@ -147,6 +152,10 @@ export class ThreadManager {
                 _running_count+=1;
             }
             if(thread.status == ThreadStatus.YIELD) {
+                if(thread.isDeadEntity === true){
+                    thread.status = ThreadStatus.COMPLETED;
+                    continue;
+                }
                 // 実行待ちのときは スレッドを実行する
                 thread.next(); // 並列動作させる（意図的に await をつけていない）
             }
@@ -239,8 +248,8 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
     private _originalF!: CallableFunction;
     public done: boolean = false; 
     public status: ThreadStatusType = ThreadStatus.INITIALIZING;
-    private _entity: IEntity;
-    private _proxy: IEntityProxy;
+    private _entity: IEntity | null;
+    private _proxy: IEntityProxy | null;
     public threadId: string;
     public entityId: string;;
     // public childObj: ThreadObj|null = null; 
@@ -258,12 +267,22 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
         this._proxy = this.genProxy();
         this._args = [];
     }
+    clear() {
+        this._entity = null;
+
+    }
+    get isDeadEntity() : boolean {
+        return !(this.entity as Entity).isAlive;
+    }
     genProxy() : IEntityProxy {
-        const proxy = EntityProxyExt.getProxy(this._entity, _=>{
-            throw "NOT FOUND PROPERTY in TARGET";
-        });
-        proxy.threadId = this.threadId;
-        return proxy;
+        if(this._entity) {
+            const proxy = EntityProxyExt.getProxy(this._entity, _=>{
+                throw "NOT FOUND PROPERTY in TARGET";
+            });
+            proxy.threadId = this.threadId;
+            return proxy;
+        }
+        throw 'エンティティが空です';
     }
     reset( entity: IEntity, func:CallableFunction): void {
         this._entity = entity;
@@ -308,9 +327,11 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
 
     }
     get entity() : IEntity{
+        if(this._entity == null) throw 'エンティティが空です'
         return this._entity;
     }
     get proxy() : IEntityProxy{
+        if(this._proxy == null) throw 'プロキシが空です'
         return this._proxy;
     }
     get originalF() {
@@ -338,6 +359,7 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
         me._isStarted = true; // 実行開始済
         me.status = ThreadStatus.RUNNING;
         this._generatorfunc.next().then((value: IteratorResult<any, void>)=>{
+            if(me._proxy == null) throw 'プロキシが空です'
             me.done = value.done || false;
             if(me.done === true){
                 me.status = ThreadStatus.COMPLETED;

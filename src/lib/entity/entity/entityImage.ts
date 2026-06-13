@@ -5,6 +5,7 @@ import type { IImage } from '../../../type/image';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityEffect } from '../../../type/entity/entity/IEntityEffect';
 import type { IEntityImage } from '../../../type/entity/entity/IEntityImage';
+import { Entity } from '.';
 
 /** メッセージ送受信 */
 export class EntityImage implements IEntityImage{
@@ -27,7 +28,7 @@ export class EntityImage implements IEntityImage{
 
     add( images: IImage[]): void {
         for(const img of images) {
-            ImageBank.add(img);
+            //ImageBank.add(img);
             this._images.push(img);
         }
     }
@@ -48,5 +49,16 @@ export class EntityImage implements IEntityImage{
             }
         }
         return true;
+    }
+
+    destoryAllSkins() : void {
+        const _entity = this.entity as Entity;
+        for( const _img of this._images){
+            const _skinId = (_img as Image).skinId;
+            const _skin = _entity.render.renderer._allSkins[_skinId];
+            if(_skin) {
+                _entity.render.renderer.destroySkin(_skinId);
+            }
+        }
     }
 }
