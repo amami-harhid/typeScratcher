@@ -116,7 +116,7 @@ export class EntityBroadCast implements IEntityBroadCast {
         for(const elementFunc of element.funcArr){
             const threadObj = elementFunc.thread;
             // ジェネレーター再設定( 引数付き )
-            threadObj.setFunc<any>(elementFunc.func, ...args);
+            threadObj.setFunc(elementFunc.func, ...args);
             // 待機中にする
             threadObj.status = ThreadStatus.YIELD;
         }

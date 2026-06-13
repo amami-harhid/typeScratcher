@@ -2,7 +2,7 @@ import { EventFunctionSetter } from "./IEntityEvent";
 import type { IThreadObj } from "../../engine/thread/threads";
 /** メッセージ受信処理 */
 export type TBroadcastElementFunc = {
-    thread: IThreadObj,
+    thread: IThreadObj<any>,
     func: CallableFunction,
 }
 /** メッセージ受信エレメント  */
