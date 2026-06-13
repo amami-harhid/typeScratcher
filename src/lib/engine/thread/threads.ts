@@ -347,11 +347,12 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
             }
 
         }).catch(e=>{
-            me._proxy?.setStopThisScriptSwitch(false);// 一度強制スローしたので元に戻す
             me._proxy?.Sound.stopImmediately();
             me.status = ThreadStatus.COMPLETED;
             if( e==Threads.THROW_STOP_THIS_SCRIPTS){
+                me._proxy?.setStopThisScriptSwitch(false);// 一度強制スローしたので元に戻す
                 // throwせず
+                console.log(e);
             }else if( e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS){
                 // throwせず
 

@@ -25,7 +25,8 @@ declare type KEYPRESS_EVENT_ELEMENT = {key: string, threadArr: ThreadObj<any>[]}
 export type BACKDROP_EVENT_ELEMENT = {backdropName: string, threadArr: ThreadObj<any>[]};
 /** イベント */
 export class EntityEvent implements IEntityEvent{
-    private static _flagPressEventFuncArray: ThreadObj<any>[] = [];
+    private _flagPressFuncArray: CallableFunction[] = [];
+    private _flagPressEventFuncArray: ThreadObj<any>[] = [];
     private static _keyPressEventFuncArray: KEYPRESS_EVENT_ELEMENT[] = [];
     private static _backdropEventFuncArray: BACKDROP_EVENT_ELEMENT[] = [];
     private static _clickEventFuncArray: CLICK_EVENT_FUNCTION[] = [];
@@ -70,22 +71,34 @@ export class EntityEvent implements IEntityEvent{
      */
     private _whenFlag(func: CallableFunction) : void {
 
+        this._flagPressFuncArray.push(func);
         const threadObj = new ThreadObj(this.entity, DoubleRunning.FALSE);
+        this._flagPressEventFuncArray.push(threadObj);
         threadManager.registThread(threadObj);
+        /* 
         // 緑の旗がおされたときに「YIELD」にする、スレッドが実行されはじめる
         (engine as Engine).runtime.scratchEvent.on(ScratchEvent.GREEN_FLAG_CLICKED, ()=>{
-            threadObj.setFunc(func); // 旗クリックされたときに作り直す
             threadObj.isStarted = false;
             threadObj.status = ThreadStatus.YIELD;
         })
+        */
     }
     async flagPresserKick(): Promise<void> {
+        for(const funcIdx in this._flagPressFuncArray) {
+
+            const func = this._flagPressFuncArray[funcIdx];
+            const threadObj = this._flagPressEventFuncArray[funcIdx];
+            threadObj.setFunc(func);
+            threadObj.status = ThreadStatus.YIELD;
+        }
+        /*
         for(const threadObj of EntityEvent._flagPressEventFuncArray) {
             const func = threadObj.originalF;
             threadObj.setFunc(func);
             // 待機中にする
             threadObj.status = ThreadStatus.YIELD;
         }
+         */
     }
     /**
      * キー押下イベントのセッターを返す

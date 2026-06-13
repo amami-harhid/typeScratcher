@@ -49,11 +49,4 @@ export default defineConfig({
     plugins: [
         topLevelAwait(),
     ],
-    resolve: {
-        alias: {
-        }
-    },
-    define: {
-        __s3_version__: version
-    }
 })
