@@ -40,9 +40,9 @@ export class Threads {
 export const thread = new Threads();
 
 class ThreadBank {
-    static threadMap: Map<string, ThreadObj> = new Map<string, ThreadObj>();
-    static threadArr: ThreadObj[] = [];
-    static add(thread: ThreadObj) {
+    static threadMap: Map<string, ThreadObj<any>> = new Map<string, ThreadObj<any>>();
+    static threadArr: ThreadObj<any>[] = [];
+    static add(thread: ThreadObj<any>) {
         ThreadBank.threadArr.push(thread);
     }
     static removeByEntityId(entityId: string) {
@@ -68,7 +68,7 @@ export class ThreadManager {
         this._pauser = false;
         this._running = false;
     }
-    add(threadObj: ThreadObj) {
+    add(threadObj: ThreadObj<any>) {
         ThreadBank.add(threadObj);
     }
     removeByEntityId(entityId: string) {
@@ -117,6 +117,8 @@ export class ThreadManager {
                         (_sprite.Control as SpriteControl).removeAllClones();
                     }
                 }
+                SpriteControl.cloneCount=0;
+
             }
         }
         _scratchEvent.on(ScratchEvent.STOP_CLICKED, _stop);
@@ -131,12 +133,18 @@ export class ThreadManager {
         this._running = true;
     }
     async interval(me: ThreadManager):Promise<void> {
+        const threadArr = ThreadBank.threadArr.filter(thread=> thread.status != ThreadStatus.COMPLETED );
+        // TODO 処理中に追加されたスレッドが消えてしまう。
+        ThreadBank.threadArr = [...threadArr];
+        me._interval(me, threadArr);
+    }
+    async _interval(me: ThreadManager, threadArr: ThreadObj<any>[]):Promise<void> {
         ThreadManager._timer = Math.floor(performance.now());
         if(me._pauser === true) return; // PAUSE中はスレッドを実行しない
-        let _completed_count = 0;
-        for(const thread of ThreadBank.threadArr){
-            if(thread.status == ThreadStatus.COMPLETED){
-                _completed_count += 1;
+        let _running_count= 0;
+        for(const thread of threadArr){
+            if(thread.status == ThreadStatus.RUNNING) {
+                _running_count+=1;
             }
             if(thread.status == ThreadStatus.YIELD) {
                 // 実行待ちのときは スレッドを実行する
@@ -153,7 +161,7 @@ export class ThreadManager {
 
         (engine as Engine).render.renderer.draw();
 
-        if(ThreadBank.threadArr.length == _completed_count) {
+        if(_running_count == 0) {
             me.stopMarkToNotactive();
         }
 
@@ -221,12 +229,12 @@ export class ThreadManager {
             }
         }
     }
-    registThread( thread: ThreadObj ) : void{
+    registThread<T>( thread: ThreadObj<T> ) : void{
         ThreadBank.add(thread);
     }
 }
 export const threadManager = new ThreadManager();
-export class ThreadObj extends EventEmitter implements IThreadObj{
+export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
     private _generatorfunc!: AsyncGenerator<any, void, any>;
     private _originalF!: CallableFunction;
     public done: boolean = false; 
@@ -239,6 +247,7 @@ export class ThreadObj extends EventEmitter implements IThreadObj{
     // public parentObj: TThreadObj|null = null;
     private _doubleRunable: boolean = false;
     private _isStarted: boolean = false;
+    private _args: T[];
     constructor(entity:IEntity, doubleRunable=false) {
         super();
         this._entity = entity;
@@ -247,6 +256,7 @@ export class ThreadObj extends EventEmitter implements IThreadObj{
         this.entityId = (entity as Entity).id;
         this._doubleRunable = doubleRunable;
         this._proxy = this.genProxy();
+        this._args = [];
     }
     genProxy() : IEntityProxy {
         const proxy = EntityProxyExt.getProxy(this._entity, _=>{
@@ -255,7 +265,16 @@ export class ThreadObj extends EventEmitter implements IThreadObj{
         proxy.threadId = this.threadId;
         return proxy;
     }
-    setFunc<T> (func: CallableFunction, ...args:T[]) {
+    reset( entity: IEntity, func:CallableFunction): void {
+        this._entity = entity;
+        this.entityId = (this._entity as Entity).id;
+        this._setFunc(func, ...this._args);
+    }
+    setFunc (func: CallableFunction, ...args:T[]) {
+        this._args = args;
+        this._setFunc(func, ...args);
+    }
+    private _setFunc( func: CallableFunction, ...args:T[]) :void {
         const me = this;
         this._proxy = me.genProxy();
         me._isStarted = false;
@@ -286,6 +305,7 @@ export class ThreadObj extends EventEmitter implements IThreadObj{
             throw "Generator関数以外はエラーです";
 
         }
+
     }
     get entity() : IEntity{
         return this._entity;
@@ -321,15 +341,17 @@ export class ThreadObj extends EventEmitter implements IThreadObj{
             me.done = value.done || false;
             if(me.done === true){
                 me.status = ThreadStatus.COMPLETED;
+                me._proxy.setStopThisScriptSwitch(false); // 再実行時に落ちないようにする
             }else{
                 me.status = ThreadStatus.YIELD;
             }
+
         }).catch(e=>{
-            me.status = ThreadStatus.COMPLETED;
+            me._proxy?.setStopThisScriptSwitch(false);// 一度強制スローしたので元に戻す
             me._proxy?.Sound.stopImmediately();
+            me.status = ThreadStatus.COMPLETED;
             if( e==Threads.THROW_STOP_THIS_SCRIPTS){
                 // throwせず
-                me._proxy?.setStopThisScriptSwitch(false);// 一度強制スローしたので元に戻す
             }else if( e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS){
                 // throwせず
 

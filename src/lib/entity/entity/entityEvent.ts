@@ -21,11 +21,11 @@ export const DoubleRunning = {
  * クリックイベント定義
  */
 declare type CLICK_EVENT_FUNCTION = (_counter: number) => Promise<void>;
-declare type KEYPRESS_EVENT_ELEMENT = {key: string, threadArr: ThreadObj[]};
-export type BACKDROP_EVENT_ELEMENT = {backdropName: string, threadArr: ThreadObj[]};
+declare type KEYPRESS_EVENT_ELEMENT = {key: string, threadArr: ThreadObj<any>[]};
+export type BACKDROP_EVENT_ELEMENT = {backdropName: string, threadArr: ThreadObj<any>[]};
 /** イベント */
 export class EntityEvent implements IEntityEvent{
-    private static _flagPressEventFuncArray: ThreadObj[] = [];
+    private static _flagPressEventFuncArray: ThreadObj<any>[] = [];
     private static _keyPressEventFuncArray: KEYPRESS_EVENT_ELEMENT[] = [];
     private static _backdropEventFuncArray: BACKDROP_EVENT_ELEMENT[] = [];
     private static _clickEventFuncArray: CLICK_EVENT_FUNCTION[] = [];
@@ -254,5 +254,4 @@ export class EntityEvent implements IEntityEvent{
         EntityEvent._backdropEventFuncArray.push(element);
         return element;
     }
-
 }

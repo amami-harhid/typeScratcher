@@ -14,7 +14,7 @@ export const ThreadStatus = {
 
 export type ThreadStatusType = keyof typeof ThreadStatus;
 
-export interface IThreadObj {
+export interface IThreadObj<T> {
     /** 完了フラグ */
     readonly done: boolean;
     /** スレッドID */
@@ -26,7 +26,7 @@ export interface IThreadObj {
     /** プロキシ生成 */
     genProxy(): void;
     /** イベント関数を設定する */
-    setFunc<T> (func: CallableFunction, ...args:T[]):void;
+    setFunc (func: CallableFunction, ...args:T[]):void;
     /** エンティティ */
     readonly entity : IEntity;
     /** エンティティプロキシ */

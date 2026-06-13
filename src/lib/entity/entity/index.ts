@@ -16,8 +16,6 @@ import type { TMouse } from "../../../type/mouse";
 import { type StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
 import { EntityBroadCast } from "./entityBroadcast";
 
-const _engine = engine as Engine;
-
 export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
         return "sound_force_stop";
@@ -35,6 +33,7 @@ export class Entity extends EventEmitter implements IEntity{
     protected _isAlive: boolean;
     constructor() {
         super();
+        const _engine = engine as Engine;
         this._render = _engine.render;
         this.id = this._generateUUID();
         this._image = new EntityImage(this);

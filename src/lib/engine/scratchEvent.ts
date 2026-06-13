@@ -1,10 +1,12 @@
-import { EventEmitter } from "events";
-import { ScratchElement } from "../gui/scratchElement";
 import { Engine, engine } from ".";
-import { SpriteEvent } from "../entity/sprite/spriteEvent";
-import { StageEvent } from "../entity/stage/stageEvent";
 import { EntityBackdrop } from "../entity/entity/entityBackdrop";
 import { EntityBroadCast } from "../entity/entity/entityBroadcast";
+import { EventEmitter } from "events";
+import { ScratchElement } from "../gui/scratchElement";
+import { Sprite } from "../entity/sprite";
+import { SpriteEvent } from "../entity/sprite/spriteEvent";
+import { SpriteControl } from "../entity/sprite/spriteControl";
+import { StageEvent } from "../entity/stage/stageEvent";
 
 /**
  * Scratch Event
@@ -38,6 +40,7 @@ export class ScratchEvent extends EventEmitter {
     private _keyPressedPool: string[];
     private _messageReceiverIdsPool: string[];
     private _backdropChangerNamesPool: string[];
+    private _clonedNamesPool : string[];
     constructor() {
         super();
         this._running= false;
@@ -51,6 +54,7 @@ export class ScratchEvent extends EventEmitter {
         this._messageReceiverIdsPool = [];
         this._keyPressedPool = [];
         this._backdropChangerNamesPool = [];
+        this._clonedNamesPool = [];
     }
     public get running(): boolean {
         return this._running;
@@ -211,5 +215,36 @@ export class ScratchEvent extends EventEmitter {
                 (stage.Event as StageEvent).backdropEventKick(backdropName);
             }
         })
+    }
+    public clonedEventRegist(sprite: Sprite): void {
+        // 引数(sprite)は 親スプライトの前提
+        const messageId = this.getClonedEventMessageId(sprite);
+        if( this.isClonedEventExist(messageId) === false) {
+            // 登録されていないとき
+            this._clonedNamesPool.push(messageId);
+            // イベント登録
+            this._onClonedEventKick(sprite);
+        }
+    }
+    public isClonedEventExist(messageId: string) : boolean {
+        if(this._clonedNamesPool.includes(messageId)){
+            return true;
+        }
+        return false;
+    }
+    private _onClonedEventKick(sprite: Sprite) : void {
+        // sprite は親スプライトの前提
+        if(sprite.isClone === true) {
+            // クローンからの呼び出しのときは何もしない
+            return;
+        }
+        const messageId = this.getClonedEventMessageId(sprite);
+        this.on(messageId, (clone: Sprite)=>{
+            (clone.Control as SpriteControl).clonedEventKick(messageId, clone);
+        });
+    }
+    public getClonedEventMessageId(sprite: Sprite) : string {
+        // 引数(sprite)は 親スプライトの前提
+        return `Cloned_${sprite.name}_${sprite.id}`;
     }
 }

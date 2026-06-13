@@ -1,23 +1,37 @@
 import { engine, Engine } from '../../engine';
+import { DoubleRunning } from '../entity/entityEvent';
 import { EntityEffect } from '../entity/entityEffect';
 import { EntitySound } from '../entity/entitySound';
 import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '.';
 import { Sound } from '../../sounds';
 import { StageLayering } from '../../engine/stageLayering';
-import { threadManager } from '../../engine/thread/threads';
+import { threadManager, ThreadObj } from '../../engine/thread/threads';
+import { ThreadStatus } from '../../../type/engine/thread/threads';
 import { Timer } from '../../utils/timer';
 import * as Until from '../../utils/wait';
+import type { EventFunctionSetter } from '../../../type/entity/entity/IEntityEvent';
 import type { TEntityEffects } from '../../../type/entity/entity/TEntityOptions';
+import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteControl } from '../../../type/entity/sprite/ISpriteControl';
-import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
-import type { ISound } from 'src/type/sound';
+import type { ISound } from '../../../type/sound';
+
+const CLONE_MAX_SIZE = 300;
+
 
 /**
  * Sprite Control(制御)
  */
 export class SpriteControl implements ISpriteControl {
+    //private static _clonedEventElements : CLONED_EVENT_ELEMENT[] = [];
+    private static _clonedFuncElements : CallableFunction[] = [];
+    private static _clonedEventElementKeys : string[] = [];
+    private static _cloneCount: number = 0;
+    
+    public static set cloneCount(_count: number) {
+        SpriteControl._cloneCount = _count;
+    }
     protected entity: ISprite;
     /**
      * @internal
@@ -30,14 +44,14 @@ export class SpriteControl implements ISpriteControl {
      * 指定秒数分、待つ。
      * @param sec 
      */
-    async wait(sec: number): Promise<void>{
+    public async wait(sec: number): Promise<void>{
         await Timer.wait(sec);
     }
     /**
      * 条件が成立する迄、待つ。
      * @param condition {Until.ConditionFunction} - 条件結果を返す関数
      */
-    async waitUntil(condition: Until.ConditionFunction): Promise<void> {
+    public async waitUntil(condition: Until.ConditionFunction): Promise<void> {
         await Until.untilCondition(condition);
     }
     /**
@@ -45,13 +59,21 @@ export class SpriteControl implements ISpriteControl {
      * 
      * @param condition {Until.ConditionFunction} - 条件結果を返す関数
      */
-    async waitWhile(condition: Until.ConditionFunction): Promise<void> {
+    public async waitWhile(condition: Until.ConditionFunction): Promise<void> {
         await Until.whileCondition(condition);
     }
     /**
      * クローンを作る
      */
-    clone(): void {
+    public clone(): void {
+        SpriteControl._cloneCount+=1;
+        this._clone();
+    }
+    private async _clone():Promise<void> {
+        if(SpriteControl._cloneCount > CLONE_MAX_SIZE) {
+            return;
+        }
+        return new Promise<void>(resolve=>{
         const _sprite = this.entity as Sprite;
         const clonesCount = _sprite.clones.length;
         const name = `${_sprite.name}_${clonesCount+1}`;
@@ -64,10 +86,22 @@ export class SpriteControl implements ISpriteControl {
         // 各種コピー
         (clone.Control as SpriteControl)._propertiesCopyFrom(_sprite);
 
+        // イベント登録
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
+        const messageId = scratchEvent.getClonedEventMessageId(_sprite);
+        if(SpriteControl._clonedEventElementKeys.includes(messageId)) {
+            // メッセージIDの登録があるとき
+            scratchEvent.emit(messageId, clone);
+        }else{
+            // 何もしない
+        }
+
         // 初期化
         clone.init();
+            resolve();
+        });
     }
-    _propertiesCopyFrom( target: Sprite ) {
+    private _propertiesCopyFrom( target: Sprite ) {
         const _sprite = this.entity as Sprite;
         if(_sprite.isClone === true) {
             // Imageコピー
@@ -78,7 +112,6 @@ export class SpriteControl implements ISpriteControl {
             const _soundKeys = (target.Sound as EntitySound).soundKeys;
             const _arr: ISound[] = [];
             for( const key of _soundKeys) {
-                console.log(key)
                 const _sound = _soundMap[key];  
                 _arr.push( (_sound as Sound).deepCopy() as ISound );
             }
@@ -108,26 +141,84 @@ export class SpriteControl implements ISpriteControl {
      * クローンされたときの動作を定義する
      * @param func {CallableFunction} 動作を記述する関数
      */
-    whenCloned(func: CallableFunction): void {
-        
+    public cloned() : EventFunctionSetter {
+        const me = this;
+        return class {
+            static set func(func: CallableFunction) {
+                me._whenCloned(func);
+            }
+        };
     }
+    /**
+     * 動作をスレッドとして登録する
+     * 親スプライトとして動作する。
+     */
+    private _whenCloned(func: CallableFunction): void {
+        const _parentSprite = this.entity as Sprite; // <== 本体スプライトである
+        if(_parentSprite.isClone === true){
+            // 何もしない
+            return;
+        }
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
+        const messageId = scratchEvent.getClonedEventMessageId(_parentSprite);
+        SpriteControl._clonedFuncElements.push(func);
+
+        const threadObj = new ThreadObj(this.entity, DoubleRunning.TRUE); // 多重起動許す
+        threadObj.setFunc(func);
+        threadManager.registThread(threadObj);
+
+        if(SpriteControl._clonedEventElementKeys.includes(messageId)) {
+            // 何もしない
+        }else{
+            // キーを保存
+            SpriteControl._clonedEventElementKeys.push(messageId);
+            // イベントを登録
+            scratchEvent.clonedEventRegist(_parentSprite);              
+        }
+    }
+
+    /**
+     * クローンのイベントを開始する
+     * @param messageId 
+     * @param clone 
+     */
+    public clonedEventKick(messageId: string, clone: ISprite): void {
+
+        // このメソッドは ScratchEventから呼ばれる。
+        // クローンのメソッドである( this == clone )
+
+        if( (this.entity as Sprite).isClone === false ){
+            // クローンでない場合は何もしない
+            return;
+        }
+        // スレッドを作成する
+        for(const func of SpriteControl._clonedFuncElements) {
+            const threadObj = new ThreadObj(this.entity, DoubleRunning.FALSE); // 多重起動許さない
+            threadObj.setFunc(func);
+            threadManager.registThread(threadObj);
+            threadObj.status = ThreadStatus.YIELD;
+        }
+    }
+
     /**
      * 全てのスプライトの動作を停止する
      */
-    stopAll() : void {
+    public stopAll() : void {
         (engine as Engine).runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
     }
     /**
      * クローンを抹消する
      */
-    removeClone() : void {
+    public removeClone() : void {
         const _sprite = this.entity as Sprite;
         if(_sprite.isClone === true){
             const _clone = _sprite;
             const _engine = engine as Engine;
             _engine.removeSprites(_clone);
-            _clone.render.renderer.destroyDrawable(_clone.drawableID, StageLayering.SPRITE_LAYER);
+            _clone.Sound.stopImmediately(); // <=== thread.next() のなかで止めると落ちる。
             _clone.isAlive = false;
+            _clone.render.renderer.destroyDrawable(_clone.drawableID, StageLayering.SPRITE_LAYER);
+            SpriteControl._cloneCount-=1;
             const _parent = _clone.parent;
             if(_parent) {
                 const _parentSprite = (_parent as Sprite);
@@ -140,7 +231,7 @@ export class SpriteControl implements ISpriteControl {
     /**
      * クローンを全て削除する
      */
-    removeAllClones() : void {
+    public removeAllClones() : void {
         const _sprite = this.entity as Sprite;
         const _clones = [..._sprite.clones];
         for(const _clone of _clones) {
@@ -150,13 +241,13 @@ export class SpriteControl implements ISpriteControl {
     /**
      * このスクリプトを停止する
      */
-    stopThisScript(proxy:IEntityProxy) : void {
+    public stopThisScript(proxy:IEntityProxy) : void {
         proxy.setStopThisScriptSwitch(true);
     }
     /**
      * このスプライトの他のスクリプトを停止する
      */
-    stopOtherScripts(proxy:IEntityProxy) : void {
+    public stopOtherScripts(proxy:IEntityProxy) : void {
         threadManager.stopOtherScripts(proxy);
     }
 
