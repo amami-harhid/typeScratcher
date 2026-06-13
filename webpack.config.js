@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-//const path = require('path');
 import path from 'path';
 import url from 'url';
 const dirname = path.dirname;
@@ -8,13 +5,8 @@ const fileURLToPath = url.fileURLToPath;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-//const webpack = require('webpack');
 import webpack from 'webpack';
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
-//const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 import pkg from './package.json' with { type: 'json' };
 const version = JSON.stringify(pkg.version);
 const config = {
@@ -25,7 +17,7 @@ const config = {
     },
     target: "web",
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, '/.build'),
         filename: 'index.js', //まとめた結果出力されるファイル名
         library:{
             type: "module",

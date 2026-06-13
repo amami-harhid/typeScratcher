@@ -80,7 +80,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist <-- 意図的に解除する( Webpackのビルド先にした )
+dist <-- 意図的に解除する( tscのビルド先にした )
 .output
 
 # Gatsby files
@@ -143,5 +143,6 @@ vite.config.ts.timestamp-*
 .vite/
 
 
-# Viteのテスト用の一時的ビルド先
-build
+# Tsc/Viteビルド先
+.build
+.dist
