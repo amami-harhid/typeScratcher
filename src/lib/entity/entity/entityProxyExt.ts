@@ -87,13 +87,11 @@ export class EntityProxyExt {
                     ){
                         // 「このスクリプトを停止」スイッチオンのときは
                         // 例外を発生させる。
-                        console.log('=[entityProxyExt #01]===================')
                         throw Threads.THROW_STOP_THIS_SCRIPTS;
                     }
                 }
                 if(name == Threads.THROW_FORCE_STOP_THIS_SCRIPTS) {
                     return function() {
-                        console.log('=[entityProxyExt #02]===================')
                         throw Threads.THROW_FORCE_STOP_THIS_SCRIPTS;
                     }
                 }

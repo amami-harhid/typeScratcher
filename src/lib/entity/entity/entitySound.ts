@@ -154,7 +154,6 @@ export class EntitySound {
         if(this.soundKeys.includes(sound.name)) {
             const effect = this.effectMap[sound.name]
             effect.pitch = pitch;
-            console.log('[2]',sound.name, pitch)
             sound.setPitch(pitch);
         }else{
             return;
