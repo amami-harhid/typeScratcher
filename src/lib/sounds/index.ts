@@ -7,6 +7,7 @@ import { SoundPlayer } from "./soundPlayer";
 import { Utils } from "../utils/utils";
 import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
 import type { ISound } from "../../type/sound";
+import { ImageBank } from "../image/imageBank";
 type SoundArgStringObject = { [key:string]: string | Uint8Array<ArrayBuffer>};
 
 /**
@@ -22,7 +23,7 @@ export class Sound extends EventEmitter implements ISound {
     private _loadCompleted: boolean = false;
     private _soundPlayer!: ISoundPlayer;
     private _volume: number = 100;
-    private _pitch: number = 1.0;
+    private _pitch: number = 0;
     constructor(sound: SoundArgStringObject, reuse:boolean = false) {
         super();
         const info = Utils.varNameValues(sound);
@@ -47,7 +48,7 @@ export class Sound extends EventEmitter implements ISound {
             if(this._soundPlayer == undefined ){
                 // ここに来るときは、SoundRemaker.remake(sound)で 流用したとき
                 // AudioEngineの準備完了した時点で、各音のSoundPlayerを作る。
-                this.createSoundPlayer();
+                await this.createSoundPlayer();
             }
             return;            
         }
@@ -90,18 +91,36 @@ export class Sound extends EventEmitter implements ISound {
 
     play() : void {
         if(this._soundPlayer == undefined) {
-            this.createSoundPlayer();
+            this.createSoundPlayer().then(()=>{
+                this._play();
+            });
+        }else{
+            this._play();
         }
+    }
+    private _play() :void {
+        this._soundPlayer.volume = this._volume;
+        const autdioPitch = this._pitchScratchToAudio(this._pitch);
+        this._soundPlayer.pitch = autdioPitch/100;
         this._soundPlayer.play();
     }
     async playUntilDone(): Promise<void> {
-        await this.startSoundUntilDone();
+        if(this._soundPlayer == undefined) {
+            this.createSoundPlayer().then(async()=>{
+                await this._startSoundUntilDone();
+            });
+        }else{
+            await this._startSoundUntilDone();
+        }
     }
-    startSoundUntilDone(): Promise<void> {
+    private _startSoundUntilDone(): Promise<void> {
         if(this._soundPlayer == undefined) {
             this.createSoundPlayer();
         }
         const me = this;
+        me._soundPlayer.volume = me._volume;
+        const autdioPitch = this._pitchScratchToAudio(this._pitch);
+        me._soundPlayer.pitch = autdioPitch/100;
         return new Promise<void>(async resolve=>{
             if(me._soundPlayer == undefined) {
                 resolve();
@@ -158,21 +177,19 @@ export class Sound extends EventEmitter implements ISound {
         const _pitch = this._pitch + pitch;
         const autdioPitch = this._pitchScratchToAudio(_pitch);
         if( 12.5 <= autdioPitch && autdioPitch <= 800 ){
-            this._pitch += pitch;
-            const pitchScratch = this._pitchAudioToScratch(autdioPitch);
+            this._pitch = _pitch;
             if ( this._soundPlayer == null) return;
-            this._soundPlayer.pitch = pitchScratch;
+            this._soundPlayer.pitch = autdioPitch/100;
         }else{
             // 何もしない
         }
     }
     setPitch(pitch:number): void {
+        const autdioPitch = this._pitchScratchToAudio(pitch);
         this._pitch = pitch;
-        const autdioPitch = this._pitchScratchToAudio(this._pitch);
         if( 12.5 <= autdioPitch && autdioPitch <= 800 ){
-            const pitchScratch = this._pitchAudioToScratch(autdioPitch);
             if ( this._soundPlayer == null) return;
-            this._soundPlayer.pitch = pitchScratch;
+            this._soundPlayer.pitch = autdioPitch/100;
         }else{
             // 何もしない
         }
@@ -183,14 +200,14 @@ export class Sound extends EventEmitter implements ISound {
     }
 
     deepCopy() : ISound {
-        const _sound: ISound = structuredClone(this);
-        return _sound;
+        const sound = SoundRemaker.remake(this);
+        return sound;
     }
 
     private _pitchScratchToAudio(pitch: number) {
         if(-360 <= pitch && pitch <= 360) {
             const audioPitch = 100 * (2**(pitch/120));
-            return audioPitch / 100.0;
+            return audioPitch;
         }
         return 0;
     }

@@ -3,8 +3,8 @@ import { DoubleRunning } from '../entity/entityEvent';
 import { EntityEffect } from '../entity/entityEffect';
 import { EntitySound } from '../entity/entitySound';
 import { ScratchEvent } from '../../engine/scratchEvent';
-import { SoundRemaker } from '../../sounds/soundRemaker';
 import { Sprite } from '.';
+import { Sound } from '../../sounds';
 import { StageLayering } from '../../engine/stageLayering';
 import { threadManager, ThreadObj } from '../../engine/thread/threads';
 import { ThreadStatus } from '../../../type/engine/thread/threads';
@@ -114,7 +114,7 @@ export class SpriteControl implements ISpriteControl {
             for( const key of _soundKeys) {
                 const _sound = _soundMap[key];  
                 // 名前とデータを流用した新規インスタンス
-                const _reuseSound = SoundRemaker.remake( _sound ); 
+                const _reuseSound = (_sound as Sound).deepCopy(); 
                 _arr.push( _reuseSound );
             }
             if( _arr.length > 0){

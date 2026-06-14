@@ -34,9 +34,10 @@ apple.Motion.direction.degree = 45;
 apple.Motion.rotation.style = TS.Rotation.LEFT_RIGHT;
 apple.Motion.position.xy = [0,0];
 
-apple.Sound.setVolume(chillSound, 100);
-apple.Sound.setPitch(chillSound, 1.0);
-apple.Sound.setVolume(catSound, 10);
+stage.Sound.setVolume(chillSound, 50);
+stage.Sound.setPitch(chillSound, -120);
+apple.Sound.setVolume(catSound, 0.1);
+apple.Sound.setVolume(chillSound, 150);
 
 
 apple.Event.flagPresser().func = async function*(this: Sprite){
@@ -54,9 +55,17 @@ apple.Event.flagPresser().func = async function*(this: Sprite){
         yield;
     }
 }
-stage.Event.flagPresser().func = async function*(this: Stage){
+apple.Event.flagPresser().func = async function*(this: Sprite){
     for(;;){
-        await this.Sound.play(chillSound);
+        await this.Sound.playUntilDone(chillSound);
+        //await this.Control.wait(0.5);
+        yield;
+    }
+}
+stage.Event.flagPresser().func = async function*(this: Stage){
+    //this.Sound.setPitch(chillSound, 0);
+    for(;;){
+        await this.Sound.playUntilDone(chillSound);
         yield;
     }
 }
@@ -67,10 +76,11 @@ stage.Event.flagPresser().func = async function*(this: Stage){
         yield;
     }
 }
-apple.Event.keyPresser("a").func = async function*(this: Sprite){
+stage.Event.keyPresser("a").func = async function*(this: Stage){
+    console.log('stage key a ')
     for(;;){
-        this.Sound.addVolume(chillSound, 1);
-        this.Sound.addPitch(chillSound, 0.05);
+        //this.Sound.addVolume(chillSound, 1);
+        this.Sound.addPitch(chillSound, 10);
         await this.Control.wait(1);
         yield;
     }
