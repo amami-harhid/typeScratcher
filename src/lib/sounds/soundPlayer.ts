@@ -33,6 +33,11 @@ export class SoundPlayer implements ISoundPlayer{
             this._effects = {};
         }
     }
+    /**
+     *   --> 0.5
+     * 0 --> 1.0
+     * 50 --> 1.5
+     */
     set pitch( pitch ) {
         this._pitch = pitch;
         this._soundPlayer.setPlaybackRate(pitch);

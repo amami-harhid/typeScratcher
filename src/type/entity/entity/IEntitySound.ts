@@ -11,7 +11,7 @@ export interface IEntitySound {
      * 音を鳴らす
      * @param soundName {string} - 音の名前
      */
-    play(sound: ISound): Promise<void>;
+    play(sound: ISound): void;
     /**
      * 終わるまで音を鳴らす
      * @param soundName {string} - 音の名前

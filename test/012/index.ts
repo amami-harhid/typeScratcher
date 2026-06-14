@@ -6,15 +6,21 @@ import { Typescratcher as TS } from '../../index';
 import type { Sprite, Stage } from '../../index';
 
 import CatSvg from '../assets/cat.svg';
+import AmonPng from '../assets/Amon.png';
 import BlueskySvg from '../assets/Blue Sky.svg';
 import BasketBallPng from '../assets/Basketball 2.png';
+import CatWav from '../assets/Cat.wav';
 
 const BlueskyImage = new TS.Image({BlueskySvg});
 const BasketballImage = new TS.Image({BasketBallPng});
 const CatImage = new TS.Image({CatSvg});
+const AmonImage = new TS.Image({AmonPng});
+
+const CatSound = new TS.Sound({CatWav});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([CatImage]);
+cat.Costume.add([CatImage, AmonImage]);
+cat.Sound.add([CatSound]);
 
 const stage = new TS.Stage();
 stage.Backdrop.add([BlueskyImage, BasketballImage]);
@@ -22,16 +28,20 @@ stage.Backdrop.add([BlueskyImage, BasketballImage]);
 
 
 cat.Event.flagPresser().func=async function*(this:Sprite) {
+    this.Sound.setVolume(CatSound, 50);
+    this.Sound.setPitch(CatSound, 0);
     this.Motion.position.xy = [0,0];
     this.Motion.direction.degree = 90;
     for(;;){
         this.Motion.direction.degree += 5;
         this.Control.clone();
-        await this.Control.wait(0.01);
+        this.Sound.play(CatSound);
+        await this.Control.wait(0.1);
         this.Looks.effect.change(TS.ImageEffective.GHOST, 5);
         this.Looks.effect.change(TS.ImageEffective.COLOR, 5);
         if(this.Looks.effect.get().ghost == 100) {
             this.Looks.effect.set(TS.ImageEffective.GHOST, 0);
+            this.Sound.play(CatSound);
         }
         yield;
     }
@@ -39,18 +49,22 @@ cat.Event.flagPresser().func=async function*(this:Sprite) {
 
 cat.Event.cloned().func = async function*(this:Sprite) {
     //this.Motion.direction.degree += 20;
+    //this.Costume.name = AmonImage.name;
     this.Looks.size.scale = [10, 10];
     this.Looks.effect.change(TS.ImageEffective.COLOR, 25);
     for(;;) {
-        this.Motion.move.steps(10);
+        this.Motion.move.steps(15);
+        this.Costume.next();
         this.Looks.size.w += 2;
         this.Looks.size.h += 2;
 
         if(this.Sensing.edge.isTouching === true) {
             break;
         }
+        await this.Control.wait(0.05);
         yield;
     }
+    this.Looks.hide();
     this.Control.removeClone();
 }
 

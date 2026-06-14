@@ -39,13 +39,13 @@ export class EntitySound {
      * 音を鳴らす
      * @param sound {Sound} - 音
      */
-    async play(sound: ISound): Promise<void> {
+    play(sound: ISound): void {
         const _sound = sound as Sound;
         if(this.soundKeys.includes( _sound.name )) {
             const effect = this.effectMap[_sound.name];
             _sound.setVolume(effect.volume);
             _sound.setPitch(effect.pitch);
-            await _sound.play();
+            _sound.play();
         }
     }
     /**
@@ -58,7 +58,7 @@ export class EntitySound {
                 const effect = this.effectMap[sound.name];
                 sound.setVolume(effect.volume);
                 sound.setPitch(effect.pitch);
-                sound.startSoundUntilDone().then(()=>{
+                sound.playUntilDone().then(()=>{
                     resolve();
                 });
             }else{

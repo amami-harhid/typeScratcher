@@ -72,6 +72,7 @@ export class SpriteLooks extends EntityLooks implements ISpriteLooks{
      */
     show() : void {
         const sprite = this.entity as Sprite;
+        sprite.Properties.visible = true;
         sprite.render.renderer.updateDrawableVisible(sprite.drawableID, true);
     }
     /**
@@ -79,6 +80,7 @@ export class SpriteLooks extends EntityLooks implements ISpriteLooks{
      */
     hide() : void {
         const sprite = this.entity as Sprite;
+        sprite.Properties.visible = false;
         sprite.render.renderer.updateDrawableVisible(sprite.drawableID, false);
     }
 

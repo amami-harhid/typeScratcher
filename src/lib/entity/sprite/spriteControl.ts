@@ -3,8 +3,8 @@ import { DoubleRunning } from '../entity/entityEvent';
 import { EntityEffect } from '../entity/entityEffect';
 import { EntitySound } from '../entity/entitySound';
 import { ScratchEvent } from '../../engine/scratchEvent';
+import { SoundRemaker } from '../../sounds/soundRemaker';
 import { Sprite } from '.';
-import { Sound } from '../../sounds';
 import { StageLayering } from '../../engine/stageLayering';
 import { threadManager, ThreadObj } from '../../engine/thread/threads';
 import { ThreadStatus } from '../../../type/engine/thread/threads';
@@ -16,7 +16,6 @@ import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteControl } from '../../../type/entity/sprite/ISpriteControl';
 import type { ISound } from '../../../type/sound';
-import { EntityImage } from '../entity/entityImage';
 
 const CLONE_MAX_SIZE = 300;
 
@@ -114,7 +113,9 @@ export class SpriteControl implements ISpriteControl {
             const _arr: ISound[] = [];
             for( const key of _soundKeys) {
                 const _sound = _soundMap[key];  
-                _arr.push( (_sound as Sound).deepCopy() as ISound );
+                // 名前とデータを流用した新規インスタンス
+                const _reuseSound = SoundRemaker.remake( _sound ); 
+                _arr.push( _reuseSound );
             }
             if( _arr.length > 0){
                 _sprite.Sound.add( _arr );
