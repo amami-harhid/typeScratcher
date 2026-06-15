@@ -150,16 +150,9 @@ export class ThreadManager {
         ThreadManager._timer = Math.floor(performance.now());
         let _running_count= 0;
         for(const thread of threadArr){
-            if(me._pauser === true) {
-                (thread.entity as Entity).isThreadRunning = false;
-                continue; // PAUSE中はスレッドを実行しない
-            }else{
-                (thread.entity as Entity).isThreadRunning = true;                
-            }
             if(thread.status == ThreadStatus.RUNNING) {
                  _running_count+=1;
             }else if(thread.status == ThreadStatus.YIELD) {
-                (thread.entity as Entity).isThreadRunning = true;
                 if(thread.isDeadEntity === true){
                     thread.status = ThreadStatus.COMPLETED;
                     continue;
@@ -170,17 +163,22 @@ export class ThreadManager {
             }
         }
         if(_running_count == 0) {
+            // 実行中スレッドがゼロ個の場合は停止ボタンを非活性
             me.stopMarkToNotactive();
         }
-        if(me._pauser === true) return;
-        for(const sprite of (engine as Engine).getSprites()){
-            sprite.update();
+        if(me._pauser === true) {
+            // 停止中は描画をしない
+            return;
+        }else{
+            for(const sprite of (engine as Engine).getSprites()){
+                sprite.update();
+            }
+            const stage = (engine as Engine).getStage();
+            if(stage){
+                stage.update();
+            }
+            (engine as Engine).render.renderer.draw();
         }
-        const stage = (engine as Engine).getStage();
-        if(stage){
-            stage.update();
-        }
-        (engine as Engine).render.renderer.draw();
 
 
     }
@@ -221,7 +219,7 @@ export class ThreadManager {
             if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.YIELD){
                 //thread.status = ThreadStatus.COMPLETED;
                 const entity = thread.entity as Entity;
-                entity.isThreadRunning = false;
+                //entity.isThreadRunning = false;
                 if(entity.isSprite) {
                     const sprite = entity as Sprite;
                     if(sprite.isClone) {

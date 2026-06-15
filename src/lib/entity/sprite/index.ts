@@ -156,11 +156,9 @@ export class Sprite extends Entity implements ISprite {
         })
     }
     update() {
-        if(this.isThreadRunning) {
-            this._penSprite.update();
-            (this._looks.bubble as SpriteBubble).update();
-            this._properties.update(); 
-        }
+        this._penSprite.update();
+        (this._looks.bubble as SpriteBubble).update();
+        this._properties.update(); 
     }
 
 }
