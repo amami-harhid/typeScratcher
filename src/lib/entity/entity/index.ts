@@ -1,6 +1,7 @@
 /**
  * Entity
  */
+import { EntityBroadCast } from "./entityBroadcast";
 import { EntityImage } from "./entityImage";
 import { EntitySound } from "./entitySound";
 import { EventEmitter } from "events";
@@ -12,9 +13,10 @@ import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityBroadCast } from "../../../type/entity/entity/IEntityBroadcast";
 import type { IEntityImage } from "../../../type/entity/entity/IEntityImage";
 import type { IEntitySound } from "../../../type/entity/entity/IEntitySound";
+import type { IEntitySpeech } from "../../../type/entity/entity/IEntitySpeech";
 import type { TMouse } from "../../../type/mouse";
 import { type StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
-import { EntityBroadCast } from "./entityBroadcast";
+import { EntitySpeech } from "./entitySpeech";
 
 export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
@@ -24,11 +26,12 @@ export class Entity extends EventEmitter implements IEntity{
     private _images: Image[] = [];
     public id: string;
     public drawableID: number = -1;
-    protected _render: Render;
-    protected _image: IEntityImage;
-    protected _sound: IEntitySound;
     protected _broadcast : IEntityBroadCast;
+    protected _image: IEntityImage;
     protected _mouse: TMouse;
+    protected _render: Render;
+    protected _sound: IEntitySound;
+    protected _speech: IEntitySpeech;
     protected _isSprite: boolean;
     protected _isAlive: boolean;
     constructor() {
@@ -39,6 +42,7 @@ export class Entity extends EventEmitter implements IEntity{
         this._image = new EntityImage(this);
         this._sound = new EntitySound(this);
         this._broadcast = new EntityBroadCast(this);
+        this._speech = new EntitySpeech(this);
         this._mouse = _engine.mouse;
         this._isSprite = false;
         this._isAlive = true;
@@ -60,11 +64,14 @@ export class Entity extends EventEmitter implements IEntity{
     get $images() {
         return this._images;
     }
+    get Broadcast(): IEntityBroadCast {
+        return this._broadcast;
+    }
     get Sound():IEntitySound {
         return this._sound;
     }
-    get Broadcast(): IEntityBroadCast {
-        return this._broadcast;
+    get Speech(): IEntitySpeech {
+        return this._speech;
     }
     get mouse():TMouse {
         return this._mouse;

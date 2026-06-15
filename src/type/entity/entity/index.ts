@@ -1,18 +1,18 @@
-import { IEntityBroadCast } from "./IEntityBroadcast";
+import type { IEntityBroadCast } from "./IEntityBroadcast";
 import type { IEntitySound } from "./IEntitySound";
+import type { IEntitySpeech } from "./IEntitySpeech";
 export declare interface IEntity {
-
-    /**
-     * エンティティID
-     */
-    //readonly id: string;
-    /**
-     * サウンド
-     */
-    readonly Sound: IEntitySound;
 
     /**
      * メッセージ送受信
      */
     readonly Broadcast: IEntityBroadCast;
+    /**
+     * サウンド
+     */
+    readonly Sound: IEntitySound;
+    /**
+     * スピーチ
+     */
+    readonly Speech: IEntitySpeech;
 };

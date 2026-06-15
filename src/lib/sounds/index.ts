@@ -19,10 +19,10 @@ export class Sound extends EventEmitter implements ISound {
     public static get SOUND_FORCE_STOP() {
         return "SOUND_FORCE_STOP";
     }
-    private _name: string;
-    private _soundPath:string;
-    private _data!:Uint8Array<ArrayBuffer>;
-    private _ready_audio_engine: boolean;
+    protected _name: string;
+    protected _soundPath:string;
+    protected _data!:Uint8Array<ArrayBuffer>;
+    protected _ready_audio_engine: boolean;
     //private _loadCompleted: boolean = false;
     //private _soundPlayer!: ISoundPlayer;
     //private _volume: number = 100;
