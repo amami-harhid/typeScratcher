@@ -74,30 +74,30 @@ export class SpriteControl implements ISpriteControl {
             return;
         }
         return new Promise<void>(resolve=>{
-        const _sprite = this.entity as Sprite;
-        const clonesCount = _sprite.clones.length;
-        const name = `${_sprite.name}_${clonesCount+1}`;
-        // クローン作製
-        const clone = new Sprite(name);
-        clone.isClone = true;
-        _sprite.clones.push(clone);
-        clone.parent = this.entity;
-        clone.Looks.layer.goBackwardLayers(1);
-        // 各種コピー
-        (clone.Control as SpriteControl)._propertiesCopyFrom(_sprite);
+            const _sprite = this.entity as Sprite;
+            const clonesCount = _sprite.clones.length;
+            const name = `${_sprite.name}_${clonesCount+1}`;
+            // クローン作製
+            const clone = new Sprite(name);
+            clone.isClone = true;
+            _sprite.clones.push(clone);
+            clone.parent = this.entity;
+            clone.Looks.layer.goBackwardLayers(1);
+            // 各種コピー
+            (clone.Control as SpriteControl)._propertiesCopyFrom(_sprite);
 
-        // イベント登録
-        const scratchEvent = (engine as Engine).runtime.scratchEvent;
-        const messageId = scratchEvent.getClonedEventMessageId(_sprite);
-        if(SpriteControl._clonedEventElementKeys.includes(messageId)) {
-            // メッセージIDの登録があるとき
-            scratchEvent.emit(messageId, clone);
-        }else{
-            // 何もしない
-        }
+            // イベント登録
+            const scratchEvent = (engine as Engine).runtime.scratchEvent;
+            const messageId = scratchEvent.getClonedEventMessageId(_sprite);
+            if(SpriteControl._clonedEventElementKeys.includes(messageId)) {
+                // メッセージIDの登録があるとき
+                scratchEvent.emit(messageId, clone);
+            }else{
+                // 何もしない
+            }
 
-        // 初期化
-        clone.init();
+            // 初期化
+            clone.init();
             resolve();
         });
     }

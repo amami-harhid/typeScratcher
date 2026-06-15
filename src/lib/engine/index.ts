@@ -112,15 +112,22 @@ export class Engine implements IEngine {
     getStage() {
         return this._stage;
     }
+    /**
+     * 開始処理 
+     */
     async start(): Promise<void> {
         this._runtime.scratchEvent.stageFirstClick();
         for(const s of this._sprites){
             const _s = s as Sprite;
+            // ここでロード処理が走る
+            // （マウスクリックアクションでAudioPlayerを生成)
             await _s.init();
             _s.update();
         }
         const stage = this._stage as Stage;
         if(stage){
+            // ここでロード処理が走る
+            // （マウスクリックアクションでAudioPlayerを生成)
             await stage.init();
             stage.update();
         }

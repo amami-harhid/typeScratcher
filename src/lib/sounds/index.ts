@@ -1,13 +1,15 @@
 import { engine, Engine } from "../engine";
 import EventEmitter from "events";
+import { EntitySound } from "../entity/entity/entitySound";
 import { ScratchEvent } from '../engine/scratchEvent';
 import { SoundRemaker } from "./soundRemaker";
 import { SoundLoader } from "../loader/soundLoader";
 import { SoundPlayer } from "./soundPlayer";
 import { Utils } from "../utils/utils";
-import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
+import type { IEntity } from "../../type/entity/entity";
 import type { ISound } from "../../type/sound";
-import { ImageBank } from "../image/imageBank";
+import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
+import { Entity } from "../entity/entity";
 type SoundArgStringObject = { [key:string]: string | Uint8Array<ArrayBuffer>};
 
 /**
@@ -20,63 +22,74 @@ export class Sound extends EventEmitter implements ISound {
     private _name: string;
     private _soundPath:string;
     private _data!:Uint8Array<ArrayBuffer>;
-    private _loadCompleted: boolean = false;
-    private _soundPlayer!: ISoundPlayer;
-    private _volume: number = 100;
-    private _pitch: number = 0;
+    private _ready_audio_engine: boolean;
+    //private _loadCompleted: boolean = false;
+    //private _soundPlayer!: ISoundPlayer;
+    //private _volume: number = 100;
+    //private _pitch: number = 0;
     constructor(sound: SoundArgStringObject, reuse:boolean = false) {
         super();
         const info = Utils.varNameValues(sound);
         this._name = info[0];
         const data = info[1];
+        this._ready_audio_engine = false;
         if(reuse === true) {
+            this._ready_audio_engine = true;
             this._soundPath = '';
             this._data = data;
         }else{
             this._soundPath = data;
         }
     }
-
-    async load() {
-        if(this.loadCompleted === true) {
-            // ロードはスプライトの Image.addメソッド内で実行される。
-            // 複数のスプライトへ同一Imageインスタンスをaddしていることを
-            // 想定し、すでにロード済であれば再ロードはしないとする。
-            return;
-        }
-        if( this._data != undefined ) {
-            if(this._soundPlayer == undefined ){
-                // ここに来るときは、SoundRemaker.remake(sound)で 流用したとき
-                // AudioEngineの準備完了した時点で、各音のSoundPlayerを作る。
-                await this.createSoundPlayer();
-            }
-            return;            
-        }
-        const sound = await SoundLoader.loadSound(this._soundPath, this._name);
-        this._data = sound.data;
+    /**
+     * ロード処理が実行される都度、soundPlayerを生成する
+     * 同じSoundインスタンスを複数のスプライトで共有することを考慮し
+     * データロード完了している場合にはデータロードを抑止する。
+     * @param entity 
+     */
+    async load(entity: IEntity) {
         const me = this;
-        (engine as Engine).runtime.scratchEvent.once(ScratchEvent.READY_AUDIO_ENGINE, async()=>{
-            if(me._soundPlayer == undefined ){
-                // AudioEngineの準備完了した時点で、各音のSoundPlayerを作る。
-                await me.createSoundPlayer();
-            }
-        });
-        this._loadCompleted = true;
-    }
-    private async createSoundPlayer() {
-        if(this._soundPlayer) {
-            return;
+        const entitySound = entity.Sound as EntitySound;
+        if(this._data == undefined) {
+            const sound = await SoundLoader.loadSound(this._soundPath, this._name);
+            this._data = sound.data;
+        }else{
+            // データロード済
+
         }
-        const data = this._data;
+        if(this._ready_audio_engine === false) {
+            (engine as Engine).runtime.scratchEvent.once(ScratchEvent.READY_AUDIO_ENGINE, async()=>{
+                this._ready_audio_engine = true;
+                const _soundPlayer = entitySound.getSoundPlayer(this._name);
+                if(_soundPlayer == undefined ){
+                    // AudioEngineの準備完了した時点で、各音のSoundPlayerを作る。
+                    await me.makeSoundPlayer(entity);
+                }
+            });
+        }else{
+            // 【READY_AUDIO_ENGINE】イベント発生後に 生成されるサウンド用の処理
+            // 例：（クローン生成時に イメージを再生成するとき）
+            const _soundPlayer = entitySound.getSoundPlayer(this._name);
+            if(_soundPlayer == undefined ){
+                // AudioEngineの準備完了した時点で、各音のSoundPlayerを作る。
+                await me.makeSoundPlayer(entity);
+            }
+        }
+    }
+    /**
+     * SoundPlayerを生成して EntitySoundインスタンスへ格納する
+     * @param entity 
+     * @returns 
+     */
+    public async makeSoundPlayer(entity: IEntity) : Promise<ISoundPlayer>{
         const audioEngine = (engine as Engine).runtime.audioEngine;
-        const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data});
+        const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data: this.data});
         const _effects = audioEngine.createEffectChain();
         const options = {effects: _effects};
         const soundPlayer = new SoundPlayer(this.name, decodeSoundPlayer, options);
         soundPlayer.connect(); // effects は インスタンスを作るときに渡しているので引数省略
-        this._soundPlayer = soundPlayer;
-        this.setVolume(this._volume);
-        this.setPitch(this._pitch);
+        (entity.Sound as EntitySound).addPlayer(this.name, soundPlayer);
+        return soundPlayer as ISoundPlayer;
     }
     get name() {
         return this._name;
@@ -85,79 +98,46 @@ export class Sound extends EventEmitter implements ISound {
         return this._data;
     }
 
-    get loadCompleted() : boolean {
-        return this._loadCompleted;
-    }
+    //get loadCompleted() : boolean {
+    //    return this._loadCompleted;
+    //}
 
-    play() : void {
-        if(this._soundPlayer == undefined) {
-            this.createSoundPlayer().then(()=>{
-                this._play();
-            });
-        }else{
-            this._play();
-        }
+    play(soundPlayer: ISoundPlayer) : void {
+        soundPlayer.play();
     }
-    private _play() :void {
-        this._soundPlayer.volume = this._volume;
-        const autdioPitch = this._pitchScratchToAudio(this._pitch);
-        this._soundPlayer.pitch = autdioPitch/100;
-        this._soundPlayer.play();
-    }
-    async playUntilDone(): Promise<void> {
-        if(this._soundPlayer == undefined) {
-            this.createSoundPlayer().then(async()=>{
-                await this._startSoundUntilDone();
-            });
-        }else{
-            await this._startSoundUntilDone();
-        }
-    }
-    private _startSoundUntilDone(): Promise<void> {
-        if(this._soundPlayer == undefined) {
-            this.createSoundPlayer();
-        }
+    playUntilDone(soundPlayer: ISoundPlayer): Promise<void> {
         const me = this;
-        me._soundPlayer.volume = me._volume;
-        const autdioPitch = this._pitchScratchToAudio(this._pitch);
-        me._soundPlayer.pitch = autdioPitch/100;
         return new Promise<void>(async resolve=>{
-            if(me._soundPlayer == undefined) {
+            if(soundPlayer == undefined) {
                 resolve();
             }else{
                 // speechStopImmediately() からEmit
                 const _f = _=>{
-                    me.stopImmediately();
+                    me.stopImmediately(soundPlayer);
                     resolve();
                 }
                 const EMIT_ID = Sound.SOUND_FORCE_STOP;
                 me.once(EMIT_ID,_f);
-                await me._soundPlayer.startSoundUntilDone(); // 終わるまで待つ
+                await soundPlayer.startSoundUntilDone(); // 終わるまで待つ
                 me.removeListener(EMIT_ID, _f);
                 resolve();
             }
         });
     }
-    stop() {
-        if ( this._soundPlayer == null) return;
-        this._soundPlayer.stop();
+    stop(soundPlayer: ISoundPlayer) {
+        soundPlayer.stop();
     }
-    stopImmediately() {
-        if ( this._soundPlayer == null) return;
-        this._soundPlayer.stopImmediately();
+    stopImmediately(soundPlayer: ISoundPlayer) {
+        soundPlayer.stopImmediately();
     }
     forceStop() {
-        if ( this._soundPlayer == null) return;
         this.emit(Sound.SOUND_FORCE_STOP);
     }
-    get volume() {
-        if ( this._soundPlayer == null) return this._volume;
-        return this._soundPlayer.volume;
+    getVolume(soundPlayer: ISoundPlayer) {
+        return soundPlayer.volume;
     }
-    addVolume(volume: number) {
-        this._volume += volume;
-        if ( this._soundPlayer == null) return;
-        this._soundPlayer.volume += volume;
+    addVolume(soundPlayer: ISoundPlayer, volume: number) {
+        soundPlayer.volume += volume;
 
     }
     /**
@@ -165,38 +145,34 @@ export class Sound extends EventEmitter implements ISound {
      * @param volume 
      * @returns 
      */
-    setVolume(volume: number) {
-        this._volume = volume;
-        if ( this._soundPlayer == null) return;
-        this._soundPlayer.volume = volume;
+    setVolume(soundPlayer: ISoundPlayer, volume: number) {
+        soundPlayer.volume = volume;
     }
-    get pitch() {
-        return this._pitch;
+    getPitch(soundPlayer: ISoundPlayer) : number{
+        const _pitch = soundPlayer.pitch;
+        const _scratchPitch = this._pitchAudioToScratch(_pitch);
+        return _scratchPitch;
     }
-    addPitch(pitch:number): void {
-        const _pitch = this._pitch + pitch;
+    addPitch(soundPlayer: ISoundPlayer, pitch:number): void {        
+        const _pitch = this.getPitch(soundPlayer) + pitch;
         const autdioPitch = this._pitchScratchToAudio(_pitch);
         if( 12.5 <= autdioPitch && autdioPitch <= 800 ){
-            this._pitch = _pitch;
-            if ( this._soundPlayer == null) return;
-            this._soundPlayer.pitch = autdioPitch/100;
+            soundPlayer.pitch = autdioPitch/100;
         }else{
             // 何もしない
         }
     }
-    setPitch(pitch:number): void {
+    setPitch(soundPlayer: ISoundPlayer, pitch:number): void {
         const autdioPitch = this._pitchScratchToAudio(pitch);
-        this._pitch = pitch;
+        //this._pitch = pitch;
         if( 12.5 <= autdioPitch && autdioPitch <= 800 ){
-            if ( this._soundPlayer == null) return;
-            this._soundPlayer.pitch = autdioPitch/100;
+            soundPlayer.pitch = autdioPitch/100;
         }else{
             // 何もしない
         }
     }
-    get isPlaying():boolean {
-        if ( this._soundPlayer == null) return false;
-        return this._soundPlayer.soundPlayer.isPlaying;
+    isPlaying(soundPlayer: ISoundPlayer):boolean {
+        return soundPlayer.soundPlayer.isPlaying;
     }
 
     deepCopy() : ISound {

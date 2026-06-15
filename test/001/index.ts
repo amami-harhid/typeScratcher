@@ -34,10 +34,10 @@ apple.Motion.direction.degree = 45;
 apple.Motion.rotation.style = TS.Rotation.LEFT_RIGHT;
 apple.Motion.position.xy = [0,0];
 
-stage.Sound.setVolume(chillSound, 50);
-stage.Sound.setPitch(chillSound, -120);
-apple.Sound.setVolume(catSound, 0.1);
-apple.Sound.setVolume(chillSound, 150);
+stage.Sound.setVolume(chillSound, 5);
+stage.Sound.setPitch(chillSound, 120);
+apple.Sound.setVolume(chillSound, 100);
+apple.Sound.setPitch(chillSound, -20);
 
 
 apple.Event.flagPresser().func = async function*(this: Sprite){
@@ -66,6 +66,7 @@ stage.Event.flagPresser().func = async function*(this: Stage){
     //this.Sound.setPitch(chillSound, 0);
     for(;;){
         await this.Sound.playUntilDone(chillSound);
+        await this.Control.wait(0.5);
         yield;
     }
 }

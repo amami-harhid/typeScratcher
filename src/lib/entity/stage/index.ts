@@ -63,6 +63,7 @@ export class Stage extends Entity implements IStage{
         return this._sensing;
     }
     async init() {
+        const me = this;
         return new Promise<void>((resolve)=>{
             const loadArr: Promise<void>[] = [];
             for(const img of this._image.images){
@@ -71,7 +72,7 @@ export class Stage extends Entity implements IStage{
             for(const sndKey of (this._sound as EntitySound).soundKeys){
                 const sound = (this._sound as EntitySound).soundMap[sndKey];
                 const _sound = sound as Sound;
-                loadArr.push(_sound.load());
+                loadArr.push(_sound.load(me));
             }
             Promise.all(loadArr).then(async ()=>{
                 // イメージごとに Skinを作る

@@ -233,8 +233,10 @@ export class ThreadManager {
         const soundKeys = (entity.Sound as EntitySound).soundKeys;
         for(const key of soundKeys){
             const sound = sounds[key] as Sound;
-            if(sound.isPlaying === true){
-                sound.stopImmediately();
+            const soundPlayer = (entity.Sound as EntitySound).getSoundPlayer(sound.name);
+            if(soundPlayer == undefined) continue; // 何もしない
+            if(sound.isPlaying(soundPlayer) === true){
+                sound.stopImmediately(soundPlayer);
             }
         }
     }

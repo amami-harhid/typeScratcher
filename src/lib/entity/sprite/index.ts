@@ -131,7 +131,7 @@ export class Sprite extends Entity implements ISprite {
             for(const sndKey of (this._sound as EntitySound).soundKeys){
                 const sound = (this._sound as EntitySound).soundMap[sndKey];
                 const _sound = sound as Sound;
-                loadArr.push(_sound.load());
+                loadArr.push(_sound.load(me));
             }
             if( me.isClone ){
                 return;

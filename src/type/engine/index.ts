@@ -2,6 +2,8 @@
  * playground
  */
 export interface IEngine {
-    /** スタート */
+    /**
+     * 開始処理 
+     */
     start(): void;
 }
