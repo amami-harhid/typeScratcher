@@ -31,6 +31,7 @@ export class Entity extends EventEmitter implements IEntity{
     protected _mouse: TMouse;
     protected _isSprite: boolean;
     protected _isAlive: boolean;
+    protected _threadRunning: boolean; 
     constructor() {
         super();
         const _engine = engine as Engine;
@@ -42,6 +43,7 @@ export class Entity extends EventEmitter implements IEntity{
         this._mouse = _engine.mouse;
         this._isSprite = false;
         this._isAlive = true;
+        this._threadRunning = true;
     }
     createDrawable(layer: StageLayeringValue) {
         this.drawableID = this._render.createDrawable(layer);
@@ -77,6 +79,12 @@ export class Entity extends EventEmitter implements IEntity{
     }
     set isAlive(isAlive: boolean) {
         this._isAlive = isAlive;
+    }
+    get isThreadRunning() : boolean {
+        return this._threadRunning;
+    }
+    set isThreadRunning(running: boolean) {
+        this._threadRunning = running;
     }
     imageLoadCompleteAll() : boolean {
         for( const _img of this._images){

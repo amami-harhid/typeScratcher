@@ -98,7 +98,9 @@ export class Stage extends Entity implements IStage{
         })
     }
     update() {
-        this._properties.update(); 
+        if(this._threadRunning) {
+            this._properties.update(); 
+        }
     }
 
 }

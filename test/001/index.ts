@@ -126,10 +126,7 @@ apple.Event.keyPresser(TS.Keyboard.SPACE).func = async function*(this: Sprite){
 }
 
 apple.Event.clicker().func = async function*(this: Sprite) {
-    this.Sound.play(chillSound);
-};
-apple.Event.clicker().func = async function*(this: Sprite) {
-    //this.Sound.play(catSound);
+    this.Sound.play(catSound);
 };
 apple.Event.keyPresser('e').func = async function*(this: Sprite){
     console.log('KEY e')

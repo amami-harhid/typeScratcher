@@ -13,6 +13,7 @@ import { QuestionBoxElement } from "../../gui/questionBoxElement";
 import { ScratchElement } from "../../gui/scratchElement";
 import { ScratchEvent } from "../../engine/scratchEvent";
 import { Sound } from "../../sounds";
+import { Sprite } from "../../entity/sprite";
 import { SpriteControl } from "../../entity/sprite/spriteControl";
 import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
@@ -105,6 +106,7 @@ export class ThreadManager {
         }
         _scratchEvent.on(ScratchEvent.RESTART_CLICKED, _restart);
         const _stop = () => {
+            me._pauser = true;
             if(me._running === true) { // pause中でも実行してよいとする
                 // フキダシ、質問欄表示中のときは消す
                 QuestionBoxElement.removeAsk();
@@ -139,27 +141,38 @@ export class ThreadManager {
                 thread.clear();
             }
         }
-        // TODO 処理中に追加されたスレッドが消えてしまう。
+        // TODO 処理中に追加されたスレッド(例：クローンされたときのスレッド)が消えてしまうときは
+        // このあたりを見直すこと！
         ThreadBank.threadArr = [...threadArr];
         me._interval(me, threadArr);
     }
     async _interval(me: ThreadManager, threadArr: ThreadObj<any>[]):Promise<void> {
         ThreadManager._timer = Math.floor(performance.now());
-        if(me._pauser === true) return; // PAUSE中はスレッドを実行しない
         let _running_count= 0;
         for(const thread of threadArr){
-            if(thread.status == ThreadStatus.RUNNING) {
-                _running_count+=1;
+            if(me._pauser === true) {
+                (thread.entity as Entity).isThreadRunning = false;
+                continue; // PAUSE中はスレッドを実行しない
+            }else{
+                (thread.entity as Entity).isThreadRunning = true;                
             }
-            if(thread.status == ThreadStatus.YIELD) {
+            if(thread.status == ThreadStatus.RUNNING) {
+                 _running_count+=1;
+            }else if(thread.status == ThreadStatus.YIELD) {
+                (thread.entity as Entity).isThreadRunning = true;
                 if(thread.isDeadEntity === true){
                     thread.status = ThreadStatus.COMPLETED;
                     continue;
                 }
                 // 実行待ちのときは スレッドを実行する
                 thread.next(); // 並列動作させる（意図的に await をつけていない）
+                _running_count+=1;
             }
         }
+        if(_running_count == 0) {
+            me.stopMarkToNotactive();
+        }
+        if(me._pauser === true) return;
         for(const sprite of (engine as Engine).getSprites()){
             sprite.update();
         }
@@ -167,12 +180,8 @@ export class ThreadManager {
         if(stage){
             stage.update();
         }
-
         (engine as Engine).render.renderer.draw();
 
-        if(_running_count == 0) {
-            me.stopMarkToNotactive();
-        }
 
     }
     stopThisScript(proxy: IEntityProxy) :void {
@@ -210,6 +219,16 @@ export class ThreadManager {
     stopAllScripts() : void {
         for(const thread of ThreadBank.threadArr){
             if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.YIELD){
+                //thread.status = ThreadStatus.COMPLETED;
+                const entity = thread.entity as Entity;
+                entity.isThreadRunning = false;
+                if(entity.isSprite) {
+                    const sprite = entity as Sprite;
+                    if(sprite.isClone) {
+                        // クローンのとき
+                        (thread.entity as Entity).isAlive = false;
+                    }
+                }
                 // 実行中、実行待ちのスレッドは強制修正する。
                 const _proxy = thread.proxy;
                 if(_proxy){
@@ -270,7 +289,10 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
         this._args = [];
     }
     clear() {
-        this._entity = null;
+        // クローンのとき
+        if((this.entity as Entity).isSprite && (this.entity as Sprite).isClone) {
+            this._entity = null;
+        }
 
     }
     get isDeadEntity() : boolean {
@@ -379,6 +401,7 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
                 console.log(e);
             }else if( e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS){
                 // throwせず
+                console.log(e);
 
             }else{
                 const f= me._originalF;
