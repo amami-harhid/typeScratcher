@@ -6,9 +6,8 @@ import { TSoundPlayerOption } from "../sound/IAudioEngine";
 
 export const SPEECH_LOCAL = {
     ENGLISH: 'en',
-    JAPANESE: 'ja',
+    JAPANESE: 'ja-JP',
     JAPANESE_HIRA: 'ja-hira',
-    JJ: 'ja-JP'
 } as const;
 export type Type_speech_local = typeof SPEECH_LOCAL[keyof typeof SPEECH_LOCAL]
 

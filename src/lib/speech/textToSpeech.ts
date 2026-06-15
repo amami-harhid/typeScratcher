@@ -2,12 +2,12 @@
  * Tex to speech
  */
 import { Entity } from "../entity/entity";
-import { EntitySound } from "../entity/entity/entitySound";
 import { SoundLoader } from "../loader/soundLoader";
 import { SpeechSound } from "./speechSound";
 import { SPEECH_GENDER, SPEECH_LOCAL, type Type_properties, type Type_speech_gender, type Type_speech_local } from "../../type/speech/ITextToSpeech";
+import type { IEntity } from "../../type/entity/entity";
 import type { TSoundPlayerOption } from "../../type/sound/IAudioEngine";
-import type { ISound } from "../../type/sound";
+import { EntitySpeech } from "../entity/entity/entitySpeech";
 
 /**
  * the url of the synthesis server.
@@ -76,18 +76,7 @@ type Type_language_info = {
 type Type_Sound = {name:string, data: Uint8Array<ArrayBuffer>};
 
 export class Speech {
-
-    private _gender:  Type_speech_gender;
-    private _cache: Map<string, Type_Sound>;
-    private _local: Type_speech_local;
-    private _properties: Type_properties;
-    constructor() {
-        this._gender = SPEECH_GENDER.FEMALE;
-        this._cache = new Map<string,Type_Sound>();
-        this._local = SPEECH_LOCAL.JAPANESE;
-        this._properties = {};
-    }
-    get LANGUAGE_INFO () :Type_language_info {
+    static get LANGUAGE_INFO () :Type_language_info {
         return {
             [ENGLISH_ID]: {
                 name: 'English',
@@ -96,10 +85,22 @@ export class Speech {
             },
             [JAPANESE_ID]: {
                 name: 'Japanese',
-                locales: ['ja', 'ja-hira'],
+                locales: ['ja-JP'],
                 speechSynthLocale: 'ja-JP'
             },
         };
+    }
+    private _entity : IEntity;
+    private _gender:  Type_speech_gender;
+    private _cache: Map<string, Type_Sound>;
+    private _local: Type_speech_local;
+    private _properties: Type_properties;
+    constructor(entity: IEntity) {
+        this._entity = entity;
+        this._gender = SPEECH_GENDER.FEMALE;
+        this._cache = new Map<string,Type_Sound>();
+        this._local = SPEECH_LOCAL.JAPANESE;
+        this._properties = {};
     }
     /**
      * The default state, to be used when a target has no existing state.
@@ -136,27 +137,36 @@ export class Speech {
      * @param type 
      * @returns 
      */
-    public async speech(entity:Entity, words:string, type: string) {
+    public async speech(words:string, type: string) {
         const _prop = this._properties[type];
         if(_prop == undefined) return;
         // 128文字までしか許容しないとする
         const text = encodeURIComponent(words.substring(0, 128));
         let path = `${SERVER_HOST}/synth?locale=${_prop.locale}&gender=${_prop.gender}&text=${text}`;
         if(!this._cache.has(path)) {
-            const name = 'ScratchSpeech'+text; // <-- なんでもよいが、変数に使える文字であること
+            const name = 'ScratchSpeech'; // <-- なんでもよいが、変数に使える文字であること
             const _sound = await SoundLoader.loadSound(path, name);
-            await this._speechPlay(entity, name, _sound.data, _prop.properties);
+            await this._speechPlay(path, name, _sound.data, _prop.properties);
         }else{
             const _sound = this._cache.get(path);
             if(_sound){
-                await this._speechPlay(entity, _sound.name, _sound.data, _prop.properties);
+                await this._speechPlay(path, _sound.name, _sound.data, _prop.properties);
             }
         }
     }
 
-    private async _speechPlay(entity:Entity, name: string, data: Uint8Array<ArrayBuffer>, properties: TSoundPlayerOption) {
-        const sound = new SpeechSound();
-        const soundPlayer = await sound.setSound(name, data, properties);
-        await soundPlayer.startSoundUntilDone();
+    private async _speechPlay(path: string, name: string, data: Uint8Array<ArrayBuffer>, properties: TSoundPlayerOption) {
+        const entitySpeech = this._entity.Speech as EntitySpeech;
+        const soundPlayer = entitySpeech.getCache(path);
+        if(soundPlayer) {
+            await soundPlayer.startSoundUntilDone();
+
+        }else{
+            const sound = new SpeechSound();
+            const soundPlayer = await sound.setSound(name, data, properties);
+            entitySpeech.addCache(path, soundPlayer);
+            await soundPlayer.startSoundUntilDone();
+
+        }
     }
 }
