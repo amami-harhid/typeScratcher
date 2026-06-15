@@ -34,6 +34,9 @@ export class ScratchEvent extends EventEmitter {
     static get CANVAS_CLICKED() : string {
         return "CANVAS_CLICKED";
     }
+    static get SPRITE_GLIDE(): string {
+        return "SPRITE_CLIDE";
+    }
 
     private _running:boolean;
     private _restart:boolean;

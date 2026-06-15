@@ -19,6 +19,7 @@ import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityProxy } from "../../../type/entity/entity/IEntityProxy";
 import { ThreadStatus, type IThreadObj, type ThreadStatusType } from "../../../type/engine/thread/threads";
+import { Rewriter } from "./rewriter";
 
 export class Threads {
     static get THROW_STOP_THIS_SCRIPTS(){
@@ -151,7 +152,13 @@ export class ThreadManager {
         let _running_count= 0;
         for(const thread of threadArr){
             if(thread.status == ThreadStatus.RUNNING) {
-                 _running_count+=1;
+                _running_count+=1; // 実行中スレッドの数
+                // スライド移動のリスナー待ち数
+                const count = (thread.proxy as unknown as  EntityProxyExt).listenerCount(ScratchEvent.SPRITE_GLIDE);
+                if(count > 0){
+                    // 待ちがあるとき Emit する
+                    (thread.proxy as unknown as  EntityProxyExt).emit(ScratchEvent.SPRITE_GLIDE);
+                }
             }else if(thread.status == ThreadStatus.YIELD) {
                 if(thread.isDeadEntity === true){
                     thread.status = ThreadStatus.COMPLETED;
@@ -328,6 +335,8 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
             throw "イベントで宣言する関数は async をつけてください。";
         }
         if(functionDeclareType.isGenerator){
+            this._generatorfunc = Rewriter.toGenerator(this.proxy, func, ...args);
+            /* 
             const _func = func.bind(this._proxy);
             const _func2 = _func(...args);
             const _f = async function* <T>(...args:T[]){
@@ -341,12 +350,12 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
                 }
             }
             this._generatorfunc = _f(...args);
+            */
         }else{
             // TODO 繰り返し構文の最後に yield を自動追加するようにしたい！
             throw "Generator関数以外はエラーです";
 
         }
-
     }
     get entity() : IEntity{
         if(this._entity == null) throw 'エンティティが空です'

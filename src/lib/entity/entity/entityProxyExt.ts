@@ -1,11 +1,12 @@
+import { Entity } from '.';
+import EventEmitter from 'events';
 import { Threads } from '../../engine/thread/threads';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
-import { Entity } from '.';
 /**
  * エンティティのプロキシ拡張
  */
-export class EntityProxyExt {
+export class EntityProxyExt extends EventEmitter{
     /** スレッドＩＤ */
     static THREAD_ID = "threadId";
     /** スレッドカウンター */

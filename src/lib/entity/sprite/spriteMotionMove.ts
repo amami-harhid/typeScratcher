@@ -1,11 +1,15 @@
 import { Engine, engine } from '../../engine';
 import { INTERVAL } from '../../engine/thread/interval';
+import { Loop } from '../../engine/loop';
 import { MathUtil } from '../../utils/math-util';
+import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '../sprite';
 import { Utils } from '../../utils/utils';
+import type { IEntity } from '../../../type/entity/entity';
+import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionMove } from '../../../type/entity/sprite/ISpriteMotionMove';
-import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
+import { EntityProxyExt } from '../entity/entityProxyExt';
 
 export class SpriteMotionMove implements ISpriteMotionMove {
     private entity: Sprite;
@@ -164,41 +168,43 @@ export class SpriteMotionMove implements ISpriteMotionMove {
         this.entity.Properties.position.y = (target as Sprite).Properties.position.y;
     }
     /**
-     * 指定秒数かけて指定座標へ移動する
-     * @param sec {number} - 秒数
-     * @param x {number} - X座標
-     * @param y {number} - Y座標
+     * 
+     * @param sec 
+     * @param x 
+     * @param y 
+     * @param proxy 
+     * @returns 
      */
-    async glideTo(sec:number, x: number, y:number): Promise<void> {
+    async glideTo(sec:number, x: number, y:number, proxy:IEntity): Promise<void> {
+        const _proxy = proxy as unknown as EntityProxyExt; 
         const _x = this.entity.Properties.position.x;
         const _y = this.entity.Properties.position.y;
         const _xy = {x: _x, y: _y};
         const _count = Math.floor((sec * 1000 ) / INTERVAL);
-        const _interval = (sec*1000) / _count;
         const _def_x = ( x - _x ) / _count;
         const _def_y = ( y - _y ) / _count;
-        const me = this.entity;
         return new Promise<void>((resolve)=>{
-            let counter = 0;
-            const intervalProcess = () => {
-                setTimeout(()=>{
+            let _counter = 0;
+            const _glide = () => {
+                if(_counter < _count) {
                     _xy.x += _def_x;
                     _xy.y += _def_y;
-                    me.Properties.position.x = _xy.x;
-                    me.Properties.position.y = _xy.y;
-                    counter += 1;
-                    if( counter < (_count-1))
-                        intervalProcess();
-                    else{
-                        me.Properties.position.x = x;
-                        me.Properties.position.y = y;
-                        resolve();
-                    }
-                },_interval);
+                    this.entity.Properties.position.x = _xy.x;
+                    this.entity.Properties.position.y = _xy.y;
+                }else{
+                    this.entity.Properties.position.x = x;
+                    this.entity.Properties.position.y = y;
+                    _proxy.removeListener(ScratchEvent.SPRITE_GLIDE, _glide);
+                    resolve();
+                }
+                _counter+=1;
             }
-            intervalProcess();
+            // このリスナーが１０個を超えるとエラーなのでProxyでリッスンしている。
+            _proxy.on(ScratchEvent.SPRITE_GLIDE, _glide);
+            // エンティティでリッスンすると１０個を超える場合が予想される。
+            // （同じスプライトの１０個以上のスレッドで同時に「glideTo」メソッドが実行される場合）
+            // Proxy(=スレッド単位)でリッスンすることにした。
+            // Proxy単位であれば、「glideTo」は同時には動かない。
         });
-
     }
-
 };
