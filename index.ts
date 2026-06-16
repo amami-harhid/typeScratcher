@@ -40,7 +40,7 @@ import { Rotation, type RotationStyle } from './src/type/entity/RotationStyle';
 import { Sound as _Sound} from './src/lib/sounds';
 import { Sprite as _Sprite } from './src/lib/entity/sprite';
 import { Stage as _Stage } from './src/lib/entity/stage';
-import { ScratchFontFamily } from './src/type/svgText';
+import { ScratchFontFamily as _ScratchFontFamily } from './src/type/svgText';
 import { Timer } from './src/lib/utils/timer';
 import { textToSvg } from './src/lib/svgText';
 import { Loop } from './src/lib/engine/loop';
@@ -53,7 +53,8 @@ import type { ITextToSvg } from './src/type/svgText';
 import type { SImage } from './src/type/image';
 import type { SLoop } from './src/lib/engine/loop';
 import type { SSound } from './src/type/sound';
-
+import { SPEECH_LOCALE } from './src/type/speech/IVoice';
+import { VOICE_ID } from './src/type/speech/IVoice';
 /**
  * 【2026/06/06】
  *  scratch-render@2.0.356 では、グローバルのBufferを使っていない（様子）
@@ -83,8 +84,10 @@ type ExportType = {
     engine: IEngine,
     textToSvg: ITextToSvg,
     Loop: SLoop,
-    ScratchFontFamily: typeof ScratchFontFamily,
+    ScratchFontFamily: typeof _ScratchFontFamily,
     Timer: typeof Timer,
+    SpeechLocale: typeof SPEECH_LOCALE,
+    VoiceType: typeof VOICE_ID,
 }
 export const Typescratcher: ExportType = {
     Sprite: _Sprite as SSprite,
@@ -97,8 +100,10 @@ export const Typescratcher: ExportType = {
     engine: engine as IEngine,
     textToSvg: textToSvg as ITextToSvg,
     Loop: Loop as SLoop,
-    ScratchFontFamily: ScratchFontFamily,
     Timer: Timer as typeof Timer,
+    ScratchFontFamily: _ScratchFontFamily as typeof _ScratchFontFamily,
+    SpeechLocale: SPEECH_LOCALE,
+    VoiceType: VOICE_ID,
 } as const;
 
 export type Sprite = ISprite;

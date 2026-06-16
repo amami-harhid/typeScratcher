@@ -2,8 +2,6 @@
  * Language ids. The value for each language id is a valid Scratch locale.
  */
 
-import { TSoundPlayerOption } from "../sound/IAudioEngine";
-
 export const SPEECH_LOCAL = {
     ENGLISH: 'en',
     JAPANESE: 'ja',

@@ -46,8 +46,8 @@ export class SoundPlayer implements ISoundPlayer{
         return this._pitch;
     }
     set volume( volume) {
+        this._volume = volume;
         if(this._effects && this._effects.set && this._effects.volume){
-            this._volume = volume;
             this._effects.set(this._effects.volume.name, this._volume);
             this._effects.volume.update();
         }

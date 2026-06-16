@@ -13,13 +13,13 @@ const cat = new TS.Sprite('cat');
 cat.Costume.add([CatImage]);
 
 const _stage = new TS.Stage();
-cat.Speech.setSpeechProperties("TEST", "female", "ja-JP", {});
+cat.Speech.locale(TS.SpeechLocale.JAPANESE).type(TS.VoiceType.GIANT).addPitch(-20);
 cat.Event.flagPresser().func = async function*(this:Sprite) {
     
-    for(const second of TS.Loop.Iterator(10,1)){
-        const text = `${second} 秒`;
-        console.log(text);
-        await this.Speech.speech( text, 'TEST');
+    for(const _second of TS.Loop.Iterator(10,1)){
+        //const text = `${second} 秒`;
+        const text = `${_second} 秒`;
+        await this.Speech.speech(text);
         yield;
     }
 }

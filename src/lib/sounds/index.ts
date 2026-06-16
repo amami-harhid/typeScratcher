@@ -10,6 +10,7 @@ import type { IEntity } from "../../type/entity/entity";
 import type { ISound } from "../../type/sound";
 import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
 import { Entity } from "../entity/entity";
+import { TSoundPlayerOption } from "src/type/sound/IAudioEngine";
 type SoundArgStringObject = { [key:string]: string | Uint8Array<ArrayBuffer>};
 
 /**
@@ -85,7 +86,8 @@ export class Sound extends EventEmitter implements ISound {
         const audioEngine = (engine as Engine).runtime.audioEngine;
         const decodeSoundPlayer = await audioEngine.decodeSoundPlayer({data: this.data});
         const _effects = audioEngine.createEffectChain();
-        const options = {effects: _effects};
+        const options: TSoundPlayerOption = {};
+        options.effects = _effects;
         const soundPlayer = new SoundPlayer(this.name, decodeSoundPlayer, options);
         soundPlayer.connect(); // effects は インスタンスを作るときに渡しているので引数省略
         (entity.Sound as EntitySound).addPlayer(this.name, soundPlayer);
