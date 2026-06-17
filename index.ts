@@ -32,7 +32,7 @@ import { Version } from './version';
 
 import * as GUI from './src/lib/gui';
 
-import { engine } from './src/lib/engine';
+import { Engine, engine } from './src/lib/engine';
 import { Image as _Image } from './src/lib/image';
 import { ImageEffective, type ImageEffectiveType } from './src/type/entity/ImageEffective';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './src/type/engine/keyboad';
@@ -70,8 +70,19 @@ const Initialize = async function() {
     GUI.guiInitialize();    
 };
 
+
 // 表示初期化
 await Initialize();
+
+const stageWidth = (engine as Engine).render.stageWidth;
+const stageHeight = (engine as Engine).render.stageHeight;
+const stageBounds: {w: number, h: number} = {
+    w: stageWidth,
+    h: stageHeight,
+}
+
+console.log(stageWidth, stageHeight);
+
 
 type ExportType = {
     Sprite: SSprite,
@@ -88,6 +99,7 @@ type ExportType = {
     Timer: typeof Timer,
     SpeechLocale: typeof SPEECH_LOCALE,
     VoiceType: typeof VOICE_ID,
+    StageBounds: typeof stageBounds,
 }
 export const Typescratcher: ExportType = {
     Sprite: _Sprite as SSprite,
@@ -104,6 +116,7 @@ export const Typescratcher: ExportType = {
     ScratchFontFamily: _ScratchFontFamily as typeof _ScratchFontFamily,
     SpeechLocale: SPEECH_LOCALE,
     VoiceType: VOICE_ID,
+    StageBounds: stageBounds,
 } as const;
 
 export type Sprite = ISprite;
