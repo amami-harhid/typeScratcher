@@ -87,6 +87,7 @@ export class ThreadManager {
             // フキダシ、質問欄表示中のときは消す
             QuestionBoxElement.removeAsk();
             this.stopAllScripts();
+            this.clearAllScripts();
             this._pauser = false;
             if(_runtime.audioEngine){
                 const audioContext = _runtime.audioEngine.audioContext;
@@ -111,12 +112,15 @@ export class ThreadManager {
         }
         _scratchEvent.on(ScratchEvent.RESTART_CLICKED, _restart);
         const _stop = () => {
+
             me._pauser = true;
             if(me._running === true) { // pause中でも実行してよいとする
                 // フキダシ、質問欄表示中のときは消す
                 QuestionBoxElement.removeAsk();
                 // すべてのスレッドを停止する
                 me.stopAllScripts();
+                // 実行中スレッド数をゼロにする
+                (engine as Engine).runtime.scratchEvent.runningThreadCount = 0;
                 
                 // クローンを消す、スピーチを止める
                 const allSprites = (engine as Engine).getSprites();
@@ -173,7 +177,7 @@ export class ThreadManager {
                     }
                 }
             }else if(thread.status == ThreadStatus.YIELD) {
-                if(thread.isDeadEntity === true){
+                if(thread.isDeadThread === true){
                     thread.status = ThreadStatus.COMPLETED;
                     continue;
                 }
@@ -184,6 +188,7 @@ export class ThreadManager {
                 _running_count+=1;
             }
         }
+        (engine as Engine).runtime.scratchEvent.runningThreadCount = _running_count;
         if(_running_count == 0) {
             // 実行中スレッドがゼロ個の場合は停止ボタンを非活性
             me.stopMarkToNotactive();
@@ -235,31 +240,42 @@ export class ThreadManager {
             }
         }
     }
-    
-    stopAllScripts() : void {
+    clearAllScripts(): void {
+        // すべてのスレッドについて終了処理をする
         for(const thread of ThreadBank.threadArr){
+            thread.isDeadThread = false; // 停止スレッドを解除
+        }
+
+    }
+    stopAllScripts() : void {
+        // すべてのスレッドについて終了処理をする
+        for(const thread of ThreadBank.threadArr){
+            thread.isDeadThread = true; // 停止スレッド
             if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.YIELD){
-
                 const entity = thread.entity as Entity;
-                //(entity.Broadcast as EntityBroadCast).broadcastReceivedKickStop();
 
-                //entity.isThreadRunning = false;
                 if(entity.isSprite) {
                     const sprite = entity as Sprite;
                     if(sprite.isClone) {
-                        // クローンのとき
+                        // クローンのとき「生死」= 「死亡」とする
                         (thread.entity as Entity).isAlive = false;
                     }
                 }
                 // 実行中、実行待ちのスレッドは強制修正する。
                 const _proxy = thread.proxy;
                 if(_proxy){
-                    // GLIDE中のときGLIDEを終える
-                    (_proxy as unknown as EntityProxyExt).emit(ScratchEvent.SPRITE_GLIDE_STOP);
+                    // GLIDE中のときGLIDEを中断させる
+                    const proxyExt = _proxy as unknown as EntityProxyExt;
+                    if(proxyExt.listenerCount(ScratchEvent.SPRITE_GLIDE_STOP)>0){
+                        proxyExt.emit(ScratchEvent.SPRITE_GLIDE_STOP);
+                    }
+                    // メソッド動作したら例外を起こしてスレッドを止める。
                     _proxy.setStopThisScriptSwitch(true);
+                    // 音を止める
                     this.stopSounds(_proxy);
                 }
             }
+            thread.status = ThreadStatus.COMPLETED;
         }
     }
     stopMarkToNotactive() {
@@ -302,6 +318,7 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
     private _doubleRunable: boolean = false;
     private _isStarted: boolean = false;
     private _args: T[];
+    private _isDeadThread: boolean;
     constructor(entity:IEntity, doubleRunable=false) {
         super();
         this._entity = entity;
@@ -311,6 +328,7 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
         this._doubleRunable = doubleRunable;
         this._proxy = this.genProxy();
         this._args = [];
+        this._isDeadThread = false;
     }
     clear() {
         // クローンのとき
@@ -319,8 +337,11 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
         }
 
     }
-    get isDeadEntity() : boolean {
-        return !(this.entity as Entity).isAlive;
+    get isDeadThread() : boolean {
+        return this._isDeadThread;
+    }
+    set isDeadThread(isDead: boolean) {
+        this._isDeadThread = isDead;
     }
     genProxy() : IEntityProxy {
         if(this._entity) {
@@ -424,9 +445,11 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
             if( e==Threads.THROW_STOP_THIS_SCRIPTS){
                 me._proxy?.setStopThisScriptSwitch(false);// 一度強制スローしたので元に戻す
                 // throwせず
+                // TODO あとで消す
                 console.log(e);
             }else if( e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS){
                 // throwせず
+                // TODO あとで消す
                 console.log(e);
 
             }else{

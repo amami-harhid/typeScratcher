@@ -47,6 +47,7 @@ export class ScratchEvent extends EventEmitter {
     private _messageReceiverIdsPool: string[];
     private _backdropChangerNamesPool: string[];
     private _clonedNamesPool : string[];
+    private _runningThreadCount: number;
     constructor() {
         super();
         this._running= false;
@@ -61,9 +62,13 @@ export class ScratchEvent extends EventEmitter {
         this._keyPressedPool = [];
         this._backdropChangerNamesPool = [];
         this._clonedNamesPool = [];
+        this._runningThreadCount = 0;
     }
     public get running(): boolean {
         return this._running;
+    }
+    public set runningThreadCount(runningThreadCount:number) {
+        this._runningThreadCount = runningThreadCount;
     }
     public stageFirstClick() {
         const main = ScratchElement.getMain();
@@ -127,15 +132,17 @@ export class ScratchEvent extends EventEmitter {
         const me = this;
         //let restart = false;
         pauseMark.addEventListener('click',(event:MouseEvent)=>{
-            if(this._restart===true){
-                me.emit(ScratchEvent.RESTART_CLICKED);
-                ScratchElement.changeToPauseMarkActive(pauseMark);
-            }else{
-                me.emit(ScratchEvent.PAUSE_CLICKED);
-                ScratchElement.changeToRestartMark(pauseMark);
+            if(me._runningThreadCount > 0) {
+                if(me._restart===true){
+                    me.emit(ScratchEvent.RESTART_CLICKED);
+                    ScratchElement.changeToPauseMarkActive(pauseMark);
+                }else{
+                    me.emit(ScratchEvent.PAUSE_CLICKED);
+                    ScratchElement.changeToRestartMark(pauseMark);
+                }
+                me._restart = !me._restart;        
             }
             event.stopPropagation();
-            me._restart = !this._restart;
         })
 
     }
