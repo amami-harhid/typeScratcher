@@ -157,19 +157,23 @@ export class ThreadManager {
         for(const thread of threadArr){
             if(thread.status == ThreadStatus.RUNNING) {
                 _running_count+=1; // 実行中スレッドの数
-                // スライド移動のリスナー待ち数
-                const count = (thread.proxy as unknown as  EntityProxyExt).listenerCount(ScratchEvent.SPRITE_GLIDE);
-                if(count > 0){
-                    // 待ちがあるとき Emit する
-                    (thread.proxy as unknown as  EntityProxyExt).emit(ScratchEvent.SPRITE_GLIDE);
+                if(me._pauser === true){
+                    // スライド移動のリスナー待ち数
+                    const count = (thread.proxy as unknown as  EntityProxyExt).listenerCount(ScratchEvent.SPRITE_GLIDE);
+                    if(count > 0){
+                        // 待ちがあるとき Emit する
+                        (thread.proxy as unknown as  EntityProxyExt).emit(ScratchEvent.SPRITE_GLIDE);
+                    }
                 }
             }else if(thread.status == ThreadStatus.YIELD) {
                 if(thread.isDeadEntity === true){
                     thread.status = ThreadStatus.COMPLETED;
                     continue;
                 }
-                // 実行待ちのときは スレッドを実行する
-                thread.next(); // 並列動作させる（意図的に await をつけていない）
+                if(me._pauser === false){
+                    // 実行待ちのときは スレッドを実行する
+                    thread.next(); // 並列動作させる（意図的に await をつけていない）
+                }
                 _running_count+=1;
             }
         }
