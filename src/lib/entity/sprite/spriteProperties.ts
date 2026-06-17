@@ -27,8 +27,14 @@ export class SpriteProperties extends EntityProperties {
             }
         }
         const _sprite = this.entity as Sprite;
-        const _spriteImage = _sprite.$image as SpriteImage;
-        const effect = _spriteImage.effect.get();
+        //const _spriteImage = _sprite.$image as SpriteImage;
+        //const effect = _spriteImage.effect.get();
+        const _drawable = _sprite.render.renderer._allDrawables[_sprite.drawableID];
+        if(_drawable && _drawable.skin ) { // _drawable.skinに対してメソッドを発行する。Skinが出来上がっていないうちは回避する
+            const fencedPosition = _sprite.render.renderer.getFencedPositionOfDrawable(_sprite.drawableID, [this.position.x, this.position.y]);
+            this.position.x = fencedPosition[0];
+            this.position.y = fencedPosition[1];
+        }
         const prop: ScratchRenderProperties = {
             skinId: entity.Costume.currentSkinId,
             position: [this.position.x, this.position.y],
