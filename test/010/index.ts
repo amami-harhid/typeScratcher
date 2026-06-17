@@ -57,7 +57,7 @@ arrow.Event.keyPresser('a').func = async function*(this:Sprite) {
         yield;
     }
     this.Motion.move.to(0,0);
-    await this.Motion.move.glideTo( 2, 200, 50);
+    await this.Motion.move.glideTo( 2, 200, 50, this);
 }
 arrow.Event.keyPresser(TS.Keyboard.SPACE).func = async function*(this:Sprite) {
     this.Motion.position.y += 50;
@@ -66,7 +66,7 @@ arrow.Broadcast.receiver('GLIDE').func = async function*(this:Sprite) {
     this.Control.stopOtherScripts(this);
     this.Motion.move.to(0,0);
     await this.Control.wait(1);
-    await this.Motion.move.glideTo( 5, 100, 100);
+    await this.Motion.move.glideTo( 5, 100, 100, this);
 }
 stage.Event.flagPresser().func = async function*(this: Stage) {
     for(;;){

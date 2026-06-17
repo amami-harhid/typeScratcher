@@ -1,3 +1,4 @@
+import { ScratchElement } from '../../gui/scratchElement';
 import { Sprite } from '../sprite';
 import { Utils } from "../../utils/utils";
 import type { ISprite } from '../../../type/entity/sprite';
@@ -23,9 +24,12 @@ export class SpriteSensingDistance implements ISpriteSensingDistance{
             x: this.entity.Properties.position.x,
             y: this.entity.Properties.position.y,
         }
+        const pageX = this.entity.mouse.pageX;
+        const pageY = this.entity.mouse.pageY;
+        const stagePosition = ScratchElement.pageToScratchStagePosition(pageX, pageY);
         const obj2 = {
-            x: this.entity.Sensing.mouse.x,
-            y: this.entity.Sensing.mouse.y,
+            x: stagePosition.scratchX,
+            y: stagePosition.scratchY,
         }
         const _distance = Utils.distance(obj1, obj2);
         return _distance;

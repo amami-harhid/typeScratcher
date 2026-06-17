@@ -30,13 +30,13 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
      * マウス情報(x座標)
      */
     get x() {
-        return this.entity.mouse.x;
+        return this.entity.mouse.scratchX;
     }
     /**
      * マウス情報(y座標)
      */
     get y() {
-        return this.entity.mouse.y;
+        return this.entity.mouse.scratchY;
     }
     /**
      * 距離
@@ -52,22 +52,11 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
      * マウスカーソルへの向き
      */
     get degree(): number {
-        const canvas = ScratchElement.getScratchCanvas();
-        const rect = canvas.getBoundingClientRect();
-        const canvasGlobalCenterX = rect.x + rect.width/2;
-        const canvasGlobalCenterY = rect.y + rect.height/2;
         const pageX = this.entity.mouse.pageX;
         const pageY = this.entity.mouse.pageY;
-        const _mouseXG = (pageX - canvasGlobalCenterX );
-        const _mouseYG = (canvasGlobalCenterY - pageY);
-
-        const render = this.entity.render;
-        const rateX = render.stageWidth / canvas.width;
-        const rateY = render.stageHeight / canvas.height;
-        const targetX = (_mouseXG) * rateX;
-        const targetY = (_mouseYG) * rateY;
-        const dx = targetX - this.entity.Properties.position.x;
-        const dy = targetY - this.entity.Properties.position.y;
+        const stagePosition = ScratchElement.pageToScratchStagePosition(pageX, pageY);
+        const dx = stagePosition.scratchX - this.entity.Properties.position.x;
+        const dy = stagePosition.scratchY - this.entity.Properties.position.y;
         let direction = 90 - MathUtil.radToDeg( Math.atan2(dy, dx));
         if(direction > 180) {
             direction -= 360;

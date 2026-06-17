@@ -1,7 +1,8 @@
 import { Engine, engine } from '../../engine';
+import { EntityProxyExt } from '../entity/entityProxyExt';
 import { INTERVAL } from '../../engine/thread/interval';
-import { Loop } from '../../engine/loop';
 import { MathUtil } from '../../utils/math-util';
+import { ScratchElement } from '../../gui/scratchElement';
 import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '../sprite';
 import { Utils } from '../../utils/utils';
@@ -9,7 +10,6 @@ import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionMove } from '../../../type/entity/sprite/ISpriteMotionMove';
-import { EntityProxyExt } from '../entity/entityProxyExt';
 
 export class SpriteMotionMove implements ISpriteMotionMove {
     private entity: Sprite;
@@ -154,10 +154,12 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      */
     toMouse() : void {
         const _mouse = (engine as Engine).mouse;
-        const _rate = (engine as Engine).renderRate;
-        // ステージの外に出たときは 動かない。
-        this.entity.Properties.position.x = _mouse.scratchX * _rate.x;
-        this.entity.Properties.position.y = _mouse.scratchY * _rate.y;
+        // Window全体のマウス座標をもとにCanvas上の座標へ変換する
+        const stagePosition = ScratchElement.pageToScratchStagePosition(_mouse.pageX, _mouse.pageY);
+        this.entity.Properties.position.x = stagePosition.scratchX;
+        this.entity.Properties.position.y = stagePosition.scratchY;
+        //this.entity.Properties.position.x = _mouse.pageX * _rate.x;
+        //this.entity.Properties.position.y = _mouse.pageY * _rate.y;
     }
     /**
      * 指定したスプライトの位置へ移動する

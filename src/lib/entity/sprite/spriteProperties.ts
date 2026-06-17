@@ -1,7 +1,6 @@
 import { EntityProperties } from "../entity/entityProperties";
 import { Rotation } from "../../../type/entity/RotationStyle";
 import { Sprite } from "../sprite";
-import { SpriteImage } from "./spriteImage";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
 /**
@@ -27,8 +26,6 @@ export class SpriteProperties extends EntityProperties {
             }
         }
         const _sprite = this.entity as Sprite;
-        //const _spriteImage = _sprite.$image as SpriteImage;
-        //const effect = _spriteImage.effect.get();
         const _drawable = _sprite.render.renderer._allDrawables[_sprite.drawableID];
         if(_drawable && _drawable.skin ) { // _drawable.skinに対してメソッドを発行する。Skinが出来上がっていないうちは回避する
             const fencedPosition = _sprite.render.renderer.getFencedPositionOfDrawable(_sprite.drawableID, [this.position.x, this.position.y]);

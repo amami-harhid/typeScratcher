@@ -1,6 +1,7 @@
 /**
  * Element
  */
+import { engine, Engine } from "../engine";
 import { GUI_CONST } from "./gui_const";
 
 /** ロゴ */
@@ -169,4 +170,22 @@ export class ScratchElement {
         pauseMark.setAttribute("src", RestartMark);
         pauseMark.setAttribute("title", "再開");
     }
+	/**
+	 * ページ座標をステージ座標へ変換する
+	 * @param pageX 
+	 * @param pageY 
+	 * @returns 
+	 */
+	static pageToScratchStagePosition(pageX: number, pageY: number): {scratchX: number, scratchY:number} {
+		const position:{scratchX:number, scratchY:number} = {scratchX:0, scratchY:0};
+		const canvas = ScratchElement.getScratchCanvas();
+		const rect = canvas.getBoundingClientRect();
+		const canvasCenter = {x: rect.left + rect.width/2, y: rect.top + rect.height/2};
+		const positionBaseCanvasCenter = {x: pageX - canvasCenter.x,  y: canvasCenter.y - pageY};
+		// Scratch3ステージ座標へ
+		const _rate = (engine as Engine).renderRate;
+		position.scratchX = positionBaseCanvasCenter.x * _rate.x;
+		position.scratchY = positionBaseCanvasCenter.y * _rate.y;
+		return position;
+	}
 }
