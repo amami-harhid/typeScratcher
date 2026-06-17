@@ -55,6 +55,7 @@ import type { SLoop } from './src/lib/engine/loop';
 import type { SSound } from './src/type/sound';
 import { SPEECH_LOCALE } from './src/type/speech/IVoice';
 import { VOICE_ID } from './src/type/speech/IVoice';
+import { Utils } from './src/lib/utils/utils';
 /**
  * 【2026/06/06】
  *  scratch-render@2.0.356 では、グローバルのBufferを使っていない（様子）
@@ -74,15 +75,13 @@ const Initialize = async function() {
 // 表示初期化
 await Initialize();
 
+// ステージBounds( 480 360 )
 const stageWidth = (engine as Engine).render.stageWidth;
 const stageHeight = (engine as Engine).render.stageHeight;
 const stageBounds: {w: number, h: number} = {
     w: stageWidth,
     h: stageHeight,
 }
-
-console.log(stageWidth, stageHeight);
-
 
 type ExportType = {
     Sprite: SSprite,
@@ -100,6 +99,7 @@ type ExportType = {
     SpeechLocale: typeof SPEECH_LOCALE,
     VoiceType: typeof VOICE_ID,
     StageBounds: typeof stageBounds,
+    RandomValue: typeof Utils.randomValue,
 }
 export const Typescratcher: ExportType = {
     Sprite: _Sprite as SSprite,
@@ -117,6 +117,8 @@ export const Typescratcher: ExportType = {
     SpeechLocale: SPEECH_LOCALE,
     VoiceType: VOICE_ID,
     StageBounds: stageBounds,
+    RandomValue: Utils.randomValue,
+    
 } as const;
 
 export type Sprite = ISprite;

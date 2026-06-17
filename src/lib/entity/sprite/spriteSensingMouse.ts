@@ -75,10 +75,14 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
      * @returns 
      */
     get isTouching(): boolean {
-        const mouseX = this.entity.mouse.x +1; // TODO: +1 は暫定、理由不明
-        const mouseY = this.entity.mouse.y +1; // TODO: +1 は暫定、理由不明
+        const pageX = this.entity.mouse.pageX;
+        const pageY = this.entity.mouse.pageY;
+        const stagePosition = ScratchElement.pageToScratchStagePosition(pageX, pageY);
+        const mouseX = stagePosition.scratchX;
+        const mouseY = stagePosition.scratchY;
         // 自分自身だけを対象にしてマウスタッチしているDrawableのIDを取得する
         // マウスタッチしていれば自分自身のDrawableIDが返るはず。
+        // 第３、第４パラメーターはタッチする幅と高さ(大きくすると近づくだけでもタッチとみなされる)
         const touchDrawableId = this.entity.render.renderer.pick(mouseX,mouseY, 2, 2, [this.entity.drawableID]);
         if(this.entity.drawableID == touchDrawableId){
             return true;
