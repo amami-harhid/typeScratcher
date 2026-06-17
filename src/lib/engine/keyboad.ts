@@ -22,6 +22,13 @@ export class Keyboard {
             };
             this.postData(data);
         });
+        document.addEventListener('keyup', (e:KeyboardEvent) => {
+            const data: POST_DATA = {
+                isDown: false,
+                key : e.key,
+            };
+            this.postData(data);
+        });
         this._spaceStopPropagation = true;
     }
     postData(data: POST_DATA) {

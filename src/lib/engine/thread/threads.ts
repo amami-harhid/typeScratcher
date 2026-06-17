@@ -20,6 +20,7 @@ import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityProxy } from "../../../type/entity/entity/IEntityProxy";
 import { ThreadStatus, type IThreadObj, type ThreadStatusType } from "../../../type/engine/thread/threads";
 import { Rewriter } from "./rewriter";
+import { EntityBroadCast } from "src/lib/entity/entity/entityBroadcast";
 
 export class Threads {
     static get THROW_STOP_THIS_SCRIPTS(){
@@ -83,6 +84,9 @@ export class ThreadManager {
         const _scratchEvent = (engine as Engine).runtime.scratchEvent;
         const _runtime = (engine as Engine).runtime;
         const _flagClick = () => {
+            // フキダシ、質問欄表示中のときは消す
+            QuestionBoxElement.removeAsk();
+            this.stopAllScripts();
             this._pauser = false;
             if(_runtime.audioEngine){
                 const audioContext = _runtime.audioEngine.audioContext;
@@ -113,19 +117,22 @@ export class ThreadManager {
                 QuestionBoxElement.removeAsk();
                 // すべてのスレッドを停止する
                 me.stopAllScripts();
+                
                 // クローンを消す、スピーチを止める
                 const allSprites = (engine as Engine).getSprites();
                 for(const _sprite of allSprites){
                     if(_sprite.isClone === false){
                         (_sprite.Control as SpriteControl).removeAllClones();
                     }
-                    _sprite.Speech.stopAll();
+                    _sprite.Speech.stopAll();                    
                 }
                 SpriteControl.cloneCount=0;
                 const stage = (engine as Engine).getStage();
                 if(stage){
                     stage.Speech.stopAll();
                 }
+                // 再描画
+                (engine as Engine).render.renderer.draw();
             }
         }
         _scratchEvent.on(ScratchEvent.STOP_CLICKED, _stop);
@@ -157,7 +164,7 @@ export class ThreadManager {
         for(const thread of threadArr){
             if(thread.status == ThreadStatus.RUNNING) {
                 _running_count+=1; // 実行中スレッドの数
-                if(me._pauser === true){
+                if(me._pauser === false){
                     // スライド移動のリスナー待ち数
                     const count = (thread.proxy as unknown as  EntityProxyExt).listenerCount(ScratchEvent.SPRITE_GLIDE);
                     if(count > 0){
@@ -232,8 +239,10 @@ export class ThreadManager {
     stopAllScripts() : void {
         for(const thread of ThreadBank.threadArr){
             if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.YIELD){
-                //thread.status = ThreadStatus.COMPLETED;
+
                 const entity = thread.entity as Entity;
+                //(entity.Broadcast as EntityBroadCast).broadcastReceivedKickStop();
+
                 //entity.isThreadRunning = false;
                 if(entity.isSprite) {
                     const sprite = entity as Sprite;
@@ -245,6 +254,8 @@ export class ThreadManager {
                 // 実行中、実行待ちのスレッドは強制修正する。
                 const _proxy = thread.proxy;
                 if(_proxy){
+                    // GLIDE中のときGLIDEを終える
+                    (_proxy as unknown as EntityProxyExt).emit(ScratchEvent.SPRITE_GLIDE_STOP);
                     _proxy.setStopThisScriptSwitch(true);
                     this.stopSounds(_proxy);
                 }

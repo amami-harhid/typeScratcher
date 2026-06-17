@@ -124,7 +124,6 @@ export class EntityBroadCast implements IEntityBroadCast {
             threadObj.status = ThreadStatus.YIELD;
         }
     }
-
     private static getBroadcastElement(messageId: string):TBroadcastElement{
         const arr = EntityBroadCast._broadcastReceivedFuncArr;
         for(const elem of arr){

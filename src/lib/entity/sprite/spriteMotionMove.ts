@@ -201,12 +201,19 @@ export class SpriteMotionMove implements ISpriteMotionMove {
                 }
                 _counter+=1;
             }
+            
             // このリスナーが１０個を超えるとエラーなのでProxyでリッスンしている。
             _proxy.on(ScratchEvent.SPRITE_GLIDE, _glide);
             // エンティティでリッスンすると１０個を超える場合が予想される。
             // （同じスプライトの１０個以上のスレッドで同時に「glideTo」メソッドが実行される場合）
             // Proxy(=スレッド単位)でリッスンすることにした。
             // Proxy単位であれば、「glideTo」は同時には動かない。
+            
+            _proxy.once(ScratchEvent.SPRITE_GLIDE_STOP, ()=>{
+                // GLIDE 停止メッセージを受信したとき（ Threadより )
+                _proxy.removeListener(ScratchEvent.SPRITE_GLIDE, _glide);
+                resolve();
+            })
         });
     }
 };

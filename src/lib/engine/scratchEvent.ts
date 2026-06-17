@@ -37,6 +37,9 @@ export class ScratchEvent extends EventEmitter {
     static get SPRITE_GLIDE(): string {
         return "SPRITE_CLIDE";
     }
+    static get SPRITE_GLIDE_STOP(): string {
+        return "SPRITE_CLIDE_STOP";
+    }
 
     private _running:boolean;
     private _restart:boolean;
