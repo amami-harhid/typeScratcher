@@ -105,4 +105,13 @@ export class Speech {
         prop.pitch += pitch;        
         return this;
     }
+
+    stopAll(): void {
+        for( const key of Speech._soundBank.keys()) {
+            const sound = Speech._soundBank.get(key);
+            if(sound){
+                sound.forceStop();
+            }
+        }
+    }
 }

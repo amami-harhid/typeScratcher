@@ -113,15 +113,19 @@ export class ThreadManager {
                 QuestionBoxElement.removeAsk();
                 // すべてのスレッドを停止する
                 me.stopAllScripts();
-                // クローンを消す
+                // クローンを消す、スピーチを止める
                 const allSprites = (engine as Engine).getSprites();
                 for(const _sprite of allSprites){
                     if(_sprite.isClone === false){
                         (_sprite.Control as SpriteControl).removeAllClones();
                     }
+                    _sprite.Speech.stopAll();
                 }
                 SpriteControl.cloneCount=0;
-
+                const stage = (engine as Engine).getStage();
+                if(stage){
+                    stage.Speech.stopAll();
+                }
             }
         }
         _scratchEvent.on(ScratchEvent.STOP_CLICKED, _stop);

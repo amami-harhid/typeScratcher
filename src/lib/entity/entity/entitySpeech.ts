@@ -110,4 +110,8 @@ export class EntitySpeech implements IEntitySpeech{
         const soundPlayer = this._speechCache.get(path);
         return soundPlayer;
     }
+
+    public stopAll() : void {
+        this._speech.stopAll();
+    }
 }

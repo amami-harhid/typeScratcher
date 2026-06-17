@@ -123,7 +123,6 @@ export class SpeechSound extends EventEmitter implements ISound {
     }
     setPitch(soundPlayer: ISoundPlayer, pitch:number): void {
         const audioPitch = this._pitchScratchToAudio(pitch);
-        const scratchPitch = this._pitchAudioToScratch(audioPitch);
         const _audioPitch = audioPitch; 
         if( 12.5 <= _audioPitch && _audioPitch <= 800 ){
             soundPlayer.pitch = audioPitch / 100;

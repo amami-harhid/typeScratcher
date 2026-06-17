@@ -71,4 +71,9 @@ export interface IEntitySpeech {
      */
     speech(words: string) : Promise<void>;
 
+    /**
+     * すべてのスピーチを停止する
+     */
+    stopAll() : void
+
 }
