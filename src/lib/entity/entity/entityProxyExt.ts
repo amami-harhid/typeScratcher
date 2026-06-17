@@ -78,13 +78,18 @@ export class EntityProxyExt extends EventEmitter{
                 //「このスクリプトを停止」スイッチオンのとき
                 // @ts-ignore : stop_this_script_switchは定義なしだがOK 
                 if(this.stop_this_script_switch === true){
-                    if(name == 'Motion' || 
-                        name == 'Looks' ||
-                        name == 'Sound' ||
-                        name == 'Event' ||
+                    if(
+                        name == 'Backdrop' ||
+                        name == 'Broadcast' ||
                         name == 'Control' ||
-                        name == 'Sensing' ||
-                        name == 'Image'
+                        name == 'Costume' ||
+                        name == 'Event' ||
+                        name == 'Image' ||
+                        name == 'Looks' ||
+                        name == 'Motion' || 
+                        name == 'Sound' ||
+                        name == 'Speech'  ||
+                        name == 'Sensing'
                     ){
                         // 「このスクリプトを停止」スイッチオンのときは
                         // 例外を発生させる。
