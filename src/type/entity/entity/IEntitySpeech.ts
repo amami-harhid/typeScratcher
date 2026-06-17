@@ -4,58 +4,71 @@ import type { Type_speech_gender, Type_speech_local } from "../../speech";
 
 
 export interface NextMethods {
-    volume(volume:number): NextMethodsD;
-    pitch(pitch: number, plus?:boolean): NextMethodsC;
+    volume(volume:number): NextMethodsVolume;
+    pitch(pitch: number): NextMethodsPitch;
+    addVolume(volume:number): NextMethodsAddVolume;
+    addPitch(pitch: number): NextMethodsAddVolume;
     type(type:string): IEntitySpeech;
-    speech( words: string, type: string): Promise<void>;
+    speech( words: string): Promise<void>;
 }
-export interface NextMethodsA {
-    type(type:string): IEntitySpeech;
-    speech( words: string, type: string): Promise<void>;
+
+export interface NextMethodsLocale {
+    type(type:string): NextMethodsType;
+    speech( words: string): Promise<void>;
 }
-export interface NextMethodsB {
-    volume(volume:number): NextMethodsD;
-    pitch(pitch: number, plus?:boolean): NextMethodsC;
-    speech( words: string, type: string): Promise<void>;
+export interface NextMethodsType {
+    volume(volume:number): NextMethodsVolume;
+    pitch(pitch: number): NextMethodsPitch;
+    addVolume(volume:number): NextMethodsAddVolume;
+    addPitch(pitch: number): NextMethodsAddPitch;
+    speech( words: string): Promise<void>;
 }
-export interface NextMethodsC {
-    volume(volume:number): NextMethodsD;
-    speech( words: string, type: string): Promise<void>;
+export interface NextMethodsPitch {
+    volume(volume:number): NextMethodsVolume;
+    addVolume(volume:number): NextMethodsAddVolume;
+    addPitch(pitch: number): NextMethodsAddPitch;
+    speech( words: string): Promise<void>;
 }
-export interface NextMethodsD {
-    pitch(pitch: number, plus?:boolean): NextMethodsC;
-    speech( words: string, type: string): Promise<void>;
+export interface NextMethodsVolume {
+    pitch(pitch: number): NextMethodsPitch;
+    addVolume(volume:number): NextMethodsAddVolume;
+    addPitch(pitch: number): NextMethodsAddPitch;
+    speech( words: string): Promise<void>;
 }
+export interface NextMethodsAddVolume {
+    volume(volume:number): NextMethodsVolume;
+    pitch(pitch: number): NextMethodsPitch;
+    addPitch(pitch: number): NextMethodsAddPitch;
+    speech( words: string): Promise<void>;
+}
+export interface NextMethodsAddPitch {
+    volume(volume:number): NextMethodsVolume;
+    pitch(pitch: number): NextMethodsPitch;
+    addVolume(volume:number): NextMethodsAddVolume;
+    speech( words: string): Promise<void>;
+}
+
 
 /**
  * スピーチ機能
  */
 export interface IEntitySpeech {
 
-    locale(locale: V_SPEECH_LOCALE): NextMethodsA;
+    locale(locale: V_SPEECH_LOCALE): NextMethodsLocale;
 
-    type(type: string): IEntitySpeech;
+    type(type: string): NextMethodsType;
 
-    volume(volume: number) : NextMethodsD;
+    volume(volume: number) : NextMethodsVolume;
 
-    pitch(pitch: number, plus?:boolean) : NextMethodsC;
+    pitch(pitch: number) : NextMethodsPitch;
 
-    addVolume(volume:number): IEntitySpeech;
+    addVolume(volume:number): NextMethodsAddVolume;
 
-    addPitch(pitch: number): IEntitySpeech;
+    addPitch(pitch: number): NextMethodsAddPitch;
     /**
      * テキストをスピーチする
      * @param words 
      */
     speech(words: string) : Promise<void>;
-
-    /**
-     * スピーチプロパティ設定
-     * @param type 
-     * @param gender 
-     * @param locale 
-     * @param properties 
-     */
-    setSpeechProperties(type:string, gender:Type_speech_gender, locale:Type_speech_local ,properties:TSoundPlayerOption): void;
 
 }

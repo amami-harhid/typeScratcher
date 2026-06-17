@@ -34,7 +34,6 @@ export class Speech {
                 this._propertiesBank.set(type, element);
             }            
         }
-        console.log(this._propertiesBank)
         Speech._soundBank = new Map<string, SpeechSound>();
     }
     addProperties(type: string, prop: T_VOICE_INFO_ELEMENT): void {
@@ -64,12 +63,11 @@ export class Speech {
         return this;
     }
     public play(words: string) : Promise<void>{
-        const prop = this.getProperties(this._type);
-        console.log(prop);
-        const locale = this._locale || SPEECH_LOCALE.JAPANESE;
-        const _path = this._getSoundUrl(locale, prop.gender, words);        
-        const sound = Speech._soundBank.get(_path);
         return new Promise<void>(async(resolve)=>{
+            const prop = this.getProperties(this._type);
+            const locale = this._locale || SPEECH_LOCALE.JAPANESE;
+            const _path = this._getSoundUrl(locale, prop.gender, words);
+            const sound = Speech._soundBank.get(_path);
             if(sound) {
                 const soundPlayer = sound.soundPlayer;
                 sound.setPitch(soundPlayer, prop.pitch);
