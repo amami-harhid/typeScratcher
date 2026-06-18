@@ -19,7 +19,7 @@ import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import { Timer } from "../../utils/timer";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { ISvgSkin } from "../../../type/render/ISvgSkin";
-import type { ISpriteBackdrop } from "../../../type/entity/sprite/ISpriteBackdrop";
+import type { ISpriteLooksBackdrop } from "../../../type/entity/sprite/ISpriteLookaBackdrop";
 import type { ISpriteControl } from "../../../type/entity/sprite/ISpriteControl";
 import type { ISpriteCostume } from "../../../type/entity/sprite/ISpriteCostume";
 import type { ISpriteEvent } from "../../../type/entity/sprite/ISpriteEvent";
@@ -34,7 +34,7 @@ import type { ISpriteSensing } from "../../../type/entity/sprite/ISpriteSensing"
  */
 export class Sprite extends Entity implements ISprite {
     private _costume : ISpriteCostume;
-    private _backdrop: ISpriteBackdrop;
+    private _backdrop: ISpriteLooksBackdrop;
     private _motion: ISpriteMotion;
     private _looks: ISpriteLooks;
     private _control: ISpriteControl;
@@ -78,7 +78,7 @@ export class Sprite extends Entity implements ISprite {
     get Costume(): ISpriteCostume {
         return this._costume;
     }
-    get Backdrop(): ISpriteBackdrop {
+    get Backdrop(): ISpriteLooksBackdrop {
         return this._backdrop;
     }
     get Motion() : ISpriteMotion {

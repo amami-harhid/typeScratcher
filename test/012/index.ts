@@ -29,8 +29,6 @@ cat.Sound.add([CatSound, TennishitSound, SquawkSound]);
 const stage = new TS.Stage();
 stage.Backdrop.add([BlueskyImage, BasketballImage]);
 
-
-
 cat.Event.flagPresser().func=async function*(this:Sprite) {
     this.Sound.setVolume(CatSound, 50);
     this.Sound.setPitch(CatSound, 120);
@@ -58,7 +56,7 @@ cat.Event.cloned().func = async function*(this:Sprite) {
     this.Looks.effect.change(TS.ImageEffective.COLOR, 25);
     for(;;) {
         this.Motion.move.steps(15);
-        this.Costume.next();
+        this.Looks.costume.next();
         this.Looks.size.w += 2;
         this.Looks.size.h += 2;
 
@@ -77,7 +75,7 @@ cat.Event.cloned().func = async function*(this:Sprite) {
 
 stage.Event.flagPresser().func=async function*(this: Stage) {
     for(;;){
-        this.Backdrop.next();
+        this.Looks.backdrop.next();
         await this.Control.wait(1);
         yield;
     }

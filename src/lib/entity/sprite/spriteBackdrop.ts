@@ -1,8 +1,7 @@
 import { Engine, engine } from '../../engine';
-import { Entity } from '../entity';
 import { EntityBackdrop } from '../entity/entityBackdrop';
 import { Stage } from '../stage';
-import { Utils } from '../../utils/utils';
+import { StageBackdrop } from '../stage/stageBackdrop';
 import type { ISpriteBackdrop } from '../../../type/entity/sprite/ISpriteBackdrop';
 import type { ISprite } from '../../../type/entity/sprite';
 
@@ -38,7 +37,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     get no(): number {
         const _entity = (engine as Engine).getStage() as Stage
         if(_entity) {
-            return _entity.Backdrop.no;    
+            return (_entity.Backdrop as StageBackdrop).no;    
         }
         return -1;
     }
@@ -52,7 +51,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     set no(no:number) {
         const _entity = (engine as Engine).getStage() as Stage
         if( _entity ) {
-            _entity.Backdrop.no = no;
+            (_entity.Backdrop as StageBackdrop).no = no;
         }
     }
     /**
@@ -65,7 +64,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     get name(): string {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity){
-            return _entity.Backdrop.name;
+            return (_entity.Backdrop as StageBackdrop).name;
         }
         return '';
     }
@@ -79,7 +78,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     set name(name:string) {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity){
-            _entity.Backdrop.name = name;
+            (_entity.Backdrop as StageBackdrop).name = name;
         }
     }
     /**
@@ -89,7 +88,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     async switchAndWait(backdropName: string) : Promise<void>{
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity){
-            await _entity.Backdrop.switchAndWait(backdropName);
+            await (_entity.Backdrop as StageBackdrop).switchAndWait(backdropName);
         }
     }
     /**
@@ -101,7 +100,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     next() : void {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity){
-            _entity.Backdrop.next();
+            (_entity.Backdrop as StageBackdrop).next();
         }
     }
     /**
@@ -110,7 +109,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     async nextAndWait(): Promise<void> {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity) {
-            await _entity.Backdrop.nextAndWait();
+            await (_entity.Backdrop as StageBackdrop).nextAndWait();
         }
     }
     /**
@@ -119,7 +118,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     previous() : void {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity) {
-            _entity.Backdrop.previous();
+            (_entity.Backdrop as StageBackdrop).previous();
         }
     }
 
@@ -129,7 +128,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     async previousAndWait() : Promise<void> {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity) {
-            await _entity.Backdrop.previousAndWait();
+            await (_entity.Backdrop as StageBackdrop).previousAndWait();
         }
     }
     /**
@@ -138,7 +137,7 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     random(): void {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity) {
-            _entity.Backdrop.random();
+            (_entity.Backdrop as StageBackdrop).random();
         }
         
     }

@@ -50,7 +50,7 @@ apple.Event.flagPresser().func = async function*(this: Sprite){
 }
 apple.Event.flagPresser().func = async function*(this: Sprite){
     for(;;){
-        this.Costume.next();
+        this.Looks.costume.next();
         await this.Control.wait(0.5);
         yield;
     }
@@ -72,7 +72,7 @@ stage.Event.flagPresser().func = async function*(this: Stage){
 }
 stage.Event.flagPresser().func = async function*(this: Stage){
     for(;;){
-        this.Backdrop.next();
+        this.Looks.backdrop.next();
         await this.Control.wait(0.1);
         yield;
     }

@@ -1,17 +1,21 @@
 import type { IEntityLooks } from '../entity/IEntityLooks';
-import type { ISpriteCostume } from './ISpriteCostume';
-import type { ISpriteBackdrop } from './ISpriteBackdrop';
+import type { ISpriteLooksBackdrop } from './ISpriteLookaBackdrop';
 import type { ISpriteSize } from './ISpriteSize';
 import type { ISpriteLayer } from './ISpriteLayer';
 import type { ISpriteBubble } from './ISpriteBubble';
+import type { ISpriteLooksCostume } from './ISpriteLooksCostume';
 /**
  * Sprite Looks(見た目)
  */
 export interface ISpriteLooks extends IEntityLooks {
     /**
-     * コスチューム番号、コスチューム名を取り出すためのオブジェクト
+     * コスチュームを操作する
      */
-    readonly costume: ISpriteCostume;
+    readonly costume: ISpriteLooksCostume;
+    /**
+     * 背景を操作する
+     */
+    readonly backdrop: ISpriteLooksBackdrop;
 
     /**
      * サイズ

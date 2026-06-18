@@ -25,7 +25,7 @@ stage.Backdrop.add([BlueskyImage, BasketballImage]);
 cat.Event.flagPresser().func=async function*(this:Sprite) {
     let counter = 0;
     for(;;){
-        this.Backdrop.next();
+        this.Looks.backdrop.next();
         await this.Control.wait(1);
         counter+=1;
         if(counter>5){
@@ -39,7 +39,7 @@ cat.Event.flagPresser().func=async function*(this:Sprite) {
 stage.Broadcast.receiver('STAGE').func = async function*(this: Stage) {
     let counter = 0;
     for(;;){
-        this.Backdrop.next();
+        this.Looks.backdrop.next();
         counter+=1;
         if(counter>5){
             break;

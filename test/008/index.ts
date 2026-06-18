@@ -23,10 +23,10 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
 }
 
 stage.Broadcast.receiver("BACKDROP_NEXT").func = async function*(this:Stage) {
-    this.Backdrop.next();
+    this.Looks.backdrop.next();
 }
 num.Broadcast.receiver("COSTUME_NEXT").func = async function*(this: Sprite) {
-    this.Costume.next();
+    this.Looks.costume.next();
 }
 cat.Event.flagPresser().func = async function*(this: Sprite) {
     this.Motion.direction.degree = 30;

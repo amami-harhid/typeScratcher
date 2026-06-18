@@ -16,14 +16,14 @@ type _2 = Stage;
 stage.Event.flagPresser().func = async function*(this:Stage) {
     //const wait2 = this.Control.wait2(2);
     for(;;){
-        this.Backdrop.next();
+        this.Looks.backdrop.next();
         await TS.Timer.wait(1);
         yield;
     }
 }
 num.Event.flagPresser().func = async function*(this: Sprite) {
     for(;;){
-        this.Costume.next();
+        this.Looks.costume.next();
         await this.Control.wait(2);
         yield;
     }

@@ -43,7 +43,6 @@ export class EntityBroadCast implements IEntityBroadCast {
         const _messageId = this.getMessageId(messageId);
         return new Promise<void>( async resolve=>{
             const element = EntityBroadCast.getBroadcastElement(_messageId);
-            console.log('element.funcArr.length=',element.funcArr.length)
             if(element.funcArr.length > 0){
                 (engine as Engine).runtime.scratchEvent.emit(_messageId, ...args);
                 for(;;){
@@ -56,7 +55,6 @@ export class EntityBroadCast implements IEntityBroadCast {
                     }
                     if(_allDone === true) {
                         // すべて COMPLETEDの場合
-                        console.log('ALL COMPLETED')
                         resolve();
                         break;
                     }

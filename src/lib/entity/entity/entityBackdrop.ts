@@ -48,7 +48,6 @@ export class EntityBackdrop implements IEntityBackdrop {
      * ```
      */
     get no(): number {
-        const _entity = this.entity as Entity;
         return this.currentBackdropNo;    
     }
     /**
@@ -202,7 +201,7 @@ export class EntityBackdrop implements IEntityBackdrop {
         await this.untilBackdropEventDone(backdropName);
     }
 
-    protected async untilBackdropEventDone(backdropName: string) : Promise<void> {
+    async untilBackdropEventDone(backdropName: string) : Promise<void> {
         const element = this.getBackdropEventElement(backdropName);
         if(element) {
             return new Promise<void>(async resolve=>{

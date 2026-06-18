@@ -261,5 +261,28 @@ if(this.Sensing.mouse.isTouching) {
 spriteSensingMouseの renderer.pick() へ与える座標を間違えていた
 Stage(Canvas)左上基準の Offset座標( 表示拡大率 を考慮しない実座標 )が正しい。
 
-## 対応
+### 対応
 0.0.36 #01
+
+# this.Looks.costume.next() とかけてしまう
+でも動作はしない。
+
+## costume
+sprite.Costume.add();   // OK
+sprite.Costume.names    // OK
+sprite.Costume.他       // 不可にする
+sprite.Looks.costume.add();   // 不可にする
+sprite.Looks.costume.names    // 不可にする
+sprite.Looks.costume.他       // OK
+sprite.Backdrop.～      // 不可にする
+sprite.Looks.backdrop.add() // 不可にする
+sprite.Looks.backdrop.names // 不可にする
+sprite.Looks.backdrop.next() // OK
+
+## backdrop
+stage.Backdrop.add();   // OK
+stage.Backdrop.names    // OK
+stage.Backdrop.他       // 不可にする
+sprite.Looks.backdrop.add();   // 不可にする
+sprite.Looks.backdrop.names    // 不可にする
+sprite.Looks.backdrop.next()       // OK

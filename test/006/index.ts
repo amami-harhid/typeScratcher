@@ -24,7 +24,7 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
     for(;;){
         // 「次の背景にするよ」と2秒間言う
         await this.Looks.bubble.sayForSecs("次の背景にするよ",2);
-        await this.Backdrop.nextAndWait();
+        await this.Looks.backdrop.nextAndWait();
         yield;
     }
 }

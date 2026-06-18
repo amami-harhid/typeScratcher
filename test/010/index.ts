@@ -70,7 +70,7 @@ arrow.Broadcast.receiver('GLIDE').func = async function*(this:Sprite) {
 }
 stage.Event.flagPresser().func = async function*(this: Stage) {
     for(;;){
-        this.Backdrop.next();
+        this.Looks.backdrop.next();
         await this.Control.wait(2);
         yield;
     }

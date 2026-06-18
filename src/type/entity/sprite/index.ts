@@ -8,8 +8,8 @@ import type { ISpriteSensing } from './ISpriteSensing';
 import type { ISpriteEvent } from './ISpriteEvent';
 import type { ISpriteDragMode } from './ISpriteDragMode';
 import type { ISpriteCostume } from './ISpriteCostume';
-import type { ISpriteBackdrop } from './ISpriteBackdrop';
 import type { IPenSprite } from './pen';
+import type { ISpriteBackdrop } from './ISpriteBackdrop';
 /**
  * Sprite
  */

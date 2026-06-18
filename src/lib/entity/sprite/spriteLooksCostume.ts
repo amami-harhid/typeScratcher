@@ -1,11 +1,11 @@
 import { Image } from '../../image';
-import { Sprite } from '../sprite';
-import type { ISpriteCostume } from '../../../type/entity/sprite/ISpriteCostume';
-import type { IImage } from '../../../type/image';
+import { Sprite } from '.';
+import { SpriteCostume } from './spriteCostume';
 import type { ISprite } from '../../../type/entity/sprite';
+import type { ISpriteLooksCostume } from '../../../type/entity/sprite/ISpriteLooksCostume';
 
 /** サイズ */
-export class SpriteCostume implements ISpriteCostume {
+export class SpriteLooksCostume implements ISpriteLooksCostume {
 
     protected entity: ISprite;
     public currentConstumeNo: number = -1;
@@ -16,18 +16,6 @@ export class SpriteCostume implements ISpriteCostume {
     constructor(entity:ISprite){
         this.entity = entity;
     }
-    add(images: IImage[]) : void{
-        const _sprite = this.entity as Sprite;
-        _sprite.$image.add(images);
-        if(this.currentConstumeNo == -1){
-            this.currentConstumeNo = 0;
-        }
-    }
-    get names() : string[] {
-        const _sprite = this.entity as Sprite;
-        return _sprite.$image.names;
-    }
-
     /**
      * コスチューム番号
      * ```ts

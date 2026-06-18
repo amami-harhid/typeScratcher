@@ -14,7 +14,7 @@ const _1 = stage;
 
 num.Event.flagPresser().func = async function*(this: Sprite) {
     for(;;){
-        this.Costume.next();
+        this.Looks.costume.next();
         await this.Control.wait(0.01);
         yield;
     }

@@ -1,10 +1,11 @@
 import { EntityBackdrop } from '../entity/entityBackdrop';
-import type { IStage } from '../../../type/entity/stage';
-import type { IStageBackdrop } from '../../../type/entity/stage/IStageBackdrop';
 import { Stage } from '.';
+import { StageBackdrop } from './stageBackdrop';
+import type { IStage } from '../../../type/entity/stage';
+import type { IStageLooksBackdrop } from '../../../type/entity/stage/IStageLooksBackdrop';
 
 /** サイズ */
-export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
+export class StageLooksBackdrop extends EntityBackdrop implements IStageLooksBackdrop{
 
     /**
      * @internal
@@ -12,12 +13,6 @@ export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
      */
     constructor(entity:IStage){
         super(entity);
-    }
-    /**
-     * 背景名の配列
-     */
-    get names() : string[] {
-        return super.names;
     }
     /**
      * 背景番号
@@ -47,7 +42,8 @@ export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
      * ```
      */
     get name(): string {
-        return super.name;
+        const _entity = this.entity as Stage;
+        return (_entity.Backdrop as StageBackdrop).name;
     }
     /**
      * 背景名
@@ -57,14 +53,16 @@ export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
      * ```
      */
     set name(name:string) {
-        super.name = name;
+        const _entity = this.entity as Stage;
+        (_entity.Backdrop as StageBackdrop).name = name;
     }
     /**
      * 背景を切り替えて待つ
      * @param name 
      */
     async switchAndWait(backdropName: string) : Promise<void>{
-        await super.switchAndWait(backdropName);
+        const _entity = this.entity as Stage;
+        await (_entity.Backdrop as StageBackdrop).switchAndWait(backdropName);
     }
     /**
      * 次の背景にする
@@ -73,39 +71,46 @@ export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
      * ```
      */
     next() : void {
-        super.next();
+        const _entity = this.entity as Stage;
+        (_entity.Backdrop as StageBackdrop).next();
     }
     /**
      * 次の背景にして待つ
      */
     async nextAndWait(): Promise<void> {
-        await super.nextAndWait();
+        const _entity = this.entity as Stage;
+        await (_entity.Backdrop as StageBackdrop).nextAndWait();
     }
     /**
      * 前の背景にする
      */
     previous() : void {
-        super.previous();
+        const _entity = this.entity as Stage;
+        (_entity.Backdrop as StageBackdrop).previous();
     }
 
     /**
      * 前の背景にして待つ。
      */
     async previousAndWait() : Promise<void> {
-        await super.previousAndWait();
+        const _entity = this.entity as Stage
+        await (_entity.Backdrop as StageBackdrop).previousAndWait();
     }
     /**
      * どれかの背景にする
      */
     random(): void {
-        super.random();
+        const _entity = this.entity as Stage
+        (_entity.Backdrop as StageBackdrop).random();
         
     }
     /**
      * どれかの背景にして待つ
      */
     async randomAndWait() : Promise<void>{
+        
+        const _entity = this.entity as Stage
         const backdropName = this.name;
-        await super.untilBackdropEventDone(backdropName);
+        await (_entity.Backdrop as StageBackdrop).untilBackdropEventDone(backdropName);
     }
 }

@@ -20,7 +20,6 @@ import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityProxy } from "../../../type/entity/entity/IEntityProxy";
 import { ThreadStatus, type IThreadObj, type ThreadStatusType } from "../../../type/engine/thread/threads";
 import { Rewriter } from "./rewriter";
-import { EntityBroadCast } from "src/lib/entity/entity/entityBroadcast";
 
 export class Threads {
     static get THROW_STOP_THIS_SCRIPTS(){
@@ -445,13 +444,8 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
             if( e==Threads.THROW_STOP_THIS_SCRIPTS){
                 me._proxy?.setStopThisScriptSwitch(false);// 一度強制スローしたので元に戻す
                 // throwせず
-                // TODO あとで消す
-                console.log(e);
             }else if( e==Threads.THROW_FORCE_STOP_THIS_SCRIPTS){
                 // throwせず
-                // TODO あとで消す
-                console.log(e);
-
             }else{
                 const f= me._originalF;
                 console.error(e);
