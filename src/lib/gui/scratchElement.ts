@@ -171,7 +171,9 @@ export class ScratchElement {
         pauseMark.setAttribute("title", "再開");
     }
 	/**
-	 * ページ座標をステージ座標へ変換する
+	 * ページ座標をScratchベースのステージ座標へ変換する
+	 * Scratchベースなので、表示率を掛けている。
+	 * 
 	 * @param pageX 
 	 * @param pageY 
 	 * @returns 
@@ -186,6 +188,22 @@ export class ScratchElement {
 		const _rate = (engine as Engine).renderRate;
 		position.scratchX = positionBaseCanvasCenter.x * _rate.x;
 		position.scratchY = positionBaseCanvasCenter.y * _rate.y;
+		return position;
+	}
+	/**
+	 * ウィンドウ(Body)左上基準の座標をStage(Canvas)左上基準へ変換する
+	 * @param pageX 
+	 * @param pageY 
+	 * @returns 
+	 */
+	static offsetChangePageToStage(pageX: number, pageY: number): {x: number, y: number} {
+
+		const canvas = ScratchElement.getScratchCanvas();
+		const rect = canvas.getBoundingClientRect();
+		const position = {
+			x: pageX - rect.left,
+			y: pageY - rect.top,
+		}
 		return position;
 	}
 }

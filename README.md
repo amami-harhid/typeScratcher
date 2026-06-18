@@ -257,3 +257,9 @@ if(this.Sensing.mouse.isTouching) {
     await this.Sound.playUntilDone(CatSound);
 }
 ```
+### 原因 
+spriteSensingMouseの renderer.pick() へ与える座標を間違えていた
+Stage(Canvas)左上基準の Offset座標( 表示拡大率 を考慮しない実座標 )が正しい。
+
+## 対応
+0.0.36 #01
