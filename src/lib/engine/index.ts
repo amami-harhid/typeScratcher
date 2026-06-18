@@ -48,6 +48,7 @@ export class Engine implements IEngine {
         return this._mouse;
     }
     mouseEventStart() {
+        const _rate = this.renderRate;
         this.initMouseInfo();
         const body = document.querySelector('#main') as HTMLElement;
         body?.addEventListener('mousedown', (e:MouseEvent)=>{
@@ -76,8 +77,8 @@ export class Engine implements IEngine {
             me._mouse.clientX = e.clientX;
             me._mouse.clientY = e.clientY;
             
-            me._mouse.scratchX = e.offsetX - canvas.width/2;
-            me._mouse.scratchY = canvas.height/2 - e.offsetY;
+            me._mouse.scratchX = (e.offsetX - canvas.width/2)*_rate.x;
+            me._mouse.scratchY = (canvas.height/2 - e.offsetY)*_rate.y;
         });
         canvas.addEventListener('mousedown', (e:MouseEvent) => {
             me._mouse.x = e.offsetX;

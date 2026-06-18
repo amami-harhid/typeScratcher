@@ -25,12 +25,12 @@ export class StageSensingMouse implements IEntitySensingMouse {
      * マウス情報 (x座標)
      */
     get x() : number {
-        return this.entity.mouse.x;
+        return this.entity.mouse.scratchX;
     }
     /**
      * マウス情報 (y座標)
      */
     get y() : number {
-        return this.entity.mouse.y;
+        return this.entity.mouse.scratchY;
     }
 };

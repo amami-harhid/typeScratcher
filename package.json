@@ -1,6 +1,6 @@
 {
   "name": "@tscratch3/typescratcher",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "TypeScript library that generates Scratch 3-style drawings",
   "repository": {
     "type": "git",

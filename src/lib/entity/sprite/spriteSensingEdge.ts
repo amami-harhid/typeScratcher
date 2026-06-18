@@ -20,6 +20,7 @@ export class SpriteSensingEdge implements ISpriteSensingEdge {
      * @returns 
      */
     get isTouching() : boolean {
+        this.entity.render.renderer.updateDrawableScale(this.entity.drawableID, [this.entity.Properties.scale.w, this.entity.Properties.scale.h]);
         const touch = this.isTouchingEdge();
         return touch.touch;
     }
@@ -28,6 +29,7 @@ export class SpriteSensingEdge implements ISpriteSensingEdge {
      * @returns 
      */
     get isTouchingVirtical() : boolean {
+        this.entity.render.renderer.updateDrawableScale(this.entity.drawableID, [this.entity.Properties.scale.w, this.entity.Properties.scale.h]);
         const touch = this.isTouchingEdge();
         if( touch.touch === false) {
             return false;
@@ -42,6 +44,7 @@ export class SpriteSensingEdge implements ISpriteSensingEdge {
      * 水平方向の枠に触っていることを判定する
      */
     get isTouchingHorizontal(): boolean {
+        this.entity.render.renderer.updateDrawableScale(this.entity.drawableID, [this.entity.Properties.scale.w, this.entity.Properties.scale.h]);
         const touch = this.isTouchingEdge();
         if( touch.touch === false) {
             return false;
