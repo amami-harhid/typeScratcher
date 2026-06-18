@@ -49,18 +49,23 @@ cat.Event.flagPresser().func = async function* (this: Sprite) {
 cat.Event.flagPresser().func = async function* (this: Sprite) {
     // ずっと繰り返す
     for (;;) {
-        // クリックしたとき
-        if (this.Sensing.mouse.isTouching && this.Sensing.mouse.isDown) {
-            this.Control.clone(); 
-            this.Sound.play(CatSound);
+        if (this.Sensing.mouse.isDown) {
+            this.Control.clone();
         }
+        //await this.Control.wait(2);
+        // クリックしたとき
+        // if (this.Sensing.mouse.isTouching && this.Sensing.mouse.isDown) {
+        //     this.Control.clone(); 
+        //     this.Sound.play(CatSound);
+        // }
         yield;
     }
 };
 // クローンされたとき
 // クローンすると本体の半透明効果が一瞬無くなる
 cat.Event.cloned().func = async function* (this: Sprite) {
-    //this.Looks.effect.set(Ts.ImageEffective.GHOST, 0);
+    //this.Looks.show();  
+    this.Looks.effect.set(Ts.ImageEffective.GHOST, 0);
     const mousePos = {x:this.Sensing.mouse.x, y:this.Sensing.mouse.y}
     this.Motion.position.xy = [mousePos.x, mousePos.y];
     this.Looks.size.scale = [15, 15]; //<=== スケールを変更したらレンダーへ教えないといけなそう。

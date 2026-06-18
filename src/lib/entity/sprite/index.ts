@@ -155,7 +155,14 @@ export class Sprite extends Entity implements ISprite {
             });
         })
     }
+    private _updateSkipCounter = 0;
     update() {
+        // クローンされた直後は 本体と同じ場所・同じ大きさ・画像効果で出現してしまわないよう、
+        // 「クローンされたとき」に間に合うように １回だけレンダー反映をスキップさせる
+        if( this._isClone == true && this._updateSkipCounter < 1) {
+            this._updateSkipCounter+=1;
+            return;
+        } 
         this._penSprite.update();
         (this._looks.bubble as SpriteBubble).update();
         this._properties.update(); 

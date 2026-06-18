@@ -16,6 +16,7 @@ import type { IEntityProxy } from '../../../type/entity/entity/IEntityProxy';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteControl } from '../../../type/entity/sprite/ISpriteControl';
 import type { ISound } from '../../../type/sound';
+import { SpriteCostume } from './spriteCostume';
 
 const CLONE_MAX_SIZE = 300;
 
@@ -89,14 +90,14 @@ export class SpriteControl implements ISpriteControl {
             // イベント登録
             const scratchEvent = (engine as Engine).runtime.scratchEvent;
             const messageId = scratchEvent.getClonedEventMessageId(_sprite);
-            if(SpriteControl._clonedEventElementKeys.includes(messageId)) {
-                // メッセージIDの登録があるとき
+            if(scratchEvent.listenerCount(messageId)>0){
                 scratchEvent.emit(messageId, clone);
             }else{
                 // 何もしない
             }
 
             // 初期化
+            // TODO クローンの場合は初期化は不要かもしれない。
             clone.init();
             resolve();
         });
@@ -130,7 +131,7 @@ export class SpriteControl implements ISpriteControl {
             _sprite.Properties.scale.h = target.Properties.scale.h;
             _sprite.Properties.visible = target.Properties.visible;
             // コスチューム番号
-            _sprite.Costume.no = target.Costume.no;
+            (_sprite.Costume as SpriteCostume).no = (target.Costume as SpriteCostume).no;
 
             // 画像効果
             const _effect:TEntityEffects = target.Looks.effect.get();

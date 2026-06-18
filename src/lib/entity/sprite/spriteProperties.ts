@@ -1,6 +1,7 @@
 import { EntityProperties } from "../entity/entityProperties";
 import { Rotation } from "../../../type/entity/RotationStyle";
 import { Sprite } from "../sprite";
+import { SpriteCostume } from "./spriteCostume";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
 /**
@@ -33,7 +34,7 @@ export class SpriteProperties extends EntityProperties {
             this.position.y = fencedPosition[1];
         }
         const prop: ScratchRenderProperties = {
-            skinId: entity.Costume.currentSkinId,
+            skinId: (entity.Costume as SpriteCostume).currentSkinId,
             position: [this.position.x, this.position.y],
             scale: [_scale.w, _scale.h],
             direction: _degree,
