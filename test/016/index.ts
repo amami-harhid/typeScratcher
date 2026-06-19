@@ -26,6 +26,8 @@ const CatSound = new Ts.Sound({ CatWav });
 const cat = new Ts.Sprite("apple");
 cat.Costume.add([CatImage, Cat2Image]); // イメージを１個追加
 cat.Sound.add([CatSound]); // サウンドを１個追加
+cat.Sound.setVolume(CatSound, 10);
+cat.Sound.setPitch(CatSound, 30);
 
 // ステージ作成
 const stage = new Ts.Stage();
@@ -64,6 +66,8 @@ cat.Event.flagPresser().func = async function* (this: Sprite) {
 // クローンされたとき
 // クローンすると本体の半透明効果が一瞬無くなる
 cat.Event.cloned().func = async function* (this: Sprite) {
+    // this.Sound.setVolume(CatSound, 10);
+    // this.Sound.setPitch(CatSound, 30);
     //this.Looks.show();  
     this.Looks.effect.set(Ts.ImageEffective.GHOST, 0);
     const mousePos = {x:this.Sensing.mouse.x, y:this.Sensing.mouse.y}
@@ -74,11 +78,15 @@ cat.Event.cloned().func = async function* (this: Sprite) {
     this.Motion.direction.degree = random;
     for (;;) {
         this.Motion.move.steps(10);
-        this.Looks.costume.next();
-        if (this.Sensing.edge.isTouching) {
+        this.Motion.move.ifOnEdgeBounce();
+        if(this.Sensing.edge.isTouching){
+            this.Sound.play(CatSound);
+        }
+        if(this.Sensing.sprite.isTouching([cat])) {
             this.Looks.hide();
             break;
         }
+        this.Looks.costume.next();
         yield;
     }
     this.Control.removeClone();

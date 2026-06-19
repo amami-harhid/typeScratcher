@@ -38,7 +38,9 @@ export class EntitySound {
             }
             const soundName = s.name;
             this.soundMap[soundName] = s;
-            this.effectMap[soundName] = {volume:100, pitch:0};
+            if(this.effectMap[soundName] == undefined) {
+                this.effectMap[soundName] = {volume:100, pitch:0};
+            }
             this.soundKeys.push(s.name);
         }
     }
