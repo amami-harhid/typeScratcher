@@ -144,7 +144,7 @@ export class PenSprite implements IPenSprite {
         this._penRgbAttributes.color4f[0] = rgb.r/255;
         this._penRgbAttributes.color4f[1] = rgb.g/255;
         this._penRgbAttributes.color4f[2] = rgb.b/255;
-        this._penRgbAttributes.color4f[3] = rgb.a;
+        this._penRgbAttributes.color4f[3] = (rgb.a)? rgb.a: 1.0;
         this._penRgbAttributes.diameter = this._penAttributes.diameter;
 
     }

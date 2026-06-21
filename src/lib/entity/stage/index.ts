@@ -70,9 +70,11 @@ export class Stage extends Entity implements IStage{
                 loadArr.push((img as Image).load());
             }
             for(const sndKey of (this._sound as EntitySound).soundKeys){
-                const sound = (this._sound as EntitySound).soundMap[sndKey];
-                const _sound = sound as Sound;
-                loadArr.push(_sound.load(me));
+                const sound = (this._sound as EntitySound).soundMap.get(sndKey);
+                if(sound){
+                    const _sound = sound as Sound;
+                    loadArr.push(_sound.load(me));
+                }
             }
             Promise.all(loadArr).then(async ()=>{
                 // イメージごとに Skinを作る

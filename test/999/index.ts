@@ -1,10 +1,8 @@
 /**
- * 基本-010
- * スプライトをクリックしたらクローンを作る
- * クローンされたとき、ランダムな方向へ動き出す
+ * 基本-999
  */
-import { Typescratcher as Ts } from '../../index';
-import type { Sprite, Stage as _ } from '../../index';
+import { Typescratcher as Ts } from '../../src/importer';
+import type { Sprite, Stage as _ } from '../../src/importer';
 
 // 【画像 import 】
 import CatSvg from "../assets/cat.svg";
@@ -35,6 +33,7 @@ stage.Backdrop.add([BasketballImage]); // 背景を１個追加
 
 // 旗を押したときのイベント定義
 cat.Event.flagPresser().func = async function* (this: Sprite) {
+
     // 回転を「回転しない」にする
     this.Motion.rotation.style = Ts.Rotation.DONT_ROTATE;
     // 角度を設定する

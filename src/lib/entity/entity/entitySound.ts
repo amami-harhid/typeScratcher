@@ -103,7 +103,10 @@ export class EntitySound {
      */
     async clearEffects(): Promise<void> {
         for(const soundKey of this.soundKeys) {
-            const sound = this.soundMap[soundKey];
+            const sound = this.soundMap.get(soundKey);
+            if(sound == undefined){
+                return;
+            }
             const _sound = sound as Sound;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) continue;// 何もしない
@@ -123,7 +126,10 @@ export class EntitySound {
      */
     stop(): void {
         for(const soundKey of this.soundKeys) {
-            const sound = this.soundMap[soundKey];
+            const sound = this.soundMap.get(soundKey);
+            if(sound == undefined){
+                continue;
+            }
             const _sound = sound as Sound;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) continue;// 何もしない
@@ -142,7 +148,10 @@ export class EntitySound {
      */
     stopImmediately(): void {
         for(const soundKey of this.soundKeys) {
-            const sound = this.soundMap[soundKey];
+            const sound = this.soundMap.get(soundKey);
+            if(sound == undefined){
+                return;
+            }
             const _sound = sound as Sound;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) continue;// 何もしない

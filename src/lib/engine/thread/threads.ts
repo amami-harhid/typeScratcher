@@ -290,7 +290,10 @@ export class ThreadManager {
         const sounds = (entity.Sound as EntitySound).soundMap;
         const soundKeys = (entity.Sound as EntitySound).soundKeys;
         for(const key of soundKeys){
-            const sound = sounds[key] as Sound;
+            const sound = sounds.get(key) as Sound;
+            if(sound == undefined){
+                continue;
+            }
             const soundPlayer = (entity.Sound as EntitySound).getSoundPlayer(sound.name);
             if(soundPlayer == undefined) continue; // 何もしない
             if(sound.isPlaying(soundPlayer) === true){

@@ -107,21 +107,21 @@ export class SpriteControl implements ISpriteControl {
         if(_sprite.isClone === true) {
             // Imageコピー
             const _images = (target as Sprite).$image.images;
-            this.entity.Costume.add(_images);
+            _sprite.Costume.add(_images);
             // Soundコピー(DeepCopy)
             const _soundMap = (target.Sound as EntitySound).soundMap;
             const _soundKeys = (target.Sound as EntitySound).soundKeys;
             const _arr: ISound[] = [];
             const targetEntitySound = target.Sound as EntitySound; // サウンド効果設定用(CLONE)
-            const cloneEntitySound = this.entity.Sound as EntitySound; // サウンド効果設定用(CLONE)
+            const cloneEntitySound = _sprite.Sound as EntitySound; // サウンド効果設定用(CLONE)
             for( const key of _soundKeys) {
-                const _sound = _soundMap[key] as Sound;  
+                const _sound = _soundMap.get(key) as Sound;  
                 // 名前とデータを流用した新規インスタンス
                 const _reuseSound = (_sound as Sound).deepCopy();
                 // サウンド効果を引き継ぐ
                 const _volume = targetEntitySound.getVolume(_sound);
                 const _pitch = targetEntitySound.getPitch(_sound);
-                (_sprite.Sound as EntitySound).effectMap[_reuseSound.name] = {volume: _volume, pitch: _pitch};
+                cloneEntitySound.effectMap.set(_reuseSound.name, {volume: _volume, pitch: _pitch});
                 _arr.push( _reuseSound );
             }
             if( _arr.length > 0){
