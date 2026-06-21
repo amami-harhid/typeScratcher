@@ -5,7 +5,7 @@ export const SPEECH_LOCALE = {
 
 export type V_SPEECH_LOCALE = typeof SPEECH_LOCALE[keyof typeof SPEECH_LOCALE];
 
-import { SPEECH_GENDER, SPEECH_LOCAL, type Type_properties, type Type_speech_gender, type Type_speech_local } from ".";
+import { SPEECH_GENDER, type Type_speech_gender } from ".";
 
 /**
  * An id for one of the voices.

@@ -4,19 +4,17 @@ import type { IEntity } from '../../../type/entity/entity';
 import type { ISound } from '../../../type/sound';
 import type { ISoundPlayer } from '../../../type/sound/ISoundPlayer';
 
-type TypeSoundPlayerElement = {[key: string]: ISoundPlayer};
-
 /** 
  * サウンド 
  */
 export class EntitySound {
 
     protected entity: IEntity;
-    public soundMap: {[key:string]: ISound} = {};
+    public soundMap: Map<string, ISound>;
     public soundKeys: string[] = [];
-    public effectMap: {[key:string]: {volume:number, pitch:number}} = {}
+    public effectMap: Map<string,{volume:number, pitch:number}>;
     protected currentSound!: ISound;
-    private _soundPlayers : TypeSoundPlayerElement[];
+    private _soundPlayers : Map<string, ISoundPlayer>;
     private _soundPlayerKeys : string[];
     /**
      * @internal
@@ -24,7 +22,9 @@ export class EntitySound {
      */
     constructor(entity:IEntity){
         this.entity = entity;
-        this._soundPlayers = [];
+        this.soundMap = new Map<string, ISound>();
+        this.effectMap = new Map<string, {volume:number, pitch:number}>();
+        this._soundPlayers = new Map<string,ISoundPlayer>();
         this._soundPlayerKeys = [];
     }
     /**
@@ -37,9 +37,9 @@ export class EntitySound {
                 this.currentSound = s;
             }
             const soundName = s.name;
-            this.soundMap[soundName] = s;
-            if(this.effectMap[soundName] == undefined) {
-                this.effectMap[soundName] = {volume:100, pitch:0};
+            this.soundMap.set(soundName, s);
+            if( !this.effectMap.has(soundName)) {
+                this.effectMap.set(soundName,{volume:100, pitch:0});
             }
             this.soundKeys.push(s.name);
         }
@@ -49,13 +49,15 @@ export class EntitySound {
             // 何もしない
         }else{
             this._soundPlayerKeys.push(name);
-            this._soundPlayers[name] = player;
+            this._soundPlayers.set(name, player);
         }
     }
     getSoundPlayer( name: string ) : ISoundPlayer | undefined {
-        if(this._soundPlayerKeys.includes(name)) {
-            return this._soundPlayers[name];
+        if(this._soundPlayerKeys.includes(name)){
+            const sp = this._soundPlayers.get(name);
+            return sp;
         }
+        return undefined;
     }
     /**
      * 音を鳴らす
@@ -64,11 +66,13 @@ export class EntitySound {
     play(sound: ISound): void {
         const _sound = sound as Sound;
         if(this.soundKeys.includes( _sound.name )) {
-            const effect = this.effectMap[_sound.name];
+            const effect = this.effectMap.get(_sound.name);
             const _soundPlayer = this.getSoundPlayer(_sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
-            _sound.setVolume(_soundPlayer, effect.volume);
-            _sound.setPitch(_soundPlayer, effect.pitch);
+            if(effect){
+                _sound.setVolume(_soundPlayer, effect.volume);
+                _sound.setPitch(_soundPlayer, effect.pitch);
+            }
             _sound.play(_soundPlayer);
         }
     }
@@ -79,11 +83,13 @@ export class EntitySound {
     playUntilDone(sound: Sound): Promise<void> {
         return new Promise<void>(resolve=>{
             if(this.soundKeys.includes( sound.name )) {
-                const effect = this.effectMap[sound.name];
+                const effect = this.effectMap.get(sound.name);
                 const _soundPlayer = this.getSoundPlayer( sound.name);
                 if(_soundPlayer == undefined) return;// 何もしない
-                sound.setVolume(_soundPlayer, effect.volume);
-                sound.setPitch(_soundPlayer, effect.pitch);
+                if(effect){
+                    sound.setVolume(_soundPlayer, effect.volume);
+                    sound.setPitch(_soundPlayer, effect.pitch);
+                }
                 sound.playUntilDone(_soundPlayer).then(()=>{
                     resolve();
                 });
@@ -101,11 +107,13 @@ export class EntitySound {
             const _sound = sound as Sound;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) continue;// 何もしない
-            const effect = this.effectMap[soundKey]
+            const effect = this.effectMap.get(soundKey);
+            if(effect){
+                effect.volume = 100;
+                effect.pitch = 0;
+            }
             _sound.setVolume(_soundPlayer, 100);
-            effect.volume = 100;
             _sound.setPitch(_soundPlayer, 0);
-            effect.pitch = 0;
         }
         // 反映されるまで少し待つ
         await Timer.wait(1/30);
@@ -119,9 +127,11 @@ export class EntitySound {
             const _sound = sound as Sound;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) continue;// 何もしない
-            const effect = this.effectMap[sound.name]
-            _sound.setVolume(_soundPlayer, effect.volume);
-            _sound.setPitch(_soundPlayer, effect.pitch);
+            const effect = this.effectMap.get(sound.name);
+            if(effect){
+                _sound.setVolume(_soundPlayer, effect.volume);
+                _sound.setPitch(_soundPlayer, effect.pitch);
+            }
             if(_sound.isPlaying(_soundPlayer) === true){
                 _sound.stop(_soundPlayer);
             }
@@ -136,9 +146,11 @@ export class EntitySound {
             const _sound = sound as Sound;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) continue;// 何もしない
-            const effect = this.effectMap[sound.name]
-            _sound.setVolume(_soundPlayer, effect.volume);
-            _sound.setPitch(_soundPlayer, effect.pitch);
+            const effect = this.effectMap.get(sound.name);
+            if(effect){
+                _sound.setVolume(_soundPlayer, effect.volume);
+                _sound.setPitch(_soundPlayer, effect.pitch);
+            }
             if(_sound.isPlaying(_soundPlayer) === true){
                 _sound.stopImmediately(_soundPlayer);
             }
@@ -147,16 +159,18 @@ export class EntitySound {
     /** 音量 */
     getVolume(sound: ISound) : number {
         if(this.soundKeys.includes( sound.name )) {
-            const effect = this.effectMap[sound.name]
-            return effect.volume;
+            const effect = this.effectMap.get(sound.name);
+            if(effect)
+                return effect.volume;
         }
         return -Infinity;
     }
     addVolume(sound: ISound, volume: number) : void {
         const _sound = sound as Sound;
         if(this.soundKeys.includes(_sound.name)) {
-            const effect = this.effectMap[sound.name]
-            effect.volume += volume;
+            const effect = this.effectMap.get(sound.name);
+            if(effect)
+                effect.volume += volume;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
             _sound.addVolume(_soundPlayer, volume);
@@ -166,8 +180,9 @@ export class EntitySound {
     }
     setVolume(sound: Sound, volume: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            const effect = this.effectMap[sound.name]
-            effect.volume = volume;
+            const effect = this.effectMap.get(sound.name);
+            if(effect)
+                effect.volume = volume;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
             sound.setVolume(_soundPlayer, volume);
@@ -178,15 +193,17 @@ export class EntitySound {
     /** ピッチ */
     getPitch(sound: Sound) : number {
         if(this.soundKeys.includes(sound.name)) {
-            const effect = this.effectMap[sound.name]
-            return effect.pitch;
+            const effect = this.effectMap.get(sound.name);
+            if(effect)
+                return effect.pitch;
         }
         return -Infinity;
     }
     addPitch(sound: Sound, pitch: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            const effect = this.effectMap[sound.name]
-            effect.pitch += pitch;
+            const effect = this.effectMap.get(sound.name);
+            if(effect)
+                effect.pitch += pitch;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
             sound.addPitch(_soundPlayer, pitch);
@@ -196,8 +213,9 @@ export class EntitySound {
     }
     setPitch(sound: Sound, pitch: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            const effect = this.effectMap[sound.name]
-            effect.pitch = pitch;
+            const effect = this.effectMap.get(sound.name);
+            if(effect)
+                effect.pitch = pitch;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
             sound.setPitch(_soundPlayer, pitch);

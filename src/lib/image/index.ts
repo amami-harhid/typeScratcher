@@ -36,7 +36,7 @@ export class Image implements IImage{
         }
         const textSvgData = await textToSvg.createSvgData(_text, attributes);
         
-        const _image = {};
+        const _image :{[key:string]: string } = {};
         _image[_name] = textSvgData;
 
         const textImage = new Image( _image );

@@ -255,7 +255,7 @@ export declare interface IRenderWebGL {
      * @param costumeResolution 
      * @param rotationCenter 
      */
-    updateBitmapSkin(skinId:number, bitmapData: HTMLImageElement, costumeResolution?:number, rotationCenter?:TPositionArray)
+    updateBitmapSkin(skinId:number, bitmapData: HTMLImageElement, costumeResolution?:number, rotationCenter?:TPositionArray):void;
     /**
      * 
      * @param skinId {number} - skin id.

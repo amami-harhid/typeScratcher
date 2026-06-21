@@ -193,7 +193,7 @@ export class SpriteControl implements ISpriteControl {
      * @param messageId 
      * @param clone 
      */
-    public clonedEventKick(messageId: string, clone: ISprite): void {
+    public clonedEventKick(): void {
 
         // このメソッドは ScratchEventから呼ばれる。
         // クローンのメソッドである( this == clone )

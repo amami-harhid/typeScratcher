@@ -1,16 +1,10 @@
 import { engine, Engine } from "../engine";
 import EventEmitter from "events";
-import { EntitySound } from "../entity/entity/entitySound";
-import { ScratchEvent } from '../engine/scratchEvent';
-import { SoundRemaker } from "../sounds/soundRemaker";
-import { SoundLoader } from "../loader/soundLoader";
 import { SoundPlayer } from "../sounds/soundPlayer";
 import { Utils } from "../utils/utils";
-import type { IEntity } from "../../type/entity/entity";
 import type { ISound } from "../../type/sound";
 import type { ISoundPlayer } from "../../type/sound/ISoundPlayer";
-import { Entity } from "../entity/entity";
-import { TSoundPlayerOption } from "src/type/sound/IAudioEngine";
+import type { TSoundPlayerOption } from "../../type/sound/IAudioEngine";
 type SoundArgStringObject = { [key:string]: string | Uint8Array<ArrayBuffer>};
 
 /**
@@ -70,7 +64,7 @@ export class SpeechSound extends EventEmitter implements ISound {
                 resolve();
             }else{
                 // speechStopImmediately() からEmit
-                const _f = _=>{
+                const _f = ()=>{
                     me.stopImmediately(soundPlayer);
                     resolve();
                 }

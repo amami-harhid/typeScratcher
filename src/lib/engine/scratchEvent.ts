@@ -253,7 +253,7 @@ export class ScratchEvent extends EventEmitter {
         }
         const messageId = this.getClonedEventMessageId(sprite);
         this.on(messageId, (clone: Sprite)=>{
-            (clone.Control as SpriteControl).clonedEventKick(messageId, clone);
+            (clone.Control as SpriteControl).clonedEventKick();
         });
     }
     public getClonedEventMessageId(sprite: Sprite) : string {

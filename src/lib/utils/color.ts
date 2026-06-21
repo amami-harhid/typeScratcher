@@ -1,6 +1,8 @@
 /**
  * Color
  */
+export type RGBObject = {r: number, g: number, b: number, a?:number};
+export type HSVObject = {h: number, s: number, v: number};
 export class Color {
     /**
      * @typedef {object} RGBObject - An object representing a color in RGB format.
@@ -17,12 +19,12 @@ export class Color {
      */
 
     /** @type {RGBObject} */
-    static get RGB_BLACK () {
+    static get RGB_BLACK () :RGBObject{
         return {r: 0, g: 0, b: 0};
     }
 
     /** @type {RGBObject} */
-    static get RGB_WHITE () {
+    static get RGB_WHITE () :RGBObject{
         return {r: 255, g: 255, b: 255};
     }
 
@@ -31,7 +33,7 @@ export class Color {
      * @param {number} decimal RGB color as a decimal.
      * @return {string} RGB color as #RRGGBB hex string.
      */
-    static decimalToHex (decimal) {
+    static decimalToHex (decimal: number) : string {
         if (decimal < 0) {
             decimal += 0xFFFFFF + 1;
         }
@@ -45,7 +47,7 @@ export class Color {
      * @param {number} decimal RGB color as decimal.
      * @return {RGBObject} rgb - {r: red [0,255], g: green [0,255], b: blue [0,255]}.
      */
-    static decimalToRgb (decimal) {
+    static decimalToRgb (decimal: number): RGBObject {
         const a = (decimal >> 24) & 0xFF;
         const r = (decimal >> 16) & 0xFF;
         const g = (decimal >> 8) & 0xFF;
@@ -85,7 +87,7 @@ export class Color {
      * @param {RGBObject} rgb - {r: red [0,255], g: green [0,255], b: blue [0,255]}.
      * @return {!number} Number representing the color.
      */
-    static rgbToDecimal (rgb) {
+    static rgbToDecimal (rgb: RGBObject) : number{
         return (rgb.r << 16) + (rgb.g << 8) + rgb.b;
     }
 
@@ -102,7 +104,7 @@ export class Color {
      * @param hsv 
      * @returns 
      */
-    static hsv2rgb(hsv:{h:number,s:number,v:number,t:number}) {
+    static hsv2rgb(hsv:{h:number,s:number,v:number,t:number}): {hex: string, rgb: RGBObject} {
         const h = hsv.h;
         const s = hsv.s;
         const v = hsv.v;
@@ -129,7 +131,7 @@ export class Color {
      * @param {RGBObject} rgb - {r: red [0,255], g: green [0,255], b: blue [0,255]}.
      * @return {HSVObject} hsv - {h: hue [0,360), s: saturation [0,1], v: value [0,1]}
      */
-    static rgbToHsv (rgb) {
+    static rgbToHsv (rgb: RGBObject): HSVObject {
         const r = rgb.r / 255;
         const g = rgb.g / 255;
         const b = rgb.b / 255;
@@ -156,7 +158,7 @@ export class Color {
      * @param {number} fraction1 - the interpolation parameter. If this is 0.5, for example, mix the two colors equally.
      * @return {RGBObject} the interpolated color.
      */
-    static mixRgb (rgb0, rgb1, fraction1) {
+    static mixRgb (rgb0:RGBObject, rgb1:RGBObject, fraction1: number): RGBObject {
         if (fraction1 <= 0) return rgb0;
         if (fraction1 >= 1) return rgb1;
         const fraction0 = 1 - fraction1;

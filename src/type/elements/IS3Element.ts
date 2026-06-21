@@ -11,7 +11,7 @@ export type TS3CSS = {
 // static interface
 export interface IStaticS3Element {
 
-    insertCss(S3CSS: TS3CSS) : void;
+    insertCss() : void;
     init(): Promise<HTMLElement>;
 
 };

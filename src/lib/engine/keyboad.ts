@@ -1,12 +1,12 @@
 import { Cast } from "../utils/cast";
 import { Runtime } from "./runtime";
-import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from "../../type/engine/keyboad";
+import { KEYBOARD_KEYS } from "../../type/engine/keyboad";
 declare type POST_DATA = {
     isDown: boolean,
     key : string,
 };
 
-const KEY_NAME_LIST:string[] = Object.keys(KEYBOARD_KEYS).map(name => KEYBOARD_KEYS[name]);
+const KEY_NAME_LIST:string[] = Object.keys(KEYBOARD_KEYS).map((name:string) => KEYBOARD_KEYS[name]);
 
 export class Keyboard {
     private _keysPressed: string[] = [];

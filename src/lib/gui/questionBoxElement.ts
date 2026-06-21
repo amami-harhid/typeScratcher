@@ -5,6 +5,7 @@ import { Sprite } from '../entity/sprite';
 import { Utils } from '../utils/utils';
 import type { IEntity } from '../../type/entity/entity';
 import type { ISprite } from '../../type/entity/sprite';
+import { KEYBOARD_KEYS_Type } from 'src/type/engine/keyboad';
 
 /** div include canvas */
 const CanvasDiv = 'canvasDiv';
@@ -166,8 +167,10 @@ export class QuestionBoxElement extends EventEmitter {
         keyboard.spaceStopPropagation = false;
 
         let inputText = '';
-        const inputChange = function(e) {
-            inputText = e.currentTarget.value;
+        const inputChange = function(e: Event) {
+            if(e.currentTarget && e.currentTarget instanceof HTMLInputElement ){
+                inputText = e.currentTarget.value;
+            }
         }
         const me = this;
         input.addEventListener('input', inputChange);
