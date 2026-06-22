@@ -13,7 +13,7 @@ const ScratchFontFamily = {
     Pixel: 'Pixel',
     Scratch: 'Scratch',
 } as const;
-//const ScratchFontFamilyValArr:string[] = Object.values(ScratchFontFamily);
+
 export type ScratchFontFamilyValue = typeof ScratchFontFamily[keyof typeof ScratchFontFamily];
 type ImageArgStringObject = { [key:string]:string };
 

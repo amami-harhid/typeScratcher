@@ -13,6 +13,12 @@ export class ImageLoader {
     private static get REGEX_SVG_DATA_IMAGE_FILE(): RegExp {
         return /^.+\.svg(\\?.*)?$/;
     }
+
+    static get REGEX_DATA_XML_SVG (): RegExp {
+        // <?xml version="1.0" encoding="utf-8" ?><svg
+        return /^(\<\?xml\s.+\?\>)?\<svg\s/;
+    }
+
     /**
      * REGEX_DATA_IMAGE_SVG
      * svg data の先頭
@@ -41,10 +47,10 @@ export class ImageLoader {
     static async _svgText(path: string) :Promise<string>{
         let svg: Response = await fetch(path);
         let _text: string = await svg.text();
-        if(_text.substring(0,4) != "<svg"){
-            return "ERROR";
+        if(_text.match(ImageLoader.REGEX_DATA_XML_SVG)){
+            return _text;
         }
-        return _text;
+        return "ERROR";
     }
 
     static async _bitmapLoad(path: string): Promise<string>{

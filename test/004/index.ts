@@ -1,10 +1,10 @@
 /**
  * TEST 004 ( Sprite Sensing )
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage as _Stage } from '../../index';
+import { Typescratcher as TS } from '../../src/index';
+import type { Sprite, Stage as _Stage } from '../../src/index';
 
-import AppleSvg from '../assets/Apple.svg';
+import AppleSvg from '../assets/front_01.svg';
 import CatSvg from '../assets/cat.svg';
 import BlueskySvg from '../assets/Blue Sky.svg';
 

@@ -6391,7 +6391,7 @@ function wB() {
   }, AE;
 }
 var eE = {}, Y2;
-function Ki() {
+function Oi() {
   if (Y2) return eE;
   Y2 = 1;
   var i = Se(), A = TypeError, t = function(r) {
@@ -6409,7 +6409,7 @@ var M2;
 function NV() {
   if (M2) return s2;
   M2 = 1;
-  var i = oA(), A = Oe(), t = Ns(), r = we(), B = pa(), Q = Qe(), a = st(), c = Ii(), n = br(), w = ts(), g = Se(), o = Le(), s = xe(), h = xr(), l = Wa(), u = Ka().set, I = e8(), d = t8(), F = is(), m = A8(), p = it(), D = xs(), U = wB(), J = Ki(), v = "Promise", S = U.CONSTRUCTOR, R = U.REJECTION_EVENT, y = U.SUBCLASSING, f = p.getterFor(v), G = p.set, x = D && D.prototype, T = D, P = x, k = r.TypeError, K = r.document, j = r.process, Z = J.f, nA = Z, X = !!(K && K.createEvent && r.dispatchEvent), AA = "unhandledrejection", $ = "rejectionhandled", rA = 0, eA = 1, gA = 2, aA = 1, lA = 2, vA, bA, MA, fA, jA = function(mA) {
+  var i = oA(), A = Oe(), t = Ns(), r = we(), B = pa(), Q = Qe(), a = st(), c = Ii(), n = br(), w = ts(), g = Se(), o = Le(), s = xe(), h = xr(), l = Wa(), u = Ka().set, I = e8(), d = t8(), F = is(), m = A8(), p = it(), D = xs(), U = wB(), J = Oi(), v = "Promise", S = U.CONSTRUCTOR, R = U.REJECTION_EVENT, y = U.SUBCLASSING, f = p.getterFor(v), G = p.set, x = D && D.prototype, T = D, P = x, k = r.TypeError, K = r.document, j = r.process, Z = J.f, nA = Z, X = !!(K && K.createEvent && r.dispatchEvent), AA = "unhandledrejection", $ = "rejectionhandled", rA = 0, eA = 1, gA = 2, aA = 1, lA = 2, vA, bA, MA, fA, jA = function(mA) {
     var DA;
     return s(mA) && o(DA = mA.then) ? DA : !1;
   }, ee = function(mA, DA) {
@@ -6533,7 +6533,7 @@ var D2;
 function GV() {
   if (D2) return F2;
   D2 = 1;
-  var i = oA(), A = Qe(), t = Se(), r = Ki(), B = is(), Q = Gt(), a = Oa();
+  var i = oA(), A = Qe(), t = Se(), r = Oi(), B = is(), Q = Gt(), a = Oa();
   return i({ target: "Promise", stat: !0, forced: a }, {
     all: function(n) {
       var w = this, g = r.f(w), o = g.resolve, s = g.reject, h = B(function() {
@@ -6568,7 +6568,7 @@ var y2 = {}, U2;
 function xV() {
   if (U2) return y2;
   U2 = 1;
-  var i = oA(), A = Qe(), t = Se(), r = Ki(), B = is(), Q = Gt(), a = Oa();
+  var i = oA(), A = Qe(), t = Se(), r = Oi(), B = is(), Q = Gt(), a = Oa();
   return i({ target: "Promise", stat: !0, forced: a }, {
     race: function(n) {
       var w = this, g = r.f(w), o = g.reject, s = B(function() {
@@ -6585,7 +6585,7 @@ var N2 = {}, G2;
 function RV() {
   if (G2) return N2;
   G2 = 1;
-  var i = oA(), A = Ki(), t = wB().CONSTRUCTOR;
+  var i = oA(), A = Oi(), t = wB().CONSTRUCTOR;
   return i({ target: "Promise", stat: !0, forced: t }, {
     reject: function(B) {
       var Q = A.f(this), a = Q.reject;
@@ -6597,7 +6597,7 @@ var v2 = {}, rE, x2;
 function r8() {
   if (x2) return rE;
   x2 = 1;
-  var i = Ee(), A = xe(), t = Ki();
+  var i = Ee(), A = xe(), t = Oi();
   return rE = function(r, B) {
     if (i(r), A(B) && B.constructor === r) return B;
     var Q = t.f(r), a = Q.resolve;
@@ -6623,7 +6623,7 @@ var S2 = {}, J2;
 function i8() {
   if (J2) return S2;
   J2 = 1;
-  var i = oA(), A = Qe(), t = Se(), r = Ki(), B = is(), Q = Gt(), a = Oa();
+  var i = oA(), A = Qe(), t = Se(), r = Oi(), B = is(), Q = Gt(), a = Oa();
   return i({ target: "Promise", stat: !0, forced: a }, {
     allSettled: function(n) {
       var w = this, g = r.f(w), o = g.resolve, s = g.reject, h = B(function() {
@@ -6645,7 +6645,7 @@ var T2 = {}, b2;
 function n8() {
   if (b2) return T2;
   b2 = 1;
-  var i = oA(), A = Qe(), t = Se(), r = He(), B = Ki(), Q = is(), a = Gt(), c = Oa(), n = "No one promise resolved";
+  var i = oA(), A = Qe(), t = Se(), r = He(), B = Oi(), Q = is(), a = Gt(), c = Oa(), n = "No one promise resolved";
   return i({ target: "Promise", stat: !0, forced: c }, {
     any: function(g) {
       var o = this, s = r("AggregateError"), h = B.f(o), l = h.resolve, u = h.reject, I = Q(function() {
@@ -6698,7 +6698,7 @@ var P2 = {}, L2;
 function s8() {
   if (L2) return P2;
   L2 = 1;
-  var i = oA(), A = we(), t = Ir(), r = Or(), B = Ki(), Q = Se(), a = is(), c = A.Promise, n = !1, w = !c || !c.try || a(function() {
+  var i = oA(), A = we(), t = Ir(), r = Or(), B = Oi(), Q = Se(), a = is(), c = A.Promise, n = !1, w = !c || !c.try || a(function() {
     c.try(function(g) {
       n = g === 8;
     }, 8);
@@ -6716,7 +6716,7 @@ var z2 = {}, W2;
 function B8() {
   if (W2) return z2;
   W2 = 1;
-  var i = oA(), A = Ki();
+  var i = oA(), A = Oi();
   return i({ target: "Promise", stat: !0 }, {
     withResolvers: function() {
       var r = A.f(this);
@@ -8848,7 +8848,7 @@ function L8() {
   }, Aw;
 }
 var pG;
-function Oi() {
+function Vi() {
   if (pG) return oa.exports;
   pG = 1;
   var i = oA(), A = we(), t = Qe(), r = ye(), B = Ql(), Q = Ke(), a = Ha(), c = xr(), n = Wr(), w = Vt(), g = rl(), o = gB(), s = j8(), h = P8(), l = ni(), u = We(), I = Tr(), d = xe(), F = wn(), m = Tt(), p = lr(), D = Ii(), U = _n().f, J = L8(), v = kt().forEach, S = ts(), R = ft(), y = Et(), f = nr(), G = hn(), x = it(), T = qn(), P = x.get, k = x.set, K = x.enforce, j = y.f, Z = f.f, nA = A.RangeError, X = a.ArrayBuffer, AA = X.prototype, $ = a.DataView, rA = Q.NATIVE_ARRAY_BUFFER_VIEWS, eA = Q.TYPED_ARRAY_TAG, gA = Q.TypedArray, aA = Q.TypedArrayPrototype, lA = Q.isTypedArray, vA = "BYTES_PER_ELEMENT", bA = "Wrong length", MA = function(ne, ce) {
@@ -8926,7 +8926,7 @@ var mG;
 function b5() {
   if (mG) return hG;
   mG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Float32", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -8937,7 +8937,7 @@ var yG = {}, UG;
 function k5() {
   if (UG) return yG;
   UG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Float64", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -8948,7 +8948,7 @@ var NG = {}, GG;
 function j5() {
   if (GG) return NG;
   GG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Int8", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -8959,7 +8959,7 @@ var vG = {}, xG;
 function P5() {
   if (xG) return vG;
   xG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Int16", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -8970,7 +8970,7 @@ var RG = {}, HG;
 function L5() {
   if (HG) return RG;
   HG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Int32", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -8981,7 +8981,7 @@ var SG = {}, JG;
 function z5() {
   if (JG) return SG;
   JG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Uint8", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -8992,7 +8992,7 @@ var TG = {}, bG;
 function W5() {
   if (bG) return TG;
   bG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Uint8", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -9003,7 +9003,7 @@ var kG = {}, jG;
 function K5() {
   if (jG) return kG;
   jG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Uint16", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -9014,7 +9014,7 @@ var PG = {}, LG;
 function O5() {
   if (LG) return PG;
   LG = 1;
-  var i = Oi();
+  var i = Vi();
   return i("Uint32", function(A) {
     return function(r, B, Q) {
       return A(this, r, B, Q);
@@ -9854,7 +9854,7 @@ function El() {
   return Fx || (Fx = 1, d7()), hx;
 }
 var fx = {}, ow, Dx;
-function Vi() {
+function Xi() {
   if (Dx) return ow;
   Dx = 1;
   var i = re(), A = WeakMap.prototype;
@@ -9871,7 +9871,7 @@ var px;
 function sL() {
   if (px) return fx;
   px = 1;
-  var i = oA(), A = Vi(), t = Oe(), r = A.get, B = A.has, Q = A.set;
+  var i = oA(), A = Xi(), t = Oe(), r = A.get, B = A.has, Q = A.set;
   return i({ target: "WeakMap", proto: !0, real: !0, forced: t }, {
     getOrInsert: function(c, n) {
       return B(this, c) ? r(this, c) : (Q(this, c, n), n);
@@ -9882,7 +9882,7 @@ var mx = {}, gw, yx;
 function wl() {
   if (yx) return gw;
   yx = 1;
-  var i = Vi().has;
+  var i = Xi().has;
   return gw = function(A) {
     return i(A), A;
   }, gw;
@@ -9891,7 +9891,7 @@ var cw, Ux;
 function Y7() {
   if (Ux) return cw;
   Ux = 1;
-  var i = Vi(), A = new i.WeakMap(), t = i.set, r = i.remove;
+  var i = Xi(), A = new i.WeakMap(), t = i.set, r = i.remove;
   return cw = function(B) {
     return t(A, B, 1), r(A, B), B;
   }, cw;
@@ -9900,7 +9900,7 @@ var Nx;
 function BL() {
   if (Nx) return mx;
   Nx = 1;
-  var i = oA(), A = Se(), t = wl(), r = Y7(), B = Vi(), Q = Oe(), a = B.get, c = B.has, n = B.set, w = Q || !(function() {
+  var i = oA(), A = Se(), t = wl(), r = Y7(), B = Xi(), Q = Oe(), a = B.get, c = B.has, n = B.set, w = Q || !(function() {
     try {
       WeakMap.prototype.getOrInsertComputed && (/* @__PURE__ */ new WeakMap()).getOrInsertComputed(1, function() {
         throw 1;
@@ -12053,7 +12053,7 @@ function $X() {
   return sT || (sT = 1, B8()), nT;
 }
 var BT = {}, Tw, aT;
-function Xi() {
+function _i() {
   if (aT) return Tw;
   aT = 1, el(), El();
   var i = He(), A = re(), t = un(), r = i("Map"), B = i("WeakMap"), Q = A([].push), a = t("metadata"), c = a.store || (a.store = new B()), n = function(l, u, I) {
@@ -12098,7 +12098,7 @@ var oT;
 function A_() {
   if (oT) return BT;
   oT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = A.toKey, B = A.set;
+  var i = oA(), A = _i(), t = Ee(), r = A.toKey, B = A.set;
   return i({ target: "Reflect", stat: !0 }, {
     defineMetadata: function(a, c, n) {
       var w = arguments.length < 4 ? void 0 : r(arguments[3]);
@@ -12110,7 +12110,7 @@ var gT = {}, cT;
 function e_() {
   if (cT) return gT;
   cT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = A.toKey, B = A.getMap, Q = A.store;
+  var i = oA(), A = _i(), t = Ee(), r = A.toKey, B = A.getMap, Q = A.store;
   return i({ target: "Reflect", stat: !0 }, {
     deleteMetadata: function(c, n) {
       var w = arguments.length < 3 ? void 0 : r(arguments[2]), g = B(t(n), w, !1);
@@ -12125,7 +12125,7 @@ var QT = {}, CT;
 function t_() {
   if (CT) return QT;
   CT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = Xt(), B = A.has, Q = A.get, a = A.toKey, c = function(n, w, g) {
+  var i = oA(), A = _i(), t = Ee(), r = Xt(), B = A.has, Q = A.get, a = A.toKey, c = function(n, w, g) {
     var o = B(n, w, g);
     if (o) return Q(n, w, g);
     var s = r(w);
@@ -12142,7 +12142,7 @@ var ET = {}, wT;
 function r_() {
   if (wT) return ET;
   wT = 1;
-  var i = oA(), A = re(), t = Xi(), r = Ee(), B = Xt(), Q = ll(), a = A(Q), c = A([].concat), n = t.keys, w = t.toKey, g = function(o, s) {
+  var i = oA(), A = re(), t = _i(), r = Ee(), B = Xt(), Q = ll(), a = A(Q), c = A([].concat), n = t.keys, w = t.toKey, g = function(o, s) {
     var h = n(o, s), l = B(o);
     if (l === null) return h;
     var u = g(l, s);
@@ -12159,7 +12159,7 @@ var uT = {}, lT;
 function i_() {
   if (lT) return uT;
   lT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = A.get, B = A.toKey;
+  var i = oA(), A = _i(), t = Ee(), r = A.get, B = A.toKey;
   return i({ target: "Reflect", stat: !0 }, {
     getOwnMetadata: function(a, c) {
       var n = arguments.length < 3 ? void 0 : B(arguments[2]);
@@ -12171,7 +12171,7 @@ var IT = {}, hT;
 function n_() {
   if (hT) return IT;
   hT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = A.keys, B = A.toKey;
+  var i = oA(), A = _i(), t = Ee(), r = A.keys, B = A.toKey;
   return i({ target: "Reflect", stat: !0 }, {
     getOwnMetadataKeys: function(a) {
       var c = arguments.length < 2 ? void 0 : B(arguments[1]);
@@ -12183,7 +12183,7 @@ var dT = {}, YT;
 function s_() {
   if (YT) return dT;
   YT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = Xt(), B = A.has, Q = A.toKey, a = function(c, n, w) {
+  var i = oA(), A = _i(), t = Ee(), r = Xt(), B = A.has, Q = A.toKey, a = function(c, n, w) {
     var g = B(c, n, w);
     if (g) return !0;
     var o = r(n);
@@ -12200,7 +12200,7 @@ var MT = {}, FT;
 function B_() {
   if (FT) return MT;
   FT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = A.has, B = A.toKey;
+  var i = oA(), A = _i(), t = Ee(), r = A.has, B = A.toKey;
   return i({ target: "Reflect", stat: !0 }, {
     hasOwnMetadata: function(a, c) {
       var n = arguments.length < 3 ? void 0 : B(arguments[2]);
@@ -12212,7 +12212,7 @@ var fT = {}, DT;
 function a_() {
   if (DT) return fT;
   DT = 1;
-  var i = oA(), A = Xi(), t = Ee(), r = A.toKey, B = A.set;
+  var i = oA(), A = _i(), t = Ee(), r = A.toKey, B = A.set;
   return i({ target: "Reflect", stat: !0 }, {
     metadata: function(a, c) {
       return function(w, g) {
@@ -12640,7 +12640,7 @@ var H3;
 function k_() {
   if (H3) return x3;
   H3 = 1;
-  var i = dn(), A = oA(), t = fa(), r = re(), B = Ir(), Q = Ee(), a = Xe(), c = Le(), n = _e(), w = Et().f, g = Or(), o = Vi(), s = YL(), h = b_(), l = Gs(), u = new o.WeakMap(), I = o.get, d = o.has, F = o.set, m = Array, p = TypeError, D = Object.freeze || Object, U = Object.isFrozen, J = Math.min, v = r("".charAt), S = r("".slice), R = r("".split), y = r(/./.exec), f = /([\n\u2028\u2029]|\r\n?)/g, G = RegExp("^[" + l + "]*"), x = RegExp("[^" + l + "]"), T = "Invalid tag", P = "Invalid opening line", k = "Invalid closing line", K = function($) {
+  var i = dn(), A = oA(), t = fa(), r = re(), B = Ir(), Q = Ee(), a = Xe(), c = Le(), n = _e(), w = Et().f, g = Or(), o = Xi(), s = YL(), h = b_(), l = Gs(), u = new o.WeakMap(), I = o.get, d = o.has, F = o.set, m = Array, p = TypeError, D = Object.freeze || Object, U = Object.isFrozen, J = Math.min, v = r("".charAt), S = r("".slice), R = r("".split), y = r(/./.exec), f = /([\n\u2028\u2029]|\r\n?)/g, G = RegExp("^[" + l + "]*"), x = RegExp("[^" + l + "]"), T = "Invalid tag", P = "Invalid opening line", k = "Invalid closing line", K = function($) {
     var rA = $.raw;
     if (i && !U(rA)) throw new p("Raw template should be frozen");
     if (d(u, rA)) return I(u, rA);
@@ -12974,7 +12974,7 @@ var Ab = {}, eb;
 function MZ() {
   if (eb) return Ab;
   eb = 1;
-  var i = oA(), A = wl(), t = Vi().remove;
+  var i = oA(), A = wl(), t = Xi().remove;
   return i({ target: "WeakMap", proto: !0, real: !0, forced: !0 }, {
     deleteAll: function() {
       for (var B = A(this), Q = !0, a, c = 0, n = arguments.length; c < n; c++)
@@ -12987,7 +12987,7 @@ var tb = {}, rb;
 function FZ() {
   if (rb) return tb;
   rb = 1;
-  var i = oA(), A = Vi(), t = no();
+  var i = oA(), A = Xi(), t = no();
   return i({ target: "WeakMap", stat: !0, forced: !0 }, {
     from: t(A.WeakMap, A.set, !0)
   }), tb;
@@ -12996,7 +12996,7 @@ var ib = {}, nb;
 function fZ() {
   if (nb) return ib;
   nb = 1;
-  var i = oA(), A = Vi(), t = so();
+  var i = oA(), A = Xi(), t = so();
   return i({ target: "WeakMap", stat: !0, forced: !0 }, {
     of: t(A.WeakMap, A.set, !0)
   }), ib;
@@ -13005,7 +13005,7 @@ var sb = {}, Bb;
 function DZ() {
   if (Bb) return sb;
   Bb = 1;
-  var i = oA(), A = wl(), t = Vi(), r = t.get, B = t.has, Q = t.set;
+  var i = oA(), A = wl(), t = Xi(), r = t.get, B = t.has, Q = t.set;
   return i({ target: "WeakMap", proto: !0, real: !0, forced: !0 }, {
     emplace: function(c, n) {
       var w = A(this), g, o;
@@ -14258,7 +14258,7 @@ function _Z() {
     return WA === "." || $(WA) === "%2e";
   }, QA = function(WA) {
     return WA = $(WA), WA === ".." || WA === "%2e." || WA === ".%2e" || WA === "%2e%2e";
-  }, YA = {}, RA = {}, ie = {}, Ie = {}, De = {}, Ge = {}, Ue = {}, dt = {}, St = {}, $e = {}, Ar = {}, dr = {}, Yr = {}, Ji = {}, _i = {}, Fe = {}, ct = {}, Pt = {}, Mi = {}, Br = {}, Mr = {}, Zr = function(WA, $A, XA) {
+  }, YA = {}, RA = {}, ie = {}, Ie = {}, De = {}, Ge = {}, Ue = {}, dt = {}, St = {}, $e = {}, Ar = {}, dr = {}, Yr = {}, Ji = {}, Zi = {}, Fe = {}, ct = {}, Pt = {}, Mi = {}, Br = {}, Mr = {}, Zr = function(WA, $A, XA) {
     var SA = u(WA), te, Ne, Ye;
     if ($A) {
       if (Ne = this.parse(SA), Ne) throw new S(Ne);
@@ -14413,7 +14413,7 @@ function _Z() {
             } else return lA;
             break;
           case Ji:
-            if (SA.scheme = "file", SA.host = "", se === "/" || se === "\\") te = _i;
+            if (SA.scheme = "file", SA.host = "", se === "/" || se === "\\") te = Zi;
             else if (XA && XA.scheme === "file")
               switch (se) {
                 case _A:
@@ -14434,7 +14434,7 @@ function _Z() {
               continue;
             }
             break;
-          case _i:
+          case Zi:
             if (se === "/" || se === "\\") {
               te = Fe;
               break;
@@ -14777,7 +14777,7 @@ function sq() {
   return yk || (yk = 1, eu = nq()), eu;
 }
 sq();
-const Bq = "0.0.44", aq = {
+const Bq = "0.0.45", aq = {
   version: Bq
 }, oq = aq.version, Mt = {
   main_id: "main",
@@ -22755,7 +22755,7 @@ function gq() {
                     implementation: dr,
                     createNodeIterator: Yr,
                     createDocumentFragment: Ji,
-                    getElementsByTagName: _i
+                    getElementsByTagName: Zi
                   } = wA, {
                     importNode: Fe
                   } = uA;
@@ -22803,21 +22803,21 @@ function gq() {
                   let pn = null;
                   const Ai = k({}, ["audio", "video", "img", "source", "image", "track"]);
                   let Ti = null;
-                  const Dr = k({}, ["alt", "class", "for", "id", "label", "name", "pattern", "placeholder", "role", "summary", "title", "value", "style", "xmlns"]), Zi = "http://www.w3.org/1998/Math/MathML", Hr = "http://www.w3.org/2000/svg", jr = "http://www.w3.org/1999/xhtml";
+                  const Dr = k({}, ["alt", "class", "for", "id", "label", "name", "pattern", "placeholder", "role", "summary", "title", "value", "style", "xmlns"]), qi = "http://www.w3.org/1998/Math/MathML", Hr = "http://www.w3.org/2000/svg", jr = "http://www.w3.org/1999/xhtml";
                   let Sr = jr, ze = !1, mn = null;
-                  const Ts = k({}, [Zi, Hr, jr], J);
-                  let qi = k({}, ["mi", "mo", "mn", "ms", "mtext"]), pi = k({}, ["annotation-xml"]);
+                  const Ts = k({}, [qi, Hr, jr], J);
+                  let $i = k({}, ["mi", "mo", "mn", "ms", "mtext"]), pi = k({}, ["annotation-xml"]);
                   const as = k({}, ["title", "style", "font", "a", "script"]);
                   let mi = null;
                   const bi = ["application/xhtml+xml", "text/html"], ki = "text/html";
                   let Yt = null, ei = null;
-                  const $i = wA.createElement("form"), An = function(JA) {
+                  const An = wA.createElement("form"), en = function(JA) {
                     return JA instanceof RegExp || JA instanceof Function;
                   }, yn = function() {
                     let JA = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
                     if (!(ei && ei === JA)) {
                       if ((!JA || typeof JA != "object") && (JA = {}), JA = j(JA), mi = // eslint-disable-next-line unicorn/prefer-includes
-                      bi.indexOf(JA.PARSER_MEDIA_TYPE) === -1 ? ki : JA.PARSER_MEDIA_TYPE, Yt = mi === "application/xhtml+xml" ? J : U, ut = f(JA, "ALLOWED_TAGS") ? k({}, JA.ALLOWED_TAGS, Yt) : WA, $A = f(JA, "ALLOWED_ATTR") ? k({}, JA.ALLOWED_ATTR, Yt) : XA, mn = f(JA, "ALLOWED_NAMESPACES") ? k({}, JA.ALLOWED_NAMESPACES, J) : Ts, Ti = f(JA, "ADD_URI_SAFE_ATTR") ? k(j(Dr), JA.ADD_URI_SAFE_ATTR, Yt) : Dr, pn = f(JA, "ADD_DATA_URI_TAGS") ? k(j(Ai), JA.ADD_DATA_URI_TAGS, Yt) : Ai, tr = f(JA, "FORBID_CONTENTS") ? k({}, JA.FORBID_CONTENTS, Yt) : Dn, te = f(JA, "FORBID_TAGS") ? k({}, JA.FORBID_TAGS, Yt) : {}, Ne = f(JA, "FORBID_ATTR") ? k({}, JA.FORBID_ATTR, Yt) : {}, Di = f(JA, "USE_PROFILES") ? JA.USE_PROFILES : !1, Ye = JA.ALLOW_ARIA_ATTR !== !1, At = JA.ALLOW_DATA_ATTR !== !1, Qt = JA.ALLOW_UNKNOWN_PROTOCOLS || !1, Ct = JA.ALLOW_SELF_CLOSE_IN_ATTR !== !1, Bt = JA.SAFE_FOR_TEMPLATES || !1, se = JA.SAFE_FOR_XML !== !1, et = JA.WHOLE_DOCUMENT || !1, yt = JA.RETURN_DOM || !1, Bi = JA.RETURN_DOM_FRAGMENT || !1, Rr = JA.RETURN_TRUSTED_TYPE || !1, fr = JA.FORCE_BODY || !1, fn = JA.SANITIZE_DOM !== !1, ai = JA.SANITIZE_NAMED_PROPS || !1, Fi = JA.KEEP_CONTENT !== !1, fi = JA.IN_PLACE || !1, Fr = JA.ALLOWED_URI_REGEXP || ne, Sr = JA.NAMESPACE || jr, qi = JA.MATHML_TEXT_INTEGRATION_POINTS || qi, pi = JA.HTML_INTEGRATION_POINTS || pi, SA = JA.CUSTOM_ELEMENT_HANDLING || {}, JA.CUSTOM_ELEMENT_HANDLING && An(JA.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (SA.tagNameCheck = JA.CUSTOM_ELEMENT_HANDLING.tagNameCheck), JA.CUSTOM_ELEMENT_HANDLING && An(JA.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (SA.attributeNameCheck = JA.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), JA.CUSTOM_ELEMENT_HANDLING && typeof JA.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (SA.allowCustomizedBuiltInElements = JA.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), Bt && (At = !1), Bi && (yt = !0), Di && (ut = k({}, gA), $A = [], Di.html === !0 && (k(ut, nA), k($A, aA)), Di.svg === !0 && (k(ut, X), k($A, lA), k($A, bA)), Di.svgFilters === !0 && (k(ut, AA), k($A, lA), k($A, bA)), Di.mathMl === !0 && (k(ut, rA), k($A, vA), k($A, bA))), JA.ADD_TAGS && (ut === WA && (ut = j(ut)), k(ut, JA.ADD_TAGS, Yt)), JA.ADD_ATTR && ($A === XA && ($A = j($A)), k($A, JA.ADD_ATTR, Yt)), JA.ADD_URI_SAFE_ATTR && k(Ti, JA.ADD_URI_SAFE_ATTR, Yt), JA.FORBID_CONTENTS && (tr === Dn && (tr = j(tr)), k(tr, JA.FORBID_CONTENTS, Yt)), Fi && (ut["#text"] = !0), et && k(ut, ["html", "head", "body"]), ut.table && (k(ut, ["tbody"]), delete te.tbody), JA.TRUSTED_TYPES_POLICY) {
+                      bi.indexOf(JA.PARSER_MEDIA_TYPE) === -1 ? ki : JA.PARSER_MEDIA_TYPE, Yt = mi === "application/xhtml+xml" ? J : U, ut = f(JA, "ALLOWED_TAGS") ? k({}, JA.ALLOWED_TAGS, Yt) : WA, $A = f(JA, "ALLOWED_ATTR") ? k({}, JA.ALLOWED_ATTR, Yt) : XA, mn = f(JA, "ALLOWED_NAMESPACES") ? k({}, JA.ALLOWED_NAMESPACES, J) : Ts, Ti = f(JA, "ADD_URI_SAFE_ATTR") ? k(j(Dr), JA.ADD_URI_SAFE_ATTR, Yt) : Dr, pn = f(JA, "ADD_DATA_URI_TAGS") ? k(j(Ai), JA.ADD_DATA_URI_TAGS, Yt) : Ai, tr = f(JA, "FORBID_CONTENTS") ? k({}, JA.FORBID_CONTENTS, Yt) : Dn, te = f(JA, "FORBID_TAGS") ? k({}, JA.FORBID_TAGS, Yt) : {}, Ne = f(JA, "FORBID_ATTR") ? k({}, JA.FORBID_ATTR, Yt) : {}, Di = f(JA, "USE_PROFILES") ? JA.USE_PROFILES : !1, Ye = JA.ALLOW_ARIA_ATTR !== !1, At = JA.ALLOW_DATA_ATTR !== !1, Qt = JA.ALLOW_UNKNOWN_PROTOCOLS || !1, Ct = JA.ALLOW_SELF_CLOSE_IN_ATTR !== !1, Bt = JA.SAFE_FOR_TEMPLATES || !1, se = JA.SAFE_FOR_XML !== !1, et = JA.WHOLE_DOCUMENT || !1, yt = JA.RETURN_DOM || !1, Bi = JA.RETURN_DOM_FRAGMENT || !1, Rr = JA.RETURN_TRUSTED_TYPE || !1, fr = JA.FORCE_BODY || !1, fn = JA.SANITIZE_DOM !== !1, ai = JA.SANITIZE_NAMED_PROPS || !1, Fi = JA.KEEP_CONTENT !== !1, fi = JA.IN_PLACE || !1, Fr = JA.ALLOWED_URI_REGEXP || ne, Sr = JA.NAMESPACE || jr, $i = JA.MATHML_TEXT_INTEGRATION_POINTS || $i, pi = JA.HTML_INTEGRATION_POINTS || pi, SA = JA.CUSTOM_ELEMENT_HANDLING || {}, JA.CUSTOM_ELEMENT_HANDLING && en(JA.CUSTOM_ELEMENT_HANDLING.tagNameCheck) && (SA.tagNameCheck = JA.CUSTOM_ELEMENT_HANDLING.tagNameCheck), JA.CUSTOM_ELEMENT_HANDLING && en(JA.CUSTOM_ELEMENT_HANDLING.attributeNameCheck) && (SA.attributeNameCheck = JA.CUSTOM_ELEMENT_HANDLING.attributeNameCheck), JA.CUSTOM_ELEMENT_HANDLING && typeof JA.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements == "boolean" && (SA.allowCustomizedBuiltInElements = JA.CUSTOM_ELEMENT_HANDLING.allowCustomizedBuiltInElements), Bt && (At = !1), Bi && (yt = !0), Di && (ut = k({}, gA), $A = [], Di.html === !0 && (k(ut, nA), k($A, aA)), Di.svg === !0 && (k(ut, X), k($A, lA), k($A, bA)), Di.svgFilters === !0 && (k(ut, AA), k($A, lA), k($A, bA)), Di.mathMl === !0 && (k(ut, rA), k($A, vA), k($A, bA))), JA.ADD_TAGS && (ut === WA && (ut = j(ut)), k(ut, JA.ADD_TAGS, Yt)), JA.ADD_ATTR && ($A === XA && ($A = j($A)), k($A, JA.ADD_ATTR, Yt)), JA.ADD_URI_SAFE_ATTR && k(Ti, JA.ADD_URI_SAFE_ATTR, Yt), JA.FORBID_CONTENTS && (tr === Dn && (tr = j(tr)), k(tr, JA.FORBID_CONTENTS, Yt)), Fi && (ut["#text"] = !0), et && k(ut, ["html", "head", "body"]), ut.table && (k(ut, ["tbody"]), delete te.tbody), JA.TRUSTED_TYPES_POLICY) {
                         if (typeof JA.TRUSTED_TYPES_POLICY.createHTML != "function")
                           throw x('TRUSTED_TYPES_POLICY configuration option must provide a "createHTML" hook.');
                         if (typeof JA.TRUSTED_TYPES_POLICY.createScriptURL != "function")
@@ -22834,7 +22834,7 @@ function gq() {
                       tagName: "template"
                     });
                     const fe = U(JA.tagName), at = U(ge.tagName);
-                    return mn[JA.namespaceURI] ? JA.namespaceURI === Hr ? ge.namespaceURI === jr ? fe === "svg" : ge.namespaceURI === Zi ? fe === "svg" && (at === "annotation-xml" || qi[at]) : !!ji[fe] : JA.namespaceURI === Zi ? ge.namespaceURI === jr ? fe === "math" : ge.namespaceURI === Hr ? fe === "math" && pi[at] : !!de[fe] : JA.namespaceURI === jr ? ge.namespaceURI === Hr && !pi[at] || ge.namespaceURI === Zi && !qi[at] ? !1 : !de[fe] && (as[fe] || !ji[fe]) : !!(mi === "application/xhtml+xml" && mn[JA.namespaceURI]) : !1;
+                    return mn[JA.namespaceURI] ? JA.namespaceURI === Hr ? ge.namespaceURI === jr ? fe === "svg" : ge.namespaceURI === qi ? fe === "svg" && (at === "annotation-xml" || $i[at]) : !!ji[fe] : JA.namespaceURI === qi ? ge.namespaceURI === jr ? fe === "math" : ge.namespaceURI === Hr ? fe === "math" && pi[at] : !!de[fe] : JA.namespaceURI === jr ? ge.namespaceURI === Hr && !pi[at] || ge.namespaceURI === qi && !$i[at] ? !1 : !de[fe] && (as[fe] || !ji[fe]) : !!(mi === "application/xhtml+xml" && mn[JA.namespaceURI]) : !1;
                   }, rr = function(JA) {
                     p(sA.removed, {
                       element: JA
@@ -22867,7 +22867,7 @@ function gq() {
                           ge.setAttribute(JA, "");
                         } catch {
                         }
-                  }, en = function(JA) {
+                  }, tn = function(JA) {
                     let ge = null, fe = null;
                     if (fr)
                       JA = "<remove></remove>" + JA;
@@ -22890,8 +22890,8 @@ function gq() {
                       }
                     }
                     const xt = ge.body || ge.documentElement;
-                    return JA && fe && xt.insertBefore(wA.createTextNode(fe), xt.childNodes[0] || null), Sr === jr ? _i.call(ge, et ? "html" : "body")[0] : et ? ge.documentElement : xt;
-                  }, tn = function(JA) {
+                    return JA && fe && xt.insertBefore(wA.createTextNode(fe), xt.childNodes[0] || null), Sr === jr ? Zi.call(ge, et ? "html" : "body")[0] : et ? ge.documentElement : xt;
+                  }, rn = function(JA) {
                     return Yr.call(
                       JA.ownerDocument || JA,
                       JA,
@@ -22940,7 +22940,7 @@ function gq() {
                       element: JA.cloneNode()
                     }), JA.textContent = ge)), Pr(ct.afterSanitizeElements, JA, null), !1);
                   }, or = function(JA, ge, fe) {
-                    if (fn && (ge === "id" || ge === "name") && (fe in wA || fe in $i))
+                    if (fn && (ge === "id" || ge === "name") && (fe in wA || fe in An))
                       return !1;
                     if (!(At && !Ne[ge] && G(Mr, ge))) {
                       if (!(Ye && G(Zr, ge))) {
@@ -22968,7 +22968,7 @@ function gq() {
                     return !0;
                   }, gs = function(JA) {
                     return JA !== "annotation-xml" && v(JA, tt);
-                  }, rn = function(JA) {
+                  }, nn = function(JA) {
                     Pr(ct.beforeSanitizeAttributes, JA, null);
                     const {
                       attributes: ge
@@ -23025,9 +23025,9 @@ function gq() {
                     Pr(ct.afterSanitizeAttributes, JA, null);
                   }, Nn = function pe(JA) {
                     let ge = null;
-                    const fe = tn(JA);
+                    const fe = rn(JA);
                     for (Pr(ct.beforeSanitizeShadowDOM, JA, null); ge = fe.nextNode(); )
-                      Pr(ct.uponSanitizeShadowNode, ge, null), ar(ge), rn(ge), ge.content instanceof PA && pe(ge.content);
+                      Pr(ct.uponSanitizeShadowNode, ge, null), ar(ge), nn(ge), ge.content instanceof PA && pe(ge.content);
                     Pr(ct.afterSanitizeShadowDOM, JA, null);
                   };
                   return sA.sanitize = function(pe) {
@@ -23047,18 +23047,18 @@ function gq() {
                           throw x("root node is forbidden and cannot be sanitized in-place");
                       }
                     } else if (pe instanceof L)
-                      ge = en("<!---->"), fe = ge.ownerDocument.importNode(pe, !0), fe.nodeType === LA.element && fe.nodeName === "BODY" || fe.nodeName === "HTML" ? ge = fe : ge.appendChild(fe);
+                      ge = tn("<!---->"), fe = ge.ownerDocument.importNode(pe, !0), fe.nodeType === LA.element && fe.nodeName === "BODY" || fe.nodeName === "HTML" ? ge = fe : ge.appendChild(fe);
                     else {
                       if (!yt && !Bt && !et && // eslint-disable-next-line unicorn/prefer-includes
                       pe.indexOf("<") === -1)
                         return $e && Rr ? $e.createHTML(pe) : pe;
-                      if (ge = en(pe), !ge)
+                      if (ge = tn(pe), !ge)
                         return yt ? null : Rr ? Ar : "";
                     }
                     ge && fr && rr(ge.firstChild);
-                    const Jt = tn(fi ? pe : ge);
+                    const Jt = rn(fi ? pe : ge);
                     for (; at = Jt.nextNode(); )
-                      ar(at), rn(at), at.content instanceof PA && Nn(at.content);
+                      ar(at), nn(at), at.content instanceof PA && Nn(at.content);
                     if (fi)
                       return pe;
                     if (yt) {
@@ -27394,7 +27394,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   attributes: function() {
                     return (
                       /* binding */
-                      Zi
+                      qi
                     );
                   },
                   /* harmony export */
@@ -27674,7 +27674,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   getFormatAndTypeForInternalFormat: function() {
                     return (
                       /* binding */
-                      Bn
+                      an
                     );
                   },
                   /* harmony export */
@@ -28297,7 +28297,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   getTypedArrayTypeForGLType: dr,
                   isArrayBuffer: Yr
                 });
-                function _i(Y, N, H) {
+                function Zi(Y, N, H) {
                   Y.forEach(function(z) {
                     const q = N[z];
                     q !== void 0 && (H[z] = q);
@@ -28473,7 +28473,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     H[z] = Ti(Y, N[z], z);
                   }), N.indices ? (H.numElements = N.indices.length, H.elementType = $e($r(N.indices))) : H.numElements = Dn(N), H;
                 }
-                var Zi = /* @__PURE__ */ Object.freeze({
+                var qi = /* @__PURE__ */ Object.freeze({
                   __proto__: null,
                   createAttribsFromArrays: Fi,
                   createBuffersFromArrays: Dr,
@@ -28526,7 +28526,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   }
                   return Object.keys(Y).filter(mn).forEach(q), H;
                 }
-                function qi(Y) {
+                function $i(Y) {
                   if (Y.indices)
                     throw new Error("can not flatten normals of indexed vertices. deindex them first");
                   const N = Y.normal, H = N.length;
@@ -28605,7 +28605,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     indices: [0, 1, 2, 2, 1, 3]
                   };
                 }
-                function $i(Y, N, H, z, q) {
+                function An(Y, N, H, z, q) {
                   Y = Y || 1, N = N || 1, H = H || 1, z = z || 1, q = q || nA();
                   const BA = (H + 1) * (z + 1), CA = ze(3, BA), hA = ze(3, BA), yA = ze(2, BA);
                   for (let TA = 0; TA <= z; TA++)
@@ -28640,7 +28640,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     indices: kA
                   }, q);
                 }
-                function An(Y, N, H, z, q, BA, CA) {
+                function en(Y, N, H, z, q, BA, CA) {
                   if (N <= 0 || H <= 0)
                     throw new Error("subdivisionAxis and subdivisionHeight must be > 0");
                   z = z || 0, q = q || Math.PI, BA = BA || 0, CA = CA || Math.PI * 2;
@@ -29465,7 +29465,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     indices: qA
                   };
                 }
-                function en(Y, N, H, z, q, BA) {
+                function tn(Y, N, H, z, q, BA) {
                   return de(
                     Y,
                     Y,
@@ -29476,7 +29476,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     BA
                   );
                 }
-                function tn(Y, N, H, z, q, BA) {
+                function rn(Y, N, H, z, q, BA) {
                   if (H < 3)
                     throw new Error("radialSubdivisions must be 3 or greater");
                   if (z < 3)
@@ -29579,7 +29579,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   "name",
                   "attribName"
                 ];
-                function rn(Y, N, H, z) {
+                function nn(Y, N, H, z) {
                   z = z || 0;
                   const q = Y.length;
                   for (let BA = 0; BA < q; ++BA)
@@ -29590,7 +29590,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   let q = z;
                   return H.numComponents && H.numElements && Sr(z, H.numComponents), Y.data && (q = {
                     data: z
-                  }, _i(gs, Y, q)), q;
+                  }, Zi(gs, Y, q)), q;
                 }
                 function pe(Y) {
                   const N = {};
@@ -29618,7 +29618,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     let kA = 0, zA = 0;
                     for (let TA = 0; TA < Y.length; ++TA) {
                       const OA = Y[TA][hA], qA = Hr(OA);
-                      hA === "indices" ? (rn(qA, GA, zA, kA), kA += yA[TA]) : rn(qA, GA, zA), zA += qA.length;
+                      hA === "indices" ? (nn(qA, GA, zA, kA), kA += yA[TA]) : nn(qA, GA, zA), zA += qA.length;
                     }
                   }
                   const BA = N[H], CA = {};
@@ -29631,10 +29631,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   const N = {};
                   return Object.keys(Y).forEach(function(H) {
                     const z = Y[H], q = Hr(z), BA = Nn(z, q.length);
-                    rn(q, Hr(BA), 0), N[H] = BA;
+                    nn(q, Hr(BA), 0), N[H] = BA;
                   }), N;
                 }
-                const ge = or(rr), fe = ar(rr), at = or(ji), xt = ar(ji), Jt = or($i), _t = ar($i), gr = or(An), Li = ar(An), Wt = or(de), Gn = ar(de), cs = or(ei), co = ar(ei), MB = or(oi), FB = ar(oi), vn = or(en), fB = ar(en), Qo = or(tn), O = ar(tn), C = or(Pi), e = ar(Pi);
+                const ge = or(rr), fe = ar(rr), at = or(ji), xt = ar(ji), Jt = or(An), _t = ar(An), gr = or(en), Li = ar(en), Wt = or(de), Gn = ar(de), cs = or(ei), co = ar(ei), MB = or(oi), FB = ar(oi), vn = or(tn), fB = ar(tn), Qo = or(rn), O = ar(rn), C = or(Pi), e = ar(Pi);
                 var _ = /* @__PURE__ */ Object.freeze({
                   __proto__: null,
                   create3DFBufferInfo: ge,
@@ -29646,10 +29646,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   createCubeVertices: ji,
                   createPlaneBufferInfo: Jt,
                   createPlaneBuffers: _t,
-                  createPlaneVertices: $i,
+                  createPlaneVertices: An,
                   createSphereBufferInfo: gr,
                   createSphereBuffers: Li,
-                  createSphereVertices: An,
+                  createSphereVertices: en,
                   createTruncatedConeBufferInfo: Wt,
                   createTruncatedConeBuffers: Gn,
                   createTruncatedConeVertices: de,
@@ -29664,15 +29664,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   createCrescentVertices: oi,
                   createCylinderBufferInfo: vn,
                   createCylinderBuffers: fB,
-                  createCylinderVertices: en,
+                  createCylinderVertices: tn,
                   createTorusBufferInfo: Qo,
                   createTorusBuffers: O,
-                  createTorusVertices: tn,
+                  createTorusVertices: rn,
                   createDiscBufferInfo: C,
                   createDiscBuffers: e,
                   createDiscVertices: Pi,
                   deindexVertices: Ts,
-                  flattenNormals: qi,
+                  flattenNormals: $i,
                   makeRandomVertexColors: Pr,
                   reorientDirections: mi,
                   reorientNormals: bi,
@@ -29719,16 +29719,16 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   return function() {
                     return Y = Y || (typeof document < "u" && document.createElement ? document.createElement("canvas").getContext("2d") : null), Y;
                   };
-                })(), Me = 6406, Je = 6407, ke = 6408, Ve = 6409, rt = 6410, Jr = 6402, ti = 34041, xn = 33071, DB = 9728, pB = 9729, ri = 3553, ii = 34067, gi = 32879, ci = 35866, Rn = 34069, mB = 34070, yB = 34071, UB = 34072, NB = 34073, GB = 34074, Qs = 10241, Cs = 10240, Hn = 10242, Sn = 10243, bs = 32882, vB = 33082, xB = 33083, RB = 33084, HB = 33085, Es = 3317, ks = 3314, js = 32878, Ps = 3316, Ls = 3315, zs = 32877, qL = 37443, $L = 37441, Az = 37440, ez = 33321, tz = 36756, rz = 33325, iz = 33326, nz = 33330, sz = 33329, Bz = 33338, az = 33337, oz = 33340, gz = 33339, cz = 33323, Qz = 36757, Cz = 33327, Ez = 33328, wz = 33336, uz = 33335, lz = 33332, Iz = 33331, hz = 33334, dz = 33333, Yz = 32849, Mz = 35905, Fz = 36194, fz = 36758, Dz = 35898, pz = 35901, mz = 34843, yz = 34837, Uz = 36221, Nz = 36239, Gz = 36215, vz = 36233, xz = 36209, Rz = 36227, Hz = 32856, Sz = 35907, Jz = 36759, Tz = 32855, bz = 32854, kz = 32857, jz = 34842, Pz = 34836, Lz = 36220, zz = 36238, Wz = 36975, Kz = 36214, Oz = 36232, Vz = 36226, Xz = 36208, _z = 33189, Zz = 33190, qz = 36012, $z = 36013, AW = 35056, nn = 5120, Dt = 5121, SB = 5122, ws = 5123, JB = 5124, Jn = 5125, cr = 5126, Fl = 32819, fl = 32820, Dl = 33635, Qi = 5131, Ws = 36193, Co = 33640, eW = 35899, tW = 35902, rW = 36269, iW = 34042, Ks = 33319, Tn = 33320, Os = 6403, bn = 36244, kn = 36248, sn = 36249, pl = {};
+                })(), Me = 6406, Je = 6407, ke = 6408, Ve = 6409, rt = 6410, Jr = 6402, ti = 34041, xn = 33071, DB = 9728, pB = 9729, ri = 3553, ii = 34067, gi = 32879, ci = 35866, Rn = 34069, mB = 34070, yB = 34071, UB = 34072, NB = 34073, GB = 34074, Qs = 10241, Cs = 10240, Hn = 10242, Sn = 10243, bs = 32882, vB = 33082, xB = 33083, RB = 33084, HB = 33085, Es = 3317, ks = 3314, js = 32878, Ps = 3316, Ls = 3315, zs = 32877, qL = 37443, $L = 37441, Az = 37440, ez = 33321, tz = 36756, rz = 33325, iz = 33326, nz = 33330, sz = 33329, Bz = 33338, az = 33337, oz = 33340, gz = 33339, cz = 33323, Qz = 36757, Cz = 33327, Ez = 33328, wz = 33336, uz = 33335, lz = 33332, Iz = 33331, hz = 33334, dz = 33333, Yz = 32849, Mz = 35905, Fz = 36194, fz = 36758, Dz = 35898, pz = 35901, mz = 34843, yz = 34837, Uz = 36221, Nz = 36239, Gz = 36215, vz = 36233, xz = 36209, Rz = 36227, Hz = 32856, Sz = 35907, Jz = 36759, Tz = 32855, bz = 32854, kz = 32857, jz = 34842, Pz = 34836, Lz = 36220, zz = 36238, Wz = 36975, Kz = 36214, Oz = 36232, Vz = 36226, Xz = 36208, _z = 33189, Zz = 33190, qz = 36012, $z = 36013, AW = 35056, sn = 5120, Dt = 5121, SB = 5122, ws = 5123, JB = 5124, Jn = 5125, cr = 5126, Fl = 32819, fl = 32820, Dl = 33635, Qi = 5131, Ws = 36193, Co = 33640, eW = 35899, tW = 35902, rW = 36269, iW = 34042, Ks = 33319, Tn = 33320, Os = 6403, bn = 36244, kn = 36248, Bn = 36249, pl = {};
                 {
                   const Y = pl;
-                  Y[Me] = { numColorComponents: 1 }, Y[Ve] = { numColorComponents: 1 }, Y[rt] = { numColorComponents: 2 }, Y[Je] = { numColorComponents: 3 }, Y[ke] = { numColorComponents: 4 }, Y[Os] = { numColorComponents: 1 }, Y[bn] = { numColorComponents: 1 }, Y[Ks] = { numColorComponents: 2 }, Y[Tn] = { numColorComponents: 2 }, Y[Je] = { numColorComponents: 3 }, Y[kn] = { numColorComponents: 3 }, Y[ke] = { numColorComponents: 4 }, Y[sn] = { numColorComponents: 4 }, Y[Jr] = { numColorComponents: 1 }, Y[ti] = { numColorComponents: 2 };
+                  Y[Me] = { numColorComponents: 1 }, Y[Ve] = { numColorComponents: 1 }, Y[rt] = { numColorComponents: 2 }, Y[Je] = { numColorComponents: 3 }, Y[ke] = { numColorComponents: 4 }, Y[Os] = { numColorComponents: 1 }, Y[bn] = { numColorComponents: 1 }, Y[Ks] = { numColorComponents: 2 }, Y[Tn] = { numColorComponents: 2 }, Y[Je] = { numColorComponents: 3 }, Y[kn] = { numColorComponents: 3 }, Y[ke] = { numColorComponents: 4 }, Y[Bn] = { numColorComponents: 4 }, Y[Jr] = { numColorComponents: 1 }, Y[ti] = { numColorComponents: 2 };
                 }
                 let Eo;
                 function TB(Y) {
                   if (!Eo) {
                     const N = {};
-                    N[Me] = { textureFormat: Me, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [1, 2, 2, 4], type: [Dt, Qi, Ws, cr] }, N[Ve] = { textureFormat: Ve, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [1, 2, 2, 4], type: [Dt, Qi, Ws, cr] }, N[rt] = { textureFormat: rt, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [2, 4, 4, 8], type: [Dt, Qi, Ws, cr] }, N[Je] = { textureFormat: Je, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [3, 6, 6, 12, 2], type: [Dt, Qi, Ws, cr, Dl] }, N[ke] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4, 8, 8, 16, 2, 2], type: [Dt, Qi, Ws, cr, Fl, fl] }, N[Jr] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2, 4], type: [Jn, ws] }, N[ez] = { textureFormat: Os, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [1], type: [Dt] }, N[tz] = { textureFormat: Os, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [1], type: [nn] }, N[rz] = { textureFormat: Os, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [4, 2], type: [cr, Qi] }, N[iz] = { textureFormat: Os, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [4], type: [cr] }, N[nz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [1], type: [Dt] }, N[sz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [1], type: [nn] }, N[lz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [ws] }, N[Iz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [SB] }, N[hz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Jn] }, N[dz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [JB] }, N[cz] = { textureFormat: Ks, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [2], type: [Dt] }, N[Qz] = { textureFormat: Ks, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [2], type: [nn] }, N[Cz] = { textureFormat: Ks, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [8, 4], type: [cr, Qi] }, N[Ez] = { textureFormat: Ks, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [8], type: [cr] }, N[wz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [Dt] }, N[uz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [nn] }, N[Bz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [ws] }, N[az] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [SB] }, N[oz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [Jn] }, N[gz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [JB] }, N[Yz] = { textureFormat: Je, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [3], type: [Dt] }, N[Mz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [3], type: [Dt] }, N[Fz] = { textureFormat: Je, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [3, 2], type: [Dt, Dl] }, N[fz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [3], type: [nn] }, N[Dz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [12, 6, 4], type: [cr, Qi, eW] }, N[pz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [12, 6, 4], type: [cr, Qi, tW] }, N[mz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [12, 6], type: [cr, Qi] }, N[yz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [12], type: [cr] }, N[Uz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [3], type: [Dt] }, N[Nz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [3], type: [nn] }, N[Gz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [6], type: [ws] }, N[vz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [6], type: [SB] }, N[xz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [12], type: [Jn] }, N[Rz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [12], type: [JB] }, N[Hz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4], type: [Dt] }, N[Sz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4], type: [Dt] }, N[Jz] = { textureFormat: ke, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [4], type: [nn] }, N[Tz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4, 2, 4], type: [Dt, fl, Co] }, N[bz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4, 2], type: [Dt, Fl] }, N[kz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4], type: [Co] }, N[jz] = { textureFormat: ke, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [16, 8], type: [cr, Qi] }, N[Pz] = { textureFormat: ke, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [16], type: [cr] }, N[Lz] = { textureFormat: sn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Dt] }, N[zz] = { textureFormat: sn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [nn] }, N[Wz] = { textureFormat: sn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Co] }, N[Kz] = { textureFormat: sn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [ws] }, N[Oz] = { textureFormat: sn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [SB] }, N[Vz] = { textureFormat: sn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [16], type: [JB] }, N[Xz] = { textureFormat: sn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [16], type: [Jn] }, N[_z] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2, 4], type: [ws, Jn] }, N[Zz] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Jn] }, N[qz] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [cr] }, N[AW] = { textureFormat: ti, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [iW] }, N[$z] = { textureFormat: ti, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [rW] }, Object.keys(N).forEach(function(H) {
+                    N[Me] = { textureFormat: Me, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [1, 2, 2, 4], type: [Dt, Qi, Ws, cr] }, N[Ve] = { textureFormat: Ve, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [1, 2, 2, 4], type: [Dt, Qi, Ws, cr] }, N[rt] = { textureFormat: rt, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [2, 4, 4, 8], type: [Dt, Qi, Ws, cr] }, N[Je] = { textureFormat: Je, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [3, 6, 6, 12, 2], type: [Dt, Qi, Ws, cr, Dl] }, N[ke] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4, 8, 8, 16, 2, 2], type: [Dt, Qi, Ws, cr, Fl, fl] }, N[Jr] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2, 4], type: [Jn, ws] }, N[ez] = { textureFormat: Os, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [1], type: [Dt] }, N[tz] = { textureFormat: Os, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [1], type: [sn] }, N[rz] = { textureFormat: Os, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [4, 2], type: [cr, Qi] }, N[iz] = { textureFormat: Os, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [4], type: [cr] }, N[nz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [1], type: [Dt] }, N[sz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [1], type: [sn] }, N[lz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [ws] }, N[Iz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [SB] }, N[hz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Jn] }, N[dz] = { textureFormat: bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [JB] }, N[cz] = { textureFormat: Ks, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [2], type: [Dt] }, N[Qz] = { textureFormat: Ks, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [2], type: [sn] }, N[Cz] = { textureFormat: Ks, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [8, 4], type: [cr, Qi] }, N[Ez] = { textureFormat: Ks, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [8], type: [cr] }, N[wz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [Dt] }, N[uz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2], type: [sn] }, N[Bz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [ws] }, N[az] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [SB] }, N[oz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [Jn] }, N[gz] = { textureFormat: Tn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [JB] }, N[Yz] = { textureFormat: Je, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [3], type: [Dt] }, N[Mz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [3], type: [Dt] }, N[Fz] = { textureFormat: Je, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [3, 2], type: [Dt, Dl] }, N[fz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [3], type: [sn] }, N[Dz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [12, 6, 4], type: [cr, Qi, eW] }, N[pz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [12, 6, 4], type: [cr, Qi, tW] }, N[mz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [12, 6], type: [cr, Qi] }, N[yz] = { textureFormat: Je, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [12], type: [cr] }, N[Uz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [3], type: [Dt] }, N[Nz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [3], type: [sn] }, N[Gz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [6], type: [ws] }, N[vz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [6], type: [SB] }, N[xz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [12], type: [Jn] }, N[Rz] = { textureFormat: kn, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [12], type: [JB] }, N[Hz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4], type: [Dt] }, N[Sz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4], type: [Dt] }, N[Jz] = { textureFormat: ke, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [4], type: [sn] }, N[Tz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4, 2, 4], type: [Dt, fl, Co] }, N[bz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4, 2], type: [Dt, Fl] }, N[kz] = { textureFormat: ke, colorRenderable: !0, textureFilterable: !0, bytesPerElement: [4], type: [Co] }, N[jz] = { textureFormat: ke, colorRenderable: !1, textureFilterable: !0, bytesPerElement: [16, 8], type: [cr, Qi] }, N[Pz] = { textureFormat: ke, colorRenderable: !1, textureFilterable: !1, bytesPerElement: [16], type: [cr] }, N[Lz] = { textureFormat: Bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Dt] }, N[zz] = { textureFormat: Bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [sn] }, N[Wz] = { textureFormat: Bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Co] }, N[Kz] = { textureFormat: Bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [ws] }, N[Oz] = { textureFormat: Bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [8], type: [SB] }, N[Vz] = { textureFormat: Bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [16], type: [JB] }, N[Xz] = { textureFormat: Bn, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [16], type: [Jn] }, N[_z] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [2, 4], type: [ws, Jn] }, N[Zz] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [Jn] }, N[qz] = { textureFormat: Jr, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [cr] }, N[AW] = { textureFormat: ti, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [iW] }, N[$z] = { textureFormat: ti, colorRenderable: !0, textureFilterable: !1, bytesPerElement: [4], type: [rW] }, Object.keys(N).forEach(function(H) {
                       const z = N[H];
                       z.bytesPerElementMap = {}, z.bytesPerElement.forEach(function(q, BA) {
                         const CA = z.type[BA];
@@ -29747,7 +29747,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     throw "unknown internal format";
                   return z;
                 }
-                function Bn(Y) {
+                function an(Y) {
                   const N = TB(Y);
                   if (!N)
                     throw "unknown internal format";
@@ -29868,7 +29868,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   z = z || KA.textureOptions;
                   const q = z.target || ri, BA = z.level || 0;
                   let CA = H.width, hA = H.height;
-                  const yA = z.internalFormat || z.format || ke, GA = Bn(yA), kA = z.format || GA.format, zA = z.type || GA.type;
+                  const yA = z.internalFormat || z.format || ke, GA = an(yA), kA = z.format || GA.format, zA = z.type || GA.type;
                   if (us(Y, z), Y.bindTexture(q, N), q === ii) {
                     const TA = H.width, ZA = H.height;
                     let OA, qA;
@@ -29989,7 +29989,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   const q = H.src;
                   if (q.length !== 6)
                     throw "there must be 6 urls for a cubemap";
-                  const BA = H.level || 0, CA = H.internalFormat || H.format || ke, hA = Bn(CA), yA = H.format || hA.format, GA = H.type || Dt, kA = H.target || ri;
+                  const BA = H.level || 0, CA = H.internalFormat || H.format || ke, hA = an(CA), yA = H.format || hA.format, GA = H.type || Dt, kA = H.target || ri;
                   if (kA !== ii)
                     throw "target must be TEXTURE_CUBE_MAP";
                   po(Y, N, H), H = Object.assign({}, H);
@@ -30009,7 +30009,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 }
                 function gW(Y, N, H, z) {
                   z = z || ls;
-                  const q = H.src, BA = H.internalFormat || H.format || ke, CA = Bn(BA), hA = H.format || CA.format, yA = H.type || Dt, GA = H.target || ci;
+                  const q = H.src, BA = H.internalFormat || H.format || ke, CA = an(BA), hA = H.format || CA.format, yA = H.type || Dt, GA = H.target || ci;
                   if (GA !== gi && GA !== ci)
                     throw "target must be TEXTURE_3D or TEXTURE_2D_ARRAY";
                   po(Y, N, H), H = Object.assign({}, H);
@@ -30047,7 +30047,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   const q = z.target || ri;
                   Y.bindTexture(q, N);
                   let BA = z.width, CA = z.height, hA = z.depth;
-                  const yA = z.level || 0, GA = z.internalFormat || z.format || ke, kA = Bn(GA), zA = z.format || kA.format, TA = z.type || Ul(Y, H, kA.type);
+                  const yA = z.level || 0, GA = z.internalFormat || z.format || ke, kA = an(GA), zA = z.format || kA.format, TA = z.type || Ul(Y, H, kA.type);
                   if (ae(H))
                     H instanceof Uint8ClampedArray && (H = new Uint8Array(H.buffer));
                   else {
@@ -30084,7 +30084,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                 function Uo(Y, N, H) {
                   const z = H.target || ri;
                   Y.bindTexture(z, N);
-                  const q = H.level || 0, BA = H.internalFormat || H.format || ke, CA = Bn(BA), hA = H.format || CA.format, yA = H.type || CA.type;
+                  const q = H.level || 0, BA = H.internalFormat || H.format || ke, CA = an(BA), hA = H.format || CA.format, yA = H.type || CA.type;
                   if (us(Y, H), z === ii)
                     for (let GA = 0; GA < 6; ++GA)
                       Y.texImage2D(Rn + GA, q, BA, H.width, H.height, 0, hA, yA, null);
@@ -30112,7 +30112,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   z = z || H.width, q = q || H.height, BA = BA || H.depth;
                   const CA = H.target || ri;
                   Y.bindTexture(CA, N);
-                  const hA = H.level || 0, yA = H.internalFormat || H.format || ke, GA = Bn(yA), kA = H.format || GA.format;
+                  const hA = H.level || 0, yA = H.internalFormat || H.format || ke, GA = an(yA), kA = H.format || GA.format;
                   let zA;
                   const TA = H.src;
                   if (TA && (ae(TA) || Array.isArray(TA) && typeof TA[0] == "number") ? zA = H.type || Ul(Y, TA, GA.type) : zA = H.type || GA.type, CA === ii)
@@ -30160,7 +30160,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   canFilter: lo,
                   getNumComponentsForFormat: yl,
                   getBytesPerElementForInternalFormat: wo,
-                  getFormatAndTypeForInternalFormat: Bn
+                  getFormatAndTypeForInternalFormat: an
                 });
                 const LB = ct, CW = Pt;
                 function Go(Y) {
@@ -30346,7 +30346,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                       ), H.divisor !== void 0 && Y.vertexAttribDivisor(N, H.divisor);
                   };
                 }
-                function an(Y, N) {
+                function on(Y, N) {
                   return function(H) {
                     if (H.value)
                       if (Y.disableVertexAttribArray(N), H.value.length === 4)
@@ -30397,7 +30397,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                   };
                 }
                 const Lt = {};
-                Lt[KB] = { size: 4, setter: _B }, Lt[Tl] = { size: 8, setter: _B }, Lt[bl] = { size: 12, setter: _B }, Lt[kl] = { size: 16, setter: _B }, Lt[xo] = { size: 4, setter: an }, Lt[jl] = { size: 8, setter: an }, Lt[Pl] = { size: 12, setter: an }, Lt[Ll] = { size: 16, setter: an }, Lt[Ro] = { size: 4, setter: ZB }, Lt[Zl] = { size: 8, setter: ZB }, Lt[ql] = { size: 12, setter: ZB }, Lt[$l] = { size: 16, setter: ZB }, Lt[zl] = { size: 4, setter: an }, Lt[Wl] = { size: 8, setter: an }, Lt[Kl] = { size: 12, setter: an }, Lt[Ol] = { size: 16, setter: an }, Lt[Vl] = { size: 4, setter: So, count: 2 }, Lt[Xl] = { size: 9, setter: So, count: 3 }, Lt[_l] = { size: 16, setter: So, count: 4 };
+                Lt[KB] = { size: 4, setter: _B }, Lt[Tl] = { size: 8, setter: _B }, Lt[bl] = { size: 12, setter: _B }, Lt[kl] = { size: 16, setter: _B }, Lt[xo] = { size: 4, setter: on }, Lt[jl] = { size: 8, setter: on }, Lt[Pl] = { size: 12, setter: on }, Lt[Ll] = { size: 16, setter: on }, Lt[Ro] = { size: 4, setter: ZB }, Lt[Zl] = { size: 8, setter: ZB }, Lt[ql] = { size: 12, setter: ZB }, Lt[$l] = { size: 16, setter: ZB }, Lt[zl] = { size: 4, setter: on }, Lt[Wl] = { size: 8, setter: on }, Lt[Kl] = { size: 12, setter: on }, Lt[Ol] = { size: 16, setter: on }, Lt[Vl] = { size: 4, setter: So, count: 2 }, Lt[Xl] = { size: 9, setter: So, count: 3 }, Lt[_l] = { size: 16, setter: So, count: 4 };
                 const E9 = /ERROR:\s*\d+:(\d+)/gi;
                 function w9(Y, N = "", H = 0) {
                   const z = [...N.matchAll(E9)], q = new Map(z.map((BA, CA) => {
@@ -30891,10 +30891,10 @@ Error compiling ${dA(Y, N)}: ${BA}`);
                 function T9(Y, N) {
                   return Ci[Y] || Ci[N];
                 }
-                const on = {};
-                on[H9] = !0, on[S9] = !0, on[J9] = !0, on[Xo] = !0, on[mI] = !0, on[yI] = !0, on[UI] = !0;
+                const gn = {};
+                gn[H9] = !0, gn[S9] = !0, gn[J9] = !0, gn[Xo] = !0, gn[mI] = !0, gn[yI] = !0, gn[UI] = !0;
                 function b9(Y) {
-                  return on[Y];
+                  return gn[Y];
                 }
                 const k9 = 32;
                 function j9(Y) {
@@ -36297,7 +36297,7 @@ function Eq() {
       this.scopeStack[0].declareFunctions.has(C.name) || super.checkLocalExport(C);
     }
   }
-  const _i = /* @__PURE__ */ new Set(["_", "any", "bool", "boolean", "empty", "extends", "false", "interface", "mixed", "null", "number", "static", "string", "true", "typeof", "void"]), Fe = u`flow`({ AmbiguousConditionalArrow: "Ambiguous expression: wrap the arrow functions in parentheses to disambiguate.", AmbiguousDeclareModuleKind: "Found both `declare module.exports` and `declare export` in the same module. Modules can only have 1 since they are either an ES module or they are a CommonJS module.", AssignReservedType: ({ reservedType: O }) => `Cannot overwrite reserved type ${O}.`, DeclareClassElement: "The `declare` modifier can only appear on class fields.", DeclareClassFieldInitializer: "Initializers are not allowed in fields with the `declare` modifier.", DuplicateDeclareModuleExports: "Duplicate `declare module.exports` statement.", EnumBooleanMemberNotInitialized: ({ memberName: O, enumName: C }) => `Boolean enum members need to be initialized. Use either \`${O} = true,\` or \`${O} = false,\` in enum \`${C}\`.`, EnumDuplicateMemberName: ({ memberName: O, enumName: C }) => `Enum member names need to be unique, but the name \`${O}\` has already been used before in enum \`${C}\`.`, EnumInconsistentMemberValues: ({ enumName: O }) => `Enum \`${O}\` has inconsistent member initializers. Either use no initializers, or consistently use literals (either booleans, numbers, or strings) for all member initializers.`, EnumInvalidExplicitType: ({ invalidEnumType: O, enumName: C }) => `Enum type \`${O}\` is not valid. Use one of \`boolean\`, \`number\`, \`string\`, or \`symbol\` in enum \`${C}\`.`, EnumInvalidExplicitTypeUnknownSupplied: ({ enumName: O }) => `Supplied enum type is not valid. Use one of \`boolean\`, \`number\`, \`string\`, or \`symbol\` in enum \`${O}\`.`, EnumInvalidMemberInitializerPrimaryType: ({ enumName: O, memberName: C, explicitType: e }) => `Enum \`${O}\` has type \`${e}\`, so the initializer of \`${C}\` needs to be a ${e} literal.`, EnumInvalidMemberInitializerSymbolType: ({ enumName: O, memberName: C }) => `Symbol enum members cannot be initialized. Use \`${C},\` in enum \`${O}\`.`, EnumInvalidMemberInitializerUnknownType: ({ enumName: O, memberName: C }) => `The enum member initializer for \`${C}\` needs to be a literal (either a boolean, number, or string) in enum \`${O}\`.`, EnumInvalidMemberName: ({ enumName: O, memberName: C, suggestion: e }) => `Enum member names cannot start with lowercase 'a' through 'z'. Instead of using \`${C}\`, consider using \`${e}\`, in enum \`${O}\`.`, EnumNumberMemberNotInitialized: ({ enumName: O, memberName: C }) => `Number enum members need to be initialized, e.g. \`${C} = 1\` in enum \`${O}\`.`, EnumStringMemberInconsistentlyInitialized: ({ enumName: O }) => `String enum members need to consistently either all use initializers, or use no initializers, in enum \`${O}\`.`, GetterMayNotHaveThisParam: "A getter cannot have a `this` parameter.", ImportReflectionHasImportType: "An `import module` declaration can not use `type` or `typeof` keyword.", ImportTypeShorthandOnlyInPureImport: "The `type` and `typeof` keywords on named imports can only be used on regular `import` statements. It cannot be used with `import type` or `import typeof` statements.", InexactInsideExact: "Explicit inexact syntax cannot appear inside an explicit exact object type.", InexactInsideNonObject: "Explicit inexact syntax cannot appear in class or interface definitions.", InexactVariance: "Explicit inexact syntax cannot have variance.", InvalidNonTypeImportInDeclareModule: "Imports within a `declare module` body must always be `import type` or `import typeof`.", MissingTypeParamDefault: "Type parameter declaration needs a default, since a preceding type parameter declaration has a default.", NestedDeclareModule: "`declare module` cannot be used inside another `declare module`.", NestedFlowComment: "Cannot have a flow comment inside another flow comment.", PatternIsOptional: Object.assign({ message: "A binding pattern parameter cannot be optional in an implementation signature." }, { reasonCode: "OptionalBindingPattern" }), SetterMayNotHaveThisParam: "A setter cannot have a `this` parameter.", SpreadVariance: "Spread properties cannot have variance.", ThisParamAnnotationRequired: "A type annotation is required for the `this` parameter.", ThisParamBannedInConstructor: "Constructors cannot have a `this` parameter; constructors don't bind `this` like other functions.", ThisParamMayNotBeOptional: "The `this` parameter cannot be optional.", ThisParamMustBeFirst: "The `this` parameter must be the first function parameter.", ThisParamNoDefault: "The `this` parameter may not have a default value.", TypeBeforeInitializer: "Type annotations must come before default assignments, e.g. instead of `age = 25: number` use `age: number = 25`.", TypeCastInPattern: "The type cast expression is expected to be wrapped with parenthesis.", UnexpectedExplicitInexactInObject: "Explicit inexact syntax must appear at the end of an inexact object.", UnexpectedReservedType: ({ reservedType: O }) => `Unexpected reserved type ${O}.`, UnexpectedReservedUnderscore: "`_` is only allowed as a type argument to call or new.", UnexpectedSpaceBetweenModuloChecks: "Spaces between `%` and `checks` are not allowed here.", UnexpectedSpreadType: "Spread operator cannot appear in class or interface definitions.", UnexpectedSubtractionOperand: 'Unexpected token, expected "number" or "bigint".', UnexpectedTokenAfterTypeParameter: "Expected an arrow function after this type parameter declaration.", UnexpectedTypeParameterBeforeAsyncArrowFunction: "Type parameters must come after the async keyword, e.g. instead of `<T> async () => {}`, use `async <T>() => {}`.", UnsupportedDeclareExportKind: ({ unsupportedExportKind: O, suggestion: C }) => `\`declare export ${O}\` is not supported. Use \`${C}\` instead.`, UnsupportedStatementInDeclareModule: "Only declares and type imports are allowed inside declare module.", UnterminatedFlowComment: "Unterminated flow-comment." });
+  const Zi = /* @__PURE__ */ new Set(["_", "any", "bool", "boolean", "empty", "extends", "false", "interface", "mixed", "null", "number", "static", "string", "true", "typeof", "void"]), Fe = u`flow`({ AmbiguousConditionalArrow: "Ambiguous expression: wrap the arrow functions in parentheses to disambiguate.", AmbiguousDeclareModuleKind: "Found both `declare module.exports` and `declare export` in the same module. Modules can only have 1 since they are either an ES module or they are a CommonJS module.", AssignReservedType: ({ reservedType: O }) => `Cannot overwrite reserved type ${O}.`, DeclareClassElement: "The `declare` modifier can only appear on class fields.", DeclareClassFieldInitializer: "Initializers are not allowed in fields with the `declare` modifier.", DuplicateDeclareModuleExports: "Duplicate `declare module.exports` statement.", EnumBooleanMemberNotInitialized: ({ memberName: O, enumName: C }) => `Boolean enum members need to be initialized. Use either \`${O} = true,\` or \`${O} = false,\` in enum \`${C}\`.`, EnumDuplicateMemberName: ({ memberName: O, enumName: C }) => `Enum member names need to be unique, but the name \`${O}\` has already been used before in enum \`${C}\`.`, EnumInconsistentMemberValues: ({ enumName: O }) => `Enum \`${O}\` has inconsistent member initializers. Either use no initializers, or consistently use literals (either booleans, numbers, or strings) for all member initializers.`, EnumInvalidExplicitType: ({ invalidEnumType: O, enumName: C }) => `Enum type \`${O}\` is not valid. Use one of \`boolean\`, \`number\`, \`string\`, or \`symbol\` in enum \`${C}\`.`, EnumInvalidExplicitTypeUnknownSupplied: ({ enumName: O }) => `Supplied enum type is not valid. Use one of \`boolean\`, \`number\`, \`string\`, or \`symbol\` in enum \`${O}\`.`, EnumInvalidMemberInitializerPrimaryType: ({ enumName: O, memberName: C, explicitType: e }) => `Enum \`${O}\` has type \`${e}\`, so the initializer of \`${C}\` needs to be a ${e} literal.`, EnumInvalidMemberInitializerSymbolType: ({ enumName: O, memberName: C }) => `Symbol enum members cannot be initialized. Use \`${C},\` in enum \`${O}\`.`, EnumInvalidMemberInitializerUnknownType: ({ enumName: O, memberName: C }) => `The enum member initializer for \`${C}\` needs to be a literal (either a boolean, number, or string) in enum \`${O}\`.`, EnumInvalidMemberName: ({ enumName: O, memberName: C, suggestion: e }) => `Enum member names cannot start with lowercase 'a' through 'z'. Instead of using \`${C}\`, consider using \`${e}\`, in enum \`${O}\`.`, EnumNumberMemberNotInitialized: ({ enumName: O, memberName: C }) => `Number enum members need to be initialized, e.g. \`${C} = 1\` in enum \`${O}\`.`, EnumStringMemberInconsistentlyInitialized: ({ enumName: O }) => `String enum members need to consistently either all use initializers, or use no initializers, in enum \`${O}\`.`, GetterMayNotHaveThisParam: "A getter cannot have a `this` parameter.", ImportReflectionHasImportType: "An `import module` declaration can not use `type` or `typeof` keyword.", ImportTypeShorthandOnlyInPureImport: "The `type` and `typeof` keywords on named imports can only be used on regular `import` statements. It cannot be used with `import type` or `import typeof` statements.", InexactInsideExact: "Explicit inexact syntax cannot appear inside an explicit exact object type.", InexactInsideNonObject: "Explicit inexact syntax cannot appear in class or interface definitions.", InexactVariance: "Explicit inexact syntax cannot have variance.", InvalidNonTypeImportInDeclareModule: "Imports within a `declare module` body must always be `import type` or `import typeof`.", MissingTypeParamDefault: "Type parameter declaration needs a default, since a preceding type parameter declaration has a default.", NestedDeclareModule: "`declare module` cannot be used inside another `declare module`.", NestedFlowComment: "Cannot have a flow comment inside another flow comment.", PatternIsOptional: Object.assign({ message: "A binding pattern parameter cannot be optional in an implementation signature." }, { reasonCode: "OptionalBindingPattern" }), SetterMayNotHaveThisParam: "A setter cannot have a `this` parameter.", SpreadVariance: "Spread properties cannot have variance.", ThisParamAnnotationRequired: "A type annotation is required for the `this` parameter.", ThisParamBannedInConstructor: "Constructors cannot have a `this` parameter; constructors don't bind `this` like other functions.", ThisParamMayNotBeOptional: "The `this` parameter cannot be optional.", ThisParamMustBeFirst: "The `this` parameter must be the first function parameter.", ThisParamNoDefault: "The `this` parameter may not have a default value.", TypeBeforeInitializer: "Type annotations must come before default assignments, e.g. instead of `age = 25: number` use `age: number = 25`.", TypeCastInPattern: "The type cast expression is expected to be wrapped with parenthesis.", UnexpectedExplicitInexactInObject: "Explicit inexact syntax must appear at the end of an inexact object.", UnexpectedReservedType: ({ reservedType: O }) => `Unexpected reserved type ${O}.`, UnexpectedReservedUnderscore: "`_` is only allowed as a type argument to call or new.", UnexpectedSpaceBetweenModuloChecks: "Spaces between `%` and `checks` are not allowed here.", UnexpectedSpreadType: "Spread operator cannot appear in class or interface definitions.", UnexpectedSubtractionOperand: 'Unexpected token, expected "number" or "bigint".', UnexpectedTokenAfterTypeParameter: "Expected an arrow function after this type parameter declaration.", UnexpectedTypeParameterBeforeAsyncArrowFunction: "Type parameters must come after the async keyword, e.g. instead of `<T> async () => {}`, use `async <T>() => {}`.", UnsupportedDeclareExportKind: ({ unsupportedExportKind: O, suggestion: C }) => `\`declare export ${O}\` is not supported. Use \`${C}\` instead.`, UnsupportedStatementInDeclareModule: "Only declares and type imports are allowed inside declare module.", UnterminatedFlowComment: "Unterminated flow-comment." });
   function ct(O) {
     return O.type === "DeclareExportAllDeclaration" || O.type === "DeclareExportDeclaration" && (!O.declaration || O.declaration.type !== "TypeAlias" && O.declaration.type !== "InterfaceDeclaration");
   }
@@ -36455,7 +36455,7 @@ function Eq() {
       e === "_" && this.raise(Fe.UnexpectedReservedUnderscore, this.state.startLoc);
     }
     checkReservedType(e, E, M) {
-      _i.has(e) && this.raise(M ? Fe.AssignReservedType : Fe.UnexpectedReservedType, E, { reservedType: e });
+      Zi.has(e) && this.raise(M ? Fe.AssignReservedType : Fe.UnexpectedReservedType, E, { reservedType: e });
     }
     flowParseRestrictedIdentifier(e, E) {
       return this.checkReservedType(this.state.value, this.state.startLoc, E), this.parseIdentifier(e);
@@ -38187,7 +38187,7 @@ function Eq() {
       this.type = C.type, this.value = C.value, this.start = e + C.start, this.end = e + C.end, this.loc = new t(C.startLoc, C.endLoc);
     }
   }
-  class Zi extends Bi {
+  class qi extends Bi {
     constructor(C, e) {
       super(), this.isLookahead = void 0, this.tokens = [], this.errorHandlers_readInt = { invalidDigit: (E, M, b, _) => this.optionFlags & 2048 ? (this.raise(I.InvalidDigit, Ai(E, M, b), { radix: _ }), !0) : !1, numericSeparatorInEscapeSequence: this.errorBuilder(I.NumericSeparatorInEscapeSequence), unexpectedNumericSeparator: this.errorBuilder(I.UnexpectedNumericSeparator) }, this.errorHandlers_readCodePoint = Object.assign({}, this.errorHandlers_readInt, { invalidEscapeSequence: this.errorBuilder(I.InvalidEscapeSequence), invalidCodePoint: this.errorBuilder(I.InvalidCodePoint) }), this.errorHandlers_readStringContents_string = Object.assign({}, this.errorHandlers_readCodePoint, { strictNumericEscape: (E, M, b) => {
         this.recordStrictModeErrors(I.StrictNumericEscape, Ai(E, M, b));
@@ -38906,7 +38906,7 @@ function Eq() {
   function Ts() {
     return new Sr(3);
   }
-  function qi() {
+  function $i() {
     return new ze(1);
   }
   function pi() {
@@ -38915,7 +38915,7 @@ function Eq() {
   function as() {
     return new Sr();
   }
-  class mi extends Zi {
+  class mi extends qi {
     addExtra(C, e, E, M = !0) {
       if (!C) return;
       let { extra: b } = C;
@@ -39093,12 +39093,12 @@ function Eq() {
       return cA.type = e, cA.start = E, cA.end = M, cA.loc = b, cA.range = _, cA.extra = iA, cA.value = C.value, cA;
     }
   }
-  const $i = (O) => O.type === "ParenthesizedExpression" ? $i(O.expression) : O;
-  class An extends ei {
+  const An = (O) => O.type === "ParenthesizedExpression" ? An(O.expression) : O;
+  class en extends ei {
     toAssignable(C, e = !1) {
       var E, M;
       let b;
-      switch ((C.type === "ParenthesizedExpression" || (E = C.extra) != null && E.parenthesized) && (b = $i(C), e ? b.type === "Identifier" ? this.expressionScope.recordArrowParameterBindingError(I.InvalidParenthesizedAssignment, C) : b.type !== "MemberExpression" && !this.isOptionalMemberExpression(b) && this.raise(I.InvalidParenthesizedAssignment, C) : this.raise(I.InvalidParenthesizedAssignment, C)), C.type) {
+      switch ((C.type === "ParenthesizedExpression" || (E = C.extra) != null && E.parenthesized) && (b = An(C), e ? b.type === "Identifier" ? this.expressionScope.recordArrowParameterBindingError(I.InvalidParenthesizedAssignment, C) : b.type !== "MemberExpression" && !this.isOptionalMemberExpression(b) && this.raise(I.InvalidParenthesizedAssignment, C) : this.raise(I.InvalidParenthesizedAssignment, C)), C.type) {
         case "Identifier":
         case "ObjectPattern":
         case "ArrayPattern":
@@ -39377,7 +39377,7 @@ function Eq() {
   function oi(O) {
     return O === "in" || O === "out";
   }
-  var en = (O) => class extends O {
+  var tn = (O) => class extends O {
     constructor(...e) {
       super(...e), this.tsParseInOutModifiers = this.tsParseModifiers.bind(this, { allowedModifiers: ["in", "out"], disallowedModifiers: ["const", "public", "private", "protected", "readonly", "declare", "abstract", "override"], errorTemplate: de.InvalidModifierOnTypeParameter }), this.tsParseConstModifier = this.tsParseModifiers.bind(this, { allowedModifiers: ["const"], disallowedModifiers: ["in", "out"], errorTemplate: de.InvalidModifierOnTypeParameterPositions }), this.tsParseInOutConstModifiers = this.tsParseModifiers.bind(this, { allowedModifiers: ["in", "out", "const"], disallowedModifiers: ["public", "private", "protected", "readonly", "declare", "abstract", "override"], errorTemplate: de.InvalidModifierOnTypeParameter });
     }
@@ -40754,7 +40754,7 @@ function Eq() {
       }
     }
   };
-  function tn(O) {
+  function rn(O) {
     if (O.type !== "MemberExpression") return !1;
     const { computed: C, property: e } = O;
     return C && e.type !== "StringLiteral" && (e.type !== "TemplateLiteral" || e.expressions.length > 0) ? !1 : ar(O.object);
@@ -40772,7 +40772,7 @@ function Eq() {
       }
     } else if (E === "StringLiteral" || E === "BooleanLiteral")
       return !0;
-    return !!(Un(O, C) || Pr(O, C) || E === "TemplateLiteral" && O.expressions.length === 0 || tn(O));
+    return !!(Un(O, C) || Pr(O, C) || E === "TemplateLiteral" && O.expressions.length === 0 || rn(O));
   }
   function Un(O, C) {
     return C ? O.type === "Literal" && (typeof O.value == "number" || "bigint" in O) : O.type === "NumericLiteral" || O.type === "BigIntLiteral";
@@ -40908,7 +40908,7 @@ function Eq() {
     assertNoSpace() {
       this.state.start > this.offsetToSourcePos(this.state.lastTokEndLoc.index) && this.raise(or.UnexpectedSpace, this.state.lastTokEndLoc);
     }
-  }, rn = (O) => class extends O {
+  }, nn = (O) => class extends O {
     parseV8Intrinsic() {
       if (this.match(54)) {
         const e = this.state.startLoc, E = this.startNode();
@@ -40988,8 +40988,8 @@ function Eq() {
     if (O.has("optionalChainingAssign") && O.get("optionalChainingAssign").version !== "2023-07")
       throw new Error("The 'optionalChainingAssign' plugin requires a 'version' option, representing the last proposal update. Currently, the only supported value is '2023-07'.");
   }
-  const ge = { estree: U, jsx: Ye, flow: Zr, typescript: en, v8intrinsic: rn, placeholders: gs }, fe = Object.keys(ge);
-  class at extends An {
+  const ge = { estree: U, jsx: Ye, flow: Zr, typescript: tn, v8intrinsic: nn, placeholders: gs }, fe = Object.keys(ge);
+  class at extends en {
     checkProto(C, e, E, M) {
       if (C.type === "SpreadElement" || this.isObjectMethod(C) || C.computed || C.shorthand)
         return E;
@@ -41475,7 +41475,7 @@ function Eq() {
     parseParenAndDistinguishExpression(C) {
       const e = this.state.startLoc;
       let E;
-      this.next(), this.expressionScope.enter(qi());
+      this.next(), this.expressionScope.enter($i());
       const M = this.state.maybeInArrowParameters, b = this.state.inFSharpPipelineDirectBody;
       this.state.maybeInArrowParameters = !0, this.state.inFSharpPipelineDirectBody = !1;
       const _ = this.state.startLoc, iA = [], cA = new bi();
@@ -43371,7 +43371,7 @@ const Rt = {
   /** 終了 */
   COMPLETED: "COMPLETED"
 };
-class Wi {
+class Ki {
   static async wait(A) {
     const t = A * 1e3;
     return new Promise(async (r) => {
@@ -43381,7 +43381,7 @@ class Wi {
     });
   }
 }
-class zi {
+class Wi {
   static _broadcastReceivedFuncArr = [];
   entity;
   /**
@@ -43398,7 +43398,7 @@ class zi {
    */
   send(A, ...t) {
     const r = this.getMessageId(A);
-    zi.getBroadcastElement(r).funcArr.length > 0 && he.runtime.scratchEvent.emit(r, ...t);
+    Wi.getBroadcastElement(r).funcArr.length > 0 && he.runtime.scratchEvent.emit(r, ...t);
   }
   /**
    * メッセージを送り終わるまで待つ
@@ -43408,7 +43408,7 @@ class zi {
   sendAndWait(A, ...t) {
     const r = this.getMessageId(A);
     return new Promise(async (B) => {
-      const Q = zi.getBroadcastElement(r);
+      const Q = Wi.getBroadcastElement(r);
       if (Q.funcArr.length > 0)
         for (he.runtime.scratchEvent.emit(r, ...t); ; ) {
           let a = !0;
@@ -43418,7 +43418,7 @@ class zi {
             B();
             break;
           }
-          await Wi.wait(0.1 / 1e3);
+          await Ki.wait(0.1 / 1e3);
         }
       else
         B();
@@ -43450,7 +43450,7 @@ class zi {
   _whenBroadcastReceived(A, t) {
     const r = this, B = this.getMessageId(A), Q = new Kn(r.entity, zn.FALSE);
     Q.setFunc(t), yi.registThread(Q);
-    const a = zi.getBroadcastElement(B), c = {
+    const a = Wi.getBroadcastElement(B), c = {
       thread: Q,
       func: t
     };
@@ -43460,14 +43460,14 @@ class zi {
     return `message_${A}`;
   }
   broadcastReceivedKick(A, ...t) {
-    const r = zi.getBroadcastElement(A);
+    const r = Wi.getBroadcastElement(A);
     for (const B of r.funcArr) {
       const Q = B.thread;
       Q.setFunc(B.func, ...t), Q.status = Rt.YIELD;
     }
   }
   static getBroadcastElement(A) {
-    const t = zi._broadcastReceivedFuncArr;
+    const t = Wi._broadcastReceivedFuncArr;
     for (const B of t)
       if (B.messageId == A)
         return B;
@@ -43475,7 +43475,7 @@ class zi {
       messageId: A,
       funcArr: []
     };
-    return zi._broadcastReceivedFuncArr.push(r), r;
+    return Wi._broadcastReceivedFuncArr.push(r), r;
   }
 }
 const zn = {
@@ -43499,7 +43499,7 @@ class ui {
    * @param entity {Entity}
    */
   constructor(A) {
-    this.entity = A, this._broadcast = new zi(A);
+    this.entity = A, this._broadcast = new Wi(A);
   }
   /**
    * BroadCast
@@ -43808,7 +43808,7 @@ class Js {
               r();
               break;
             }
-            await Wi.wait(0.1 / 1e3);
+            await Ki.wait(0.1 / 1e3);
           }
         else
           r();
@@ -44176,7 +44176,7 @@ class vq {
       const Q = this.effectMap.get(A);
       Q && (Q.volume = 100, Q.pitch = 0), r.setVolume(B, 100), r.setPitch(B, 0);
     }
-    await Wi.wait(1 / 30);
+    await Ki.wait(1 / 30);
   }
   /**
    * 鳴っている音を止める
@@ -44672,7 +44672,7 @@ class bL extends YB.EventEmitter {
   constructor() {
     super();
     const A = he;
-    this._render = A.render, this.id = this._generateUUID(), this._image = new Gq(this), this._sound = new vq(this), this._broadcast = new zi(this), this._speech = new Sq(this), this._mouse = A.mouse, this._isSprite = !1, this._isAlive = !0;
+    this._render = A.render, this.id = this._generateUUID(), this._image = new Gq(this), this._sound = new vq(this), this._broadcast = new Wi(this), this._speech = new Sq(this), this._mouse = A.mouse, this._isSprite = !1, this._isAlive = !0;
   }
   createDrawable(A) {
     this.drawableID = this._render.createDrawable(A);
@@ -45762,7 +45762,7 @@ class Wq {
    * @returns 
    */
   async sayForSecs(A, t, r) {
-    this.say(A, r), await Wi.wait(t), this.bubble.destroyBubble();
+    this.say(A, r), await Ki.wait(t), this.bubble.destroyBubble();
   }
   /**
    * 考える
@@ -45781,7 +45781,7 @@ class Wq {
    * @returns
    */
   async thinkForSecs(A, t, r) {
-    this.think(A, r), await Wi.wait(t), this.bubble.destroyBubble();
+    this.think(A, r), await Ki.wait(t), this.bubble.destroyBubble();
   }
   update() {
     this.bubble.isBubbleActive === !0 && this.bubble.moveWithSprite();
@@ -47030,7 +47030,7 @@ class zL extends bL {
       A.isClone || Promise.all(r).then(async () => {
         for (const B of this._image.images) {
           const Q = B.image, a = this.render.renderer.createSVGSkin(Q), n = this._render.renderer._allSkins[a];
-          n._canvas = qe.RemakeCanvasWillReadFrequentlyTrue, n._context = n._canvas.getContext("2d", { willReadFrequently: !0 }), await Wi.wait(0.1), B.skinId = a;
+          n._canvas = qe.RemakeCanvasWillReadFrequentlyTrue, n._context = n._canvas.getContext("2d", { willReadFrequently: !0 }), await Ki.wait(0.1), B.skinId = a;
         }
         t();
       });
@@ -47081,7 +47081,7 @@ class wi {
    * @param sec 
    */
   async wait(A) {
-    await Wi.wait(A);
+    await Ki.wait(A);
   }
   /**
    * 条件が成立する迄、待つ。
@@ -49297,29 +49297,29 @@ const he = new K$(), O$ = "data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%2
 }, Symbol.toStringTag, { value: "Module" })), { NowLoadingSVG: X$ } = await Promise.resolve().then(() => V$), _$ = () => {
   const i = document.createElement("style");
   i.innerHTML = `
-            ${gn.documentCss}
+            ${cn.documentCss}
 
 
-            ${gn.flagCss}
+            ${cn.flagCss}
 
 
-            ${gn.scratch3Header}
+            ${cn.scratch3Header}
 
 
-            ${gn.canvasCss}
+            ${cn.canvasCss}
 
 
-            ${gn.textCanvasCss}
+            ${cn.textCanvasCss}
 
 
-            ${gn.mainTmpCss}
+            ${cn.mainTmpCss}
 
 
-            ${gn.askCss}
+            ${cn.askCss}
 
 
         `, document.getElementsByTagName("head")[0].appendChild(i);
-}, gn = {
+}, cn = {
   documentCss: `
 * { 
         box-sizing: border-box;
@@ -49634,7 +49634,7 @@ html, body{
 `
 }, Z$ = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  S3CSS: gn,
+  S3CSS: cn,
   insertCss: _$
 }, Symbol.toStringTag, { value: "Module" })), { insertCss: q$ } = await Promise.resolve().then(() => Z$), $$ = () => {
   q$();
@@ -49676,7 +49676,7 @@ class go {
     });
   }
 }
-class cn {
+class zi {
   /**
    * REGEX_SVG_DATA_IMAGE_FILE
    * svg file 名 の判定のRegExpを返す
@@ -49684,6 +49684,9 @@ class cn {
    */
   static get REGEX_SVG_DATA_IMAGE_FILE() {
     return /^.+\.svg(\\?.*)?$/;
+  }
+  static get REGEX_DATA_XML_SVG() {
+    return /^(\<\?xml\s.+\?\>)?\<svg\s/;
   }
   /**
    * REGEX_DATA_IMAGE_SVG
@@ -49693,7 +49696,7 @@ class cn {
     return /^data:image\/svg\+xml/;
   }
   static async loader(A) {
-    return A.match(cn.REGEX_DATA_IMAGE_SVG) || A.match(cn.REGEX_SVG_DATA_IMAGE_FILE) ? cn._svgText(A) : cn._bitmapLoad(A);
+    return A.match(zi.REGEX_DATA_IMAGE_SVG) || A.match(zi.REGEX_SVG_DATA_IMAGE_FILE) ? zi._svgText(A) : zi._bitmapLoad(A);
   }
   /**
    * 与えたアドレスをもとにイメージを取り出し返す。
@@ -49703,11 +49706,11 @@ class cn {
    */
   static async _svgText(A) {
     let r = await (await fetch(A)).text();
-    return r.substring(0, 4) != "<svg" ? "ERROR" : r;
+    return r.match(zi.REGEX_DATA_XML_SVG) ? r : "ERROR";
   }
   static async _bitmapLoad(A) {
     const t = he.render, r = { W: t.stageWidth, H: t.stageHeight }, B = await go.getLoadInfo(A), Q = B.size.width, a = B.size.heigth, c = B.data;
-    return Q > r.W && a > r.H ? cn.toSvg(c, r.W, r.H) : cn.toSvg(c, Q / 2, a / 2);
+    return Q > r.W && a > r.H ? zi.toSvg(c, r.W, r.H) : zi.toSvg(c, Q / 2, a / 2);
   }
   static toSvg(A, t, r) {
     return `<svg width="${t}" height="${r}" viewBox="0,0,${t},${r}" xmlns="http://www.w3.org/2000/svg">
@@ -49930,7 +49933,7 @@ let aAA = class ZL {
   async load() {
     if (this.loadCompleted === !0)
       return;
-    const A = await cn.loader(this._imagePath);
+    const A = await zi.loader(this._imagePath);
     this._img = A, this._loadCompleted = !0;
   }
   get name() {
@@ -50205,7 +50208,7 @@ class QAA {
    * @param sec 
    */
   async wait(A) {
-    await Wi.wait(A);
+    await Ki.wait(A);
   }
   /**
    * 条件が成立する迄、待つ。
@@ -50559,7 +50562,7 @@ class YAA extends bL {
           const a = Q.image, c = this.render.renderer.createSVGSkin(a);
           B == null && (B = document.createElement("canvas"));
           const w = this._render.renderer._allSkins[c];
-          w._canvas = B, w._context = w._canvas.getContext("2d", { willReadFrequently: !0 }), await Wi.wait(0.1), Q.skinId = c;
+          w._canvas = B, w._context = w._canvas.getContext("2d", { willReadFrequently: !0 }), await Ki.wait(0.1), Q.skinId = c;
         }
         t();
       });
