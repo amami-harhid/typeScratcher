@@ -5,6 +5,7 @@ import { ScratchFontFamily as _ScratchFontFamily } from '../type/svgText';
 import type { IEngine } from '../type/engine';
 import type { SImage } from '../type/image';
 import type { SLoop } from '../lib/engine/loop';
+import type { SMonitors } from './entity/monitor';
 import type { SSound } from '../type/sound';
 import type { SSprite } from '../type/entity/sprite';
 import type { SStage } from '../type/entity/stage';
@@ -27,6 +28,7 @@ export type ExportType = {
     engine: IEngine,
     textToSvg: ITextToSvg,
     Loop: SLoop,
+    Monitors: SMonitors,
     ScratchFontFamily: typeof _ScratchFontFamily,
     SpeechLocale: typeof SPEECH_LOCALE,
     VoiceType: typeof VOICE_ID,

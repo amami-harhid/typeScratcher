@@ -38,6 +38,7 @@ import { Engine, engine } from './lib/engine';
 import { Image as _Image } from './lib/image';
 import { ImageEffective, type ImageEffectiveType } from './type/entity/ImageEffective';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './type/engine/keyboad';
+import { Monitors } from './lib/entity/monitor/monitors';
 import { Rotation, type RotationStyle } from './type/entity/RotationStyle';
 import { Sound as _Sound} from './lib/sounds';
 import { Sprite as _Sprite } from './lib/entity/sprite';
@@ -49,6 +50,7 @@ import { Var } from './lib/entity/monitor/varProxy';
 import type { createSvgImageAttributes } from './type/image';
 import type { IEngine } from './type/engine';
 import type { IImage } from './type/image';
+import type { SMonitors } from './type/entity/monitor'; 
 import type { ISprite, SSprite } from './type/entity/sprite';
 import type { IStage, SStage } from './type/entity/stage';
 import type { ITextToSvg } from './type/svgText';
@@ -97,6 +99,7 @@ export const Typescratcher: ExportType = {
     engine: engine as IEngine,
     textToSvg: textToSvg as ITextToSvg,
     Loop: Loop as SLoop,
+    Monitors: Monitors as SMonitors,
     ScratchFontFamily: _ScratchFontFamily as typeof _ScratchFontFamily,
     SpeechLocale: SPEECH_LOCALE,
     VoiceType: VOICE_ID,

@@ -5,9 +5,39 @@ import { MonitoringVars } from "./monitoring";
  * Monitors
  */
 export interface SMonitors{
-    new(): IMonitors;    
+    /**
+     * モニターを追加する.
+     * @param vars 
+     */
+    addVar(vars: MonitoringVars):void;
+    /**
+     * モニターを再配置する
+     */
+    allReposition(): void;
+    /**
+     * 指定したIDのモニターを返す
+     * @param monitorId {string}
+     * @returns {Monitor}
+     */
+    getMonitor(monitorId: string): IMonitor;
+    /**
+     * 指定したIDのモニターを表示する
+     * @param monitorId 
+     */
+    showMonitor(monitorId: string): void;
+    /**
+     * 指定したIDのモニターを隠す
+     * @param monitorId {string}
+     */
+    hideMonitor(monitorId: string): void;
+
+    /**
+     * 全てのMonitorを描画する
+     */
+    drawMonitors() : void;
+
 }
-export interface IMonitors{
+export interface IMonitors {
     /**
      * IDとラベルを指定して モニターを追加する.
      * IDが重複する場合は追加しない.

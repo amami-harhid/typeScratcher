@@ -6,10 +6,43 @@ import { S3MonitorSkin } from "./s3MonitorSkin";
 import type { IMonitors } from "../../../type/entity/monitor";
 import type { IRenderWebGL } from "../../../type/render/IRenderWebGL"; 
 import { MonitoringVars } from "src/type/entity/monitor/monitoring";
+import { IMonitor } from "src/type/entity/monitor/monitor";
 /**
  * Monitors
  */
 export class Monitors implements IMonitors{
+
+    private static _instance: Monitors;
+    private static getInstance(): Monitors {
+        if(Monitors._instance == undefined) {
+            Monitors._instance = new Monitors();
+        }
+        return Monitors._instance;
+    }
+    public static addVar(vars: MonitoringVars): void {
+        const instance = Monitors.getInstance();
+        instance.add(vars);
+    }
+    public static allReposition(): void {
+        const instance = Monitors.getInstance();
+        instance.reposition();
+    }
+    public static getMonitor(monitorId: string): IMonitor {
+        const instance = Monitors.getInstance();
+        return instance.get(monitorId);
+    }
+    public static showMonitor(monitorId: string): void {
+        const instance = Monitors.getInstance();
+        instance.show(monitorId);
+    }
+    public static hideMonitor(monitorId: string): void {
+        const instance = Monitors.getInstance();
+        instance.hide(monitorId);
+    }
+    public static drawMonitors() : void {
+        const instance = Monitors.getInstance();
+        instance.draw();
+    }
     private _renderer: IRenderWebGL;
     private _monitors: Monitor[];
     private _render: Render;
@@ -140,9 +173,9 @@ export class Monitors implements IMonitors{
     /**
      * 指定したIDのモニターを返す
      * @param monitorId {string}
-     * @returns {Monitor}
+     * @returns {IMonitor}
      */
-    get(monitorId: string): Monitor{
+    get(monitorId: string): IMonitor{
         for(const _monitor of this._monitors){
             if(monitorId === _monitor.monitorId){
                 return _monitor;
