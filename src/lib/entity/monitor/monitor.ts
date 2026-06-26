@@ -7,7 +7,7 @@ import { Utils } from "../../utils/utils";
 import type { IRenderWebGL, ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
 import type { TPosition, TScale, TDistance} from "../../../type/common/typeCommon";
 import type { IMonitor } from "../../../type/entity/monitor/monitor";
-import { Monitoring, MonitoringVars } from "src/type/entity/monitor/monitoring";
+import type { MonitoringNumber, MonitoringString, MonitoringVars } from "src/type/entity/monitor/monitoring";
 
 /**
  * Monitor
@@ -27,18 +27,18 @@ export class Monitor extends Entity implements IMonitor{
     private _scale: TScale;
     private _dropEnabled: boolean;
     private _moveDistance: TDistance;
-    private _monitoring! : Monitoring;
+    private _monitoring! : MonitoringNumber | MonitoringString;
     //private _preDraw: boolean;
     /**
      * @constructor
      * @param monitorId {string}
      * @param label {string}
      */
-    constructor(monitorId:string, value: Monitoring){
+    constructor(monitorId:string, value: MonitoringNumber | MonitoringString){
         super();
         this._monitorId = monitorId;
         this._monitoring = value;
-        this._label = value.label;
+        this._label = (value.label)? value.label: monitorId;
         this.createDrawable(StageLayering.MONITOR_LAYER);
         //this._monitorId = monitorId;
         this._visible = true;
@@ -80,15 +80,15 @@ export class Monitor extends Entity implements IMonitor{
         });
 
         this._monitoring.callback = () => {
-            if(Utils.isNumber( this._monitoring.value )){
+            if("value" in this._monitoring){
                 if( this._skin ) {
                     this._skin.value = this._monitoring.value;
                 }
             
-            } else if(typeof this._monitoring.value == 'string'){
+            } else if("text" in this._monitoring){
                 if(this._skin){
                     // 文字列化して格納
-                    this._skin.value = ''+ this._monitoring.value;
+                    this._skin.value = this._monitoring.text;
                 }
             }
         }

@@ -47391,7 +47391,7 @@ class Kn extends ao {
   _args;
   _isDeadThread;
   constructor(A, t = !1) {
-    super(), this._entity = A, this.threadId = lt.generateUUID(), this.genProxy(), this.entityId = A.id, this._doubleRunable = t, this._proxy = this.genProxy(), this._args = [], this._isDeadThread = !1;
+    super(), this._entity = A, this.threadId = lt.generateUUID(), this.entityId = A.id, this._doubleRunable = t, this._proxy = this.genProxy(), this._args = [], this._isDeadThread = !1;
   }
   clear() {
     this.entity.isSprite && this.entity.isClone && (this._entity = null);
@@ -50582,14 +50582,37 @@ const MAA = class {
     for (let t = A; t < A + i; t++)
       yield t;
   }
-}, FAA = MAA, fAA = async function() {
+}, FAA = MAA;
+class fAA {
+  static num(A) {
+    return new Proxy(A, {
+      get(t, r) {
+        return Reflect.get(t, r);
+      },
+      set(t, r, B) {
+        return r != "callback" && t.callback && t.callback(), Reflect.set(t, r, B);
+      }
+    });
+  }
+  static str(A) {
+    return new Proxy(A, {
+      get(t, r) {
+        return Reflect.get(t, r);
+      },
+      set(t, r, B) {
+        return r != "callback" && t.callback && t.callback(), Reflect.set(t, r, B);
+      }
+    });
+  }
+}
+const DAA = async function() {
   console.log(`Library Version = "${oq}"`), $$();
 };
-await fAA();
-const DAA = he.render.stageWidth, pAA = he.render.stageHeight, mAA = {
-  w: DAA,
-  h: pAA
-}, HAA = {
+await DAA();
+const pAA = he.render.stageWidth, mAA = he.render.stageHeight, yAA = {
+  w: pAA,
+  h: mAA
+}, SAA = {
   Sprite: zL,
   Stage: YAA,
   Image: aAA,
@@ -50603,9 +50626,10 @@ const DAA = he.render.stageWidth, pAA = he.render.stageHeight, mAA = {
   ScratchFontFamily: _L,
   SpeechLocale: vL,
   VoiceType: xq,
-  StageBounds: mAA,
-  Utils: lt
+  StageBounds: yAA,
+  Utils: lt,
+  Var: fAA
 };
 export {
-  HAA as Typescratcher
+  SAA as Typescratcher
 };

@@ -45,6 +45,7 @@ import { Stage as _Stage } from './lib/entity/stage';
 import { ScratchFontFamily as _ScratchFontFamily } from './type/svgText';
 import { textToSvg } from './lib/svgText';
 import { Loop } from './lib/engine/loop';
+import { Var } from './lib/entity/monitor/varProxy';
 import type { createSvgImageAttributes } from './type/image';
 import type { IEngine } from './type/engine';
 import type { IImage } from './type/image';
@@ -54,6 +55,7 @@ import type { ITextToSvg } from './type/svgText';
 import type { SImage } from './type/image';
 import type { SLoop } from './lib/engine/loop';
 import type { SSound } from './type/sound';
+import type { SVar } from './type/entity/monitor/SVar';
 import { SPEECH_LOCALE } from './type/speech/IVoice';
 import { VOICE_ID } from './type/speech/IVoice';
 import { Utils } from './lib/utils/utils';
@@ -100,6 +102,7 @@ export const Typescratcher: ExportType = {
     VoiceType: VOICE_ID,
     StageBounds: stageBounds,
     Utils: Utils,
+    Var: Var as SVar,
     
 } as const;
 
