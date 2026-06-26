@@ -325,7 +325,7 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
         super();
         this._entity = entity;
         this.threadId = Utils.generateUUID();
-        this.genProxy();
+        //this.genProxy();
         this.entityId = (entity as Entity).id;
         this._doubleRunable = doubleRunable;
         this._proxy = this.genProxy();

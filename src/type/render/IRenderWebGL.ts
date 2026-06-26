@@ -1,5 +1,5 @@
 import type { StageLayeringValue } from '../entity/stage/CStageLayering';
-import type { IMonitorSkin } from '../monitors/IMonitorSkin';
+import type { IMonitorSkin } from '../entity/monitor/IMonitorSkin';
 import type { TPenAttributes } from '../pen';
 import type { ISkin } from './ISkin';
 import type { IDrawable } from './IDrawable';

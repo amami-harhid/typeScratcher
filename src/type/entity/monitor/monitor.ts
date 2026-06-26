@@ -9,22 +9,8 @@ export interface IMonitor {
     set position(_position: TPosition)
     get scale(): TScale;
     set scale(_scale:TScale)
+    /** 表示する */
     show (): void;
+    /** 隠す */
     hide (): void;
-    /**
-     * 文字列型
-     */    
-    get text (): string;
-    /**
-     * 文字列型
-     */    
-    set text( _text: string )
-    /**
-     * 数値型
-     */    
-    get value (): number;
-    /**
-     * 数値型
-     */    
-    set value( _value: number )
 }
