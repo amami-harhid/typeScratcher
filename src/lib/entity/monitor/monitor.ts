@@ -1,4 +1,4 @@
-import { engine, Engine } from "src/lib/engine";
+import { engine, Engine } from "../../engine";
 import { Entity } from "../entity";
 import { S3MonitorSkin } from "./s3MonitorSkin";
 import { ScratchElement } from "../../gui/scratchElement";
@@ -7,7 +7,7 @@ import { Utils } from "../../utils/utils";
 import type { IRenderWebGL, ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
 import type { TPosition, TScale, TDistance} from "../../../type/common/typeCommon";
 import type { IMonitor } from "../../../type/entity/monitor/monitor";
-import type { MonitoringNumber, MonitoringString, MonitoringVars } from "src/type/entity/monitor/monitoring";
+import type { MonitoringNumber, MonitoringString } from "../../../type/entity/monitor/monitoring";
 
 /**
  * Monitor

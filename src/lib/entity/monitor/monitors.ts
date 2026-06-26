@@ -91,12 +91,14 @@ export class Monitors implements IMonitors{
                 if(monitorId === _monitor.monitorId) {
                     return;
                 }
-                const monitor = new Monitor(monitorId, monitoring);
-                monitor.createTextSkin();
-                monitor.scale = {w: 100, h:100};
-                this._monitors.push(monitor);
-                this.reposition();
             }
+            console.log('monitorId=', monitorId);
+            console.log('monitoring=', monitoring);
+            const monitor = new Monitor(monitorId, monitoring);
+            monitor.createTextSkin();
+            monitor.scale = {w: 100, h:100};
+            this._monitors.push(monitor);
+            this.reposition();
             break;
         }
     }
@@ -188,11 +190,12 @@ export class Monitors implements IMonitors{
      * @param monitorId 
      */
     show(monitorId: string): void{
+        console.log(this._monitors);
         for(const _monitor of this._monitors){
             if(monitorId === _monitor.monitorId){
                 _monitor.show();
                 _monitor.draw();
-                break;
+                return;
             }
         }
         throw `指定した${monitorId}のMonitorはありません`;
@@ -206,7 +209,7 @@ export class Monitors implements IMonitors{
             if(monitorId === _monitor.monitorId){
                 _monitor.hide();
                 _monitor.draw();
-                break;
+                return;
             }
         }
         throw `指定した${monitorId}のMonitorはありません`;
