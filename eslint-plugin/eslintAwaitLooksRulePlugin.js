@@ -20,7 +20,7 @@ const awaitLooksRule = {
                     if(node.parent.type == 'MemberExpression') {  
                         const parent = node.parent;
                         if(parent.object && parent.object.property && 
-                            parent.object.property.name == 'Bubble' &&
+                            parent.object.property.name == 'bubble' &&
                             parent.object.object && parent.object.object.property &&
                             parent.object.object.property.name == 'Looks'
                         ) {

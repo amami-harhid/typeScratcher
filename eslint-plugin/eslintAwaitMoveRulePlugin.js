@@ -19,7 +19,7 @@ const awaitMoveRule = {
                     const parent = node.parent;
                     if(parent.type == 'MemberExpression') {
                         if(parent.object && parent.object.property 
-                            && parent.object.property.name == 'Move' &&
+                            && parent.object.property.name == 'move' &&
                             parent.object.object && parent.object.object.property && 
                             parent.object.object.property.name == 'Motion'){
                             const parent2 = parent.parent;

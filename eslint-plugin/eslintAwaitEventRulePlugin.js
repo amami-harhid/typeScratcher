@@ -12,12 +12,12 @@ const awaitEventRule = {
         return {
             Identifier(node) {
                 if(node.type == 'Identifier' &&
-           node.name == 'broadcastAndWait'
+                    node.name == 'sendAndWait'
                 ) {
                     if(node.parent.type == 'MemberExpression') {  
                         const parent = node.parent;
                         if(parent.object && parent.object.property 
-                  && parent.object.property.name == 'Event') {
+                            && parent.object.property.name == 'Broadcast') {
                             // (xxx.Event.broadcastAndWait) --> parent_parent 
                             const parent_parent = node.parent.parent;
                             if(parent_parent.type == 'CallExpression'){

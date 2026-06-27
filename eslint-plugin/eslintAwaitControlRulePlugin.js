@@ -15,12 +15,12 @@ const awaitControlRule = {
           (
               node.name == 'wait' ||
            node.name == 'waitUntil' ||
-           node.name == 'waitWhile' ||
-           node.name == 'cloneAndWait' ||
-           node.name == 'forever'   ||
-           node.name == 'while'     ||
-           node.name == 'repeat'    ||
-           node.name == 'repeatUntil'
+           node.name == 'waitWhile'
+        //    node.name == 'cloneAndWait' ||
+        //    node.name == 'forever'   ||
+        //    node.name == 'while'     ||
+        //    node.name == 'repeat'    ||
+        //    node.name == 'repeatUntil'
           )
                 ) {
                     if(node.parent.type == 'MemberExpression') {  
