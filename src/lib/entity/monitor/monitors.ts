@@ -96,6 +96,7 @@ export class Monitors implements IMonitors{
             //monitor.show(); // 初期状態は表示
             monitor.createTextSkin();
             monitor.scale = monitoring.scale;
+            monitor.draw();
             this._monitors.push(monitor);
             this.reposition();
             break;

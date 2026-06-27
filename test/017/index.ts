@@ -15,8 +15,8 @@ const clone = Ts.Variable.number(0); // 変数初期値設定
 const cloneCounterStr = Ts.Variable.string(''); // 変数初期値設定
 Ts.Variable.monitoring({clone}); // モニター開始
 Ts.Variable.monitoring({cloneCounterStr}); // モニター開始
-clone.scale = {w: 100, h:100};
-cloneCounterStr.scale = {w: 100, h:100};
+//clone.scale = {w: 100, h:100};
+//cloneCounterStr.scale = {w: 100, h:100};
 
 // イメージ作成
 const CatImage = new Ts.Image({ CatSvg });

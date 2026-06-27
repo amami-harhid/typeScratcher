@@ -14777,7 +14777,7 @@ function Mq() {
   return Pk || (Pk = 1, gu = fq()), gu;
 }
 Mq();
-const Fq = "0.0.49", Dq = {
+const Fq = "0.0.50", Dq = {
   version: Fq
 }, pq = Dq.version, Ir = {
   main_id: "main",
@@ -44319,12 +44319,15 @@ class ps extends Rl {
     }), c.on(ps.Events.DROP_COMPLETE, () => {
       r._dropEnabled = !0, r._moveDistance = {}, r._skin && (r._skin.dropping = !1);
     }), this._monitoring.callback = () => {
-      "value" in this._monitoring ? this._skin && (this._skin.value = this._monitoring.value) : "text" in this._monitoring && this._skin && (this._skin.text = this._monitoring.text), (this._scale.w != this._monitoring.scale.w || this._scale.h != this._monitoring.scale.h) && (this.scale = this._monitoring.scale, di.allReposition());
+      this._setValue();
     }, this._monitoring.show = () => {
       this.show(), this.draw();
     }, this._monitoring.hide = () => {
       this.hide(), this.draw();
     };
+  }
+  _setValue() {
+    "value" in this._monitoring ? this._skin && (this._skin.value = this._monitoring.value) : "text" in this._monitoring && this._skin && (this._skin.text = this._monitoring.text), (this._scale.w != this._monitoring.scale.w || this._scale.h != this._monitoring.scale.h) && (this.scale = this._monitoring.scale, di.allReposition());
   }
   get monitorId() {
     return this._monitorId;
@@ -44349,7 +44352,7 @@ class ps extends Rl {
   }
   createTextSkin() {
     const A = this._renderer.s3CreateMonitorSkin(this.drawableID, this._label);
-    this._skinId = A, this._skin = this._renderer.getS3Skin(A);
+    this._skinId = A, this._skin = this._renderer.getS3Skin(A), this._setValue();
   }
   get skin() {
     return this._skin;
@@ -48447,7 +48450,7 @@ class di {
         if (e === c.monitorId)
           return;
       const n = new ps(e, r);
-      n.createTextSkin(), n.scale = r.scale, this._monitors.push(n), this.reposition();
+      n.createTextSkin(), n.scale = r.scale, n.draw(), this._monitors.push(n), this.reposition();
       break;
     }
   }

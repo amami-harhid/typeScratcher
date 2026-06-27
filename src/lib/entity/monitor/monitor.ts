@@ -79,21 +79,7 @@ export class Monitor extends Entity implements IMonitor{
         });
 
         this._monitoring.callback = () => {
-            if("value" in this._monitoring){
-                if( this._skin ) {
-                    this._skin.value = this._monitoring.value;
-                }
-            
-            } else if("text" in this._monitoring){
-                if(this._skin){
-                    // 文字列化して格納
-                    this._skin.text = this._monitoring.text;
-                }
-            }
-            if(this._scale.w != this._monitoring.scale.w || this._scale.h != this._monitoring.scale.h) {
-                this.scale = this._monitoring.scale;
-                Monitors.allReposition();
-            }
+            this._setValue();
         }
         this._monitoring.show = () => {
             this.show();
@@ -103,7 +89,24 @@ export class Monitor extends Entity implements IMonitor{
             this.hide();
             this.draw();
         }
-        //this._preDraw = true;
+    }
+    private _setValue() {
+        if("value" in this._monitoring){
+            if( this._skin ) {
+                this._skin.value = this._monitoring.value;
+            }
+            
+        } else if("text" in this._monitoring){
+            if(this._skin){
+                // 文字列化して格納
+                this._skin.text = this._monitoring.text;
+            }
+        }
+        if(this._scale.w != this._monitoring.scale.w || this._scale.h != this._monitoring.scale.h) {
+            this.scale = this._monitoring.scale;
+            Monitors.allReposition();
+        }
+
     }
     get monitorId() {
         return this._monitorId;
@@ -148,6 +151,7 @@ export class Monitor extends Entity implements IMonitor{
         const skinId = this._renderer.s3CreateMonitorSkin(this.drawableID, this._label);
         this._skinId = skinId;
         this._skin = this._renderer.getS3Skin(skinId) as S3MonitorSkin;
+        this._setValue();
     }
     get skin () {
         return this._skin;
