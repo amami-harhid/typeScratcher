@@ -3,7 +3,7 @@
  * 変数モニター
  * 表示・非表示を切り替える
  */
-import { Typescratcher as Ts } from '../../index';
+import { Typescratcher as Ts } from '../../src/index';
 import type { Sprite, Stage } from '../../index';
 
 // 【画像 import 】
@@ -14,8 +14,9 @@ import BasketballPng from "../assets/Basketball 2.png";
 const clone = Ts.Variable.number(0); // 変数初期値設定
 const cloneCounterStr = Ts.Variable.string(''); // 変数初期値設定
 Ts.Variable.monitoring({clone}); // モニター開始
-Ts.Variable.monitoring({'クローン数': cloneCounterStr}); // モニター開始
-
+Ts.Variable.monitoring({cloneCounterStr}); // モニター開始
+clone.scale = {w: 100, h:100};
+cloneCounterStr.scale = {w: 100, h:100};
 
 // イメージ作成
 const CatImage = new Ts.Image({ CatSvg });
@@ -53,7 +54,7 @@ cat.Event.flagPresser().func = async function* (this: Sprite) {
         if (this.Sensing.mouse.isDown) {
             this.Control.clone();
             clone.value += 1;
-            cloneCounterStr.text = `${clone.value}個`;
+            //cloneCounterStr.text = `${clone.value}個`;
         }
         yield;
     }
@@ -69,7 +70,7 @@ cat.Event.cloned().func = async function* (this: Sprite) {
     const random = Ts.Utils.randomValue(0, 360);
     this.Motion.direction.degree = random;
     for (;;) {
-        this.Motion.move.steps(10);
+        this.Motion.move.steps(2);
         this.Motion.move.ifOnEdgeBounce();
         if(this.Sensing.sprite.isTouching([cat])) {
             this.Looks.hide();
@@ -90,13 +91,13 @@ let cloneCounterStrView = true;
 stage.Event.keyPresser(Ts.Keyboard.SPACE).func = async function*(this: Stage) {
     cloneCounterStrView = !(cloneCounterStrView);
     if(cloneCounterStrView===true){
-        clone.hide();
+        clone.show();
         cloneCounterStr.show();
     }else{
-        clone.show();
+        clone.hide();
         cloneCounterStr.hide();    
     }
-    Ts.Variable.reposition();
+    //Ts.Variable.reposition();
 }
 
 // 開始

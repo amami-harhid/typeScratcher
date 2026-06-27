@@ -8,6 +8,7 @@ import type { IRenderWebGL, ScratchRenderProperties } from "../../../type/render
 import type { TPosition, TScale, TDistance} from "../../../type/common/typeCommon";
 import type { IMonitor } from "../../../type/entity/monitor/monitor";
 import type { MonitoringNumber, MonitoringString, NumberProxy, StringProxy } from "../../../type/entity/monitor/monitoring";
+import { Monitors } from "./monitors";
 
 /**
  * Monitor
@@ -40,9 +41,7 @@ export class Monitor extends Entity implements IMonitor{
         this._monitoring = value;
         this._label = monitorId;
         this.createDrawable(StageLayering.MONITOR_LAYER);
-        //this._monitorId = monitorId;
         this._visible = true;
-        //this._label = label;
         this._skinId = 0;
         this._renderer = this._render.renderer;
         this._position = {x: 0, y: 0};
@@ -91,12 +90,18 @@ export class Monitor extends Entity implements IMonitor{
                     this._skin.text = this._monitoring.text;
                 }
             }
+            if(this._scale.w != this._monitoring.scale.w || this._scale.h != this._monitoring.scale.h) {
+                this.scale = this._monitoring.scale;
+                Monitors.allReposition();
+            }
         }
         this._monitoring.show = () => {
             this.show();
+            this.draw();
         }
         this._monitoring.hide = () => {
             this.hide();
+            this.draw();
         }
         //this._preDraw = true;
     }
@@ -115,10 +120,7 @@ export class Monitor extends Entity implements IMonitor{
             }
         }
     }
-    get scale() {
-        return this._scale;
-    }
-    set scale(_scale){
+    set scale(_scale:TScale){
         if( _scale != undefined && _scale.w != undefined && _scale.h != undefined ) {
             if(Utils.isNumber(_scale.w) && Utils.isNumber(_scale.h)){
                 this._scale.w = _scale.w;

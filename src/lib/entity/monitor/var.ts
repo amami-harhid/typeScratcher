@@ -1,5 +1,5 @@
 import { SVar } from "src/type/entity/monitor/SVar";
-import type { NumberProxy, StringProxy, MonitoringNumber, MonitoringString } from "../../../type/entity/monitor/monitoring";
+import type { NumberProxy, StringProxy, MonitoringNumber, MonitoringString, BaseNumberProxy, BaseStringProxy } from "../../../type/entity/monitor/monitoring";
 import { Monitors } from "./monitors";
 /**
  * Var
@@ -9,7 +9,7 @@ import { Monitors } from "./monitors";
 export class Var {
 
     static number(value:number) : NumberProxy {
-        const obj:NumberProxy = {value: value, show: ()=>{}, hide: ()=>{}};
+        const obj : NumberProxy = {value: value, scale: {w:100, h:100}, show:()=>{}, hide:()=>{}};
         const _var = new Proxy(obj, {
 
             get(target:NumberProxy, prop: string) {
@@ -35,8 +35,7 @@ export class Var {
     }
 
     static string(text:string) : StringProxy {
-
-        const obj:StringProxy = {text: text, show: ()=>{}, hide: ()=>{} };
+        const obj : StringProxy = {text: text, scale: {w:100, h:100}, show:()=>{}, hide:()=>{}};
         const _var = new Proxy(obj, {
 
             get(target:StringProxy, prop: string) {

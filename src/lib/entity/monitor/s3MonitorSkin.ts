@@ -281,7 +281,7 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
      * @param {Array<number>} scale - The scaling factors to be used.
      * @return {WebGLTexture} The GL texture representation of this skin when drawing at the given size.
      */
-    getTexture (scale: number[]) {
+    getTexture (scale: number[]) : WebGLTexture{
         // The texture only ever gets uniform scale. Take the larger of the two axes.
         const scaleMax = scale ? Math.max(Math.abs(scale[0]), Math.abs(scale[1])) : 100;
         const requestedScale = scaleMax / 100;
@@ -418,8 +418,12 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             ctx.scale(scale, scale);
-            ctx.translate(MonitorStyle.PADDING * 0.5, 
-                MonitorStyle.PADDING * 0.5);            
+            // 左側に余白をつけると スケール拡大縮小で余白サイズも拡大縮小されるため、
+            // スケールが異なるモニターの左側の位置がそろわない不具合あり。原点はずらさないことにする        
+            // ctx.translate(MonitorStyle.PADDING * 0.5, 
+            //     MonitorStyle.PADDING * 0.5);
+            ctx.translate(0, 0 );            
+
             ctx.save();
             // モニターの外側の境界線を描く
             ctx.beginPath();

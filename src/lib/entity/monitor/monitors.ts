@@ -93,8 +93,9 @@ export class Monitors implements IMonitors{
                 }
             }
             const monitor = new Monitor(monitorId, monitoring);
+            //monitor.show(); // 初期状態は表示
             monitor.createTextSkin();
-            monitor.scale = {w: 100, h:100};
+            monitor.scale = monitoring.scale;
             this._monitors.push(monitor);
             this.reposition();
             break;
@@ -119,8 +120,8 @@ export class Monitors implements IMonitors{
         const _row = (index) % Env.MonitorMaxRowSize;
         monitor.position.x = 0;
         const size = index+1;
-        const sWidth = this._render.stageWidth;
-        const sHeight = this._render.stageHeight;
+        const sWidth = this._render.stageWidth; // ステージの幅
+        const sHeight = this._render.stageHeight; // ステージの高さ
         const startRowPos = 5;
         const startColumnPos = 5;
         const rowFiller = 5;
@@ -223,7 +224,9 @@ export class Monitors implements IMonitors{
      */
     draw() {
         for(const _monitor of this._monitors){
-            _monitor.draw();
+            if(_monitor.visible === true){
+                _monitor.draw();
+            }
         }
     }
 };

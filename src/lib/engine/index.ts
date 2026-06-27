@@ -6,6 +6,8 @@ import { Stage } from "../entity/stage";
 import { ScratchElement } from "../gui/scratchElement";
 import type { TMouse } from "../../type/mouse";
 import type { IEngine } from "../../type/engine";
+import { Variable } from "../entity/monitor/variable";
+import { Monitors } from "../entity/monitor/monitors";
 
 /**
  * PlayGround
