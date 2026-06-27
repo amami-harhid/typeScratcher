@@ -5,8 +5,8 @@ import { Render } from "../../render";
 import { S3MonitorSkin } from "./s3MonitorSkin";
 import type { IMonitors } from "../../../type/entity/monitor";
 import type { IRenderWebGL } from "../../../type/render/IRenderWebGL"; 
-import { MonitoringVars } from "src/type/entity/monitor/monitoring";
-import { IMonitor } from "src/type/entity/monitor/monitor";
+import { MonitoringVars } from "../../../type/entity/monitor/monitoring";
+import { IMonitor } from "../../../type/entity/monitor/monitor";
 /**
  * Monitors
  */
@@ -92,8 +92,6 @@ export class Monitors implements IMonitors{
                     return;
                 }
             }
-            console.log('monitorId=', monitorId);
-            console.log('monitoring=', monitoring);
             const monitor = new Monitor(monitorId, monitoring);
             monitor.createTextSkin();
             monitor.scale = {w: 100, h:100};
@@ -102,11 +100,17 @@ export class Monitors implements IMonitors{
             break;
         }
     }
+    /**
+     * 表示中のモニターを選び再配置する
+     */
     reposition() : void {
-
+        let counter = 0;
         for(let _idx = 0; _idx < this._monitors.length; _idx++){
             const monitor = this._monitors[_idx];
-            this._reposition(monitor, _idx);
+            if(monitor.visible === true){
+                this._reposition(monitor, counter);
+                counter+=1;
+            }
         }
         this.draw();
     }

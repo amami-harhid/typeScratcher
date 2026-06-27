@@ -3,13 +3,15 @@
  */
 
 import EventEmitter from "events";
+import { engine, Engine } from "..";
 import { Entity } from "../../entity/entity";
 import { EntityProxyExt } from "../../entity/entity/entityProxyExt";
 import { EntitySound } from "../../entity/entity/entitySound";
 import { FunctionChecker } from "../../utils/functionChecker";
 import { INTERVAL } from "./interval";
-import { engine, Engine } from "..";
+import { Monitors } from "../../entity/monitor/monitors";
 import { QuestionBoxElement } from "../../gui/questionBoxElement";
+import { Rewriter } from "./rewriter";
 import { ScratchElement } from "../../gui/scratchElement";
 import { ScratchEvent } from "../../engine/scratchEvent";
 import { Sound } from "../../sounds";
@@ -19,7 +21,6 @@ import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityProxy } from "../../../type/entity/entity/IEntityProxy";
 import { ThreadStatus, type IThreadObj, type ThreadStatusType } from "../../../type/engine/thread/threads";
-import { Rewriter } from "./rewriter";
 
 export class Threads {
     static get THROW_STOP_THIS_SCRIPTS(){
@@ -203,6 +204,7 @@ export class ThreadManager {
             if(stage){
                 stage.update();
             }
+            Monitors.drawMonitors();
             (engine as Engine).render.renderer.draw();
         }
 

@@ -1,21 +1,34 @@
 /**
- * モニターする変数の型
+ * 数値プロキシ
  */
-export type MonitoringNumber = {
+export type NumberProxy = {
     /** 変数(数値) */
     value: number,
-    /** モニター表示ラベル */
-    label?: string,
+    show: CallableFunction;
+    hide: CallableFunction;
+}
 
+/**
+ * 文字列プロキシ
+ */
+export type StringProxy = {
+    /** 変数(文字列) */
+    text: string,
+    show: CallableFunction;
+    hide: CallableFunction;
+}
+
+/**
+ * モニターする変数の型
+ */
+export interface MonitoringNumber extends NumberProxy {
     callback?: CallableFunction;
 }
 
-export type MonitoringString = {
-    /** 変数(文字列) */
-    text: string,
-    /** モニター表示ラベル */
-    label?: string,
-
+/**
+ * モニターする変数の型
+ */
+export interface MonitoringString extends StringProxy {
     callback?: CallableFunction;
 }
 

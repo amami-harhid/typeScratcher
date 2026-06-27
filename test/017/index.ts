@@ -1,17 +1,21 @@
 /**
  * 基本-017
  * 変数モニター
+ * 表示・非表示を切り替える
  */
 import { Typescratcher as Ts } from '../../index';
-import type { Sprite, Stage as _ } from '../../index';
+import type { Sprite, Stage } from '../../index';
 
 // 【画像 import 】
 import CatSvg from "../assets/cat.svg";
 import BasketballPng from "../assets/Basketball 2.png";
 
-const life = Ts.Var.num({value:100});
+// 【モニター用の変数を用意】
+const clone = Ts.Variable.number(0); // 変数初期値設定
+const cloneCounterStr = Ts.Variable.string(''); // 変数初期値設定
+Ts.Variable.monitoring({clone}); // モニター開始
+Ts.Variable.monitoring({'クローン数': cloneCounterStr}); // モニター開始
 
-Ts.Monitors.addVar({life: life});
 
 // イメージ作成
 const CatImage = new Ts.Image({ CatSvg });
@@ -42,28 +46,21 @@ cat.Event.flagPresser().func = async function* (this: Sprite) {
 
 // 旗を押したときのイベント定義
 cat.Event.flagPresser().func = async function* (this: Sprite) {
+    clone.value = 0;
+    cloneCounterStr.text = 'START';
     // ずっと繰り返す
     for (;;) {
         if (this.Sensing.mouse.isDown) {
             this.Control.clone();
+            clone.value += 1;
+            cloneCounterStr.text = `${clone.value}個`;
         }
-        //await this.Control.wait(2);
-        // クリックしたとき
-        // if (this.Sensing.mouse.isTouching && this.Sensing.mouse.isDown) {
-        //     this.Control.clone(); 
-        //     this.Sound.play(CatSound);
-        // }
-        life.value += 1;
-        Ts.Monitors.drawMonitors();
         yield;
     }
 };
 // クローンされたとき
 // クローンすると本体の半透明効果が一瞬無くなる
 cat.Event.cloned().func = async function* (this: Sprite) {
-    // this.Sound.setVolume(CatSound, 10);
-    // this.Sound.setPitch(CatSound, 30);
-    //this.Looks.show();  
     this.Looks.effect.set(Ts.ImageEffective.GHOST, 0);
     const mousePos = {x:this.Sensing.mouse.x, y:this.Sensing.mouse.y}
     this.Motion.position.xy = [mousePos.x, mousePos.y];
@@ -78,11 +75,29 @@ cat.Event.cloned().func = async function* (this: Sprite) {
             this.Looks.hide();
             break;
         }
+        if(this.Sensing.edge.isTouching){
+            this.Looks.hide();
+            break;
+        }
         this.Looks.costume.next();
         yield;
     }
+    clone.value -= 1;
+    cloneCounterStr.text = `${clone.value}個`;
     this.Control.removeClone();
 };
+let cloneCounterStrView = true;
+stage.Event.keyPresser(Ts.Keyboard.SPACE).func = async function*(this: Stage) {
+    cloneCounterStrView = !(cloneCounterStrView);
+    if(cloneCounterStrView===true){
+        clone.hide();
+        cloneCounterStr.show();
+    }else{
+        clone.show();
+        cloneCounterStr.hide();    
+    }
+    Ts.Variable.reposition();
+}
 
 // 開始
 Ts.engine.start();

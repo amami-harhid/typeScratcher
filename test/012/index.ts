@@ -1,6 +1,6 @@
 /**
  * TEST 012
- * ◇ Stageをクローンする
+ * ◇ クローンする
  */
 import { Typescratcher as TS } from '../../index';
 import type { Sprite, Stage } from '../../index';
@@ -28,6 +28,9 @@ cat.Sound.add([CatSound, TennishitSound, SquawkSound]);
 
 const stage = new TS.Stage();
 stage.Backdrop.add([BlueskyImage, BasketballImage]);
+
+const BackDropName = TS.Variable.string(BlueskyImage.name)
+TS.Variable.monitoring({BackDropName});
 
 cat.Event.flagPresser().func=async function*(this:Sprite) {
     this.Sound.setVolume(CatSound, 50);
@@ -76,6 +79,7 @@ cat.Event.cloned().func = async function*(this:Sprite) {
 stage.Event.flagPresser().func=async function*(this: Stage) {
     for(;;){
         this.Looks.backdrop.next();
+        BackDropName.text = this.Looks.backdrop.name;
         await this.Control.wait(1);
         yield;
     }

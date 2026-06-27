@@ -11,9 +11,9 @@ import type { SSprite } from '../type/entity/sprite';
 import type { SStage } from '../type/entity/stage';
 import type { ITextToSvg } from '../type/svgText';
 import type { IUtils } from '../type/util/utils';
-import type { SVar } from './entity/monitor/SVar';
 import { SPEECH_LOCALE } from '../type/speech/IVoice';
 import { VOICE_ID } from '../type/speech/IVoice';
+import { SVariable } from './entity/monitor/SVariable';
 
 type stageBounds = {w: number, h: number};
 
@@ -28,11 +28,10 @@ export type ExportType = {
     engine: IEngine,
     textToSvg: ITextToSvg,
     Loop: SLoop,
-    Monitors: SMonitors,
     ScratchFontFamily: typeof _ScratchFontFamily,
     SpeechLocale: typeof SPEECH_LOCALE,
     VoiceType: typeof VOICE_ID,
     StageBounds: stageBounds,
     Utils: IUtils,
-    Var: SVar,
+    Variable: SVariable,
 }

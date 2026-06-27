@@ -11,6 +11,7 @@ import type { IDrawable } from "../../../type/render/IDrawable";
 import type { IMonitorSkin } from "../../../type/entity/monitor/IMonitorSkin";
 import type { IRenderWebGL } from "../../../type/render/IRenderWebGL";
 import type { TSize, TVec3 } from "../../../type/common/typeCommon";
+import type { TBitMapData } from '../../../type/entity/monitor/ISilhouette';
 
 const MonitorStyle = {
     MAX_LINE_WIDTH: Env.StageSize.W,  // stage width
@@ -280,7 +281,7 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
      * @param {Array<number>} scale - The scaling factors to be used.
      * @return {WebGLTexture} The GL texture representation of this skin when drawing at the given size.
      */
-    getTexture (scale) {
+    getTexture (scale: number[]) {
         // The texture only ever gets uniform scale. Take the larger of the two axes.
         const scaleMax = scale ? Math.max(Math.abs(scale[0]), Math.abs(scale[1])) : 100;
         const requestedScale = scaleMax / 100;
@@ -319,7 +320,7 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
      * Set this skin's texture to the given image.
      * @param {ImageData|HTMLCanvasElement} textureData - The canvas or image data to set the texture to.
      */
-    _setTexture (textureData) {
+    _setTexture (textureData: TBitMapData) {
         const gl = this._renderer.gl;
         gl.bindTexture(gl.TEXTURE_2D, this._texture);
         gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
@@ -336,13 +337,24 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
     }
     /**
      * Set parameters for this text monitor.
-     * @param {string|number} value 
+     * @param {number} value 
      */
-    set value (value: string|number) {
-        this._text = value;
+    set value (value: number) {
+        this._text = `${value}`;
         this._textDirty = true;
         this._textureDirty = true;
-        this.emit(S3MonitorSkin.Events.WasAltered);
+        if(this.listenerCount(S3MonitorSkin.Events.WasAltered)>0){
+            this.emit(S3MonitorSkin.Events.WasAltered);
+        }
+    }
+    set text(text: string) {
+        this._text = text;
+        this._textDirty = true;
+        this._textureDirty = true;
+        if(this.listenerCount(S3MonitorSkin.Events.WasAltered)>0){
+            this.emit(S3MonitorSkin.Events.WasAltered);
+        }
+
     }
     get value() :string|number{
         return this._text;
@@ -385,7 +397,7 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
      * Render this text monitor at a certain scale, using the current parameters, to the canvas.
      * @param {*} scale 
      */
-    _renderTextMonitor (scale) {
+    _renderTextMonitor (scale: number) {
         const _scale = scale;
         const ctx = this.ctx;
         if( ctx == undefined ) return;
@@ -405,13 +417,11 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
             // Reset the transform before clearing to ensure 100% clearage
             ctx.setTransform(1, 0, 0, 1, 0, 0);
             ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
             ctx.scale(scale, scale);
             ctx.translate(MonitorStyle.PADDING * 0.5, 
-                MonitorStyle.PADDING * 0.5);
-            
+                MonitorStyle.PADDING * 0.5);            
             ctx.save();
-            // Draw the monitor's rounded borders
+            // モニターの外側の境界線を描く
             ctx.beginPath();
             ctx.moveTo(MonitorStyle.CORNER_RADIUS, paddedHeight);
             ctx.arcTo(0, paddedHeight, 0, paddedHeight - MonitorStyle.CORNER_RADIUS, 
@@ -446,21 +456,26 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
 
             // Draw value area
             ctx.beginPath();
-            const valueAreaHorizonStart = MonitorStyle.PADDING + this.titleLineWidth
+            // 値表示域 左側（縦線) 位置（余白＋タイトル部の長さ）
+            const valueAreaHorizonStart = MonitorStyle.PADDING + this.titleLineWidth;
+            // 値表示域の高さ
             const valueHeight = paddedHeight-MonitorStyle.PADDING_VALUE_VIRTICAL*2;
-            let x00 = valueAreaHorizonStart+MonitorStyle.CORNER_RADIUS;
-            let y00 = valueHeight+MonitorStyle.PADDING_VALUE_VIRTICAL;
-            ctx.moveTo(x00, y00);
-            let x01_01 = valueAreaHorizonStart;
+            // 値表示域を描画する左下の開始座標( x00, y00 ) 
+            let x00 = valueAreaHorizonStart +MonitorStyle.CORNER_RADIUS; // x座標は曲がりの分だけ右へ寄せる調整をする
+            let y00 = valueHeight+MonitorStyle.PADDING_VALUE_VIRTICAL; // y座標は余白の分だけ下に寄せる
+            ctx.moveTo( x00, y00 ); // 描画位置へ移動
+            // 左下の曲線を描く
+            let x01_01 = valueAreaHorizonStart; // 左縦線位置へ 
             let y01_01 = y00;
             let x01_02 = x01_01;
             let y01_02 = valueHeight - MonitorStyle.CORNER_RADIUS;
-            ctx.arcTo(x01_01, y01_01, x01_02, y01_02, MonitorStyle.CORNER_RADIUS);
+            ctx.arcTo( x01_01, y01_01, x01_02, y01_02, MonitorStyle.CORNER_RADIUS );
+            // 左上の曲線を描く
             let x02_01 = x01_02;
             let y02_01 = MonitorStyle.PADDING_VALUE_VIRTICAL;
-            let x02_02 = this.valueLineWidth+MonitorStyle.CORNER_RADIUS;
+            let x02_02 = valueAreaHorizonStart + MonitorStyle.CORNER_RADIUS;
             let y02_02 = y02_01;
-            ctx.arcTo(x02_01,y02_01, x02_02, y02_02, MonitorStyle.CORNER_RADIUS);
+            ctx.arcTo( x02_01, y02_01, x02_02, y02_02, MonitorStyle.CORNER_RADIUS );
             let x03_01 = valueAreaHorizonStart+this.valueLineWidth+MonitorStyle.PADDING_VALUE_VIRTICAL+MonitorStyle.CORNER_RADIUS;
             let y03_01 = y02_01;
             let x03_02 = x03_01;

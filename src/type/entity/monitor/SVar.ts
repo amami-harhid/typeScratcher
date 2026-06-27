@@ -1,4 +1,4 @@
-import { MonitoringNumber , MonitoringString } from "./monitoring";
+import { NumberProxy, StringProxy } from "./monitoring";
 
 /**
  * 変数格納プロキシ生成
@@ -7,12 +7,12 @@ export interface SVar {
 
     /**
      * 数値プロキシ生成
-     * @param obj 
+     * @param value 
      */
-    num(obj:MonitoringNumber) : MonitoringNumber;
+    number(value:number) : NumberProxy;
     /**
      * 文字列プロキシ生成
-     * @param obj 
+     * @param text
      */
-    str(obj:MonitoringString) : MonitoringString;
+    string(text:string) : StringProxy;
 }

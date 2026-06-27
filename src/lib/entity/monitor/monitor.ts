@@ -7,7 +7,7 @@ import { Utils } from "../../utils/utils";
 import type { IRenderWebGL, ScratchRenderProperties } from "../../../type/render/IRenderWebGL";
 import type { TPosition, TScale, TDistance} from "../../../type/common/typeCommon";
 import type { IMonitor } from "../../../type/entity/monitor/monitor";
-import type { MonitoringNumber, MonitoringString } from "../../../type/entity/monitor/monitoring";
+import type { MonitoringNumber, MonitoringString, NumberProxy, StringProxy } from "../../../type/entity/monitor/monitoring";
 
 /**
  * Monitor
@@ -34,11 +34,11 @@ export class Monitor extends Entity implements IMonitor{
      * @param monitorId {string}
      * @param label {string}
      */
-    constructor(monitorId:string, value: MonitoringNumber | MonitoringString){
+    constructor(monitorId:string, value: NumberProxy | StringProxy){
         super();
         this._monitorId = monitorId;
         this._monitoring = value;
-        this._label = (value.label)? value.label: monitorId;
+        this._label = monitorId;
         this.createDrawable(StageLayering.MONITOR_LAYER);
         //this._monitorId = monitorId;
         this._visible = true;
@@ -60,8 +60,8 @@ export class Monitor extends Entity implements IMonitor{
                     StageLayering.MONITOR_LAYER, true);
                 // マウスが触った場所と左上隅の距離（位置関係）を記録する。モニターDROP時に利用する
                 me._moveDistance = {
-                    x: _engine.mouse.x - me._position.x,
-                    y: _engine.mouse.y - me._position.y,
+                    x: _engine.mouse.scratchX - me._position.x,
+                    y: _engine.mouse.scratchY - me._position.y,
                 };
                 if(me._skin)
                     me._skin.dropping = true;
@@ -88,9 +88,15 @@ export class Monitor extends Entity implements IMonitor{
             } else if("text" in this._monitoring){
                 if(this._skin){
                     // 文字列化して格納
-                    this._skin.value = this._monitoring.text;
+                    this._skin.text = this._monitoring.text;
                 }
             }
+        }
+        this._monitoring.show = () => {
+            this.show();
+        }
+        this._monitoring.hide = () => {
+            this.hide();
         }
         //this._preDraw = true;
     }
@@ -105,7 +111,6 @@ export class Monitor extends Entity implements IMonitor{
             if(Utils.isNumber(_position.x) && Utils.isNumber(_position.y)){                
                 this._position.x = _position.x;
                 this._position.y = _position.y;
-                console.log('position', this._position);
                 this.renderDraw();
             }
         }
@@ -133,6 +138,9 @@ export class Monitor extends Entity implements IMonitor{
         if(this._skin != null){
             this._skin.hide();
         }
+    }
+    get visible () : boolean {
+        return this._visible;
     }
     createTextSkin(){
         const skinId = this._renderer.s3CreateMonitorSkin(this.drawableID, this._label);
@@ -208,8 +216,8 @@ export class Monitor extends Entity implements IMonitor{
             }
         }else{
             if(this._isMouseDown() && this._moveDistance.x && this._moveDistance.y){
-                this._position.x = this._mouse.x - this._moveDistance.x;
-                this._position.y = this._mouse.y - this._moveDistance.y;
+                this._position.x = this._mouse.scratchX - this._moveDistance.x;
+                this._position.y = this._mouse.scratchY - this._moveDistance.y;
             }else{
                 scratchEvent.emit(Monitor.Events.DROP_COMPLETE);
                 this._moveDistance = {};
