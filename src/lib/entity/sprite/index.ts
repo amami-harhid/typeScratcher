@@ -5,8 +5,7 @@ import { Image } from "../../image";
 import { PenSprite } from "./pen";
 import { ScratchElement } from "../../gui/scratchElement";
 import { Sound } from "../../sounds";
-import { SpriteBackdrop } from "./spriteBackdrop";
-import { SpriteBubble } from "./spriteBubble";
+import { SpriteLooksBubble } from "./spriteLooksBubble";
 import { SpriteControl } from "./spriteControl";
 import { SpriteCostume } from "./spriteCostume";
 import { SpriteDragMode } from "./spriteDragMode";
@@ -19,7 +18,6 @@ import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import { Timer } from "../../utils/timer";
 import type { ISprite } from "../../../type/entity/sprite";
 import type { ISvgSkin } from "../../../type/render/ISvgSkin";
-import type { ISpriteLooksBackdrop } from "../../../type/entity/sprite/ISpriteLookaBackdrop";
 import type { ISpriteControl } from "../../../type/entity/sprite/ISpriteControl";
 import type { ISpriteCostume } from "../../../type/entity/sprite/ISpriteCostume";
 import type { ISpriteEvent } from "../../../type/entity/sprite/ISpriteEvent";
@@ -34,7 +32,6 @@ import type { ISpriteSensing } from "../../../type/entity/sprite/ISpriteSensing"
  */
 export class Sprite extends Entity implements ISprite {
     private _costume : ISpriteCostume;
-    private _backdrop: ISpriteLooksBackdrop;
     private _motion: ISpriteMotion;
     private _looks: ISpriteLooks;
     private _control: ISpriteControl;
@@ -43,7 +40,6 @@ export class Sprite extends Entity implements ISprite {
     private _sensing: ISpriteSensing;
     private _penSprite: PenSprite;
     private _dragMode : SpriteDragMode;
-    //private _textToSpeech : ISpriteTextToSpeech;
     private _isClone: boolean = false;
     private _clones: ISprite[] = [];
     private _parent?: ISprite;
@@ -56,7 +52,6 @@ export class Sprite extends Entity implements ISprite {
         this._name = name;
         this._properties = new SpriteProperties(this);
         this._costume = new SpriteCostume(this);
-        this._backdrop = new SpriteBackdrop(this);
         this._motion = new SpriteMotion(this);
         this._looks = new SpriteLooks(this);
         this._control = new SpriteControl(this);
@@ -64,9 +59,6 @@ export class Sprite extends Entity implements ISprite {
         this._sensing = new SpriteSensing(this);
         this._dragMode = new SpriteDragMode(this);
         this._penSprite = new PenSprite(this);
-        //this._font = new SpriteFont(this);
-        //this._svgText = new SvgText(this);
-        //this._textToSpeech = new TextToSpeech(this);
         this._isSprite = true; // これはスプライトです！
         const _engine = engine as Engine;
         _engine.addSprite(this);
@@ -77,9 +69,6 @@ export class Sprite extends Entity implements ISprite {
     }
     get Costume(): ISpriteCostume {
         return this._costume;
-    }
-    get Backdrop(): ISpriteLooksBackdrop {
-        return this._backdrop;
     }
     get Motion() : ISpriteMotion {
         return this._motion;
@@ -103,9 +92,6 @@ export class Sprite extends Entity implements ISprite {
     get Pen(): PenSprite {
         return this._penSprite;
     }
-    //get Font(): ISpriteFont {
-    //    return this._font;
-    //}
     get clones() {
         return this._clones;
     }
@@ -166,7 +152,7 @@ export class Sprite extends Entity implements ISprite {
             return;
         } 
         this._penSprite.update();
-        (this._looks.bubble as SpriteBubble).update();
+        (this._looks.bubble as SpriteLooksBubble).update();
         this._properties.update(); 
     }
 

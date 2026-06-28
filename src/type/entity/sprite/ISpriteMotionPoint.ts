@@ -16,4 +16,8 @@ export interface ISpriteMotionPoint {
      * @param target {Sprite} - ターゲット
      */
     toTarget(target: ISprite): void;
+    /**
+     * どこかを向く
+     */
+    toRandom(): void ;
 };

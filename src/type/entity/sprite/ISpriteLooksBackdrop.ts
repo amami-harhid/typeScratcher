@@ -1,6 +1,6 @@
 /** 背景 */
 import type { IEntityBackdrop } from "../entity/IEntityBackdrop";
-export interface ISpriteBackdrop extends IEntityBackdrop {
+export interface ISpriteLooksBackdrop extends IEntityBackdrop {
 
 
 }

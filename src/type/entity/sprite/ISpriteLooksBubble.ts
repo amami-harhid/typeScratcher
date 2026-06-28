@@ -1,7 +1,7 @@
 import type { BubbleProperties } from '../TBubble';
 
 /** 吹き出し */
-export interface ISpriteBubble {
+export interface ISpriteLooksBubble {
 
     /**
      * 言う

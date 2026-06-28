@@ -97,14 +97,14 @@ export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
     /**
      * どれかの背景にする
      */
-    random(): void {
-        super.random();
+    switchRandom(): void {
+        super.switchRandom();
         
     }
     /**
      * どれかの背景にして待つ
      */
-    async randomAndWait() : Promise<void>{
+    async switchRandomAndWait() : Promise<void>{
         const backdropName = this.name;
         await super.untilBackdropEventDone(backdropName);
     }

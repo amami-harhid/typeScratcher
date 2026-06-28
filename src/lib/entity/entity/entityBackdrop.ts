@@ -181,7 +181,7 @@ export class EntityBackdrop implements IEntityBackdrop {
     /**
      * どれかの背景にする
      */
-    random(): void {
+    switchRandom(): void {
         const prevNo = this.no;
         const _entity = this.entity as Entity;
         const length = _entity.$image.images.length;
@@ -195,8 +195,8 @@ export class EntityBackdrop implements IEntityBackdrop {
     /**
      * どれかの背景にして待つ
      */
-    async randomAndWait() : Promise<void>{
-        this.random();
+    async switchRandomAndWait() : Promise<void>{
+        this.switchRandom();
         const backdropName = this.name;
         await this.untilBackdropEventDone(backdropName);
     }

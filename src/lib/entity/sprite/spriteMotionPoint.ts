@@ -1,6 +1,7 @@
+import { MathUtil } from '../../utils/math-util';
 import { ScratchElement } from '../../gui/scratchElement';
 import { Sprite } from '../sprite';
-import { MathUtil } from '../../utils/math-util';
+import { Utils } from '../../utils/utils';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionPoint } from '../../../type/entity/sprite/ISpriteMotionPoint';
 
@@ -18,8 +19,8 @@ export class SpriteMotionPoint implements ISpriteMotionPoint{
      */
     toMouseInStage(): void {
         const me = this.entity as Sprite;
-        const direction = me.Sensing.mouse.degree;
-        this.entity.Properties.degree = direction;
+        const _degree = me.Sensing.mouse.degree;
+        this.entity.Properties.degree = _degree;
     }
     toMouse(): void {
         const pageX = this.entity.mouse.pageX;
@@ -27,11 +28,11 @@ export class SpriteMotionPoint implements ISpriteMotionPoint{
         const stagePosition = ScratchElement.pageToScratchStagePosition(pageX, pageY);
         const dx = stagePosition.scratchX - this.entity.Properties.position.x;
         const dy = stagePosition.scratchY - this.entity.Properties.position.y;
-        let direction = 90 - MathUtil.radToDeg( Math.atan2(dy, dx));
-        if(direction > 180) {
-            direction -= 360;
+        let _degree = 90 - MathUtil.radToDeg( Math.atan2(dy, dx));
+        if(_degree > 180) {
+            _degree -= 360;
         }
-        this.entity.Properties.degree = direction;
+        this.entity.Properties.degree = _degree;
     }
     /**
      * ターゲットの位置へ向く
@@ -42,10 +43,17 @@ export class SpriteMotionPoint implements ISpriteMotionPoint{
         const _targetPosition = _target.Properties.position;
         const dx = _targetPosition.x - this.entity.Properties.position.x;
         const dy = _targetPosition.y - this.entity.Properties.position.y;
-        let direction = 90 - MathUtil.radToDeg( Math.atan2(dy, dx));
-        if(direction > 180) {
-            direction -= 360;
+        let _degree = 90 - MathUtil.radToDeg( Math.atan2(dy, dx));
+        if(_degree > 180) {
+            _degree -= 360;
         }
-        this.entity.Properties.degree = direction;
-  }
+        this.entity.Properties.degree = _degree;
+    }
+    /**
+     * どこかを向く
+     */
+    toRandom(): void {
+        const _degree = Utils.randomValue(-179, 180); // -179 ≦ 角度 ≦ 180
+        this.entity.Properties.degree = _degree;
+    }
 };

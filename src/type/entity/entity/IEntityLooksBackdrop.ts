@@ -56,15 +56,12 @@ export interface IEntityLooksBackdrop {
     previousAndWait(): Promise<void>;
     /**
      * どれかの背景にする
-     * ```ts
-     *  this.Looks.Backdrop.random();
-     * ```
      */
-    random(): void;
+    switchRandom(): void;
     /**
      * どれかの背景にして待つ
      */
-    randomAndWait(): Promise<void>;
+    switchRandomAndWait(): Promise<void>;
     /**
      * 背景を変えて待つ
      * @param backdropName 

@@ -2,9 +2,9 @@ import { Bubble } from './bubble';
 import { Timer } from '../../utils/timer';
 import type { BubbleProperties } from '../../../type/entity/TBubble';
 import type { ISprite } from '../../../type/entity/sprite';
-import type { ISpriteBubble } from '../../../type/entity/sprite/ISpriteBubble';
+import type { ISpriteLooksBubble } from '../../../type/entity/sprite/ISpriteLooksBubble';
 /** 吹き出し */
-export class SpriteBubble implements ISpriteBubble{
+export class SpriteLooksBubble implements ISpriteLooksBubble{
 
     protected entity: ISprite;
     private bubble: Bubble;

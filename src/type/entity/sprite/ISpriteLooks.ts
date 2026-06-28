@@ -2,7 +2,7 @@ import type { IEntityLooks } from '../entity/IEntityLooks';
 import type { ISpriteLooksBackdrop } from './ISpriteLookaBackdrop';
 import type { ISpriteSize } from './ISpriteSize';
 import type { ISpriteLayer } from './ISpriteLayer';
-import type { ISpriteBubble } from './ISpriteBubble';
+import type { ISpriteLooksBubble } from './ISpriteLooksBubble';
 import type { ISpriteLooksCostume } from './ISpriteLooksCostume';
 /**
  * Sprite Looks(見た目)
@@ -32,7 +32,7 @@ export interface ISpriteLooks extends IEntityLooks {
     /**
      * フキダシ
      */
-    readonly bubble : ISpriteBubble;
+    readonly bubble : ISpriteLooksBubble;
 
         /**
      * 表示する

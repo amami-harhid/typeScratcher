@@ -2,13 +2,13 @@ import { Engine, engine } from '../../engine';
 import { EntityBackdrop } from '../entity/entityBackdrop';
 import { Stage } from '../stage';
 import { StageBackdrop } from '../stage/stageBackdrop';
-import type { ISpriteBackdrop } from '../../../type/entity/sprite/ISpriteBackdrop';
+import type { ISpriteLooksBackdrop } from '../../../type/entity/sprite/ISpriteLooksBackdrop';
 import type { ISprite } from '../../../type/entity/sprite';
 
 /** 
  * 背景 
  **/
-export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
+export class SpriteLooksBackdrop extends EntityBackdrop implements ISpriteLooksBackdrop {
 
     /**
      * @internal
@@ -134,17 +134,17 @@ export class SpriteBackdrop extends EntityBackdrop implements ISpriteBackdrop {
     /**
      * どれかの背景にする
      */
-    random(): void {
+    switchRandom(): void {
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity) {
-            (_entity.Backdrop as StageBackdrop).random();
+            (_entity.Backdrop as StageBackdrop).switchRandom();
         }
         
     }
     /**
      * どれかの背景にして待つ
      */
-    async randomAndWait() : Promise<void>{
+    async switchRandomAndWait() : Promise<void>{
         
         const backdropName = this.name;
         await this.untilBackdropEventDone(backdropName);

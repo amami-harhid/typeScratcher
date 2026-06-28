@@ -74,8 +74,7 @@ cat.Event.cloned().func = async function* (this: Sprite) {
     this.Motion.position.xy = [mousePos.x, mousePos.y];
     this.Looks.size.scale = [15, 15]; //<=== スケールを変更したらレンダーへ教えないといけなそう。
     this.Motion.rotation.style = Ts.Rotation.ALL_AROUND;
-    const random = Ts.Utils.randomValue(0, 360);
-    this.Motion.direction.degree = random;
+    this.Motion.point.toRandom(); // どこかの方向を向く
     for (;;) {
         this.Motion.move.steps(10);
         this.Motion.move.ifOnEdgeBounce();

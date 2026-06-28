@@ -9,7 +9,7 @@ import type { ISpriteEvent } from './ISpriteEvent';
 import type { ISpriteDragMode } from './ISpriteDragMode';
 import type { ISpriteCostume } from './ISpriteCostume';
 import type { IPenSprite } from './pen';
-import type { ISpriteBackdrop } from './ISpriteBackdrop';
+import type { ISpriteLooksBackdrop } from './ISpriteLooksBackdrop';
 /**
  * Sprite
  */
@@ -41,12 +41,6 @@ export interface ISprite extends IEntity {
      * @returns
      */
     readonly Costume: ISpriteCostume;
-    
-    /**
-     * 背景番号、背景名を取り出すためのオブジェクト
-     */
-    readonly Backdrop: ISpriteBackdrop;
-
     /**
      * 見た目
      */

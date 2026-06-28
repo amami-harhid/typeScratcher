@@ -99,7 +99,7 @@ export class StageLooksBackdrop extends EntityBackdrop implements IStageLooksBac
     /**
      * どれかの背景にする
      */
-    random(): void {
+    switchRandom(): void {
         const _entity = this.entity as Stage
         (_entity.Backdrop as StageBackdrop).random();
         
@@ -107,7 +107,7 @@ export class StageLooksBackdrop extends EntityBackdrop implements IStageLooksBac
     /**
      * どれかの背景にして待つ
      */
-    async randomAndWait() : Promise<void>{
+    async switchRandomAndWait() : Promise<void>{
         
         const _entity = this.entity as Stage
         const backdropName = this.name;
