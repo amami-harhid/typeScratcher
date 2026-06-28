@@ -5,8 +5,8 @@
  * ・ スプライトの位置へ移動
  * ・ 〇秒でXY座標へ移動
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage } from '../../index';
+import { Typescratcher as TS } from '../../src/index';
+import type { Sprite, Stage } from '../../src/index';
 import { cat, arrow } from './sub/sprites';
 import { stage } from './sub/stage';
 
@@ -20,14 +20,14 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
 }
 cat.Event.flagPresser().func = async function*(this: Sprite) {
     await this.Control.wait(5);
-    this.Control.stopOtherScripts(this);
+    this.Control.stopOtherScripts();
     for(;;) {
         this.Motion.move.toSprite(arrow);
         yield;
     }
 }
 cat.Broadcast.receiver('GLIDE').func = async function*(this:Sprite) {
-    this.Control.stopOtherScripts(this);
+    this.Control.stopOtherScripts();
 }
 arrow.Event.flagPresser().func = async function*(this: Sprite) {
     this.Motion.direction.degree = 90;
@@ -57,16 +57,16 @@ arrow.Event.keyPresser('a').func = async function*(this:Sprite) {
         yield;
     }
     this.Motion.move.to(0,0);
-    await this.Motion.move.glideTo( 2, 200, 50, this);
+    await this.Motion.move.glideTo( 2, 200, 50);
 }
 arrow.Event.keyPresser(TS.Keyboard.SPACE).func = async function*(this:Sprite) {
     this.Motion.position.y += 50;
 }
 arrow.Broadcast.receiver('GLIDE').func = async function*(this:Sprite) {
-    this.Control.stopOtherScripts(this);
+    this.Control.stopOtherScripts();
     this.Motion.move.to(0,0);
     await this.Control.wait(1);
-    await this.Motion.move.glideTo( 5, 100, 100, this);
+    await this.Motion.move.glideTo( 5, 100, 100);
 }
 stage.Event.flagPresser().func = async function*(this: Stage) {
     for(;;){

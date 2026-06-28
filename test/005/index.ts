@@ -3,8 +3,8 @@
  * ◇ Stageで 背景を no, name で切り替える
  * ◇ Spriteで 背景を no, name で切り替える
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage } from '../../index';
+import { Typescratcher as TS } from '../../src';
+import type { Sprite, Stage } from '../../src';
 
 import CatSvg from '../assets/cat.svg';
 import BlueskySvg from '../assets/Blue Sky.svg';

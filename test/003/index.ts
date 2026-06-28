@@ -1,8 +1,8 @@
 /**
  * TEST 003 ( Stage 背景 PNG )
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage } from '../../index';
+import { Typescratcher as TS } from '../../src';
+import type { Sprite, Stage } from '../../src';
 
 import AmonPng from '../assets/Amon.png';
 import BasketballPng from '../assets/Basketball 2.png';

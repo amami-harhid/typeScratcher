@@ -1,4 +1,4 @@
-import { Typescratcher as TS } from '../../..';
+import { Typescratcher as TS } from '../../../src/';
 
 import CatSvg from '../../assets/cat.svg';
 const CatImage = new TS.Image({CatSvg});

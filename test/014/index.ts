@@ -2,8 +2,8 @@
  * TEST 014
  * ◇ ステージの端を超えていこうとするとき、ステージの端にひっかかる。
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage as _ } from '../../index';
+import { Typescratcher as TS } from '../../src';
+import type { Sprite, Stage as _ } from '../../src';
 
 import CatSvg from '../assets/cat.svg';
 
@@ -27,7 +27,7 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 
 cat.Broadcast.receiver('NEXT').func = async function*(this:Sprite) {
     //this.Motion.move.to(0, 0);
-    await this.Motion.move.glideTo(1, 0, 0, this);
+    await this.Motion.move.glideTo(1, 0, 0);
     for(;;) {
         this.Motion.point.toMouse();
         const distance = this.Sensing.mouse.distance;

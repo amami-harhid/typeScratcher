@@ -39,6 +39,6 @@ export interface ISpriteMotionMove {
      * @param x {number} - X座標
      * @param y {number} - Y座標
      */
-    glideTo(sec:number, x: number, y:number, proxy:IEntity): Promise<void>;
+    glideTo(sec:number, x: number, y:number): Promise<void>;
 
 };

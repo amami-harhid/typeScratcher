@@ -2,8 +2,8 @@
  * TEST 012
  * ◇ クローンする
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage } from '../../index';
+import { Typescratcher as TS } from '../../src';
+import type { Sprite, Stage } from '../../src';
 
 import CatSvg from '../assets/cat.svg';
 import AmonPng from '../assets/Amon.png';

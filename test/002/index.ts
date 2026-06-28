@@ -1,8 +1,8 @@
 /**
  * TEST 002 ( Pen )
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite } from '../../index';
+import { Typescratcher as TS } from '../../src';
+import type { Sprite } from '../../src';
 
 import AmonPng from '../assets/Amon.png';
 

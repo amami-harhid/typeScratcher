@@ -17,6 +17,7 @@ import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteControl } from '../../../type/entity/sprite/ISpriteControl';
 import type { ISound } from '../../../type/sound';
 import { SpriteCostume } from './spriteCostume';
+import { EntityProxyExt } from '../entity/entityProxyExt';
 
 const CLONE_MAX_SIZE = 300;
 
@@ -213,6 +214,7 @@ export class SpriteControl implements ISpriteControl {
 
     /**
      * 全てのスプライトの動作を停止する
+     * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
      */
     public stopAll() : void {
         (engine as Engine).runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
@@ -254,13 +256,19 @@ export class SpriteControl implements ISpriteControl {
     /**
      * このスクリプトを停止する
      */
-    public stopThisScript(proxy:IEntityProxy) : void {
+    public stopThisScript() : void {
+        const proxy = this.entity as unknown as IEntityProxy
         proxy.setStopThisScriptSwitch(true);
     }
     /**
      * このスプライトの他のスクリプトを停止する
+     * 親スプライトから派生したクローンを含めて、同じスプライトであるとみなすので、
+     * 親スプライトからこのメソッドを実行すると、親の他のスクリプトと派生したクローンの全てのスクリプトが止まる。
+     * クローンからこのメソッドを実行する場合、他のクローン、親スプライトは同じスプライトとはみなさない。
+     * すまり、クローンからこのメソッドを実行すると、当該クローンの他のスクリプトだけを止める。
      */
-    public stopOtherScripts(proxy:IEntityProxy) : void {
+    public stopOtherScripts() : void {
+        const proxy = this.entity as unknown as IEntityProxy
         threadManager.stopOtherScripts(proxy);
     }
 

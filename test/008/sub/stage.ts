@@ -1,4 +1,4 @@
-import { Typescratcher as TS } from '../../..';
+import { Typescratcher as TS } from '../../../src';
 
 import BasketballPng from '../../assets/Basketball 2.png';
 import BlueskySvg from '../../assets/Blue Sky.svg';

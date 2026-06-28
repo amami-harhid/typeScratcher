@@ -75,6 +75,10 @@ export class SpriteSensingMouse implements ISpriteSensingMouse {
      * @returns 
      */
     get isTouching(): boolean {
+        if((this.entity as Sprite).Properties.visible == false) {
+            // ここで抜けておかないと、「renderer.pick」のなかで例外が起こる
+            return false;
+        }
         // scratch3 render処理の pickメソッドへ渡すマウスポインター座標( x, y )は、
         // stage(canvas)の 左上を起点とするオフセット座標である
         const pageX = this.entity.mouse.pageX;

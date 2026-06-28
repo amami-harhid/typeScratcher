@@ -3,8 +3,8 @@
  * ・文字列をSVG化してスプライトで表示
  * ・ネコが文字に触れたらネコが"TOUCH"と言う
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage } from '../../index';
+import { Typescratcher as TS } from '../../src';
+import type { Sprite, Stage } from '../../src';
 import { num } from './sub/num';
 import { cat } from './sub/cat';
 import { stage } from './sub/stage';
@@ -17,7 +17,7 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
     //const wait2 = this.Control.wait2(2);
     for(;;){
         this.Looks.backdrop.next();
-        await TS.Timer.wait(1);
+        await this.Control.wait(1);
         yield;
     }
 }

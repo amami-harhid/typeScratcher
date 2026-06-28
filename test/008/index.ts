@@ -2,8 +2,8 @@
  * TEST 008
  * ・Test 007 で コスチューム変更、背景変更の同期を合わせる
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage } from '../../index';
+import { Typescratcher as TS } from '../../src/';
+import type { Sprite, Stage } from '../../src/';
 import { num } from './sub/num';
 import { cat } from './sub/cat';
 import { stage } from './sub/stage';
@@ -17,7 +17,7 @@ stage.Event.flagPresser().func = async function*(this:Stage) {
             count = 0;
         }
         this.Broadcast.send('BACKDROP_NEXT');
-        await TS.Timer.wait(1);
+        await this.Control.wait(1);
         yield;
     }
 }

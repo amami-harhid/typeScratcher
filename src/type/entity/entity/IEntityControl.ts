@@ -10,7 +10,8 @@ export interface IEntityControl {
      */
     wait(sec: number): Promise<void>;
     /**
-     * 条件が成立する迄、待つ。
+     * 条件が成立する迄、待つ
+     * 
      * ```ts
      * const condition = ()=>{
      *  // マウスの押下を判定
@@ -25,6 +26,7 @@ export interface IEntityControl {
     waitUntil(condition: CallableFunction): Promise<void>;
     /**
      * 条件が成立する間、待つ。
+     * 
      * ```ts
      * const condition = ()=>{
      *  // マウスの押下を判定
@@ -39,15 +41,22 @@ export interface IEntityControl {
     waitWhile(condition: CallableFunction): Promise<void>;
     /**
      * 全てのスプライトの動作を停止する
+     * 
+     * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
      */
     stopAll() : void;
     /**
      * このスクリプトを停止する
      */
-    stopThisScript(proxy: IEntity) : void;
+    stopThisScript() : void;
     /**
      * このスプライトの他のスクリプトを停止する
+     * 
+     * 親スプライトから派生したクローンを含めて、同じスプライトであるとみなす。
+     * クローンからこのメソッドを実行する場合、他のクローン、親スプライトは同じスプライトとはみなさない。
+     * 親スプライトからこのメソッドを実行すると、親の他のスクリプトと派生したクローンの全てのスクリプトを停止する。
+     * クローンからこのメソッドを実行すると、当該クローンの他のスクリプトだけを停止する。
      */
-    stopOtherScripts(proxy: IEntity) : void;
+    stopOtherScripts() : void;
 
 };

@@ -61,6 +61,7 @@ export class StageControl implements IStageControl{
     }
     /**
      * 全てのスプライトの動作を停止する
+     * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
      */
     stopAll() : void {
         (engine as Engine).runtime.scratchEvent.emit(ScratchEvent.STOP_CLICKED);
@@ -68,13 +69,19 @@ export class StageControl implements IStageControl{
     /**
      * このスクリプトを停止する
      */
-    stopThisScript(proxy:IEntityProxy) : void {
+    stopThisScript() : void {
+        const proxy = this.entity as unknown as IEntityProxy
         proxy.setStopThisScriptSwitch(true);
     }
     /**
      * このスプライトの他のスクリプトを停止する
+     * 親スプライトから派生したクローンを含めて、同じスプライトであるとみなすので、
+     * 親スプライトからこのメソッドを実行すると、親の他のスクリプトと派生したクローンの全てのスクリプトが止まる。
+     * クローンからこのメソッドを実行する場合、他のクローン、親スプライトは同じスプライトとはみなさない。
+     * すまり、クローンからこのメソッドを実行すると、当該クローンの他のスクリプトだけを止める。
      */
-    stopOtherScripts(proxy:IEntityProxy) : void {
+    stopOtherScripts() : void {
+        const proxy = this.entity as unknown as IEntityProxy
         threadManager.stopOtherScripts(proxy);
     }
 

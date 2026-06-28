@@ -12,7 +12,7 @@ export class EntityProxyExt extends EventEmitter{
     /** スレッドカウンター */
     static THREAD_COUNTER = "threadCounter";
     /** 「他のスクリプトを削除する」メソッド名 */
-    static STOP_OTHER_SCRIPTS = "$stopOtherScripts";
+    static STOP_OTHER_SCRIPTS = "stopOtherScripts";
     /** 「このスクリプトを停止」スイッチの名前 */
     static STOP_THIS_SCRIPT_SWITCH = "$stopThisScriptSwitch";
     static SET_STOP_THIS_SCRIPT_SWITCH = "setStopThisScriptSwitch";

@@ -226,11 +226,32 @@ export class ThreadManager {
         }
 
     }
+    /**
+     * このメソッドを呼び出したスレッド以外を停止する
+     * ただし、停止するスレッドは同じスプライトのものとする
+     * 同じスプライトとは、派生したクローンを含める
+     * クローンのスレッド内でこのメソッドを呼び出したときは、
+     * 親スプライトのスレッドを停止せずそのクローンの他のスクリプトだけを
+     * 停止する。
+     * @param proxy 
+     */
     stopOtherScripts(proxy: IEntityProxy) : void {
+
+        let _cloneEntityIds:string[] = [];
+        // スプライトクローンのプロキシか？
+        const _entity = proxy as unknown as Entity;
+        if(_entity.isSprite === true){
+            // クローン配列を取得し エンティティID配列を作成
+            for(const _clone of (_entity as Sprite).clones) {
+                _cloneEntityIds.push((_clone as Sprite).id);
+            }                
+        }
+
         const ownEntityID = proxy.id;
         for(const thread of ThreadBank.threadArr){
             const entityID = thread.entityId;
-            if(entityID == ownEntityID){
+            if(entityID == ownEntityID || (_cloneEntityIds.includes( entityID ))){
+                // 同じエンティティのとき
                 const _proxy = thread.proxy;
                 if(_proxy){
                     if(proxy.threadId != _proxy.threadId) {
@@ -375,26 +396,12 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
         if( functionDeclareType.isArrow === true ){
             throw "イベントで宣言する関数は アロー関数を使ってはいけません。";
         }
-        if( functionDeclareType.isAsync === false ){
-            throw "イベントで宣言する関数は async をつけてください。";
-        }
+        // 20260628 async function でなくてもOKとした（Rewriter.toGeneratorでasync化するため）
+        // if( functionDeclareType.isAsync === false ){
+        //     throw "イベントで宣言する関数は async をつけてください。";
+        // }
         if(functionDeclareType.isGenerator){
             this._generatorfunc = Rewriter.toGenerator(this.proxy, func, ...args);
-            /* 
-            const _func = func.bind(this._proxy);
-            const _func2 = _func(...args);
-            const _f = async function* <T>(...args:T[]){
-                try{
-                    yield *_func2; // generator()
-                }catch(e){
-                    if(e== Threads.THROW_STOP_THIS_SCRIPTS){
-                        return;
-                    }                    
-                    throw e;
-                }
-            }
-            this._generatorfunc = _f(...args);
-            */
         }else{
             // TODO 繰り返し構文の最後に yield を自動追加するようにしたい！
             throw "Generator関数以外はエラーです";

@@ -1,5 +1,5 @@
-import { Typescratcher as TS } from '../../..';
-import type { ICreateSvgImageAttributes } from '../../..';
+import { Typescratcher as TS } from '../../../src';
+import type { ICreateSvgImageAttributes } from '../../../src';
 
 const textAttr: ICreateSvgImageAttributes = {
     font_size: 90,

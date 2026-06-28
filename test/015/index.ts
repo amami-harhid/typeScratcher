@@ -2,8 +2,8 @@
  * TEST 014
  * ◇ ステージの端を超えていこうとするとき、ステージの端にひっかかる。
  */
-import { Typescratcher as TS } from '../../index';
-import type { Sprite, Stage as _ } from '../../index';
+import { Typescratcher as TS } from '../../src';
+import type { Sprite, Stage as _ } from '../../src';
 
 import CatSvg from '../assets/cat.svg';
 import CatWav from '../assets/Cat.wav';

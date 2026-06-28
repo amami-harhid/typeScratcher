@@ -177,8 +177,10 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      * @param proxy 
      * @returns 
      */
-    async glideTo(sec:number, x: number, y:number, proxy:IEntity): Promise<void> {
-        const _proxy = proxy as unknown as EntityProxyExt; 
+    async glideTo(sec:number, x: number, y:number): Promise<void> {
+
+        const _proxy = this.entity as unknown as EntityProxyExt; 
+
         const _x = this.entity.Properties.position.x;
         const _y = this.entity.Properties.position.y;
         const _xy = {x: _x, y: _y};

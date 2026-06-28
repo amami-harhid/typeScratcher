@@ -3,8 +3,8 @@
  * スプライトをクリックしたらクローンを作る
  * クローンされたとき、ランダムな方向へ動き出す
  */
-import { Typescratcher as Ts } from '../../index';
-import type { Sprite, Stage as _ } from '../../index';
+import { Typescratcher as Ts } from '../../src';
+import type { Sprite, Stage as _ } from '../../src';
 
 // 【画像 import 】
 import CatSvg from "../assets/cat.svg";

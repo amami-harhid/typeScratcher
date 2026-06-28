@@ -14777,7 +14777,7 @@ function Mq() {
   return Pk || (Pk = 1, gu = fq()), gu;
 }
 Mq();
-const Fq = "0.0.50", Dq = {
+const Fq = "0.0.51", Dq = {
   version: Fq
 }, pq = Dq.version, Ir = {
   main_id: "main",
@@ -35640,7 +35640,7 @@ class mi extends Io {
   /** スレッドカウンター */
   static THREAD_COUNTER = "threadCounter";
   /** 「他のスクリプトを削除する」メソッド名 */
-  static STOP_OTHER_SCRIPTS = "$stopOtherScripts";
+  static STOP_OTHER_SCRIPTS = "stopOtherScripts";
   /** 「このスクリプトを停止」スイッチの名前 */
   static STOP_THIS_SCRIPT_SWITCH = "$stopThisScriptSwitch";
   static SET_STOP_THIS_SCRIPT_SWITCH = "setStopThisScriptSwitch";
@@ -50428,15 +50428,15 @@ class h$ {
    * @param proxy 
    * @returns 
    */
-  async glideTo(A, e, r, n) {
-    const c = n, a = this.entity.Properties.position.x, Q = this.entity.Properties.position.y, i = { x: a, y: Q }, C = Math.floor(A * 1e3 / VL), g = (e - a) / C, o = (r - Q) / C;
-    return new Promise((B) => {
-      let I = 0;
-      const l = () => {
-        I < C ? (i.x += g, i.y += o, this.entity.Properties.position.x = i.x, this.entity.Properties.position.y = i.y) : (this.entity.Properties.position.x = e, this.entity.Properties.position.y = r, c.removeListener(ur.SPRITE_GLIDE, l), B()), I += 1;
+  async glideTo(A, e, r) {
+    const n = this.entity, c = this.entity.Properties.position.x, a = this.entity.Properties.position.y, Q = { x: c, y: a }, i = Math.floor(A * 1e3 / VL), C = (e - c) / i, g = (r - a) / i;
+    return new Promise((o) => {
+      let B = 0;
+      const I = () => {
+        B < i ? (Q.x += C, Q.y += g, this.entity.Properties.position.x = Q.x, this.entity.Properties.position.y = Q.y) : (this.entity.Properties.position.x = e, this.entity.Properties.position.y = r, n.removeListener(ur.SPRITE_GLIDE, I), o()), B += 1;
       };
-      c.on(ur.SPRITE_GLIDE, l), c.once(ur.SPRITE_GLIDE_STOP, () => {
-        c.removeListener(ur.SPRITE_GLIDE, l), B();
+      n.on(ur.SPRITE_GLIDE, I), n.once(ur.SPRITE_GLIDE_STOP, () => {
+        n.removeListener(ur.SPRITE_GLIDE, I), o();
       });
     });
   }
@@ -50809,6 +50809,8 @@ class U$ {
    * @returns 
    */
   get isTouching() {
+    if (this.entity.Properties.visible == !1)
+      return !1;
     const A = this.entity.mouse.pageX, e = this.entity.mouse.pageY, r = Ot.offsetChangePageToStage(A, e), n = this.entity.render.renderer.pick(r.x, r.y, 1, 1, [this.entity.drawableID]);
     return n !== !1 && n == this.entity.drawableID;
   }
@@ -51437,6 +51439,7 @@ class Oi {
   }
   /**
    * 全てのスプライトの動作を停止する
+   * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
    */
   stopAll() {
     He.runtime.scratchEvent.emit(ur.STOP_CLICKED);
@@ -51467,13 +51470,18 @@ class Oi {
   /**
    * このスクリプトを停止する
    */
-  stopThisScript(A) {
-    A.setStopThisScriptSwitch(!0);
+  stopThisScript() {
+    this.entity.setStopThisScriptSwitch(!0);
   }
   /**
    * このスプライトの他のスクリプトを停止する
+   * 親スプライトから派生したクローンを含めて、同じスプライトであるとみなすので、
+   * 親スプライトからこのメソッドを実行すると、親の他のスクリプトと派生したクローンの全てのスクリプトが止まる。
+   * クローンからこのメソッドを実行する場合、他のクローン、親スプライトは同じスプライトとはみなさない。
+   * すまり、クローンからこのメソッドを実行すると、当該クローンの他のスクリプトだけを止める。
    */
-  stopOtherScripts(A) {
+  stopOtherScripts() {
+    const A = this.entity;
     en.stopOtherScripts(A);
   }
 }
@@ -51586,13 +51594,29 @@ class aB {
         c && A.threadId == c.threadId && (A.setStopThisScriptSwitch(!0), this.stopSounds(c));
       }
   }
+  /**
+   * このメソッドを呼び出したスレッド以外を停止する
+   * ただし、停止するスレッドは同じスプライトのものとする
+   * 同じスプライトとは、派生したクローンを含める
+   * クローンのスレッド内でこのメソッドを呼び出したときは、
+   * 親スプライトのスレッドを停止せずそのクローンの他のスクリプトだけを
+   * 停止する。
+   * @param proxy 
+   */
   stopOtherScripts(A) {
-    const e = A.id;
-    for (const r of yi.threadArr)
-      if (r.entityId == e) {
-        const c = r.proxy;
-        c && A.threadId != c.threadId && (c.setStopThisScriptSwitch(!0), this.stopSounds(c));
+    let e = [];
+    const r = A;
+    if (r.isSprite === !0)
+      for (const c of r.clones)
+        e.push(c.id);
+    const n = A.id;
+    for (const c of yi.threadArr) {
+      const a = c.entityId;
+      if (a == n || e.includes(a)) {
+        const Q = c.proxy;
+        Q && A.threadId != Q.threadId && (Q.setStopThisScriptSwitch(!0), this.stopSounds(Q));
       }
+    }
   }
   clearAllScripts() {
     for (const A of yi.threadArr)
@@ -51679,8 +51703,6 @@ class $n extends Io {
     const n = Gq.getFunctionDeclares(A);
     if (n.isArrow === !0)
       throw "イベントで宣言する関数は アロー関数を使ってはいけません。";
-    if (n.isAsync === !1)
-      throw "イベントで宣言する関数は async をつけてください。";
     if (n.isGenerator)
       this._generatorfunc = i$.toGenerator(this.proxy, A, ...e);
     else
@@ -54500,6 +54522,7 @@ class RAA {
   }
   /**
    * 全てのスプライトの動作を停止する
+   * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
    */
   stopAll() {
     He.runtime.scratchEvent.emit(ur.STOP_CLICKED);
@@ -54507,13 +54530,18 @@ class RAA {
   /**
    * このスクリプトを停止する
    */
-  stopThisScript(A) {
-    A.setStopThisScriptSwitch(!0);
+  stopThisScript() {
+    this.entity.setStopThisScriptSwitch(!0);
   }
   /**
    * このスプライトの他のスクリプトを停止する
+   * 親スプライトから派生したクローンを含めて、同じスプライトであるとみなすので、
+   * 親スプライトからこのメソッドを実行すると、親の他のスクリプトと派生したクローンの全てのスクリプトが止まる。
+   * クローンからこのメソッドを実行する場合、他のクローン、親スプライトは同じスプライトとはみなさない。
+   * すまり、クローンからこのメソッドを実行すると、当該クローンの他のスクリプトだけを止める。
    */
-  stopOtherScripts(A) {
+  stopOtherScripts() {
+    const A = this.entity;
     en.stopOtherScripts(A);
   }
 }
