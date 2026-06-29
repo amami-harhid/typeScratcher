@@ -1,10 +1,10 @@
-import { Sprite } from '../sprite';
-import type { TBounds, TScaleArr } from '../../../type/common/typeCommon';
+import { Sprite } from '.';
+import type { TBounds, TBoundsEx, TScaleArr } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
-import type { ISpriteSize } from '../../../type/entity/sprite/ISpriteSize';
+import type { ISpriteLooksSize } from '../../../type/entity/sprite/ISpriteLooksSize';
 
 /** サイズ */
-export class SpriteSize implements ISpriteSize{
+export class SpriteLooksSize implements ISpriteLooksSize{
 
     private entity: Sprite;
 
@@ -90,9 +90,10 @@ export class SpriteSize implements ISpriteSize{
      *  const {w,h} = this.Looks.Size.drawingSize;
      * ```
      */
-    get drawingSize() : TBounds{
+    get drawingSize() : TBoundsEx{
         const bounds = this.entity.render.renderer.getBounds(this.entity.drawableID);
-        return bounds;
+        const _bounds: TBoundsEx = {...bounds, width: bounds.right-bounds.left, height: bounds.top - bounds.bottom};
+        return _bounds;
     }
 
 }

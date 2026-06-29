@@ -87,22 +87,22 @@ const stageBounds: {w: number, h: number} = {
 }
 
 export const Typescratcher: ExportType = {
-    Sprite: _Sprite as SSprite,
-    Stage: _Stage as SStage,
-    Image: _Image as SImage,
-    Sound: _Sound as SSound,
-    ImageEffective: ImageEffective as ImageEffectiveType,
-    Rotation: Rotation as RotationStyle,
-    Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     engine: engine as IEngine,
-    textToSvg: textToSvg as ITextToSvg,
+    Image: _Image as SImage,
+    ImageEffective: ImageEffective as ImageEffectiveType,
+    Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     Loop: Loop as SLoop,
+    Rotation: Rotation as RotationStyle,
     ScratchFontFamily: _ScratchFontFamily as typeof _ScratchFontFamily,
     SpeechLocale: SPEECH_LOCALE,
-    VoiceType: VOICE_ID,
+    Sound: _Sound as SSound,
+    Sprite: _Sprite as SSprite,
+    Stage: _Stage as SStage,
     StageBounds: stageBounds,
-    Utils: Utils,
+    textToSvg: textToSvg as ITextToSvg,
     Variable: Variable as SVariable,
+    VoiceType: VOICE_ID,
+    Utils: Utils,
     
 } as const;
 

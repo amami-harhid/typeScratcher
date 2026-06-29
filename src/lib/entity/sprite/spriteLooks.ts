@@ -4,9 +4,9 @@ import { SpriteLooksBubble } from './spriteLooksBubble';
 import { SpriteLooksBackdrop } from './spriteLooksBackdrop';
 import { SpriteLayer } from './spriteLayer';
 import { SpriteLooksCostume } from './spriteLooksCostume';
-import { SpriteSize } from './spriteSize';
+import { SpriteLooksSize } from './spriteLooksSize';
 import type { ISprite } from '../../../type/entity/sprite';
-import type { ISpriteSize } from '../../../type/entity/sprite/ISpriteSize';
+import type { ISpriteLooksSize } from '../../../type/entity/sprite/ISpriteLooksSize';
 import type { ISpriteLooksBackdrop } from '../../../type/entity/sprite/ISpriteLookaBackdrop';
 import type { ISpriteLooksBubble } from '../../../type/entity/sprite/ISpriteLooksBubble';
 import type { ISpriteLayer } from '../../../type/entity/sprite/ISpriteLayer';
@@ -18,7 +18,7 @@ import type { ISpriteLooksCostume } from '../../../type/entity/sprite/ISpriteLoo
  */
 export class SpriteLooks extends EntityLooks implements ISpriteLooks{
     private _layer: ISpriteLayer;
-    private _size : ISpriteSize;
+    private _size : ISpriteLooksSize;
     private _bubble: ISpriteLooksBubble;
     private _costume: ISpriteLooksCostume;
     private _backdrop: ISpriteLooksBackdrop;
@@ -29,7 +29,7 @@ export class SpriteLooks extends EntityLooks implements ISpriteLooks{
     constructor(entity:ISprite){
         super(entity);
         this._layer = new SpriteLayer(entity);
-        this._size = new SpriteSize(entity);
+        this._size = new SpriteLooksSize(entity);
         this._bubble = new SpriteLooksBubble(entity);
         this._costume = new SpriteLooksCostume(entity);
         this._backdrop = new SpriteLooksBackdrop(entity);
@@ -49,7 +49,7 @@ export class SpriteLooks extends EntityLooks implements ISpriteLooks{
     /**
      * サイズ
      */
-    get size() : ISpriteSize {
+    get size() : ISpriteLooksSize {
         return this._size;
     }
     /**

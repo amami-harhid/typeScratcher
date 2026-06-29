@@ -14777,7 +14777,7 @@ function fq() {
   return Pk || (Pk = 1, gu = Yq()), gu;
 }
 fq();
-const Mq = "0.0.53", Fq = {
+const Mq = "0.0.54", Fq = {
   version: Mq
 }, Dq = Fq.version, Ir = {
   main_id: "main",
@@ -50265,7 +50265,8 @@ class l$ {
    * ```
    */
   get drawingSize() {
-    return this.entity.render.renderer.getBounds(this.entity.drawableID);
+    const A = this.entity.render.renderer.getBounds(this.entity.drawableID);
+    return { ...A, width: A.right - A.left, height: A.top - A.bottom };
   }
 }
 class I$ extends rz {
@@ -54925,22 +54926,22 @@ const VAA = He.render.stageWidth, XAA = He.render.stageHeight, _AA = {
   w: VAA,
   h: XAA
 }, ieA = {
-  Sprite: sz,
-  Stage: LAA,
-  Image: NAA,
-  Sound: oB,
-  ImageEffective: hi,
-  Rotation: ma,
-  Keyboard: jr,
   engine: He,
-  textToSvg: Lu,
+  Image: NAA,
+  ImageEffective: hi,
+  Keyboard: jr,
   Loop: WAA,
+  Rotation: ma,
   ScratchFontFamily: Qz,
   SpeechLocale: _L,
-  VoiceType: Rq,
+  Sound: oB,
+  Sprite: sz,
+  Stage: LAA,
   StageBounds: _AA,
-  Utils: qt,
-  Variable: OAA
+  textToSvg: Lu,
+  Variable: OAA,
+  VoiceType: Rq,
+  Utils: qt
 };
 export {
   ieA as Typescratcher

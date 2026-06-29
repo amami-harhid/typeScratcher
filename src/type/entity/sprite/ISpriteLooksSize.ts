@@ -1,9 +1,9 @@
-import type { TBounds, TScaleArr } from "../../common/typeCommon";
+import type { TBounds, TBoundsEx, TScaleArr } from "../../common/typeCommon";
 
 /**
  * スプライトのサイズ
  */
-export interface ISpriteSize {
+export interface ISpriteLooksSize {
 
     /**
      * 横サイズ
@@ -79,6 +79,6 @@ export interface ISpriteSize {
      *  const {w,h} = this.Looks.Size.drawingSize;
      * ```
      */
-    get drawingSize() : TBounds;
+    get drawingSize() : TBoundsEx;
 
 }

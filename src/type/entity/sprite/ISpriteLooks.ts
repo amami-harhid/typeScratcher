@@ -1,6 +1,6 @@
 import type { IEntityLooks } from '../entity/IEntityLooks';
 import type { ISpriteLooksBackdrop } from './ISpriteLookaBackdrop';
-import type { ISpriteSize } from './ISpriteSize';
+import type { ISpriteLooksSize } from './ISpriteLooksSize';
 import type { ISpriteLayer } from './ISpriteLayer';
 import type { ISpriteLooksBubble } from './ISpriteLooksBubble';
 import type { ISpriteLooksCostume } from './ISpriteLooksCostume';
@@ -20,7 +20,7 @@ export interface ISpriteLooks extends IEntityLooks {
     /**
      * サイズ
      */
-    readonly size : ISpriteSize;
+    readonly size : ISpriteLooksSize;
 
     /**
      * 階層

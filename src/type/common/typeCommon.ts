@@ -50,6 +50,11 @@ export declare type TBounds = {
     left: number,
     right: number,
 }
+/** 上下左右の大きさ */
+export interface TBoundsEx extends TBounds {
+    width: number,
+    height: number,
+}
 
 /** Vec3 */
 export declare type TVec3 = {
