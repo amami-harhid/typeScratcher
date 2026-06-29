@@ -17,8 +17,8 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
         super(entity);
         this.Distance = new SpriteSensingDistance(entity);
     }
-    isTouching(sprites: ISprite[]): boolean {
-        return this.isTouchingTargetToTarget(sprites);
+    isTouching(sprites: ISprite[], includeClone: boolean = true): boolean {
+        return this.isTouchingTargetToTarget(sprites, includeClone);
     }
     /**
      * スプライトまでの距離

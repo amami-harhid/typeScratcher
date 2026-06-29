@@ -6,10 +6,11 @@ import type { ISprite } from '.';
 export interface ISpriteSensingSprite extends IEntitySensingSprite{
 
     /**
-     * スプライトに触れていることを判定する
+     * スプライトに触れていることを判定する（クローンを含める）
      * @param sprites 
+     * @param includeClone falseのときはクローンを含めずに検査する
      */
-    isTouching(sprites: ISprite[]): boolean;
+    isTouching(sprites: ISprite[], includeClone?: boolean): boolean;
 
     /**
      * 自分に触れているスプライトを配列にして返す

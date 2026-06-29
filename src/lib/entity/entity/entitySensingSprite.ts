@@ -16,17 +16,26 @@ export class EntitySensingSprite implements IEntitySensingSprite {
     }
     /**
      * 相手スプライトのどれかに衝突しているか否かを検知する
+     * 第二パラメータがtrueのときは クローンを含めて検査する
      * @param targets 
+     * @param includesClone
      * @returns 
      */
-    protected isTouchingTargetToTarget(targets: ISprite[]) {
+    protected isTouchingTargetToTarget(targets: ISprite[], includesClone:boolean = false) {
         const targetIds: number[] = [];
         for(const t of targets){
-            const _e = t as IEntity;
             const _s = t as Sprite;
             if(_s.Properties.visible === true) {
                 const targetDrawableID = _s.drawableID;
                 targetIds.push(targetDrawableID);
+            }
+            if(includesClone === true && _s.isClone === false){
+                for(const _clone of _s.clones) {
+                    const _cloneSprite = _clone as Sprite;
+                    if(_cloneSprite.Properties.visible === true){
+                        targetIds.push(_cloneSprite.drawableID);
+                    }
+                }
             }
         }
         if(targetIds.length>0){

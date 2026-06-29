@@ -14777,7 +14777,7 @@ function fq() {
   return Pk || (Pk = 1, gu = Yq()), gu;
 }
 fq();
-const Mq = "0.0.52", Fq = {
+const Mq = "0.0.53", Fq = {
   version: Mq
 }, Dq = Fq.version, Ir = {
   main_id: "main",
@@ -51089,24 +51089,31 @@ class x$ {
   }
   /**
    * 相手スプライトのどれかに衝突しているか否かを検知する
+   * 第二パラメータがtrueのときは クローンを含めて検査する
    * @param targets 
+   * @param includesClone
    * @returns 
    */
-  isTouchingTargetToTarget(A) {
-    const e = [];
-    for (const r of A) {
-      const n = r;
-      if (n.Properties.visible === !0) {
-        const c = n.drawableID;
-        e.push(c);
+  isTouchingTargetToTarget(A, e = !1) {
+    const r = [];
+    for (const n of A) {
+      const c = n;
+      if (c.Properties.visible === !0) {
+        const a = c.drawableID;
+        r.push(a);
       }
+      if (e === !0 && c.isClone === !1)
+        for (const a of c.clones) {
+          const Q = a;
+          Q.Properties.visible === !0 && r.push(Q.drawableID);
+        }
     }
-    if (e.length > 0) {
-      const r = this.entity;
+    if (r.length > 0) {
+      const n = this.entity;
       try {
-        return r.render.renderer.isTouchingDrawables(r.drawableID, e);
-      } catch (n) {
-        console.error(n);
+        return n.render.renderer.isTouchingDrawables(n.drawableID, r);
+      } catch (c) {
+        console.error(c);
       }
     }
     return !1;
@@ -51134,8 +51141,8 @@ class R$ extends x$ {
   constructor(A) {
     super(A), this.Distance = new nz(A);
   }
-  isTouching(A) {
-    return this.isTouchingTargetToTarget(A);
+  isTouching(A, e = !0) {
+    return this.isTouchingTargetToTarget(A, e);
   }
   /**
    * スプライトまでの距離
