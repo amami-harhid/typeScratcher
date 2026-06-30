@@ -104,8 +104,11 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite, BlockBounds
     console.log(`blockBoundsHeight=${BlockBounds.height}`)
     const Bounds = this.Looks.size.drawingSize;
     const DogHeight = Bounds.height;
-    // 見た目（表示している範囲）の中心と スプライト中心がずれていることがあるので、
-    // 見た目で位置決めをしたいのであれば、２つの中心のずれを測定して位置を調整する必要がある
+    // 所定の移動をした場合に衝突が予測される場合に移動前に検知する仕組み
+    // 衝突ぎりぎりのところで止まる仕組み
+    // これは端に触れたときに止める仕組みと同じだが端の場合は垂直・水平が保証されている。
+    // 垂直・水平が保証されないときに 
+
     // 
     const _diffY = Bounds.top - DogHeight/2 - this.Motion.position.y;
     console.log('_diffY=',_diffY)
