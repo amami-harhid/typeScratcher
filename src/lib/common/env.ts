@@ -23,4 +23,8 @@ export const Env: TEnv = {
      * ステージサイズ
      */
     StageSize : { W: 480, H: 360} as const,
+    /**
+     * デバッグモード
+     */
+    debugMode : false,
 };

@@ -35,6 +35,7 @@ import * as GUI from './lib/gui';
 import { ExportType } from './type';
 
 import { Engine, engine } from './lib/engine';
+import { Env } from './lib/common/env';
 import { Image as _Image } from './lib/image';
 import { ImageEffective, type ImageEffectiveType } from './type/entity/ImageEffective';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './type/engine/keyboad';
@@ -49,6 +50,7 @@ import { Variable } from './lib/entity/monitor/variable';
 import { Utils } from './lib/utils/utils';
 import type { createSvgImageAttributes } from './type/image';
 import type { IEngine } from './type/engine';
+import type { TEnv } from './type/common/env';
 import type { IImage } from './type/image';
 import type { ISprite, SSprite } from './type/entity/sprite';
 import type { IStage, SStage } from './type/entity/stage';
@@ -88,6 +90,7 @@ const stageBounds: {w: number, h: number} = {
 
 export const Typescratcher: ExportType = {
     engine: engine as IEngine,
+    Env: Env as TEnv,
     Image: _Image as SImage,
     ImageEffective: ImageEffective as ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,

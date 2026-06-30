@@ -5,6 +5,7 @@
  */
 import { Typescratcher as Ts } from "../../src/";
 import { Sprite } from "../../src/";
+Ts.Env.debugMode = true;
 
 // 【画像読み込み】
 import catSvg from '../assets/cat.svg';
@@ -49,6 +50,7 @@ dog.Event.flagPresser().func = async function*(this:Sprite){
 };
 
 block.Event.flagPresser().func = async function*(this:Sprite){
+    
     this.Looks.show();
 
     this.Motion.position.xy = [0,0];
@@ -59,8 +61,8 @@ block.Event.flagPresser().func = async function*(this:Sprite){
     this.Motion.position.y =-StageHeight/2
 
     const BlockBounds = block.Looks.size.drawingSize;
-    console.log('In block.Event.flagPresser, BlockBounds=', BlockBounds)
-    console.log('this.Motion.position.y=', this.Motion.position.y)
+    //console.log('In block.Event.flagPresser, BlockBounds=', BlockBounds)
+    //console.log('this.Motion.position.y=', this.Motion.position.y)
     this.Broadcast.send('START', BlockBounds);
 };
 
@@ -72,18 +74,19 @@ let onFloor = false;
  * moveSpeed の速さで移動したとき targetに衝突するかを判定する
  */
 const isTouching = function(this:Sprite, target:Sprite, moveSpeed: number):boolean {
-    console.log('speed=', moveSpeed);
+    //console.log('speed=', moveSpeed);
+    //this.Pen.penClear();
+    //this.Pen.drawBounds();
+    const bounds = this.Looks.size.drawingSize;
     // 自分自身の高さ
-    const ownHeight = this.Looks.size.drawingSize.height;
+    const ownHeight = bounds.height;
     // ターゲットの上辺の座標位置
     const targetUpperY = target.Looks.size.drawingSize.top;
     //const targetUpperY = target.Looks.size.drawingSize.height/2 - StageWidth / 2;
-    console.log('target.Looks.size.drawingSize=', target.Looks.size.drawingSize)
     // 次に予想される自分自身の位置
     const nextY = this.Motion.position.y + moveSpeed;
     // 次に予想される自分自身の底辺の座標位置
     const ownBottomY = nextY - ownHeight / 2;
-    console.log('nextY=', nextY, ', targetUpperY=', targetUpperY, ', ownBottomY=', ownBottomY);
     if( ownBottomY > targetUpperY ) {
         return false;
     }
@@ -93,15 +96,15 @@ const isTouching = function(this:Sprite, target:Sprite, moveSpeed: number):boole
 // 旗が押されたとき
 dog.Broadcast.receiver("START").func = async function*(this: Sprite, BlockBounds: TBoundsEx) {
 
-    console.log(BlockBounds);
-    const BlockHeight = BlockBounds.height;
-    const BlockPositionY = BlockBounds.top - BlockHeight/2;
-    console.log('BlockPositionY=', BlockPositionY, "block.y=", block.Motion.position.y);
-    const BlockYDiff = block.Motion.position.y - BlockPositionY;
-    console.log('BlockYDiff=', BlockYDiff)
+    //console.log(BlockBounds);
+    //const BlockHeight = BlockBounds.height;
+    //const BlockPositionY = BlockBounds.top - BlockHeight/2;
+    //console.log('BlockPositionY=', BlockPositionY, "block.y=", block.Motion.position.y);
+    //const BlockYDiff = block.Motion.position.y - BlockPositionY;
+    //console.log('BlockYDiff=', BlockYDiff)
     speed = 0;
     onFloor = false;
-    console.log(`blockBoundsHeight=${BlockBounds.height}`)
+    //console.log(`blockBoundsHeight=${BlockBounds.height}`)
     const Bounds = this.Looks.size.drawingSize;
     const DogHeight = Bounds.height;
     // 所定の移動をした場合に衝突が予測される場合に移動前に検知する仕組み
@@ -111,13 +114,14 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite, BlockBounds
 
     // 
     const _diffY = Bounds.top - DogHeight/2 - this.Motion.position.y;
-    console.log('_diffY=',_diffY)
+    //console.log('_diffY=',_diffY)
     const _IsTouching = isTouching.bind(this);
+    this.Pen.prepare();
 
     // ずっと繰り返す
     for(;;){
         if(_IsTouching(block, speed)){
-            console.log('_IsTouching');
+            //console.log('_IsTouching');
             // 次に衝突が予想されるので衝突ギリギリに位置を変える
             this.Motion.position.y = BlockBounds.height/2 -StageHeight/2 + (DogHeight/2) - _diffY;
             //this.Motion.position.y = blockBoundsHeight/2 - StageHeight/2 + (DogHeight/2);
@@ -141,6 +145,14 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite) {
     for(;;){
         if( onFloor === true){
             // 進める
+            if(this.Sensing.keyboard.isDown(Ts.Keyboard.RIGHT)){
+                this.Motion.direction.degree = 90;
+                this.Motion.move.steps(5);
+            }
+            if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)){
+                this.Motion.direction.degree = -90;
+                this.Motion.move.steps(5);
+            }
             //this.Motion.move.steps(10);
             // 端についたら跳ね返る
             //this.Motion.move.ifOnEdgeBounce();
@@ -161,14 +173,6 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite) {
         yield;
     }
 }
-dog.Event.keyPresser(Ts.Keyboard.RIGHT).func = async function*(this:Sprite) {
-    //this.Looks.costume.next();
-    const bounds = this.Looks.size.drawingSize;
-    console.log(bounds.top, bounds.bottom, bounds.left, bounds.right);
-    console.log(this.Motion.position.xy);
-    console.log('center y ', bounds.top - bounds.height/2)
-
-};
 dog.Event.flagPresser().func = async function*(this:Sprite) {
     mouse.show();
     for(;;){

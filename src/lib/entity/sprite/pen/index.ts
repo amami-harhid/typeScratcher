@@ -109,18 +109,13 @@ export class PenSprite implements IPenSprite {
         this.render.renderer.penClear(this._skinId);
     }
     penUp() : void {
-        if(this._skinId == -1){
-            console.error(NotPrepareMessage);
-            return;
+        if(this._skinId == -1 || this._prepareDone == false){
+            this.prepare();
         }
         this._penDown = false;
     }
     penDown() : void {
-        if(this._skinId == -1){
-            console.error(NotPrepareMessage);
-            return;
-        }
-        if(this._prepareDone == false) {
+        if(this._skinId == -1 || this._prepareDone == false){
             this.prepare();
         }
         this._penDown = true;
@@ -216,8 +211,8 @@ export class PenSprite implements IPenSprite {
      * スプライトのスタンプをとる
      */
     stamp() : void {
-        if(this._skinId == -1){
-            console.error(NotPrepareMessage);
+        if(this._skinId == -1 || this._prepareDone == false){
+            this.prepare();
         }
         const stampDrawingID = this._sprite.drawableID;
         if(this._skinId > -1 && stampDrawingID > -1 && this._sprite.DragMode.dragging == false){
@@ -239,11 +234,38 @@ export class PenSprite implements IPenSprite {
             this.render.renderer.penStamp(this._skinId, stampDrawingId);
         }
     }
-    /** @internal */
+    drawBounds(): void {
+        if(this._skinId == -1 || this._prepareDone == false){
+            this.prepare();
+        }
+        if(this._skinId > -1 ){
+            this.penClear();
+            const bounds = this._sprite.Looks.size.drawingSize;
+            this.render.renderer.penLine(this._skinId, 
+                    this._penRgbAttributes, 
+                    bounds.left, bounds.top, 
+                    bounds.right, bounds.top
+                );
+            this.render.renderer.penLine(this._skinId, 
+                    this._penRgbAttributes, 
+                    bounds.right, bounds.top, 
+                    bounds.right, bounds.bottom
+                );
+            this.render.renderer.penLine(this._skinId, 
+                    this._penRgbAttributes, 
+                    bounds.right, bounds.bottom, 
+                    bounds.left, bounds.bottom
+                );
+            this.render.renderer.penLine(this._skinId, 
+                    this._penRgbAttributes, 
+                    bounds.left, bounds.bottom, 
+                    bounds.left, bounds.top
+                );
+        }
+    }
     drawLine(): void {
-        if(this._skinId == -1){
-            console.error(NotPrepareMessage);
-            return;
+        if(this._skinId == -1 || this._prepareDone == false){
+            this.prepare();
         }
 
         if(this._penDown === true){
@@ -265,10 +287,8 @@ export class PenSprite implements IPenSprite {
     }
     /** @internal */
     drawPoint() : void {
-        console.log(this._skinId)
-        if(this._skinId == -1){
-            console.error(NotPrepareMessage);
-            return;
+        if(this._skinId == -1 || this._prepareDone == false){
+            this.prepare();
         }
         if(this._skinId > -1 && this._sprite.DragMode.dragging == false){
             const x0 = this._sprite.Properties.position.x;

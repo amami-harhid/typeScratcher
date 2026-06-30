@@ -27,5 +27,8 @@ export type TEnv = {
      * モニター表示数（縦）
      */
     MonitorMaxRowSize: number,
-
+    /**
+     * デバッグモード
+     */
+    debugMode: boolean;
 };

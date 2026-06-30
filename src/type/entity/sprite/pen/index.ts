@@ -60,4 +60,8 @@ export interface IPenSprite {
      * サイズ
      */
     readonly Size: IPenSpriteSize;
+    /**
+     * スプライトの矩形をラインで描く
+     */
+    drawBounds(): void;
 }

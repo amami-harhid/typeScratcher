@@ -7,8 +7,8 @@ import { engine, Engine } from "..";
 import { Entity } from "../../entity/entity";
 import { EntityProxyExt } from "../../entity/entity/entityProxyExt";
 import { EntitySound } from "../../entity/entity/entitySound";
+import { Env } from "../../common/env";
 import { FunctionChecker } from "../../utils/functionChecker";
-import { INTERVAL } from "./interval";
 import { Monitors } from "../../entity/monitor/monitors";
 import { QuestionBoxElement } from "../../gui/questionBoxElement";
 import { Rewriter } from "./rewriter";
@@ -147,7 +147,7 @@ export class ThreadManager {
             this.intervalId = undefined;
         }
         ThreadManager._timer = Math.floor(performance.now());
-        this.intervalId = setInterval(this.interval, INTERVAL, this);
+        this.intervalId = setInterval(this.interval, Math.floor(1000/Env.fps), this);
         this._running = true;
     }
     async interval(me: ThreadManager):Promise<void> {

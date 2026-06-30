@@ -1,4 +1,5 @@
 import { Entity } from "../entity";
+import { Env } from "../../common/env";
 import { engine, Engine } from "../../engine";
 import { EntitySound } from "../entity/entitySound";
 import { Image } from "../../image";
@@ -145,6 +146,9 @@ export class Sprite extends Entity implements ISprite {
     }
     private _updateSkipCounter = 0;
     update() {
+        if(Env.debugMode === true){
+            this.Pen.drawBounds();
+        }
         // クローンされた直後は 本体と同じ場所・同じ大きさ・画像効果で出現してしまわないよう、
         // 「クローンされたとき」に間に合うように １回だけレンダー反映をスキップさせる
         if( this._isClone == true && this._updateSkipCounter < 1) {

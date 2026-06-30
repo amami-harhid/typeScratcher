@@ -1,12 +1,11 @@
 import { Engine, engine } from '../../engine';
 import { EntityProxyExt } from '../entity/entityProxyExt';
-import { INTERVAL } from '../../engine/thread/interval';
+import { Env } from '../../common/env';
 import { MathUtil } from '../../utils/math-util';
 import { ScratchElement } from '../../gui/scratchElement';
 import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '../sprite';
 import { Utils } from '../../utils/utils';
-import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionMove } from '../../../type/entity/sprite/ISpriteMotionMove';
@@ -184,7 +183,7 @@ export class SpriteMotionMove implements ISpriteMotionMove {
         const _x = this.entity.Properties.position.x;
         const _y = this.entity.Properties.position.y;
         const _xy = {x: _x, y: _y};
-        const _count = Math.floor((sec * 1000 ) / INTERVAL);
+        const _count = Math.floor(sec * Env.fps);
         const _def_x = ( x - _x ) / _count;
         const _def_y = ( y - _y ) / _count;
         return new Promise<void>((resolve)=>{

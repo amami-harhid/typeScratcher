@@ -27,6 +27,7 @@ export declare interface IRenderWebGL {
     _allDrawables: IDrawable[];
     /** 全てのskinの配列 */
     _allSkins: ISkin[];
+    _backgroundColor4f:number[];
     /** canvas context */
     gl: WebGLRenderingContext;
     /** next skin id */
@@ -187,6 +188,16 @@ export declare interface IRenderWebGL {
      * @returns {number} - skin id.  
      */
     s3CreateMonitorSkin(drawableID:number, label:string):number;
+
+    /**
+     * Set the background color for the stage
+     * The stage will be cleared with this color each frame
+     * red, green, blue  0 ～ 1.0
+     * @param red 
+     * @param green 
+     * @param blue 
+     */
+    setBackgroundColor(red: number, green: number, blue: number): void;
     /**
      * Set a drawable's order in the drawable list (effectively, z/layer).
      * Can be used to move drawables to absolute positions in the list,

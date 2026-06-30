@@ -3,9 +3,9 @@ import type { KEYBOARD_KEYS_Type } from '../type/engine/keyboad';
 import type { RotationStyle } from '../type/entity/RotationStyle';
 import { ScratchFontFamily as _ScratchFontFamily } from '../type/svgText';
 import type { IEngine } from '../type/engine';
+import type { TEnv } from './common/env';
 import type { SImage } from '../type/image';
 import type { SLoop } from '../lib/engine/loop';
-import type { SMonitors } from './entity/monitor';
 import type { SSound } from '../type/sound';
 import type { SSprite } from '../type/entity/sprite';
 import type { SStage } from '../type/entity/stage';
@@ -14,7 +14,6 @@ import type { IUtils } from '../type/util/utils';
 import { SPEECH_LOCALE } from '../type/speech/IVoice';
 import { VOICE_ID } from '../type/speech/IVoice';
 import { SVariable } from './entity/monitor/SVariable';
-
 type stageBounds = {w: number, h: number};
 
 export type ExportType = {
@@ -26,6 +25,7 @@ export type ExportType = {
     ImageEffective: ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS_Type
     engine: IEngine,
+    Env: TEnv,
     textToSvg: ITextToSvg,
     Loop: SLoop,
     ScratchFontFamily: typeof _ScratchFontFamily,

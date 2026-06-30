@@ -9,7 +9,6 @@ import type { ISpriteEvent } from './ISpriteEvent';
 import type { ISpriteDragMode } from './ISpriteDragMode';
 import type { ISpriteCostume } from './ISpriteCostume';
 import type { IPenSprite } from './pen';
-import type { ISpriteLooksBackdrop } from './ISpriteLooksBackdrop';
 /**
  * Sprite
  */
@@ -94,4 +93,5 @@ export interface ISprite extends IEntity {
 
     //isClone: boolean;
 
+    
 };
