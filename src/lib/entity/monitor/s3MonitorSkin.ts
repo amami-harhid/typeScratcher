@@ -267,7 +267,7 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
     /**
      * @returns {CanvasRenderingContext2D}
      */
-    get ctx() {
+    get ctx() : CanvasRenderingContext2D{
         return this._ctx;
     }
     /**
