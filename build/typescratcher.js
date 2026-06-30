@@ -51143,7 +51143,8 @@ class R$ extends x$ {
     super(A), this.Distance = new nz(A);
   }
   isTouching(A, e = !0) {
-    return this.isTouchingTargetToTarget(A, e);
+    const r = this.entity;
+    return r.render.renderer.updateDrawableScale(r.drawableID, [r.Properties.scale.w, r.Properties.scale.h]), this.isTouchingTargetToTarget(A, e);
   }
   /**
    * スプライトまでの距離
@@ -51151,15 +51152,18 @@ class R$ extends x$ {
    * @returns 
    */
   distance(A) {
-    return this.Distance.to(A);
+    const e = this.entity;
+    return e.render.renderer.updateDrawableScale(e.drawableID, [e.Properties.scale.w, e.Properties.scale.h]), this.Distance.to(A);
   }
   /**
    * スプライトへの向き
    * @param target 
    */
   degree(A) {
-    const e = A;
-    return this.degreeToTarget(e);
+    const e = this.entity;
+    e.render.renderer.updateDrawableScale(e.drawableID, [e.Properties.scale.w, e.Properties.scale.h]);
+    const r = A;
+    return this.degreeToTarget(r);
   }
   /**
    * 自分に触れているスプライトを配列にして返す
@@ -51167,8 +51171,10 @@ class R$ extends x$ {
    * @returns 
    */
   getTouching() {
-    const A = He.getSprites();
-    return this.getTouchingTarget(A);
+    const A = this.entity;
+    A.render.renderer.updateDrawableScale(A.drawableID, [A.Properties.scale.w, A.Properties.scale.h]);
+    const e = He.getSprites();
+    return this.getTouchingTarget(e);
   }
 }
 class H$ {

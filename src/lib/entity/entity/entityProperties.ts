@@ -92,10 +92,6 @@ export class EntityProperties implements IEntityProperties {
         const _image = _entity.$image as EntityImage;
         const effect = _image.effect.get();
         Object.assign( prop, effect );
-        if((this.entity as Entity).isSprite === true && (this.entity as Sprite).isClone === false){
-            //console.log("effect ghost = ", effect.ghost)
-            //prop.ghost = 0;
-        }
         _entity.render.renderer.updateDrawableProperties(_entity.drawableID, prop);
     }
 }

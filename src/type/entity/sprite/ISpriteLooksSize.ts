@@ -1,4 +1,5 @@
 import type { TBounds, TBoundsEx, TScaleArr } from "../../common/typeCommon";
+import { ISpriteLooksSizeScale } from "./ISpriteLooksSizeScale";
 
 /**
  * スプライトのサイズ
@@ -44,7 +45,7 @@ export interface ISpriteLooksSize {
      *  console.log('縦', scale.h);
      * ```
      */
-    get scale() : {w:number,h:number};
+    get scale() : ISpriteLooksSizeScale;
     /**
      * 縦横サイズ
      * ```ts

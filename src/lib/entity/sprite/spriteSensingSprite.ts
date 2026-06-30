@@ -4,6 +4,7 @@ import { engine, Engine } from '../../engine';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteSensingSprite } from '../../../type/entity/sprite/ISpriteSensingSprite';
 import type { ISpriteSensingDistance } from '../../../type/entity/sprite/ISpriteSensingDistance';
+import { Sprite } from '.';
 /**
  * Sprite Sensing(調べる) Sprite
  */
@@ -18,6 +19,8 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
         this.Distance = new SpriteSensingDistance(entity);
     }
     isTouching(sprites: ISprite[], includeClone: boolean = true): boolean {
+        const _entity = this.entity as Sprite;
+        _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
         return this.isTouchingTargetToTarget(sprites, includeClone);
     }
     /**
@@ -26,6 +29,8 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
      * @returns 
      */
     distance(target:ISprite) : number {
+        const _entity = this.entity as Sprite;
+        _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
         return this.Distance.to(target)
     }
     /**
@@ -33,6 +38,8 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
      * @param target 
      */
     degree(target:ISprite): number {
+        const _entity = this.entity as Sprite;
+        _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
         const _target:ISprite = target as unknown as ISprite;
         return this.degreeToTarget(_target);
     }
@@ -42,6 +49,8 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
      * @returns 
      */
     getTouching() : ISprite[] {
+        const _entity = this.entity as Sprite;
+        _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
         const targetSprites = (engine as Engine).getSprites();
         const entities = this.getTouchingTarget(targetSprites);
         return entities;

@@ -2,18 +2,22 @@ import { Sprite } from '.';
 import type { TBounds, TBoundsEx, TScaleArr } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteLooksSize } from '../../../type/entity/sprite/ISpriteLooksSize';
+import { SpriteLooksSizeScale } from './spriteLooksSizeScale';
 
 /** サイズ */
 export class SpriteLooksSize implements ISpriteLooksSize{
 
     private entity: Sprite;
-
+    private _scale: SpriteLooksSizeScale;
+    private _w!: number;
+    private _h!: number;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
         this.entity = entity as Sprite;
+        this._scale = new SpriteLooksSizeScale(entity);
     }
     /**
      * 横サイズ
@@ -22,7 +26,14 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      * ```
      */
     get w () : number {
-        return this.entity.Properties.scale.w;
+        if(this._w == undefined){
+            //const _org_w = this.entity.Properties.scale.w;
+            //this.entity.Properties.scale.w = 100;
+            const _bounds = this.drawingSize;
+            this._w = _bounds.width;
+            //this.entity.Properties.scale.w = _org_w;
+        }
+        return this._w;
     }
     /**
      * 横サイズ
@@ -32,7 +43,11 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      * ```
      */
     set w (width: number) {
-        this.entity.Properties.scale.w = width;
+        this._w = width;
+        this.entity.Properties.scale.w = 100;
+        const _bounds = this.drawingSize;
+        const _scale = width / _bounds.width * 100;
+        this.entity.Properties.scale.w = _scale;
     }
     /**
      * 縦サイズ
@@ -41,7 +56,14 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      * ```
      */
     get h () : number {
-        return this.entity.Properties.scale.h;
+        if(this._h == undefined){
+            //const _org_h = this.entity.Properties.scale.h;
+            //this.entity.Properties.scale.h = 100;
+            const _bounds = this.drawingSize;
+            this._h = _bounds.width;
+            //this.entity.Properties.scale.h = _org_h;
+        }
+        return this._h;
     }
     /**
      * 縦サイズ
@@ -51,7 +73,11 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      * ```
      */
     set h (height: number) {
-        this.entity.Properties.scale.h = height;
+        this._h = height;
+        this.entity.Properties.scale.h = 100;
+        const _bounds = this.drawingSize;
+        const _scale = height / _bounds.height * 100;
+        this.entity.Properties.scale.h = _scale;
     }
     /**
      * 縦横サイズ
@@ -62,8 +88,8 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      *  console.log('縦', scale.h);
      * ```
      */
-    get scale() : {w:number,h:number} {
-        return {w:this.entity.Properties.scale.w, h:this.entity.Properties.scale.h};
+    get scale() : SpriteLooksSizeScale {
+        return this._scale;
     }
     /**
      * 縦横サイズ
@@ -91,6 +117,9 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      * ```
      */
     get drawingSize() : TBoundsEx{
+        // スケールと座標位置、角度、表示非表示をレンダー側へ渡す
+        this.entity.Properties.update();
+        // this.entity.render.renderer.updateDrawableScale(this.entity.drawableID, [this.entity.Properties.scale.w, this.entity.Properties.scale.h]);
         const bounds = this.entity.render.renderer.getBounds(this.entity.drawableID);
         const _bounds: TBoundsEx = {...bounds, width: bounds.right-bounds.left, height: bounds.top - bounds.bottom};
         return _bounds;
