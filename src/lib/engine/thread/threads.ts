@@ -83,7 +83,6 @@ export class ThreadManager {
     isExist(thread: ThreadObj<any>): boolean {
         for( const _thread of ThreadBank.threadArr) {
             if(_thread.threadId == thread.threadId) {
-                console.log('exist thread status = ', _thread.status);
                 return true;
             }
         }
@@ -174,7 +173,6 @@ export class ThreadManager {
         }
         // TODO 処理中に追加されたスレッド(例：クローンされたときのスレッド)が消えてしまうときは
         // このあたりを見直すこと！
-        console.log('thread数=', threadArr.length);
         ThreadBank.threadArr = [...threadArr];
         me._interval(me, threadArr);
     }
@@ -460,7 +458,12 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
             if(me._proxy == null) throw 'プロキシが空です'
             me.done = value.done || false;
             if(me.done === true){
-                me.status = ThreadStatus.COMPLETED;
+                // スレッドのなかで再実行のために「YIELD」に変更する場合がある
+                // 例）メッセージ受信処理のなかで同じメッセージを送信する場合。
+                // YIELDをCOMPLETEDにされると再実行できないので次の処置をしている。
+                if(me.status != ThreadStatus.YIELD) {
+                    me.status = ThreadStatus.COMPLETED;
+                }
                 me._proxy.setStopThisScriptSwitch(false); // 再実行時に落ちないようにする
             }else{
                 me.status = ThreadStatus.YIELD;

@@ -1,7 +1,7 @@
 /**
  * いろいろ試そう-006
  * 
- * 自由落下
+ * 質問と回答
  */
 import { Typescratcher as Ts } from "../../src/";
 import { Sprite } from "../../src/";
