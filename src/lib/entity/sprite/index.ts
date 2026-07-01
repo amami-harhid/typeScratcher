@@ -41,7 +41,7 @@ export class Sprite extends Entity implements ISprite {
     private _properties: ISpriteProperties;
     private _sensing: ISpriteSensing;
     private _penSprite: PenSprite;
-    private _debugSprite: PenSprite;
+    private _debugSprite!: PenSprite;
     private _dragMode : SpriteDragMode;
     private _isClone: boolean = false;
     private _clones: ISprite[] = [];
@@ -62,7 +62,9 @@ export class Sprite extends Entity implements ISprite {
         this._sensing = new SpriteSensing(this);
         this._dragMode = new SpriteDragMode(this);
         this._penSprite = new PenSprite(this);
-        this._debugSprite = new PenSprite(this, true); // debug layer
+        if(Env.debugMode === true) {
+            this._debugSprite = new PenSprite(this, true); // debug layer
+        }
         this._isSprite = true; // これはスプライトです！
         const _engine = engine as Engine;
         _engine.addSprite(this);

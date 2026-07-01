@@ -5,7 +5,7 @@
  */
 import { Typescratcher as Ts } from "../../src/";
 import { Sprite } from "../../src/";
-Ts.Env.debugMode = true;
+//Ts.Env.debugMode = true;
 //Ts.Env.fps = 5;
 
 // 【画像読み込み】
