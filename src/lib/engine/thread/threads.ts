@@ -46,6 +46,12 @@ class ThreadBank {
     static threadMap: Map<string, ThreadObj<any>> = new Map<string, ThreadObj<any>>();
     static threadArr: ThreadObj<any>[] = [];
     static add(thread: ThreadObj<any>) {
+        for(const _thread of ThreadBank.threadArr) {
+            if(_thread.threadId == thread.threadId) {
+                return;          
+            }
+        }
+        // 未登録の場合のみ登録する
         ThreadBank.threadArr.push(thread);
     }
     static removeByEntityId(entityId: string) {
@@ -73,6 +79,15 @@ export class ThreadManager {
     }
     add(threadObj: ThreadObj<any>) {
         ThreadBank.add(threadObj);
+    }
+    isExist(thread: ThreadObj<any>): boolean {
+        for( const _thread of ThreadBank.threadArr) {
+            if(_thread.threadId == thread.threadId) {
+                console.log('exist thread status = ', _thread.status);
+                return true;
+            }
+        }
+        return false;
     }
     removeByEntityId(entityId: string) {
         ThreadBank.removeByEntityId(entityId);
@@ -159,6 +174,7 @@ export class ThreadManager {
         }
         // TODO 処理中に追加されたスレッド(例：クローンされたときのスレッド)が消えてしまうときは
         // このあたりを見直すこと！
+        console.log('thread数=', threadArr.length);
         ThreadBank.threadArr = [...threadArr];
         me._interval(me, threadArr);
     }
@@ -340,17 +356,17 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
     public entityId: string;;
     // public childObj: ThreadObj|null = null; 
     // public parentObj: TThreadObj|null = null;
-    private _doubleRunable: boolean = false;
+    private _foreverExist: boolean = false;
     private _isStarted: boolean = false;
     private _args: T[];
     private _isDeadThread: boolean;
-    constructor(entity:IEntity, doubleRunable=false) {
+    constructor(entity:IEntity, foreverExist=false) {
         super();
         this._entity = entity;
         this.threadId = Utils.generateUUID();
         //this.genProxy();
         this.entityId = (entity as Entity).id;
-        this._doubleRunable = doubleRunable;
+        this._foreverExist = foreverExist;
         this._proxy = this.genProxy();
         this._args = [];
         this._isDeadThread = false;
@@ -419,8 +435,8 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
     get originalF() {
         return this._originalF;
     }
-    get doubleRunable() {
-        return this._doubleRunable;
+    get foreverExist() {
+        return this._foreverExist;
     }
     protected _generateUUID () {
         return Utils.generateUUID();

@@ -184,7 +184,9 @@ export class ScratchEvent extends EventEmitter {
         }
     }
     public messageReceiverRegist(messageId: string): void {
+        console.log('ScratchEvent[1] messageId=', messageId);
         if( !this._messageReceiverIdsPool.includes(messageId)){
+            console.log('ScratchEvent[2] messageId=', messageId);
             // 登録されていないとき
             // 登録する
             this._messageReceiverIdsPool.push(messageId);
@@ -194,6 +196,7 @@ export class ScratchEvent extends EventEmitter {
     }
     private _onMessageReceiverKick(messageId: string) {
         this.on(messageId, (...args:any)=> {
+            console.log('ScratchEvent[3] messageId=', messageId);
             const sprites = (engine as Engine).getSprites();
             for(const s of sprites) {
                 (s.Broadcast as EntityBroadCast).broadcastReceivedKick(messageId, ...args);

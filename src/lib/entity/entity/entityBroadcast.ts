@@ -28,9 +28,11 @@ export class EntityBroadCast implements IEntityBroadCast {
      * @param args 
      */
     send(messageId: string, ...args:any[]) {
+        console.log('entityBroadcast[1], send messageId', messageId);
         const _messageId = this.getMessageId(messageId);
         const element = EntityBroadCast.getBroadcastElement(_messageId);
         if(element.funcArr.length > 0){
+            console.log('entityBroadcast[2], send messageId', messageId);
             (engine as Engine).runtime.scratchEvent.emit(_messageId, ...args);
         }
     }
@@ -113,11 +115,16 @@ export class EntityBroadCast implements IEntityBroadCast {
         return `message_${messageId}`;
     }
     public broadcastReceivedKick(messageId: string, ...args:any[]) :void {
+        console.log('entityBraoadcast broadcastReceivedKick[1] messageId=', messageId);
         const element = EntityBroadCast.getBroadcastElement(messageId);
+        console.log(element);
         for(const elementFunc of element.funcArr){
+            console.log('entityBroadcast broadcastReceivedKick[2]')
             const threadObj = elementFunc.thread;
+            console.log("exists=", threadManager.isExist(threadObj as unknown as ThreadObj<any>));
             // ジェネレーター再設定( 引数付き )
-            threadObj.setFunc(elementFunc.func, ...args);
+            threadObj.setFunc((threadObj as ThreadObj<any>).originalF, ...args);
+            console.log((threadObj as ThreadObj<any>).status);
             // 待機中にする
             threadObj.status = ThreadStatus.YIELD;
         }
