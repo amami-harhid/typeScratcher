@@ -4,28 +4,29 @@ import { Render } from '../../../render';
 import { Sprite } from '../../sprite';
 import { PenSpriteSize } from './penSpriteSize';
 import { PenSpriteHSVColor } from './penSpriteHSVColor';
-import { StageLayering } from '../../../../type/entity/stage/CStageLayering';
+import { StageLayering, StageLayeringValue } from '../../../../type/entity/stage/CStageLayering';
 import type { TPenAttributes } from '../../../../type/pen';
 import type { IPenSprite } from '../../../../type/entity/sprite/pen';
 
-
 const NotPrepareMessage = 'prepareが行われていません';
-class PenDrawable {
-    private static instance: PenDrawable;
-    private _skinId: number;
+
+class BaseDrawable {
+    protected _skinId: number;
     constructor(){
         this._skinId = -1;
     }
     get skinId() :number {
         return this._skinId;
     }
+}
+class PenDrawable extends BaseDrawable{
+    private static instance: PenDrawable;
     static getInstance(): PenDrawable {
         if(PenDrawable.instance == undefined){
             PenDrawable.instance = new PenDrawable();
         }
         return PenDrawable.instance;
     }
-
     createPen(render: Render): number{
         if(this._skinId == -1){
             const penDrawableId = render.renderer.createDrawable(StageLayering.PEN_LAYER);
@@ -35,6 +36,26 @@ class PenDrawable {
         }
         return this._skinId;
     }
+
+}
+class DebugDrawable extends BaseDrawable{
+    private static instance: DebugDrawable;
+    static getInstance(): DebugDrawable {
+        if(DebugDrawable.instance == undefined){
+            DebugDrawable.instance = new DebugDrawable();
+        }
+        return DebugDrawable.instance;
+    }
+    createPen(render: Render): number{
+        if(this._skinId == -1){
+            const penDrawableId = render.renderer.createDrawable(StageLayering.DEBUG_LAYER);
+            const skinId = render.renderer.createPenSkin();
+            render.renderer.updateDrawableSkinId(penDrawableId, skinId);
+            this._skinId = skinId;
+        }
+        return this._skinId;
+    }
+
 }
 export class PenSprite implements IPenSprite {
     private render: Render;
@@ -49,34 +70,48 @@ export class PenSprite implements IPenSprite {
     private _x0?: number;
     private _y0?: number;
     private _sprite: Sprite;
-    private _penDrawableId: number;
+    //private _penDrawableId: number;
     private _Size: PenSpriteSize;
     private _HSVColor : PenSpriteHSVColor;
     private _penDrawable: PenDrawable;
+    private _debugDrawable! : DebugDrawable;
+    private _debugMode : boolean;
     /**
      * @constructor
      * @param render { Render } 
      */
-    constructor(sprite: Sprite){
+    constructor(sprite: Sprite, debug: boolean = false){
         this._sprite = sprite;
         this.render = sprite.render;
         this._penDown = false;
         this._prepareDone = false;
-        this._penAttributes = {color4f:[240,1,1,1], diameter: 1};
-        this._penRgbAttributes = {color4f:[0,0,1,1], diameter: 1};
-        this._penSize = 1;
-        this._penDrawableId = -1;
+        if(debug === true){
+            this._penAttributes = {color4f:[0,1,1,1], diameter: 1};
+            this._penRgbAttributes = {color4f:[1,0,0,1], diameter: 1};
+            this._penSize = 1;
+        }else{
+            this._penAttributes = {color4f:[240,1,1,1], diameter: 1};
+            this._penRgbAttributes = {color4f:[0,0,1,1], diameter: 1};
+            this._penSize = 1;
+        }
+        //this._penDrawableId = -1;
         //this._skinId = -1;
         this._Size = new PenSpriteSize(this);
         this._HSVColor = new PenSpriteHSVColor(this);
+        this._debugMode = debug;
         this._penDrawable = PenDrawable.getInstance();
+        if(debug === true) {
+            this._debugDrawable = new DebugDrawable();
+        }
         this._skinId = this._penDrawable.skinId;
+
     }
     _createPen() : void {
-        this._skinId = this._penDrawable.createPen(this.render);
-        this._penDrawableId = this.render.renderer.createDrawable(StageLayering.PEN_LAYER);
-        this._skinId = this.render.renderer.createPenSkin();
-        this.render.renderer.updateDrawableSkinId(this._penDrawableId, this._skinId);
+        if(this._debugMode === true){
+            this._skinId = this._debugDrawable.createPen(this.render);
+        }else{
+            this._skinId = this._penDrawable.createPen(this.render);
+        }
     }
     dispose(): void {
         if(this._skinId>-1){
@@ -235,11 +270,14 @@ export class PenSprite implements IPenSprite {
         }
     }
     drawBounds(): void {
+        if(this._sprite.Properties.visible === false) {
+            return;
+        }
         if(this._skinId == -1 || this._prepareDone == false){
             this.prepare();
         }
         if(this._skinId > -1 ){
-            this.penClear();
+            this.render.renderer.penClear(this._skinId);
             const bounds = this._sprite.Looks.size.drawingSize;
             this.render.renderer.penLine(this._skinId, 
                     this._penRgbAttributes, 

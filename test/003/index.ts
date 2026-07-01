@@ -14,7 +14,7 @@ const BasketballImage = new TS.Image({BasketballPng});
 
 const amon = new TS.Sprite('amon');
 amon.Costume.add([AmonImage]);
-amon.Motion.direction.degree = 95;
+amon.Motion.direction.degree = 95; // 少し傾ける
 
 const stage = new TS.Stage();
 stage.Backdrop.add([BlueskyImage, BasketballImage]);

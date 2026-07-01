@@ -20,6 +20,8 @@ export const StageLayering = {
     /** モニター */
     MONITOR_LAYER : 'monitor',
 
+    /** デバッグ */
+    DEBUG_LAYER : 'debug',
 
 } as const;
 
@@ -31,7 +33,8 @@ export const LAYER_GROUPS = function () : StageLayeringValue[]{
         StageLayering.PEN_LAYER,
         StageLayering.SPRITE_LAYER,
         StageLayering.TEXT_LAYER,
-        StageLayering.MONITOR_LAYER
+        StageLayering.MONITOR_LAYER,
+        StageLayering.DEBUG_LAYER,
     ];
 }
 

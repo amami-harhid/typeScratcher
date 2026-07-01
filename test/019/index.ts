@@ -6,6 +6,7 @@
 import { Typescratcher as Ts } from "../../src/";
 import { Sprite } from "../../src/";
 Ts.Env.debugMode = true;
+//Ts.Env.fps = 5;
 
 // 【画像読み込み】
 import catSvg from '../assets/cat.svg';
@@ -19,11 +20,11 @@ import { TBoundsEx } from "src/type/common/typeCommon";
 const WaterImage = new Ts.Image({WaterSvg});
 
 // 【スプライト】(犬)
-const dog = new Ts.Sprite('shark');
+const dog = new Ts.Sprite('dog');
 // 画像をスプライトへ追加
 dog.Costume.add( [DogImage, CatImage] );
 dog.Looks.size.scale = [20, 20];
-dog.Motion.position.xy = [ 0, 180 ];
+dog.Motion.position.xy = [ 0, 200 ];
 
 // ステージの幅
 const StageWidth = Ts.StageBounds.w;
@@ -44,7 +45,7 @@ Ts.Variable.monitoring({mouse});
 mouse.hide(); // 隠す
 
 dog.Event.flagPresser().func = async function*(this:Sprite){
-    this.Motion.position.xy = [ 0, 180 ];
+    this.Motion.position.xy = [ 0, 200 ];
     this.Motion.rotation.style = Ts.Rotation.LEFT_RIGHT; // 左右のみ反転
 
 };
@@ -116,7 +117,8 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite, BlockBounds
     const _diffY = Bounds.top - DogHeight/2 - this.Motion.position.y;
     //console.log('_diffY=',_diffY)
     const _IsTouching = isTouching.bind(this);
-    this.Pen.prepare();
+    //this.Pen.prepare();
+    this.Pen.penDown();
 
     // ずっと繰り返す
     for(;;){
@@ -131,12 +133,13 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite, BlockBounds
         // 自由落下
         if(onFloor === false ) {
             this.Motion.position.y += speed;
+            this.Motion.move.steps(walkSpeed);
             speed -= GRAVITY;
         }
         yield;
     }
 }
-
+let walkSpeed = 0;
 // メッセージ（START)を受け取ったとき
 dog.Broadcast.receiver("START").func = async function*(this: Sprite) {
 
@@ -147,15 +150,18 @@ dog.Broadcast.receiver("START").func = async function*(this: Sprite) {
             // 進める
             if(this.Sensing.keyboard.isDown(Ts.Keyboard.RIGHT)){
                 this.Motion.direction.degree = 90;
-                this.Motion.move.steps(5);
-            }
-            if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)){
+                walkSpeed = 10;
+                this.Motion.move.steps(walkSpeed);
+            }else if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)){
                 this.Motion.direction.degree = -90;
-                this.Motion.move.steps(5);
+                walkSpeed = 10;
+                this.Motion.move.steps(walkSpeed);
+            }else{
+                walkSpeed = 0;
             }
             //this.Motion.move.steps(10);
             // 端についたら跳ね返る
-            //this.Motion.move.ifOnEdgeBounce();
+            this.Motion.move.ifOnEdgeBounce();
         }
         yield;
     }

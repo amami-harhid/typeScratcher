@@ -1,8 +1,10 @@
+import { engine, Engine } from '../../engine';
+import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '.';
-import type { TBounds, TBoundsEx, TScaleArr } from '../../../type/common/typeCommon';
+import { SpriteLooksSizeScale } from './spriteLooksSizeScale';
+import type { TBoundsEx, TScaleArr } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteLooksSize } from '../../../type/entity/sprite/ISpriteLooksSize';
-import { SpriteLooksSizeScale } from './spriteLooksSizeScale';
 
 /** サイズ */
 export class SpriteLooksSize implements ISpriteLooksSize{
@@ -44,10 +46,14 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      */
     set w (width: number) {
         this._w = width;
-        this.entity.Properties.scale.w = 100;
-        const _bounds = this.drawingSize;
-        const _scale = width / _bounds.width * 100;
-        this.entity.Properties.scale.w = _scale;
+        if(this.hasSkin()){
+            this._updateSizeW();
+        }else{
+            const scratchEvent = (engine as Engine).runtime.scratchEvent;
+            const _update = this._updateSizeW.bind(this);
+            scratchEvent.removeListener(ScratchEvent.SPRITE_INIT, _update);
+            scratchEvent.once(ScratchEvent.SPRITE_INIT, _update);
+        }
     }
     /**
      * 縦サイズ
@@ -59,8 +65,12 @@ export class SpriteLooksSize implements ISpriteLooksSize{
         if(this._h == undefined){
             //const _org_h = this.entity.Properties.scale.h;
             //this.entity.Properties.scale.h = 100;
-            const _bounds = this.drawingSize;
-            this._h = _bounds.width;
+            if(this.hasSkin()){
+                const _bounds = this.drawingSize;
+                this._h = _bounds.width;
+            }else{
+                this._h = -Infinity;
+            }
             //this.entity.Properties.scale.h = _org_h;
         }
         return this._h;
@@ -74,6 +84,31 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      */
     set h (height: number) {
         this._h = height;
+        // sprite.init()実行後でないとSkinは作成されていない
+        if(this.hasSkin()){
+            this._updateSizeH();
+        }else{
+            const scratchEvent = (engine as Engine).runtime.scratchEvent;
+            const _update = this._updateSizeH.bind(this);
+            scratchEvent.removeListener(ScratchEvent.SPRITE_INIT, _update);
+            scratchEvent.once(ScratchEvent.SPRITE_INIT, _update);
+        }
+    }
+    sizeUpdate() {
+        const scratchEvent = (engine as Engine).runtime.scratchEvent;
+        if(scratchEvent.listenerCount(ScratchEvent.SPRITE_INIT) > 0) {
+            scratchEvent.emit(ScratchEvent.SPRITE_INIT);
+        }
+    }
+    private _updateSizeW(): void {
+        const width = this._w;
+        this.entity.Properties.scale.w = 100;
+        const _bounds = this.drawingSize;
+        const _scale = width / _bounds.width * 100;
+        this.entity.Properties.scale.w = _scale;    
+    }
+    private _updateSizeH(): void {
+        const height = this._h;
         this.entity.Properties.scale.h = 100;
         const _bounds = this.drawingSize;
         const _scale = height / _bounds.height * 100;
@@ -123,6 +158,16 @@ export class SpriteLooksSize implements ISpriteLooksSize{
         const bounds = this.entity.render.renderer.getBounds(this.entity.drawableID);
         const _bounds: TBoundsEx = {...bounds, width: bounds.right-bounds.left, height: bounds.top - bounds.bottom};
         return _bounds;
+    }
+    private hasSkin() : boolean {
+        const _drawable = this.entity.render.renderer._allDrawables[this.entity.drawableID];
+        if(_drawable == undefined)
+            return false;
+        if(_drawable.skin == undefined)
+            return false;
+
+        return true;
+
     }
 
 }

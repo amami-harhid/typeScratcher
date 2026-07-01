@@ -26,6 +26,7 @@ import type { ISpriteLooks } from "../../../type/entity/sprite/ISpriteLooks";
 import type { ISpriteMotion } from "../../../type/entity/sprite/ISpriteMotion";
 import type { ISpriteProperties } from "../../../type/entity/sprite/ISpriteProperties";
 import type { ISpriteSensing } from "../../../type/entity/sprite/ISpriteSensing";
+import { SpriteLooksSize } from "./spriteLooksSize";
 
 
 /**
@@ -40,6 +41,7 @@ export class Sprite extends Entity implements ISprite {
     private _properties: ISpriteProperties;
     private _sensing: ISpriteSensing;
     private _penSprite: PenSprite;
+    private _debugSprite: PenSprite;
     private _dragMode : SpriteDragMode;
     private _isClone: boolean = false;
     private _clones: ISprite[] = [];
@@ -60,6 +62,7 @@ export class Sprite extends Entity implements ISprite {
         this._sensing = new SpriteSensing(this);
         this._dragMode = new SpriteDragMode(this);
         this._penSprite = new PenSprite(this);
+        this._debugSprite = new PenSprite(this, true); // debug layer
         this._isSprite = true; // これはスプライトです！
         const _engine = engine as Engine;
         _engine.addSprite(this);
@@ -140,6 +143,7 @@ export class Sprite extends Entity implements ISprite {
                     await Timer.wait(0.1);
                     (img as Image).skinId = skinId;
                 }
+                (me.Looks.size as SpriteLooksSize).sizeUpdate();
                 resolve(); // 完了
             });
         })
@@ -147,7 +151,7 @@ export class Sprite extends Entity implements ISprite {
     private _updateSkipCounter = 0;
     update() {
         if(Env.debugMode === true){
-            this.Pen.drawBounds();
+            this._debugSprite.drawBounds();
         }
         // クローンされた直後は 本体と同じ場所・同じ大きさ・画像効果で出現してしまわないよう、
         // 「クローンされたとき」に間に合うように １回だけレンダー反映をスキップさせる

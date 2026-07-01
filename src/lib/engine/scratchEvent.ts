@@ -40,7 +40,9 @@ export class ScratchEvent extends EventEmitter {
     static get SPRITE_GLIDE_STOP(): string {
         return "SPRITE_CLIDE_STOP";
     }
-
+    static get SPRITE_INIT(): string {
+        return "SPRITE_INIT";
+    }
     private _running:boolean;
     private _restart:boolean;
     private _keyPressedPool: string[];
