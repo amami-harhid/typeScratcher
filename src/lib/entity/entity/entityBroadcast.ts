@@ -120,6 +120,8 @@ export class EntityBroadCast implements IEntityBroadCast {
             threadObj.setFunc((threadObj as ThreadObj<any>).originalF, ...args);
             // 待機中にする
             threadObj.status = ThreadStatus.YIELD;
+            // ↑ 実行中スレッドのなかでYIELDにしたとき、Threadプロセスのなかで
+            // スレッドが終わったときにCompletedにならないようにしている。
         }
     }
     private static getBroadcastElement(messageId: string):TBroadcastElement{

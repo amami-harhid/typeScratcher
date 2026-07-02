@@ -49,6 +49,7 @@ import { Loop } from './lib/engine/loop';
 import { Variable } from './lib/entity/monitor/variable';
 import { Utils } from './lib/utils/utils';
 import type { createSvgImageAttributes } from './type/image';
+import type { TBoundsEx } from './type/common/typeCommon';
 import type { IEngine } from './type/engine';
 import type { TEnv } from './type/common/env';
 import type { IImage } from './type/image';
@@ -112,4 +113,5 @@ export const Typescratcher: ExportType = {
 export type Sprite = ISprite;
 export type Stage = IStage;
 export type Image = IImage;
+export type Bounds = TBoundsEx;
 export type ICreateSvgImageAttributes = createSvgImageAttributes;
