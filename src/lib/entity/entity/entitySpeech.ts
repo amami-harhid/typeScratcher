@@ -2,8 +2,6 @@ import { Speech } from "../../speech/";
 import { SoundPlayer } from "../../sounds/soundPlayer";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntitySpeech, NextMethodsAddPitch, NextMethodsAddVolume, NextMethodsLocale, NextMethodsPitch, NextMethodsType, NextMethodsVolume } from "../../../type/entity/entity/IEntitySpeech";
-import type { Type_speech_gender, Type_speech_local } from "../../../type/speech";
-import type { TSoundPlayerOption } from "../../../type/sound/IAudioEngine";
 import type { V_SPEECH_LOCALE } from "../../../type/speech/IVoice";
 
 /**

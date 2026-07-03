@@ -44,6 +44,7 @@ import { Sound as _Sound} from './lib/sounds';
 import { Sprite as _Sprite } from './lib/entity/sprite';
 import { Stage as _Stage } from './lib/entity/stage';
 import { ScratchFontFamily as _ScratchFontFamily } from './type/svgText';
+import { SPEECH_GENDER } from './type/speech';
 import { textToSvg } from './lib/svgText';
 import { Loop } from './lib/engine/loop';
 import { Variable } from './lib/entity/monitor/variable';
@@ -98,8 +99,9 @@ export const Typescratcher: ExportType = {
     Loop: Loop as SLoop,
     Rotation: Rotation as RotationStyle,
     ScratchFontFamily: _ScratchFontFamily as typeof _ScratchFontFamily,
-    SpeechLocale: SPEECH_LOCALE,
     Sound: _Sound as SSound,
+    SpeechGender: SPEECH_GENDER,
+    SpeechLocale: SPEECH_LOCALE,
     Sprite: _Sprite as SSprite,
     Stage: _Stage as SStage,
     StageBounds: stageBounds,

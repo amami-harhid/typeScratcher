@@ -1,6 +1,7 @@
 import type { ImageEffectiveType } from '../type/entity/ImageEffective';
 import type { KEYBOARD_KEYS_Type } from '../type/engine/keyboad';
 import type { RotationStyle } from '../type/entity/RotationStyle';
+import { SPEECH_GENDER } from './speech';
 import { ScratchFontFamily as _ScratchFontFamily } from '../type/svgText';
 import type { IEngine } from '../type/engine';
 import type { TEnv } from './common/env';
@@ -29,8 +30,9 @@ export type ExportType = {
     textToSvg: ITextToSvg,
     Loop: SLoop,
     ScratchFontFamily: typeof _ScratchFontFamily,
-    SpeechLocale: typeof SPEECH_LOCALE,
     VoiceType: typeof VOICE_ID,
+    SpeechGender: typeof SPEECH_GENDER
+    SpeechLocale: typeof SPEECH_LOCALE,
     StageBounds: stageBounds,
     Utils: IUtils,
     Variable: SVariable,
