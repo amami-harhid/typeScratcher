@@ -172,29 +172,35 @@ export class EntitySound {
             if(effect)
                 return effect.volume;
         }
-        return -Infinity;
+        return 100; // デフォルト
     }
+
     addVolume(sound: ISound, volume: number) : void {
         const _sound = sound as Sound;
         if(this.soundKeys.includes(_sound.name)) {
-            const effect = this.effectMap.get(sound.name);
-            if(effect)
-                effect.volume += volume;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
-            _sound.addVolume(_soundPlayer, volume);
+            const effect = this.effectMap.get(sound.name);
+            if(effect){
+                const _volume = _sound.toScratchVolumeLimit(effect.volume+volume);
+                _sound.setVolume(_soundPlayer, _volume);
+                effect.volume = _volume;
+            }
         }else{
             return;
         }
     }
+
     setVolume(sound: Sound, volume: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            const effect = this.effectMap.get(sound.name);
-            if(effect)
-                effect.volume = volume;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
-            sound.setVolume(_soundPlayer, volume);
+            const effect = this.effectMap.get(sound.name);
+            if(effect){
+                const _volume = sound.toScratchPitchLimit(volume);
+                sound.setVolume(_soundPlayer, _volume);
+                effect.volume = _volume;
+            }
         }else{
             return;
         }
@@ -206,28 +212,31 @@ export class EntitySound {
             if(effect)
                 return effect.pitch;
         }
-        return -Infinity;
+        return 0; // デフォルト
     }
     addPitch(sound: Sound, pitch: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            const effect = this.effectMap.get(sound.name);
-            if(effect)
-                effect.pitch += pitch;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
-            sound.addPitch(_soundPlayer, pitch);
+            const effect = this.effectMap.get(sound.name);
+            if(effect){
+                const _pitch = effect.pitch + pitch;
+                effect.pitch = sound.toScratchPitchLimit(_pitch);
+                sound.setPitch(_soundPlayer, effect.pitch);
+            }
         }else{
             return;
         }
     }
     setPitch(sound: Sound, pitch: number) : void {
         if(this.soundKeys.includes(sound.name)) {
-            const effect = this.effectMap.get(sound.name);
-            if(effect)
-                effect.pitch = pitch;
             const _soundPlayer = this.getSoundPlayer( sound.name);
             if(_soundPlayer == undefined) return;// 何もしない
-            sound.setPitch(_soundPlayer, pitch);
+            const effect = this.effectMap.get(sound.name);
+            if(effect){
+                effect.pitch = sound.toScratchPitchLimit(pitch);
+                sound.setPitch(_soundPlayer, effect.pitch);
+            }
         }else{
             return;
         }

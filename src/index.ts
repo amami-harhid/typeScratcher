@@ -114,4 +114,4 @@ export type Sprite = ISprite;
 export type Stage = IStage;
 export type Image = IImage;
 export type Bounds = TBoundsEx;
-export type ICreateSvgImageAttributes = createSvgImageAttributes;
+export type SvgImageAttributes = createSvgImageAttributes;

@@ -14,58 +14,61 @@ import catSvg from '../assets/cat.svg';
 const CatImage = new Ts.Image( {catSvg} );
 import WaterSvg from '../assets/water.svg';
 const WaterImage = new Ts.Image({WaterSvg});
+// 【音読み込み】
+import ChillWav from '../assets/Chill.wav';
+const ChillSound = new Ts.Sound({ChillWav});
 
 // 【スプライト】(Spriteネコ)
 const cat = new Ts.Sprite('cat');
+
 // 画像をスプライトへ追加
 cat.Costume.add( [CatImage] );
 cat.Motion.position.xy = [ 0, 0 ];
+
+// サウンドをスプライトへ追加
+cat.Sound.add([ ChillSound ]);
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
 stage.Backdrop.add( [WaterImage] );
 
 // 変数
-const answer = Ts.Variable.string(''); 
-Ts.Variable.monitoring({'答え': answer});
-answer.hide(); // 隠す
+const volume = Ts.Variable.number( 100 ); 
+Ts.Variable.monitoring( { volume } );
+const pitch = Ts.Variable.number( 0 );
+Ts.Variable.monitoring( { pitch } );
 
-let askingNow = false;
 cat.Event.flagPresser().func = async function*(this:Sprite){
-    answer.hide();
-    askingNow = false;
-    this.Motion.position.xy = [ 0, 0 ];
-
+    volume.value = 100;
+    pitch.value = 0;    
+    // ずっと繰り返し音を鳴らす
+    for(;;) {
+        await this.Sound.playUntilDone(ChillSound);
+        yield;
+    }
 };
 
-const ASKING = 'ASKING';
-cat.Event.keyPresser(Ts.Keyboard.SPACE).func = async function*(this:Sprite) {
-    if(askingNow === true)
-        return;
-    this.Broadcast.send(ASKING);
+cat.Event.keyPresser( 'a' ).func = async function*(this:Sprite) {
+    // ボリュームを あげる
+    this.Sound.addVolume(ChillSound, 5);
+    volume.value = this.Sound.getVolume(ChillSound);
 }
-cat.Broadcast.receiver(ASKING).func = async function*(this:Sprite) {
-    console.log(ASKING)
-    askingNow = true;
-    answer.text = await this.Sensing.askAndWait('今日はご機嫌よろしいですか？')
-    answer.show();
-    if(answer.text == 'はい') {
-        this.Looks.bubble.say('YES');        
-
-    }else if(answer.text == 'いいえ') {
-        this.Looks.bubble.think('no....');      
-
-    }else{
-        this.Looks.bubble.say('');
-        askingNow = false;
-        // 質問をする
-        console.log('RE ASKING')
-        this.Broadcast.send(ASKING);
-        // TODO 再送信をしたら受信しないみたい。なぜ？？？
-        // コードを見るかぎり、スレッドは消えていない様子。
-    }
-
+cat.Event.keyPresser( 'd' ).func = async function*(this:Sprite) {
+    // ボリュームを さげる
+    this.Sound.addVolume(ChillSound, -5);
+    volume.value = this.Sound.getVolume(ChillSound);
 }
+cat.Event.keyPresser( 'w' ).func = async function*(this:Sprite) {
+    // ピッチを あげる
+    this.Sound.addPitch(ChillSound, 5);
+    pitch.value = this.Sound.getPitch(ChillSound);
+}
+cat.Event.keyPresser( 'x' ).func = async function*(this:Sprite) {
+    // ピッチを さげる
+    this.Sound.addPitch(ChillSound, -5);
+    pitch.value = this.Sound.getPitch(ChillSound);
+}
+
 
 // 開始
 Ts.engine.start();

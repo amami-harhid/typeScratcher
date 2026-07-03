@@ -134,66 +134,89 @@ export class Sound extends EventEmitter implements ISound {
     forceStop() {
         this.emit(Sound.SOUND_FORCE_STOP);
     }
+
     getVolume(soundPlayer: ISoundPlayer) {
         return soundPlayer.volume;
     }
-    addVolume(soundPlayer: ISoundPlayer, volume: number) {
-        soundPlayer.volume += volume;
 
-    }
     /**
      * 100 がデフォルト
      * @param volume 
      * @returns 
      */
     setVolume(soundPlayer: ISoundPlayer, volume: number) {
-        soundPlayer.volume = volume;
+        const _volume = this.toScratchVolumeLimit(volume);
+        soundPlayer.volume = _volume;
     }
+
     getPitch(soundPlayer: ISoundPlayer) : number{
+
         const _pitch = soundPlayer.pitch;
-        const _scratchPitch = this._pitchAudioToScratch(_pitch);
-        return _scratchPitch;
+        const _scratchPitch = this._pitchAudioToScratch(_pitch*100);
+        const _scratchPitchKurisute = Math.floor(_scratchPitch*10)/10;
+        return _scratchPitchKurisute;
     }
-    addPitch(soundPlayer: ISoundPlayer, pitch:number): void {        
-        const _pitch = this.getPitch(soundPlayer) + pitch;
-        const autdioPitch = this._pitchScratchToAudio(_pitch);
-        if( 12.5 <= autdioPitch && autdioPitch <= 800 ){
-            soundPlayer.pitch = autdioPitch/100;
-        }else{
-            // 何もしない
-        }
-    }
+
     setPitch(soundPlayer: ISoundPlayer, pitch:number): void {
-        const autdioPitch = this._pitchScratchToAudio(pitch);
-        //this._pitch = pitch;
-        if( 12.5 <= autdioPitch && autdioPitch <= 800 ){
-            soundPlayer.pitch = autdioPitch/100;
-        }else{
-            // 何もしない
+
+        const audioPitch = this._pitchScratchToAudio(pitch);
+        if( audioPitch < 12.5 ){
+            soundPlayer.pitch = 12.5/100;
+            return;
         }
+        if( 800 < audioPitch ) {
+            soundPlayer.pitch = 800/100;
+            return;
+        }
+        soundPlayer.pitch = audioPitch/100;
     }
+
     isPlaying(soundPlayer: ISoundPlayer):boolean {
         return soundPlayer.soundPlayer.isPlaying;
     }
 
     deepCopy() : ISound {
+
         const sound = SoundRemaker.remake(this);
         return sound;
     }
+    toScratchVolumeLimit(volume: number): number {
 
-    private _pitchScratchToAudio(pitch: number) {
-        if(-360 <= pitch && pitch <= 360) {
-            const audioPitch = 100 * (2**(pitch/120));
-            return audioPitch;
+        if( volume < 0 ) {
+            return 0;
         }
-        return 0;
+        if( 100 < volume ) {
+            return 100;
+        }
+        return volume;
+    }
+    toScratchPitchLimit(pitch: number): number {
+
+        if( pitch < -360 ) {
+            return -360;
+        }
+        if( 360 < pitch ) {
+            return 360;
+        }
+        return pitch;
+    }
+    private _pitchScratchToAudio(pitch: number) {
+
+        const _pitch = this.toScratchPitchLimit(pitch);
+        const audioPitch = 100 * (2**(_pitch/120));
+        return audioPitch;
     }
 
     private _pitchAudioToScratch(pitch: number) {
-        if(12.5 <= pitch && pitch <= 800){
-            const scratchPitch = 120 * Math.log2(pitch/100);
-            return scratchPitch;
+
+        if( pitch < 12.5) {
+            return 12.5;
         }
-        return 100;
+        if( 800 < pitch) {
+            return 800;
+        }
+        const scratchPitch = 120 * Math.log2(pitch/100);
+        return scratchPitch;
+
     }
 }

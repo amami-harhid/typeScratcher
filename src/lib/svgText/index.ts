@@ -38,7 +38,7 @@ export class TextToSvg implements ITextToSvg {
         }
         this._external_fontFamily = [];
         this._external_fontDatas = [];
-        this._padding = 25;
+        this._padding = 10; // ピクセル
         this._scratchFontFamily = ScratchFontFamily.SansSerif;
     }
 
@@ -187,10 +187,11 @@ export class TextToSvg implements ITextToSvg {
     private createText(textStr: string, mesure:{w:number,h:number}): SVGTextElement {
         const text = document.createElementNS(SVG_NS, "text");
         if(this._textAttributes.use == undefined || this._textAttributes.use.length == 0){
-            // テキストの左下のX座標
-            text.setAttribute("x", `${this._padding}`);
-            // テキストの左下のY座標
-            text.setAttribute("y", `${mesure.h + this._padding}`);
+            // センタリング
+            text.setAttribute("x", '50%'); // 水平方向中央
+            text.setAttribute("y", '50%'); // 垂直方向中央
+            text.setAttribute("text-anchor", 'middle'); // 水平方向の基準を中央に
+            text.setAttribute("dominant-baseline", 'middle'); // 垂直方向の基準を中央に
             if(this._textAttributes.fill){
                 text.setAttribute(FILL, `${this._textAttributes.fill}`);
             }

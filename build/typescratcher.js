@@ -14777,7 +14777,7 @@ function Fq() {
   return Pk || (Pk = 1, Qu = Mq()), Qu;
 }
 Fq();
-const Dq = "0.0.62", pq = {
+const Dq = "0.0.65", pq = {
   version: Dq
 }, mq = pq.version, Ir = {
   main_id: "main",
@@ -43553,26 +43553,30 @@ class Sq {
       if (e)
         return e.volume;
     }
-    return -1 / 0;
+    return 100;
   }
   addVolume(A, e) {
     const r = A;
     if (this.soundKeys.includes(r.name)) {
-      const n = this.effectMap.get(A.name);
-      n && (n.volume += e);
-      const c = this.getSoundPlayer(A.name);
-      if (c == null) return;
-      r.addVolume(c, e);
+      const n = this.getSoundPlayer(A.name);
+      if (n == null) return;
+      const c = this.effectMap.get(A.name);
+      if (c) {
+        const a = r.toScratchVolumeLimit(c.volume + e);
+        r.setVolume(n, a), c.volume = a;
+      }
     } else
       return;
   }
   setVolume(A, e) {
     if (this.soundKeys.includes(A.name)) {
-      const r = this.effectMap.get(A.name);
-      r && (r.volume = e);
-      const n = this.getSoundPlayer(A.name);
-      if (n == null) return;
-      A.setVolume(n, e);
+      const r = this.getSoundPlayer(A.name);
+      if (r == null) return;
+      const n = this.effectMap.get(A.name);
+      if (n) {
+        const c = A.toScratchPitchLimit(e);
+        A.setVolume(r, c), n.volume = c;
+      }
     } else
       return;
   }
@@ -43583,25 +43587,26 @@ class Sq {
       if (e)
         return e.pitch;
     }
-    return -1 / 0;
+    return 0;
   }
   addPitch(A, e) {
     if (this.soundKeys.includes(A.name)) {
-      const r = this.effectMap.get(A.name);
-      r && (r.pitch += e);
-      const n = this.getSoundPlayer(A.name);
-      if (n == null) return;
-      A.addPitch(n, e);
+      const r = this.getSoundPlayer(A.name);
+      if (r == null) return;
+      const n = this.effectMap.get(A.name);
+      if (n) {
+        const c = n.pitch + e;
+        n.pitch = A.toScratchPitchLimit(c), A.setPitch(r, n.pitch);
+      }
     } else
       return;
   }
   setPitch(A, e) {
     if (this.soundKeys.includes(A.name)) {
-      const r = this.effectMap.get(A.name);
-      r && (r.pitch = e);
-      const n = this.getSoundPlayer(A.name);
-      if (n == null) return;
-      A.setPitch(n, e);
+      const r = this.getSoundPlayer(A.name);
+      if (r == null) return;
+      const n = this.effectMap.get(A.name);
+      n && (n.pitch = A.toScratchPitchLimit(e), A.setPitch(r, n.pitch));
     } else
       return;
   }
@@ -54222,7 +54227,7 @@ class vs {
   constructor() {
     this._textAttributes = { fill: "#000000", font: "Handwriting", font_size: 80 }, this._debugCanvas = document.createElement("canvas");
     const A = this._debugCanvas.getContext("2d", { willReadFrequently: !0 });
-    A && (this._debugCtx = A), this._external_fontFamily = [], this._external_fontDatas = [], this._padding = 25, this._scratchFontFamily = Ez.SansSerif;
+    A && (this._debugCtx = A), this._external_fontFamily = [], this._external_fontDatas = [], this._padding = 10, this._scratchFontFamily = Ez.SansSerif;
   }
   set padding(A) {
     this._padding = A;
@@ -54314,7 +54319,7 @@ class vs {
    */
   createText(A, e) {
     const r = document.createElementNS(Ds, "text");
-    return (this._textAttributes.use == null || this._textAttributes.use.length == 0) && (r.setAttribute("x", `${this._padding}`), r.setAttribute("y", `${e.h + this._padding}`), this._textAttributes.fill && r.setAttribute(Uj, `${this._textAttributes.fill}`), r.setAttribute(Nj, `${this._textAttributes.font_size}px`), r.setAttribute(Pu, `"${this._textAttributes.font}",${fa}`), this._textAttributes.stroke && r.setAttribute(vj, this._textAttributes.stroke), this._textAttributes.stroke_mode && r.setAttribute(NAA, this._textAttributes.stroke_mode), this._textAttributes.stroke_width && r.setAttribute(Gj, `${this._textAttributes.stroke_width}`)), r.textContent = A, r;
+    return (this._textAttributes.use == null || this._textAttributes.use.length == 0) && (r.setAttribute("x", "50%"), r.setAttribute("y", "50%"), r.setAttribute("text-anchor", "middle"), r.setAttribute("dominant-baseline", "middle"), this._textAttributes.fill && r.setAttribute(Uj, `${this._textAttributes.fill}`), r.setAttribute(Nj, `${this._textAttributes.font_size}px`), r.setAttribute(Pu, `"${this._textAttributes.font}",${fa}`), this._textAttributes.stroke && r.setAttribute(vj, this._textAttributes.stroke), this._textAttributes.stroke_mode && r.setAttribute(NAA, this._textAttributes.stroke_mode), this._textAttributes.stroke_width && r.setAttribute(Gj, `${this._textAttributes.stroke_width}`)), r.textContent = A, r;
   }
   /**
    * 文字列の大きさを測定するために Canvasを使っている
@@ -54482,28 +54487,30 @@ class cB extends ho {
   getVolume(A) {
     return A.volume;
   }
-  addVolume(A, e) {
-    A.volume += e;
-  }
   /**
    * 100 がデフォルト
    * @param volume 
    * @returns 
    */
   setVolume(A, e) {
-    A.volume = e;
+    const r = this.toScratchVolumeLimit(e);
+    A.volume = r;
   }
   getPitch(A) {
-    const e = A.pitch;
-    return this._pitchAudioToScratch(e);
-  }
-  addPitch(A, e) {
-    const r = this.getPitch(A) + e, n = this._pitchScratchToAudio(r);
-    12.5 <= n && n <= 800 && (A.pitch = n / 100);
+    const e = A.pitch, r = this._pitchAudioToScratch(e * 100);
+    return Math.floor(r * 10) / 10;
   }
   setPitch(A, e) {
     const r = this._pitchScratchToAudio(e);
-    12.5 <= r && r <= 800 && (A.pitch = r / 100);
+    if (r < 12.5) {
+      A.pitch = 12.5 / 100;
+      return;
+    }
+    if (800 < r) {
+      A.pitch = 800 / 100;
+      return;
+    }
+    A.pitch = r / 100;
   }
   isPlaying(A) {
     return A.soundPlayer.isPlaying;
@@ -54511,11 +54518,17 @@ class cB extends ho {
   deepCopy() {
     return RAA.remake(this);
   }
+  toScratchVolumeLimit(A) {
+    return A < 0 ? 0 : 100 < A ? 100 : A;
+  }
+  toScratchPitchLimit(A) {
+    return A < -360 ? -360 : 360 < A ? 360 : A;
+  }
   _pitchScratchToAudio(A) {
-    return -360 <= A && A <= 360 ? 100 * 2 ** (A / 120) : 0;
+    return 100 * 2 ** (this.toScratchPitchLimit(A) / 120);
   }
   _pitchAudioToScratch(A) {
-    return 12.5 <= A && A <= 800 ? 120 * Math.log2(A / 100) : 100;
+    return A < 12.5 ? 12.5 : 800 < A ? 800 : 120 * Math.log2(A / 100);
   }
 }
 class SAA extends Ws {
