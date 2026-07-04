@@ -1,9 +1,11 @@
+import { IFont } from "../../font";
+
 /**
- * Sprite Image(イメージ)
+ * Sprite Font(イメージ)
  */
 export interface ISpriteFont {
 
-    add(fontName: string) : void;
+    add(fonts: IFont[]) : void;
 
     get names() : string [];
 };

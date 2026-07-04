@@ -15,6 +15,7 @@ import type { IUtils } from '../type/util/utils';
 import { SPEECH_LOCALE } from '../type/speech/IVoice';
 import { VOICE_ID } from '../type/speech/IVoice';
 import { SVariable } from './entity/monitor/SVariable';
+import { SFont } from './font';
 type stageBounds = {w: number, h: number};
 
 export type ExportType = {
@@ -22,6 +23,7 @@ export type ExportType = {
     Stage: SStage,
     Image: SImage,
     Sound: SSound,
+    Font: SFont,
     Rotation: RotationStyle,
     ImageEffective: ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS_Type

@@ -1,4 +1,4 @@
-import { FontLoader } from "./fontLoader";
+import { FontLoader } from "../loader/fontLoader";
 import { ScratchFontFamily } from "../../type/svgText";
 import { ImageToBase64Util } from "../utils/base64Util";
 import type { ITextToSvg, ParmFontFace, TextAttributes, ScratchFontFamilyValue } from "../../type/svgText";

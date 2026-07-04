@@ -36,6 +36,7 @@ import { ExportType } from './type';
 
 import { Engine, engine } from './lib/engine';
 import { Env } from './lib/common/env';
+import { Font } from './lib/fonts';
 import { Image as _Image } from './lib/image';
 import { ImageEffective, type ImageEffectiveType } from './type/entity/ImageEffective';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './type/engine/keyboad';
@@ -53,6 +54,7 @@ import type { createSvgImageAttributes } from './type/image';
 import type { TBoundsEx } from './type/common/typeCommon';
 import type { IEngine } from './type/engine';
 import type { TEnv } from './type/common/env';
+import type { SFont } from './type/font';
 import type { IImage } from './type/image';
 import type { ISprite, SSprite } from './type/entity/sprite';
 import type { IStage, SStage } from './type/entity/stage';
@@ -94,6 +96,7 @@ export const Typescratcher: ExportType = {
     engine: engine as IEngine,
     Env: Env as TEnv,
     Image: _Image as SImage,
+    Font: Font as SFont,
     ImageEffective: ImageEffective as ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     Loop: Loop as SLoop,

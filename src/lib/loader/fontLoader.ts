@@ -37,6 +37,7 @@ export class FontLoader {
         const fontFaceUrl = `url(${url})`;
         const fontFace = new FontFace(name, fontFaceUrl);
         await fontFace.load();
+        console.log(fontFace);
         document.fonts.add(fontFace);
     }
     private static async makeEmbeddedFontdata(url: string): Promise<string[]>{

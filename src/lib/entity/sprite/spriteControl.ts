@@ -128,6 +128,9 @@ export class SpriteControl implements ISpriteControl {
             if( _arr.length > 0){
                 _sprite.Sound.add( _arr );
             }
+            // Fontコピー
+            const fonts = (target as Sprite).$fonts;
+            _sprite.Font.add(fonts);
 
             // プロパティコピー
             _sprite.Properties.degree = target.Properties.degree;

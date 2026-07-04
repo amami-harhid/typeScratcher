@@ -1,22 +1,27 @@
 /**
  * Entity
  */
+import { engine, Engine } from "../../engine";
 import { EntityBroadCast } from "./entityBroadcast";
+import { EntityFont } from "./entityFont";
 import { EntityImage } from "./entityImage";
 import { EntitySound } from "./entitySound";
+import { EntitySpeech } from "./entitySpeech";
 import { EventEmitter } from "events";
+import { Font } from "../../fonts";
 import { Image } from "../../image";
-import { engine, Engine } from "../../engine";
 import { Render } from "../../render";
 import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityBroadCast } from "../../../type/entity/entity/IEntityBroadcast";
+import type { IEntityFont } from "../../../type/entity/entity/IEntityFont";
 import type { IEntityImage } from "../../../type/entity/entity/IEntityImage";
 import type { IEntitySound } from "../../../type/entity/entity/IEntitySound";
 import type { IEntitySpeech } from "../../../type/entity/entity/IEntitySpeech";
+import type { IImage } from "../../../type/image";
 import type { TMouse } from "../../../type/mouse";
-import { type StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
-import { EntitySpeech } from "./entitySpeech";
+import type { StageLayeringValue } from '../../../type/entity/stage/CStageLayering';
+import { IFont } from "src/type/font";
 
 export class Entity extends EventEmitter implements IEntity{
     public get SOUND_FORCE_STOP() {
@@ -24,6 +29,7 @@ export class Entity extends EventEmitter implements IEntity{
     }
     protected _name! : string;
     private _images: Image[] = [];
+    protected _fonts: Font[] = []; 
     public id: string;
     public drawableID: number = -1;
     protected _broadcast : IEntityBroadCast;
@@ -61,8 +67,11 @@ export class Entity extends EventEmitter implements IEntity{
     get $image():IEntityImage {
         return this._image;
     }
-    get $images() {
+    get $images(): IImage[] {
         return this._images;
+    }
+    get $fonts() : IFont[] {
+        return this._fonts;
     }
     get Broadcast(): IEntityBroadCast {
         return this._broadcast;

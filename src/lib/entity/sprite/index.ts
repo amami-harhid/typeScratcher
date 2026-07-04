@@ -6,12 +6,14 @@ import { Image } from "../../image";
 import { PenSprite } from "./pen";
 import { ScratchElement } from "../../gui/scratchElement";
 import { Sound } from "../../sounds";
-import { SpriteLooksBubble } from "./spriteLooksBubble";
 import { SpriteControl } from "./spriteControl";
 import { SpriteCostume } from "./spriteCostume";
 import { SpriteDragMode } from "./spriteDragMode";
 import { SpriteEvent } from "./spriteEvent";
+import { SpriteFont } from "./spriteFont";
 import { SpriteLooks } from "./spriteLooks";
+import { SpriteLooksBubble } from "./spriteLooksBubble";
+import { SpriteLooksSize } from "./spriteLooksSize";
 import { SpriteMotion } from "./spriteMotion";
 import { SpriteProperties } from "./spriteProperties";
 import { SpriteSensing } from "./spriteSensing";
@@ -22,11 +24,11 @@ import type { ISvgSkin } from "../../../type/render/ISvgSkin";
 import type { ISpriteControl } from "../../../type/entity/sprite/ISpriteControl";
 import type { ISpriteCostume } from "../../../type/entity/sprite/ISpriteCostume";
 import type { ISpriteEvent } from "../../../type/entity/sprite/ISpriteEvent";
+import type { ISpriteFont } from "../../../type/entity/sprite/ISpriteFont";
 import type { ISpriteLooks } from "../../../type/entity/sprite/ISpriteLooks";
 import type { ISpriteMotion } from "../../../type/entity/sprite/ISpriteMotion";
 import type { ISpriteProperties } from "../../../type/entity/sprite/ISpriteProperties";
 import type { ISpriteSensing } from "../../../type/entity/sprite/ISpriteSensing";
-import { SpriteLooksSize } from "./spriteLooksSize";
 
 
 /**
@@ -34,6 +36,7 @@ import { SpriteLooksSize } from "./spriteLooksSize";
  */
 export class Sprite extends Entity implements ISprite {
     private _costume : ISpriteCostume;
+    private _font: ISpriteFont;
     private _motion: ISpriteMotion;
     private _looks: ISpriteLooks;
     private _control: ISpriteControl;
@@ -55,6 +58,7 @@ export class Sprite extends Entity implements ISprite {
         this._name = name;
         this._properties = new SpriteProperties(this);
         this._costume = new SpriteCostume(this);
+        this._font = new SpriteFont(this);
         this._motion = new SpriteMotion(this);
         this._looks = new SpriteLooks(this);
         this._control = new SpriteControl(this);
@@ -75,6 +79,9 @@ export class Sprite extends Entity implements ISprite {
     }
     get Costume(): ISpriteCostume {
         return this._costume;
+    }
+    get Font(): ISpriteFont {
+        return this._font;
     }
     get Motion() : ISpriteMotion {
         return this._motion;
@@ -126,6 +133,9 @@ export class Sprite extends Entity implements ISprite {
                     const _sound = sound as Sound;
                     loadArr.push(_sound.load(me));
                 }
+            }
+            for(const fnt of this._fonts) {
+                loadArr.push(fnt.load())
             }
             if( me.isClone ){
                 return;

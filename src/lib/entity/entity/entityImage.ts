@@ -1,13 +1,12 @@
+import { Entity } from '.';
 import { EntityEffect } from './entityEffect';
 import { Image } from '../../image';
-import { ImageBank } from '../../image/imageBank';
 import type { IImage } from '../../../type/image';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityEffect } from '../../../type/entity/entity/IEntityEffect';
 import type { IEntityImage } from '../../../type/entity/entity/IEntityImage';
-import { Entity } from '.';
 
-/** メッセージ送受信 */
+/** Entity イメージ */
 export class EntityImage implements IEntityImage{
 
     protected entity: IEntity;
