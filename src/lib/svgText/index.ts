@@ -1,3 +1,4 @@
+import { Font } from "../fonts";
 import { FontLoader } from "../loader/fontLoader";
 import { ScratchFontFamily } from "../../type/svgText";
 import { ImageToBase64Util } from "../utils/base64Util";
@@ -48,6 +49,12 @@ export class TextToSvg implements ITextToSvg {
     public set scratchFontFamily(fontFamily: ScratchFontFamilyValue) {
         this._scratchFontFamily = fontFamily;
     }
+    public addExternalFontDatas(fonts: Font[]) {
+        for(const font of fonts) {
+            this._external_fontDatas.push({name: font.name, data: font.fonts});
+        }
+        console.log('this._external_fontDatas=',this._external_fontDatas);
+    }
     public async setExternalFontFamily(fontFamily: ParmFontFace[]): Promise<void>{
         if(this._external_fontFamily.length>0){
             this._external_fontFamily.slice(0, this._external_fontFamily.length);
@@ -64,8 +71,10 @@ export class TextToSvg implements ITextToSvg {
             this._textAttributes.fill = attr.fill;
         if(attr.font_size)
             this._textAttributes.font_size = attr.font_size;
+        console.log('attr.font = ', attr.font   )
         if(attr.font)
             this._textAttributes.font = attr.font;
+        console.log('this._textAttributes.font = ', this._textAttributes.font)
         this._textAttributes.stroke = (attr.stroke)?attr.stroke:undefined;
         this._textAttributes.stroke_mode = (attr.stroke_mode)?attr.stroke_mode:undefined;
         this._textAttributes.stroke_width = (attr.stroke_width)?attr.stroke_width:undefined;
@@ -127,6 +136,7 @@ export class TextToSvg implements ITextToSvg {
         svg.setAttribute(WIDTH, `${mesure.w+this._padding*2}`);
         svg.setAttribute(HEIGHT, `${mesure.h+this._padding*2}`);
         svg.setAttribute(VIEWBOX, `0 0 ${mesure.w+this._padding*2} ${mesure.h+this._padding*2}`);
+        console.log('this._external_fontDatas.length=',this._external_fontDatas.length)
         if(this._external_fontDatas.length>0){
             const defs = document.createElementNS(SVG_NS, DEFS);
             const style =  document.createElementNS(SVG_NS, STYLE);
@@ -144,7 +154,7 @@ export class TextToSvg implements ITextToSvg {
             defs.appendChild(style);
             svg.appendChild(defs);            
         }
-
+        console.log(svg)
         const text = this.createText(inputText, mesure);
         if( this._scratchFontFamily) {
             text.setAttribute(FONT_FAMILY, this._scratchFontFamily);        
@@ -195,6 +205,7 @@ export class TextToSvg implements ITextToSvg {
             if(this._textAttributes.fill){
                 text.setAttribute(FILL, `${this._textAttributes.fill}`);
             }
+            console.log('this._textAttributes.font=', this._textAttributes.font);
             text.setAttribute(FONT_SIZE, `${this._textAttributes.font_size}px`);
             text.setAttribute(FONT_FAMILY, `"${this._textAttributes.font}",${SANS_SERIF}`);
             if(this._textAttributes.stroke){

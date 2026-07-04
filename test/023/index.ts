@@ -4,13 +4,13 @@
  * フォントロード
  */
 import { Typescratcher as Ts } from "../../src";
-import { Sprite } from "../../src";
+import { Sprite, SvgImageAttributes } from "../../src";
 
 Ts.Env.debugMode = true;
 
 //【フォント読み込み】
 const HarryPotter = "https://amami-harhid.github.io/tscratch3assets/assets/fonts/HarryPotter-ov4z.woff";
-const HarryPotterFont = new Ts.Font({HarryPotter});
+const HarryPotterFont = new Ts.Font({HarryPotter: HarryPotter});
 
 // 【画像読み込み】
 import catSvg from '../assets/cat.svg';
@@ -24,13 +24,28 @@ const cat = new Ts.Sprite('cat');
 // 画像をスプライトへ追加
 cat.Costume.add( [CatImage] );
 
-// Fontを追加
-cat.Font.add( [HarryPotterFont] );
 
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 大きさの設定
 cat.Looks.size.scale = [250, 250];
+
+// 文字列イメージ化
+const HELLO = 'Hello world';
+const attribute: SvgImageAttributes = {
+    fill: '#f0f0f0', // 文字色
+    font_weight: 'bold',
+    font_family: HarryPotterFont.name,
+    //scratch_font_family: HarryPotterFont.name, //Ts.ScratchFontFamily.Handwriting
+};
+
+const moji = new Ts.Sprite('moji');
+// Fontを追加
+moji.Font.add( [HarryPotterFont] );
+const helloImage = await Ts.Image.createSvgImage({HELLO}, attribute); // ESLint で await をつける
+moji.Costume.add( [helloImage] ); // <--- 文字中央にならない！！改良必要。
+moji.Looks.layer.gotoBack();
+
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();

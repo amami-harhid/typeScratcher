@@ -1,6 +1,7 @@
 import { Utils } from "../utils/utils";
 import { FontLoader } from "../loader/fontLoader";
 import type { IFont } from "../../type/font";
+import { TextToSvg, textToSvg } from "../svgText";
 
 type FontArgStringObject = { [key:string]:string };
 /**
@@ -28,6 +29,7 @@ export class Font implements IFont{
         const fontData = await FontLoader.fontLoad(this._fontPath, this._name);
         this._fonts = fontData.data;
         this._loadCompleted = true;
+        (textToSvg as TextToSvg).addExternalFontDatas([this])
     }
     get name() {
         return this._name;
