@@ -145,21 +145,21 @@ export class Sound extends EventEmitter implements ISound {
      * @returns 
      */
     setVolume(soundPlayer: ISoundPlayer, volume: number) {
-        const _volume = this.toScratchVolumeLimit(volume);
+        const _volume = Sound.toScratchVolumeLimit(volume);
         soundPlayer.volume = _volume;
     }
 
     getPitch(soundPlayer: ISoundPlayer) : number{
 
         const _pitch = soundPlayer.pitch;
-        const _scratchPitch = this._pitchAudioToScratch(_pitch*100);
+        const _scratchPitch = Sound.pitchAudioToScratch(_pitch*100);
         const _scratchPitchKurisute = Math.floor(_scratchPitch*10)/10;
         return _scratchPitchKurisute;
     }
 
     setPitch(soundPlayer: ISoundPlayer, pitch:number): void {
 
-        const audioPitch = this._pitchScratchToAudio(pitch);
+        const audioPitch = Sound.pitchScratchToAudio(pitch);
         if( audioPitch < 12.5 ){
             soundPlayer.pitch = 12.5/100;
             return;
@@ -180,7 +180,7 @@ export class Sound extends EventEmitter implements ISound {
         const sound = SoundRemaker.remake(this);
         return sound;
     }
-    toScratchVolumeLimit(volume: number): number {
+    static toScratchVolumeLimit(volume: number): number {
 
         if( volume < 0 ) {
             return 0;
@@ -190,7 +190,7 @@ export class Sound extends EventEmitter implements ISound {
         }
         return volume;
     }
-    toScratchPitchLimit(pitch: number): number {
+    static toScratchPitchLimit(pitch: number): number {
 
         if( pitch < -360 ) {
             return -360;
@@ -200,14 +200,14 @@ export class Sound extends EventEmitter implements ISound {
         }
         return pitch;
     }
-    private _pitchScratchToAudio(pitch: number) {
+    static pitchScratchToAudio(pitch: number) {
 
-        const _pitch = this.toScratchPitchLimit(pitch);
+        const _pitch = Sound.toScratchPitchLimit(pitch);
         const audioPitch = 100 * (2**(_pitch/120));
         return audioPitch;
     }
 
-    private _pitchAudioToScratch(pitch: number) {
+    static pitchAudioToScratch(pitch: number) {
 
         if( pitch < 12.5) {
             return 12.5;

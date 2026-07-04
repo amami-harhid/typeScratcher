@@ -1,8 +1,9 @@
 import { Speech } from "../../speech/";
 import { SoundPlayer } from "../../sounds/soundPlayer";
 import type { IEntity } from "../../../type/entity/entity";
-import type { IEntitySpeech, NextMethodsAddPitch, NextMethodsAddVolume, NextMethodsLocale, NextMethodsPitch, NextMethodsType, NextMethodsVolume } from "../../../type/entity/entity/IEntitySpeech";
+import type { IEntitySpeech, NextMethodsAddPitch, NextMethodsAddVolume, NextMethodsCopyTo, NextMethodsGender, NextMethodsLocale, NextMethodsPitch, NextMethodsType, NextMethodsVolume } from "../../../type/entity/entity/IEntitySpeech";
 import type { V_SPEECH_LOCALE } from "../../../type/speech/IVoice";
+import { Type_speech_gender } from "src/type/speech";
 
 /**
  * スピーチ機能
@@ -33,6 +34,9 @@ export class EntitySpeech implements IEntitySpeech{
         this._speech.use(type);
         const me = this;
         return class {
+            static typeCopyTo(type: string) : NextMethodsCopyTo {
+                return me.typeCopyTo(type);
+            }
             static volume(volume:number) : NextMethodsVolume {
                 return me.volume(volume);
             }
@@ -58,6 +62,54 @@ export class EntitySpeech implements IEntitySpeech{
         this._speech.addVolume(volume);
         return this;
     }
+    typeCopyTo( type: string) : NextMethodsCopyTo {
+        const prop = this._speech.getProperties( this._speech.type );
+        this._speech.addProperties( type, prop);
+        const me = this;
+        return class {
+            static gender(gender: Type_speech_gender): NextMethodsGender {
+                return me.gender(gender);
+            }
+            static volume(volume:number) : NextMethodsVolume {
+                return me.volume(volume);
+            }
+            static addVolume(volume:number) : NextMethodsAddVolume {
+                return me.addVolume(volume);
+            }
+            static pitch(pitch:number) : NextMethodsPitch {
+                return me.pitch(pitch);
+            }
+            static addPitch(pitch:number) : NextMethodsAddPitch {
+                return me.addPitch(pitch); 
+            }
+            static async speech(words: string) : Promise<void>{
+                await me.speech(words);
+            }
+        }
+    }
+    public gender(gender: Type_speech_gender) :NextMethodsGender {
+        this._speech.setGender(gender);
+        const me = this;
+        return class {
+
+            static volume(volume:number) : NextMethodsVolume {
+                return me.volume(volume);
+            }
+            static addVolume(volume:number) : NextMethodsAddVolume {
+                return me.addVolume(volume);
+            }
+            static pitch(pitch:number) : NextMethodsPitch {
+                return me.pitch(pitch);
+            }
+            static addPitch(pitch:number) : NextMethodsAddPitch {
+                return me.addPitch(pitch); 
+            }
+            static async speech(words: string) : Promise<void>{
+                await me.speech(words);
+            }
+        }                
+    }
+
     public pitch(pitch: number): NextMethodsPitch {
         this._speech.setPitch(pitch);
         const me = this;

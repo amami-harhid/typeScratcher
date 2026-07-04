@@ -3,6 +3,8 @@ import { SpeechSound } from "./speechSound";
 import { SPEECH_LOCALE, type V_SPEECH_LOCALE } from "../../type/speech/IVoice";
 import { VoiceLoader } from "./voiceLoader";
 import type { T_VOICE_INFO_ELEMENT } from "../../type/speech/IVoice";
+import { Type_speech_gender } from "src/type/speech";
+import { Sound } from "../sounds";
 
 /**
  * the url of the synthesis server.
@@ -39,6 +41,7 @@ export class Speech {
     addProperties(type: string, prop: T_VOICE_INFO_ELEMENT): void {
         if( !this._propertiesBank.has(type) ){
             this._propertiesBank.set(type, prop);
+            this._type = type;
         }
     }
     getProperties(type: string): T_VOICE_INFO_ELEMENT {
@@ -85,24 +88,33 @@ export class Speech {
             resolve();
         });
     }
+    setGender(gender: Type_speech_gender) : Speech {
+        const prop = this.getProperties(this._type);
+        prop.gender = gender;
+        return this;
+    }
     setVolume(volume: number): Speech {
         const prop = this.getProperties(this._type);
-        prop.volume = volume;
+        const _volume = Sound.toScratchVolumeLimit(volume);
+        prop.volume = _volume;
         return this;
     }
     addVolume(volume: number): Speech {
         const prop = this.getProperties(this._type);
-        prop.volume += volume;
+        const _volume = Sound.toScratchVolumeLimit(prop.volume + volume);
+        prop.volume = _volume;
         return this;
     }
     setPitch(pitch:number): Speech {
         const prop = this.getProperties(this._type);
-        prop.pitch = pitch;        
+        const _pitch = Sound.toScratchPitchLimit(pitch);       
+        prop.pitch = _pitch;
         return this;
     }
     addPitch(pitch:number): Speech {
         const prop = this.getProperties(this._type);
-        prop.pitch += pitch;        
+        const _pitch = Sound.toScratchPitchLimit(prop.pitch + pitch);       
+        prop.pitch = _pitch;
         return this;
     }
 
@@ -113,5 +125,8 @@ export class Speech {
                 sound.forceStop();
             }
         }
+    }
+    get type(): string {
+        return this._type;
     }
 }
