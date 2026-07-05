@@ -4,7 +4,6 @@ import type { ISpriteControl } from './ISpriteControl';
 import type { ISpriteCostume } from './ISpriteCostume';
 import type { ISpriteDragMode } from './ISpriteDragMode';
 import type { ISpriteEvent } from './ISpriteEvent';
-import type { ISpriteFont } from './ISpriteFont';
 import type { ISpriteLooks } from './ISpriteLooks';
 import type { ISpriteMotion } from './ISpriteMotion';
 import type { ISpriteSound } from './ISpriteSound';
@@ -34,10 +33,6 @@ export interface ISprite extends IEntity {
      * PEN
      */
     readonly Pen: IPenSprite;
-    /**
-     * FONT
-     */
-    readonly Font: ISpriteFont;
 
     /**
      * コスチューム番号、コスチューム名を取り出すためのオブジェクト

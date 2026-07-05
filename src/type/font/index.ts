@@ -25,4 +25,6 @@ export interface SFont{
 };
 export interface IFont {
     name: string;
+
+    load(): Promise<void>;
 }

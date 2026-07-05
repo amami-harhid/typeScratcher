@@ -196,7 +196,6 @@ export class Monitors implements IMonitors{
      * @param monitorId 
      */
     show(monitorId: string): void{
-        console.log(this._monitors);
         for(const _monitor of this._monitors){
             if(monitorId === _monitor.monitorId){
                 _monitor.show();

@@ -24,6 +24,7 @@ const cat = new Ts.Sprite('cat');
 // 画像をスプライトへ追加
 cat.Costume.add( [CatImage] );
 
+//await HarryPotterFont.load();
 
 cat.Motion.position.xy = [ 0, 0 ];
 
@@ -33,19 +34,16 @@ cat.Looks.size.scale = [250, 250];
 // 文字列イメージ化
 const HELLO = 'Hello world';
 const attribute: SvgImageAttributes = {
-    fill: '#f0f0f0', // 文字色
-    font_weight: 'bold',
+    fill: '#f00000', // 文字色
+    //font_weight: 'normal',
     font_family: HarryPotterFont.name,
-    //scratch_font_family: HarryPotterFont.name, //Ts.ScratchFontFamily.Handwriting
+    //scratch_font_family: Ts.ScratchFontFamily.Handwriting
 };
 
 const moji = new Ts.Sprite('moji');
-// Fontを追加
-moji.Font.add( [HarryPotterFont] );
-const helloImage = await Ts.Image.createSvgImage({HELLO}, attribute); // ESLint で await をつける
-moji.Costume.add( [helloImage] ); // <--- 文字中央にならない！！改良必要。
-moji.Looks.layer.gotoBack();
-
+const helloImage = new Ts.FontImage(attribute);
+moji.Costume.add( [helloImage] );
+await helloImage.textToSvg(HELLO);
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
@@ -67,10 +65,12 @@ cat.Event.flagPresser().func = async function*(this:Sprite){
         if(_touch()){
             // スピーチする
             if(speechFlag){
+                await helloImage.textToSvg("FEMAIL");
                 // ピッチ加工したFEMAILの声
                 await this.Speech.type("001").speech(speechText.text);
 
             }else{
+                await helloImage.textToSvg("MAIL");
                 // ピッチ加工したMAILの声
                 await this.Speech.type("002").speech(speechText.text);
 

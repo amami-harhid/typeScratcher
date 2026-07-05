@@ -96,7 +96,9 @@ export class Image implements IImage{
     get image() {
         return this._img;
     }
-
+    set image(_img: string) {
+        this._img = _img;
+    }
     get loadCompleted() : boolean {
         return this._loadCompleted;
     }

@@ -65,6 +65,8 @@ import type { SSound } from './type/sound';
 import type { SVariable } from './type/entity/monitor/SVariable';
 import { SPEECH_LOCALE } from './type/speech/IVoice';
 import { VOICE_ID } from './type/speech/IVoice';
+import { FontImage } from './lib/fonts/fontImage';
+import { SFontImage } from './type/font/fontImage';
 /**
  * 【2026/06/06】
  *  scratch-render@2.0.356 では、グローバルのBufferを使っていない（様子）
@@ -97,6 +99,7 @@ export const Typescratcher: ExportType = {
     Env: Env as TEnv,
     Image: _Image as SImage,
     Font: Font as SFont,
+    FontImage: FontImage as SFontImage,
     ImageEffective: ImageEffective as ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
     Loop: Loop as SLoop,

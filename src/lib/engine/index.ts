@@ -8,6 +8,7 @@ import type { TMouse } from "../../type/mouse";
 import type { IEngine } from "../../type/engine";
 import { Variable } from "../entity/monitor/variable";
 import { Monitors } from "../entity/monitor/monitors";
+import { Font } from "../fonts";
 
 /**
  * PlayGround
@@ -17,6 +18,7 @@ export class Engine implements IEngine {
     private _runtime: Runtime;
     private _sprites: Sprite[] = [];
     private _stage!: Stage;
+    private _fonts: Font[] = [];
     private _timer: number;
     private _mouse!: TMouse;
     constructor() {
@@ -115,6 +117,13 @@ export class Engine implements IEngine {
     getStage() {
         return this._stage;
     }
+    addFont(font: Font): void {
+        this._fonts.push(font);
+    }
+    getFonts(): Font[] {
+        return this._fonts;
+    }
+
     /**
      * 開始処理 
      */

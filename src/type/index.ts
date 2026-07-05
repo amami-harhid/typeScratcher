@@ -16,6 +16,7 @@ import { SPEECH_LOCALE } from '../type/speech/IVoice';
 import { VOICE_ID } from '../type/speech/IVoice';
 import { SVariable } from './entity/monitor/SVariable';
 import { SFont } from './font';
+import { SFontImage } from './font/fontImage';
 type stageBounds = {w: number, h: number};
 
 export type ExportType = {
@@ -24,6 +25,7 @@ export type ExportType = {
     Image: SImage,
     Sound: SSound,
     Font: SFont,
+    FontImage: SFontImage,
     Rotation: RotationStyle,
     ImageEffective: ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS_Type

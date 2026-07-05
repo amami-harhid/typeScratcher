@@ -2,6 +2,7 @@ import { Utils } from "../utils/utils";
 import { FontLoader } from "../loader/fontLoader";
 import type { IFont } from "../../type/font";
 import { TextToSvg, textToSvg } from "../svgText";
+import { engine, Engine } from "../engine";
 
 type FontArgStringObject = { [key:string]:string };
 /**
@@ -18,8 +19,9 @@ export class Font implements IFont{
         const info = Utils.varNameValues(font);
         this._name = info[0];
         this._fontPath = info[1];
+        (engine as Engine).addFont(this);
     }
-    async load() {
+    async load() : Promise<void>{
         if(this.loadCompleted === true) {
             // ロードはスプライトの Font.addメソッド内で実行される。
             // 複数のスプライトへ同一Fontインスタンスをaddしていることを

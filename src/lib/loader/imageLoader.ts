@@ -73,7 +73,6 @@ export class ImageLoader {
 
     }
     private static toSvg(dataUrl:string, width: number, height: number): string {
-        console.log(`w=${width}, h=${height}`);
         const svg = 
 `<svg width="${width}" height="${height}" viewBox="0,0,${width},${height}" xmlns="http://www.w3.org/2000/svg">
     <image href="${dataUrl}" width="${width}" height="${height}" />
