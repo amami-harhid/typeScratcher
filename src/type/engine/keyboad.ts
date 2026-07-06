@@ -2,6 +2,7 @@
  * キーボードキー
  */
 export const KEYBOARD_KEYS = {
+    ANY: 'any',
     SPACE : 'Space',
     LEFT : 'LeftArrow',
     UP : 'UpArrow',

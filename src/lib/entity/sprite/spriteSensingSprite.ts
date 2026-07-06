@@ -20,7 +20,8 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
     }
     isTouching(sprites: ISprite[], includeClone: boolean = true): boolean {
         const _entity = this.entity as Sprite;
-        _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
+        _entity.Properties.update(); 
+        //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
         return this.isTouchingTargetToTarget(sprites, includeClone);
     }
     /**
