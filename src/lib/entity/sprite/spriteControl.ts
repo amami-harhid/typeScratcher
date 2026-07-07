@@ -80,7 +80,7 @@ export class SpriteControl implements ISpriteControl {
             const clonesCount = _sprite.clones.length;
             const name = `${_sprite.name}_${clonesCount+1}`;
             // クローン作製
-            const clone = new Sprite(name);
+            const clone = _sprite.makeClone(name);
             clone.isClone = true;
             _sprite.clones.push(clone);
             clone.parent = this.entity;
@@ -89,6 +89,7 @@ export class SpriteControl implements ISpriteControl {
             (clone.Control as SpriteControl)._propertiesCopyFrom(_sprite);
 
             // イベント登録
+            this.beforeRegistCloneEvent(clone);
             const scratchEvent = (engine as Engine).runtime.scratchEvent;
             const messageId = scratchEvent.getClonedEventMessageId(_sprite);
             if(scratchEvent.listenerCount(messageId)>0){
@@ -103,6 +104,10 @@ export class SpriteControl implements ISpriteControl {
             resolve();
         });
     }
+    protected beforeRegistCloneEvent(clone: Sprite) {
+
+    }
+
     private _propertiesCopyFrom( target: Sprite ) {
         const _sprite = this.entity as Sprite;
         if(_sprite.isClone === true) {

@@ -169,4 +169,15 @@ export class Sprite extends Entity implements ISprite {
         this._properties.update(); 
     }
 
+    /**
+     * SpriteControl.clone()内で使われる
+     * クローンインスタンス作成メソッド
+     * 必要に応じて オーバーライドして利用してよい
+     * @param name 
+     * @returns 
+     */
+    public makeClone(name : string) : Sprite {
+        const clone = new Sprite(name);
+        return clone;
+    }
 }
