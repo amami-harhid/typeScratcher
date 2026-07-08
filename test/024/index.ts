@@ -21,16 +21,20 @@ import { CollectSound, ChirpSound, CrashBeatboxSound } from "./sub/sound";
 // 【スプライト】壁
 const wall = new Wall('wall');
 wall.Costume.add( [WallImage] );
-wall.Looks.hide();
 const w = WallWidth;
 const h = WallHeight;
+//wall.Looks.size.w = w;
+//wall.Looks.size.h = h;
+wall.Looks.hide();
 
 // 【スプライト】Cage
 const cage = new Wall('cage');
-cage.Costume.add( [DoorImage,CageImage] );
+cage.Costume.add( [DoorImage, CageImage] );
+cage.Costume.add( [DoorImage] );
+console.log('[#001]')
+//cage.Looks.size.w = w;
+//cage.Looks.size.h = h;
 cage.Looks.hide();
-cage.Looks.size.w = w;
-cage.Looks.size.h = h;
 
 //【変数】
 const Count = Ts.Variable.number(0);
@@ -47,6 +51,8 @@ slime.Looks.hide();
 slime.Costume.add( [SlimeImage] );
 slime.Sound.add([ChirpSound, CollectSound, CrashBeatboxSound]);
 slime.Motion.position.xy = [ 0, 0 ];
+slime.Looks.size.w = w*0.8;
+slime.Looks.size.h = h*0.8;
 
 slime.Event.flagPresser().func = async function*(this:IWall){
     // 大きさの設定

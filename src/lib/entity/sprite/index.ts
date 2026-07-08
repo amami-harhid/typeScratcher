@@ -155,12 +155,12 @@ export class Sprite extends Entity implements ISprite {
                     /*【A】*/const _svgSkin: ISvgSkin = _skin as ISvgSkin;
                     /*【A】*/_svgSkin._canvas = ScratchElement.RemakeCanvasWillReadFrequentlyTrue;
                     /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
-                    await Timer.wait(0.1);
                     (img as Image).skinId = skinId;
                     if(_skinId == -1){
                         _skinId = skinId;
                         me._render.renderer.updateDrawableSkinId(this.drawableID, _skinId);
                     }
+                    await Timer.wait(0.1);
                 }
                 (me.Looks.size as SpriteLooksSize).sizeUpdate();
                 resolve(); // 完了
