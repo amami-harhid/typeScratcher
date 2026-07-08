@@ -47,10 +47,12 @@ export class SpriteLooksSize implements ISpriteLooksSize{
     set w (width: number) {
         this._w = width;
         if(this.hasSkin()){
+            console.log('spriteLooksSize [1]')
             this._updateSizeW();
         }else{
             // TODO
-            // ここに来る条件は無さそう
+            // ここに来るのは、TS.start() される前。
+            console.log('spriteLooksSize [2]')
             const scratchEvent = (engine as Engine).runtime.scratchEvent;
             const _update = this._updateSizeW.bind(this);
             scratchEvent.removeListener(ScratchEvent.SPRITE_INIT, _update);

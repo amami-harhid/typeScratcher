@@ -131,6 +131,7 @@ export class Engine implements IEngine {
         this._runtime.scratchEvent.stageFirstClick();
         for(const s of this._sprites){
             const _s = s as Sprite;
+            console.log('start s.name=', _s.name)
             // ここでロード処理が走る
             // （マウスクリックアクションでAudioPlayerを生成)
             await _s.init();

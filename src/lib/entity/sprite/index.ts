@@ -143,11 +143,12 @@ export class Sprite extends Entity implements ISprite {
                     resolve();
                     return;
                 }                
-
+                let _skinId = -1;
                 for(const img of this._image.images){
                     const svgText = (img as Image).image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
                     const _skin = this._render.renderer._allSkins[skinId];
+                    console.log(_skin);
                     // willReadFrequently を設定するために SKINインスタンスを取り出し、
                     // SVGSkinのコンストラクターで実施すみの下記【A】２行をやり直す。
                     //if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
@@ -156,6 +157,10 @@ export class Sprite extends Entity implements ISprite {
                     /*【A】*/_svgSkin._context = _svgSkin._canvas.getContext("2d", { willReadFrequently: true });
                     await Timer.wait(0.1);
                     (img as Image).skinId = skinId;
+                    if(_skinId == -1){
+                        _skinId = skinId;
+                        me._render.renderer.updateDrawableSkinId(this.drawableID, _skinId);
+                    }
                 }
                 (me.Looks.size as SpriteLooksSize).sizeUpdate();
                 resolve(); // 完了

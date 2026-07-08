@@ -13,27 +13,10 @@ console.log(WallWidth, WallHeight)
 
 
 // 【画像読み込み】
-import wallPng  from './assets/wall.png';
-const WallImage = new Ts.Image({wallPng});
-import cagePng from './assets/cage.png';
-const CageImage = new Ts.Image({cagePng});
-import doorPng from './assets/door.png';
-const DoorImage = new Ts.Image({doorPng});
-
-import SlimeSvg from './assets/slime_a.svg';
-const SlimeImage = new Ts.Image({SlimeSvg});
-import BackdropBlackSvg from '../assets/backdropBlack.svg';
-const BackdropBlackImage = new Ts.Image({BackdropBlackSvg});
-import WaterSvg from '../assets/water.svg';
-const WaterImage = new Ts.Image({WaterSvg});
+import { WallImage, CageImage, DoorImage, SlimeImage, BackdropBlackImage, WaterImage } from "./sub/image";
 
 // 【音を読み込む】
-const Collect = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/32514c51e03db680e9c63857b840ae78.wav/get';
-const CollectSound = new Ts.Sound({Collect});
-const Chirp = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/3b8236bbb288019d93ae38362e865972.wav/get';
-const ChirpSound = new Ts.Sound({Chirp});
-const CrashBeatbox = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/725e29369e9138a43f11e0e5eb3eb562.wav/get';
-const CrashBeatboxSound = new Ts.Sound({CrashBeatbox});
+import { CollectSound, ChirpSound, CrashBeatboxSound } from "./sub/sound";
 
 // 【スプライト】壁
 const wall = new Wall('wall');
@@ -41,14 +24,13 @@ wall.Costume.add( [WallImage] );
 wall.Looks.hide();
 const w = WallWidth;
 const h = WallHeight;
-// wall.Looks.size.w = w;
-// wall.Looks.size.h = h;
+
 // 【スプライト】Cage
 const cage = new Wall('cage');
 cage.Costume.add( [DoorImage,CageImage] );
 cage.Looks.hide();
-// cage.Looks.size.w = w;
-// cage.Looks.size.h = h;
+cage.Looks.size.w = w;
+cage.Looks.size.h = h;
 
 //【変数】
 const Count = Ts.Variable.number(0);
@@ -108,7 +90,7 @@ wall.Event.flagPresser().func = async function*(this:IWall){
         y+=1;
     }
     Count.show();
-    this.Broadcast.send('SLIME');
+    slime.Control.clone();
 }
 cage.Event.flagPresser().func = async function*(this:IWall){
     let y = - Math.floor( Map01.length/2 );
@@ -215,14 +197,6 @@ const moveToRandomCage = function(this:Sprite) {
     this.Motion.position.xy = [_randomCage.Motion.position.x, _randomCage.Motion.position.y];
     Count.value += 1;
 }
-const cageFilter = function(this:Sprite, arr: Sprite[]) {
-
-    const _arr = arr.filter( s => {
-        const _s = s as IWall;
-        return _s.type != undefined; // IWALLスプライトである条件
-    })
-    return _arr;
-}
 slime.Event.cloned().func = async function*(this:Sprite) {
     // 大きさの設定
     this.Looks.size.w = w*0.7;
@@ -230,11 +204,10 @@ slime.Event.cloned().func = async function*(this:Sprite) {
     this.Looks.show();
 
     const _moveToRandomCage = moveToRandomCage.bind(this);
-    const _cageFilter = cageFilter.bind(this);
     for(;;) {
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.UP)) {
             this.Motion.position.y += h;
-            if(this.Sensing.sprite.isTouching([wall], true)) {
+            if(this.Sensing.sprite.isTouching([wall])) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.y -= h;
             }else{
@@ -255,7 +228,7 @@ slime.Event.cloned().func = async function*(this:Sprite) {
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.DOWN)) {
             this.Motion.position.y -= h;
-            if(this.Sensing.sprite.isTouching([wall], true)) {
+            if(this.Sensing.sprite.isTouching([wall])) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.y += h;
             }else{
@@ -276,7 +249,7 @@ slime.Event.cloned().func = async function*(this:Sprite) {
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.RIGHT)) {
             this.Motion.position.x += w;
-            if(this.Sensing.sprite.isTouching([wall], true)) {
+            if(this.Sensing.sprite.isTouching([wall])) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.x -= w;
             }else{
@@ -297,7 +270,7 @@ slime.Event.cloned().func = async function*(this:Sprite) {
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)) {
             this.Motion.position.x -= w;
-            if(this.Sensing.sprite.isTouching([wall], true)) {
+            if(this.Sensing.sprite.isTouching([wall])) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.x += w;
             }else{
