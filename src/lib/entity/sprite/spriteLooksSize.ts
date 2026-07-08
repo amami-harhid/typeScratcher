@@ -49,6 +49,8 @@ export class SpriteLooksSize implements ISpriteLooksSize{
         if(this.hasSkin()){
             this._updateSizeW();
         }else{
+            // TODO
+            // ここに来る条件は無さそう
             const scratchEvent = (engine as Engine).runtime.scratchEvent;
             const _update = this._updateSizeW.bind(this);
             scratchEvent.removeListener(ScratchEvent.SPRITE_INIT, _update);
@@ -63,15 +65,12 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      */
     get h () : number {
         if(this._h == undefined){
-            //const _org_h = this.entity.Properties.scale.h;
-            //this.entity.Properties.scale.h = 100;
             if(this.hasSkin()){
                 const _bounds = this.drawingSize;
                 this._h = _bounds.width;
             }else{
                 this._h = -Infinity;
             }
-            //this.entity.Properties.scale.h = _org_h;
         }
         return this._h;
     }
@@ -88,6 +87,8 @@ export class SpriteLooksSize implements ISpriteLooksSize{
         if(this.hasSkin()){
             this._updateSizeH();
         }else{
+            // TODO
+            // ここに来る条件は無さそう
             const scratchEvent = (engine as Engine).runtime.scratchEvent;
             const _update = this._updateSizeH.bind(this);
             scratchEvent.removeListener(ScratchEvent.SPRITE_INIT, _update);

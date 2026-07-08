@@ -4,6 +4,14 @@ const stageBounds = Ts.StageBounds;
 const stageWidth = stageBounds.w;
 const stageHeight = stageBounds.h;
 
+/**
+ * タイルマップ
+ * 1:  壁
+ * 2:  ドア
+ * 3:  ゲージ
+ * 9:  スライムの初期位置
+ * 横、縦とも、タイル数は奇数とすること
+ */
 export const Map01: number[][] = [
     [1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1],
     [1,9,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 1],
@@ -19,18 +27,34 @@ export const Map01: number[][] = [
 
     [1,0,1,0,0, 0,1,0,0,0, 0,0,0,0,0, 0,1,0,0,0, 1],
     [1,0,0,0,0, 0,1,1,1,1, 1,0,0,0,0, 0,1,1,1,1, 1],
-    [1,0,0,0,0, 0,0,0,0,0, 0,0,0,0,1, 1,0,0,0,0, 1],
+    [1,0,0,0,0, 0,0,0,0,0, 0,0,0,0,1, 1,3,0,0,0, 1],
     [1,0,1,1,1, 1,1,0,0,0, 0,0,0,0,1, 1,0,0,0,0, 1],
     [1,0,0,0,0, 0,0,0,1,1, 1,1,1,0,1, 1,0,0,0,0, 1],
 
     [1,0,1,0,0, 1,0,1,1,1, 1,0,0,0,0, 0,0,0,0,0, 1],
-    [1,0,1,0,0, 0,0,0,0,0, 0,0,1,1,0, 0,0,0,0,0, 1],
+    [1,0,1,3,0, 0,0,0,0,0, 0,0,1,1,0, 0,0,0,0,0, 1],
     [1,0,1,1,1, 0,1,1,1,1, 0,0,1,1,0, 0,1,1,0,0, 1],
     [1,0,0,1,0, 0,0,1,0,0, 1,0,1,1,0, 0,0,0,0,0, 1],
-    [1,0,0,0,0, 1,0,0,0,0, 0,0,0,0,0, 1,1,0,0,0, 1],
+    [1,0,0,0,0, 1,0,0,0,0, 0,0,0,0,3, 1,1,0,0,0, 1],
 
     [1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1, 1,1,1,1,1 ,1],
 ];
+const cagePositionArr:{x:number, y: number}[] = [];
+let y = Math.floor(-Map01[0].length / 2);
+// eslint-disable-next-line loopCheck/s3-loop-plugin
+for(const row of Map01) {
+    let x = -Math.floor(-row.length/2);
+    // eslint-disable-next-line loopCheck/s3-loop-plugin
+    for(const elem of row) {
+        if(elem == 2){
+            cagePositionArr.push({x: x, y: y});
+        }
+        x+=1;
+    }
+    y+=1;
+}
+
+export const CagePositionArr = cagePositionArr;
 
 export const WallWidth = stageWidth/Map01[0].length;
 export const WallHeight = stageHeight/Map01.length;

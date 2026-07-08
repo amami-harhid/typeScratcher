@@ -10,12 +10,16 @@ import { Sprite, Stage, SvgImageAttributes } from "../../src";
 // 【MAP読み込み】
 import { Map01, WallWidth, WallHeight, Wall, type IWall } from "./sub/wall";
 console.log(WallWidth, WallHeight)
+
+
+// 【画像読み込み】
 import wallPng  from './assets/wall.png';
 const WallImage = new Ts.Image({wallPng});
 import cagePng from './assets/cage.png';
 const CageImage = new Ts.Image({cagePng});
+import doorPng from './assets/door.png';
+const DoorImage = new Ts.Image({doorPng});
 
-// 【画像読み込み】
 import SlimeSvg from './assets/slime_a.svg';
 const SlimeImage = new Ts.Image({SlimeSvg});
 import BackdropBlackSvg from '../assets/backdropBlack.svg';
@@ -28,6 +32,8 @@ const Collect = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/32514c51e0
 const CollectSound = new Ts.Sound({Collect});
 const Chirp = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/3b8236bbb288019d93ae38362e865972.wav/get';
 const ChirpSound = new Ts.Sound({Chirp});
+const CrashBeatbox = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/725e29369e9138a43f11e0e5eb3eb562.wav/get';
+const CrashBeatboxSound = new Ts.Sound({CrashBeatbox});
 
 // 【スプライト】壁
 const wall = new Wall('wall');
@@ -39,10 +45,36 @@ const h = WallHeight;
 // wall.Looks.size.h = h;
 // 【スプライト】Cage
 const cage = new Wall('cage');
-cage.Costume.add( [CageImage] );
+cage.Costume.add( [DoorImage,CageImage] );
 cage.Looks.hide();
 // cage.Looks.size.w = w;
 // cage.Looks.size.h = h;
+
+//【変数】
+const Count = Ts.Variable.number(0);
+Ts.Variable.monitoring({Count});
+Count.hide();
+
+const CageBank : {[key : string]: IWall} = {};
+
+// 【スプライト】(Spriteスライム)
+const slime = new Ts.Sprite('slime');
+slime.Looks.hide();
+
+// 画像をスプライトへ追加
+slime.Costume.add( [SlimeImage] );
+slime.Sound.add([ChirpSound, CollectSound, CrashBeatboxSound]);
+slime.Motion.position.xy = [ 0, 0 ];
+
+slime.Event.flagPresser().func = async function*(this:IWall){
+    // 大きさの設定
+    // this.Looks.size.w = w*0.8;
+    // this.Looks.size.h = h*0.8;
+    Count.scale.w = 50;
+    Count.scale.h = 50;
+    Count.value = 0;
+    Count.hide();
+}
 
 wall.Event.flagPresser().func = async function*(this:IWall){
     this.Looks.size.w = w;
@@ -58,7 +90,6 @@ wall.Event.flagPresser().func = async function*(this:IWall){
     // eslint-disable-next-line loopCheck/s3-loop-plugin
     for(const _row of Map01) {
         let x = - Math.floor( _row.length / 2 ); 
-        //console.log(_row);
         // eslint-disable-next-line loopCheck/s3-loop-plugin
         for(const _elem of _row) {
             if(0 < _elem ) {
@@ -69,11 +100,6 @@ wall.Event.flagPresser().func = async function*(this:IWall){
                         this.Motion.position.xy =  [ w*x,  -h*y];
                         this.type = 1;
                         this.Control.clone();
-
-                    }else if(_elem==2){
-                        cage.Motion.position.xy = [ w*x, -h*y];
-                        cage.type = 2;
-                        cage.Control.clone();
                     }
                 }
             }
@@ -81,22 +107,63 @@ wall.Event.flagPresser().func = async function*(this:IWall){
         }
         y+=1;
     }
+    Count.show();
+    this.Broadcast.send('SLIME');
+}
+cage.Event.flagPresser().func = async function*(this:IWall){
+    let y = - Math.floor( Map01.length/2 );
+    // eslint-disable-next-line loopCheck/s3-loop-plugin
+    for(const _row of Map01) {
+        let x = - Math.floor( _row.length / 2 ); 
+        // eslint-disable-next-line loopCheck/s3-loop-plugin
+        for(const _elem of _row) {
+            if(_elem==2){
+                cage.Motion.position.xy = [ w*x, -h*y];
+                cage.type = 2;
+                cage.Control.clone();
+            }else if(_elem==3){
+                cage.Motion.position.xy = [ w*x, -h*y];
+                cage.type = 3;
+                cage.Control.clone();
+            }
+            x+=1;
+        }
+        y+=1;
+    }
 
 }
+
 wall.Event.cloned().func = async function*(this:IWall) {
     this.Looks.show();
 }
 cage.Event.cloned().func = async function*(this:IWall) {
-    this.Looks.show();
+    const me = this;
+    if(this.type == 2) {
+        this.Looks.costume.name = DoorImage.name;
+        this.Looks.show();
+    }else if(this.type == 3){
+        this.Looks.costume.name = CageImage.name;
+        this.Looks.show();
+    }
+    // ケージを保存
+    CageBank[this.name] = me;
+
+    for(;;){
+        await this.Control.wait(Ts.Utils.randomValue(3.5, 5.5));
+        if(this.type == 2) {
+            this.Looks.costume.name = CageImage.name;
+            this.type = 3;
+        }else{
+            this.Looks.costume.name = DoorImage.name;
+            this.type = 2;
+        }
+        yield;
+    }
 }
 
-// 【スプライト】(Spriteスライム)
-const slime = new Ts.Sprite('slime');
-
-// 画像をスプライトへ追加
-slime.Costume.add( [SlimeImage] );
-slime.Sound.add([ChirpSound, CollectSound]);
-slime.Motion.position.xy = [ 0, 0 ];
+slime.Broadcast.receiver('SLIME').func = async function*(this:Sprite) {
+    this.Control.clone();
+}
 
 
 // 【ステージ】(water)
@@ -119,79 +186,145 @@ moji.Looks.layer.gotoBack();
 moji.Event.flagPresser().func = async function*(this:Sprite) {
     this.Looks.layer.gotoFront();
     slime.Looks.layer.gotoFront();
+    for(;;) {
+        this.Looks.hide();
+        await this.Control.wait(1);
+        this.Looks.show();
+        await this.Control.wait(1);
+        yield;
+    }
 }
 
-// 変数
-const touch = Ts.Variable.string( '' ); // タッチ
-Ts.Variable.monitoring( { touch } );
-touch.hide();
+const moveToRandomCage = function(this:Sprite) {
+    this.Sound.play(CrashBeatboxSound);
+    const otherArr: IWall[] = [];
+    // eslint-disable-next-line loopCheck/s3-loop-plugin
+    for(const idx of Ts.Loop.Iterator(Object.keys(CageBank).length)){
+        const _name = Object.keys(CageBank)[idx];
+        const _cage = CageBank[_name];
+        if(_cage.Looks.costume.name == CageImage.name) {
+            if( _cage.name != this.name ) {
+                otherArr.push(_cage);
+            }
+        }
+    }
+    // ランダムに選ぶ
+    const _idx = Ts.Utils.randomValue(0, otherArr.length-1 );
+    const _randomCage = otherArr[_idx];
+    console.log(_randomCage.name)
+    this.Motion.position.xy = [_randomCage.Motion.position.x, _randomCage.Motion.position.y];
+    Count.value += 1;
+}
+const cageFilter = function(this:Sprite, arr: Sprite[]) {
 
-
-slime.Event.flagPresser().func = async function*(this:Sprite){
+    const _arr = arr.filter( s => {
+        const _s = s as IWall;
+        return _s.type != undefined; // IWALLスプライトである条件
+    })
+    return _arr;
+}
+slime.Event.cloned().func = async function*(this:Sprite) {
     // 大きさの設定
-    this.Looks.size.w = w*0.8;
+    this.Looks.size.w = w*0.7;
     this.Looks.size.h = h*0.8;
-    touch.text = '' // 初期化
+    this.Looks.show();
 
-};
-// const moveOtherCage = function(this:Sprite) {
-//     const cloneWalls = (wall as Wall)
-// }
-// 【旗】が押されたとき
-slime.Event.flagPresser().func = async function*(this:Sprite){
-//    const _moveOtherCage = moveOtherCage.bind(this);
+    const _moveToRandomCage = moveToRandomCage.bind(this);
+    const _cageFilter = cageFilter.bind(this);
     for(;;) {
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.UP)) {
             this.Motion.position.y += h;
             if(this.Sensing.sprite.isTouching([wall], true)) {
-                const _walls = this.Sensing.sprite.getTouching();
-                const _wall = _walls[0] as Wall;
-                if(_wall.type == 2) { // Cageのとき
-                    
-                }else{
-                    this.Sound.play(CollectSound);
-                    this.Motion.position.y -=h;
-
-                }
+                this.Sound.play(CollectSound);
+                this.Motion.position.y -= h;
             }else{
-                this.Sound.play(ChirpSound);   
+                const _cages = this.Sensing.sprite.getTouching([cage]);
+                if(_cages.length>0) {
+                    const _cage = _cages[0] as IWall;
+                    if(_cage.Looks.costume.name == DoorImage.name){
+                        //this.Motion.position.x += w;
+                        _moveToRandomCage();
+                    }else{
+                        this.Sound.play(CollectSound);
+                        this.Motion.position.y -= h;
+                    }
+                }else{
+                    this.Sound.play(ChirpSound);
+                }
             }
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.DOWN)) {
             this.Motion.position.y -= h;
-            if(this.Sensing.sprite.isTouching([wall])) {
+            if(this.Sensing.sprite.isTouching([wall], true)) {
                 this.Sound.play(CollectSound);
-                this.Motion.position.y +=h;
+                this.Motion.position.y += h;
             }else{
-                this.Sound.play(ChirpSound);   
+                const _cages = this.Sensing.sprite.getTouching([cage]);
+                if(_cages.length>0) {
+                    const _cage = _cages[0] as IWall;
+                    if(_cage.Looks.costume.name == DoorImage.name){
+                        //this.Motion.position.x += w;
+                        _moveToRandomCage();
+                    }else{
+                        this.Sound.play(CollectSound);
+                        this.Motion.position.y += h;
+                    }
+                }else{
+                    this.Sound.play(ChirpSound);
+                }
             }
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.RIGHT)) {
             this.Motion.position.x += w;
-            if(this.Sensing.sprite.isTouching([wall])) {
+            if(this.Sensing.sprite.isTouching([wall], true)) {
                 this.Sound.play(CollectSound);
-                this.Motion.position.x -=w;
+                this.Motion.position.x -= w;
             }else{
-                this.Sound.play(ChirpSound);   
+                const _cages = this.Sensing.sprite.getTouching([cage]);
+                if(_cages.length>0) {
+                    const _cage = _cages[0] as IWall;
+                    if(_cage.Looks.costume.name == DoorImage.name){
+                        //this.Motion.position.x += w;
+                        _moveToRandomCage();
+                    }else{
+                        this.Sound.play(CollectSound);
+                        this.Motion.position.x -= w;
+                    }
+                }else{
+                    this.Sound.play(ChirpSound);
+                }
             }
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)) {
             this.Motion.position.x -= w;
-            if(this.Sensing.sprite.isTouching([wall])) {
+            if(this.Sensing.sprite.isTouching([wall], true)) {
                 this.Sound.play(CollectSound);
-                this.Motion.position.x +=w;
+                this.Motion.position.x += w;
             }else{
-                this.Sound.play(ChirpSound);   
+                const _cages = this.Sensing.sprite.getTouching([cage]);
+                if(_cages.length>0) {
+                    const _cage = _cages[0] as IWall;
+                    if(_cage.Looks.costume.name == DoorImage.name){
+                        //this.Motion.position.x += w;
+                        _moveToRandomCage();
+                    }else{
+                        this.Sound.play(CollectSound);
+                        this.Motion.position.x += w;
+                    }
+                }else{
+                    this.Sound.play(ChirpSound);
+                }
             }
         }
+
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.ANY)) {
             await this.Control.waitUntil(()=>this.Sensing.keyboard.isNotDown(Ts.Keyboard.ANY));
         }
         yield;
     }
 }
-// 【旗】が押されたとき
-slime.Event.flagPresser().func = async function*(this:Sprite){
+// 【スライムクローン】
+slime.Event.cloned().func = async function*(this:Sprite) {
     /** 色の変化量 */
     const changeColor = 15;
     for(;;) {

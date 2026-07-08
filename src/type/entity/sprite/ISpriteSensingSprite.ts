@@ -17,7 +17,7 @@ export interface ISpriteSensingSprite extends IEntitySensingSprite{
      * @param targets 
      * @returns 
      */
-    getTouching() : ISprite[];
+    getTouching(target?: ISprite[]) : ISprite[];
 
     /**
      * 指定したスプライトまでの距離

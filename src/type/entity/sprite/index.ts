@@ -22,7 +22,10 @@ export interface SSprite{
 
 };
 export interface ISprite extends IEntity {
-
+    /**
+     * スプライト名
+     */
+    readonly name: string;
 
     /**
      * 動き

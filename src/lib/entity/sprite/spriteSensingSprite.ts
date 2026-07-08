@@ -49,11 +49,23 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
      * @param targets 
      * @returns 
      */
-    getTouching() : ISprite[] {
+    getTouching(targets?: ISprite[]) : ISprite[] {
         const _entity = this.entity as Sprite;
         _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
-        const targetSprites = (engine as Engine).getSprites();
-        const entities = this.getTouchingTarget(targetSprites);
-        return entities;
+        if( targets ) {
+            const targetSprites: ISprite[] = [];
+            for(const _target of targets){
+                const __target = _target as Sprite;
+                targetSprites.push(_target);
+                targetSprites.push(...__target.clones);
+            }
+            const entities = this.getTouchingTarget(targetSprites);
+            return entities;
+
+        }else{
+            const targetSprites = (engine as Engine).getSprites();
+            const entities = this.getTouchingTarget(targetSprites);
+            return entities;
+        }
     }
 };

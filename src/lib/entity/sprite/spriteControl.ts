@@ -27,8 +27,8 @@ const CLONE_MAX_SIZE = 300;
  */
 export class SpriteControl implements ISpriteControl {
     //private static _clonedEventElements : CLONED_EVENT_ELEMENT[] = [];
-    private static _clonedFuncElements : CallableFunction[] = [];
-    private static _clonedEventElementKeys : string[] = [];
+    public _clonedFuncElements : CallableFunction[] = [];
+    public _clonedEventElementKeys : string[] = [];
     private static _cloneCount: number = 0;
     
     public static set cloneCount(_count: number) {
@@ -75,12 +75,16 @@ export class SpriteControl implements ISpriteControl {
         if(SpriteControl._cloneCount > CLONE_MAX_SIZE) {
             return;
         }
-        return new Promise<void>(resolve=>{
+        return new Promise<void>(async resolve=>{
             const _sprite = this.entity as Sprite;
             const clonesCount = _sprite.clones.length;
             const name = `${_sprite.name}_${clonesCount+1}`;
             // クローン作製
             const clone = _sprite.makeClone(name);
+
+            (clone.Control as SpriteControl)._clonedFuncElements = [...this._clonedFuncElements];
+            (clone.Control as SpriteControl)._clonedEventElementKeys = [...this._clonedEventElementKeys];
+
             clone.isClone = true;
             _sprite.clones.push(clone);
             clone.parent = this.entity;
@@ -88,8 +92,10 @@ export class SpriteControl implements ISpriteControl {
             // 各種コピー
             (clone.Control as SpriteControl)._propertiesCopyFrom(_sprite);
 
+            // 初期化
+            await clone.init();
+
             // イベント登録
-            this.beforeRegistCloneEvent(clone);
             const scratchEvent = (engine as Engine).runtime.scratchEvent;
             const messageId = scratchEvent.getClonedEventMessageId(_sprite);
             if(scratchEvent.listenerCount(messageId)>0){
@@ -98,16 +104,9 @@ export class SpriteControl implements ISpriteControl {
                 // 何もしない
             }
 
-            // 初期化
-            // TODO クローンの場合は初期化は不要かもしれない。
-            clone.init();
             resolve();
         });
     }
-    protected beforeRegistCloneEvent(clone: Sprite) {
-
-    }
-
     private _propertiesCopyFrom( target: Sprite ) {
         const _sprite = this.entity as Sprite;
         if(_sprite.isClone === true) {
@@ -178,17 +177,17 @@ export class SpriteControl implements ISpriteControl {
         }
         const scratchEvent = (engine as Engine).runtime.scratchEvent;
         const messageId = scratchEvent.getClonedEventMessageId(_parentSprite);
-        SpriteControl._clonedFuncElements.push(func);
+        this._clonedFuncElements.push(func);
 
         const threadObj = new ThreadObj(this.entity, DoubleRunning.TRUE); // 多重起動許す
         threadObj.setFunc(func);
         threadManager.registThread(threadObj);
 
-        if(SpriteControl._clonedEventElementKeys.includes(messageId)) {
+        if(this._clonedEventElementKeys.includes(messageId)) {
             // 何もしない
         }else{
             // キーを保存
-            SpriteControl._clonedEventElementKeys.push(messageId);
+            this._clonedEventElementKeys.push(messageId);
             // イベントを登録
             scratchEvent.clonedEventRegist(_parentSprite);              
         }
@@ -200,7 +199,6 @@ export class SpriteControl implements ISpriteControl {
      * @param clone 
      */
     public clonedEventKick(): void {
-
         // このメソッドは ScratchEventから呼ばれる。
         // クローンのメソッドである( this == clone )
 
@@ -209,7 +207,7 @@ export class SpriteControl implements ISpriteControl {
             return;
         }
         // スレッドを作成する
-        for(const func of SpriteControl._clonedFuncElements) {
+        for(const func of this._clonedFuncElements) {
             const threadObj = new ThreadObj(this.entity, DoubleRunning.FALSE); // 多重起動許さない
             threadObj.setFunc(func);
             threadManager.registThread(threadObj);

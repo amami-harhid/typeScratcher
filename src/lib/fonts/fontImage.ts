@@ -13,7 +13,7 @@ export class FontImage extends Image implements IFontImage {
     private _text! : string;
     constructor(attributes: createSvgImageAttributes) {
         const image: ImageArgStringObject = {};
-        image['fontImage'] = ''; // ダミー 
+        image['fontImageDummy'] = ''; // ダミー 
         super(image);
         this._attributes = attributes;
         this.skinId = -1;

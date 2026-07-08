@@ -255,11 +255,14 @@ export class ScratchEvent extends EventEmitter {
         }
         const messageId = this.getClonedEventMessageId(sprite);
         this.on(messageId, (clone: Sprite)=>{
+            //console.log('on clone=', clone.name, clone.id);
             (clone.Control as SpriteControl).clonedEventKick();
         });
     }
     public getClonedEventMessageId(sprite: Sprite) : string {
         // 引数(sprite)は 親スプライトの前提
-        return `Cloned_${sprite.name}_${sprite.id}`;
+        const messageId = `Cloned_${sprite.name}_${sprite.id}`;
+        //console.log('messageId=', messageId);
+        return messageId;
     }
 }

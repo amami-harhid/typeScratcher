@@ -115,9 +115,12 @@ export class Sprite extends Entity implements ISprite {
     }
     async init() {
         const me = this;
+
         return new Promise<void>((resolve)=>{
             const loadArr: Promise<void>[] = [];
             for(const img of this._image.images){
+                console.log('sprite name = ', me.name);
+                console.log('image name = ', img.name);
                 loadArr.push((img as Image).load());
             }
             for(const sndKey of (this._sound as EntitySound).soundKeys){
@@ -130,11 +133,17 @@ export class Sprite extends Entity implements ISprite {
             for(const fnt of this._fonts) {
                 loadArr.push(fnt.load())
             }
-            if( me.isClone ){
-                return;
-            }
             Promise.all(loadArr).then(async ()=>{ 
                 // イメージごとに Skinを作る
+                if(me.isClone === true) {
+                    const costumeNo = me.Looks.costume.no;
+                    const _selectedImage = me._image.images[costumeNo];
+                    const _skinId = (_selectedImage as Image).skinId;
+                    me._render.renderer.updateDrawableSkinId(this.drawableID, _skinId);
+                    resolve();
+                    return;
+                }                
+
                 for(const img of this._image.images){
                     const svgText = (img as Image).image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
@@ -152,6 +161,10 @@ export class Sprite extends Entity implements ISprite {
                 resolve(); // 完了
             });
         })
+    }
+    cloneInit() : void {
+
+
     }
     private _updateSkipCounter = 0;
     update() {
