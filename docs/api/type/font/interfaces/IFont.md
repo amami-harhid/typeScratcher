@@ -1,6 +1,6 @@
 # Interface: IFont
 
-Defined in: [src/type/font/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/font/index.ts#L26)
+Defined in: [src/type/font/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/font/index.ts#L26)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [src/type/font/index.ts:26](https://github.com/amami-harhid/typeScra
 
 > **name**: `string`
 
-Defined in: [src/type/font/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/font/index.ts#L27)
+Defined in: [src/type/font/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/font/index.ts#L27)
 
 ## Methods
 
@@ -16,7 +16,7 @@ Defined in: [src/type/font/index.ts:27](https://github.com/amami-harhid/typeScra
 
 > **load**(): `Promise`\<`void`\>
 
-Defined in: [src/type/font/index.ts:29](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/font/index.ts#L29)
+Defined in: [src/type/font/index.ts:29](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/font/index.ts#L29)
 
 #### Returns
 

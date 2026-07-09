@@ -1,6 +1,6 @@
 # Class: SpriteSensingMouse
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L11)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L11)
 
 Sprite Sensing(調べる) Mouse
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる) Mouse
 
 > **new SpriteSensingMouse**(`entity`): `SpriteSensingMouse`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:18](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L18)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L18)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:18](https://github.com/
 
 > **get** **degree**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:54](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L54)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:54](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L54)
 
 マウスカーソルへの向き
 
@@ -60,7 +60,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:54](https://github.com/
 
 > **get** **distance**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:48](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L48)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:48](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L48)
 
 距離
 使用例：マウスポインターとの距離 
@@ -86,7 +86,7 @@ this.Sensing.Distance.to( otherSprite )
 
 > **get** **isDown**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L26)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L26)
 
 マウスが押されていることの判定
 
@@ -110,7 +110,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:26](https://github.com/
 
 > **get** **isNotTouching**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:70](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L70)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:70](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L70)
 
 マウスタッチしていないことの判定
 
@@ -126,7 +126,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:70](https://github.com/
 
 > **get** **isTouching**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:77](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L77)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:77](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L77)
 
 マウスタッチしていることの判定
 
@@ -148,7 +148,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:77](https://github.com/
 
 > **get** **x**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:32](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L32)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:32](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L32)
 
 マウス情報(x座標)
 
@@ -170,7 +170,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:32](https://github.com/
 
 > **get** **y**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:38](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingMouse.ts#L38)
+Defined in: [src/lib/entity/sprite/spriteSensingMouse.ts:38](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingMouse.ts#L38)
 
 マウス情報(y座標)
 

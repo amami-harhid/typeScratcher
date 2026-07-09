@@ -2,7 +2,7 @@
 
 > **ParmFontFace** = `object`
 
-Defined in: [src/type/svgText/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/svgText/index.ts#L25)
+Defined in: [src/type/svgText/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/svgText/index.ts#L25)
 
 FontFace
 
@@ -12,7 +12,7 @@ FontFace
 
 > **descriptors**: `FontFaceDescriptors`
 
-Defined in: [src/type/svgText/index.ts:28](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/svgText/index.ts#L28)
+Defined in: [src/type/svgText/index.ts:28](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/svgText/index.ts#L28)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/type/svgText/index.ts:28](https://github.com/amami-harhid/typeS
 
 > **font**: `string`
 
-Defined in: [src/type/svgText/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/svgText/index.ts#L26)
+Defined in: [src/type/svgText/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/svgText/index.ts#L26)
 
 ***
 
@@ -28,4 +28,4 @@ Defined in: [src/type/svgText/index.ts:26](https://github.com/amami-harhid/typeS
 
 > **href**: `string`
 
-Defined in: [src/type/svgText/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/svgText/index.ts#L27)
+Defined in: [src/type/svgText/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/svgText/index.ts#L27)

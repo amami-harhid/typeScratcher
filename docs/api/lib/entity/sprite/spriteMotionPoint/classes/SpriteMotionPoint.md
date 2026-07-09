@@ -1,6 +1,6 @@
 # Class: SpriteMotionPoint
 
-Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:8](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionPoint.ts#L8)
+Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionPoint.ts#L8)
 
 スプライトの動き（向かせる）
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:8](https://github.com/am
 
 > **new SpriteMotionPoint**(`entity`): `SpriteMotionPoint`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionPoint.ts#L14)
+Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionPoint.ts#L14)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:14](https://github.com/a
 
 > **toMouse**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:25](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionPoint.ts#L25)
+Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:25](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionPoint.ts#L25)
 
 マウスカーソルへ向く(ステージ外でもOK)
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:25](https://github.com/a
 
 > **toMouseInStage**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:20](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionPoint.ts#L20)
+Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionPoint.ts#L20)
 
 マウスカーソルへ向く
 
@@ -72,7 +72,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:20](https://github.com/a
 
 > **toRandom**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:55](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionPoint.ts#L55)
+Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:55](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionPoint.ts#L55)
 
 どこかを向く
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:55](https://github.com/a
 
 > **toTarget**(`target`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:41](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionPoint.ts#L41)
+Defined in: [src/lib/entity/sprite/spriteMotionPoint.ts:41](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionPoint.ts#L41)
 
 ターゲットの位置へ向く
 

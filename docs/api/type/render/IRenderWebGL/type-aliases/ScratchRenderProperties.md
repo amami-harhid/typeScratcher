@@ -2,7 +2,7 @@
 
 > **ScratchRenderProperties** = `object`
 
-Defined in: [src/type/render/IRenderWebGL.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L9)
+Defined in: [src/type/render/IRenderWebGL.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L9)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:9](https://github.com/amami-harhid/
 
 > `optional` **brightness?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:20](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L20)
+Defined in: [src/type/render/IRenderWebGL.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L20)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:20](https://github.com/amami-harhid
 
 > `optional` **color?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:15](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L15)
+Defined in: [src/type/render/IRenderWebGL.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L15)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:15](https://github.com/amami-harhid
 
 > `optional` **direction?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:12](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L12)
+Defined in: [src/type/render/IRenderWebGL.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L12)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:12](https://github.com/amami-harhid
 
 > `optional` **fisheye?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:16](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L16)
+Defined in: [src/type/render/IRenderWebGL.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L16)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:16](https://github.com/amami-harhid
 
 > `optional` **ghost?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:21](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L21)
+Defined in: [src/type/render/IRenderWebGL.ts:21](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L21)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:21](https://github.com/amami-harhid
 
 > `optional` **mosaic?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:19](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L19)
+Defined in: [src/type/render/IRenderWebGL.ts:19](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L19)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:19](https://github.com/amami-harhid
 
 > `optional` **pixelate?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:18](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L18)
+Defined in: [src/type/render/IRenderWebGL.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L18)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:18](https://github.com/amami-harhid
 
 > `optional` **position?**: [`TPositionArray`](../../../common/typeCommon/type-aliases/TPositionArray.md)
 
-Defined in: [src/type/render/IRenderWebGL.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L11)
+Defined in: [src/type/render/IRenderWebGL.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L11)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:11](https://github.com/amami-harhid
 
 > `optional` **scale?**: [`TScaleArr`](../../../common/typeCommon/type-aliases/TScaleArr.md)
 
-Defined in: [src/type/render/IRenderWebGL.ts:13](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L13)
+Defined in: [src/type/render/IRenderWebGL.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L13)
 
 ***
 
@@ -82,7 +82,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:13](https://github.com/amami-harhid
 
 > **skinId**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L10)
+Defined in: [src/type/render/IRenderWebGL.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L10)
 
 ***
 
@@ -90,7 +90,7 @@ Defined in: [src/type/render/IRenderWebGL.ts:10](https://github.com/amami-harhid
 
 > `optional` **visible?**: `boolean`
 
-Defined in: [src/type/render/IRenderWebGL.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L14)
+Defined in: [src/type/render/IRenderWebGL.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L14)
 
 ***
 
@@ -98,4 +98,4 @@ Defined in: [src/type/render/IRenderWebGL.ts:14](https://github.com/amami-harhid
 
 > `optional` **whirl?**: `number`
 
-Defined in: [src/type/render/IRenderWebGL.ts:17](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/IRenderWebGL.ts#L17)
+Defined in: [src/type/render/IRenderWebGL.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/IRenderWebGL.ts#L17)

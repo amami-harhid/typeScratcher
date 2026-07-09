@@ -1,6 +1,6 @@
 # Class: SpriteMotionMove
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:13](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L13)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L13)
 
 スプライトの動き（動かす）
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:13](https://github.com/am
 
 > **new SpriteMotionMove**(`entity`): `SpriteMotionMove`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:20](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L20)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L20)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:20](https://github.com/am
 
 > **get** **x**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:24](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L24)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:24](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L24)
 
 ##### Returns
 
@@ -48,7 +48,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:24](https://github.com/am
 
 > **set** **x**(`x`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:27](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L27)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L27)
 
 ##### Parameters
 
@@ -68,7 +68,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:27](https://github.com/am
 
 > **get** **y**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:30](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L30)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:30](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L30)
 
 ##### Returns
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:30](https://github.com/am
 
 > **set** **y**(`y`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:33](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L33)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:33](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L33)
 
 ##### Parameters
 
@@ -96,7 +96,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:33](https://github.com/am
 
 > **glideTo**(`sec`, `x`, `y`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:179](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L179)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:179](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L179)
 
 #### Parameters
 
@@ -126,7 +126,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:179](https://github.com/a
 
 > **ifOnEdgeBounce**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:59](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L59)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:59](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L59)
 
 もし端に振れたら跳ね返る
 
@@ -144,7 +144,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:59](https://github.com/am
 
 > **steps**(`steps`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:46](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L46)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:46](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L46)
 
 ステップ数分、進ませる
 
@@ -170,7 +170,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:46](https://github.com/am
 
 > **to**(`x`, `y`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:36](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L36)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:36](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L36)
 
 指定座標へ移動させる
 
@@ -202,7 +202,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:36](https://github.com/am
 
 > **toMouse**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:154](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L154)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:154](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L154)
 
 マウスカーソルの位置へ移動する
 
@@ -220,7 +220,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:154](https://github.com/a
 
 > **toRandom**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:139](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L139)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:139](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L139)
 
 ステージ上のランダムな位置へ移動する
 
@@ -238,7 +238,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:139](https://github.com/a
 
 > **toSprite**(`target`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:167](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteMotionMove.ts#L167)
+Defined in: [src/lib/entity/sprite/spriteMotionMove.ts:167](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteMotionMove.ts#L167)
 
 指定したスプライトの位置へ移動する
 

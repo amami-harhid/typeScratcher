@@ -1,6 +1,6 @@
 # Class: Var
 
-Defined in: [src/lib/entity/monitor/var.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/var.ts#L9)
+Defined in: [src/lib/entity/monitor/var.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/var.ts#L9)
 
 Var
 
@@ -22,7 +22,7 @@ const counter = Var.from({value: 5}); // 初期値 5 (数値型)を定義
 
 > `static` **number**(`value`): [`NumberProxy`](../../../../../type/entity/monitor/monitoring/interfaces/NumberProxy.md)
 
-Defined in: [src/lib/entity/monitor/var.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/var.ts#L11)
+Defined in: [src/lib/entity/monitor/var.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/var.ts#L11)
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Defined in: [src/lib/entity/monitor/var.ts:11](https://github.com/amami-harhid/t
 
 > `static` **string**(`text`): [`StringProxy`](../../../../../type/entity/monitor/monitoring/interfaces/StringProxy.md)
 
-Defined in: [src/lib/entity/monitor/var.ts:37](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/var.ts#L37)
+Defined in: [src/lib/entity/monitor/var.ts:37](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/var.ts#L37)
 
 #### Parameters
 

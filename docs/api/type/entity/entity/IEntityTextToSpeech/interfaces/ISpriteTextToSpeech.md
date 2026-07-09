@@ -1,6 +1,6 @@
 # Interface: ISpriteTextToSpeech
 
-Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityTextToSpeech.ts#L4)
+Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityTextToSpeech.ts#L4)
 
 サイズ
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:4](https://github.com
 
 > **setSpeechProperties**(`type`, `properties?`, `gender?`, `locale?`): `void`
 
-Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:25](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityTextToSpeech.ts#L25)
+Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:25](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityTextToSpeech.ts#L25)
 
 識別タイプをつけてプロパティを設定する
 
@@ -50,7 +50,7 @@ Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:25](https://github.co
 
 > **speech**(`words`, `propertyType`): `void`
 
-Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityTextToSpeech.ts#L11)
+Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityTextToSpeech.ts#L11)
 
 スピーチする
 
@@ -78,7 +78,7 @@ Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:11](https://github.co
 
 > **speechAndWait**(`words`, `propertyType`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:17](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityTextToSpeech.ts#L17)
+Defined in: [src/type/entity/entity/IEntityTextToSpeech.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityTextToSpeech.ts#L17)
 
 スピーチして終わるまで待つ
 

@@ -1,6 +1,6 @@
 # Class: SpriteLooksBackdrop
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L11)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L11)
 
 背景
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:11](https://github.com
 
 > **new SpriteLooksBackdrop**(`entity`): `SpriteLooksBackdrop`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:17](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L17)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L17)
 
 **`Internal`**
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:17](https://github.com
 
 > **currentBackdropNo**: `number` = `-1`
 
-Defined in: [src/lib/entity/entity/entityBackdrop.ts:18](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityBackdrop.ts#L18)
+Defined in: [src/lib/entity/entity/entityBackdrop.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityBackdrop.ts#L18)
 
 #### Inherited from
 
@@ -58,7 +58,7 @@ Defined in: [src/lib/entity/entity/entityBackdrop.ts:18](https://github.com/amam
 
 > **get** **currentSkinId**(): `number`
 
-Defined in: [src/lib/entity/entity/entityBackdrop.ts:74](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityBackdrop.ts#L74)
+Defined in: [src/lib/entity/entity/entityBackdrop.ts:74](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityBackdrop.ts#L74)
 
 使用中のSkinId
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/entity/entity/entityBackdrop.ts:74](https://github.com/amam
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:64](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L64)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:64](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L64)
 
 背景名
 ```ts
@@ -94,7 +94,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:64](https://github.com
 
 > **set** **name**(`name`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:78](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L78)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:78](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L78)
 
 背景名
 ```ts
@@ -124,7 +124,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:78](https://github.com
 
 > **get** **names**(): `string`[]
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:23](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L23)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L23)
 
 背景名の配列
 
@@ -144,7 +144,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:23](https://github.com
 
 > **get** **no**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:37](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L37)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:37](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L37)
 
 背景番号
 ```ts
@@ -160,7 +160,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:37](https://github.com
 
 > **set** **no**(`no`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:51](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L51)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:51](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L51)
 
 背景番号
 ```ts
@@ -188,7 +188,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:51](https://github.com
 
 > **add**(`images`): `void`
 
-Defined in: [src/lib/entity/entity/entityBackdrop.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityBackdrop.ts#L26)
+Defined in: [src/lib/entity/entity/entityBackdrop.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityBackdrop.ts#L26)
 
 #### Parameters
 
@@ -210,7 +210,7 @@ Defined in: [src/lib/entity/entity/entityBackdrop.ts:26](https://github.com/amam
 
 > **next**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:100](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L100)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:100](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L100)
 
 次の背景にする
 ```ts
@@ -231,7 +231,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:100](https://github.co
 
 > **nextAndWait**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:109](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L109)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:109](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L109)
 
 次の背景にして待つ
 
@@ -249,7 +249,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:109](https://github.co
 
 > **previous**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:118](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L118)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:118](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L118)
 
 前の背景にする
 
@@ -267,7 +267,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:118](https://github.co
 
 > **previousAndWait**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:128](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L128)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:128](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L128)
 
 前の背景にして待つ。
 
@@ -285,7 +285,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:128](https://github.co
 
 > **switchAndWait**(`backdropName`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:88](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L88)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:88](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L88)
 
 背景を切り替えて待つ
 
@@ -309,7 +309,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:88](https://github.com
 
 > **switchRandom**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:137](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L137)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:137](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L137)
 
 どれかの背景にする
 
@@ -327,7 +327,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:137](https://github.co
 
 > **switchRandomAndWait**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:147](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksBackdrop.ts#L147)
+Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:147](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksBackdrop.ts#L147)
 
 どれかの背景にして待つ
 
@@ -345,7 +345,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBackdrop.ts:147](https://github.co
 
 > **untilBackdropEventDone**(`backdropName`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entityBackdrop.ts:204](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityBackdrop.ts#L204)
+Defined in: [src/lib/entity/entity/entityBackdrop.ts:204](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityBackdrop.ts#L204)
 
 #### Parameters
 
@@ -367,7 +367,7 @@ Defined in: [src/lib/entity/entity/entityBackdrop.ts:204](https://github.com/ama
 
 > `static` **getBackdropChangeMessageId**(`backdropName`): `string`
 
-Defined in: [src/lib/entity/entity/entityBackdrop.ts:246](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityBackdrop.ts#L246)
+Defined in: [src/lib/entity/entity/entityBackdrop.ts:246](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityBackdrop.ts#L246)
 
 #### Parameters
 

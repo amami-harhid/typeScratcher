@@ -1,6 +1,6 @@
 # Interface: ISvgSkin
 
-Defined in: [src/type/render/ISvgSkin.ts:2](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/ISvgSkin.ts#L2)
+Defined in: [src/type/render/ISvgSkin.ts:2](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/ISvgSkin.ts#L2)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [src/type/render/ISvgSkin.ts:2](https://github.com/amami-harhid/type
 
 > **\_canvas**: `HTMLCanvasElement` \| `null`
 
-Defined in: [src/type/render/ISkin.ts:2](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/ISkin.ts#L2)
+Defined in: [src/type/render/ISkin.ts:2](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/ISkin.ts#L2)
 
 #### Inherited from
 
@@ -24,7 +24,7 @@ Defined in: [src/type/render/ISkin.ts:2](https://github.com/amami-harhid/typeScr
 
 > **\_context**: `CanvasRenderingContext2D` \| `null`
 
-Defined in: [src/type/render/ISvgSkin.ts:3](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/ISvgSkin.ts#L3)
+Defined in: [src/type/render/ISvgSkin.ts:3](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/ISvgSkin.ts#L3)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: [src/type/render/ISvgSkin.ts:3](https://github.com/amami-harhid/type
 
 > **\_svgImage**: `HTMLImageElement`
 
-Defined in: [src/type/render/ISvgSkin.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/render/ISvgSkin.ts#L4)
+Defined in: [src/type/render/ISvgSkin.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/render/ISvgSkin.ts#L4)

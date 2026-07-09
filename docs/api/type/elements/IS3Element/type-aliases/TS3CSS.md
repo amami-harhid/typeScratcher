@@ -2,7 +2,7 @@
 
 > **TS3CSS** = `object`
 
-Defined in: [src/type/elements/IS3Element.ts:1](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L1)
+Defined in: [src/type/elements/IS3Element.ts:1](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L1)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/elements/IS3Element.ts:1](https://github.com/amami-harhid/
 
 > **askCss**: `string`
 
-Defined in: [src/type/elements/IS3Element.ts:8](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L8)
+Defined in: [src/type/elements/IS3Element.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L8)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/elements/IS3Element.ts:8](https://github.com/amami-harhid/
 
 > **canvasCss**: `string`
 
-Defined in: [src/type/elements/IS3Element.ts:5](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L5)
+Defined in: [src/type/elements/IS3Element.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L5)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/elements/IS3Element.ts:5](https://github.com/amami-harhid/
 
 > **documentCss**: `string`
 
-Defined in: [src/type/elements/IS3Element.ts:2](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L2)
+Defined in: [src/type/elements/IS3Element.ts:2](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L2)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/elements/IS3Element.ts:2](https://github.com/amami-harhid/
 
 > **flagCss**: `string`
 
-Defined in: [src/type/elements/IS3Element.ts:3](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L3)
+Defined in: [src/type/elements/IS3Element.ts:3](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L3)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/elements/IS3Element.ts:3](https://github.com/amami-harhid/
 
 > **mainTmpCss**: `string`
 
-Defined in: [src/type/elements/IS3Element.ts:7](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L7)
+Defined in: [src/type/elements/IS3Element.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L7)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/type/elements/IS3Element.ts:7](https://github.com/amami-harhid/
 
 > **scratch3Header**: `string`
 
-Defined in: [src/type/elements/IS3Element.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L4)
+Defined in: [src/type/elements/IS3Element.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L4)
 
 ***
 
@@ -58,4 +58,4 @@ Defined in: [src/type/elements/IS3Element.ts:4](https://github.com/amami-harhid/
 
 > **textCanvasCss**: `string`
 
-Defined in: [src/type/elements/IS3Element.ts:6](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/elements/IS3Element.ts#L6)
+Defined in: [src/type/elements/IS3Element.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/elements/IS3Element.ts#L6)

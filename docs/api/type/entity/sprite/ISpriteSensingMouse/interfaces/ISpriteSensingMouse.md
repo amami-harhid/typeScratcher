@@ -1,6 +1,6 @@
 # Interface: ISpriteSensingMouse
 
-Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:5](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteSensingMouse.ts#L5)
+Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingMouse.ts#L5)
 
 Sprite Sensing(調べる)
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる)
 
 > `readonly` **degree**: `number`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteSensingMouse.ts#L26)
+Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingMouse.ts#L26)
 
 マウスカーソルへの向き
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:26](https://github.co
 
 > `readonly` **distance**: `number`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:22](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteSensingMouse.ts#L22)
+Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingMouse.ts#L22)
 
 マウスカーソルまでの距離
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:22](https://github.co
 
 > `readonly` **isDown**: `boolean`
 
-Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySensingMouse.ts#L9)
+Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensingMouse.ts#L9)
 
 マウスが押されていることの判定
 
@@ -52,7 +52,7 @@ Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:9](https://github.com
 
 > `readonly` **isTouching**: `boolean`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteSensingMouse.ts#L11)
+Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingMouse.ts#L11)
 
 マウスタッチしていることの判定
 
@@ -64,7 +64,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingMouse.ts:11](https://github.co
 
 > `readonly` **x**: `number`
 
-Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:13](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySensingMouse.ts#L13)
+Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensingMouse.ts#L13)
 
 マウス情報( x座標 )
 
@@ -78,7 +78,7 @@ Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:13](https://github.co
 
 > `readonly` **y**: `number`
 
-Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:17](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySensingMouse.ts#L17)
+Defined in: [src/type/entity/entity/IEntitySensingMouse.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensingMouse.ts#L17)
 
 マウス情報( y座標 )
 

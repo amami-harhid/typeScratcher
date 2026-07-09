@@ -70,7 +70,7 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
     private _textAreaSize: TSize;
     private _textDirty: boolean;
     private _textureDirty: boolean;
-    private _rotationCenter: TVec3;
+    private _rotationCenter: twgl.v3.Vec3;
     private _texture: WebGLTexture|null;
     private _uniforms: TUniform;
     private _silhouette: S3Silhouette;
@@ -206,7 +206,7 @@ export class S3MonitorSkin extends EventEmitter implements IMonitorSkin {
     get id () : number{
         return this._id;
     }
-    get rotationCenter () : TVec3 {
+    get rotationCenter () : twgl.v3.Vec3 {
         return this._rotationCenter;
     }
     /**

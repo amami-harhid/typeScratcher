@@ -1,6 +1,6 @@
 # Class: SvgTextCreator
 
-Defined in: [src/lib/svgText/svgTextCreator.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/svgText/svgTextCreator.ts#L10)
+Defined in: [src/lib/svgText/svgTextCreator.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTextCreator.ts#L10)
 
 SvgTextCreator
 
@@ -24,7 +24,7 @@ SvgTextCreator
 
 > **toSvg**(`textArr`, `option?`): `string`
 
-Defined in: [src/lib/svgText/svgTextCreator.ts:37](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/svgText/svgTextCreator.ts#L37)
+Defined in: [src/lib/svgText/svgTextCreator.ts:37](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTextCreator.ts#L37)
 
 文字の配列をSVG化する
 
@@ -52,7 +52,7 @@ Defined in: [src/lib/svgText/svgTextCreator.ts:37](https://github.com/amami-harh
 
 > **toSvg2**(`textArr`, `fontSize?`, `fontStyle?`, `color?`, `fontFamily?`): `string`
 
-Defined in: [src/lib/svgText/svgTextCreator.ts:27](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/svgText/svgTextCreator.ts#L27)
+Defined in: [src/lib/svgText/svgTextCreator.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTextCreator.ts#L27)
 
 文字の配列をSVG化する
 
@@ -92,7 +92,7 @@ Defined in: [src/lib/svgText/svgTextCreator.ts:27](https://github.com/amami-harh
 
 > `static` **getInstance**(): `SvgTextCreator`
 
-Defined in: [src/lib/svgText/svgTextCreator.ts:12](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/svgText/svgTextCreator.ts#L12)
+Defined in: [src/lib/svgText/svgTextCreator.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTextCreator.ts#L12)
 
 #### Returns
 

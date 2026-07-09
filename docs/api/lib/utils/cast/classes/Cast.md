@@ -1,6 +1,6 @@
 # Class: Cast
 
-Defined in: [src/lib/utils/cast.ts:18](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L18)
+Defined in: [src/lib/utils/cast.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L18)
 
 ## Fileoverview
 
@@ -30,7 +30,7 @@ Use when coercing a value before computation.
 
 > **get** `static` **LIST\_ALL**(): `string`
 
-Defined in: [src/lib/utils/cast.ts:209](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L209)
+Defined in: [src/lib/utils/cast.ts:209](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L209)
 
 ##### Returns
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/utils/cast.ts:209](https://github.com/amami-harhid/typeScra
 
 > **get** `static` **LIST\_INVALID**(): `string`
 
-Defined in: [src/lib/utils/cast.ts:205](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L205)
+Defined in: [src/lib/utils/cast.ts:205](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L205)
 
 ##### Returns
 
@@ -56,7 +56,7 @@ Defined in: [src/lib/utils/cast.ts:205](https://github.com/amami-harhid/typeScra
 
 > `static` **compare**(`v1`, `v2`): `number`
 
-Defined in: [src/lib/utils/cast.ts:150](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L150)
+Defined in: [src/lib/utils/cast.ts:150](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L150)
 
 Compare two values, using Scratch cast, case-insensitive string compare, etc.
 In Scratch 2.0, this is captured by `interp.compare.`
@@ -87,7 +87,7 @@ Negative number if v1 < v2; 0 if equal; positive otherwise.
 
 > `static` **isInt**(`val`): `boolean`
 
-Defined in: [src/lib/utils/cast.ts:186](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L186)
+Defined in: [src/lib/utils/cast.ts:186](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L186)
 
 Determine if a Scratch argument number represents a round integer.
 
@@ -111,7 +111,7 @@ True if number looks like an integer.
 
 > `static` **isWhiteSpace**(`val`): `boolean`
 
-Defined in: [src/lib/utils/cast.ts:139](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L139)
+Defined in: [src/lib/utils/cast.ts:139](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L139)
 
 Determine if a Scratch argument is a white space string (or null / empty).
 
@@ -135,7 +135,7 @@ True if the argument is all white spaces or null / empty.
 
 > `static` **rgbToHsv**(`rgb`): [`HSVObject`](../../../../type/util/cast/type-aliases/HSVObject.md)
 
-Defined in: [src/lib/utils/cast.ts:86](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L86)
+Defined in: [src/lib/utils/cast.ts:86](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L86)
 
 Convert an RGB color to HSV format. 
 ref: scratch-vm, util/color.js
@@ -160,7 +160,7 @@ hsv - {h: hue [0,360), s: saturation [0,1], v: value [0,1]}
 
 > `static` **toBoolean**(`value`): `boolean`
 
-Defined in: [src/lib/utils/cast.ts:53](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L53)
+Defined in: [src/lib/utils/cast.ts:53](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L53)
 
 Scratch cast to boolean.
 In Scratch 2.0, this is captured by `interp.boolArg.`
@@ -186,7 +186,7 @@ The Scratch-casted boolean value.
 
 > `static` **toListIndex**(`index`, `length`, `acceptAll`): `string` \| `number`
 
-Defined in: [src/lib/utils/cast.ts:223](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L223)
+Defined in: [src/lib/utils/cast.ts:223](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L223)
 
 Compute a 1-based index into a list, based on a Scratch argument.
 Two special cases may be returned:
@@ -225,7 +225,7 @@ Whether it should accept "all" or not.
 
 > `static` **toNumber**(`value`): `number`
 
-Defined in: [src/lib/utils/cast.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L26)
+Defined in: [src/lib/utils/cast.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L26)
 
 Scratch cast to number.
 Treats NaN as 0.
@@ -251,7 +251,7 @@ The Scratch-casted number value.
 
 > `static` **toRgbColorList**(`value`): [`RGBColorArray`](../../../../type/util/cast/type-aliases/RGBColorArray.md)
 
-Defined in: [src/lib/utils/cast.ts:111](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L111)
+Defined in: [src/lib/utils/cast.ts:111](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L111)
 
 Cast any Scratch argument to an RGB color array to be used for the renderer.
 
@@ -275,7 +275,7 @@ Value to convert to RGB color array.
 
 > `static` **toRgbColorObject**(`value`): [`RGBObject`](../../../../type/util/cast/type-aliases/RGBObject.md)
 
-Defined in: [src/lib/utils/cast.ts:121](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L121)
+Defined in: [src/lib/utils/cast.ts:121](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L121)
 
 Cast any Scratch argument to an RGB color object to be used for the renderer.
 
@@ -299,7 +299,7 @@ Value to convert to RGB color object.
 
 > `static` **toString**(`value`): `string`
 
-Defined in: [src/lib/utils/cast.ts:77](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/cast.ts#L77)
+Defined in: [src/lib/utils/cast.ts:77](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/cast.ts#L77)
 
 Scratch cast to string.
 

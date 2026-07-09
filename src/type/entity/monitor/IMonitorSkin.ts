@@ -1,6 +1,4 @@
-/**
- * S3MonitorSkin
- */
+import * as twgl from 'twgl.js';
 import type { IMeasurementProvider } from "../../util/IMeasurementProvider";
 import type { IDrawable } from "../../render/IDrawable";
 import type { TSize, TVec3 } from "../../common/typeCommon";
@@ -18,6 +16,10 @@ declare type TUniform = {
      */
     u_skin: WebGLTexture|null,    
 }
+
+/**
+ * S3MonitorSkin
+ */
 export interface IMonitorSkin {
     
     dropping : boolean;
@@ -38,7 +40,7 @@ export interface IMonitorSkin {
      */
     readonly id: number;
 
-    readonly rotationCenter : TVec3;
+    readonly rotationCenter : twgl.v3.Vec3;
 
     /**
      * @return {Array<number>} the "native" size, in texels, of this skin.

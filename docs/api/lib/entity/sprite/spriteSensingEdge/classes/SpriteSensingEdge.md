@@ -1,6 +1,6 @@
 # Class: SpriteSensingEdge
 
-Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:7](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingEdge.ts#L7)
+Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingEdge.ts#L7)
 
 Sprite Sensing(調べる) Edge
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる) Edge
 
 > **new SpriteSensingEdge**(`entity`): `SpriteSensingEdge`
 
-Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingEdge.ts#L14)
+Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingEdge.ts#L14)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:14](https://github.com/a
 
 > **get** **isTouching**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:22](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingEdge.ts#L22)
+Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingEdge.ts#L22)
 
 枠に触っていることの判定
 
@@ -60,7 +60,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:22](https://github.com/a
 
 > **get** **isTouchingHorizontal**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:46](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingEdge.ts#L46)
+Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:46](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingEdge.ts#L46)
 
 水平方向の枠に触っていることを判定する
 
@@ -82,7 +82,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:46](https://github.com/a
 
 > **get** **isTouchingVirtical**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:31](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingEdge.ts#L31)
+Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingEdge.ts#L31)
 
 縦の枠に触っていることを判定する
 
@@ -102,7 +102,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:31](https://github.com/a
 
 > **isTouchingEdge**(): `object`
 
-Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:62](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingEdge.ts#L62)
+Defined in: [src/lib/entity/sprite/spriteSensingEdge.ts:62](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingEdge.ts#L62)
 
 スプライトがステージの枠に触っているか否かを判定する
 

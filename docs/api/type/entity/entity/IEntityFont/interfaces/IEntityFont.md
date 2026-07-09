@@ -1,6 +1,6 @@
 # Interface: IEntityFont
 
-Defined in: [src/type/entity/entity/IEntityFont.ts:5](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityFont.ts#L5)
+Defined in: [src/type/entity/entity/IEntityFont.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityFont.ts#L5)
 
 Entity Font(フォント)
 
@@ -10,7 +10,7 @@ Entity Font(フォント)
 
 > `readonly` **fonts**: [`IFont`](../../../../font/interfaces/IFont.md)[]
 
-Defined in: [src/type/entity/entity/IEntityFont.ts:18](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityFont.ts#L18)
+Defined in: [src/type/entity/entity/IEntityFont.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityFont.ts#L18)
 
 フォントを取得する
 
@@ -20,7 +20,7 @@ Defined in: [src/type/entity/entity/IEntityFont.ts:18](https://github.com/amami-
 
 > `readonly` **names**: `string`[]
 
-Defined in: [src/type/entity/entity/IEntityFont.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityFont.ts#L14)
+Defined in: [src/type/entity/entity/IEntityFont.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityFont.ts#L14)
 
 追加されている画像名を配列で受け取る
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/entity/IEntityFont.ts:14](https://github.com/amami-
 
 > **add**(`fonts`): `void`
 
-Defined in: [src/type/entity/entity/IEntityFont.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntityFont.ts#L10)
+Defined in: [src/type/entity/entity/IEntityFont.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityFont.ts#L10)
 
 フォントを追加する
 

@@ -1,6 +1,6 @@
 # Class: SpriteSensingColor
 
-Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:8](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingColor.ts#L8)
+Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingColor.ts#L8)
 
 Sprite Sensing(調べる) Color
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる) Color
 
 > **new SpriteSensingColor**(`entity`): `SpriteSensingColor`
 
-Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingColor.ts#L14)
+Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingColor.ts#L14)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:14](https://github.com/
 
 > **isTouching**(`targetColor`): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:22](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingColor.ts#L22)
+Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingColor.ts#L22)
 
 指定した色に触れたことを判定する
 
@@ -62,7 +62,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:22](https://github.com/
 
 > **isTouchingBy**(`mask`, `target`): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:37](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingColor.ts#L37)
+Defined in: [src/lib/entity/sprite/spriteSensingColor.ts:37](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingColor.ts#L37)
 
 指定した色(target)に自身の色(mask)が触れたことを判定する
 

@@ -1,6 +1,6 @@
 # Interface: NextMethods
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:5](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySpeech.ts#L5)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySpeech.ts#L5)
 
 ## Methods
 
@@ -8,7 +8,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:5](https://github.com/amami
 
 > **addPitch**(`pitch`): [`NextMethodsAddVolume`](NextMethodsAddVolume.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySpeech.ts#L9)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySpeech.ts#L9)
 
 #### Parameters
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:9](https://github.com/amami
 
 > **addVolume**(`volume`): [`NextMethodsAddVolume`](NextMethodsAddVolume.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:8](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySpeech.ts#L8)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySpeech.ts#L8)
 
 #### Parameters
 
@@ -44,7 +44,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:8](https://github.com/amami
 
 > **pitch**(`pitch`): [`NextMethodsPitch`](NextMethodsPitch.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:7](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySpeech.ts#L7)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySpeech.ts#L7)
 
 #### Parameters
 
@@ -62,7 +62,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:7](https://github.com/amami
 
 > **speech**(`words`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySpeech.ts#L11)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySpeech.ts#L11)
 
 #### Parameters
 
@@ -80,7 +80,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:11](https://github.com/amam
 
 > **type**(`type`): [`IEntitySpeech`](IEntitySpeech.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySpeech.ts#L10)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySpeech.ts#L10)
 
 #### Parameters
 
@@ -98,7 +98,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:10](https://github.com/amam
 
 > **volume**(`volume`): [`NextMethodsVolume`](NextMethodsVolume.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:6](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/IEntitySpeech.ts#L6)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySpeech.ts#L6)
 
 #### Parameters
 

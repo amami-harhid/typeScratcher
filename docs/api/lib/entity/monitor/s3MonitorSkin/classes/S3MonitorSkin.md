@@ -1,6 +1,8 @@
 # Class: S3MonitorSkin
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:55](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L55)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:55](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L55)
+
+S3MonitorSkin
 
 ## Extends
 
@@ -16,7 +18,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:55](https://github.com/amam
 
 > **new S3MonitorSkin**(`id`, `renderer`, `title`, `x?`, `y?`): `S3MonitorSkin`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:101](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L101)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:101](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L101)
 
 Create a S3Skin, which stores and/or generates textures for use in rendering.
 
@@ -66,7 +68,7 @@ The unique ID for this S3Skin.
 
 > **\_canvas**: `HTMLCanvasElement` \| `null`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:80](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L80)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:80](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L80)
 
 ***
 
@@ -74,7 +76,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:80](https://github.com/amam
 
 > `static` **Events**: `object`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:56](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L56)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:56](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L56)
 
 #### WasAltered
 
@@ -92,7 +94,7 @@ Emitted when anything about the Skin has been altered, such as the appearance or
 
 > **get** **canvas**(): `HTMLCanvasElement`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:262](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L262)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:262](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L262)
 
 ##### Returns
 
@@ -110,7 +112,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:262](https://github.com/ama
 
 > **get** **ctx**(): `CanvasRenderingContext2D`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:270](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L270)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:270](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L270)
 
 ##### Returns
 
@@ -128,7 +130,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:270](https://github.com/ama
 
 > **get** **dropping**(): `boolean`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:170](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L170)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:170](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L170)
 
 ##### Returns
 
@@ -138,7 +140,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:170](https://github.com/ama
 
 > **set** **dropping**(`_dropping`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:173](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L173)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:173](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L173)
 
 ##### Parameters
 
@@ -162,7 +164,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:173](https://github.com/ama
 
 > **get** **id**(): `number`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:206](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L206)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:206](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L206)
 
 ##### Returns
 
@@ -182,7 +184,7 @@ the unique ID for this Skin.
 
 > **get** **measurementProvider**(): [`MeasurementProvider`](../../../../utils/MeasurementProvider/classes/MeasurementProvider.md)
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:276](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L276)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:276](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L276)
 
 ##### Returns
 
@@ -198,13 +200,13 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:276](https://github.com/ama
 
 #### Get Signature
 
-> **get** **rotationCenter**(): [`TVec3`](../../../../../type/common/typeCommon/type-aliases/TVec3.md)
+> **get** **rotationCenter**(): `Vec3`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:209](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L209)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:209](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L209)
 
 ##### Returns
 
-[`TVec3`](../../../../../type/common/typeCommon/type-aliases/TVec3.md)
+`Vec3`
 
 #### Implementation of
 
@@ -218,7 +220,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:209](https://github.com/ama
 
 > **get** **size**(): `number`[]
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:215](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L215)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:215](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L215)
 
 ##### Returns
 
@@ -238,7 +240,7 @@ the "native" size, in texels, of this skin.
 
 > **set** **text**(`text`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:350](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L350)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:350](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L350)
 
 ##### Parameters
 
@@ -258,7 +260,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:350](https://github.com/ama
 
 > **get** **textAreaSize**(): [`TSize`](../../../../../type/common/typeCommon/type-aliases/TSize.md)
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:249](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L249)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:249](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L249)
 
 textAreaSize
 
@@ -282,7 +284,7 @@ textAreaSize
 
 > **get** **value**(): `string` \| `number`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:359](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L359)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:359](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L359)
 
 Set parameters for this text monitor.
 
@@ -294,7 +296,7 @@ Set parameters for this text monitor.
 
 > **set** **value**(`value`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:342](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L342)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:342](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L342)
 
 Set parameters for this text monitor.
 
@@ -326,7 +328,7 @@ Set parameters for this text monitor.
 
 > **get** **x**(): `number`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:233](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L233)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:233](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L233)
 
 ##### Returns
 
@@ -336,7 +338,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:233](https://github.com/ama
 
 > **set** **x**(`_x`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:239](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L239)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:239](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L239)
 
 ##### Parameters
 
@@ -360,7 +362,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:239](https://github.com/ama
 
 > **get** **y**(): `number`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:236](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L236)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:236](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L236)
 
 ##### Returns
 
@@ -370,7 +372,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:236](https://github.com/ama
 
 > **set** **y**(`_y`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:242](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L242)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:242](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L242)
 
 ##### Parameters
 
@@ -392,7 +394,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:242](https://github.com/ama
 
 > **\_reflowLines**(): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:369](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L369)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:369](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L369)
 
 Update the array of wrapped lines and the text dimensions.
 
@@ -410,7 +412,7 @@ Update the array of wrapped lines and the text dimensions.
 
 > **\_renderTextMonitor**(`scale`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:400](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L400)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:400](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L400)
 
 Render this text monitor at a certain scale, using the current parameters, to the canvas.
 
@@ -434,7 +436,7 @@ Render this text monitor at a certain scale, using the current parameters, to th
 
 > **\_restyleCanvas**(): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:362](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L362)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:362](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L362)
 
 #### Returns
 
@@ -450,7 +452,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:362](https://github.com/ama
 
 > **\_setTexture**(`textureData`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:323](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L323)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:323](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L323)
 
 Set this skin's texture to the given image.
 
@@ -476,7 +478,7 @@ The canvas or image data to set the texture to.
 
 > **calculateRotationCenter**(): `number`[]
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:256](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L256)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:256](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L256)
 
 Get the center of the current bounding box
 
@@ -496,7 +498,7 @@ the center of the current bounding box
 
 > **createCanvas**(): `CanvasRenderingContext2D`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:179](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L179)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:179](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L179)
 
 #### Returns
 
@@ -512,7 +514,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:179](https://github.com/ama
 
 > **dispose**(): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:195](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L195)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:195](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L195)
 
 Dispose of this object. Do not use it after calling this method.
 
@@ -530,7 +532,7 @@ Dispose of this object. Do not use it after calling this method.
 
 > **getDefaultHeight**(): `number`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:187](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L187)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:187](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L187)
 
 #### Returns
 
@@ -546,7 +548,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:187](https://github.com/ama
 
 > **getTexture**(`scale`): `WebGLTexture`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:284](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L284)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:284](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L284)
 
 #### Parameters
 
@@ -572,7 +574,7 @@ The GL texture representation of this skin when drawing at the given size.
 
 > **getUniforms**(`scale`): `TUniform`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:525](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L525)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:525](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L525)
 
 #### Parameters
 
@@ -594,7 +596,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:525](https://github.com/ama
 
 > **hide**(): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:335](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L335)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:335](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L335)
 
 #### Returns
 
@@ -610,7 +612,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:335](https://github.com/ama
 
 > **isTouchingLinear**(`vec`): `boolean`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:552](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L552)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:552](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L552)
 
 Does this point touch an opaque or translucent point on this skin?
 Linear Interpolation version
@@ -645,7 +647,7 @@ Did it touch?
 
 > **isTouchingNearest**(`vec`): `boolean`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:539](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L539)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:539](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L539)
 
 Does this point touch an opaque or translucent point on this skin?
 Nearest Neighbor version
@@ -680,7 +682,7 @@ Did it touch?
 
 > **show**(): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:332](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L332)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:332](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L332)
 
 #### Returns
 
@@ -696,7 +698,7 @@ Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:332](https://github.com/ama
 
 > **updateSilhouette**(`scale?`): `void`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:316](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L316)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:316](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L316)
 
 If the skin defers silhouette operations until the last possible minute,
 this will be called before isTouching uses the silhouette.
@@ -721,7 +723,7 @@ this will be called before isTouching uses the silhouette.
 
 > **useNearest**(`scale`, `drawable`): `boolean`
 
-Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:229](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3MonitorSkin.ts#L229)
+Defined in: [src/lib/entity/monitor/s3MonitorSkin.ts:229](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3MonitorSkin.ts#L229)
 
 Should this skin's texture be filtered with nearest-neighbor or linear interpolation at the given scale?
 

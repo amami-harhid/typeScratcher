@@ -1,6 +1,6 @@
 # Class: ThreadObj\<T\>
 
-Defined in: [src/lib/engine/thread/threads.ts:346](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L346)
+Defined in: [src/lib/engine/thread/threads.ts:346](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L346)
 
 ## Extends
 
@@ -22,7 +22,7 @@ Defined in: [src/lib/engine/thread/threads.ts:346](https://github.com/amami-harh
 
 > **new ThreadObj**\<`T`\>(`entity`, `foreverExist?`): `ThreadObj`\<`T`\>
 
-Defined in: [src/lib/engine/thread/threads.ts:361](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L361)
+Defined in: [src/lib/engine/thread/threads.ts:361](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L361)
 
 #### Parameters
 
@@ -48,7 +48,7 @@ Defined in: [src/lib/engine/thread/threads.ts:361](https://github.com/amami-harh
 
 > **done**: `boolean` = `false`
 
-Defined in: [src/lib/engine/thread/threads.ts:349](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L349)
+Defined in: [src/lib/engine/thread/threads.ts:349](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L349)
 
 完了フラグ
 
@@ -62,7 +62,7 @@ Defined in: [src/lib/engine/thread/threads.ts:349](https://github.com/amami-harh
 
 > **entityId**: `string`
 
-Defined in: [src/lib/engine/thread/threads.ts:354](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L354)
+Defined in: [src/lib/engine/thread/threads.ts:354](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L354)
 
 エンティティID
 
@@ -76,7 +76,7 @@ Defined in: [src/lib/engine/thread/threads.ts:354](https://github.com/amami-harh
 
 > **status**: `"INITIALIZING"` \| `"YIELD"` \| `"RUNNING"` \| `"COMPLETED"` = `ThreadStatus.INITIALIZING`
 
-Defined in: [src/lib/engine/thread/threads.ts:350](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L350)
+Defined in: [src/lib/engine/thread/threads.ts:350](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L350)
 
 ステータス
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/engine/thread/threads.ts:350](https://github.com/amami-harh
 
 > **threadId**: `string`
 
-Defined in: [src/lib/engine/thread/threads.ts:353](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L353)
+Defined in: [src/lib/engine/thread/threads.ts:353](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L353)
 
 スレッドID
 
@@ -106,7 +106,7 @@ Defined in: [src/lib/engine/thread/threads.ts:353](https://github.com/amami-harh
 
 > **get** **entity**(): [`IEntity`](../../../../../type/entity/entity/interfaces/IEntity.md)
 
-Defined in: [src/lib/engine/thread/threads.ts:425](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L425)
+Defined in: [src/lib/engine/thread/threads.ts:425](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L425)
 
 エンティティ
 
@@ -128,7 +128,7 @@ Defined in: [src/lib/engine/thread/threads.ts:425](https://github.com/amami-harh
 
 > **get** **foreverExist**(): `boolean`
 
-Defined in: [src/lib/engine/thread/threads.ts:436](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L436)
+Defined in: [src/lib/engine/thread/threads.ts:436](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L436)
 
 ##### Returns
 
@@ -142,7 +142,7 @@ Defined in: [src/lib/engine/thread/threads.ts:436](https://github.com/amami-harh
 
 > **get** **isDeadThread**(): `boolean`
 
-Defined in: [src/lib/engine/thread/threads.ts:379](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L379)
+Defined in: [src/lib/engine/thread/threads.ts:379](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L379)
 
 ##### Returns
 
@@ -152,7 +152,7 @@ Defined in: [src/lib/engine/thread/threads.ts:379](https://github.com/amami-harh
 
 > **set** **isDeadThread**(`isDead`): `void`
 
-Defined in: [src/lib/engine/thread/threads.ts:382](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L382)
+Defined in: [src/lib/engine/thread/threads.ts:382](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L382)
 
 ##### Parameters
 
@@ -172,7 +172,7 @@ Defined in: [src/lib/engine/thread/threads.ts:382](https://github.com/amami-harh
 
 > **get** **isStarted**(): `boolean`
 
-Defined in: [src/lib/engine/thread/threads.ts:442](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L442)
+Defined in: [src/lib/engine/thread/threads.ts:442](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L442)
 
 開始フラグ
 
@@ -184,7 +184,7 @@ Defined in: [src/lib/engine/thread/threads.ts:442](https://github.com/amami-harh
 
 > **set** **isStarted**(`started`): `void`
 
-Defined in: [src/lib/engine/thread/threads.ts:445](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L445)
+Defined in: [src/lib/engine/thread/threads.ts:445](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L445)
 
 開始フラグ
 
@@ -212,7 +212,7 @@ Defined in: [src/lib/engine/thread/threads.ts:445](https://github.com/amami-harh
 
 > **get** **originalF**(): `CallableFunction`
 
-Defined in: [src/lib/engine/thread/threads.ts:433](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L433)
+Defined in: [src/lib/engine/thread/threads.ts:433](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L433)
 
 ##### Returns
 
@@ -226,7 +226,7 @@ Defined in: [src/lib/engine/thread/threads.ts:433](https://github.com/amami-harh
 
 > **get** **proxy**(): [`IEntityProxy`](../../../../../type/entity/entity/IEntityProxy/interfaces/IEntityProxy.md)
 
-Defined in: [src/lib/engine/thread/threads.ts:429](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L429)
+Defined in: [src/lib/engine/thread/threads.ts:429](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L429)
 
 エンティティプロキシ
 
@@ -246,7 +246,7 @@ Defined in: [src/lib/engine/thread/threads.ts:429](https://github.com/amami-harh
 
 > **clear**(): `void`
 
-Defined in: [src/lib/engine/thread/threads.ts:372](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L372)
+Defined in: [src/lib/engine/thread/threads.ts:372](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L372)
 
 #### Returns
 
@@ -258,7 +258,7 @@ Defined in: [src/lib/engine/thread/threads.ts:372](https://github.com/amami-harh
 
 > **forceExit**(): `void`
 
-Defined in: [src/lib/engine/thread/threads.ts:448](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L448)
+Defined in: [src/lib/engine/thread/threads.ts:448](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L448)
 
 #### Returns
 
@@ -270,7 +270,7 @@ Defined in: [src/lib/engine/thread/threads.ts:448](https://github.com/amami-harh
 
 > **genProxy**(): [`IEntityProxy`](../../../../../type/entity/entity/IEntityProxy/interfaces/IEntityProxy.md)
 
-Defined in: [src/lib/engine/thread/threads.ts:385](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L385)
+Defined in: [src/lib/engine/thread/threads.ts:385](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L385)
 
 プロキシ生成
 
@@ -288,7 +288,7 @@ Defined in: [src/lib/engine/thread/threads.ts:385](https://github.com/amami-harh
 
 > **next**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/engine/thread/threads.ts:453](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L453)
+Defined in: [src/lib/engine/thread/threads.ts:453](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L453)
 
 #### Returns
 
@@ -300,7 +300,7 @@ Defined in: [src/lib/engine/thread/threads.ts:453](https://github.com/amami-harh
 
 > **reset**(`entity`, `func`): `void`
 
-Defined in: [src/lib/engine/thread/threads.ts:395](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L395)
+Defined in: [src/lib/engine/thread/threads.ts:395](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L395)
 
 #### Parameters
 
@@ -322,7 +322,7 @@ Defined in: [src/lib/engine/thread/threads.ts:395](https://github.com/amami-harh
 
 > **setFunc**(`func`, ...`args`): `void`
 
-Defined in: [src/lib/engine/thread/threads.ts:400](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/thread/threads.ts#L400)
+Defined in: [src/lib/engine/thread/threads.ts:400](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/thread/threads.ts#L400)
 
 イベント関数を設定する
 

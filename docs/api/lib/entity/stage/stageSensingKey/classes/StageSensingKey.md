@@ -1,6 +1,6 @@
 # Class: StageSensingKey
 
-Defined in: [src/lib/entity/stage/stageSensingKey.ts:8](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/stage/stageSensingKey.ts#L8)
+Defined in: [src/lib/entity/stage/stageSensingKey.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageSensingKey.ts#L8)
 
 Stage Sensing(調べる) Key
 
@@ -14,7 +14,7 @@ Stage Sensing(調べる) Key
 
 > **new StageSensingKey**(`entity`): `StageSensingKey`
 
-Defined in: [src/lib/entity/stage/stageSensingKey.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/stage/stageSensingKey.ts#L14)
+Defined in: [src/lib/entity/stage/stageSensingKey.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageSensingKey.ts#L14)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/stage/stageSensingKey.ts:14](https://github.com/amam
 
 > **isDown**(`key`): `boolean`
 
-Defined in: [src/lib/entity/stage/stageSensingKey.ts:23](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/stage/stageSensingKey.ts#L23)
+Defined in: [src/lib/entity/stage/stageSensingKey.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageSensingKey.ts#L23)
 
 キーが押されていることの判定
 
@@ -64,7 +64,7 @@ Defined in: [src/lib/entity/stage/stageSensingKey.ts:23](https://github.com/amam
 
 > **isNotDown**(`key`): `boolean`
 
-Defined in: [src/lib/entity/stage/stageSensingKey.ts:31](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/stage/stageSensingKey.ts#L31)
+Defined in: [src/lib/entity/stage/stageSensingKey.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageSensingKey.ts#L31)
 
 キーが押されていないことの判定
 

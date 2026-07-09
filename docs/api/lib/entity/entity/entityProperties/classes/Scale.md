@@ -1,6 +1,6 @@
 # Class: Scale
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L9)
+Defined in: [src/lib/entity/entity/entityProperties.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityProperties.ts#L9)
 
 スケール
 
@@ -26,7 +26,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:9](https://github.com/ama
 
 > **get** **h**(): `number`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:17](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L17)
+Defined in: [src/lib/entity/entity/entityProperties.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityProperties.ts#L17)
 
 ##### Returns
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:17](https://github.com/am
 
 > **set** **h**(`h`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:20](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L20)
+Defined in: [src/lib/entity/entity/entityProperties.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityProperties.ts#L20)
 
 ##### Parameters
 
@@ -60,7 +60,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:20](https://github.com/am
 
 > **get** **w**(): `number`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L11)
+Defined in: [src/lib/entity/entity/entityProperties.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityProperties.ts#L11)
 
 ##### Returns
 
@@ -70,7 +70,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:11](https://github.com/am
 
 > **set** **w**(`w`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L14)
+Defined in: [src/lib/entity/entity/entityProperties.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityProperties.ts#L14)
 
 ##### Parameters
 

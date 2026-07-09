@@ -2,7 +2,7 @@
 
 > **TEffectChain** = `object`
 
-Defined in: [src/type/sound/IAudioEngine.ts:30](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L30)
+Defined in: [src/type/sound/IAudioEngine.ts:30](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L30)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:30](https://github.com/amami-harhid/
 
 > `optional` **pitch?**: [`IScratchSoundPlayer`](../interfaces/IScratchSoundPlayer.md)
 
-Defined in: [src/type/sound/IAudioEngine.ts:32](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L32)
+Defined in: [src/type/sound/IAudioEngine.ts:32](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L32)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:32](https://github.com/amami-harhid/
 
 > `optional` **volume?**: [`IScratchSoundPlayer`](../interfaces/IScratchSoundPlayer.md)
 
-Defined in: [src/type/sound/IAudioEngine.ts:31](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L31)
+Defined in: [src/type/sound/IAudioEngine.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L31)
 
 ## Methods
 
@@ -26,7 +26,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:31](https://github.com/amami-harhid/
 
 > `optional` **set**(`effect`, `value`): `void`
 
-Defined in: [src/type/sound/IAudioEngine.ts:38](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L38)
+Defined in: [src/type/sound/IAudioEngine.ts:38](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L38)
 
 Set an effect value by its name.
 

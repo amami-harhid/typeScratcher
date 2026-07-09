@@ -1,6 +1,6 @@
 # Interface: ISpriteCostume
 
-Defined in: [src/type/entity/sprite/ISpriteCostume.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteCostume.ts#L4)
+Defined in: [src/type/entity/sprite/ISpriteCostume.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteCostume.ts#L4)
 
 コスチューム
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/sprite/ISpriteCostume.ts:4](https://github.com/amam
 
 > `readonly` **names**: `string`[]
 
-Defined in: [src/type/entity/sprite/ISpriteCostume.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteCostume.ts#L14)
+Defined in: [src/type/entity/sprite/ISpriteCostume.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteCostume.ts#L14)
 
 コスチューム名 配列
 
@@ -20,7 +20,7 @@ Defined in: [src/type/entity/sprite/ISpriteCostume.ts:14](https://github.com/ama
 
 > **add**(`images`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteCostume.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteCostume.ts#L9)
+Defined in: [src/type/entity/sprite/ISpriteCostume.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteCostume.ts#L9)
 
 画像を追加
 

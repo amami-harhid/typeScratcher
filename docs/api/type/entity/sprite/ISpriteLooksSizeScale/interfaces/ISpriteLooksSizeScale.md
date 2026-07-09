@@ -1,6 +1,6 @@
 # Interface: ISpriteLooksSizeScale
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:1](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L1)
+Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:1](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L1)
 
 ## Accessors
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:1](https://github.c
 
 > **get** **h**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L10)
+Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L10)
 
 スケール高さ（％）
 
@@ -22,7 +22,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:10](https://github.
 
 > **set** **h**(`h`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:20](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L20)
+Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L20)
 
 スケール高さ（％）
 
@@ -44,7 +44,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:20](https://github.
 
 > **get** **w**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:5](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L5)
+Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L5)
 
 スケール幅（％）
 
@@ -56,7 +56,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:5](https://github.c
 
 > **set** **w**(`w`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:15](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L15)
+Defined in: [src/type/entity/sprite/ISpriteLooksSizeScale.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteLooksSizeScale.ts#L15)
 
 スケール幅（％）
 

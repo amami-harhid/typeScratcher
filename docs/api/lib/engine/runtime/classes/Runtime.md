@@ -1,6 +1,6 @@
 # Class: Runtime
 
-Defined in: [src/lib/engine/runtime.ts:12](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/runtime.ts#L12)
+Defined in: [src/lib/engine/runtime.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/runtime.ts#L12)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [src/lib/engine/runtime.ts:12](https://github.com/amami-harhid/typeS
 
 > **new Runtime**(): `Runtime`
 
-Defined in: [src/lib/engine/runtime.ts:16](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/runtime.ts#L16)
+Defined in: [src/lib/engine/runtime.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/runtime.ts#L16)
 
 #### Returns
 
@@ -28,7 +28,7 @@ Defined in: [src/lib/engine/runtime.ts:16](https://github.com/amami-harhid/typeS
 
 > **audioEngine**: [`IAudioEngine`](../../../../type/sound/IAudioEngine/interfaces/IAudioEngine.md)
 
-Defined in: [src/lib/engine/runtime.ts:15](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/runtime.ts#L15)
+Defined in: [src/lib/engine/runtime.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/runtime.ts#L15)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/engine/runtime.ts:15](https://github.com/amami-harhid/typeS
 
 > **ioDevices**: `IODEVICES`
 
-Defined in: [src/lib/engine/runtime.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/runtime.ts#L14)
+Defined in: [src/lib/engine/runtime.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/runtime.ts#L14)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/engine/runtime.ts:14](https://github.com/amami-harhid/typeS
 
 > **scratchEvent**: [`ScratchEvent`](../../scratchEvent/classes/ScratchEvent.md)
 
-Defined in: [src/lib/engine/runtime.ts:13](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/runtime.ts#L13)
+Defined in: [src/lib/engine/runtime.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/runtime.ts#L13)
 
 ## Methods
 
@@ -52,7 +52,7 @@ Defined in: [src/lib/engine/runtime.ts:13](https://github.com/amami-harhid/typeS
 
 > **keyIsDown**(`key?`): `boolean`
 
-Defined in: [src/lib/engine/runtime.ts:35](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/engine/runtime.ts#L35)
+Defined in: [src/lib/engine/runtime.ts:35](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/runtime.ts#L35)
 
 指定したキーが押されているかの判定
 

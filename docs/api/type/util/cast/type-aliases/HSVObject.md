@@ -2,7 +2,7 @@
 
 > **HSVObject** = `object`
 
-Defined in: [src/type/util/cast.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/util/cast.ts#L9)
+Defined in: [src/type/util/cast.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/util/cast.ts#L9)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/util/cast.ts:9](https://github.com/amami-harhid/typeScratc
 
 > **h**: `number`
 
-Defined in: [src/type/util/cast.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/util/cast.ts#L10)
+Defined in: [src/type/util/cast.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/util/cast.ts#L10)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/util/cast.ts:10](https://github.com/amami-harhid/typeScrat
 
 > **s**: `number`
 
-Defined in: [src/type/util/cast.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/util/cast.ts#L11)
+Defined in: [src/type/util/cast.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/util/cast.ts#L11)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [src/type/util/cast.ts:11](https://github.com/amami-harhid/typeScrat
 
 > **v**: `number`
 
-Defined in: [src/type/util/cast.ts:12](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/util/cast.ts#L12)
+Defined in: [src/type/util/cast.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/util/cast.ts#L12)

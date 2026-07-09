@@ -1,6 +1,6 @@
 # Class: EntitySound
 
-Defined in: [src/lib/entity/entity/entitySound.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L10)
+Defined in: [src/lib/entity/entity/entitySound.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L10)
 
 サウンド
 
@@ -10,7 +10,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:10](https://github.com/amami-h
 
 > **new EntitySound**(`entity`): `EntitySound`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:23](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L23)
+Defined in: [src/lib/entity/entity/entitySound.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L23)
 
 **`Internal`**
 
@@ -32,7 +32,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:23](https://github.com/amami-h
 
 > **effectMap**: `Map`\<`string`, \{ `pitch`: `number`; `volume`: `number`; \}\>
 
-Defined in: [src/lib/entity/entity/entitySound.ts:15](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L15)
+Defined in: [src/lib/entity/entity/entitySound.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L15)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:15](https://github.com/amami-h
 
 > **soundKeys**: `string`[] = `[]`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L14)
+Defined in: [src/lib/entity/entity/entitySound.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L14)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:14](https://github.com/amami-h
 
 > **soundMap**: `Map`\<`string`, [`ISound`](../../../../../type/sound/interfaces/ISound.md)\>
 
-Defined in: [src/lib/entity/entity/entitySound.ts:13](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L13)
+Defined in: [src/lib/entity/entity/entitySound.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L13)
 
 ## Methods
 
@@ -56,7 +56,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:13](https://github.com/amami-h
 
 > **add**(`sounds`): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:34](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L34)
+Defined in: [src/lib/entity/entity/entitySound.ts:34](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L34)
 
 音を追加する
 
@@ -76,7 +76,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:34](https://github.com/amami-h
 
 > **addPitch**(`sound`, `pitch`): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:217](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L217)
+Defined in: [src/lib/entity/entity/entitySound.ts:217](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L217)
 
 #### Parameters
 
@@ -98,7 +98,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:217](https://github.com/amami-
 
 > **addPlayer**(`name`, `player`): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:47](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L47)
+Defined in: [src/lib/entity/entity/entitySound.ts:47](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L47)
 
 #### Parameters
 
@@ -120,7 +120,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:47](https://github.com/amami-h
 
 > **addVolume**(`sound`, `volume`): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:178](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L178)
+Defined in: [src/lib/entity/entity/entitySound.ts:178](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L178)
 
 #### Parameters
 
@@ -142,7 +142,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:178](https://github.com/amami-
 
 > **clearEffects**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entitySound.ts:104](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L104)
+Defined in: [src/lib/entity/entity/entitySound.ts:104](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L104)
 
 サウンドオプションをクリアする
 
@@ -156,7 +156,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:104](https://github.com/amami-
 
 > **getPitch**(`sound`): `number`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:209](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L209)
+Defined in: [src/lib/entity/entity/entitySound.ts:209](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L209)
 
 ピッチ
 
@@ -176,7 +176,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:209](https://github.com/amami-
 
 > **getSoundPlayer**(`name`): [`ISoundPlayer`](../../../../../type/sound/ISoundPlayer/interfaces/ISoundPlayer.md) \| `undefined`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:55](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L55)
+Defined in: [src/lib/entity/entity/entitySound.ts:55](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L55)
 
 #### Parameters
 
@@ -194,7 +194,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:55](https://github.com/amami-h
 
 > **getVolume**(`sound`): `number`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:169](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L169)
+Defined in: [src/lib/entity/entity/entitySound.ts:169](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L169)
 
 音量
 
@@ -214,7 +214,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:169](https://github.com/amami-
 
 > **play**(`sound`): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:66](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L66)
+Defined in: [src/lib/entity/entity/entitySound.ts:66](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L66)
 
 音を鳴らす
 
@@ -236,7 +236,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:66](https://github.com/amami-h
 
 > **playUntilDone**(`sound`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entitySound.ts:83](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L83)
+Defined in: [src/lib/entity/entity/entitySound.ts:83](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L83)
 
 終わるまで音を鳴らす
 
@@ -258,7 +258,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:83](https://github.com/amami-h
 
 > **setPitch**(`sound`, `pitch`): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:231](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L231)
+Defined in: [src/lib/entity/entity/entitySound.ts:231](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L231)
 
 #### Parameters
 
@@ -280,7 +280,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:231](https://github.com/amami-
 
 > **setVolume**(`sound`, `volume`): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:194](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L194)
+Defined in: [src/lib/entity/entity/entitySound.ts:194](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L194)
 
 #### Parameters
 
@@ -302,7 +302,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:194](https://github.com/amami-
 
 > **stop**(): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:127](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L127)
+Defined in: [src/lib/entity/entity/entitySound.ts:127](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L127)
 
 鳴っている音を止める
 
@@ -316,7 +316,7 @@ Defined in: [src/lib/entity/entity/entitySound.ts:127](https://github.com/amami-
 
 > **stopImmediately**(): `void`
 
-Defined in: [src/lib/entity/entity/entitySound.ts:149](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySound.ts#L149)
+Defined in: [src/lib/entity/entity/entitySound.ts:149](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySound.ts#L149)
 
 鳴っている音を「すぐに」止める
 

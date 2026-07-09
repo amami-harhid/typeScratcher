@@ -2,7 +2,7 @@
 
 > **TEntityOptions** = `object`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:6](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/TEntityOptions.ts#L6)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/TEntityOptions.ts#L6)
 
 EntityOptions
 
@@ -12,7 +12,7 @@ EntityOptions
 
 > `optional` **direction?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/TEntityOptions.ts#L9)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/TEntityOptions.ts#L9)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:9](https://github.com/amam
 
 > `optional` **effect?**: [`TEntityEffects`](TEntityEffects.md)
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/TEntityOptions.ts#L10)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/TEntityOptions.ts#L10)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:10](https://github.com/ama
 
 > `optional` **position?**: [`TPosition`](../../../../common/typeCommon/type-aliases/TPosition.md)
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:7](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/TEntityOptions.ts#L7)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/TEntityOptions.ts#L7)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:7](https://github.com/amam
 
 > `optional` **scale?**: [`TScale`](../../../../common/typeCommon/type-aliases/TScale.md)
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:8](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/TEntityOptions.ts#L8)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/TEntityOptions.ts#L8)
 
 ***
 
@@ -44,4 +44,4 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:8](https://github.com/amam
 
 > `optional` **visible?**: `boolean`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/entity/TEntityOptions.ts#L11)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/TEntityOptions.ts#L11)

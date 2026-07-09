@@ -2,7 +2,7 @@
 
 > **S3SoundData** = `object`
 
-Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L66)
+Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L66)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/t
 
 > `optional` **data?**: `Uint8Array`\<`ArrayBuffer`\>
 
-Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L66)
+Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L66)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/t
 
 > `optional` **effectChain?**: [`TEffectChain`](../../../sound/IAudioEngine/type-aliases/TEffectChain.md)
 
-Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L66)
+Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L66)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/t
 
 > `optional` **name?**: `string`
 
-Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L66)
+Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L66)
 
 ***
 
@@ -34,4 +34,4 @@ Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/t
 
 > `optional` **soundPlayer?**: [`IScratchSoundPlayer`](../../../sound/IAudioEngine/interfaces/IScratchSoundPlayer.md)
 
-Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L66)
+Defined in: [src/type/common/typeCommon.ts:66](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L66)

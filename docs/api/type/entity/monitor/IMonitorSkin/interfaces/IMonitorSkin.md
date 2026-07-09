@@ -1,6 +1,8 @@
 # Interface: IMonitorSkin
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:21](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L21)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L23)
+
+S3MonitorSkin
 
 ## Properties
 
@@ -8,7 +10,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:21](https://github.com/amam
 
 > `readonly` **canvas**: `HTMLCanvasElement`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:77](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L77)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:79](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L79)
 
 #### Returns
 
@@ -18,7 +20,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:77](https://github.com/amam
 
 > `readonly` **ctx**: `CanvasRenderingContext2D`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:82](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L82)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:84](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L84)
 
 #### Returns
 
@@ -28,7 +30,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:82](https://github.com/amam
 
 > **dropping**: `boolean`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:23](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L23)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:25](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L25)
 
 ***
 
@@ -36,7 +38,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:23](https://github.com/amam
 
 > `readonly` **id**: `number`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:39](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L39)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:41](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L41)
 
 #### Returns
 
@@ -48,7 +50,7 @@ the unique ID for this Skin.
 
 > `readonly` **measurementProvider**: [`IMeasurementProvider`](../../../../util/IMeasurementProvider/interfaces/IMeasurementProvider.md)
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:87](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L87)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:89](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L89)
 
 #### Returns
 
@@ -56,9 +58,9 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:87](https://github.com/amam
 
 ### rotationCenter
 
-> `readonly` **rotationCenter**: [`TVec3`](../../../../common/typeCommon/type-aliases/TVec3.md)
+> `readonly` **rotationCenter**: `Vec3`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:41](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L41)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:43](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L43)
 
 ***
 
@@ -66,7 +68,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:41](https://github.com/amam
 
 > `readonly` **size**: `number`[]
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:46](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L46)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:48](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L48)
 
 #### Returns
 
@@ -78,7 +80,7 @@ the "native" size, in texels, of this skin.
 
 > `readonly` **textAreaSize**: [`TSize`](../../../../common/typeCommon/type-aliases/TSize.md)
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:66](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L66)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:68](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L68)
 
 textAreaSize
 
@@ -92,7 +94,7 @@ textAreaSize
 
 > **value**: `string` \| `number`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:115](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L115)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:117](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L117)
 
 Set parameters for this text monitor.
 
@@ -106,7 +108,7 @@ Set parameters for this text monitor.
 
 > **x**: `number`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:58](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L58)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:60](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L60)
 
 ***
 
@@ -114,7 +116,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:58](https://github.com/amam
 
 > **y**: `number`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:60](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L60)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:62](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L62)
 
 ## Methods
 
@@ -122,7 +124,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:60](https://github.com/amam
 
 > **\_reflowLines**(): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:122](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L122)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:124](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L124)
 
 Update the array of wrapped lines and the text dimensions.
 
@@ -136,7 +138,7 @@ Update the array of wrapped lines and the text dimensions.
 
 > **\_renderTextMonitor**(`scale`): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:128](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L128)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:130](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L130)
 
 Render this text monitor at a certain scale, using the current parameters, to the canvas.
 
@@ -156,7 +158,7 @@ Render this text monitor at a certain scale, using the current parameters, to th
 
 > **\_restyleCanvas**(): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:117](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L117)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:119](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L119)
 
 #### Returns
 
@@ -168,7 +170,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:117](https://github.com/ama
 
 > **\_setTexture**(`textureData`): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:105](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L105)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:107](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L107)
 
 Set this skin's texture to the given image.
 
@@ -190,7 +192,7 @@ The canvas or image data to set the texture to.
 
 > **calculateRotationCenter**(): `number`[]
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:72](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L72)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:74](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L74)
 
 Get the center of the current bounding box
 
@@ -206,7 +208,7 @@ the center of the current bounding box
 
 > **createCanvas**(): `CanvasRenderingContext2D`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:28](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L28)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:30](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L30)
 
 #### Returns
 
@@ -218,7 +220,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:28](https://github.com/amam
 
 > **dispose**(): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:34](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L34)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:36](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L36)
 
 Dispose of this object. Do not use it after calling this method.
 
@@ -232,7 +234,7 @@ Dispose of this object. Do not use it after calling this method.
 
 > **getDefaultHeight**(): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:30](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L30)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:32](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L32)
 
 #### Returns
 
@@ -244,7 +246,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:30](https://github.com/amam
 
 > **getTexture**(`scale`): `WebGLTexture`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:93](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L93)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:95](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L95)
 
 #### Parameters
 
@@ -266,7 +268,7 @@ The GL texture representation of this skin when drawing at the given size.
 
 > **getUniforms**(`scale`): `TUniform`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:135](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L135)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:137](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L137)
 
 #### Parameters
 
@@ -284,7 +286,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:135](https://github.com/ama
 
 > **hide**(): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:109](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L109)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:111](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L111)
 
 #### Returns
 
@@ -296,7 +298,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:109](https://github.com/ama
 
 > **isTouchingLinear**(`vec`): `boolean`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:157](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L157)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:159](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L159)
 
 Does this point touch an opaque or translucent point on this skin?
 Linear Interpolation version
@@ -327,7 +329,7 @@ Did it touch?
 
 > **isTouchingNearest**(`vec`): `boolean`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:146](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L146)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:148](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L148)
 
 Does this point touch an opaque or translucent point on this skin?
 Nearest Neighbor version
@@ -358,7 +360,7 @@ Did it touch?
 
 > **show**(): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:107](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L107)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:109](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L109)
 
 #### Returns
 
@@ -370,7 +372,7 @@ Defined in: [src/type/entity/monitor/IMonitorSkin.ts:107](https://github.com/ama
 
 > **updateSilhouette**(`scale`): `void`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:99](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L99)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:101](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L101)
 
 If the skin defers silhouette operations until the last possible minute,
 this will be called before isTouching uses the silhouette.
@@ -391,7 +393,7 @@ this will be called before isTouching uses the silhouette.
 
 > **useNearest**(`scale`, `drawable`): `boolean`
 
-Defined in: [src/type/entity/monitor/IMonitorSkin.ts:56](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/IMonitorSkin.ts#L56)
+Defined in: [src/type/entity/monitor/IMonitorSkin.ts:58](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/IMonitorSkin.ts#L58)
 
 Should this skin's texture be filtered with nearest-neighbor or linear interpolation at the given scale?
 

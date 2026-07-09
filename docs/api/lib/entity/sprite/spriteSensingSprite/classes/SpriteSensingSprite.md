@@ -1,6 +1,6 @@
 # Class: SpriteSensingSprite
 
-Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingSprite.ts#L11)
+Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingSprite.ts#L11)
 
 Sprite Sensing(調べる) Sprite
 
@@ -18,7 +18,7 @@ Sprite Sensing(調べる) Sprite
 
 > **new SpriteSensingSprite**(`entity`): `SpriteSensingSprite`
 
-Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:17](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingSprite.ts#L17)
+Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingSprite.ts#L17)
 
 **`Internal`**
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:17](https://github.com
 
 > **degree**(`target`): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:41](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingSprite.ts#L41)
+Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:41](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingSprite.ts#L41)
 
 スプライトへの向き
 
@@ -68,7 +68,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:41](https://github.com
 
 > **degreeToTarget**(`target`): `number`
 
-Defined in: [src/lib/entity/entity/entitySensingSprite.ts:53](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySensingSprite.ts#L53)
+Defined in: [src/lib/entity/entity/entitySensingSprite.ts:53](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySensingSprite.ts#L53)
 
 #### Parameters
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/entity/entity/entitySensingSprite.ts:53](https://github.com
 
 > **distance**(`target`): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:32](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingSprite.ts#L32)
+Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:32](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingSprite.ts#L32)
 
 スプライトまでの距離
 
@@ -114,7 +114,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:32](https://github.com
 
 > **getTouching**(`targets?`): [`ISprite`](../../../../../type/entity/sprite/interfaces/ISprite.md)[]
 
-Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:52](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingSprite.ts#L52)
+Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:52](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingSprite.ts#L52)
 
 自分に触れているスプライトを配列にして返す
 
@@ -138,7 +138,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:52](https://github.com
 
 > **getTouchingTarget**(`targets`): [`ISprite`](../../../../../type/entity/sprite/interfaces/ISprite.md)[]
 
-Defined in: [src/lib/entity/entity/entitySensingSprite.ts:65](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entitySensingSprite.ts#L65)
+Defined in: [src/lib/entity/entity/entitySensingSprite.ts:65](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entitySensingSprite.ts#L65)
 
 #### Parameters
 
@@ -160,7 +160,7 @@ Defined in: [src/lib/entity/entity/entitySensingSprite.ts:65](https://github.com
 
 > **isTouching**(`sprites`, `includeClone?`): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:21](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteSensingSprite.ts#L21)
+Defined in: [src/lib/entity/sprite/spriteSensingSprite.ts:21](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteSensingSprite.ts#L21)
 
 スプライトに触れていることを判定する（クローンを含める）
 

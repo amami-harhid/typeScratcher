@@ -1,6 +1,6 @@
 # Interface: IMonitors
 
-Defined in: [src/type/entity/monitor/index.ts:40](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/index.ts#L40)
+Defined in: [src/type/entity/monitor/index.ts:40](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/index.ts#L40)
 
 ## Methods
 
@@ -8,7 +8,7 @@ Defined in: [src/type/entity/monitor/index.ts:40](https://github.com/amami-harhi
 
 > **add**(`vars`): `void`
 
-Defined in: [src/type/entity/monitor/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/index.ts#L47)
+Defined in: [src/type/entity/monitor/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/index.ts#L47)
 
 IDとラベルを指定して モニターを追加する.
 IDが重複する場合は追加しない.
@@ -29,7 +29,7 @@ IDが重複する場合は追加しない.
 
 > **draw**(): `void`
 
-Defined in: [src/type/entity/monitor/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/index.ts#L67)
+Defined in: [src/type/entity/monitor/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/index.ts#L67)
 
 全てのMonitorを描画する
 
@@ -43,7 +43,7 @@ Defined in: [src/type/entity/monitor/index.ts:67](https://github.com/amami-harhi
 
 > **get**(`monitorId`): [`IMonitor`](../monitor/interfaces/IMonitor.md)
 
-Defined in: [src/type/entity/monitor/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/index.ts#L53)
+Defined in: [src/type/entity/monitor/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/index.ts#L53)
 
 指定したIDのモニターを返す
 
@@ -65,7 +65,7 @@ Defined in: [src/type/entity/monitor/index.ts:53](https://github.com/amami-harhi
 
 > **hide**(`monitorId`): `void`
 
-Defined in: [src/type/entity/monitor/index.ts:63](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/index.ts#L63)
+Defined in: [src/type/entity/monitor/index.ts:63](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/index.ts#L63)
 
 指定したIDのモニターを隠す
 
@@ -87,7 +87,7 @@ Defined in: [src/type/entity/monitor/index.ts:63](https://github.com/amami-harhi
 
 > **reposition**(): `void`
 
-Defined in: [src/type/entity/monitor/index.ts:72](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/index.ts#L72)
+Defined in: [src/type/entity/monitor/index.ts:72](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/index.ts#L72)
 
 モニターを再配置する
 
@@ -101,7 +101,7 @@ Defined in: [src/type/entity/monitor/index.ts:72](https://github.com/amami-harhi
 
 > **show**(`monitorId`): `void`
 
-Defined in: [src/type/entity/monitor/index.ts:58](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/index.ts#L58)
+Defined in: [src/type/entity/monitor/index.ts:58](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/index.ts#L58)
 
 指定したIDのモニターを表示する
 

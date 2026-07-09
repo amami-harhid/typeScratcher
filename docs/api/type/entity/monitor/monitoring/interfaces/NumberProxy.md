@@ -1,6 +1,6 @@
 # Interface: NumberProxy
 
-Defined in: [src/type/entity/monitor/monitoring.ts:17](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitoring.ts#L17)
+Defined in: [src/type/entity/monitor/monitoring.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L17)
 
 数値プロキシ
 
@@ -18,7 +18,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:17](https://github.com/amami-
 
 > **hide**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:5](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitoring.ts#L5)
+Defined in: [src/type/entity/monitor/monitoring.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L5)
 
 #### Inherited from
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:5](https://github.com/amami-h
 
 > **scale**: `object`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:18](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitoring.ts#L18)
+Defined in: [src/type/entity/monitor/monitoring.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L18)
 
 #### h
 
@@ -46,7 +46,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:18](https://github.com/amami-
 
 > **show**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitoring.ts#L4)
+Defined in: [src/type/entity/monitor/monitoring.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L4)
 
 #### Inherited from
 
@@ -58,7 +58,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:4](https://github.com/amami-h
 
 > **value**: `number`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:3](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitoring.ts#L3)
+Defined in: [src/type/entity/monitor/monitoring.ts:3](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L3)
 
 変数(数値)
 

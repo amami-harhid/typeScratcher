@@ -2,7 +2,7 @@
 
 > **RGBObject** = `object`
 
-Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/color.ts#L4)
+Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/color.ts#L4)
 
 Color
 
@@ -12,7 +12,7 @@ Color
 
 > `optional` **a?**: `number`
 
-Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/color.ts#L4)
+Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/color.ts#L4)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScrat
 
 > **b**: `number`
 
-Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/color.ts#L4)
+Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/color.ts#L4)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScrat
 
 > **g**: `number`
 
-Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/color.ts#L4)
+Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/color.ts#L4)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScrat
 
 > **r**: `number`
 
-Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/utils/color.ts#L4)
+Defined in: [src/lib/utils/color.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/color.ts#L4)

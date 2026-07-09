@@ -1,6 +1,6 @@
 # Class: S3Silhouette
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:100](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L100)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:100](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L100)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/entity/monitor/s3Silhouette.ts:100](https://github.com/amam
 
 > **new S3Silhouette**(): `S3Silhouette`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:115](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L115)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:115](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L115)
 
 #### Returns
 
@@ -22,7 +22,7 @@ Defined in: [src/lib/entity/monitor/s3Silhouette.ts:115](https://github.com/amam
 
 > **get** **data**(): `Uint8ClampedArray`\<`ArrayBufferLike`\>
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:111](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L111)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:111](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L111)
 
 ##### Returns
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/monitor/s3Silhouette.ts:111](https://github.com/amam
 
 > **get** **height**(): `number`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:108](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L108)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:108](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L108)
 
 ##### Returns
 
@@ -50,7 +50,7 @@ Defined in: [src/lib/entity/monitor/s3Silhouette.ts:108](https://github.com/amam
 
 > **get** **width**(): `number`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:105](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L105)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:105](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L105)
 
 ##### Returns
 
@@ -62,7 +62,7 @@ Defined in: [src/lib/entity/monitor/s3Silhouette.ts:105](https://github.com/amam
 
 > `optional` **colorAtLinear**(`vec`, `dst`): `Uint8ClampedArray`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:209](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L209)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:209](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L209)
 
 Sample a color from the silhouette at a given local position using
 "linear interpolation"
@@ -93,7 +93,7 @@ dst
 
 > `optional` **colorAtNearest**(`vec`, `dst`): `Uint8ClampedArray`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:193](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L193)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:193](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L193)
 
 Sample a color from the silhouette at a given local position using
 "nearest neighbor"
@@ -124,7 +124,7 @@ dst
 
 > **isTouchingLinear**(`vec`): `boolean`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:254](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L254)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:254](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L254)
 
 Test to see if any of the 4 pixels used in the linear interpolate touch
 the silhouette.
@@ -149,7 +149,7 @@ Any of the pixels have some alpha.
 
 > **isTouchingNearest**(`vec`): `boolean`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:239](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L239)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:239](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L239)
 
 Test if texture coordinate touches the silhouette using nearest neighbor.
 
@@ -173,7 +173,7 @@ If the nearest pixel has an alpha value.
 
 > **update**(`bitmapData`, `isPremultiplied?`): `void`
 
-Defined in: [src/lib/entity/monitor/s3Silhouette.ts:148](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/monitor/s3Silhouette.ts#L148)
+Defined in: [src/lib/entity/monitor/s3Silhouette.ts:148](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/s3Silhouette.ts#L148)
 
 Update this silhouette with the bitmapData for a skin.
 

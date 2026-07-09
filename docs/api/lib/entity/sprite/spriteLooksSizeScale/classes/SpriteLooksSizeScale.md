@@ -1,6 +1,6 @@
 # Class: SpriteLooksSizeScale
 
-Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:4](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSizeScale.ts#L4)
+Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSizeScale.ts#L4)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:4](https://github.com
 
 > **new SpriteLooksSizeScale**(`entity`): `SpriteLooksSizeScale`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:6](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSizeScale.ts#L6)
+Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSizeScale.ts#L6)
 
 #### Parameters
 
@@ -28,7 +28,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:6](https://github.com
 
 > **get** **h**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:18](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSizeScale.ts#L18)
+Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSizeScale.ts#L18)
 
 ##### Returns
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:18](https://github.co
 
 > **set** **h**(`h`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:22](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSizeScale.ts#L22)
+Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSizeScale.ts#L22)
 
 ##### Parameters
 
@@ -58,7 +58,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:22](https://github.co
 
 > **get** **w**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSizeScale.ts#L10)
+Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSizeScale.ts#L10)
 
 ##### Returns
 
@@ -68,7 +68,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:10](https://github.co
 
 > **set** **w**(`w`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:14](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSizeScale.ts#L14)
+Defined in: [src/lib/entity/sprite/spriteLooksSizeScale.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSizeScale.ts#L14)
 
 ##### Parameters
 

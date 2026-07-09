@@ -1,6 +1,6 @@
 # Class: EntityEvent
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:27](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L27)
+Defined in: [src/lib/entity/entity/entityEvent.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L27)
 
 イベント
 
@@ -19,7 +19,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:27](https://github.com/amami-h
 
 > **new EntityEvent**(`entity`): `EntityEvent`
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:45](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L45)
+Defined in: [src/lib/entity/entity/entityEvent.ts:45](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L45)
 
 **`Internal`**
 
@@ -43,7 +43,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:45](https://github.com/amami-h
 
 > **get** **Broadcast**(): [`IEntityBroadCast`](../../../../../type/entity/entity/IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:52](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L52)
+Defined in: [src/lib/entity/entity/entityEvent.ts:52](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L52)
 
 BroadCast
 
@@ -59,7 +59,7 @@ BroadCast
 
 > **get** `static` **backdropEventFuncArray**(): [`BACKDROP_EVENT_ELEMENT`](../type-aliases/BACKDROP_EVENT_ELEMENT.md)[]
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:35](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L35)
+Defined in: [src/lib/entity/entity/entityEvent.ts:35](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L35)
 
 背景切替イベント配列
 
@@ -73,7 +73,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:35](https://github.com/amami-h
 
 > **backdropEventKick**(`backdropName`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:248](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L248)
+Defined in: [src/lib/entity/entity/entityEvent.ts:248](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L248)
 
 #### Parameters
 
@@ -91,7 +91,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:248](https://github.com/amami-
 
 > **backdropSwitcher**(`backdrop`): [`EventFunctionSetter`](../../../../../type/entity/entity/IEntityEvent/interfaces/EventFunctionSetter.md)
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:222](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L222)
+Defined in: [src/lib/entity/entity/entityEvent.ts:222](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L222)
 
 背景が〇〇になったときのイベントセッターを返す
 
@@ -117,7 +117,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:222](https://github.com/amami-
 
 > **clicker**(): [`EventFunctionSetter`](../../../../../type/entity/entity/IEntityEvent/interfaces/EventFunctionSetter.md)
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:162](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L162)
+Defined in: [src/lib/entity/entity/entityEvent.ts:162](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L162)
 
 クリックイベントのセッターを返す
 
@@ -137,7 +137,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:162](https://github.com/amami-
 
 > **clickEventerKick**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:170](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L170)
+Defined in: [src/lib/entity/entity/entityEvent.ts:170](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L170)
 
 #### Returns
 
@@ -149,7 +149,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:170](https://github.com/amami-
 
 > **flagPresser**(): [`EventFunctionSetter`](../../../../../type/entity/entity/IEntityEvent/interfaces/EventFunctionSetter.md)
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:60](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L60)
+Defined in: [src/lib/entity/entity/entityEvent.ts:60](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L60)
 
 旗が押されたときのイベントセッターを返す
 
@@ -169,7 +169,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:60](https://github.com/amami-h
 
 > **flagPresserKick**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:86](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L86)
+Defined in: [src/lib/entity/entity/entityEvent.ts:86](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L86)
 
 #### Returns
 
@@ -181,7 +181,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:86](https://github.com/amami-h
 
 > **keyPresser**(`key`): [`EventFunctionSetter`](../../../../../type/entity/entity/IEntityEvent/interfaces/EventFunctionSetter.md)
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:107](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L107)
+Defined in: [src/lib/entity/entity/entityEvent.ts:107](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L107)
 
 キー押下イベントのセッターを返す
 
@@ -207,7 +207,7 @@ Defined in: [src/lib/entity/entity/entityEvent.ts:107](https://github.com/amami-
 
 > **keyPresserKick**(`key`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entityEvent.ts:149](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityEvent.ts#L149)
+Defined in: [src/lib/entity/entity/entityEvent.ts:149](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEvent.ts#L149)
 
 #### Parameters
 

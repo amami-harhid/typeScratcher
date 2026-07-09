@@ -1,6 +1,6 @@
 # Class: SpriteLooksSize
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L10)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L10)
 
 サイズ
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:10](https://github.com/ama
 
 > **new SpriteLooksSize**(`entity`): `SpriteLooksSize`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:20](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L20)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L20)
 
 **`Internal`**
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:20](https://github.com/ama
 
 > **get** **drawingSize**(): [`TBoundsEx`](../../../../../type/common/typeCommon/interfaces/TBoundsEx.md)
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:121](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L121)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:121](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L121)
 
 自分自身の縦横表示サイズを得る
 
@@ -68,7 +68,7 @@ bounds: {left:number, top:number, right:number, bottom:number, width: number, he
 
 > **get** **h**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:54](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L54)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:54](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L54)
 
 縦サイズ
 
@@ -80,7 +80,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:54](https://github.com/ama
 
 > **set** **h**(`height`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:68](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L68)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:68](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L68)
 
 縦サイズ
 
@@ -106,7 +106,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:68](https://github.com/ama
 
 > **get** **scale**(): [`SpriteLooksSizeScale`](../../spriteLooksSizeScale/classes/SpriteLooksSizeScale.md)
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:106](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L106)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:106](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L106)
 
 縦横サイズ
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:106](https://github.com/am
 
 > **set** **scale**(`scale`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:112](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L112)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:112](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L112)
 
 縦横サイズ
 
@@ -144,7 +144,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:112](https://github.com/am
 
 > **get** **w**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:28](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L28)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:28](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L28)
 
 横サイズ
 
@@ -156,7 +156,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:28](https://github.com/ama
 
 > **set** **w**(`width`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:38](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L38)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:38](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L38)
 
 横サイズ
 
@@ -180,7 +180,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:38](https://github.com/ama
 
 > **sizeUpdate**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:84](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/sprite/spriteLooksSize.ts#L84)
+Defined in: [src/lib/entity/sprite/spriteLooksSize.ts:84](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksSize.ts#L84)
 
 Skin作成後にSprite.init()の中からキックされる
 

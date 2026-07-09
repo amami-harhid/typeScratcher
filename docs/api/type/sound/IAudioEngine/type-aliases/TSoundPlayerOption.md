@@ -2,7 +2,7 @@
 
 > **TSoundPlayerOption** = `object`
 
-Defined in: [src/type/sound/IAudioEngine.ts:25](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L25)
+Defined in: [src/type/sound/IAudioEngine.ts:25](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L25)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:25](https://github.com/amami-harhid/
 
 > `optional` **effects?**: [`TEffectChain`](TEffectChain.md)
 
-Defined in: [src/type/sound/IAudioEngine.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L26)
+Defined in: [src/type/sound/IAudioEngine.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L26)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:26](https://github.com/amami-harhid/
 
 > `optional` **pitch?**: `number`
 
-Defined in: [src/type/sound/IAudioEngine.ts:28](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L28)
+Defined in: [src/type/sound/IAudioEngine.ts:28](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L28)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [src/type/sound/IAudioEngine.ts:28](https://github.com/amami-harhid/
 
 > `optional` **volume?**: `number`
 
-Defined in: [src/type/sound/IAudioEngine.ts:27](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/sound/IAudioEngine.ts#L27)
+Defined in: [src/type/sound/IAudioEngine.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L27)
