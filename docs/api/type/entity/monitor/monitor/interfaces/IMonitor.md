@@ -1,0 +1,107 @@
+# Interface: IMonitor
+
+Defined in: [src/type/entity/monitor/monitor.ts:6](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L6)
+
+Monitor
+
+## Accessors
+
+### monitorId
+
+#### Get Signature
+
+> **get** **monitorId**(): `string`
+
+Defined in: [src/type/entity/monitor/monitor.ts:7](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L7)
+
+##### Returns
+
+`string`
+
+***
+
+### position
+
+#### Get Signature
+
+> **get** **position**(): [`TPosition`](../../../../common/typeCommon/type-aliases/TPosition.md)
+
+Defined in: [src/type/entity/monitor/monitor.ts:8](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L8)
+
+##### Returns
+
+[`TPosition`](../../../../common/typeCommon/type-aliases/TPosition.md)
+
+#### Set Signature
+
+> **set** **position**(`_position`): `void`
+
+Defined in: [src/type/entity/monitor/monitor.ts:9](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L9)
+
+##### Parameters
+
+###### \_position
+
+[`TPosition`](../../../../common/typeCommon/type-aliases/TPosition.md)
+
+##### Returns
+
+`void`
+
+***
+
+### scale
+
+#### Get Signature
+
+> **get** **scale**(): [`TScale`](../../../../common/typeCommon/type-aliases/TScale.md)
+
+Defined in: [src/type/entity/monitor/monitor.ts:10](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L10)
+
+##### Returns
+
+[`TScale`](../../../../common/typeCommon/type-aliases/TScale.md)
+
+#### Set Signature
+
+> **set** **scale**(`_scale`): `void`
+
+Defined in: [src/type/entity/monitor/monitor.ts:11](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L11)
+
+##### Parameters
+
+###### \_scale
+
+[`TScale`](../../../../common/typeCommon/type-aliases/TScale.md)
+
+##### Returns
+
+`void`
+
+## Methods
+
+### hide()
+
+> **hide**(): `void`
+
+Defined in: [src/type/entity/monitor/monitor.ts:15](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L15)
+
+隠す
+
+#### Returns
+
+`void`
+
+***
+
+### show()
+
+> **show**(): `void`
+
+Defined in: [src/type/entity/monitor/monitor.ts:13](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/entity/monitor/monitor.ts#L13)
+
+表示する
+
+#### Returns
+
+`void`

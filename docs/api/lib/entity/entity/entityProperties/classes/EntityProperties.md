@@ -1,0 +1,274 @@
+# Class: EntityProperties
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:39](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L39)
+
+プロパティ
+
+## Extended by
+
+- [`SpriteProperties`](../../../sprite/spriteProperties/classes/SpriteProperties.md)
+- [`StageProperties`](../../../stage/stageProperties/classes/StageProperties.md)
+
+## Implements
+
+- [`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md)
+
+## Constructors
+
+### Constructor
+
+> **new EntityProperties**(`entity`): `EntityProperties`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:47](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L47)
+
+#### Parameters
+
+##### entity
+
+[`IEntity`](../../../../../type/entity/entity/interfaces/IEntity.md)
+
+#### Returns
+
+`EntityProperties`
+
+## Accessors
+
+### degree
+
+#### Get Signature
+
+> **get** **degree**(): `number`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:68](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L68)
+
+角度
+
+##### Returns
+
+`number`
+
+#### Set Signature
+
+> **set** **degree**(`degree`): `void`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:71](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L71)
+
+角度
+
+##### Parameters
+
+###### degree
+
+`number`
+
+##### Returns
+
+`void`
+
+角度
+
+#### Implementation of
+
+[`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md).[`degree`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md#degree)
+
+***
+
+### position
+
+#### Get Signature
+
+> **get** **position**(): [`IPosition`](../../../../../type/entity/entity/IEntityProperties/interfaces/IPosition.md)
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:54](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L54)
+
+座標
+
+##### Returns
+
+[`IPosition`](../../../../../type/entity/entity/IEntityProperties/interfaces/IPosition.md)
+
+#### Set Signature
+
+> **set** **position**(`pos`): `void`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:57](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L57)
+
+座標
+
+##### Parameters
+
+###### pos
+
+\[`number`, `number`\]
+
+##### Returns
+
+`void`
+
+座標
+
+#### Implementation of
+
+[`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md).[`position`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md#position)
+
+***
+
+### rotationStyle
+
+#### Get Signature
+
+> **get** **rotationStyle**(): [`RotationValue`](../../../../../type/entity/RotationStyle/type-aliases/RotationValue.md)
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:81](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L81)
+
+回転方法
+
+##### Returns
+
+[`RotationValue`](../../../../../type/entity/RotationStyle/type-aliases/RotationValue.md)
+
+#### Set Signature
+
+> **set** **rotationStyle**(`style`): `void`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:84](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L84)
+
+回転方法
+
+##### Parameters
+
+###### style
+
+[`RotationValue`](../../../../../type/entity/RotationStyle/type-aliases/RotationValue.md)
+
+##### Returns
+
+`void`
+
+回転方法
+
+#### Implementation of
+
+[`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md).[`rotationStyle`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md#rotationstyle)
+
+***
+
+### scale
+
+#### Get Signature
+
+> **get** **scale**(): [`Scale`](Scale.md)
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:61](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L61)
+
+スケール
+
+##### Returns
+
+[`Scale`](Scale.md)
+
+#### Set Signature
+
+> **set** **scale**(`size`): `void`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:64](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L64)
+
+スケール
+
+##### Parameters
+
+###### size
+
+\[`number`, `number`\]
+
+##### Returns
+
+`void`
+
+スケール
+
+#### Implementation of
+
+[`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md).[`scale`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md#scale)
+
+***
+
+### visible
+
+#### Get Signature
+
+> **get** **visible**(): `boolean`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:75](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L75)
+
+表示・非表示
+
+##### Returns
+
+`boolean`
+
+#### Set Signature
+
+> **set** **visible**(`visible`): `void`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:78](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L78)
+
+表示・非表示
+
+##### Parameters
+
+###### visible
+
+`boolean`
+
+##### Returns
+
+`void`
+
+表示・非表示
+
+#### Implementation of
+
+[`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md).[`visible`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md#visible)
+
+## Methods
+
+### update()
+
+> **update**(): `void`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:87](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L87)
+
+プロパティをレンダラーへ反映
+
+#### Returns
+
+`void`
+
+#### Implementation of
+
+[`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md).[`update`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md#update)
+
+***
+
+### updateDrawableProperties()
+
+> **updateDrawableProperties**(`prop`): `void`
+
+Defined in: [src/lib/entity/entity/entityProperties.ts:90](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/lib/entity/entity/entityProperties.ts#L90)
+
+プロパティをレンダラーへ反映
+
+#### Parameters
+
+##### prop
+
+[`ScratchRenderProperties`](../../../../../type/render/IRenderWebGL/type-aliases/ScratchRenderProperties.md)
+
+#### Returns
+
+`void`
+
+#### Implementation of
+
+[`IEntityProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md).[`updateDrawableProperties`](../../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md#updatedrawableproperties)

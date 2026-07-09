@@ -1,6 +1,6 @@
 import type {FPS} from './fps';
 /**
- * Env
+ * 環境設定
  */
 export type TEnv = {
     /**
@@ -8,10 +8,8 @@ export type TEnv = {
      */
     fps : FPS,
     /**
+     * フキダシ(Bubble)の大きさ設定
      * Trueのとき、スプライトのサイズに連動してBubbleの大きさが変わる（ ディフォルト値=false )
-     * ```ts
-     *  Env.bubbleScaleLinkedToSprite = true;
-     * ```
      */
     bubbleScaleLinkedToSprite : boolean,
     /**

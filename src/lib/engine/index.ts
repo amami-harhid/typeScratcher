@@ -11,7 +11,7 @@ import { Monitors } from "../entity/monitor/monitors";
 import { Font } from "../fonts";
 
 /**
- * PlayGround
+ * ゲームエンジン
  */
 export class Engine implements IEngine {
     private _render!: Render;
@@ -21,11 +21,17 @@ export class Engine implements IEngine {
     private _fonts: Font[] = [];
     private _timer: number;
     private _mouse!: TMouse;
+    /**
+     * @hidden
+     */
     constructor() {
         this._runtime = new Runtime();
         this._timer = performance.now();
     }
 
+    /**
+     * @hidden
+     */
     get runtime() {
         return this._runtime;
     }
@@ -41,6 +47,9 @@ export class Engine implements IEngine {
     resetTimer() {
         this._timer = performance.now();
     }
+    /**
+     * @hidden
+     */
     createRenderer(canvas: HTMLCanvasElement) {
         this._render = new Render( );
         this._render.createRenderer(canvas);
@@ -51,6 +60,9 @@ export class Engine implements IEngine {
     get mouse() {
         return this._mouse;
     }
+    /**
+     * @hidden
+     */
     mouseEventStart() {
         const _rate = this.renderRate;
         this.initMouseInfo();
@@ -100,32 +112,53 @@ export class Engine implements IEngine {
     get render(): Render {
         return this._render;
     }
+    /**
+     * @hidden
+     */
     addSprite(sprite: Sprite) {
         this._sprites.push(sprite);
     }
+    /**
+     * @hidden
+     */
     getSprites() : Sprite[]{
         return this._sprites;
     }
+    /**
+     * @hidden
+     */
     removeSprites( target: Sprite ) {
         const _sprites = this._sprites.filter( element => element.id != target.id );
         this._sprites.splice(0, this._sprites.length);
         this._sprites.push(..._sprites);
     }
+    /**
+     * @hidden
+     */
     setStage(stage: Stage) {
         this._stage = stage;
     }
+    /**
+     * @hidden
+     */
     getStage() {
         return this._stage;
     }
+    /**
+     * @hidden
+     */
     addFont(font: Font): void {
         this._fonts.push(font);
     }
+    /**
+     * @hidden
+     */
     getFonts(): Font[] {
         return this._fonts;
     }
 
     /**
-     * 開始処理 
+     * ゲームエンジン開始処理 
      */
     async start(): Promise<void> {
         this._runtime.scratchEvent.stageFirstClick();
@@ -145,6 +178,9 @@ export class Engine implements IEngine {
         }
         threadManager.start();
     }
+    /**
+     * @hidden
+     */
     get renderRate(): {x:number, y:number} {
         const canvas = ScratchElement.getScratchCanvas();
         const render = this.render;

@@ -6,10 +6,14 @@ import type { ISprite } from '../type/entity/sprite';
 import type { IStage } from '../type/entity/stage';
 import { ScratchFontFamily as _ScratchFontFamily } from '../type/svgText';
 
-
+/** @hidden */
 export const Typescratcher: ExportType = Ts;
 
+/** @hidden */
 export type Sprite = ISprite;
+/** @hidden */
 export type Stage = IStage;
+/** @hidden */
 export type Image = IImage;
+/** @hidden */
 export type ICreateSvgImageAttributes = createSvgImageAttributes;

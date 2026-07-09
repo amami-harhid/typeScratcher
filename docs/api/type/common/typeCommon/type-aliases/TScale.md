@@ -1,0 +1,23 @@
+# Type Alias: TScale
+
+> **TScale** = `object`
+
+Defined in: [src/type/common/typeCommon.ts:24](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L24)
+
+スケール
+
+## Properties
+
+### h
+
+> **h**: `number`
+
+Defined in: [src/type/common/typeCommon.ts:26](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L26)
+
+***
+
+### w
+
+> **w**: `number`
+
+Defined in: [src/type/common/typeCommon.ts:25](https://github.com/amami-harhid/typeScratcher/blob/0917aa907c2a4851193fb04e3d2b06ed49b59613/src/type/common/typeCommon.ts#L25)

@@ -7,7 +7,9 @@ declare type POST_DATA = {
 };
 
 const KEY_NAME_LIST:string[] = Object.keys(KEYBOARD_KEYS).map((name:string) => KEYBOARD_KEYS[name]);
-
+/**
+ * @hidden
+ */
 export class Keyboard {
     private _keysPressed: string[] = [];
     private _runtime : Runtime;

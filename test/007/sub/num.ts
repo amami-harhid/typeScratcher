@@ -1,7 +1,7 @@
 import { Typescratcher as TS } from '../../..';
-import type { ICreateSvgImageAttributes } from '../../..';
+import type { SvgImageAttributes } from '../../..';
 
-const textAttr: ICreateSvgImageAttributes = {
+const textAttr: SvgImageAttributes = {
     font_size: 90,
     font_weight: 'bolder',
 };

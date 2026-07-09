@@ -182,7 +182,7 @@ export class EntitySound {
             if(_soundPlayer == undefined) return;// 何もしない
             const effect = this.effectMap.get(sound.name);
             if(effect){
-                const _volume = _sound.toScratchVolumeLimit(effect.volume+volume);
+                const _volume = Sound.toScratchVolumeLimit(effect.volume+volume);
                 _sound.setVolume(_soundPlayer, _volume);
                 effect.volume = _volume;
             }
@@ -197,7 +197,7 @@ export class EntitySound {
             if(_soundPlayer == undefined) return;// 何もしない
             const effect = this.effectMap.get(sound.name);
             if(effect){
-                const _volume = sound.toScratchPitchLimit(volume);
+                const _volume = Sound.toScratchPitchLimit(volume);
                 sound.setVolume(_soundPlayer, _volume);
                 effect.volume = _volume;
             }
@@ -221,7 +221,7 @@ export class EntitySound {
             const effect = this.effectMap.get(sound.name);
             if(effect){
                 const _pitch = effect.pitch + pitch;
-                effect.pitch = sound.toScratchPitchLimit(_pitch);
+                effect.pitch = Sound.toScratchPitchLimit(_pitch);
                 sound.setPitch(_soundPlayer, effect.pitch);
             }
         }else{
@@ -234,7 +234,7 @@ export class EntitySound {
             if(_soundPlayer == undefined) return;// 何もしない
             const effect = this.effectMap.get(sound.name);
             if(effect){
-                effect.pitch = sound.toScratchPitchLimit(pitch);
+                effect.pitch = Sound.toScratchPitchLimit(pitch);
                 sound.setPitch(_soundPlayer, effect.pitch);
             }
         }else{

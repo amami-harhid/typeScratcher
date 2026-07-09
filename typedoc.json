@@ -1,0 +1,19 @@
+{
+    "entryPoints": ["src/**/*.ts"],
+    "exclude": [
+        "src/importer/**/*.ts",
+        "src/twgl.d.ts",
+        "src/version.ts",
+    ],
+    "out": "docs/api",
+    "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"],
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "excludeExternals": true,
+    "readme": "none",
+    "sidebar": {
+        "autoConfiguration": true
+    },
+    "hideBreadcrumbs": true,
+    "cleanOutputDir": false
+}

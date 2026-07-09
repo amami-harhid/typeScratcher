@@ -1,6 +1,9 @@
 import type { TEnv } from "../../type/common/env";
 import type { FPS } from "../../type/common/fps";
 const fps:FPS = 30;
+/**
+ * 環境設定
+ */
 export const Env: TEnv = {
     /**
      * FPS値

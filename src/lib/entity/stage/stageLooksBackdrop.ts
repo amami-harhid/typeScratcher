@@ -101,7 +101,7 @@ export class StageLooksBackdrop extends EntityBackdrop implements IStageLooksBac
      */
     switchRandom(): void {
         const _entity = this.entity as Stage
-        (_entity.Backdrop as StageBackdrop).random();
+        (_entity.Backdrop as StageBackdrop).switchRandom();
         
     }
     /**

@@ -126,7 +126,6 @@ apple.Looks.effect.clear()
 
 ## Font-Family の設定方法を調査すること
 0.0.25 #05 ( 実装済 )
-```:lib/text/index.ts
 text.setAttribute('font-family', 'Marker');
 
 ## test/007
