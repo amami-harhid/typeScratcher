@@ -1,4 +1,4 @@
-import { engine, Engine } from '../../engine';
+import { EventEmitter } from 'events';
 import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '.';
 import { SpriteLooksSizeScale } from './spriteLooksSizeScale';
@@ -7,7 +7,7 @@ import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteLooksSize } from '../../../type/entity/sprite/ISpriteLooksSize';
 
 /** サイズ */
-export class SpriteLooksSize implements ISpriteLooksSize{
+export class SpriteLooksSize extends EventEmitter implements ISpriteLooksSize{
 
     private entity: Sprite;
     private _scale: SpriteLooksSizeScale;
@@ -18,52 +18,38 @@ export class SpriteLooksSize implements ISpriteLooksSize{
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
+        super();
         this.entity = entity as Sprite;
         this._scale = new SpriteLooksSizeScale(entity);
     }
     /**
      * 横サイズ
-     * ```ts
-     *  const width = this.Looks.Size.w;
-     * ```
      */
     get w () : number {
         if(this._w == undefined){
-            //const _org_w = this.entity.Properties.scale.w;
-            //this.entity.Properties.scale.w = 100;
             const _bounds = this.drawingSize;
             this._w = _bounds.width;
-            //this.entity.Properties.scale.w = _org_w;
         }
         return this._w;
     }
     /**
      * 横サイズ
-     * ```ts
-     *  this.Looks.Size.w = 150; // 150%
-     *  this.Looks.Size.w += 10; // 10ずつ増やす
-     * ```
      */
     set w (width: number) {
         this._w = width;
         if(this.hasSkin()){
-            console.log('spriteLooksSize [1]')
+            // sprite.init()実行後でないとSkinは作成されていない
             this._updateSizeW();
         }else{
-            // TODO
-            // ここに来るのは、TS.start() される前。
-            console.log('spriteLooksSize [2]')
-            const scratchEvent = (engine as Engine).runtime.scratchEvent;
+            // ここに来る条件: SKIN未作成時にセッター実行されたとき
             const _update = this._updateSizeW.bind(this);
-            scratchEvent.removeListener(ScratchEvent.SPRITE_INIT, _update);
-            scratchEvent.once(ScratchEvent.SPRITE_INIT, _update);
+            this.removeListener(ScratchEvent.SPRITE_INIT, _update);
+            // SKIN作成後に一度実行される
+            this.once(ScratchEvent.SPRITE_INIT, _update);
         }
     }
     /**
      * 縦サイズ
-     * ```ts
-     *  const height = this.Looks.Size.h;
-     * ```
      */
     get h () : number {
         if(this._h == undefined){
@@ -78,29 +64,26 @@ export class SpriteLooksSize implements ISpriteLooksSize{
     }
     /**
      * 縦サイズ
-     * ```ts
-     *  this.Looks.Size.h = 150; // 150%
-     *  this.Looks.Size.h += 10; // 10ずつ増やす
-     * ```
      */
     set h (height: number) {
         this._h = height;
-        // sprite.init()実行後でないとSkinは作成されていない
         if(this.hasSkin()){
+            // sprite.init()実行後でないとSkinは作成されていない
             this._updateSizeH();
         }else{
-            // TODO
-            // ここに来る条件は無さそう
-            const scratchEvent = (engine as Engine).runtime.scratchEvent;
+            // ここに来る条件: SKIN未作成時にセッター実行されたとき
             const _update = this._updateSizeH.bind(this);
-            scratchEvent.removeListener(ScratchEvent.SPRITE_INIT, _update);
-            scratchEvent.once(ScratchEvent.SPRITE_INIT, _update);
+            this.removeListener(ScratchEvent.SPRITE_INIT, _update);
+            // SKIN作成後に一度実行される
+            this.once(ScratchEvent.SPRITE_INIT, _update);
         }
     }
+    /**
+     * Skin作成後にSprite.init()の中からキックされる
+     */
     sizeUpdate() {
-        const scratchEvent = (engine as Engine).runtime.scratchEvent;
-        if(scratchEvent.listenerCount(ScratchEvent.SPRITE_INIT) > 0) {
-            scratchEvent.emit(ScratchEvent.SPRITE_INIT);
+        if(this.listenerCount(ScratchEvent.SPRITE_INIT) > 0) {
+            this.emit(ScratchEvent.SPRITE_INIT);
         }
     }
     private _updateSizeW(): void {
@@ -119,27 +102,12 @@ export class SpriteLooksSize implements ISpriteLooksSize{
     }
     /**
      * 縦横サイズ
-     * ```ts
-     *  // 横150%, 縦100% にする
-     *  const scale = this.Looks.Size.scale;
-     *  console.log('横', scale.w);
-     *  console.log('縦', scale.h);
-     * ```
      */
     get scale() : SpriteLooksSizeScale {
         return this._scale;
     }
     /**
      * 縦横サイズ
-     * ```ts
-     *  // 横150%, 縦100% にする
-     *  this.Looks.Size.scale = {w:150, h:100};
-     * ```
-     * ```ts
-     *  // 横10,縦20 ずつ増やす
-     *  const scale = this.Looks.Size.scale;
-     *  this.Looks.Size.scale = {w:scale.w +10, h:scale.h +20};
-     * ```
      */
     set scale( scale : TScaleArr ) {
         this.entity.Properties.scale.w = scale[0];
@@ -148,26 +116,23 @@ export class SpriteLooksSize implements ISpriteLooksSize{
 
     /**
      * 自分自身の縦横表示サイズを得る
-     * @returns dimensions {w: number, h: number}
-     * ```ts
-     *  // スプライトの表示サイズを得る
-     *  const {w,h} = this.Looks.Size.drawingSize;
-     * ```
+     * @returns bounds: {left:number, top:number, right:number, bottom:number, width: number, height: number }
      */
     get drawingSize() : TBoundsEx{
         // スケールと座標位置、角度、表示非表示をレンダー側へ渡す
         this.entity.Properties.update();
-        // this.entity.render.renderer.updateDrawableScale(this.entity.drawableID, [this.entity.Properties.scale.w, this.entity.Properties.scale.h]);
         const bounds = this.entity.render.renderer.getBounds(this.entity.drawableID);
         const _bounds: TBoundsEx = {...bounds, width: bounds.right-bounds.left, height: bounds.top - bounds.bottom};
         return _bounds;
     }
     private hasSkin() : boolean {
         const _drawable = this.entity.render.renderer._allDrawables[this.entity.drawableID];
-        if(_drawable == undefined)
+        if(_drawable == undefined){
             return false;
-        if(_drawable.skin == undefined)
+        }
+        if(_drawable.skin == undefined){
             return false;
+        }
 
         return true;
 

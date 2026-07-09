@@ -119,8 +119,6 @@ export class Sprite extends Entity implements ISprite {
         return new Promise<void>((resolve)=>{
             const loadArr: Promise<void>[] = [];
             for(const img of this._image.images){
-                console.log('sprite name = ', me.name);
-                console.log('image name = ', img.name);
                 loadArr.push((img as Image).load());
             }
             for(const sndKey of (this._sound as EntitySound).soundKeys){
@@ -148,7 +146,6 @@ export class Sprite extends Entity implements ISprite {
                     const svgText = (img as Image).image;
                     const skinId = this.render.renderer.createSVGSkin(svgText);
                     const _skin = this._render.renderer._allSkins[skinId];
-                    console.log(_skin);
                     // willReadFrequently を設定するために SKINインスタンスを取り出し、
                     // SVGSkinのコンストラクターで実施すみの下記【A】２行をやり直す。
                     //if(_skin._canvas) _skin._canvas.remove(); // <== 念のため削除
@@ -162,14 +159,11 @@ export class Sprite extends Entity implements ISprite {
                     }
                     await Timer.wait(0.1);
                 }
+                // SKIN作成後でないと動作しない処理は、ここからキックする
                 (me.Looks.size as SpriteLooksSize).sizeUpdate();
                 resolve(); // 完了
             });
         })
-    }
-    cloneInit() : void {
-
-
     }
     private _updateSkipCounter = 0;
     update() {

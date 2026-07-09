@@ -9,7 +9,6 @@ import { Sprite, Stage, SvgImageAttributes } from "../../src";
 //Ts.Env.debugMode = true;
 // 【MAP読み込み】
 import { Map01, WallWidth, WallHeight, Wall, type IWall } from "./sub/wall";
-console.log(WallWidth, WallHeight)
 
 
 // 【画像読み込み】
@@ -23,23 +22,16 @@ const wall = new Wall('wall');
 wall.Costume.add( [WallImage] );
 const w = WallWidth;
 const h = WallHeight;
-//wall.Looks.size.w = w;
-//wall.Looks.size.h = h;
+wall.Looks.size.w = w;
+wall.Looks.size.h = h;
 wall.Looks.hide();
 
 // 【スプライト】Cage
 const cage = new Wall('cage');
 cage.Costume.add( [DoorImage, CageImage] );
-cage.Costume.add( [DoorImage] );
-console.log('[#001]')
-//cage.Looks.size.w = w;
-//cage.Looks.size.h = h;
+cage.Looks.size.w = w;
+cage.Looks.size.h = h;
 cage.Looks.hide();
-
-//【変数】
-const Count = Ts.Variable.number(0);
-Ts.Variable.monitoring({Count});
-Count.hide();
 
 const CageBank : {[key : string]: IWall} = {};
 
@@ -53,6 +45,13 @@ slime.Sound.add([ChirpSound, CollectSound, CrashBeatboxSound]);
 slime.Motion.position.xy = [ 0, 0 ];
 slime.Looks.size.w = w*0.8;
 slime.Looks.size.h = h*0.8;
+
+
+//【変数】
+const Count = Ts.Variable.number(0);
+Ts.Variable.monitoring({Count});
+Count.hide();
+
 
 slime.Event.flagPresser().func = async function*(this:IWall){
     // 大きさの設定
