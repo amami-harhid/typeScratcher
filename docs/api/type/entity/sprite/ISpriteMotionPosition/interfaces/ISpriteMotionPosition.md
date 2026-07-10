@@ -1,6 +1,6 @@
 # Interface: ISpriteMotionPosition
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPosition.ts#L6)
+Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPosition.ts#L6)
 
 スプライトの動き（位置）
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:6](https://github.c
 
 > **get** **x**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPosition.ts#L10)
+Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPosition.ts#L10)
 
 X座標
 
@@ -24,7 +24,7 @@ X座標
 
 > **set** **x**(`x`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPosition.ts#L22)
+Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPosition.ts#L22)
 
 X座標
 
@@ -46,7 +46,7 @@ X座標
 
 > **get** **xy**(): `TwoNumberArray`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPosition.ts#L18)
+Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPosition.ts#L18)
 
 XY座標
 
@@ -58,7 +58,7 @@ XY座標
 
 > **set** **xy**(`xy`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:30](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPosition.ts#L30)
+Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:30](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPosition.ts#L30)
 
 XY座標
 
@@ -80,7 +80,7 @@ XY座標
 
 > **get** **y**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPosition.ts#L14)
+Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPosition.ts#L14)
 
 Y座標
 
@@ -92,7 +92,7 @@ Y座標
 
 > **set** **y**(`y`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPosition.ts#L26)
+Defined in: [src/type/entity/sprite/ISpriteMotionPosition.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPosition.ts#L26)
 
 Y座標
 

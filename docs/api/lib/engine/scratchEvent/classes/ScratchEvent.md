@@ -1,6 +1,6 @@
 # Class: ScratchEvent
 
-Defined in: [src/lib/engine/scratchEvent.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L14)
+Defined in: [src/lib/engine/scratchEvent.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L14)
 
 Scratch Event
 
@@ -14,7 +14,7 @@ Scratch Event
 
 > **new ScratchEvent**(): `ScratchEvent`
 
-Defined in: [src/lib/engine/scratchEvent.ts:53](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L53)
+Defined in: [src/lib/engine/scratchEvent.ts:53](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L53)
 
 #### Returns
 
@@ -32,7 +32,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:53](https://github.com/amami-harhid/
 
 > **get** **running**(): `boolean`
 
-Defined in: [src/lib/engine/scratchEvent.ts:69](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L69)
+Defined in: [src/lib/engine/scratchEvent.ts:69](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L69)
 
 ##### Returns
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:69](https://github.com/amami-harhid/
 
 > **set** **runningThreadCount**(`runningThreadCount`): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:72](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L72)
+Defined in: [src/lib/engine/scratchEvent.ts:72](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L72)
 
 ##### Parameters
 
@@ -66,7 +66,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:72](https://github.com/amami-harhid/
 
 > **get** `static` **CANVAS\_CLICKED**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:34](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L34)
+Defined in: [src/lib/engine/scratchEvent.ts:34](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L34)
 
 ##### Returns
 
@@ -80,7 +80,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:34](https://github.com/amami-harhid/
 
 > **get** `static` **GREEN\_FLAG\_CLICKED**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L16)
+Defined in: [src/lib/engine/scratchEvent.ts:16](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L16)
 
 ##### Returns
 
@@ -94,7 +94,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:16](https://github.com/amami-harhid/
 
 > **get** `static` **PAUSE\_CLICKED**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:25](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L25)
+Defined in: [src/lib/engine/scratchEvent.ts:25](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L25)
 
 ##### Returns
 
@@ -108,7 +108,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:25](https://github.com/amami-harhid/
 
 > **get** `static` **READY\_AUDIO\_ENGINE**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L22)
+Defined in: [src/lib/engine/scratchEvent.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L22)
 
 ##### Returns
 
@@ -122,7 +122,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:22](https://github.com/amami-harhid/
 
 > **get** `static` **RESTART\_CLICKED**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:28](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L28)
+Defined in: [src/lib/engine/scratchEvent.ts:28](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L28)
 
 ##### Returns
 
@@ -136,7 +136,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:28](https://github.com/amami-harhid/
 
 > **get** `static` **SPRITE\_GLIDE**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:37](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L37)
+Defined in: [src/lib/engine/scratchEvent.ts:37](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L37)
 
 ##### Returns
 
@@ -150,7 +150,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:37](https://github.com/amami-harhid/
 
 > **get** `static` **SPRITE\_GLIDE\_STOP**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:40](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L40)
+Defined in: [src/lib/engine/scratchEvent.ts:40](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L40)
 
 ##### Returns
 
@@ -164,7 +164,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:40](https://github.com/amami-harhid/
 
 > **get** `static` **SPRITE\_INIT**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:43](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L43)
+Defined in: [src/lib/engine/scratchEvent.ts:43](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L43)
 
 ##### Returns
 
@@ -178,7 +178,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:43](https://github.com/amami-harhid/
 
 > **get** `static` **START\_AUDIO\_ENGINE**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L19)
+Defined in: [src/lib/engine/scratchEvent.ts:19](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L19)
 
 ##### Returns
 
@@ -192,7 +192,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:19](https://github.com/amami-harhid/
 
 > **get** `static` **STOP\_CLICKED**(): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L31)
+Defined in: [src/lib/engine/scratchEvent.ts:31](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L31)
 
 ##### Returns
 
@@ -204,7 +204,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:31](https://github.com/amami-harhid/
 
 > **backdropChangerRegist**(`backdropName`): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:207](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L207)
+Defined in: [src/lib/engine/scratchEvent.ts:207](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L207)
 
 #### Parameters
 
@@ -222,7 +222,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:207](https://github.com/amami-harhid
 
 > **clonedEventRegist**(`sprite`): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:234](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L234)
+Defined in: [src/lib/engine/scratchEvent.ts:234](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L234)
 
 #### Parameters
 
@@ -240,7 +240,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:234](https://github.com/amami-harhid
 
 > **getClonedEventMessageId**(`sprite`): `string`
 
-Defined in: [src/lib/engine/scratchEvent.ts:262](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L262)
+Defined in: [src/lib/engine/scratchEvent.ts:262](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L262)
 
 #### Parameters
 
@@ -258,7 +258,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:262](https://github.com/amami-harhid
 
 > **greenFlagClick**(): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:87](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L87)
+Defined in: [src/lib/engine/scratchEvent.ts:87](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L87)
 
 #### Returns
 
@@ -270,7 +270,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:87](https://github.com/amami-harhid/
 
 > **isBackdropChangerExist**(`backdropName`): `boolean`
 
-Defined in: [src/lib/engine/scratchEvent.ts:215](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L215)
+Defined in: [src/lib/engine/scratchEvent.ts:215](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L215)
 
 #### Parameters
 
@@ -288,7 +288,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:215](https://github.com/amami-harhid
 
 > **isClonedEventExist**(`messageId`): `boolean`
 
-Defined in: [src/lib/engine/scratchEvent.ts:244](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L244)
+Defined in: [src/lib/engine/scratchEvent.ts:244](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L244)
 
 #### Parameters
 
@@ -306,7 +306,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:244](https://github.com/amami-harhid
 
 > **keyClick**(`key`): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:163](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L163)
+Defined in: [src/lib/engine/scratchEvent.ts:163](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L163)
 
 #### Parameters
 
@@ -324,7 +324,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:163](https://github.com/amami-harhid
 
 > **messageReceiverRegist**(`messageId`): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:186](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L186)
+Defined in: [src/lib/engine/scratchEvent.ts:186](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L186)
 
 #### Parameters
 
@@ -342,7 +342,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:186](https://github.com/amami-harhid
 
 > **pauseMarkClick**(): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:132](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L132)
+Defined in: [src/lib/engine/scratchEvent.ts:132](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L132)
 
 #### Returns
 
@@ -354,7 +354,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:132](https://github.com/amami-harhid
 
 > **spliteClick**(): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:151](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L151)
+Defined in: [src/lib/engine/scratchEvent.ts:151](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L151)
 
 #### Returns
 
@@ -366,7 +366,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:151](https://github.com/amami-harhid
 
 > **stageFirstClick**(): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:75](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L75)
+Defined in: [src/lib/engine/scratchEvent.ts:75](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L75)
 
 #### Returns
 
@@ -378,7 +378,7 @@ Defined in: [src/lib/engine/scratchEvent.ts:75](https://github.com/amami-harhid/
 
 > **stopMarkClick**(): `void`
 
-Defined in: [src/lib/engine/scratchEvent.ts:118](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/scratchEvent.ts#L118)
+Defined in: [src/lib/engine/scratchEvent.ts:118](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/scratchEvent.ts#L118)
 
 #### Returns
 

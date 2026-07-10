@@ -2,7 +2,7 @@
 
 > **T\_VOICE\_INFO\_ELEMENT** = `object`
 
-Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/speech/IVoice.ts#L45)
+Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/speech/IVoice.ts#L45)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeS
 
 > **gender**: [`Type_speech_gender`](../../type-aliases/Type_speech_gender.md)
 
-Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/speech/IVoice.ts#L45)
+Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/speech/IVoice.ts#L45)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeS
 
 > **pitch**: `number`
 
-Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/speech/IVoice.ts#L45)
+Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/speech/IVoice.ts#L45)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeS
 
 > **volume**: `number`
 
-Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/speech/IVoice.ts#L45)
+Defined in: [src/type/speech/IVoice.ts:45](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/speech/IVoice.ts#L45)

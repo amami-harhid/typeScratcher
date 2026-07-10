@@ -1,6 +1,6 @@
 # Interface: StringProxy
 
-Defined in: [src/type/entity/monitor/monitoring.ts:24](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L24)
+Defined in: [src/type/entity/monitor/monitoring.ts:24](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L24)
 
 文字列プロキシ
 
@@ -18,7 +18,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:24](https://github.com/amami-
 
 > **hide**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L11)
+Defined in: [src/type/entity/monitor/monitoring.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L11)
 
 #### Inherited from
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:11](https://github.com/amami-
 
 > **scale**: `object`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:25](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L25)
+Defined in: [src/type/entity/monitor/monitoring.ts:25](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L25)
 
 #### h
 
@@ -46,7 +46,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:25](https://github.com/amami-
 
 > **show**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L10)
+Defined in: [src/type/entity/monitor/monitoring.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L10)
 
 #### Inherited from
 
@@ -58,7 +58,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:10](https://github.com/amami-
 
 > **text**: `string`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L9)
+Defined in: [src/type/entity/monitor/monitoring.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L9)
 
 変数(文字列)
 

@@ -1,6 +1,6 @@
 # Class: StageSensingTimer
 
-Defined in: [src/lib/entity/stage/stageSensingTimer.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageSensingTimer.ts#L8)
+Defined in: [src/lib/entity/stage/stageSensingTimer.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageSensingTimer.ts#L8)
 
 Stage Sensing(調べる) Timer
 
@@ -14,7 +14,7 @@ Stage Sensing(調べる) Timer
 
 > **new StageSensingTimer**(`entity`): `StageSensingTimer`
 
-Defined in: [src/lib/entity/stage/stageSensingTimer.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageSensingTimer.ts#L14)
+Defined in: [src/lib/entity/stage/stageSensingTimer.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageSensingTimer.ts#L14)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/stage/stageSensingTimer.ts:14](https://github.com/am
 
 > **get** **timer**(): `number`
 
-Defined in: [src/lib/entity/stage/stageSensingTimer.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageSensingTimer.ts#L20)
+Defined in: [src/lib/entity/stage/stageSensingTimer.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageSensingTimer.ts#L20)
 
 タイマー値
 
@@ -58,7 +58,7 @@ Defined in: [src/lib/entity/stage/stageSensingTimer.ts:20](https://github.com/am
 
 > **reset**(): `void`
 
-Defined in: [src/lib/entity/stage/stageSensingTimer.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageSensingTimer.ts#L26)
+Defined in: [src/lib/entity/stage/stageSensingTimer.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageSensingTimer.ts#L26)
 
 タイマーリセット
 

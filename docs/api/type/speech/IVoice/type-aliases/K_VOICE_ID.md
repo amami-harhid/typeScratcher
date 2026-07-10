@@ -2,4 +2,4 @@
 
 > **K\_VOICE\_ID** = keyof *typeof* [`VOICE_ID`](../variables/VOICE_ID.md)
 
-Defined in: [src/type/speech/IVoice.ts:43](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/speech/IVoice.ts#L43)
+Defined in: [src/type/speech/IVoice.ts:43](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/speech/IVoice.ts#L43)

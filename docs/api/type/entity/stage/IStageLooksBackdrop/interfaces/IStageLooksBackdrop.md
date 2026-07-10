@@ -1,6 +1,6 @@
 # Interface: IStageLooksBackdrop
 
-Defined in: [src/type/entity/stage/IStageLooksBackdrop.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageLooksBackdrop.ts#L6)
+Defined in: [src/type/entity/stage/IStageLooksBackdrop.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/stage/IStageLooksBackdrop.ts#L6)
 
 StageBackdrop
 
@@ -14,7 +14,7 @@ StageBackdrop
 
 > `readonly` **currentSkinId**: `number`
 
-Defined in: [src/type/entity/stage/IStageLooksBackdrop.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageLooksBackdrop.ts#L11)
+Defined in: [src/type/entity/stage/IStageLooksBackdrop.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/stage/IStageLooksBackdrop.ts#L11)
 
 現在のSkinID
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/stage/IStageLooksBackdrop.ts:11](https://github.com
 
 > **get** **name**(): `string`
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L26)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L26)
 
 背景名
 ```ts
@@ -42,7 +42,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:26](https://github.c
 
 > **set** **name**(`backdropName`): `void`
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:34](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L34)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:34](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L34)
 
 背景名
 ```ts
@@ -72,7 +72,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:34](https://github.c
 
 > **get** **no**(): `number`
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L10)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L10)
 
 背景番号
 ```ts
@@ -88,7 +88,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:10](https://github.c
 
 > **set** **no**(`no`): `void`
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L18)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L18)
 
 背景番号
 ```ts
@@ -116,7 +116,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:18](https://github.c
 
 > **next**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:41](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L41)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:41](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L41)
 
 次の背景にする
 ```ts
@@ -137,7 +137,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:41](https://github.c
 
 > **nextAndWait**(): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:45](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L45)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:45](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L45)
 
 次の背景にして待つ
 
@@ -155,7 +155,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:45](https://github.c
 
 > **previous**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:52](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L52)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:52](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L52)
 
 前の背景にする
 ```ts
@@ -176,7 +176,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:52](https://github.c
 
 > **previousAndWait**(): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:56](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L56)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:56](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L56)
 
 前の背景にして待つ
 
@@ -194,7 +194,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:56](https://github.c
 
 > **switchAndWait**(`backdropName`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:69](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L69)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:69](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L69)
 
 背景を変えて待つ
 
@@ -218,7 +218,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:69](https://github.c
 
 > **switchRandom**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:60](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L60)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:60](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L60)
 
 どれかの背景にする
 
@@ -236,7 +236,7 @@ Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:60](https://github.c
 
 > **switchRandomAndWait**(): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:64](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityLooksBackdrop.ts#L64)
+Defined in: [src/type/entity/entity/IEntityLooksBackdrop.ts:64](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooksBackdrop.ts#L64)
 
 どれかの背景にして待つ
 

@@ -1,6 +1,6 @@
 # Class: SpriteSensingTimer
 
-Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingTimer.ts#L8)
+Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingTimer.ts#L8)
 
 Sprite Sensing(調べる) Timer
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる) Timer
 
 > **new SpriteSensingTimer**(`entity`): `SpriteSensingTimer`
 
-Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingTimer.ts#L14)
+Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingTimer.ts#L14)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:14](https://github.com/
 
 > **get** **timer**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingTimer.ts#L20)
+Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingTimer.ts#L20)
 
 タイマー値
 
@@ -58,7 +58,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:20](https://github.com/
 
 > **reset**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingTimer.ts#L26)
+Defined in: [src/lib/entity/sprite/spriteSensingTimer.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingTimer.ts#L26)
 
 タイマーリセット
 

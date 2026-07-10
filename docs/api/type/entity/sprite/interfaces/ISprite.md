@@ -1,6 +1,6 @@
 # Interface: ISprite
 
-Defined in: [src/type/entity/sprite/index.ts:24](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L24)
+Defined in: [src/type/entity/sprite/index.ts:24](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L24)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/sprite/index.ts:24](https://github.com/amami-harhid
 
 > `readonly` **Broadcast**: [`IEntityBroadCast`](../../entity/IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L9)
+Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/index.ts#L9)
 
 メッセージ送受信
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/
 
 > `readonly` **Control**: [`ISpriteControl`](../ISpriteControl/interfaces/ISpriteControl.md)
 
-Defined in: [src/type/entity/sprite/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L53)
+Defined in: [src/type/entity/sprite/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L53)
 
 制御
 
@@ -36,7 +36,7 @@ Defined in: [src/type/entity/sprite/index.ts:53](https://github.com/amami-harhid
 
 > `readonly` **Costume**: [`ISpriteCostume`](../ISpriteCostume/interfaces/ISpriteCostume.md)
 
-Defined in: [src/type/entity/sprite/index.ts:45](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L45)
+Defined in: [src/type/entity/sprite/index.ts:45](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L45)
 
 コスチューム番号、コスチューム名を取り出すためのオブジェクト
 使用例：this.Costume.no, this.Costume.name
@@ -49,7 +49,7 @@ Defined in: [src/type/entity/sprite/index.ts:45](https://github.com/amami-harhid
 
 > `readonly` **DragMode**: [`ISpriteDragMode`](../ISpriteDragMode/interfaces/ISpriteDragMode.md)
 
-Defined in: [src/type/entity/sprite/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L85)
+Defined in: [src/type/entity/sprite/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L85)
 
 DragModeを設定するためのオブジェクト
 
@@ -59,7 +59,7 @@ DragModeを設定するためのオブジェクト
 
 > `readonly` **Event**: [`ISpriteEvent`](../ISpriteEvent/interfaces/ISpriteEvent.md)
 
-Defined in: [src/type/entity/sprite/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L61)
+Defined in: [src/type/entity/sprite/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L61)
 
 イベント
 
@@ -69,7 +69,7 @@ Defined in: [src/type/entity/sprite/index.ts:61](https://github.com/amami-harhid
 
 > `readonly` **Looks**: [`ISpriteLooks`](../ISpriteLooks/interfaces/ISpriteLooks.md)
 
-Defined in: [src/type/entity/sprite/index.ts:49](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L49)
+Defined in: [src/type/entity/sprite/index.ts:49](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L49)
 
 見た目
 
@@ -79,7 +79,7 @@ Defined in: [src/type/entity/sprite/index.ts:49](https://github.com/amami-harhid
 
 > `readonly` **Motion**: [`ISpriteMotion`](../ISpriteMotion/interfaces/ISpriteMotion.md)
 
-Defined in: [src/type/entity/sprite/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L33)
+Defined in: [src/type/entity/sprite/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L33)
 
 動き
 
@@ -89,7 +89,7 @@ Defined in: [src/type/entity/sprite/index.ts:33](https://github.com/amami-harhid
 
 > `readonly` **name**: `string`
 
-Defined in: [src/type/entity/sprite/index.ts:28](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L28)
+Defined in: [src/type/entity/sprite/index.ts:28](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L28)
 
 スプライト名
 
@@ -99,7 +99,7 @@ Defined in: [src/type/entity/sprite/index.ts:28](https://github.com/amami-harhid
 
 > `readonly` **Pen**: [`IPenSprite`](../pen/interfaces/IPenSprite.md)
 
-Defined in: [src/type/entity/sprite/index.ts:38](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L38)
+Defined in: [src/type/entity/sprite/index.ts:38](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L38)
 
 PEN
 
@@ -109,7 +109,7 @@ PEN
 
 > `readonly` **Sensing**: [`ISpriteSensing`](../ISpriteSensing/interfaces/ISpriteSensing.md)
 
-Defined in: [src/type/entity/sprite/index.ts:57](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L57)
+Defined in: [src/type/entity/sprite/index.ts:57](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L57)
 
 調べる
 
@@ -119,7 +119,7 @@ Defined in: [src/type/entity/sprite/index.ts:57](https://github.com/amami-harhid
 
 > `readonly` **Sound**: [`IEntitySound`](../../entity/IEntitySound/interfaces/IEntitySound.md)
 
-Defined in: [src/type/entity/sprite/index.ts:66](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/index.ts#L66)
+Defined in: [src/type/entity/sprite/index.ts:66](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/index.ts#L66)
 
 サウンド
 
@@ -133,7 +133,7 @@ Defined in: [src/type/entity/sprite/index.ts:66](https://github.com/amami-harhid
 
 > `readonly` **Speech**: [`IEntitySpeech`](../../entity/IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L17)
+Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/index.ts#L17)
 
 スピーチ
 

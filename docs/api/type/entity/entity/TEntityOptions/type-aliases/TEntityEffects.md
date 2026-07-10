@@ -2,7 +2,7 @@
 
 > **TEntityEffects** = `object`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:15](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L15)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L15)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:15](https://github.com/ama
 
 > `optional` **brightness?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L21)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:21](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L21)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:21](https://github.com/ama
 
 > `optional` **color?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L16)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:16](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L16)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:16](https://github.com/ama
 
 > `optional` **fisheye?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L17)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L17)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:17](https://github.com/ama
 
 > `optional` **ghost?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L22)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L22)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:22](https://github.com/ama
 
 > `optional` **mosaic?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L20)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L20)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:20](https://github.com/ama
 
 > `optional` **pixelate?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L19)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:19](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L19)
 
 ***
 
@@ -58,4 +58,4 @@ Defined in: [src/type/entity/entity/TEntityOptions.ts:19](https://github.com/ama
 
 > `optional` **whirl?**: `number`
 
-Defined in: [src/type/entity/entity/TEntityOptions.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/TEntityOptions.ts#L18)
+Defined in: [src/type/entity/entity/TEntityOptions.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/TEntityOptions.ts#L18)

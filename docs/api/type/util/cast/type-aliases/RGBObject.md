@@ -2,7 +2,7 @@
 
 > **RGBObject** = `object`
 
-Defined in: [src/type/util/cast.ts:3](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/util/cast.ts#L3)
+Defined in: [src/type/util/cast.ts:3](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/util/cast.ts#L3)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/util/cast.ts:3](https://github.com/amami-harhid/typeScratc
 
 > `optional` **a?**: `number`
 
-Defined in: [src/type/util/cast.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/util/cast.ts#L7)
+Defined in: [src/type/util/cast.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/util/cast.ts#L7)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/util/cast.ts:7](https://github.com/amami-harhid/typeScratc
 
 > **b**: `number`
 
-Defined in: [src/type/util/cast.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/util/cast.ts#L6)
+Defined in: [src/type/util/cast.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/util/cast.ts#L6)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/util/cast.ts:6](https://github.com/amami-harhid/typeScratc
 
 > **g**: `number`
 
-Defined in: [src/type/util/cast.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/util/cast.ts#L5)
+Defined in: [src/type/util/cast.ts:5](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/util/cast.ts#L5)
 
 ***
 
@@ -34,4 +34,4 @@ Defined in: [src/type/util/cast.ts:5](https://github.com/amami-harhid/typeScratc
 
 > **r**: `number`
 
-Defined in: [src/type/util/cast.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/util/cast.ts#L4)
+Defined in: [src/type/util/cast.ts:4](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/util/cast.ts#L4)

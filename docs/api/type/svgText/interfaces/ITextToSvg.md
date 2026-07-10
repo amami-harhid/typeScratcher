@@ -1,6 +1,6 @@
 # Interface: ITextToSvg
 
-Defined in: [src/type/svgText/index.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/svgText/index.ts#L31)
+Defined in: [src/type/svgText/index.ts:31](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/svgText/index.ts#L31)
 
 ## Accessors
 
@@ -10,7 +10,7 @@ Defined in: [src/type/svgText/index.ts:31](https://github.com/amami-harhid/typeS
 
 > **set** **scratchFontFamily**(`fontFamily`): `void`
 
-Defined in: [src/type/svgText/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/svgText/index.ts#L39)
+Defined in: [src/type/svgText/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/svgText/index.ts#L39)
 
 ScratchFontFamily
 
@@ -30,7 +30,7 @@ ScratchFontFamily
 
 > **createSvgData**(`inputText`, `textAttr`): `Promise`\<`string`\>
 
-Defined in: [src/type/svgText/index.ts:41](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/svgText/index.ts#L41)
+Defined in: [src/type/svgText/index.ts:41](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/svgText/index.ts#L41)
 
 SVGデータ作成
 

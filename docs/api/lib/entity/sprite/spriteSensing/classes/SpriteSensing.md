@@ -1,6 +1,6 @@
 # Class: SpriteSensing
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L20)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L20)
 
 Sprite Sensing(調べる)
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる)
 
 > **new SpriteSensing**(`entity`): `SpriteSensing`
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L32)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L32)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteSensing.ts:32](https://github.com/amami
 
 > **get** **color**(): [`ISpriteSensingColor`](../../../../../type/entity/sprite/ISpriteSensingColor/interfaces/ISpriteSensingColor.md)
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:75](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L75)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:75](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L75)
 
 色関連
 
@@ -60,7 +60,7 @@ Defined in: [src/lib/entity/sprite/spriteSensing.ts:75](https://github.com/amami
 
 > **get** **dragMode**(): [`ISpriteDragMode`](../../../../../type/entity/sprite/ISpriteDragMode/interfaces/ISpriteDragMode.md)
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:84](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L84)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:84](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L84)
 
 Drag Mode
 
@@ -82,7 +82,7 @@ Drag Mode
 
 > **get** **edge**(): [`ISpriteSensingEdge`](../../../../../type/entity/sprite/ISpriteSensingEdge/interfaces/ISpriteSensingEdge.md)
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:72](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L72)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:72](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L72)
 
 端関連
 
@@ -104,7 +104,7 @@ Defined in: [src/lib/entity/sprite/spriteSensing.ts:72](https://github.com/amami
 
 > **get** **keyboard**(): [`IEntitySensingKey`](../../../../../type/entity/entity/IEntitySensingKey/interfaces/IEntitySensingKey.md)
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:63](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L63)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:63](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L63)
 
 Key関連
 
@@ -126,7 +126,7 @@ Key関連
 
 > **get** **mouse**(): [`ISpriteSensingMouse`](../../../../../type/entity/sprite/ISpriteSensingMouse/interfaces/ISpriteSensingMouse.md)
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:57](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L57)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:57](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L57)
 
 マウス情報
 
@@ -148,7 +148,7 @@ Defined in: [src/lib/entity/sprite/spriteSensing.ts:57](https://github.com/amami
 
 > **get** **sprite**(): [`ISpriteSensingSprite`](../../../../../type/entity/sprite/ISpriteSensingSprite/interfaces/ISpriteSensingSprite.md)
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:78](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L78)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:78](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L78)
 
 スプライト関連
 
@@ -170,7 +170,7 @@ Defined in: [src/lib/entity/sprite/spriteSensing.ts:78](https://github.com/amami
 
 > **get** **timer**(): [`IEntitySensingTimer`](../../../../../type/entity/entity/IEntitySensingTimer/interfaces/IEntitySensingTimer.md)
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:69](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L69)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:69](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L69)
 
 タイマー関連
 
@@ -190,7 +190,7 @@ Defined in: [src/lib/entity/sprite/spriteSensing.ts:69](https://github.com/amami
 
 > **askAndWait**(`question`): `Promise`\<`string`\>
 
-Defined in: [src/lib/entity/sprite/spriteSensing.ts:46](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensing.ts#L46)
+Defined in: [src/lib/entity/sprite/spriteSensing.ts:46](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensing.ts#L46)
 
 質問をして答えを待つ
 

@@ -1,6 +1,6 @@
 # Interface: IImage
 
-Defined in: [src/type/image/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L32)
+Defined in: [src/type/image/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L32)
 
 ## Extended by
 
@@ -12,4 +12,4 @@ Defined in: [src/type/image/index.ts:32](https://github.com/amami-harhid/typeScr
 
 > **name**: `string`
 
-Defined in: [src/type/image/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L34)
+Defined in: [src/type/image/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L34)

@@ -1,6 +1,6 @@
 # Interface: ISilhouette
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:13](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L13)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:13](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L13)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [src/type/entity/monitor/ISilhouette.ts:13](https://github.com/amami
 
 > `readonly` **data**: `Uint8ClampedArray`\<`ArrayBufferLike`\>
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L16)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:16](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L16)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [src/type/entity/monitor/ISilhouette.ts:16](https://github.com/amami
 
 > `readonly` **height**: `number`
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:15](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L15)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L15)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/monitor/ISilhouette.ts:15](https://github.com/amami
 
 > `readonly` **width**: `number`
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L14)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L14)
 
 ## Methods
 
@@ -32,7 +32,7 @@ Defined in: [src/type/entity/monitor/ISilhouette.ts:14](https://github.com/amami
 
 > `optional` **colorAtLinear**(`vec`, `dst`): `Uint8ClampedArray`
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:41](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L41)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:41](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L41)
 
 Sample a color from the silhouette at a given local position using
 "linear interpolation"
@@ -63,7 +63,7 @@ dst
 
 > `optional` **colorAtNearest**(`vec`, `dst`): `Uint8ClampedArray`
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L32)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L32)
 
 Sample a color from the silhouette at a given local position using
 "nearest neighbor"
@@ -94,7 +94,7 @@ dst
 
 > **isTouchingLinear**(`vec`): `boolean`
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:56](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L56)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:56](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L56)
 
 Test to see if any of the 4 pixels used in the linear interpolate touch
 the silhouette.
@@ -119,7 +119,7 @@ Any of the pixels have some alpha.
 
 > **isTouchingNearest**(`vec`): `boolean`
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:48](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L48)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:48](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L48)
 
 Test if texture coordinate touches the silhouette using nearest neighbor.
 
@@ -143,7 +143,7 @@ If the nearest pixel has an alpha value.
 
 > **update**(`bitmapData`, `isPremultiplied?`): `void`
 
-Defined in: [src/type/entity/monitor/ISilhouette.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/ISilhouette.ts#L23)
+Defined in: [src/type/entity/monitor/ISilhouette.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/ISilhouette.ts#L23)
 
 Update this silhouette with the bitmapData for a skin.
 

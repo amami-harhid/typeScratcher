@@ -1,6 +1,6 @@
 # Class: SpriteSensingKey
 
-Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingKey.ts#L8)
+Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingKey.ts#L8)
 
 Sprite Sensing(調べる) Key
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる) Key
 
 > **new SpriteSensingKey**(`entity`): `SpriteSensingKey`
 
-Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingKey.ts#L14)
+Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingKey.ts#L14)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:14](https://github.com/am
 
 > **isDown**(`key`): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingKey.ts#L23)
+Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingKey.ts#L23)
 
 キーが押されていることの判定
 
@@ -64,7 +64,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:23](https://github.com/am
 
 > **isNotDown**(`key`): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteSensingKey.ts#L31)
+Defined in: [src/lib/entity/sprite/spriteSensingKey.ts:31](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingKey.ts#L31)
 
 キーが押されていないことの判定
 

@@ -1,6 +1,6 @@
 # Interface: IEntityProxy
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L5)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:5](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L5)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:5](https://github.com/amami-
 
 > `readonly` **Broadcast**: [`IEntityBroadCast`](../../IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L9)
+Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/index.ts#L9)
 
 メッセージ送受信
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/
 
 > **entity**: [`IEntity`](../../interfaces/IEntity.md)
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L8)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L8)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:8](https://github.com/amami-
 
 > `readonly` **id**: `string`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L7)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L7)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:7](https://github.com/amami-
 
 > `readonly` **isProxyTest**: `boolean`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L6)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L6)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:6](https://github.com/amami-
 
 > `readonly` **Sound**: [`IEntitySound`](../../IEntitySound/interfaces/IEntitySound.md)
 
-Defined in: [src/type/entity/entity/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L13)
+Defined in: [src/type/entity/entity/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/index.ts#L13)
 
 サウンド
 
@@ -64,7 +64,7 @@ Defined in: [src/type/entity/entity/index.ts:13](https://github.com/amami-harhid
 
 > `readonly` **Speech**: [`IEntitySpeech`](../../IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L17)
+Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/index.ts#L17)
 
 スピーチ
 
@@ -78,7 +78,7 @@ Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid
 
 > **threadCounter**: `number`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L11)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L11)
 
 ***
 
@@ -86,7 +86,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:11](https://github.com/amami
 
 > **threadId**: `string`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L9)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L9)
 
 ***
 
@@ -94,7 +94,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:9](https://github.com/amami-
 
 > **threadName**: `string`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L10)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L10)
 
 ## Methods
 
@@ -102,7 +102,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:10](https://github.com/amami
 
 > **getStopThisScriptSwitch**(): `boolean`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:15](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L15)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L15)
 
 このスクリプトを止めるスイッチ
 
@@ -116,7 +116,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:15](https://github.com/amami
 
 > **setStopThisScriptSwitch**(`stop`): `void`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:13](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L13)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:13](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L13)
 
 このスクリプトを止めるスイッチを設定する
 
@@ -136,7 +136,7 @@ Defined in: [src/type/entity/entity/IEntityProxy.ts:13](https://github.com/amami
 
 > **throwForceStopThisScripts**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityProxy.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProxy.ts#L17)
+Defined in: [src/type/entity/entity/IEntityProxy.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityProxy.ts#L17)
 
 強制終了
 

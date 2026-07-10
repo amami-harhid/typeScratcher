@@ -1,6 +1,6 @@
 # Interface: IPenSpriteHSVColor
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L5)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:5](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L5)
 
 PenSpriteHSVColor
 
@@ -12,7 +12,7 @@ PenSpriteHSVColor
 
 > **get** **brightness**(): `number`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:27](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L27)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:27](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L27)
 
 明度
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:27](https://github
 
 > **set** **brightness**(`brightness`): `void`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L32)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L32)
 
 明度
 
@@ -48,7 +48,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:32](https://github
 
 > **get** **hue**(): `number`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L9)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L9)
 
 色相
 
@@ -60,7 +60,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:9](https://github.
 
 > **set** **hue**(`hue`): `void`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L14)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L14)
 
 色相
 
@@ -84,7 +84,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:14](https://github
 
 > **get** **saturation**(): `number`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L18)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L18)
 
 彩度
 
@@ -96,7 +96,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:18](https://github
 
 > **set** **saturation**(`saturation`): `void`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L23)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L23)
 
 彩度
 
@@ -120,7 +120,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:23](https://github
 
 > **get** **transparency**(): `number`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:36](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L36)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:36](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L36)
 
 透明度
 
@@ -132,7 +132,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:36](https://github
 
 > **set** **transparency**(`transparency`): `void`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:41](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L41)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteHSVColor.ts:41](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/IPenSpriteHSVColor.ts#L41)
 
 透明度
 

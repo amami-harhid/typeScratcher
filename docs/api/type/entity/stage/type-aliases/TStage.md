@@ -2,4 +2,4 @@
 
 > **TStage** = [`IStage`](../interfaces/IStage.md)
 
-Defined in: [src/type/entity/stage/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L17)
+Defined in: [src/type/entity/stage/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/stage/index.ts#L17)

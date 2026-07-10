@@ -1,6 +1,6 @@
 # Class: FontImage
 
-Defined in: [src/lib/fonts/fontImage.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/fonts/fontImage.ts#L10)
+Defined in: [src/lib/fonts/fontImage.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/fontImage.ts#L10)
 
 Image
 
@@ -18,7 +18,7 @@ Image
 
 > **new FontImage**(`attributes`): `FontImage`
 
-Defined in: [src/lib/fonts/fontImage.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/fonts/fontImage.ts#L14)
+Defined in: [src/lib/fonts/fontImage.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/fontImage.ts#L14)
 
 #### Parameters
 
@@ -42,7 +42,7 @@ Defined in: [src/lib/fonts/fontImage.ts:14](https://github.com/amami-harhid/type
 
 > **get** **image**(): `string`
 
-Defined in: [src/lib/image/index.ts:96](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/image/index.ts#L96)
+Defined in: [src/lib/image/index.ts:96](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/image/index.ts#L96)
 
 ##### Returns
 
@@ -52,7 +52,7 @@ Defined in: [src/lib/image/index.ts:96](https://github.com/amami-harhid/typeScra
 
 > **set** **image**(`_img`): `void`
 
-Defined in: [src/lib/image/index.ts:99](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/image/index.ts#L99)
+Defined in: [src/lib/image/index.ts:99](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/image/index.ts#L99)
 
 ##### Parameters
 
@@ -76,7 +76,7 @@ Defined in: [src/lib/image/index.ts:99](https://github.com/amami-harhid/typeScra
 
 > **get** **loadCompleted**(): `boolean`
 
-Defined in: [src/lib/image/index.ts:102](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/image/index.ts#L102)
+Defined in: [src/lib/image/index.ts:102](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/image/index.ts#L102)
 
 ##### Returns
 
@@ -94,7 +94,7 @@ Defined in: [src/lib/image/index.ts:102](https://github.com/amami-harhid/typeScr
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/image/index.ts:93](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/image/index.ts#L93)
+Defined in: [src/lib/image/index.ts:93](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/image/index.ts#L93)
 
 ##### Returns
 
@@ -116,7 +116,7 @@ Defined in: [src/lib/image/index.ts:93](https://github.com/amami-harhid/typeScra
 
 > **get** **skinId**(): `number`
 
-Defined in: [src/lib/image/index.ts:106](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/image/index.ts#L106)
+Defined in: [src/lib/image/index.ts:106](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/image/index.ts#L106)
 
 ##### Returns
 
@@ -126,7 +126,7 @@ Defined in: [src/lib/image/index.ts:106](https://github.com/amami-harhid/typeScr
 
 > **set** **skinId**(`skinId`): `void`
 
-Defined in: [src/lib/image/index.ts:109](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/image/index.ts#L109)
+Defined in: [src/lib/image/index.ts:109](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/image/index.ts#L109)
 
 ##### Parameters
 
@@ -148,7 +148,7 @@ Defined in: [src/lib/image/index.ts:109](https://github.com/amami-harhid/typeScr
 
 > **fontLoad**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/fonts/fontImage.ts:24](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/fonts/fontImage.ts#L24)
+Defined in: [src/lib/fonts/fontImage.ts:24](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/fontImage.ts#L24)
 
 #### Returns
 
@@ -160,7 +160,7 @@ Defined in: [src/lib/fonts/fontImage.ts:24](https://github.com/amami-harhid/type
 
 > **load**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/fonts/fontImage.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/fonts/fontImage.ts#L21)
+Defined in: [src/lib/fonts/fontImage.ts:21](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/fontImage.ts#L21)
 
 #### Returns
 
@@ -176,7 +176,7 @@ Defined in: [src/lib/fonts/fontImage.ts:21](https://github.com/amami-harhid/type
 
 > **textToSvg**(`text`): `Promise`\<`void`\>
 
-Defined in: [src/lib/fonts/fontImage.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/fonts/fontImage.ts#L32)
+Defined in: [src/lib/fonts/fontImage.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/fontImage.ts#L32)
 
 #### Parameters
 
@@ -198,7 +198,7 @@ Defined in: [src/lib/fonts/fontImage.ts:32](https://github.com/amami-harhid/type
 
 > `static` **createSvgImage**(`image`, `attributes`): `Promise`\<[`IImage`](../../../../type/image/interfaces/IImage.md)\>
 
-Defined in: [src/lib/image/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/image/index.ts#L32)
+Defined in: [src/lib/image/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/image/index.ts#L32)
 
 文字データの変数を渡してSVG化し、SVGデータを取り込んだImageを作る
 

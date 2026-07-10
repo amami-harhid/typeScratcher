@@ -1,6 +1,6 @@
 # Class: Sound
 
-Defined in: [src/lib/sounds/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L18)
+Defined in: [src/lib/sounds/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L18)
 
 Sound
 
@@ -18,7 +18,7 @@ Sound
 
 > **new Sound**(`sound`, `reuse?`): `Sound`
 
-Defined in: [src/lib/sounds/index.ts:30](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L30)
+Defined in: [src/lib/sounds/index.ts:30](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L30)
 
 #### Parameters
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/sounds/index.ts:30](https://github.com/amami-harhid/typeScr
 
 > **get** **data**(): `Uint8Array`\<`ArrayBuffer`\>
 
-Defined in: [src/lib/sounds/index.ts:98](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L98)
+Defined in: [src/lib/sounds/index.ts:98](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L98)
 
 ##### Returns
 
@@ -60,7 +60,7 @@ Defined in: [src/lib/sounds/index.ts:98](https://github.com/amami-harhid/typeScr
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/sounds/index.ts:95](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L95)
+Defined in: [src/lib/sounds/index.ts:95](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L95)
 
 音の名前
 
@@ -82,7 +82,7 @@ Defined in: [src/lib/sounds/index.ts:95](https://github.com/amami-harhid/typeScr
 
 > **get** `static` **SOUND\_FORCE\_STOP**(): `string`
 
-Defined in: [src/lib/sounds/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L19)
+Defined in: [src/lib/sounds/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L19)
 
 ##### Returns
 
@@ -94,7 +94,7 @@ Defined in: [src/lib/sounds/index.ts:19](https://github.com/amami-harhid/typeScr
 
 > **deepCopy**(): [`ISound`](../../../type/sound/interfaces/ISound.md)
 
-Defined in: [src/lib/sounds/index.ts:178](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L178)
+Defined in: [src/lib/sounds/index.ts:178](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L178)
 
 #### Returns
 
@@ -106,7 +106,7 @@ Defined in: [src/lib/sounds/index.ts:178](https://github.com/amami-harhid/typeSc
 
 > **forceStop**(): `void`
 
-Defined in: [src/lib/sounds/index.ts:134](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L134)
+Defined in: [src/lib/sounds/index.ts:134](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L134)
 
 #### Returns
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/sounds/index.ts:134](https://github.com/amami-harhid/typeSc
 
 > **getPitch**(`soundPlayer`): `number`
 
-Defined in: [src/lib/sounds/index.ts:152](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L152)
+Defined in: [src/lib/sounds/index.ts:152](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L152)
 
 #### Parameters
 
@@ -136,7 +136,7 @@ Defined in: [src/lib/sounds/index.ts:152](https://github.com/amami-harhid/typeSc
 
 > **getVolume**(`soundPlayer`): `number`
 
-Defined in: [src/lib/sounds/index.ts:138](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L138)
+Defined in: [src/lib/sounds/index.ts:138](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L138)
 
 #### Parameters
 
@@ -154,7 +154,7 @@ Defined in: [src/lib/sounds/index.ts:138](https://github.com/amami-harhid/typeSc
 
 > **isPlaying**(`soundPlayer`): `boolean`
 
-Defined in: [src/lib/sounds/index.ts:174](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L174)
+Defined in: [src/lib/sounds/index.ts:174](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L174)
 
 #### Parameters
 
@@ -172,7 +172,7 @@ Defined in: [src/lib/sounds/index.ts:174](https://github.com/amami-harhid/typeSc
 
 > **load**(`entity`): `Promise`\<`void`\>
 
-Defined in: [src/lib/sounds/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L50)
+Defined in: [src/lib/sounds/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L50)
 
 ロード処理が実行される都度、soundPlayerを生成する
 同じSoundインスタンスを複数のスプライトで共有することを考慮し
@@ -194,7 +194,7 @@ Defined in: [src/lib/sounds/index.ts:50](https://github.com/amami-harhid/typeScr
 
 > **makeSoundPlayer**(`entity`): `Promise`\<[`ISoundPlayer`](../../../type/sound/ISoundPlayer/interfaces/ISoundPlayer.md)\>
 
-Defined in: [src/lib/sounds/index.ts:84](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L84)
+Defined in: [src/lib/sounds/index.ts:84](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L84)
 
 SoundPlayerを生成して EntitySoundインスタンスへ格納する
 
@@ -214,7 +214,7 @@ SoundPlayerを生成して EntitySoundインスタンスへ格納する
 
 > **play**(`soundPlayer`): `void`
 
-Defined in: [src/lib/sounds/index.ts:106](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L106)
+Defined in: [src/lib/sounds/index.ts:106](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L106)
 
 #### Parameters
 
@@ -232,7 +232,7 @@ Defined in: [src/lib/sounds/index.ts:106](https://github.com/amami-harhid/typeSc
 
 > **playUntilDone**(`soundPlayer`): `Promise`\<`void`\>
 
-Defined in: [src/lib/sounds/index.ts:109](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L109)
+Defined in: [src/lib/sounds/index.ts:109](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L109)
 
 #### Parameters
 
@@ -250,7 +250,7 @@ Defined in: [src/lib/sounds/index.ts:109](https://github.com/amami-harhid/typeSc
 
 > **setPitch**(`soundPlayer`, `pitch`): `void`
 
-Defined in: [src/lib/sounds/index.ts:160](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L160)
+Defined in: [src/lib/sounds/index.ts:160](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L160)
 
 #### Parameters
 
@@ -272,7 +272,7 @@ Defined in: [src/lib/sounds/index.ts:160](https://github.com/amami-harhid/typeSc
 
 > **setVolume**(`soundPlayer`, `volume`): `void`
 
-Defined in: [src/lib/sounds/index.ts:147](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L147)
+Defined in: [src/lib/sounds/index.ts:147](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L147)
 
 100 がデフォルト
 
@@ -296,7 +296,7 @@ Defined in: [src/lib/sounds/index.ts:147](https://github.com/amami-harhid/typeSc
 
 > **stop**(`soundPlayer`): `void`
 
-Defined in: [src/lib/sounds/index.ts:128](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L128)
+Defined in: [src/lib/sounds/index.ts:128](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L128)
 
 #### Parameters
 
@@ -314,7 +314,7 @@ Defined in: [src/lib/sounds/index.ts:128](https://github.com/amami-harhid/typeSc
 
 > **stopImmediately**(`soundPlayer`): `void`
 
-Defined in: [src/lib/sounds/index.ts:131](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L131)
+Defined in: [src/lib/sounds/index.ts:131](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L131)
 
 #### Parameters
 
@@ -332,7 +332,7 @@ Defined in: [src/lib/sounds/index.ts:131](https://github.com/amami-harhid/typeSc
 
 > `static` **pitchAudioToScratch**(`pitch`): `number`
 
-Defined in: [src/lib/sounds/index.ts:210](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L210)
+Defined in: [src/lib/sounds/index.ts:210](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L210)
 
 #### Parameters
 
@@ -350,7 +350,7 @@ Defined in: [src/lib/sounds/index.ts:210](https://github.com/amami-harhid/typeSc
 
 > `static` **pitchScratchToAudio**(`pitch`): `number`
 
-Defined in: [src/lib/sounds/index.ts:203](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L203)
+Defined in: [src/lib/sounds/index.ts:203](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L203)
 
 #### Parameters
 
@@ -368,7 +368,7 @@ Defined in: [src/lib/sounds/index.ts:203](https://github.com/amami-harhid/typeSc
 
 > `static` **toScratchPitchLimit**(`pitch`): `number`
 
-Defined in: [src/lib/sounds/index.ts:193](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L193)
+Defined in: [src/lib/sounds/index.ts:193](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L193)
 
 #### Parameters
 
@@ -386,7 +386,7 @@ Defined in: [src/lib/sounds/index.ts:193](https://github.com/amami-harhid/typeSc
 
 > `static` **toScratchVolumeLimit**(`volume`): `number`
 
-Defined in: [src/lib/sounds/index.ts:183](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/sounds/index.ts#L183)
+Defined in: [src/lib/sounds/index.ts:183](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/index.ts#L183)
 
 #### Parameters
 

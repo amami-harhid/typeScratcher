@@ -1,6 +1,6 @@
 # Class: Rewriter
 
-Defined in: [src/lib/engine/thread/rewriter.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/thread/rewriter.ts#L4)
+Defined in: [src/lib/engine/thread/rewriter.ts:4](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/thread/rewriter.ts#L4)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/engine/thread/rewriter.ts:4](https://github.com/amami-harhi
 
 > `static` **toGenerator**\<`T`\>(`proxy`, `func`, ...`args`): `AsyncGenerator`\<`any`, `void`, `any`\>
 
-Defined in: [src/lib/engine/thread/rewriter.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/thread/rewriter.ts#L6)
+Defined in: [src/lib/engine/thread/rewriter.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/thread/rewriter.ts#L6)
 
 #### Type Parameters
 

@@ -2,7 +2,7 @@
 
 > **createSvgImageAttributes** = `object`
 
-Defined in: [src/type/image/index.ts:3](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L3)
+Defined in: [src/type/image/index.ts:3](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L3)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/image/index.ts:3](https://github.com/amami-harhid/typeScra
 
 > `optional` **fill?**: `string`
 
-Defined in: [src/type/image/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L4)
+Defined in: [src/type/image/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L4)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/image/index.ts:4](https://github.com/amami-harhid/typeScra
 
 > `optional` **font\_family?**: `string`
 
-Defined in: [src/type/image/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L9)
+Defined in: [src/type/image/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L9)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/image/index.ts:9](https://github.com/amami-harhid/typeScra
 
 > `optional` **font\_size?**: `number`
 
-Defined in: [src/type/image/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L10)
+Defined in: [src/type/image/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L10)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/image/index.ts:10](https://github.com/amami-harhid/typeScr
 
 > `optional` **font\_weight?**: `"normal"` \| `"bold"` \| `"bolder"` \| `"lighter"`
 
-Defined in: [src/type/image/index.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L11)
+Defined in: [src/type/image/index.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L11)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/image/index.ts:11](https://github.com/amami-harhid/typeScr
 
 > `optional` **scratch\_font\_family?**: [`ScratchFontFamilyValue`](../../svgText/type-aliases/ScratchFontFamilyValue.md)
 
-Defined in: [src/type/image/index.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L8)
+Defined in: [src/type/image/index.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L8)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/type/image/index.ts:8](https://github.com/amami-harhid/typeScra
 
 > `optional` **stroke?**: `string`
 
-Defined in: [src/type/image/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L5)
+Defined in: [src/type/image/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L5)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [src/type/image/index.ts:5](https://github.com/amami-harhid/typeScra
 
 > `optional` **stroke\_mode?**: `"outside"` \| `"inside"`
 
-Defined in: [src/type/image/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L6)
+Defined in: [src/type/image/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L6)
 
 ***
 
@@ -66,4 +66,4 @@ Defined in: [src/type/image/index.ts:6](https://github.com/amami-harhid/typeScra
 
 > `optional` **stroke\_width?**: `number`
 
-Defined in: [src/type/image/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L7)
+Defined in: [src/type/image/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L7)

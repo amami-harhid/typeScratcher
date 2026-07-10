@@ -2,7 +2,7 @@
 
 > **TDistance** = `object`
 
-Defined in: [src/type/common/typeCommon.ts:41](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L41)
+Defined in: [src/type/common/typeCommon.ts:41](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L41)
 
 距離
 
@@ -12,7 +12,7 @@ Defined in: [src/type/common/typeCommon.ts:41](https://github.com/amami-harhid/t
 
 > `optional` **x?**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:42](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L42)
+Defined in: [src/type/common/typeCommon.ts:42](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L42)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: [src/type/common/typeCommon.ts:42](https://github.com/amami-harhid/t
 
 > `optional` **y?**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:43](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L43)
+Defined in: [src/type/common/typeCommon.ts:43](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L43)

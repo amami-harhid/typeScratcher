@@ -1,6 +1,6 @@
 # Interface: ISpriteMotionMove
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L7)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L7)
 
 スプライトの動き（動かす）
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:7](https://github.com/a
 
 > **glideTo**(`sec`, `x`, `y`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:42](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L42)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:42](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L42)
 
 指定秒数かけて指定座標へ移動させる
 
@@ -44,7 +44,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:42](https://github.com/
 
 > **ifOnEdgeBounce**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L22)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L22)
 
 もし端に振れたら跳ね返る
 
@@ -58,7 +58,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:22](https://github.com/
 
 > **steps**(`steps`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L12)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:12](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L12)
 
 ステップ数分、進ませる
 
@@ -80,7 +80,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:12](https://github.com/
 
 > **to**(`x`, `y`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L18)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L18)
 
 指定座標へ移動させる
 
@@ -108,7 +108,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:18](https://github.com/
 
 > **toMouse**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:30](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L30)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:30](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L30)
 
 マウスカーソルの位置へ移動させる
 
@@ -122,7 +122,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:30](https://github.com/
 
 > **toRandom**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L26)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L26)
 
 ステージ上のどこかに移動させる
 
@@ -136,7 +136,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:26](https://github.com/
 
 > **toSprite**(`target`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:35](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionMove.ts#L35)
+Defined in: [src/type/entity/sprite/ISpriteMotionMove.ts:35](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionMove.ts#L35)
 
 指定したスプライトの位置へ移動させる
 

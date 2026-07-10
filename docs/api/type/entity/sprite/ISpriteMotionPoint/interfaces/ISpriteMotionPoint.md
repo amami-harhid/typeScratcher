@@ -1,6 +1,6 @@
 # Interface: ISpriteMotionPoint
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPoint.ts#L5)
+Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:5](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPoint.ts#L5)
 
 スプライトの動き（向かせる）
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:5](https://github.com/
 
 > **toMouse**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:13](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPoint.ts#L13)
+Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:13](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPoint.ts#L13)
 
 マウスカーソルへ向く(ステージ外でもOK)
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:13](https://github.com
 
 > **toMouseInStage**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPoint.ts#L9)
+Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPoint.ts#L9)
 
 マウスカーソルへ向く
 
@@ -38,7 +38,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:9](https://github.com/
 
 > **toRandom**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPoint.ts#L22)
+Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPoint.ts#L22)
 
 どこかを向く
 
@@ -52,7 +52,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:22](https://github.com
 
 > **toTarget**(`target`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteMotionPoint.ts#L18)
+Defined in: [src/type/entity/sprite/ISpriteMotionPoint.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteMotionPoint.ts#L18)
 
 ターゲットの位置へ向く
 

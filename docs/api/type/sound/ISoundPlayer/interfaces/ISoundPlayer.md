@@ -1,6 +1,6 @@
 # Interface: ISoundPlayer
 
-Defined in: [src/type/sound/ISoundPlayer.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L6)
+Defined in: [src/type/sound/ISoundPlayer.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L6)
 
 SoundPlayer
 
@@ -10,7 +10,7 @@ SoundPlayer
 
 > **effects**: [`TEffectChain`](../../IAudioEngine/type-aliases/TEffectChain.md)
 
-Defined in: [src/type/sound/ISoundPlayer.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L18)
+Defined in: [src/type/sound/ISoundPlayer.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L18)
 
 エフェクトチェイン
 
@@ -20,7 +20,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:18](https://github.com/amami-harhid/
 
 > `readonly` **isPlaying**: `boolean`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L8)
+Defined in: [src/type/sound/ISoundPlayer.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L8)
 
 再生状態
 
@@ -30,7 +30,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:8](https://github.com/amami-harhid/t
 
 > `readonly` **name**: `string`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L16)
+Defined in: [src/type/sound/ISoundPlayer.ts:16](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L16)
 
 名称
 
@@ -40,7 +40,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:16](https://github.com/amami-harhid/
 
 > **pitch**: `number`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L10)
+Defined in: [src/type/sound/ISoundPlayer.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L10)
 
 ピッチ
 
@@ -50,7 +50,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:10](https://github.com/amami-harhid/
 
 > `readonly` **soundPlayer**: [`IScratchSoundPlayer`](../../IAudioEngine/interfaces/IScratchSoundPlayer.md)
 
-Defined in: [src/type/sound/ISoundPlayer.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L14)
+Defined in: [src/type/sound/ISoundPlayer.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L14)
 
 Scratch SoundPlayer
 
@@ -60,7 +60,7 @@ Scratch SoundPlayer
 
 > **volume**: `number`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L12)
+Defined in: [src/type/sound/ISoundPlayer.ts:12](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L12)
 
 ボリューム
 
@@ -70,7 +70,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:12](https://github.com/amami-harhid/
 
 > **connect**(): `void`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L20)
+Defined in: [src/type/sound/ISoundPlayer.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L20)
 
 接続
 
@@ -84,7 +84,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:20](https://github.com/amami-harhid/
 
 > **play**(): `void`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L22)
+Defined in: [src/type/sound/ISoundPlayer.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L22)
 
 再生
 
@@ -98,7 +98,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:22](https://github.com/amami-harhid/
 
 > **startSoundUntilDone**(): `Promise`\<`void`\>
 
-Defined in: [src/type/sound/ISoundPlayer.ts:24](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L24)
+Defined in: [src/type/sound/ISoundPlayer.ts:24](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L24)
 
 再生して終わるまで待つ
 
@@ -112,7 +112,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:24](https://github.com/amami-harhid/
 
 > **stop**(): `void`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L26)
+Defined in: [src/type/sound/ISoundPlayer.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L26)
 
 停止する
 
@@ -126,7 +126,7 @@ Defined in: [src/type/sound/ISoundPlayer.ts:26](https://github.com/amami-harhid/
 
 > **stopImmediately**(): `void`
 
-Defined in: [src/type/sound/ISoundPlayer.ts:28](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/ISoundPlayer.ts#L28)
+Defined in: [src/type/sound/ISoundPlayer.ts:28](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/sound/ISoundPlayer.ts#L28)
 
 即時に停止する
 

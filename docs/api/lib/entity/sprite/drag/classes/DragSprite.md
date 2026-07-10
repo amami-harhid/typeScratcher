@@ -1,6 +1,6 @@
 # Class: DragSprite
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L10)
+Defined in: [src/lib/entity/sprite/drag/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L10)
 
 DragSprite
 
@@ -10,7 +10,7 @@ DragSprite
 
 > **new DragSprite**(`sprite`): `DragSprite`
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L39)
+Defined in: [src/lib/entity/sprite/drag/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L39)
 
 **`Internal`**
 
@@ -30,7 +30,7 @@ Defined in: [src/lib/entity/sprite/drag/index.ts:39](https://github.com/amami-ha
 
 > **draggable**: `boolean`
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L21)
+Defined in: [src/lib/entity/sprite/drag/index.ts:21](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L21)
 
 draggable {boolean} - trueのときDragできる。デフォルト値はfalse.
 
@@ -44,7 +44,7 @@ draggable {boolean} - trueのときDragできる。デフォルト値はfalse.
 
 > **dragging**: `boolean`
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L33)
+Defined in: [src/lib/entity/sprite/drag/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L33)
 
 dragging {boolean} - Drag中のときTrue.
 
@@ -60,7 +60,7 @@ dragging {boolean} - Drag中のときTrue.
 
 > `static` **PROPERTIES\_CHANGE**: `string` = `"properties_change"`
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L12)
+Defined in: [src/lib/entity/sprite/drag/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L12)
 
 **`Internal`**
 
@@ -70,7 +70,7 @@ Defined in: [src/lib/entity/sprite/drag/index.ts:12](https://github.com/amami-ha
 
 > **dragComplete**(): `void`
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:87](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L87)
+Defined in: [src/lib/entity/sprite/drag/index.ts:87](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L87)
 
 **`Internal`**
 
@@ -86,7 +86,7 @@ Defined in: [src/lib/entity/sprite/drag/index.ts:87](https://github.com/amami-ha
 
 > **dragger**(): `Generator`
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:129](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L129)
+Defined in: [src/lib/entity/sprite/drag/index.ts:129](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L129)
 
 **`Internal`**
 
@@ -102,7 +102,7 @@ Defined in: [src/lib/entity/sprite/drag/index.ts:129](https://github.com/amami-h
 
 > **dragStart**(): `void`
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L50)
+Defined in: [src/lib/entity/sprite/drag/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L50)
 
 **`Internal`**
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/entity/sprite/drag/index.ts:50](https://github.com/amami-ha
 
 > **update**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/drag/index.ts:100](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/drag/index.ts#L100)
+Defined in: [src/lib/entity/sprite/drag/index.ts:100](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/drag/index.ts#L100)
 
 **`Internal`**
 
