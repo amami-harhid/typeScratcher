@@ -1,6 +1,6 @@
 # Class: PenSpriteSize
 
-Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:3](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/pen/penSpriteSize.ts#L3)
+Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:3](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/pen/penSpriteSize.ts#L3)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:3](https://github.com/am
 
 > **new PenSpriteSize**(`sprite`): `PenSpriteSize`
 
-Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/pen/penSpriteSize.ts#L10)
+Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/pen/penSpriteSize.ts#L10)
 
 #### Parameters
 
@@ -30,7 +30,7 @@ Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:10](https://github.com/a
 
 > **get** **thickness**(): `number`
 
-Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/pen/penSpriteSize.ts#L16)
+Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:16](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/pen/penSpriteSize.ts#L16)
 
 ペンの太さ
 
@@ -42,7 +42,7 @@ Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:16](https://github.com/a
 
 > **set** **thickness**(`thickness`): `void`
 
-Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/pen/penSpriteSize.ts#L22)
+Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:22](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/pen/penSpriteSize.ts#L22)
 
 ペンの太さ
 
@@ -64,7 +64,7 @@ Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:22](https://github.com/a
 
 > **get** `static` **PEN\_SIZE\_RANGE**(): `object`
 
-Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/pen/penSpriteSize.ts#L33)
+Defined in: [src/lib/entity/sprite/pen/penSpriteSize.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/pen/penSpriteSize.ts#L33)
 
 Pen Size Range
 

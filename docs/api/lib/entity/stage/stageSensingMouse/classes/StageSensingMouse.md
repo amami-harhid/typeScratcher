@@ -1,6 +1,6 @@
 # Class: StageSensingMouse
 
-Defined in: [src/lib/entity/stage/stageSensingMouse.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensingMouse.ts#L7)
+Defined in: [src/lib/entity/stage/stageSensingMouse.ts:7](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensingMouse.ts#L7)
 
 Stage Sensing(調べる) Mouse
 
@@ -14,7 +14,7 @@ Stage Sensing(調べる) Mouse
 
 > **new StageSensingMouse**(`entity`): `StageSensingMouse`
 
-Defined in: [src/lib/entity/stage/stageSensingMouse.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensingMouse.ts#L13)
+Defined in: [src/lib/entity/stage/stageSensingMouse.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensingMouse.ts#L13)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/stage/stageSensingMouse.ts:13](https://github.com/am
 
 > **get** **isDown**(): `boolean`
 
-Defined in: [src/lib/entity/stage/stageSensingMouse.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensingMouse.ts#L20)
+Defined in: [src/lib/entity/stage/stageSensingMouse.ts:20](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensingMouse.ts#L20)
 
 マウスが押されていることの判定
 
@@ -62,7 +62,7 @@ Defined in: [src/lib/entity/stage/stageSensingMouse.ts:20](https://github.com/am
 
 > **get** **x**(): `number`
 
-Defined in: [src/lib/entity/stage/stageSensingMouse.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensingMouse.ts#L27)
+Defined in: [src/lib/entity/stage/stageSensingMouse.ts:27](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensingMouse.ts#L27)
 
 マウス情報 (x座標)
 
@@ -84,7 +84,7 @@ Defined in: [src/lib/entity/stage/stageSensingMouse.ts:27](https://github.com/am
 
 > **get** **y**(): `number`
 
-Defined in: [src/lib/entity/stage/stageSensingMouse.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensingMouse.ts#L33)
+Defined in: [src/lib/entity/stage/stageSensingMouse.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensingMouse.ts#L33)
 
 マウス情報 (y座標)
 

@@ -1,6 +1,6 @@
 # Interface: ISpriteMotion
 
-Defined in: [src/type/entity/sprite/ISpriteMotion.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotion.ts#L10)
+Defined in: [src/type/entity/sprite/ISpriteMotion.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotion.ts#L10)
 
 スプライトの動き
 
@@ -16,7 +16,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotion.ts:10](https://github.com/amam
 
 > **get** **direction**(): [`ISpriteMotionDirection`](../../ISpriteMotionDirection/interfaces/ISpriteMotionDirection.md)
 
-Defined in: [src/type/entity/sprite/ISpriteMotion.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotion.ts#L15)
+Defined in: [src/type/entity/sprite/ISpriteMotion.ts:15](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotion.ts#L15)
 
 向き
 
@@ -32,7 +32,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotion.ts:15](https://github.com/amam
 
 > **get** **move**(): [`ISpriteMotionMove`](../../ISpriteMotionMove/interfaces/ISpriteMotionMove.md)
 
-Defined in: [src/type/entity/sprite/ISpriteMotion.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotion.ts#L21)
+Defined in: [src/type/entity/sprite/ISpriteMotion.ts:21](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotion.ts#L21)
 
 動き
 
@@ -48,7 +48,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotion.ts:21](https://github.com/amam
 
 > **get** **point**(): [`ISpriteMotionPoint`](../../ISpriteMotionPoint/interfaces/ISpriteMotionPoint.md)
 
-Defined in: [src/type/entity/sprite/ISpriteMotion.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotion.ts#L24)
+Defined in: [src/type/entity/sprite/ISpriteMotion.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotion.ts#L24)
 
 方向へ向く
 
@@ -64,7 +64,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotion.ts:24](https://github.com/amam
 
 > **get** **position**(): [`ISpriteMotionPosition`](../../ISpriteMotionPosition/interfaces/ISpriteMotionPosition.md)
 
-Defined in: [src/type/entity/sprite/ISpriteMotion.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotion.ts#L12)
+Defined in: [src/type/entity/sprite/ISpriteMotion.ts:12](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotion.ts#L12)
 
 位置
 
@@ -80,7 +80,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotion.ts:12](https://github.com/amam
 
 > **get** **rotation**(): [`ISpriteMotionRotation`](../../ISpriteMotionRotation/interfaces/ISpriteMotionRotation.md)
 
-Defined in: [src/type/entity/sprite/ISpriteMotion.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotion.ts#L18)
+Defined in: [src/type/entity/sprite/ISpriteMotion.ts:18](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotion.ts#L18)
 
 回転
 

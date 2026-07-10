@@ -1,6 +1,6 @@
 # Class: MeasurementProvider
 
-Defined in: [src/lib/utils/MeasurementProvider.ts:5](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/MeasurementProvider.ts#L5)
+Defined in: [src/lib/utils/MeasurementProvider.ts:5](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/utils/MeasurementProvider.ts#L5)
 
 MeasurementProvider
 
@@ -14,7 +14,7 @@ MeasurementProvider
 
 > **new MeasurementProvider**(`ctx`): `MeasurementProvider`
 
-Defined in: [src/lib/utils/MeasurementProvider.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/MeasurementProvider.ts#L14)
+Defined in: [src/lib/utils/MeasurementProvider.ts:14](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/utils/MeasurementProvider.ts#L14)
 
 #### Parameters
 
@@ -35,7 +35,7 @@ with 'font' set to the text style of the text to be wrapped.
 
 > **beginMeasurementSession**(): `void`
 
-Defined in: [src/lib/utils/MeasurementProvider.ts:35](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/MeasurementProvider.ts#L35)
+Defined in: [src/lib/utils/MeasurementProvider.ts:35](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/utils/MeasurementProvider.ts#L35)
 
 Called by the TextWrapper before a batch of zero or more calls to measureText().
 
@@ -49,7 +49,7 @@ Called by the TextWrapper before a batch of zero or more calls to measureText().
 
 > **endMeasurementSession**(): `void`
 
-Defined in: [src/lib/utils/MeasurementProvider.ts:40](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/MeasurementProvider.ts#L40)
+Defined in: [src/lib/utils/MeasurementProvider.ts:40](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/utils/MeasurementProvider.ts#L40)
 
 Called by the TextWrapper after a batch of zero or more calls to measureText().
 
@@ -63,7 +63,7 @@ Called by the TextWrapper after a batch of zero or more calls to measureText().
 
 > **measureText**(`text`): `number`
 
-Defined in: [src/lib/utils/MeasurementProvider.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/MeasurementProvider.ts#L24)
+Defined in: [src/lib/utils/MeasurementProvider.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/utils/MeasurementProvider.ts#L24)
 
 文字列の長さを測定する、測定値はキャッシュする.
 

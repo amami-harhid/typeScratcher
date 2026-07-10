@@ -1,6 +1,6 @@
 # Class: Image
 
-Defined in: [src/lib/image/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L25)
+Defined in: [src/lib/image/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L25)
 
 Image
 
@@ -18,7 +18,7 @@ Image
 
 > **new Image**(`image`): `Image`
 
-Defined in: [src/lib/image/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L76)
+Defined in: [src/lib/image/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L76)
 
 #### Parameters
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/image/index.ts:76](https://github.com/amami-harhid/typeScra
 
 > **get** **image**(): `string`
 
-Defined in: [src/lib/image/index.ts:96](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L96)
+Defined in: [src/lib/image/index.ts:96](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L96)
 
 ##### Returns
 
@@ -48,7 +48,7 @@ Defined in: [src/lib/image/index.ts:96](https://github.com/amami-harhid/typeScra
 
 > **set** **image**(`_img`): `void`
 
-Defined in: [src/lib/image/index.ts:99](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L99)
+Defined in: [src/lib/image/index.ts:99](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L99)
 
 ##### Parameters
 
@@ -68,7 +68,7 @@ Defined in: [src/lib/image/index.ts:99](https://github.com/amami-harhid/typeScra
 
 > **get** **loadCompleted**(): `boolean`
 
-Defined in: [src/lib/image/index.ts:102](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L102)
+Defined in: [src/lib/image/index.ts:102](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L102)
 
 ##### Returns
 
@@ -82,7 +82,7 @@ Defined in: [src/lib/image/index.ts:102](https://github.com/amami-harhid/typeScr
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/image/index.ts:93](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L93)
+Defined in: [src/lib/image/index.ts:93](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L93)
 
 ##### Returns
 
@@ -100,7 +100,7 @@ Defined in: [src/lib/image/index.ts:93](https://github.com/amami-harhid/typeScra
 
 > **get** **skinId**(): `number`
 
-Defined in: [src/lib/image/index.ts:106](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L106)
+Defined in: [src/lib/image/index.ts:106](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L106)
 
 ##### Returns
 
@@ -110,7 +110,7 @@ Defined in: [src/lib/image/index.ts:106](https://github.com/amami-harhid/typeScr
 
 > **set** **skinId**(`skinId`): `void`
 
-Defined in: [src/lib/image/index.ts:109](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L109)
+Defined in: [src/lib/image/index.ts:109](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L109)
 
 ##### Parameters
 
@@ -128,7 +128,7 @@ Defined in: [src/lib/image/index.ts:109](https://github.com/amami-harhid/typeScr
 
 > **load**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/image/index.ts:81](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L81)
+Defined in: [src/lib/image/index.ts:81](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L81)
 
 #### Returns
 
@@ -140,7 +140,7 @@ Defined in: [src/lib/image/index.ts:81](https://github.com/amami-harhid/typeScra
 
 > `static` **createSvgImage**(`image`, `attributes`): `Promise`\<[`IImage`](../../../type/image/interfaces/IImage.md)\>
 
-Defined in: [src/lib/image/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/image/index.ts#L32)
+Defined in: [src/lib/image/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/image/index.ts#L32)
 
 文字データの変数を渡してSVG化し、SVGデータを取り込んだImageを作る
 

@@ -1,6 +1,6 @@
 # Class: SpriteDragMode
 
-Defined in: [src/lib/entity/sprite/spriteDragMode.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteDragMode.ts#L6)
+Defined in: [src/lib/entity/sprite/spriteDragMode.ts:6](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteDragMode.ts#L6)
 
 サイズ
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteDragMode.ts:6](https://github.com/amami
 
 > **new SpriteDragMode**(`sprite`): `SpriteDragMode`
 
-Defined in: [src/lib/entity/sprite/spriteDragMode.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteDragMode.ts#L13)
+Defined in: [src/lib/entity/sprite/spriteDragMode.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteDragMode.ts#L13)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteDragMode.ts:13](https://github.com/amam
 
 > **get** **draggable**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteDragMode.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteDragMode.ts#L20)
+Defined in: [src/lib/entity/sprite/spriteDragMode.ts:20](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteDragMode.ts#L20)
 
 ドラッグ可能
 
@@ -48,7 +48,7 @@ Defined in: [src/lib/entity/sprite/spriteDragMode.ts:20](https://github.com/amam
 
 > **set** **draggable**(`draggable`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteDragMode.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteDragMode.ts#L24)
+Defined in: [src/lib/entity/sprite/spriteDragMode.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteDragMode.ts#L24)
 
 ドラッグ可能
 
@@ -74,7 +74,7 @@ Defined in: [src/lib/entity/sprite/spriteDragMode.ts:24](https://github.com/amam
 
 > **get** **dragging**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/spriteDragMode.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteDragMode.ts#L16)
+Defined in: [src/lib/entity/sprite/spriteDragMode.ts:16](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteDragMode.ts#L16)
 
 ドラッグ中
 

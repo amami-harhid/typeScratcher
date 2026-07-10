@@ -1,6 +1,6 @@
 # Interface: IAudioContext
 
-Defined in: [src/type/sound/IAudioContext.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/sound/IAudioContext.ts#L4)
+Defined in: [src/type/sound/IAudioContext.ts:4](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/sound/IAudioContext.ts#L4)
 
 Audio Context
 
@@ -10,7 +10,7 @@ Audio Context
 
 > **resume**(): `void`
 
-Defined in: [src/type/sound/IAudioContext.ts:8](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/sound/IAudioContext.ts#L8)
+Defined in: [src/type/sound/IAudioContext.ts:8](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/sound/IAudioContext.ts#L8)
 
 前回中断/一時停止した音声コンテキストの時間の進行を再開します
 
@@ -24,7 +24,7 @@ Defined in: [src/type/sound/IAudioContext.ts:8](https://github.com/amami-harhid/
 
 > **suspend**(): `void`
 
-Defined in: [src/type/sound/IAudioContext.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/sound/IAudioContext.ts#L12)
+Defined in: [src/type/sound/IAudioContext.ts:12](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/sound/IAudioContext.ts#L12)
 
 一時的に音声ハードウェアアクセスを停止します。
 

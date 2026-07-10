@@ -1,6 +1,6 @@
 # Interface: ISpriteLayer
 
-Defined in: [src/type/entity/sprite/ISpriteLayer.ts:2](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLayer.ts#L2)
+Defined in: [src/type/entity/sprite/ISpriteLayer.ts:2](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLayer.ts#L2)
 
 階層
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/sprite/ISpriteLayer.ts:2](https://github.com/amami-
 
 > **goBackwardLayers**(`nLayer`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLayer.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLayer.ts#L22)
+Defined in: [src/type/entity/sprite/ISpriteLayer.ts:22](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLayer.ts#L22)
 
 奥に下げる
 
@@ -32,7 +32,7 @@ Defined in: [src/type/entity/sprite/ISpriteLayer.ts:22](https://github.com/amami
 
 > **goForwardLayers**(`nLayer`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLayer.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLayer.ts#L16)
+Defined in: [src/type/entity/sprite/ISpriteLayer.ts:16](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLayer.ts#L16)
 
 手前に出す
 
@@ -54,7 +54,7 @@ Defined in: [src/type/entity/sprite/ISpriteLayer.ts:16](https://github.com/amami
 
 > **gotoBack**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLayer.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLayer.ts#L11)
+Defined in: [src/type/entity/sprite/ISpriteLayer.ts:11](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLayer.ts#L11)
 
 最背面にする
 
@@ -68,7 +68,7 @@ Defined in: [src/type/entity/sprite/ISpriteLayer.ts:11](https://github.com/amami
 
 > **gotoFront**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLayer.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLayer.ts#L7)
+Defined in: [src/type/entity/sprite/ISpriteLayer.ts:7](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLayer.ts#L7)
 
 最前面にする
 

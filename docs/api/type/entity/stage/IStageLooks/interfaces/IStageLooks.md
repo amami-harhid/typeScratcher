@@ -1,6 +1,6 @@
 # Interface: IStageLooks
 
-Defined in: [src/type/entity/stage/IStageLooks.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/stage/IStageLooks.ts#L6)
+Defined in: [src/type/entity/stage/IStageLooks.ts:6](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/stage/IStageLooks.ts#L6)
 
 Sprite Looks(見た目)
 
@@ -14,7 +14,7 @@ Sprite Looks(見た目)
 
 > `readonly` **backdrop**: [`IStageLooksBackdrop`](../../IStageLooksBackdrop/interfaces/IStageLooksBackdrop.md)
 
-Defined in: [src/type/entity/stage/IStageLooks.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/stage/IStageLooks.ts#L10)
+Defined in: [src/type/entity/stage/IStageLooks.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/stage/IStageLooks.ts#L10)
 
 背景
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/stage/IStageLooks.ts:10](https://github.com/amami-h
 
 > `readonly` **effect**: [`IEntityEffect`](../../../entity/IEntityEffect/interfaces/IEntityEffect.md)
 
-Defined in: [src/type/entity/entity/IEntityLooks.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityLooks.ts#L7)
+Defined in: [src/type/entity/entity/IEntityLooks.ts:7](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityLooks.ts#L7)
 
 #### Inherited from
 

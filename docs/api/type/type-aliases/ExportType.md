@@ -2,7 +2,7 @@
 
 > **ExportType** = `object`
 
-Defined in: [src/type/index.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L22)
+Defined in: [src/type/index.ts:22](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L22)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/index.ts:22](https://github.com/amami-harhid/typeScratcher
 
 > **engine**: [`IEngine`](../engine/interfaces/IEngine.md)
 
-Defined in: [src/type/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L32)
+Defined in: [src/type/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L32)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/index.ts:32](https://github.com/amami-harhid/typeScratcher
 
 > **Env**: [`TEnv`](../common/env/type-aliases/TEnv.md)
 
-Defined in: [src/type/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L33)
+Defined in: [src/type/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L33)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/index.ts:33](https://github.com/amami-harhid/typeScratcher
 
 > **Font**: [`SFont`](../font/interfaces/SFont.md)
 
-Defined in: [src/type/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L27)
+Defined in: [src/type/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L27)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/index.ts:27](https://github.com/amami-harhid/typeScratcher
 
 > **FontImage**: [`SFontImage`](../font/fontImage/interfaces/SFontImage.md)
 
-Defined in: [src/type/index.ts:28](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L28)
+Defined in: [src/type/index.ts:28](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L28)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/index.ts:28](https://github.com/amami-harhid/typeScratcher
 
 > **Image**: [`SImage`](../image/interfaces/SImage.md)
 
-Defined in: [src/type/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L25)
+Defined in: [src/type/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L25)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/type/index.ts:25](https://github.com/amami-harhid/typeScratcher
 
 > **ImageEffective**: [`ImageEffectiveType`](../entity/ImageEffective/type-aliases/ImageEffectiveType.md)
 
-Defined in: [src/type/index.ts:30](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L30)
+Defined in: [src/type/index.ts:30](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L30)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [src/type/index.ts:30](https://github.com/amami-harhid/typeScratcher
 
 > **Keyboard**: [`KEYBOARD_KEYS_Type`](../engine/keyboad/type-aliases/KEYBOARD_KEYS_Type.md)
 
-Defined in: [src/type/index.ts:31](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L31)
+Defined in: [src/type/index.ts:31](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L31)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [src/type/index.ts:31](https://github.com/amami-harhid/typeScratcher
 
 > **Loop**: [`SLoop`](../../lib/engine/loop/interfaces/SLoop.md)
 
-Defined in: [src/type/index.ts:35](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L35)
+Defined in: [src/type/index.ts:35](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L35)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [src/type/index.ts:35](https://github.com/amami-harhid/typeScratcher
 
 > **Rotation**: [`RotationStyle`](../entity/RotationStyle/type-aliases/RotationStyle.md)
 
-Defined in: [src/type/index.ts:29](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L29)
+Defined in: [src/type/index.ts:29](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L29)
 
 ***
 
@@ -82,7 +82,7 @@ Defined in: [src/type/index.ts:29](https://github.com/amami-harhid/typeScratcher
 
 > **ScratchFontFamily**: *typeof* [`ScratchFontFamily`](../svgText/variables/ScratchFontFamily.md)
 
-Defined in: [src/type/index.ts:36](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L36)
+Defined in: [src/type/index.ts:36](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L36)
 
 ***
 
@@ -90,7 +90,7 @@ Defined in: [src/type/index.ts:36](https://github.com/amami-harhid/typeScratcher
 
 > **Sound**: [`SSound`](../sound/interfaces/SSound.md)
 
-Defined in: [src/type/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L26)
+Defined in: [src/type/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L26)
 
 ***
 
@@ -98,7 +98,7 @@ Defined in: [src/type/index.ts:26](https://github.com/amami-harhid/typeScratcher
 
 > **SpeechGender**: *typeof* [`SPEECH_GENDER`](../speech/variables/SPEECH_GENDER.md)
 
-Defined in: [src/type/index.ts:38](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L38)
+Defined in: [src/type/index.ts:38](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L38)
 
 ***
 
@@ -106,7 +106,7 @@ Defined in: [src/type/index.ts:38](https://github.com/amami-harhid/typeScratcher
 
 > **SpeechLocale**: *typeof* [`SPEECH_LOCALE`](../speech/IVoice/variables/SPEECH_LOCALE.md)
 
-Defined in: [src/type/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L39)
+Defined in: [src/type/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L39)
 
 ***
 
@@ -114,7 +114,7 @@ Defined in: [src/type/index.ts:39](https://github.com/amami-harhid/typeScratcher
 
 > **Sprite**: [`SSprite`](../entity/sprite/interfaces/SSprite.md)
 
-Defined in: [src/type/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L23)
+Defined in: [src/type/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L23)
 
 ***
 
@@ -122,7 +122,7 @@ Defined in: [src/type/index.ts:23](https://github.com/amami-harhid/typeScratcher
 
 > **Stage**: [`SStage`](../entity/stage/interfaces/SStage.md)
 
-Defined in: [src/type/index.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L24)
+Defined in: [src/type/index.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L24)
 
 ***
 
@@ -130,7 +130,7 @@ Defined in: [src/type/index.ts:24](https://github.com/amami-harhid/typeScratcher
 
 > **StageBounds**: `stageBounds`
 
-Defined in: [src/type/index.ts:40](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L40)
+Defined in: [src/type/index.ts:40](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L40)
 
 ***
 
@@ -138,7 +138,7 @@ Defined in: [src/type/index.ts:40](https://github.com/amami-harhid/typeScratcher
 
 > **textToSvg**: [`ITextToSvg`](../svgText/interfaces/ITextToSvg.md)
 
-Defined in: [src/type/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L34)
+Defined in: [src/type/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L34)
 
 ***
 
@@ -146,7 +146,7 @@ Defined in: [src/type/index.ts:34](https://github.com/amami-harhid/typeScratcher
 
 > **Utils**: [`IUtils`](../util/utils/interfaces/IUtils.md)
 
-Defined in: [src/type/index.ts:41](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L41)
+Defined in: [src/type/index.ts:41](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L41)
 
 ***
 
@@ -154,7 +154,7 @@ Defined in: [src/type/index.ts:41](https://github.com/amami-harhid/typeScratcher
 
 > **Variable**: [`SVariable`](../entity/monitor/SVariable/interfaces/SVariable.md)
 
-Defined in: [src/type/index.ts:42](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L42)
+Defined in: [src/type/index.ts:42](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L42)
 
 ***
 
@@ -162,4 +162,4 @@ Defined in: [src/type/index.ts:42](https://github.com/amami-harhid/typeScratcher
 
 > **VoiceType**: *typeof* [`VOICE_ID`](../speech/IVoice/variables/VOICE_ID.md)
 
-Defined in: [src/type/index.ts:37](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/index.ts#L37)
+Defined in: [src/type/index.ts:37](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/index.ts#L37)

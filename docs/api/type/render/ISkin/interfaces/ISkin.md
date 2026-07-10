@@ -1,6 +1,6 @@
 # Interface: ISkin
 
-Defined in: [src/type/render/ISkin.ts:1](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/ISkin.ts#L1)
+Defined in: [src/type/render/ISkin.ts:1](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/ISkin.ts#L1)
 
 ## Extended by
 
@@ -12,4 +12,4 @@ Defined in: [src/type/render/ISkin.ts:1](https://github.com/amami-harhid/typeScr
 
 > **\_canvas**: `HTMLCanvasElement` \| `null`
 
-Defined in: [src/type/render/ISkin.ts:2](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/ISkin.ts#L2)
+Defined in: [src/type/render/ISkin.ts:2](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/ISkin.ts#L2)

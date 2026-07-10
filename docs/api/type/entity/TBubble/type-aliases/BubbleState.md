@@ -2,7 +2,7 @@
 
 > **BubbleState** = `object`
 
-Defined in: [src/type/entity/TBubble.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/TBubble.ts#L9)
+Defined in: [src/type/entity/TBubble.ts:9](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/TBubble.ts#L9)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/TBubble.ts:9](https://github.com/amami-harhid/typeS
 
 > **drawableID**: `number`
 
-Defined in: [src/type/entity/TBubble.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/TBubble.ts#L10)
+Defined in: [src/type/entity/TBubble.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/TBubble.ts#L10)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/entity/TBubble.ts:10](https://github.com/amami-harhid/type
 
 > **onSpriteRight**: `boolean`
 
-Defined in: [src/type/entity/TBubble.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/TBubble.ts#L14)
+Defined in: [src/type/entity/TBubble.ts:14](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/TBubble.ts#L14)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/TBubble.ts:14](https://github.com/amami-harhid/type
 
 > **skinId**: `number`
 
-Defined in: [src/type/entity/TBubble.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/TBubble.ts#L11)
+Defined in: [src/type/entity/TBubble.ts:11](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/TBubble.ts#L11)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/TBubble.ts:11](https://github.com/amami-harhid/type
 
 > **text**: `string`
 
-Defined in: [src/type/entity/TBubble.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/TBubble.ts#L12)
+Defined in: [src/type/entity/TBubble.ts:12](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/TBubble.ts#L12)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/entity/TBubble.ts:12](https://github.com/amami-harhid/type
 
 > **type**: `"say"` \| `"think"`
 
-Defined in: [src/type/entity/TBubble.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/TBubble.ts#L13)
+Defined in: [src/type/entity/TBubble.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/TBubble.ts#L13)
 
 ***
 
@@ -50,4 +50,4 @@ Defined in: [src/type/entity/TBubble.ts:13](https://github.com/amami-harhid/type
 
 > **uid**: `string`
 
-Defined in: [src/type/entity/TBubble.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/TBubble.ts#L15)
+Defined in: [src/type/entity/TBubble.ts:15](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/TBubble.ts#L15)

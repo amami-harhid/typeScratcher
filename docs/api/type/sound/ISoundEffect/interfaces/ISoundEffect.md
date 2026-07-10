@@ -1,6 +1,6 @@
 # Interface: ISoundEffect
 
-Defined in: [src/type/sound/ISoundEffect.ts:1](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/sound/ISoundEffect.ts#L1)
+Defined in: [src/type/sound/ISoundEffect.ts:1](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/sound/ISoundEffect.ts#L1)
 
 ## Methods
 
@@ -8,7 +8,7 @@ Defined in: [src/type/sound/ISoundEffect.ts:1](https://github.com/amami-harhid/t
 
 > **update**(): `void`
 
-Defined in: [src/type/sound/ISoundEffect.ts:3](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/sound/ISoundEffect.ts#L3)
+Defined in: [src/type/sound/ISoundEffect.ts:3](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/sound/ISoundEffect.ts#L3)
 
 #### Returns
 

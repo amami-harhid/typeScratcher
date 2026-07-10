@@ -2,7 +2,7 @@
 
 > **SvgTextError**(`textStr?`, `fontSize?`, `mesure?`, `padding?`, `fontFamily?`): `string`
 
-Defined in: [src/lib/svgText/svgTextError.ts:1](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgTextError.ts#L1)
+Defined in: [src/lib/svgText/svgTextError.ts:1](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgTextError.ts#L1)
 
 ## Parameters
 

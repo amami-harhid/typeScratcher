@@ -1,73 +1,98 @@
 ---
 outline: deep
 ---
-![画像](/logo.svg)
+# Samples
 
+## Sample01
+::: tip エンジン起動
+スプライトや背景がない状態でエンジンだけ起動する例です
+:::
+
+**`index.html`**
+```html:line-numbers
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
 ```
-Typescript(Javascript)でコーディング、Scratch3風の動きを表現できるゲームエンジンです。
-```
-<br><br>
+**`index.ts`**
+```typescript:line-numbers
+import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
-# 特徴
-
-- イベント起動型
-- 
-
-```
-https://qiita.com/99no_exit/items/a54708c8a3586f67f894
-```
-
-## お勧めしたい方
-
-Scratch3を卒業してコードプログラミング学習に進んだのはいいけれど、なんか味気ないんだよな・・と思う人へおすすめ。
-
-コードプログラミングのゲームエンジンは敷居が高そうで・・と思うことがありそうですよね。
-
-慣れ親しんだScratch3のコードの書き方を思い出しながら、それをTypescratcherに置き換えていけばいいので。
-
-
-# Runtime API Examples
-
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
-
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
-
-```md
-<script setup>
-import { useData } from 'vitepress'
-
-const { theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+// 開始
+Ts.engine.start();
 ```
 
-<script setup>
-import { useData } from 'vitepress'
+## Sample02
+::: tip スプライトとステージを表示
+画像を読み込み、スプライトや背景を作成して表示する例です
+:::
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+**`index.ts`**
+```typescript:line-numbers
+import { Typescratcher as Ts } from "@tscratch3/typescratcher";
 
-## Results
+// 画像URL
+// ここではScratch財団が公開してる画像URLを使います
+const CatASvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/bcf454acf82e4504149f7ffe07081dbc.svg/get';
+const BlueskySvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/e7c147730f19d284bcd7b3f00af19bb6.svg/get';
 
-### Theme Data
-<pre>{{ theme }}</pre>
+// イメージ作成
+const CatAImage = new Ts.Image( { CatASvg } );
+const BlueskyImage = new Ts.Image( { BlueskySvg } );
 
-### Page Data
-<pre>{{ page }}</pre>
+// スプライト作成
+const cat = new Ts.Sprite( "cat" );
+cat.Costume.add( [ CatAImage ] ); // イメージを追加
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+// ステージ作成
+const stage = new Ts.Stage();
+stage.Backdrop.add( [ BlueskyImage ] ); // 背景を追加
 
-## More
+// 開始
+Ts.engine.start();
+```
 
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+## Sample03
+::: tip スプライトを移動させてみよう
+旗をクリックしたら少しだけ進ませる
+:::
+**`index.ts`**
+```typescript:line-numbers
+import { Typescratcher as Ts } from "@tscratch3/typescratcher";
+import { Sprite } from "@tscratch3/typescratcher";
+
+// 画像URL
+const CatASvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/bcf454acf82e4504149f7ffe07081dbc.svg/get';
+const BlueskySvg = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/e7c147730f19d284bcd7b3f00af19bb6.svg/get';
+
+// イメージ作成
+const CatAImage = new Ts.Image( { CatASvg } );
+const BlueskyImage = new Ts.Image( { BlueskySvg } );
+
+// スプライト作成
+const cat = new Ts.Sprite( "cat" );
+cat.Costume.add( [ CatAImage ] ); // イメージを追加
+
+// ステージ作成
+const stage = new Ts.Stage();
+stage.Backdrop.add( [ BlueskyImage ] ); // 背景を追加
+
+// 旗クリックされたとき、のイベント定義
+cat.Event.flagPresser().func = async function*(this: Sprite) {
+    // Motion.move.steps : 指定した数だけ動かす
+    this.Motion.move.steps(5);
+}
+
+// 開始
+Ts.engine.start();
+```
+<video width="100%" controls preload="metadata">
+<source src="/sample03.mp4" type="video/mp4"></source>
+</video>

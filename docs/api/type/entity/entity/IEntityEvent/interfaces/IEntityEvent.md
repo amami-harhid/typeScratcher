@@ -1,6 +1,6 @@
 # Interface: IEntityEvent
 
-Defined in: [src/type/entity/entity/IEntityEvent.ts:8](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityEvent.ts#L8)
+Defined in: [src/type/entity/entity/IEntityEvent.ts:8](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityEvent.ts#L8)
 
 イベント
 
@@ -14,7 +14,7 @@ Defined in: [src/type/entity/entity/IEntityEvent.ts:8](https://github.com/amami-
 
 > **backdropSwitcher**(`backdrop`): [`EventFunctionSetter`](EventFunctionSetter.md)
 
-Defined in: [src/type/entity/entity/IEntityEvent.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityEvent.ts#L33)
+Defined in: [src/type/entity/entity/IEntityEvent.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityEvent.ts#L33)
 
 背景が〇〇になったときのイベントセッターを返す
 
@@ -36,7 +36,7 @@ Defined in: [src/type/entity/entity/IEntityEvent.ts:33](https://github.com/amami
 
 > **clicker**(): [`EventFunctionSetter`](EventFunctionSetter.md)
 
-Defined in: [src/type/entity/entity/IEntityEvent.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityEvent.ts#L27)
+Defined in: [src/type/entity/entity/IEntityEvent.ts:27](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityEvent.ts#L27)
 
 クリックイベントのセッターを返す
 
@@ -52,7 +52,7 @@ Defined in: [src/type/entity/entity/IEntityEvent.ts:27](https://github.com/amami
 
 > **flagPresser**(): [`EventFunctionSetter`](EventFunctionSetter.md)
 
-Defined in: [src/type/entity/entity/IEntityEvent.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityEvent.ts#L14)
+Defined in: [src/type/entity/entity/IEntityEvent.ts:14](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityEvent.ts#L14)
 
 旗が押されたイベントのセッターを返す
 
@@ -68,7 +68,7 @@ Defined in: [src/type/entity/entity/IEntityEvent.ts:14](https://github.com/amami
 
 > **keyPresser**(`key`): `object`
 
-Defined in: [src/type/entity/entity/IEntityEvent.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityEvent.ts#L20)
+Defined in: [src/type/entity/entity/IEntityEvent.ts:20](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityEvent.ts#L20)
 
 キー押下イベントのセッターを返す
 

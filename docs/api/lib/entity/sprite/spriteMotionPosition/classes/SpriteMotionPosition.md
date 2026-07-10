@@ -1,6 +1,6 @@
 # Class: SpriteMotionPosition
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L6)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:6](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L6)
 
 スプライトの動き（位置）
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:6](https://github.com
 
 > **new SpriteMotionPosition**(`entity`): `SpriteMotionPosition`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L12)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:12](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L12)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:12](https://github.co
 
 > **get** **x**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L15)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:15](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L15)
 
 X座標
 
@@ -50,7 +50,7 @@ X座標
 
 > **set** **x**(`x`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L24)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L24)
 
 X座標
 
@@ -76,7 +76,7 @@ X座標
 
 > **get** **xy**(): `TwoNumberArray`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L21)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:21](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L21)
 
 XY座標
 
@@ -88,7 +88,7 @@ XY座標
 
 > **set** **xy**(`xy`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:30](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L30)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:30](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L30)
 
 XY座標
 
@@ -114,7 +114,7 @@ XY座標
 
 > **get** **y**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L18)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:18](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L18)
 
 Y座標
 
@@ -126,7 +126,7 @@ Y座標
 
 > **set** **y**(`y`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionPosition.ts#L27)
+Defined in: [src/lib/entity/sprite/spriteMotionPosition.ts:27](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotionPosition.ts#L27)
 
 Y座標
 

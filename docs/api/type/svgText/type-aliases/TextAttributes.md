@@ -2,7 +2,7 @@
 
 > **TextAttributes** = `object`
 
-Defined in: [src/type/svgText/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L13)
+Defined in: [src/type/svgText/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L13)
 
 SVG Text 属性
 
@@ -12,7 +12,7 @@ SVG Text 属性
 
 > `optional` **fill?**: `string`
 
-Defined in: [src/type/svgText/index.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L14)
+Defined in: [src/type/svgText/index.ts:14](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L14)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/type/svgText/index.ts:14](https://github.com/amami-harhid/typeS
 
 > `optional` **font?**: `string`
 
-Defined in: [src/type/svgText/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L18)
+Defined in: [src/type/svgText/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L18)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/type/svgText/index.ts:18](https://github.com/amami-harhid/typeS
 
 > `optional` **font\_size?**: `number`
 
-Defined in: [src/type/svgText/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L19)
+Defined in: [src/type/svgText/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L19)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [src/type/svgText/index.ts:19](https://github.com/amami-harhid/typeS
 
 > `optional` **font\_weight?**: `"normal"` \| `"bold"` \| `"bolder"` \| `"lighter"`
 
-Defined in: [src/type/svgText/index.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L20)
+Defined in: [src/type/svgText/index.ts:20](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L20)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [src/type/svgText/index.ts:20](https://github.com/amami-harhid/typeS
 
 > `optional` **stroke?**: `string`
 
-Defined in: [src/type/svgText/index.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L15)
+Defined in: [src/type/svgText/index.ts:15](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L15)
 
 ***
 
@@ -52,7 +52,7 @@ Defined in: [src/type/svgText/index.ts:15](https://github.com/amami-harhid/typeS
 
 > `optional` **stroke\_mode?**: `"outside"` \| `"inside"`
 
-Defined in: [src/type/svgText/index.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L16)
+Defined in: [src/type/svgText/index.ts:16](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L16)
 
 ***
 
@@ -60,7 +60,7 @@ Defined in: [src/type/svgText/index.ts:16](https://github.com/amami-harhid/typeS
 
 > `optional` **stroke\_width?**: `number`
 
-Defined in: [src/type/svgText/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L17)
+Defined in: [src/type/svgText/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L17)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: [src/type/svgText/index.ts:17](https://github.com/amami-harhid/typeS
 
 > `optional` **use?**: `object`[]
 
-Defined in: [src/type/svgText/index.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/index.ts#L21)
+Defined in: [src/type/svgText/index.ts:21](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/svgText/index.ts#L21)
 
 #### fill
 

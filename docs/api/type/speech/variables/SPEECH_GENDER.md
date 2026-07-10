@@ -2,7 +2,7 @@
 
 > `const` **SPEECH\_GENDER**: `object`
 
-Defined in: [src/type/speech/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/speech/index.ts#L12)
+Defined in: [src/type/speech/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/speech/index.ts#L12)
 
 ## Type Declaration
 

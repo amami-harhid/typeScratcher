@@ -1,6 +1,6 @@
 # Class: SpriteLooks
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L19)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:19](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L19)
 
 Sprite Looks(見た目)
 
@@ -18,7 +18,7 @@ Sprite Looks(見た目)
 
 > **new SpriteLooks**(`entity`): `SpriteLooks`
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:29](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L29)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:29](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L29)
 
 **`Internal`**
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/sprite/spriteLooks.ts:29](https://github.com/amami-h
 
 > **get** **backdrop**(): [`IEntityLooksBackdrop`](../../../../../type/entity/entity/IEntityLooksBackdrop/interfaces/IEntityLooksBackdrop.md)
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:46](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L46)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:46](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L46)
 
 背景を操作する
 
@@ -68,7 +68,7 @@ Defined in: [src/lib/entity/sprite/spriteLooks.ts:46](https://github.com/amami-h
 
 > **get** **bubble**(): [`ISpriteLooksBubble`](../../../../../type/entity/sprite/ISpriteLooksBubble/interfaces/ISpriteLooksBubble.md)
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:66](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L66)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:66](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L66)
 
 フキダシ
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/entity/sprite/spriteLooks.ts:66](https://github.com/amami-h
 
 > **get** **costume**(): [`ISpriteLooksCostume`](../../../../../type/entity/sprite/ISpriteLooksCostume/interfaces/ISpriteLooksCostume.md)
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:40](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L40)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:40](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L40)
 
 コスチューム番号、コスチューム名を取り出すためのオブジェクト
 
@@ -112,7 +112,7 @@ Defined in: [src/lib/entity/sprite/spriteLooks.ts:40](https://github.com/amami-h
 
 > **get** **effect**(): [`IEntityEffect`](../../../../../type/entity/entity/IEntityEffect/interfaces/IEntityEffect.md)
 
-Defined in: [src/lib/entity/entity/entityLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityLooks.ts#L22)
+Defined in: [src/lib/entity/entity/entityLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityLooks.ts#L22)
 
 ##### Returns
 
@@ -134,7 +134,7 @@ Defined in: [src/lib/entity/entity/entityLooks.ts:22](https://github.com/amami-h
 
 > **get** **layer**(): [`ISpriteLayer`](../../../../../type/entity/sprite/ISpriteLayer/interfaces/ISpriteLayer.md)
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:60](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L60)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:60](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L60)
 
 階層
 
@@ -160,7 +160,7 @@ Layer
 
 > **get** **size**(): [`ISpriteLooksSize`](../../../../../type/entity/sprite/ISpriteLooksSize/interfaces/ISpriteLooksSize.md)
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:52](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L52)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:52](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L52)
 
 サイズ
 
@@ -180,7 +180,7 @@ Defined in: [src/lib/entity/sprite/spriteLooks.ts:52](https://github.com/amami-h
 
 > **hide**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:81](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L81)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:81](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L81)
 
 隠す
 
@@ -198,7 +198,7 @@ Defined in: [src/lib/entity/sprite/spriteLooks.ts:81](https://github.com/amami-h
 
 > **show**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooks.ts:73](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooks.ts#L73)
+Defined in: [src/lib/entity/sprite/spriteLooks.ts:73](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooks.ts#L73)
 
 表示する
 

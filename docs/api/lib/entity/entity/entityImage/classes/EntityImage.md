@@ -1,6 +1,6 @@
 # Class: EntityImage
 
-Defined in: [src/lib/entity/entity/entityImage.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L10)
+Defined in: [src/lib/entity/entity/entityImage.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L10)
 
 Entity イメージ
 
@@ -18,7 +18,7 @@ Entity イメージ
 
 > **new EntityImage**(`entity`): `EntityImage`
 
-Defined in: [src/lib/entity/entity/entityImage.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L19)
+Defined in: [src/lib/entity/entity/entityImage.ts:19](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L19)
 
 **`Internal`**
 
@@ -42,7 +42,7 @@ Defined in: [src/lib/entity/entity/entityImage.ts:19](https://github.com/amami-h
 
 > **get** **effect**(): [`IEntityEffect`](../../../../../type/entity/entity/IEntityEffect/interfaces/IEntityEffect.md)
 
-Defined in: [src/lib/entity/entity/entityImage.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L24)
+Defined in: [src/lib/entity/entity/entityImage.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L24)
 
 ##### Returns
 
@@ -56,7 +56,7 @@ Defined in: [src/lib/entity/entity/entityImage.ts:24](https://github.com/amami-h
 
 > **get** **images**(): [`IImage`](../../../../../type/image/interfaces/IImage.md)[]
 
-Defined in: [src/lib/entity/entity/entityImage.ts:34](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L34)
+Defined in: [src/lib/entity/entity/entityImage.ts:34](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L34)
 
 ##### Returns
 
@@ -74,7 +74,7 @@ Defined in: [src/lib/entity/entity/entityImage.ts:34](https://github.com/amami-h
 
 > **get** **names**(): `string`[]
 
-Defined in: [src/lib/entity/entity/entityImage.ts:37](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L37)
+Defined in: [src/lib/entity/entity/entityImage.ts:37](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L37)
 
 追加されている画像名を配列で受け取る
 ```ts
@@ -114,7 +114,7 @@ Defined in: [src/lib/entity/entity/entityImage.ts:37](https://github.com/amami-h
 
 > **add**(`images`): `void`
 
-Defined in: [src/lib/entity/entity/entityImage.ts:28](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L28)
+Defined in: [src/lib/entity/entity/entityImage.ts:28](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L28)
 
 画像を追加する
 
@@ -150,7 +150,7 @@ Defined in: [src/lib/entity/entity/entityImage.ts:28](https://github.com/amami-h
 
 > **destoryAllSkins**(): `void`
 
-Defined in: [src/lib/entity/entity/entityImage.ts:53](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L53)
+Defined in: [src/lib/entity/entity/entityImage.ts:53](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L53)
 
 #### Returns
 
@@ -162,7 +162,7 @@ Defined in: [src/lib/entity/entity/entityImage.ts:53](https://github.com/amami-h
 
 > **imageLoadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/entityImage.ts:44](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityImage.ts#L44)
+Defined in: [src/lib/entity/entity/entityImage.ts:44](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityImage.ts#L44)
 
 #### Returns
 

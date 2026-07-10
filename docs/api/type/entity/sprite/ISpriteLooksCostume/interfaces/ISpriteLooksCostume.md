@@ -1,6 +1,6 @@
 # Interface: ISpriteLooksCostume
 
-Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksCostume.ts#L4)
+Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:4](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksCostume.ts#L4)
 
 コスチューム
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:4](https://github.com
 
 > **get** **currentSkinId**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksCostume.ts#L18)
+Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:18](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksCostume.ts#L18)
 
 現在のSkinID
 
@@ -28,7 +28,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:18](https://github.co
 
 > **get** **name**(): `string`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:35](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksCostume.ts#L35)
+Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:35](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksCostume.ts#L35)
 
 コスチューム名
 ```ts
@@ -44,7 +44,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:35](https://github.co
 
 > **set** **name**(`name`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:43](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksCostume.ts#L43)
+Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:43](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksCostume.ts#L43)
 
 コスチューム名
 ```ts
@@ -70,7 +70,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:43](https://github.co
 
 > **get** **no**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksCostume.ts#L13)
+Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksCostume.ts#L13)
 
 コスチューム番号
 ```ts
@@ -86,7 +86,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:13](https://github.co
 
 > **set** **no**(`no`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksCostume.ts#L27)
+Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:27](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksCostume.ts#L27)
 
 コスチューム番号
 ```ts
@@ -110,7 +110,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:27](https://github.co
 
 > **next**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:48](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksCostume.ts#L48)
+Defined in: [src/type/entity/sprite/ISpriteLooksCostume.ts:48](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksCostume.ts#L48)
 
 次のコスチュームにする
 

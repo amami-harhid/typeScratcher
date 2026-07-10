@@ -1,6 +1,6 @@
 # Interface: IEntitySensingTimer
 
-Defined in: [src/type/entity/entity/IEntitySensingTimer.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySensingTimer.ts#L4)
+Defined in: [src/type/entity/entity/IEntitySensingTimer.ts:4](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntitySensingTimer.ts#L4)
 
 Entity Sensing(調べる) Timer
 
@@ -10,7 +10,7 @@ Entity Sensing(調べる) Timer
 
 > `readonly` **timer**: `number`
 
-Defined in: [src/type/entity/entity/IEntitySensingTimer.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySensingTimer.ts#L9)
+Defined in: [src/type/entity/entity/IEntitySensingTimer.ts:9](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntitySensingTimer.ts#L9)
 
 タイマー値
 
@@ -20,7 +20,7 @@ Defined in: [src/type/entity/entity/IEntitySensingTimer.ts:9](https://github.com
 
 > **reset**(): `void`
 
-Defined in: [src/type/entity/entity/IEntitySensingTimer.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySensingTimer.ts#L13)
+Defined in: [src/type/entity/entity/IEntitySensingTimer.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntitySensingTimer.ts#L13)
 
 タイマーリセット
 

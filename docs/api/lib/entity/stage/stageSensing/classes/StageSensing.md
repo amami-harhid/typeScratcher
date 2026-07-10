@@ -1,6 +1,6 @@
 # Class: StageSensing
 
-Defined in: [src/lib/entity/stage/stageSensing.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensing.ts#L13)
+Defined in: [src/lib/entity/stage/stageSensing.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensing.ts#L13)
 
 Stage Sensing(調べる)
 
@@ -14,7 +14,7 @@ Stage Sensing(調べる)
 
 > **new StageSensing**(`entity`): `StageSensing`
 
-Defined in: [src/lib/entity/stage/stageSensing.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensing.ts#L22)
+Defined in: [src/lib/entity/stage/stageSensing.ts:22](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensing.ts#L22)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/stage/stageSensing.ts:22](https://github.com/amami-h
 
 > **get** **keyboard**(): [`IEntitySensingKey`](../../../../../type/entity/entity/IEntitySensingKey/interfaces/IEntitySensingKey.md)
 
-Defined in: [src/lib/entity/stage/stageSensing.ts:44](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensing.ts#L44)
+Defined in: [src/lib/entity/stage/stageSensing.ts:44](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensing.ts#L44)
 
 Key 関連
 
@@ -58,7 +58,7 @@ Key 関連
 
 > **get** **mouse**(): [`IEntitySensingMouse`](../../../../../type/entity/entity/IEntitySensingMouse/interfaces/IEntitySensingMouse.md)
 
-Defined in: [src/lib/entity/stage/stageSensing.ts:50](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensing.ts#L50)
+Defined in: [src/lib/entity/stage/stageSensing.ts:50](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensing.ts#L50)
 
 マウス関連
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/entity/stage/stageSensing.ts:50](https://github.com/amami-h
 
 > **get** **timer**(): [`IEntitySensingTimer`](../../../../../type/entity/entity/IEntitySensingTimer/interfaces/IEntitySensingTimer.md)
 
-Defined in: [src/lib/entity/stage/stageSensing.ts:56](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensing.ts#L56)
+Defined in: [src/lib/entity/stage/stageSensing.ts:56](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensing.ts#L56)
 
 タイマー関連
 
@@ -96,7 +96,7 @@ Defined in: [src/lib/entity/stage/stageSensing.ts:56](https://github.com/amami-h
 
 > **askAndWait**(`question`): `Promise`\<`string`\>
 
-Defined in: [src/lib/entity/stage/stageSensing.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageSensing.ts#L33)
+Defined in: [src/lib/entity/stage/stageSensing.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageSensing.ts#L33)
 
 質問をする
 

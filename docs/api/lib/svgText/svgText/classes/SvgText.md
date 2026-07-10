@@ -1,6 +1,6 @@
 # Class: SvgText
 
-Defined in: [src/lib/svgText/svgText.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgText.ts#L14)
+Defined in: [src/lib/svgText/svgText.ts:14](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgText.ts#L14)
 
 ## Implements
 
@@ -12,7 +12,7 @@ Defined in: [src/lib/svgText/svgText.ts:14](https://github.com/amami-harhid/type
 
 > **new SvgText**(`entity`): `SvgText`
 
-Defined in: [src/lib/svgText/svgText.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgText.ts#L18)
+Defined in: [src/lib/svgText/svgText.ts:18](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgText.ts#L18)
 
 #### Parameters
 
@@ -30,7 +30,7 @@ Defined in: [src/lib/svgText/svgText.ts:18](https://github.com/amami-harhid/type
 
 > **add**(`name`, `svgString`): `void`
 
-Defined in: [src/lib/svgText/svgText.ts:70](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgText.ts#L70)
+Defined in: [src/lib/svgText/svgText.ts:70](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgText.ts#L70)
 
 SVG文字列を追加する
 
@@ -58,7 +58,7 @@ SVG文字列を追加する
 
 > **addTexts**(`name`, `texts`, `option?`): `void`
 
-Defined in: [src/lib/svgText/svgText.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgText.ts#L32)
+Defined in: [src/lib/svgText/svgText.ts:32](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgText.ts#L32)
 
 文字列配列をSVG化して追加する
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/svgText/svgText.ts:32](https://github.com/amami-harhid/type
 
 > **mesure**(`texts`, `fontSize?`, `fontStyle?`, `fontFamily?`): `object`
 
-Defined in: [src/lib/svgText/svgText.ts:84](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgText.ts#L84)
+Defined in: [src/lib/svgText/svgText.ts:84](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgText.ts#L84)
 
 文字列配列の大きさを計測する
 
@@ -134,7 +134,7 @@ Defined in: [src/lib/svgText/svgText.ts:84](https://github.com/amami-harhid/type
 
 > **replaceTexts**(`name`, `text`, `option?`): `void`
 
-Defined in: [src/lib/svgText/svgText.ts:66](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgText.ts#L66)
+Defined in: [src/lib/svgText/svgText.ts:66](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgText.ts#L66)
 
 文字列配列をSVG化して画像を更新する
 
@@ -166,7 +166,7 @@ Defined in: [src/lib/svgText/svgText.ts:66](https://github.com/amami-harhid/type
 
 > **toSvg**(`textArr`, `fontSize?`, `fontStyle?`, `color?`, `fontFamily?`): `string`
 
-Defined in: [src/lib/svgText/svgText.ts:88](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgText.ts#L88)
+Defined in: [src/lib/svgText/svgText.ts:88](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/svgText.ts#L88)
 
 文字列配列をSVG化する
 

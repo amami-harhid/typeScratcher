@@ -1,6 +1,6 @@
 # Class: EntitySensingSprite
 
-Defined in: [src/lib/entity/entity/entitySensingSprite.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySensingSprite.ts#L10)
+Defined in: [src/lib/entity/entity/entitySensingSprite.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySensingSprite.ts#L10)
 
 EntitySensingSprite
 
@@ -18,7 +18,7 @@ EntitySensingSprite
 
 > **new EntitySensingSprite**(`entity`): `EntitySensingSprite`
 
-Defined in: [src/lib/entity/entity/entitySensingSprite.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySensingSprite.ts#L14)
+Defined in: [src/lib/entity/entity/entitySensingSprite.ts:14](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySensingSprite.ts#L14)
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/entity/entitySensingSprite.ts:14](https://github.com
 
 > **degreeToTarget**(`target`): `number`
 
-Defined in: [src/lib/entity/entity/entitySensingSprite.ts:53](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySensingSprite.ts#L53)
+Defined in: [src/lib/entity/entity/entitySensingSprite.ts:53](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySensingSprite.ts#L53)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/entity/entity/entitySensingSprite.ts:53](https://github.com
 
 > **getTouchingTarget**(`targets`): [`ISprite`](../../../../../type/entity/sprite/interfaces/ISprite.md)[]
 
-Defined in: [src/lib/entity/entity/entitySensingSprite.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySensingSprite.ts#L65)
+Defined in: [src/lib/entity/entity/entitySensingSprite.ts:65](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySensingSprite.ts#L65)
 
 #### Parameters
 

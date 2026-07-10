@@ -1,6 +1,6 @@
 # Class: EntitySpeech
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L12)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:12](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L12)
 
 スピーチ機能
 サウンド機能と異なり、ボリューム値変更、ピッチ変更は、次の再生から有効になる
@@ -15,7 +15,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:12](https://github.com/amami-
 
 > **new EntitySpeech**(`entity`): `EntitySpeech`
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L16)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:16](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L16)
 
 #### Parameters
 
@@ -33,7 +33,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:16](https://github.com/amami-
 
 > **addCache**(`path`, `soundPlayer`): `void`
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:154](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L154)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:154](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L154)
 
 #### Parameters
 
@@ -55,7 +55,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:154](https://github.com/amami
 
 > **addPitch**(`pitch`): [`IEntitySpeech`](../../../../../type/entity/entity/IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:57](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L57)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:57](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L57)
 
 ピッチを加える
 
@@ -79,7 +79,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:57](https://github.com/amami-
 
 > **addVolume**(`volume`): [`IEntitySpeech`](../../../../../type/entity/entity/IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:61](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L61)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:61](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L61)
 
 音量を加える
 
@@ -103,7 +103,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:61](https://github.com/amami-
 
 > **gender**(`gender`): [`NextMethodsGender`](../../../../../type/entity/entity/IEntitySpeech/interfaces/NextMethodsGender.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:90](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L90)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:90](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L90)
 
 性別
 
@@ -127,7 +127,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:90](https://github.com/amami-
 
 > **getCache**(`path`): [`SoundPlayer`](../../../../sounds/soundPlayer/classes/SoundPlayer.md) \| `undefined`
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:159](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L159)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:159](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L159)
 
 #### Parameters
 
@@ -145,7 +145,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:159](https://github.com/amami
 
 > **locale**(`locale`): [`NextMethodsLocale`](../../../../../type/entity/entity/IEntitySpeech/interfaces/NextMethodsLocale.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L21)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:21](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L21)
 
 ロケール(言語)
 
@@ -169,7 +169,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:21](https://github.com/amami-
 
 > **pitch**(`pitch`): [`NextMethodsPitch`](../../../../../type/entity/entity/IEntitySpeech/interfaces/NextMethodsPitch.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:113](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L113)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:113](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L113)
 
 ピッチ
 
@@ -193,7 +193,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:113](https://github.com/amami
 
 > **speech**(`words`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:150](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L150)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:150](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L150)
 
 テキストをスピーチする
 
@@ -217,7 +217,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:150](https://github.com/amami
 
 > **stopAll**(): `void`
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:164](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L164)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:164](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L164)
 
 すべてのスピーチを停止する
 
@@ -235,7 +235,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:164](https://github.com/amami
 
 > **type**(`type`): [`NextMethodsType`](../../../../../type/entity/entity/IEntitySpeech/interfaces/NextMethodsType.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L33)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L33)
 
 タイプを指定
 
@@ -259,7 +259,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:33](https://github.com/amami-
 
 > **typeCopyTo**(`type`): [`NextMethodsCopyTo`](../../../../../type/entity/entity/IEntitySpeech/interfaces/NextMethodsCopyTo.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L65)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:65](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L65)
 
 タイプをコピー
 
@@ -283,7 +283,7 @@ Defined in: [src/lib/entity/entity/entitySpeech.ts:65](https://github.com/amami-
 
 > **volume**(`volume`): [`NextMethodsVolume`](../../../../../type/entity/entity/IEntitySpeech/interfaces/NextMethodsVolume.md)
 
-Defined in: [src/lib/entity/entity/entitySpeech.ts:131](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entitySpeech.ts#L131)
+Defined in: [src/lib/entity/entity/entitySpeech.ts:131](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entitySpeech.ts#L131)
 
 音量
 

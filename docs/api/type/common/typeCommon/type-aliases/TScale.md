@@ -2,7 +2,7 @@
 
 > **TScale** = `object`
 
-Defined in: [src/type/common/typeCommon.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L24)
+Defined in: [src/type/common/typeCommon.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/common/typeCommon.ts#L24)
 
 スケール
 
@@ -12,7 +12,7 @@ Defined in: [src/type/common/typeCommon.ts:24](https://github.com/amami-harhid/t
 
 > **h**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:26](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L26)
+Defined in: [src/type/common/typeCommon.ts:26](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/common/typeCommon.ts#L26)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: [src/type/common/typeCommon.ts:26](https://github.com/amami-harhid/t
 
 > **w**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:25](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L25)
+Defined in: [src/type/common/typeCommon.ts:25](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/common/typeCommon.ts#L25)

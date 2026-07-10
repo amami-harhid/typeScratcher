@@ -1,6 +1,6 @@
 # Class: StageLooks
 
-Defined in: [src/lib/entity/stage/stageLooks.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageLooks.ts#L9)
+Defined in: [src/lib/entity/stage/stageLooks.ts:9](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageLooks.ts#L9)
 
 Sprite Looks(見た目)
 
@@ -18,7 +18,7 @@ Sprite Looks(見た目)
 
 > **new StageLooks**(`entity`): `StageLooks`
 
-Defined in: [src/lib/entity/stage/stageLooks.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageLooks.ts#L15)
+Defined in: [src/lib/entity/stage/stageLooks.ts:15](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageLooks.ts#L15)
 
 **`Internal`**
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/stage/stageLooks.ts:15](https://github.com/amami-har
 
 > **get** **backdrop**(): [`IStageLooksBackdrop`](../../../../../type/entity/stage/IStageLooksBackdrop/interfaces/IStageLooksBackdrop.md)
 
-Defined in: [src/lib/entity/stage/stageLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageLooks.ts#L22)
+Defined in: [src/lib/entity/stage/stageLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/stageLooks.ts#L22)
 
 背景番号、背景名を取り出すためのオブジェクト
 
@@ -68,7 +68,7 @@ Defined in: [src/lib/entity/stage/stageLooks.ts:22](https://github.com/amami-har
 
 > **get** **effect**(): [`IEntityEffect`](../../../../../type/entity/entity/IEntityEffect/interfaces/IEntityEffect.md)
 
-Defined in: [src/lib/entity/entity/entityLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityLooks.ts#L22)
+Defined in: [src/lib/entity/entity/entityLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/entityLooks.ts#L22)
 
 ##### Returns
 

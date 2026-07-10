@@ -1,6 +1,6 @@
 # Interface: IEntityLooks
 
-Defined in: [src/type/entity/entity/IEntityLooks.ts:5](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityLooks.ts#L5)
+Defined in: [src/type/entity/entity/IEntityLooks.ts:5](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityLooks.ts#L5)
 
 Entity Looks(見た目)
 
@@ -15,4 +15,4 @@ Entity Looks(見た目)
 
 > `readonly` **effect**: [`IEntityEffect`](../../IEntityEffect/interfaces/IEntityEffect.md)
 
-Defined in: [src/type/entity/entity/IEntityLooks.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityLooks.ts#L7)
+Defined in: [src/type/entity/entity/IEntityLooks.ts:7](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/entity/IEntityLooks.ts#L7)

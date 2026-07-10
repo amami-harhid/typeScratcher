@@ -1,6 +1,6 @@
 # Interface: IUtils
 
-Defined in: [src/type/util/utils.ts:1](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/util/utils.ts#L1)
+Defined in: [src/type/util/utils.ts:1](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/util/utils.ts#L1)
 
 ## Methods
 
@@ -8,7 +8,7 @@ Defined in: [src/type/util/utils.ts:1](https://github.com/amami-harhid/typeScrat
 
 > **randomValue**(`min`, `max`): `number`
 
-Defined in: [src/type/util/utils.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/util/utils.ts#L11)
+Defined in: [src/type/util/utils.ts:11](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/util/utils.ts#L11)
 
 min,max の範囲でランダム値を取得する
 min,max 両方とも整数の場合、min,maxを含む整数のランダム値を返す

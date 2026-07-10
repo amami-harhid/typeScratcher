@@ -1,6 +1,6 @@
 # Class: TextToSvg
 
-Defined in: [src/lib/svgText/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L25)
+Defined in: [src/lib/svgText/index.ts:25](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L25)
 
 ## Implements
 
@@ -12,7 +12,7 @@ Defined in: [src/lib/svgText/index.ts:25](https://github.com/amami-harhid/typeSc
 
 > **new TextToSvg**(): `TextToSvg`
 
-Defined in: [src/lib/svgText/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L33)
+Defined in: [src/lib/svgText/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L33)
 
 #### Returns
 
@@ -26,7 +26,7 @@ Defined in: [src/lib/svgText/index.ts:33](https://github.com/amami-harhid/typeSc
 
 > **set** **padding**(`padding`): `void`
 
-Defined in: [src/lib/svgText/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L47)
+Defined in: [src/lib/svgText/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L47)
 
 ##### Parameters
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/svgText/index.ts:47](https://github.com/amami-harhid/typeSc
 
 > **set** **scratchFontFamily**(`fontFamily`): `void`
 
-Defined in: [src/lib/svgText/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L50)
+Defined in: [src/lib/svgText/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L50)
 
 ScratchFontFamily
 
@@ -72,7 +72,7 @@ ScratchFontFamily
 
 > **set** **textAttributes**(`attr`): `void`
 
-Defined in: [src/lib/svgText/index.ts:69](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L69)
+Defined in: [src/lib/svgText/index.ts:69](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L69)
 
 ##### Parameters
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/svgText/index.ts:69](https://github.com/amami-harhid/typeSc
 
 > **addExternalFontDatas**(`fonts`): `void`
 
-Defined in: [src/lib/svgText/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L53)
+Defined in: [src/lib/svgText/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L53)
 
 #### Parameters
 
@@ -108,7 +108,7 @@ Defined in: [src/lib/svgText/index.ts:53](https://github.com/amami-harhid/typeSc
 
 > **createSvgData**(`inputText`, `textAttr`): `Promise`\<`string`\>
 
-Defined in: [src/lib/svgText/index.ts:121](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L121)
+Defined in: [src/lib/svgText/index.ts:121](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L121)
 
 SVGデータを作成する( Base64 )
 
@@ -136,7 +136,7 @@ SVGデータを作成する( Base64 )
 
 > **setExternalFontFamily**(`fontFamily`): `Promise`\<`void`\>
 
-Defined in: [src/lib/svgText/index.ts:58](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L58)
+Defined in: [src/lib/svgText/index.ts:58](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L58)
 
 #### Parameters
 
@@ -154,7 +154,7 @@ Defined in: [src/lib/svgText/index.ts:58](https://github.com/amami-harhid/typeSc
 
 > `static` **getInstance**(): `TextToSvg`
 
-Defined in: [src/lib/svgText/index.ts:253](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/index.ts#L253)
+Defined in: [src/lib/svgText/index.ts:253](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/svgText/index.ts#L253)
 
 #### Returns
 

@@ -1,6 +1,6 @@
 # Class: Bubble
 
-Defined in: [src/lib/entity/sprite/bubble.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L13)
+Defined in: [src/lib/entity/sprite/bubble.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L13)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:13](https://github.com/amami-harhid
 
 > **new Bubble**(`sprite`): `Bubble`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L18)
+Defined in: [src/lib/entity/sprite/bubble.ts:18](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L18)
 
 #### Parameters
 
@@ -28,7 +28,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:18](https://github.com/amami-harhid
 
 > **get** **bubbleState**(): [`BubbleState`](../../../../../type/entity/TBubble/type-aliases/BubbleState.md)
 
-Defined in: [src/lib/entity/sprite/bubble.ts:35](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L35)
+Defined in: [src/lib/entity/sprite/bubble.ts:35](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L35)
 
 ##### Returns
 
@@ -42,7 +42,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:35](https://github.com/amami-harhid
 
 > **get** **direction**(): `number`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:44](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L44)
+Defined in: [src/lib/entity/sprite/bubble.ts:44](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L44)
 
 ##### Returns
 
@@ -52,7 +52,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:44](https://github.com/amami-harhid
 
 > **set** **direction**(`_direction`): `void`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:47](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L47)
+Defined in: [src/lib/entity/sprite/bubble.ts:47](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L47)
 
 ##### Parameters
 
@@ -72,7 +72,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:47](https://github.com/amami-harhid
 
 > **get** **isBubbleActive**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:38](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L38)
+Defined in: [src/lib/entity/sprite/bubble.ts:38](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L38)
 
 ##### Returns
 
@@ -84,7 +84,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:38](https://github.com/amami-harhid
 
 > **\_createBubbleState**(): [`BubbleState`](../../../../../type/entity/TBubble/type-aliases/BubbleState.md)
 
-Defined in: [src/lib/entity/sprite/bubble.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L24)
+Defined in: [src/lib/entity/sprite/bubble.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L24)
 
 #### Returns
 
@@ -96,7 +96,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:24](https://github.com/amami-harhid
 
 > **\_positionBubble**(): `void`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:159](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L159)
+Defined in: [src/lib/entity/sprite/bubble.ts:159](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L159)
 
 #### Returns
 
@@ -108,7 +108,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:159](https://github.com/amami-harhi
 
 > **\_renderBubble**(`_properties?`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/bubble.ts:128](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L128)
+Defined in: [src/lib/entity/sprite/bubble.ts:128](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L128)
 
 #### Parameters
 
@@ -126,7 +126,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:128](https://github.com/amami-harhi
 
 > **createDrawable**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/bubble.ts:67](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L67)
+Defined in: [src/lib/entity/sprite/bubble.ts:67](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L67)
 
 #### Returns
 
@@ -138,7 +138,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:67](https://github.com/amami-harhid
 
 > **createTextSkin**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/bubble.ts:75](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L75)
+Defined in: [src/lib/entity/sprite/bubble.ts:75](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L75)
 
 #### Returns
 
@@ -150,7 +150,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:75](https://github.com/amami-harhid
 
 > **destroyBubble**(): `void`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:204](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L204)
+Defined in: [src/lib/entity/sprite/bubble.ts:204](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L204)
 
 #### Returns
 
@@ -162,7 +162,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:204](https://github.com/amami-harhi
 
 > **moveWithSprite**(): `void`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:156](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L156)
+Defined in: [src/lib/entity/sprite/bubble.ts:156](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L156)
 
 #### Returns
 
@@ -174,7 +174,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:156](https://github.com/amami-harhi
 
 > **say**(`text`, `properties?`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/bubble.ts:93](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L93)
+Defined in: [src/lib/entity/sprite/bubble.ts:93](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L93)
 
 #### Parameters
 
@@ -196,7 +196,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:93](https://github.com/amami-harhid
 
 > **setScale**(`w`, `h`): `void`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:56](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L56)
+Defined in: [src/lib/entity/sprite/bubble.ts:56](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L56)
 
 Bubbleスケールを設定する
 
@@ -224,7 +224,7 @@ Bubbleスケールを設定する
 
 > **think**(`text`, `properties?`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/bubble.ts:103](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L103)
+Defined in: [src/lib/entity/sprite/bubble.ts:103](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L103)
 
 #### Parameters
 
@@ -246,7 +246,7 @@ Defined in: [src/lib/entity/sprite/bubble.ts:103](https://github.com/amami-harhi
 
 > **updateScale**(`w`, `h`): `void`
 
-Defined in: [src/lib/entity/sprite/bubble.ts:113](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/bubble.ts#L113)
+Defined in: [src/lib/entity/sprite/bubble.ts:113](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/bubble.ts#L113)
 
 #### Parameters
 

@@ -1,6 +1,6 @@
 # Interface: ISpriteLooksBubble
 
-Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksBubble.ts#L4)
+Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:4](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksBubble.ts#L4)
 
 吹き出し
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:4](https://github.com/
 
 > **say**(`text?`, `properties?`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksBubble.ts#L12)
+Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:12](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksBubble.ts#L12)
 
 言う
 
@@ -38,7 +38,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:12](https://github.com
 
 > **sayForSecs**(`text`, `sec`, `properties?`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksBubble.ts#L19)
+Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:19](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksBubble.ts#L19)
 
 指定した秒数分、言う。
 
@@ -72,7 +72,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:19](https://github.com
 
 > **think**(`text?`, `properties?`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:25](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksBubble.ts#L25)
+Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:25](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksBubble.ts#L25)
 
 考える
 
@@ -100,7 +100,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:25](https://github.com
 
 > **thinkForSecs**(`text`, `sec`, `properties?`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksBubble.ts#L32)
+Defined in: [src/type/entity/sprite/ISpriteLooksBubble.ts:32](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteLooksBubble.ts#L32)
 
 指定した秒数分、考える。
 

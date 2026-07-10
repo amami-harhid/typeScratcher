@@ -1,6 +1,6 @@
 # Interface: IPenSpriteSize
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/IPenSpriteSize.ts#L4)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:4](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/pen/IPenSpriteSize.ts#L4)
 
 ペンサイズ
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:4](https://github.com/
 
 > **get** **thickness**(): `number`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:8](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/IPenSpriteSize.ts#L8)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:8](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/pen/IPenSpriteSize.ts#L8)
 
 ペンの太さ
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:8](https://github.com/
 
 > **set** **thickness**(`thickness`): `void`
 
-Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/IPenSpriteSize.ts#L13)
+Defined in: [src/type/entity/sprite/pen/IPenSpriteSize.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/pen/IPenSpriteSize.ts#L13)
 
 ペンの太さ
 

@@ -1,6 +1,6 @@
 # Class: SoundPlayer
 
-Defined in: [src/lib/sounds/soundPlayer.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L10)
+Defined in: [src/lib/sounds/soundPlayer.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L10)
 
 SoundPlayer
 
@@ -14,7 +14,7 @@ SoundPlayer
 
 > **new SoundPlayer**(`name`, `_soundPlayer`, `options?`): `SoundPlayer`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L19)
+Defined in: [src/lib/sounds/soundPlayer.ts:19](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L19)
 
 #### Parameters
 
@@ -42,7 +42,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:19](https://github.com/amami-harhid/t
 
 > **get** **effects**(): [`TEffectChain`](../../../../type/sound/IAudioEngine/type-aliases/TEffectChain.md)
 
-Defined in: [src/lib/sounds/soundPlayer.ts:69](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L69)
+Defined in: [src/lib/sounds/soundPlayer.ts:69](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L69)
 
 エフェクトチェイン
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:69](https://github.com/amami-harhid/t
 
 > **set** **effects**(`effects`): `void`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:66](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L66)
+Defined in: [src/lib/sounds/soundPlayer.ts:66](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L66)
 
 エフェクトチェイン
 
@@ -82,7 +82,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:66](https://github.com/amami-harhid/t
 
 > **get** **isPlaying**(): `boolean`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:83](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L83)
+Defined in: [src/lib/sounds/soundPlayer.ts:83](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L83)
 
 再生状態
 
@@ -104,7 +104,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:83](https://github.com/amami-harhid/t
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:63](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L63)
+Defined in: [src/lib/sounds/soundPlayer.ts:63](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L63)
 
 名称
 
@@ -126,7 +126,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:63](https://github.com/amami-harhid/t
 
 > **get** **pitch**(): `number`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:45](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L45)
+Defined in: [src/lib/sounds/soundPlayer.ts:45](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L45)
 
 ピッチ
 
@@ -138,7 +138,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:45](https://github.com/amami-harhid/t
 
 > **set** **pitch**(`pitch`): `void`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:41](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L41)
+Defined in: [src/lib/sounds/soundPlayer.ts:41](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L41)
 
 --> 0.5
 0 --> 1.0
@@ -168,7 +168,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:41](https://github.com/amami-harhid/t
 
 > **get** **soundPlayer**(): [`IScratchSoundPlayer`](../../../../type/sound/IAudioEngine/interfaces/IScratchSoundPlayer.md)
 
-Defined in: [src/lib/sounds/soundPlayer.ts:59](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L59)
+Defined in: [src/lib/sounds/soundPlayer.ts:59](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L59)
 
 Scratch SoundPlayer
 
@@ -190,7 +190,7 @@ Scratch SoundPlayer
 
 > **get** **volume**(): `number`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:55](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L55)
+Defined in: [src/lib/sounds/soundPlayer.ts:55](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L55)
 
 ボリューム
 
@@ -202,7 +202,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:55](https://github.com/amami-harhid/t
 
 > **set** **volume**(`volume`): `void`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:48](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L48)
+Defined in: [src/lib/sounds/soundPlayer.ts:48](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L48)
 
 ボリューム
 
@@ -228,7 +228,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:48](https://github.com/amami-harhid/t
 
 > **connect**(): `void`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:72](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L72)
+Defined in: [src/lib/sounds/soundPlayer.ts:72](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L72)
 
 接続
 
@@ -246,7 +246,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:72](https://github.com/amami-harhid/t
 
 > **play**(): `void`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:80](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L80)
+Defined in: [src/lib/sounds/soundPlayer.ts:80](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L80)
 
 再生
 
@@ -264,7 +264,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:80](https://github.com/amami-harhid/t
 
 > **startSoundUntilDone**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/sounds/soundPlayer.ts:86](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L86)
+Defined in: [src/lib/sounds/soundPlayer.ts:86](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L86)
 
 再生して終わるまで待つ
 
@@ -282,7 +282,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:86](https://github.com/amami-harhid/t
 
 > **stop**(): `void`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:104](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L104)
+Defined in: [src/lib/sounds/soundPlayer.ts:104](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L104)
 
 停止する
 
@@ -300,7 +300,7 @@ Defined in: [src/lib/sounds/soundPlayer.ts:104](https://github.com/amami-harhid/
 
 > **stopImmediately**(): `void`
 
-Defined in: [src/lib/sounds/soundPlayer.ts:107](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundPlayer.ts#L107)
+Defined in: [src/lib/sounds/soundPlayer.ts:107](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/sounds/soundPlayer.ts#L107)
 
 即時に停止する
 

@@ -2,4 +2,4 @@
 
 > **V\_SPEECH\_LOCALE** = *typeof* [`SPEECH_LOCALE`](../variables/SPEECH_LOCALE.md)\[keyof *typeof* [`SPEECH_LOCALE`](../variables/SPEECH_LOCALE.md)\]
 
-Defined in: [src/type/speech/IVoice.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/speech/IVoice.ts#L6)
+Defined in: [src/type/speech/IVoice.ts:6](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/speech/IVoice.ts#L6)

@@ -2,7 +2,7 @@
 
 > **createSvgImageAttributes** = `object`
 
-Defined in: [src/type/font/index.ts:3](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L3)
+Defined in: [src/type/font/index.ts:3](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L3)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/font/index.ts:3](https://github.com/amami-harhid/typeScrat
 
 > `optional` **fill?**: `string`
 
-Defined in: [src/type/font/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L4)
+Defined in: [src/type/font/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L4)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/font/index.ts:4](https://github.com/amami-harhid/typeScrat
 
 > `optional` **font\_family?**: `string`
 
-Defined in: [src/type/font/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L9)
+Defined in: [src/type/font/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L9)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/type/font/index.ts:9](https://github.com/amami-harhid/typeScrat
 
 > `optional` **font\_size?**: `number`
 
-Defined in: [src/type/font/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L10)
+Defined in: [src/type/font/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L10)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/font/index.ts:10](https://github.com/amami-harhid/typeScra
 
 > `optional` **font\_weight?**: `"normal"` \| `"bold"` \| `"bolder"` \| `"lighter"`
 
-Defined in: [src/type/font/index.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L11)
+Defined in: [src/type/font/index.ts:11](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L11)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/type/font/index.ts:11](https://github.com/amami-harhid/typeScra
 
 > `optional` **scratch\_font\_family?**: [`ScratchFontFamilyValue`](../../svgText/type-aliases/ScratchFontFamilyValue.md)
 
-Defined in: [src/type/font/index.ts:8](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L8)
+Defined in: [src/type/font/index.ts:8](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L8)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/type/font/index.ts:8](https://github.com/amami-harhid/typeScrat
 
 > `optional` **stroke?**: `string`
 
-Defined in: [src/type/font/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L5)
+Defined in: [src/type/font/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L5)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [src/type/font/index.ts:5](https://github.com/amami-harhid/typeScrat
 
 > `optional` **stroke\_mode?**: `"outside"` \| `"inside"`
 
-Defined in: [src/type/font/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L6)
+Defined in: [src/type/font/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L6)
 
 ***
 
@@ -66,4 +66,4 @@ Defined in: [src/type/font/index.ts:6](https://github.com/amami-harhid/typeScrat
 
 > `optional` **stroke\_width?**: `number`
 
-Defined in: [src/type/font/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L7)
+Defined in: [src/type/font/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/font/index.ts#L7)

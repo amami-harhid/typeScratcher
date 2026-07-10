@@ -1,6 +1,6 @@
 # Class: SpriteLooksBubble
 
-Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooksBubble.ts#L7)
+Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:7](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooksBubble.ts#L7)
 
 吹き出し
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:7](https://github.com/am
 
 > **new SpriteLooksBubble**(`entity`): `SpriteLooksBubble`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooksBubble.ts#L15)
+Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:15](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooksBubble.ts#L15)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:15](https://github.com/a
 
 > **say**(`text`, `properties?`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:29](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooksBubble.ts#L29)
+Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:29](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooksBubble.ts#L29)
 
 言う
 
@@ -72,7 +72,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:29](https://github.com/a
 
 > **sayForSecs**(`text`, `sec`, `properties?`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:44](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooksBubble.ts#L44)
+Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:44](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooksBubble.ts#L44)
 
 指定した秒数分、言う。
 
@@ -110,7 +110,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:44](https://github.com/a
 
 > **think**(`text`, `properties?`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:55](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooksBubble.ts#L55)
+Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:55](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooksBubble.ts#L55)
 
 考える
 
@@ -142,7 +142,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:55](https://github.com/a
 
 > **thinkForSecs**(`text`, `sec`, `properties?`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:69](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooksBubble.ts#L69)
+Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:69](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooksBubble.ts#L69)
 
 指定した秒数分、考える。
 
@@ -180,7 +180,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:69](https://github.com/a
 
 > **update**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:75](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteLooksBubble.ts#L75)
+Defined in: [src/lib/entity/sprite/spriteLooksBubble.ts:75](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteLooksBubble.ts#L75)
 
 #### Returns
 

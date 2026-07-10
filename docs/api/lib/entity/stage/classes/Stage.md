@@ -1,6 +1,6 @@
 # Class: Stage
 
-Defined in: [src/lib/entity/stage/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L26)
+Defined in: [src/lib/entity/stage/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L26)
 
 Stage
 
@@ -18,7 +18,7 @@ Stage
 
 > **new Stage**(): `Stage`
 
-Defined in: [src/lib/entity/stage/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L33)
+Defined in: [src/lib/entity/stage/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L33)
 
 #### Returns
 
@@ -34,7 +34,7 @@ Defined in: [src/lib/entity/stage/index.ts:33](https://github.com/amami-harhid/t
 
 > **drawableID**: `number` = `-1`
 
-Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L34)
+Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L34)
 
 #### Inherited from
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/
 
 > **id**: `string`
 
-Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L33)
+Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L33)
 
 #### Inherited from
 
@@ -60,7 +60,7 @@ Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/
 
 > **get** **$fonts**(): [`IFont`](../../../../type/font/interfaces/IFont.md)[]
 
-Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L73)
+Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L73)
 
 ##### Returns
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/
 
 > **get** **$image**(): [`IEntityImage`](../../../../type/entity/entity/IEntityImage/interfaces/IEntityImage.md)
 
-Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L67)
+Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L67)
 
 ##### Returns
 
@@ -96,7 +96,7 @@ Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/
 
 > **get** **$images**(): [`IImage`](../../../../type/image/interfaces/IImage.md)[]
 
-Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L70)
+Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L70)
 
 ##### Returns
 
@@ -114,7 +114,7 @@ Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/
 
 > **get** **Backdrop**(): [`IStageBackdrop`](../../../../type/entity/stage/IStageBackdrop/interfaces/IStageBackdrop.md)
 
-Defined in: [src/lib/entity/stage/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L50)
+Defined in: [src/lib/entity/stage/index.ts:50](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L50)
 
 背景
 
@@ -136,7 +136,7 @@ Defined in: [src/lib/entity/stage/index.ts:50](https://github.com/amami-harhid/t
 
 > **get** **Broadcast**(): [`IEntityBroadCast`](../../../../type/entity/entity/IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L76)
+Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L76)
 
 メッセージ送受信
 
@@ -162,7 +162,7 @@ Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/
 
 > **get** **Control**(): [`IEntityControl`](../../../../type/entity/entity/IEntityControl/interfaces/IEntityControl.md)
 
-Defined in: [src/lib/entity/stage/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L56)
+Defined in: [src/lib/entity/stage/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L56)
 
 制御
 
@@ -184,7 +184,7 @@ Defined in: [src/lib/entity/stage/index.ts:56](https://github.com/amami-harhid/t
 
 > **get** **Event**(): [`IEntityEvent`](../../../../type/entity/entity/IEntityEvent/interfaces/IEntityEvent.md)
 
-Defined in: [src/lib/entity/stage/index.ts:59](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L59)
+Defined in: [src/lib/entity/stage/index.ts:59](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L59)
 
 イベント
 
@@ -206,7 +206,7 @@ Defined in: [src/lib/entity/stage/index.ts:59](https://github.com/amami-harhid/t
 
 > **get** **isAlive**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L91)
+Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L91)
 
 ##### Returns
 
@@ -216,7 +216,7 @@ Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/
 
 > **set** **isAlive**(`isAlive`): `void`
 
-Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L94)
+Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L94)
 
 ##### Parameters
 
@@ -240,7 +240,7 @@ Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/
 
 > **get** **isSprite**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L88)
+Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L88)
 
 ##### Returns
 
@@ -258,7 +258,7 @@ Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/
 
 > **get** **Looks**(): [`IStageLooks`](../../../../type/entity/stage/IStageLooks/interfaces/IStageLooks.md)
 
-Defined in: [src/lib/entity/stage/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L53)
+Defined in: [src/lib/entity/stage/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L53)
 
 見た目
 
@@ -280,7 +280,7 @@ Defined in: [src/lib/entity/stage/index.ts:53](https://github.com/amami-harhid/t
 
 > **get** **mouse**(): [`TMouse`](../../../../type/mouse/type-aliases/TMouse.md)
 
-Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L85)
+Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L85)
 
 ##### Returns
 
@@ -298,7 +298,7 @@ Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L61)
+Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L61)
 
 ##### Returns
 
@@ -316,7 +316,7 @@ Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/
 
 > **get** **Properties**(): [`StageProperties`](../stageProperties/classes/StageProperties.md)
 
-Defined in: [src/lib/entity/stage/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L47)
+Defined in: [src/lib/entity/stage/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L47)
 
 ##### Returns
 
@@ -334,7 +334,7 @@ Defined in: [src/lib/entity/stage/index.ts:47](https://github.com/amami-harhid/t
 
 > **get** **render**(): [`Render`](../../../render/classes/Render.md)
 
-Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L64)
+Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L64)
 
 ##### Returns
 
@@ -352,7 +352,7 @@ Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/
 
 > **get** **Sensing**(): [`IEntitySensing`](../../../../type/entity/entity/IEntitySensing/interfaces/IEntitySensing.md)
 
-Defined in: [src/lib/entity/stage/index.ts:62](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L62)
+Defined in: [src/lib/entity/stage/index.ts:62](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L62)
 
 調べる
 
@@ -374,7 +374,7 @@ Defined in: [src/lib/entity/stage/index.ts:62](https://github.com/amami-harhid/t
 
 > **get** **Sound**(): [`IEntitySound`](../../../../type/entity/entity/IEntitySound/interfaces/IEntitySound.md)
 
-Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L79)
+Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L79)
 
 サウンド
 
@@ -400,7 +400,7 @@ Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/
 
 > **get** **SOUND\_FORCE\_STOP**(): `string`
 
-Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L27)
+Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L27)
 
 ##### Returns
 
@@ -418,7 +418,7 @@ Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/
 
 > **get** **Speech**(): [`IEntitySpeech`](../../../../type/entity/entity/IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L82)
+Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L82)
 
 スピーチ
 
@@ -442,7 +442,7 @@ Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/
 
 > **createDrawable**(`layer`): `void`
 
-Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L56)
+Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L56)
 
 #### Parameters
 
@@ -464,7 +464,7 @@ Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/
 
 > **imageLoadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L97)
+Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L97)
 
 #### Returns
 
@@ -480,7 +480,7 @@ Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/
 
 > **init**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/stage/index.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L65)
+Defined in: [src/lib/entity/stage/index.ts:65](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L65)
 
 #### Returns
 
@@ -492,7 +492,7 @@ Defined in: [src/lib/entity/stage/index.ts:65](https://github.com/amami-harhid/t
 
 > **loadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L105)
+Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/entity/index.ts#L105)
 
 #### Returns
 
@@ -508,7 +508,7 @@ Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid
 
 > **update**(): `void`
 
-Defined in: [src/lib/entity/stage/index.ts:102](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/index.ts#L102)
+Defined in: [src/lib/entity/stage/index.ts:102](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/stage/index.ts#L102)
 
 #### Returns
 

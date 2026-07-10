@@ -1,6 +1,6 @@
 # Interface: IRender
 
-Defined in: [src/type/render/IRender.ts:28](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L28)
+Defined in: [src/type/render/IRender.ts:28](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/IRender.ts#L28)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [src/type/render/IRender.ts:28](https://github.com/amami-harhid/type
 
 > `readonly` **renderer**: [`IRenderWebGL`](../../IRenderWebGL/interfaces/IRenderWebGL.md)
 
-Defined in: [src/type/render/IRender.ts:57](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L57)
+Defined in: [src/type/render/IRender.ts:57](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/IRender.ts#L57)
 
 Rendererを取得する
 
@@ -18,7 +18,7 @@ Rendererを取得する
 
 > `readonly` **stageHeight**: `number`
 
-Defined in: [src/type/render/IRender.ts:42](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L42)
+Defined in: [src/type/render/IRender.ts:42](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/IRender.ts#L42)
 
 ステージ高さ
 
@@ -28,7 +28,7 @@ Defined in: [src/type/render/IRender.ts:42](https://github.com/amami-harhid/type
 
 > `readonly` **stageWidth**: `number`
 
-Defined in: [src/type/render/IRender.ts:38](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L38)
+Defined in: [src/type/render/IRender.ts:38](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/IRender.ts#L38)
 
 ステージ幅
 
@@ -38,7 +38,7 @@ Defined in: [src/type/render/IRender.ts:38](https://github.com/amami-harhid/type
 
 > **createDrawable**(`layer`): `number`
 
-Defined in: [src/type/render/IRender.ts:53](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L53)
+Defined in: [src/type/render/IRender.ts:53](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/IRender.ts#L53)
 
 Drawableを作成する
 
@@ -62,7 +62,7 @@ Drawableを作成する
 
 > **createRenderer**(`canvas`): `void`
 
-Defined in: [src/type/render/IRender.ts:47](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L47)
+Defined in: [src/type/render/IRender.ts:47](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/IRender.ts#L47)
 
 Rendererを作成する
 
@@ -82,7 +82,7 @@ Rendererを作成する
 
 > **stageResize**(`w?`, `h?`): `void`
 
-Defined in: [src/type/render/IRender.ts:34](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L34)
+Defined in: [src/type/render/IRender.ts:34](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/render/IRender.ts#L34)
 
 ステージをリサイズする
 

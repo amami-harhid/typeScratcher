@@ -1,6 +1,6 @@
 # Class: Render
 
-Defined in: [src/lib/render/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L9)
+Defined in: [src/lib/render/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L9)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/render/index.ts:9](https://github.com/amami-harhid/typeScra
 
 > **new Render**(): `Render`
 
-Defined in: [src/lib/render/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L53)
+Defined in: [src/lib/render/index.ts:53](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L53)
 
 #### Returns
 
@@ -20,7 +20,7 @@ Defined in: [src/lib/render/index.ts:53](https://github.com/amami-harhid/typeScr
 
 > **stageHeight**: `number` = `0`
 
-Defined in: [src/lib/render/index.ts:52](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L52)
+Defined in: [src/lib/render/index.ts:52](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L52)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/lib/render/index.ts:52](https://github.com/amami-harhid/typeScr
 
 > **stageWidth**: `number` = `0`
 
-Defined in: [src/lib/render/index.ts:51](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L51)
+Defined in: [src/lib/render/index.ts:51](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L51)
 
 ## Accessors
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/render/index.ts:51](https://github.com/amami-harhid/typeScr
 
 > **get** **renderer**(): [`IRenderWebGL`](../../../type/render/IRenderWebGL/interfaces/IRenderWebGL.md)
 
-Defined in: [src/lib/render/index.ts:98](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L98)
+Defined in: [src/lib/render/index.ts:98](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L98)
 
 Rendererを取得する
 
@@ -54,7 +54,7 @@ Rendererを取得する
 
 > **get** `static` **H**(): `number`
 
-Defined in: [src/lib/render/index.ts:45](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L45)
+Defined in: [src/lib/render/index.ts:45](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L45)
 
 ステージの縦ピクセル数(CSSピクセル)
 
@@ -70,7 +70,7 @@ Defined in: [src/lib/render/index.ts:45](https://github.com/amami-harhid/typeScr
 
 > **get** `static` **W**(): `number`
 
-Defined in: [src/lib/render/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L19)
+Defined in: [src/lib/render/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L19)
 
 ステージの横ピクセル数(CSSピクセル)
 
@@ -86,7 +86,7 @@ Defined in: [src/lib/render/index.ts:19](https://github.com/amami-harhid/typeScr
 
 > **get** `static` **WHRate**(): `number`
 
-Defined in: [src/lib/render/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L13)
+Defined in: [src/lib/render/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L13)
 
 ステージ縦横比(縦÷高さの率)
 
@@ -100,7 +100,7 @@ Defined in: [src/lib/render/index.ts:13](https://github.com/amami-harhid/typeScr
 
 > **createDrawable**(`layer`): `number`
 
-Defined in: [src/lib/render/index.ts:87](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L87)
+Defined in: [src/lib/render/index.ts:87](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L87)
 
 #### Parameters
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/render/index.ts:87](https://github.com/amami-harhid/typeScr
 
 > **createRenderer**(`canvas`): `void`
 
-Defined in: [src/lib/render/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L73)
+Defined in: [src/lib/render/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L73)
 
 Rendererを作成する
 
@@ -138,7 +138,7 @@ Rendererを作成する
 
 > **stageResize**(`w?`, `h?`): `void`
 
-Defined in: [src/lib/render/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/render/index.ts#L61)
+Defined in: [src/lib/render/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/render/index.ts#L61)
 
 ステージをリサイズする
 

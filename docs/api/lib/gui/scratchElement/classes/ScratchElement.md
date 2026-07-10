@@ -1,6 +1,6 @@
 # Class: ScratchElement
 
-Defined in: [src/lib/gui/scratchElement.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L19)
+Defined in: [src/lib/gui/scratchElement.ts:19](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L19)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/gui/scratchElement.ts:19](https://github.com/amami-harhid/t
 
 > `static` **RemakeCanvasWillReadFrequentlyTrue**: `HTMLCanvasElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L21)
+Defined in: [src/lib/gui/scratchElement.ts:21](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L21)
 
 ## Methods
 
@@ -26,7 +26,7 @@ Defined in: [src/lib/gui/scratchElement.ts:21](https://github.com/amami-harhid/t
 
 > `static` **changeToPauseMark**(`pauseMark`): `void`
 
-Defined in: [src/lib/gui/scratchElement.ts:161](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L161)
+Defined in: [src/lib/gui/scratchElement.ts:161](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L161)
 
 #### Parameters
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/gui/scratchElement.ts:161](https://github.com/amami-harhid/
 
 > `static` **changeToPauseMarkActive**(`pauseMark`): `void`
 
-Defined in: [src/lib/gui/scratchElement.ts:165](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L165)
+Defined in: [src/lib/gui/scratchElement.ts:165](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L165)
 
 #### Parameters
 
@@ -62,7 +62,7 @@ Defined in: [src/lib/gui/scratchElement.ts:165](https://github.com/amami-harhid/
 
 > `static` **changeToRestartMark**(`pauseMark`): `void`
 
-Defined in: [src/lib/gui/scratchElement.ts:169](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L169)
+Defined in: [src/lib/gui/scratchElement.ts:169](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L169)
 
 #### Parameters
 
@@ -80,7 +80,7 @@ Defined in: [src/lib/gui/scratchElement.ts:169](https://github.com/amami-harhid/
 
 > `static` **getControlPauseMark**(): `HTMLElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:154](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L154)
+Defined in: [src/lib/gui/scratchElement.ts:154](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L154)
 
 #### Returns
 
@@ -92,7 +92,7 @@ Defined in: [src/lib/gui/scratchElement.ts:154](https://github.com/amami-harhid/
 
 > `static` **getControlStopMark**(): `HTMLElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:147](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L147)
+Defined in: [src/lib/gui/scratchElement.ts:147](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L147)
 
 #### Returns
 
@@ -104,7 +104,7 @@ Defined in: [src/lib/gui/scratchElement.ts:147](https://github.com/amami-harhid/
 
 > `static` **getGreenFlag**(): `HTMLImageElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L23)
+Defined in: [src/lib/gui/scratchElement.ts:23](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L23)
 
 #### Returns
 
@@ -116,7 +116,7 @@ Defined in: [src/lib/gui/scratchElement.ts:23](https://github.com/amami-harhid/t
 
 > `static` **getHeader**(`main`): `HTMLDivElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:61](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L61)
+Defined in: [src/lib/gui/scratchElement.ts:61](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L61)
 
 #### Parameters
 
@@ -134,7 +134,7 @@ Defined in: [src/lib/gui/scratchElement.ts:61](https://github.com/amami-harhid/t
 
 > `static` **getMain**(): `HTMLDivElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:28](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L28)
+Defined in: [src/lib/gui/scratchElement.ts:28](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L28)
 
 #### Returns
 
@@ -146,7 +146,7 @@ Defined in: [src/lib/gui/scratchElement.ts:28](https://github.com/amami-harhid/t
 
 > `static` **getOverlay**(): `HTMLDivElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:43](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L43)
+Defined in: [src/lib/gui/scratchElement.ts:43](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L43)
 
 #### Returns
 
@@ -158,7 +158,7 @@ Defined in: [src/lib/gui/scratchElement.ts:43](https://github.com/amami-harhid/t
 
 > `static` **getScratchCanvas**(): `HTMLCanvasElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:124](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L124)
+Defined in: [src/lib/gui/scratchElement.ts:124](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L124)
 
 #### Returns
 
@@ -170,7 +170,7 @@ Defined in: [src/lib/gui/scratchElement.ts:124](https://github.com/amami-harhid/
 
 > `static` **getStageCanvasWrapper**(`main`): `HTMLDivElement`
 
-Defined in: [src/lib/gui/scratchElement.ts:113](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L113)
+Defined in: [src/lib/gui/scratchElement.ts:113](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L113)
 
 #### Parameters
 
@@ -188,7 +188,7 @@ Defined in: [src/lib/gui/scratchElement.ts:113](https://github.com/amami-harhid/
 
 > `static` **offsetChangePageToStage**(`pageX`, `pageY`): `object`
 
-Defined in: [src/lib/gui/scratchElement.ts:199](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L199)
+Defined in: [src/lib/gui/scratchElement.ts:199](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L199)
 
 ウィンドウ(Body)左上基準の座標をStage(Canvas)左上基準へ変換する
 
@@ -220,7 +220,7 @@ Defined in: [src/lib/gui/scratchElement.ts:199](https://github.com/amami-harhid/
 
 > `static` **pageToScratchStagePosition**(`pageX`, `pageY`): `object`
 
-Defined in: [src/lib/gui/scratchElement.ts:181](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/gui/scratchElement.ts#L181)
+Defined in: [src/lib/gui/scratchElement.ts:181](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/gui/scratchElement.ts#L181)
 
 ページ座標をScratchベースのステージ座標へ変換する
 Scratchベースなので、表示率を掛けている。

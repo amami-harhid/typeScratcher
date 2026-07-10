@@ -1,6 +1,6 @@
 # Class: SpriteMotion
 
-Defined in: [src/lib/entity/sprite/spriteMotion.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotion.ts#L13)
+Defined in: [src/lib/entity/sprite/spriteMotion.ts:13](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotion.ts#L13)
 
 スプライトの動き
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteMotion.ts:13](https://github.com/amami-
 
 > **new SpriteMotion**(`entity`): `SpriteMotion`
 
-Defined in: [src/lib/entity/sprite/spriteMotion.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotion.ts#L24)
+Defined in: [src/lib/entity/sprite/spriteMotion.ts:24](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotion.ts#L24)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteMotion.ts:24](https://github.com/amami-
 
 > **get** **direction**(): [`ISpriteMotionDirection`](../../../../../type/entity/sprite/ISpriteMotionDirection/interfaces/ISpriteMotionDirection.md)
 
-Defined in: [src/lib/entity/sprite/spriteMotion.ts:35](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotion.ts#L35)
+Defined in: [src/lib/entity/sprite/spriteMotion.ts:35](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotion.ts#L35)
 
 向き
 
@@ -58,7 +58,7 @@ Defined in: [src/lib/entity/sprite/spriteMotion.ts:35](https://github.com/amami-
 
 > **get** **move**(): [`ISpriteMotionMove`](../../../../../type/entity/sprite/ISpriteMotionMove/interfaces/ISpriteMotionMove.md)
 
-Defined in: [src/lib/entity/sprite/spriteMotion.ts:41](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotion.ts#L41)
+Defined in: [src/lib/entity/sprite/spriteMotion.ts:41](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotion.ts#L41)
 
 動き
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/entity/sprite/spriteMotion.ts:41](https://github.com/amami-
 
 > **get** **point**(): [`ISpriteMotionPoint`](../../../../../type/entity/sprite/ISpriteMotionPoint/interfaces/ISpriteMotionPoint.md)
 
-Defined in: [src/lib/entity/sprite/spriteMotion.ts:44](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotion.ts#L44)
+Defined in: [src/lib/entity/sprite/spriteMotion.ts:44](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotion.ts#L44)
 
 方向へ向く
 
@@ -98,7 +98,7 @@ Defined in: [src/lib/entity/sprite/spriteMotion.ts:44](https://github.com/amami-
 
 > **get** **position**(): [`ISpriteMotionPosition`](../../../../../type/entity/sprite/ISpriteMotionPosition/interfaces/ISpriteMotionPosition.md)
 
-Defined in: [src/lib/entity/sprite/spriteMotion.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotion.ts#L32)
+Defined in: [src/lib/entity/sprite/spriteMotion.ts:32](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotion.ts#L32)
 
 位置
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/entity/sprite/spriteMotion.ts:32](https://github.com/amami-
 
 > **get** **rotation**(): [`ISpriteMotionRotation`](../../../../../type/entity/sprite/ISpriteMotionRotation/interfaces/ISpriteMotionRotation.md)
 
-Defined in: [src/lib/entity/sprite/spriteMotion.ts:38](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotion.ts#L38)
+Defined in: [src/lib/entity/sprite/spriteMotion.ts:38](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/lib/entity/sprite/spriteMotion.ts#L38)
 
 回転
 

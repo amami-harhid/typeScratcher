@@ -1,6 +1,6 @@
 # Interface: SSound
 
-Defined in: [src/type/sound/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/sound/index.ts#L5)
+Defined in: [src/type/sound/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/sound/index.ts#L5)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/type/sound/index.ts:5](https://github.com/amami-harhid/typeScra
 
 > **new SSound**(`image`): [`ISound`](ISound.md)
 
-Defined in: [src/type/sound/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/sound/index.ts#L9)
+Defined in: [src/type/sound/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/sound/index.ts#L9)
 
 #### Parameters
 

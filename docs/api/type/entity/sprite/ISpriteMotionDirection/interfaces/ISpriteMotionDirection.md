@@ -1,6 +1,6 @@
 # Interface: ISpriteMotionDirection
 
-Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotionDirection.ts#L4)
+Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:4](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotionDirection.ts#L4)
 
 スプライトの動き（向き)
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:4](https://github.
 
 > **get** **degree**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotionDirection.ts#L9)
+Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:9](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotionDirection.ts#L9)
 
 向き
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:9](https://github.
 
 > **set** **degree**(`degree`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteMotionDirection.ts#L15)
+Defined in: [src/type/entity/sprite/ISpriteMotionDirection.ts:15](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/entity/sprite/ISpriteMotionDirection.ts#L15)
 
 向き
 

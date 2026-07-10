@@ -2,7 +2,7 @@
 
 > **TPenAttributes** = `object`
 
-Defined in: [src/type/pen/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/pen/index.ts#L5)
+Defined in: [src/type/pen/index.ts:5](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/pen/index.ts#L5)
 
 **`Internal`**
 
@@ -14,7 +14,7 @@ Pen Attributes
 
 > **color4f**: `number`[]
 
-Defined in: [src/type/pen/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/pen/index.ts#L7)
+Defined in: [src/type/pen/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/pen/index.ts#L7)
 
 ***
 
@@ -22,4 +22,4 @@ Defined in: [src/type/pen/index.ts:7](https://github.com/amami-harhid/typeScratc
 
 > `optional` **diameter?**: `number`
 
-Defined in: [src/type/pen/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/pen/index.ts#L6)
+Defined in: [src/type/pen/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/81dd88dfc378af938ad5c35a818e215da87a8798/src/type/pen/index.ts#L6)
