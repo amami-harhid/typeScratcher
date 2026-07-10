@@ -1,6 +1,6 @@
 # Interface: BaseStringProxy
 
-Defined in: [src/type/entity/monitor/monitoring.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L7)
+Defined in: [src/type/entity/monitor/monitoring.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/monitoring.ts#L7)
 
 ## Extended by
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:7](https://github.com/amami-h
 
 > **hide**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L11)
+Defined in: [src/type/entity/monitor/monitoring.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/monitoring.ts#L11)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:11](https://github.com/amami-
 
 > **show**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L10)
+Defined in: [src/type/entity/monitor/monitoring.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/monitoring.ts#L10)
 
 ***
 
@@ -28,6 +28,6 @@ Defined in: [src/type/entity/monitor/monitoring.ts:10](https://github.com/amami-
 
 > **text**: `string`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/monitoring.ts#L9)
+Defined in: [src/type/entity/monitor/monitoring.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/monitoring.ts#L9)
 
 変数(文字列)

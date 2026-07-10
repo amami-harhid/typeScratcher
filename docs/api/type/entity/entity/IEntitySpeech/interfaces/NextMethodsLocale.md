@@ -1,6 +1,6 @@
 # Interface: NextMethodsLocale
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L14)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L14)
 
 ## Methods
 
@@ -8,7 +8,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:14](https://github.com/amam
 
 > **speech**(`words`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:16](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L16)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L16)
 
 #### Parameters
 
@@ -26,7 +26,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:16](https://github.com/amam
 
 > **type**(`type`): [`NextMethodsType`](NextMethodsType.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L15)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L15)
 
 #### Parameters
 

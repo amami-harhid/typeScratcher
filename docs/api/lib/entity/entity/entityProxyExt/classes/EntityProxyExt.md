@@ -1,6 +1,6 @@
 # Class: EntityProxyExt
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L9)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L9)
 
 エンティティのプロキシ拡張
 
@@ -36,7 +36,7 @@ Defined in: node\_modules/@types/node/events.d.ts:54
 
 > `static` **GET\_STOP\_THIS\_SCRIPT\_SWITCH**: `string` = `"getStopThisScriptSwitch"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:19](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L19)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L19)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:19](https://github.com/amam
 
 > `static` **IS\_PROXY\_TEST**: `string` = `"isProxyTest"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L23)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L23)
 
 プロキシテスター
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:23](https://github.com/amam
 
 > `static` **PROP\_STOP\_THIS\_SCRIPT\_SWITCH**: `string` = `"stopThisScriptSwitch"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L20)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L20)
 
 ***
 
@@ -62,7 +62,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:20](https://github.com/amam
 
 > `static` **SET\_STOP\_THIS\_SCRIPT\_SWITCH**: `string` = `"setStopThisScriptSwitch"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L18)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L18)
 
 ***
 
@@ -70,7 +70,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:18](https://github.com/amam
 
 > `static` **STOP\_OTHER\_SCRIPTS**: `string` = `"stopOtherScripts"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L15)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L15)
 
 「他のスクリプトを削除する」メソッド名
 
@@ -80,7 +80,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:15](https://github.com/amam
 
 > `static` **STOP\_THIS\_SCRIPT\_SWITCH**: `string` = `"$stopThisScriptSwitch"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L17)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:17](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L17)
 
 「このスクリプトを停止」スイッチの名前
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:17](https://github.com/amam
 
 > `static` **THREAD\_COUNTER**: `string` = `"threadCounter"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:13](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L13)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L13)
 
 スレッドカウンター
 
@@ -100,7 +100,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:13](https://github.com/amam
 
 > `static` **THREAD\_ID**: `string` = `"threadId"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L11)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L11)
 
 スレッドＩＤ
 
@@ -110,7 +110,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:11](https://github.com/amam
 
 > `static` **THREAD\_NAME**: `string` = `"threadName"`
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:21](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L21)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L21)
 
 ## Methods
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/entity/entity/entityProxyExt.ts:21](https://github.com/amam
 
 > `static` **getProxy**(`obj`, `callback`): [`IEntityProxy`](../../../../../type/entity/entity/IEntityProxy/interfaces/IEntityProxy.md)
 
-Defined in: [src/lib/entity/entity/entityProxyExt.ts:27](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProxyExt.ts#L27)
+Defined in: [src/lib/entity/entity/entityProxyExt.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProxyExt.ts#L27)
 
 プロキシの定義
 

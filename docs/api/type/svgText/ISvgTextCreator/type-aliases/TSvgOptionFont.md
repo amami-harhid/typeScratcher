@@ -2,7 +2,7 @@
 
 > **TSvgOptionFont** = `object`
 
-Defined in: [src/type/svgText/ISvgTextCreator.ts:1](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/svgText/ISvgTextCreator.ts#L1)
+Defined in: [src/type/svgText/ISvgTextCreator.ts:1](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/ISvgTextCreator.ts#L1)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/svgText/ISvgTextCreator.ts:1](https://github.com/amami-har
 
 > **fontFamily**: `string`
 
-Defined in: [src/type/svgText/ISvgTextCreator.ts:2](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/svgText/ISvgTextCreator.ts#L2)
+Defined in: [src/type/svgText/ISvgTextCreator.ts:2](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/ISvgTextCreator.ts#L2)
 
 ***
 
@@ -18,4 +18,4 @@ Defined in: [src/type/svgText/ISvgTextCreator.ts:2](https://github.com/amami-har
 
 > **fontUrl**: `string`[]
 
-Defined in: [src/type/svgText/ISvgTextCreator.ts:3](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/svgText/ISvgTextCreator.ts#L3)
+Defined in: [src/type/svgText/ISvgTextCreator.ts:3](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/svgText/ISvgTextCreator.ts#L3)

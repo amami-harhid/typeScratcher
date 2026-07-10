@@ -2,7 +2,7 @@
 
 > **TBounds** = `object`
 
-Defined in: [src/type/common/typeCommon.ts:47](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L47)
+Defined in: [src/type/common/typeCommon.ts:47](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L47)
 
 上下左右の大きさ
 
@@ -16,7 +16,7 @@ Defined in: [src/type/common/typeCommon.ts:47](https://github.com/amami-harhid/t
 
 > **bottom**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:49](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L49)
+Defined in: [src/type/common/typeCommon.ts:49](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L49)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [src/type/common/typeCommon.ts:49](https://github.com/amami-harhid/t
 
 > **left**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:50](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L50)
+Defined in: [src/type/common/typeCommon.ts:50](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L50)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [src/type/common/typeCommon.ts:50](https://github.com/amami-harhid/t
 
 > **right**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:51](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L51)
+Defined in: [src/type/common/typeCommon.ts:51](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L51)
 
 ***
 
@@ -40,4 +40,4 @@ Defined in: [src/type/common/typeCommon.ts:51](https://github.com/amami-harhid/t
 
 > **top**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:48](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L48)
+Defined in: [src/type/common/typeCommon.ts:48](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L48)

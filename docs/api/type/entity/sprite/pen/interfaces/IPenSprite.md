@@ -1,6 +1,6 @@
 # Interface: IPenSprite
 
-Defined in: [src/type/entity/sprite/pen/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L7)
+Defined in: [src/type/entity/sprite/pen/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L7)
 
 **`Internal`**
 
@@ -12,7 +12,7 @@ PenSprite
 
 > `readonly` **HSVColor**: [`IPenSpriteHSVColor`](../IPenSpriteHSVColor/interfaces/IPenSpriteHSVColor.md)
 
-Defined in: [src/type/entity/sprite/pen/index.ts:49](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L49)
+Defined in: [src/type/entity/sprite/pen/index.ts:49](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L49)
 
 HSVカラー
 
@@ -22,7 +22,7 @@ HSVカラー
 
 > `readonly` **Size**: [`IPenSpriteSize`](../IPenSpriteSize/interfaces/IPenSpriteSize.md)
 
-Defined in: [src/type/entity/sprite/pen/index.ts:62](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L62)
+Defined in: [src/type/entity/sprite/pen/index.ts:62](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L62)
 
 サイズ
 
@@ -32,7 +32,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:62](https://github.com/amami-ha
 
 > **dispose**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L22)
+Defined in: [src/type/entity/sprite/pen/index.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L22)
 
 ペンを破棄する
 
@@ -46,7 +46,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:22](https://github.com/amami-ha
 
 > **drawBounds**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:66](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L66)
+Defined in: [src/type/entity/sprite/pen/index.ts:66](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L66)
 
 スプライトの矩形をラインで描く
 
@@ -60,7 +60,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:66](https://github.com/amami-ha
 
 > **isPenDown**(): `boolean`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:44](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L44)
+Defined in: [src/type/entity/sprite/pen/index.ts:44](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L44)
 
 ペンが下がっている判定
 
@@ -74,7 +74,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:44](https://github.com/amami-ha
 
 > **isPrepareDone**(): `boolean`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L27)
+Defined in: [src/type/entity/sprite/pen/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L27)
 
 ペン準備済
 
@@ -88,7 +88,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:27](https://github.com/amami-ha
 
 > **penClear**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L32)
+Defined in: [src/type/entity/sprite/pen/index.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L32)
 
 ペン描画をクリアする
 
@@ -102,7 +102,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:32](https://github.com/amami-ha
 
 > **penDown**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:40](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L40)
+Defined in: [src/type/entity/sprite/pen/index.ts:40](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L40)
 
 ペンを下げる
 
@@ -116,7 +116,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:40](https://github.com/amami-ha
 
 > **penUp**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:36](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L36)
+Defined in: [src/type/entity/sprite/pen/index.ts:36](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L36)
 
 ペンを上げる
 
@@ -130,7 +130,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:36](https://github.com/amami-ha
 
 > **prepare**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L17)
+Defined in: [src/type/entity/sprite/pen/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L17)
 
 ペンを準備する
 
@@ -144,7 +144,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:17](https://github.com/amami-ha
 
 > **stamp**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:54](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L54)
+Defined in: [src/type/entity/sprite/pen/index.ts:54](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L54)
 
 スタンプ
 
@@ -158,7 +158,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:54](https://github.com/amami-ha
 
 > **stampStage**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:58](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L58)
+Defined in: [src/type/entity/sprite/pen/index.ts:58](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L58)
 
 ステージをスタンプする
 
@@ -172,7 +172,7 @@ Defined in: [src/type/entity/sprite/pen/index.ts:58](https://github.com/amami-ha
 
 > **update**(): `void`
 
-Defined in: [src/type/entity/sprite/pen/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/pen/index.ts#L12)
+Defined in: [src/type/entity/sprite/pen/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/pen/index.ts#L12)
 
 更新
 

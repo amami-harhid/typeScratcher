@@ -1,6 +1,6 @@
 # Class: StageProperties
 
-Defined in: [src/lib/entity/stage/stageProperties.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageProperties.ts#L6)
+Defined in: [src/lib/entity/stage/stageProperties.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageProperties.ts#L6)
 
 プロパティ
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/stage/stageProperties.ts:6](https://github.com/amami
 
 > **new StageProperties**(`stage`): `StageProperties`
 
-Defined in: [src/lib/entity/stage/stageProperties.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageProperties.ts#L7)
+Defined in: [src/lib/entity/stage/stageProperties.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageProperties.ts#L7)
 
 #### Parameters
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/stage/stageProperties.ts:7](https://github.com/amami
 
 > **get** **degree**(): `number`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:68](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L68)
+Defined in: [src/lib/entity/entity/entityProperties.ts:68](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L68)
 
 角度
 
@@ -50,7 +50,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:68](https://github.com/am
 
 > **set** **degree**(`degree`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:71](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L71)
+Defined in: [src/lib/entity/entity/entityProperties.ts:71](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L71)
 
 角度
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:71](https://github.com/am
 
 > **get** **position**(): [`IPosition`](../../../../../type/entity/entity/IEntityProperties/interfaces/IPosition.md)
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:54](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L54)
+Defined in: [src/lib/entity/entity/entityProperties.ts:54](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L54)
 
 座標
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:54](https://github.com/am
 
 > **set** **position**(`pos`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:57](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L57)
+Defined in: [src/lib/entity/entity/entityProperties.ts:57](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L57)
 
 座標
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:57](https://github.com/am
 
 > **get** **rotationStyle**(): [`RotationValue`](../../../../../type/entity/RotationStyle/type-aliases/RotationValue.md)
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:81](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L81)
+Defined in: [src/lib/entity/entity/entityProperties.ts:81](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L81)
 
 回転方法
 
@@ -130,7 +130,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:81](https://github.com/am
 
 > **set** **rotationStyle**(`style`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:84](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L84)
+Defined in: [src/lib/entity/entity/entityProperties.ts:84](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L84)
 
 回転方法
 
@@ -158,7 +158,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:84](https://github.com/am
 
 > **get** **scale**(): [`Scale`](../../../entity/entityProperties/classes/Scale.md)
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:61](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L61)
+Defined in: [src/lib/entity/entity/entityProperties.ts:61](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L61)
 
 スケール
 
@@ -170,7 +170,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:61](https://github.com/am
 
 > **set** **scale**(`size`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:64](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L64)
+Defined in: [src/lib/entity/entity/entityProperties.ts:64](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L64)
 
 スケール
 
@@ -198,7 +198,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:64](https://github.com/am
 
 > **get** **visible**(): `boolean`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:75](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L75)
+Defined in: [src/lib/entity/entity/entityProperties.ts:75](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L75)
 
 表示・非表示
 
@@ -210,7 +210,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:75](https://github.com/am
 
 > **set** **visible**(`visible`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:78](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L78)
+Defined in: [src/lib/entity/entity/entityProperties.ts:78](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L78)
 
 表示・非表示
 
@@ -236,7 +236,7 @@ Defined in: [src/lib/entity/entity/entityProperties.ts:78](https://github.com/am
 
 > **update**(): `void`
 
-Defined in: [src/lib/entity/stage/stageProperties.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageProperties.ts#L10)
+Defined in: [src/lib/entity/stage/stageProperties.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageProperties.ts#L10)
 
 プロパティをレンダラーへ反映
 
@@ -254,7 +254,7 @@ Defined in: [src/lib/entity/stage/stageProperties.ts:10](https://github.com/amam
 
 > **updateDrawableProperties**(`prop`): `void`
 
-Defined in: [src/lib/entity/entity/entityProperties.ts:90](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityProperties.ts#L90)
+Defined in: [src/lib/entity/entity/entityProperties.ts:90](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityProperties.ts#L90)
 
 プロパティをレンダラーへ反映
 

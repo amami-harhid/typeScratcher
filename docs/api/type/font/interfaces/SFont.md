@@ -1,6 +1,6 @@
 # Interface: SFont
 
-Defined in: [src/type/font/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/font/index.ts#L19)
+Defined in: [src/type/font/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L19)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/type/font/index.ts:19](https://github.com/amami-harhid/typeScra
 
 > **new SFont**(`font`): [`IFont`](IFont.md)
 
-Defined in: [src/type/font/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/font/index.ts#L23)
+Defined in: [src/type/font/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/index.ts#L23)
 
 #### Parameters
 

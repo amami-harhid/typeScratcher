@@ -1,6 +1,6 @@
 # Interface: ISpriteLooks
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L10)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L10)
 
 Sprite Looks(見た目)
 
@@ -14,7 +14,7 @@ Sprite Looks(見た目)
 
 > `readonly` **backdrop**: [`IEntityLooksBackdrop`](../../../entity/IEntityLooksBackdrop/interfaces/IEntityLooksBackdrop.md)
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L18)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L18)
 
 背景を操作する
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooks.ts:18](https://github.com/amami
 
 > `readonly` **bubble**: [`ISpriteLooksBubble`](../../ISpriteLooksBubble/interfaces/ISpriteLooksBubble.md)
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:35](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L35)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:35](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L35)
 
 フキダシ
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooks.ts:35](https://github.com/amami
 
 > `readonly` **costume**: [`ISpriteLooksCostume`](../../ISpriteLooksCostume/interfaces/ISpriteLooksCostume.md)
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L14)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L14)
 
 コスチュームを操作する
 
@@ -44,7 +44,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooks.ts:14](https://github.com/amami
 
 > `readonly` **effect**: [`IEntityEffect`](../../../entity/IEntityEffect/interfaces/IEntityEffect.md)
 
-Defined in: [src/type/entity/entity/IEntityLooks.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityLooks.ts#L7)
+Defined in: [src/type/entity/entity/IEntityLooks.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityLooks.ts#L7)
 
 #### Inherited from
 
@@ -56,7 +56,7 @@ Defined in: [src/type/entity/entity/IEntityLooks.ts:7](https://github.com/amami-
 
 > `readonly` **layer**: [`ISpriteLayer`](../../ISpriteLayer/interfaces/ISpriteLayer.md)
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:30](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L30)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:30](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L30)
 
 階層
 
@@ -68,7 +68,7 @@ Layer
 
 > `readonly` **size**: [`ISpriteLooksSize`](../../ISpriteLooksSize/interfaces/ISpriteLooksSize.md)
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L23)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L23)
 
 サイズ
 
@@ -78,7 +78,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooks.ts:23](https://github.com/amami
 
 > **hide**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:44](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L44)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:44](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L44)
 
 隠す
 
@@ -92,7 +92,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooks.ts:44](https://github.com/amami
 
 > **show**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooks.ts:40](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooks.ts#L40)
+Defined in: [src/type/entity/sprite/ISpriteLooks.ts:40](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooks.ts#L40)
 
 表示する
 

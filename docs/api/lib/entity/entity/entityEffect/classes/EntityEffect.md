@@ -1,6 +1,6 @@
 # Class: EntityEffect
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityEffect.ts#L7)
+Defined in: [src/lib/entity/entity/entityEffect.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityEffect.ts#L7)
 
 効果
 
@@ -19,7 +19,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:7](https://github.com/amami-h
 
 > **new EntityEffect**(`entity`): `EntityEffect`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:16](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityEffect.ts#L16)
+Defined in: [src/lib/entity/entity/entityEffect.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityEffect.ts#L16)
 
 **`Internal`**
 
@@ -43,7 +43,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:16](https://github.com/amami-
 
 > **set** **effect**(`_effect`): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:21](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityEffect.ts#L21)
+Defined in: [src/lib/entity/entity/entityEffect.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityEffect.ts#L21)
 
 ##### Parameters
 
@@ -61,7 +61,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:21](https://github.com/amami-
 
 > **change**(`effective`, `value`): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityEffect.ts#L32)
+Defined in: [src/lib/entity/entity/entityEffect.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityEffect.ts#L32)
 
 イメージ効果を指定量だけ変える。
 
@@ -93,7 +93,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:32](https://github.com/amami-
 
 > **clear**(): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:89](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityEffect.ts#L89)
+Defined in: [src/lib/entity/entity/entityEffect.ts:89](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityEffect.ts#L89)
 
 イメージ効果をクリアする（初期値に戻す）
 
@@ -111,7 +111,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:89](https://github.com/amami-
 
 > **get**(): [`TEntityEffects`](../../../../../type/entity/entity/TEntityOptions/type-aliases/TEntityEffects.md)
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:24](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityEffect.ts#L24)
+Defined in: [src/lib/entity/entity/entityEffect.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityEffect.ts#L24)
 
 イメージ効果
 
@@ -129,7 +129,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:24](https://github.com/amami-
 
 > **set**(`effective`, `value`): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:69](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/entityEffect.ts#L69)
+Defined in: [src/lib/entity/entity/entityEffect.ts:69](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/entityEffect.ts#L69)
 
 イメージ効果を指定量にする。
 

@@ -40,7 +40,7 @@
   background-color: #202020 !important;
 }
 
-.name[data-v-72cc4481], .text[data-v-72cc4481] {
+h1.heading > .name, h1.heading > text {
 
     max-width: 90%;
 }
@@ -48,5 +48,5 @@
 img {
     display: block; 
     margin: auto;
-    height: 200px;
+    width: 100%;
 }

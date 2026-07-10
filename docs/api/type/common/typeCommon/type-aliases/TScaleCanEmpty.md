@@ -2,7 +2,7 @@
 
 > **TScaleCanEmpty** = `object`
 
-Defined in: [src/type/common/typeCommon.ts:19](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L19)
+Defined in: [src/type/common/typeCommon.ts:19](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L19)
 
 スケール
 
@@ -12,7 +12,7 @@ Defined in: [src/type/common/typeCommon.ts:19](https://github.com/amami-harhid/t
 
 > `optional` **h?**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:21](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L21)
+Defined in: [src/type/common/typeCommon.ts:21](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L21)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: [src/type/common/typeCommon.ts:21](https://github.com/amami-harhid/t
 
 > `optional` **w?**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L20)
+Defined in: [src/type/common/typeCommon.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L20)

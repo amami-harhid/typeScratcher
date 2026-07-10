@@ -2,7 +2,7 @@
 
 > **svgTextCreator2**(`texts`, `fontSize?`, `fontStyle?`, `color?`, `fontFamily?`): `string`
 
-Defined in: [src/lib/svgText/svgTextCreator.ts:53](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/svgText/svgTextCreator.ts#L53)
+Defined in: [src/lib/svgText/svgTextCreator.ts:53](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/svgText/svgTextCreator.ts#L53)
 
 SVG テキスト
 

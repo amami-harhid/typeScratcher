@@ -1,6 +1,6 @@
 # Interface: ISpriteDragMode
 
-Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:4](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteDragMode.ts#L4)
+Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteDragMode.ts#L4)
 
 DragMode
 
@@ -12,7 +12,7 @@ DragMode
 
 > **get** **draggable**(): `boolean`
 
-Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:12](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteDragMode.ts#L12)
+Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteDragMode.ts#L12)
 
 ドラッグ可能
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:12](https://github.com/am
 
 > **set** **draggable**(`draggable`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteDragMode.ts#L17)
+Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:17](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteDragMode.ts#L17)
 
 ドラッグ可能
 
@@ -46,7 +46,7 @@ Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:17](https://github.com/am
 
 > **get** **dragging**(): `boolean`
 
-Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteDragMode.ts#L8)
+Defined in: [src/type/entity/sprite/ISpriteDragMode.ts:8](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteDragMode.ts#L8)
 
 ドラッグ中
 

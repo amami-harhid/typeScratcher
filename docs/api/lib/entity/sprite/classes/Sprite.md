@@ -1,6 +1,6 @@
 # Class: Sprite
 
-Defined in: [src/lib/entity/sprite/index.ts:35](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L35)
+Defined in: [src/lib/entity/sprite/index.ts:35](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L35)
 
 Sprite
 
@@ -18,7 +18,7 @@ Sprite
 
 > **new Sprite**(`name`): `Sprite`
 
-Defined in: [src/lib/entity/sprite/index.ts:52](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L52)
+Defined in: [src/lib/entity/sprite/index.ts:52](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L52)
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Defined in: [src/lib/entity/sprite/index.ts:52](https://github.com/amami-harhid/
 
 > **drawableID**: `number` = `-1`
 
-Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L34)
+Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L34)
 
 #### Inherited from
 
@@ -52,7 +52,7 @@ Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/
 
 > **id**: `string`
 
-Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L33)
+Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L33)
 
 #### Inherited from
 
@@ -66,7 +66,7 @@ Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/
 
 > **get** **$fonts**(): [`IFont`](../../../../type/font/interfaces/IFont.md)[]
 
-Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L73)
+Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L73)
 
 ##### Returns
 
@@ -84,7 +84,7 @@ Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/
 
 > **get** **$image**(): [`IEntityImage`](../../../../type/entity/entity/IEntityImage/interfaces/IEntityImage.md)
 
-Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L67)
+Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L67)
 
 ##### Returns
 
@@ -102,7 +102,7 @@ Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/
 
 > **get** **$images**(): [`IImage`](../../../../type/image/interfaces/IImage.md)[]
 
-Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L70)
+Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L70)
 
 ##### Returns
 
@@ -120,7 +120,7 @@ Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/
 
 > **get** **Broadcast**(): [`IEntityBroadCast`](../../../../type/entity/entity/IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L76)
+Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L76)
 
 メッセージ送受信
 
@@ -146,7 +146,7 @@ Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/
 
 > **get** **clones**(): [`ISprite`](../../../../type/entity/sprite/interfaces/ISprite.md)[]
 
-Defined in: [src/lib/entity/sprite/index.ts:101](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L101)
+Defined in: [src/lib/entity/sprite/index.ts:101](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L101)
 
 ##### Returns
 
@@ -160,7 +160,7 @@ Defined in: [src/lib/entity/sprite/index.ts:101](https://github.com/amami-harhid
 
 > **get** **Control**(): [`ISpriteControl`](../../../../type/entity/sprite/ISpriteControl/interfaces/ISpriteControl.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L85)
+Defined in: [src/lib/entity/sprite/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L85)
 
 制御
 
@@ -182,7 +182,7 @@ Defined in: [src/lib/entity/sprite/index.ts:85](https://github.com/amami-harhid/
 
 > **get** **Costume**(): [`ISpriteCostume`](../../../../type/entity/sprite/ISpriteCostume/interfaces/ISpriteCostume.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L76)
+Defined in: [src/lib/entity/sprite/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L76)
 
 コスチューム番号、コスチューム名を取り出すためのオブジェクト
 使用例：this.Costume.no, this.Costume.name
@@ -206,7 +206,7 @@ Defined in: [src/lib/entity/sprite/index.ts:76](https://github.com/amami-harhid/
 
 > **get** **DragMode**(): [`SpriteDragMode`](../spriteDragMode/classes/SpriteDragMode.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:92](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L92)
+Defined in: [src/lib/entity/sprite/index.ts:92](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L92)
 
 DragModeを設定するためのオブジェクト
 
@@ -228,7 +228,7 @@ DragModeを設定するためのオブジェクト
 
 > **get** **Event**(): [`ISpriteEvent`](../../../../type/entity/sprite/ISpriteEvent/interfaces/ISpriteEvent.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:89](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L89)
+Defined in: [src/lib/entity/sprite/index.ts:89](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L89)
 
 イベント
 
@@ -250,7 +250,7 @@ Defined in: [src/lib/entity/sprite/index.ts:89](https://github.com/amami-harhid/
 
 > **get** **isAlive**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L91)
+Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L91)
 
 ##### Returns
 
@@ -260,7 +260,7 @@ Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/
 
 > **set** **isAlive**(`isAlive`): `void`
 
-Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L94)
+Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L94)
 
 ##### Parameters
 
@@ -284,7 +284,7 @@ Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/
 
 > **get** **isClone**(): `boolean`
 
-Defined in: [src/lib/entity/sprite/index.ts:104](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L104)
+Defined in: [src/lib/entity/sprite/index.ts:104](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L104)
 
 ##### Returns
 
@@ -294,7 +294,7 @@ Defined in: [src/lib/entity/sprite/index.ts:104](https://github.com/amami-harhid
 
 > **set** **isClone**(`isClone`): `void`
 
-Defined in: [src/lib/entity/sprite/index.ts:107](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L107)
+Defined in: [src/lib/entity/sprite/index.ts:107](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L107)
 
 ##### Parameters
 
@@ -314,7 +314,7 @@ Defined in: [src/lib/entity/sprite/index.ts:107](https://github.com/amami-harhid
 
 > **get** **isSprite**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L88)
+Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L88)
 
 ##### Returns
 
@@ -332,7 +332,7 @@ Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/
 
 > **get** **Looks**(): [`ISpriteLooks`](../../../../type/entity/sprite/ISpriteLooks/interfaces/ISpriteLooks.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L82)
+Defined in: [src/lib/entity/sprite/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L82)
 
 見た目
 
@@ -354,7 +354,7 @@ Defined in: [src/lib/entity/sprite/index.ts:82](https://github.com/amami-harhid/
 
 > **get** **Motion**(): [`ISpriteMotion`](../../../../type/entity/sprite/ISpriteMotion/interfaces/ISpriteMotion.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L79)
+Defined in: [src/lib/entity/sprite/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L79)
 
 動き
 
@@ -376,7 +376,7 @@ Defined in: [src/lib/entity/sprite/index.ts:79](https://github.com/amami-harhid/
 
 > **get** **mouse**(): [`TMouse`](../../../../type/mouse/type-aliases/TMouse.md)
 
-Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L85)
+Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L85)
 
 ##### Returns
 
@@ -394,7 +394,7 @@ Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L61)
+Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L61)
 
 スプライト名
 
@@ -420,7 +420,7 @@ Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/
 
 > **get** **parent**(): [`ISprite`](../../../../type/entity/sprite/interfaces/ISprite.md) \| `undefined`
 
-Defined in: [src/lib/entity/sprite/index.ts:110](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L110)
+Defined in: [src/lib/entity/sprite/index.ts:110](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L110)
 
 ##### Returns
 
@@ -430,7 +430,7 @@ Defined in: [src/lib/entity/sprite/index.ts:110](https://github.com/amami-harhid
 
 > **set** **parent**(`parent`): `void`
 
-Defined in: [src/lib/entity/sprite/index.ts:113](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L113)
+Defined in: [src/lib/entity/sprite/index.ts:113](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L113)
 
 ##### Parameters
 
@@ -450,7 +450,7 @@ Defined in: [src/lib/entity/sprite/index.ts:113](https://github.com/amami-harhid
 
 > **get** **Pen**(): [`PenSprite`](../pen/classes/PenSprite.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:98](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L98)
+Defined in: [src/lib/entity/sprite/index.ts:98](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L98)
 
 PEN
 
@@ -472,7 +472,7 @@ PEN
 
 > **get** **Properties**(): [`IEntityProperties`](../../../../type/entity/entity/IEntityProperties/interfaces/IEntityProperties.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L73)
+Defined in: [src/lib/entity/sprite/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L73)
 
 ##### Returns
 
@@ -486,7 +486,7 @@ Defined in: [src/lib/entity/sprite/index.ts:73](https://github.com/amami-harhid/
 
 > **get** **render**(): [`Render`](../../../render/classes/Render.md)
 
-Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L64)
+Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L64)
 
 ##### Returns
 
@@ -504,7 +504,7 @@ Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/
 
 > **get** **Sensing**(): [`ISpriteSensing`](../../../../type/entity/sprite/ISpriteSensing/interfaces/ISpriteSensing.md)
 
-Defined in: [src/lib/entity/sprite/index.ts:95](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L95)
+Defined in: [src/lib/entity/sprite/index.ts:95](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L95)
 
 調べる
 
@@ -526,7 +526,7 @@ Defined in: [src/lib/entity/sprite/index.ts:95](https://github.com/amami-harhid/
 
 > **get** **Sound**(): [`IEntitySound`](../../../../type/entity/entity/IEntitySound/interfaces/IEntitySound.md)
 
-Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L79)
+Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L79)
 
 サウンド
 
@@ -552,7 +552,7 @@ Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/
 
 > **get** **SOUND\_FORCE\_STOP**(): `string`
 
-Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L27)
+Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L27)
 
 ##### Returns
 
@@ -570,7 +570,7 @@ Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/
 
 > **get** **Speech**(): [`IEntitySpeech`](../../../../type/entity/entity/IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L82)
+Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L82)
 
 スピーチ
 
@@ -594,7 +594,7 @@ Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/
 
 > **createDrawable**(`layer`): `void`
 
-Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L56)
+Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L56)
 
 #### Parameters
 
@@ -616,7 +616,7 @@ Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/
 
 > **imageLoadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L97)
+Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L97)
 
 #### Returns
 
@@ -632,7 +632,7 @@ Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/
 
 > **init**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/index.ts:116](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L116)
+Defined in: [src/lib/entity/sprite/index.ts:116](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L116)
 
 #### Returns
 
@@ -644,7 +644,7 @@ Defined in: [src/lib/entity/sprite/index.ts:116](https://github.com/amami-harhid
 
 > **loadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/entity/index.ts#L105)
+Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/entity/index.ts#L105)
 
 #### Returns
 
@@ -660,7 +660,7 @@ Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid
 
 > **makeClone**(`name`): `Sprite`
 
-Defined in: [src/lib/entity/sprite/index.ts:191](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L191)
+Defined in: [src/lib/entity/sprite/index.ts:191](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L191)
 
 SpriteControl.clone()内で使われる
 クローンインスタンス作成メソッド
@@ -682,7 +682,7 @@ SpriteControl.clone()内で使われる
 
 > **update**(): `void`
 
-Defined in: [src/lib/entity/sprite/index.ts:169](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/index.ts#L169)
+Defined in: [src/lib/entity/sprite/index.ts:169](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/index.ts#L169)
 
 #### Returns
 

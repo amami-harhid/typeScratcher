@@ -1,6 +1,6 @@
 # Class: SpriteSensingDistance
 
-Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:8](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingDistance.ts#L8)
+Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:8](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteSensingDistance.ts#L8)
 
 距離
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:8](https://github.co
 
 > **new SpriteSensingDistance**(`entity`): `SpriteSensingDistance`
 
-Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingDistance.ts#L15)
+Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteSensingDistance.ts#L15)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:15](https://github.c
 
 > **mousePointer**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingDistance.ts#L22)
+Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteSensingDistance.ts#L22)
 
 マウスカーソルとの距離
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:22](https://github.c
 
 > **to**(`targetSprite`): `number`
 
-Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:42](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteSensingDistance.ts#L42)
+Defined in: [src/lib/entity/sprite/spriteSensingDistance.ts:42](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteSensingDistance.ts#L42)
 
 他スプライトとの距離(中心同士の距離)
 

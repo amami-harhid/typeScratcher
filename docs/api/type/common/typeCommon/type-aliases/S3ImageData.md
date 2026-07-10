@@ -2,7 +2,7 @@
 
 > **S3ImageData** = `object`
 
-Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L65)
+Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L65)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/t
 
 > **data**: `string` \| `HTMLImageElement`
 
-Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L65)
+Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L65)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/t
 
 > **name**: `string`
 
-Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L65)
+Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L65)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/t
 
 > **skinId**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/common/typeCommon.ts#L65)
+Defined in: [src/type/common/typeCommon.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/common/typeCommon.ts#L65)

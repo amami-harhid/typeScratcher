@@ -1,6 +1,6 @@
 # Class: StageControl
 
-Defined in: [src/lib/entity/stage/stageControl.ts:14](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L14)
+Defined in: [src/lib/entity/stage/stageControl.ts:14](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L14)
 
 Stage Control(制御)
 
@@ -14,7 +14,7 @@ Stage Control(制御)
 
 > **new StageControl**(`entity`): `StageControl`
 
-Defined in: [src/lib/entity/stage/stageControl.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L20)
+Defined in: [src/lib/entity/stage/stageControl.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L20)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/stage/stageControl.ts:20](https://github.com/amami-h
 
 > **stopAll**(): `void`
 
-Defined in: [src/lib/entity/stage/stageControl.ts:66](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L66)
+Defined in: [src/lib/entity/stage/stageControl.ts:66](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L66)
 
 全てのスプライトの動作を停止する
 クローンや他のスプライトを含めてすべてのスクリプトが停止する。
@@ -55,7 +55,7 @@ Defined in: [src/lib/entity/stage/stageControl.ts:66](https://github.com/amami-h
 
 > **stopOtherScripts**(): `void`
 
-Defined in: [src/lib/entity/stage/stageControl.ts:83](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L83)
+Defined in: [src/lib/entity/stage/stageControl.ts:83](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L83)
 
 このスプライトの他のスクリプトを停止する
 親スプライトから派生したクローンを含めて、同じスプライトであるとみなすので、
@@ -77,7 +77,7 @@ Defined in: [src/lib/entity/stage/stageControl.ts:83](https://github.com/amami-h
 
 > **stopThisScript**(): `void`
 
-Defined in: [src/lib/entity/stage/stageControl.ts:72](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L72)
+Defined in: [src/lib/entity/stage/stageControl.ts:72](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L72)
 
 このスクリプトを停止する
 
@@ -95,7 +95,7 @@ Defined in: [src/lib/entity/stage/stageControl.ts:72](https://github.com/amami-h
 
 > **wait**(`sec`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/stage/stageControl.ts:27](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L27)
+Defined in: [src/lib/entity/stage/stageControl.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L27)
 
 指定秒数分、待つ。
 
@@ -119,7 +119,7 @@ Defined in: [src/lib/entity/stage/stageControl.ts:27](https://github.com/amami-h
 
 > **waitUntil**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/stage/stageControl.ts:43](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L43)
+Defined in: [src/lib/entity/stage/stageControl.ts:43](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L43)
 
 条件が成立する迄、待つ。
 ```ts
@@ -154,7 +154,7 @@ await this.Control.waitUntil(condition);
 
 > **waitWhile**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/stage/stageControl.ts:59](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/stage/stageControl.ts#L59)
+Defined in: [src/lib/entity/stage/stageControl.ts:59](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/stage/stageControl.ts#L59)
 
 条件が成立する間、待つ。
 ```ts

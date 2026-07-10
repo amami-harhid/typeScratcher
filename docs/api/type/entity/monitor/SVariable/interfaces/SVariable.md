@@ -1,6 +1,6 @@
 # Interface: SVariable
 
-Defined in: [src/type/entity/monitor/SVariable.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/SVariable.ts#L6)
+Defined in: [src/type/entity/monitor/SVariable.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/SVariable.ts#L6)
 
 変数格納プロキシ生成
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/monitor/SVariable.ts:6](https://github.com/amami-ha
 
 > **monitoring**(`variable`): `void`
 
-Defined in: [src/type/entity/monitor/SVariable.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/SVariable.ts#L23)
+Defined in: [src/type/entity/monitor/SVariable.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/SVariable.ts#L23)
 
 モニタリングする
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/monitor/SVariable.ts:23](https://github.com/amami-h
 
 > **number**(`value`): [`NumberProxy`](../../monitoring/interfaces/NumberProxy.md)
 
-Defined in: [src/type/entity/monitor/SVariable.ts:12](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/SVariable.ts#L12)
+Defined in: [src/type/entity/monitor/SVariable.ts:12](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/SVariable.ts#L12)
 
 数値プロキシ生成
 
@@ -50,7 +50,7 @@ Defined in: [src/type/entity/monitor/SVariable.ts:12](https://github.com/amami-h
 
 > **reposition**(): `void`
 
-Defined in: [src/type/entity/monitor/SVariable.ts:28](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/SVariable.ts#L28)
+Defined in: [src/type/entity/monitor/SVariable.ts:28](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/SVariable.ts#L28)
 
 表示中のモニター枠を再配置する
 
@@ -64,7 +64,7 @@ Defined in: [src/type/entity/monitor/SVariable.ts:28](https://github.com/amami-h
 
 > **string**(`text`): [`StringProxy`](../../monitoring/interfaces/StringProxy.md)
 
-Defined in: [src/type/entity/monitor/SVariable.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/monitor/SVariable.ts#L17)
+Defined in: [src/type/entity/monitor/SVariable.ts:17](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/monitor/SVariable.ts#L17)
 
 文字列プロキシ生成
 

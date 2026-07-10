@@ -1,6 +1,6 @@
 # Class: Color
 
-Defined in: [src/lib/utils/color.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L6)
+Defined in: [src/lib/utils/color.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L6)
 
 ## Constructors
 
@@ -20,7 +20,7 @@ Defined in: [src/lib/utils/color.ts:6](https://github.com/amami-harhid/typeScrat
 
 > **get** `static` **RGB\_BLACK**(): [`RGBObject`](../type-aliases/RGBObject.md)
 
-Defined in: [src/lib/utils/color.ts:22](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L22)
+Defined in: [src/lib/utils/color.ts:22](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L22)
 
 ##### Returns
 
@@ -34,7 +34,7 @@ Defined in: [src/lib/utils/color.ts:22](https://github.com/amami-harhid/typeScra
 
 > **get** `static` **RGB\_WHITE**(): [`RGBObject`](../type-aliases/RGBObject.md)
 
-Defined in: [src/lib/utils/color.ts:27](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L27)
+Defined in: [src/lib/utils/color.ts:27](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L27)
 
 ##### Returns
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/utils/color.ts:27](https://github.com/amami-harhid/typeScra
 
 > `static` **decimalToHex**(`decimal`): `string`
 
-Defined in: [src/lib/utils/color.ts:36](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L36)
+Defined in: [src/lib/utils/color.ts:36](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L36)
 
 Convert a Scratch decimal color to a hex string, #RRGGBB.
 
@@ -70,7 +70,7 @@ RGB color as #RRGGBB hex string.
 
 > `static` **decimalToRgb**(`decimal`): [`RGBObject`](../type-aliases/RGBObject.md)
 
-Defined in: [src/lib/utils/color.ts:50](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L50)
+Defined in: [src/lib/utils/color.ts:50](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L50)
 
 Convert a Scratch decimal color to an RGB color object.
 
@@ -94,7 +94,7 @@ rgb - {r: red [0,255], g: green [0,255], b: blue [0,255]}.
 
 > `static` **hexToDecimal**(`hex`): `number`
 
-Defined in: [src/lib/utils/color.ts:99](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L99)
+Defined in: [src/lib/utils/color.ts:99](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L99)
 
 Convert a hex color (e.g., F00, #03F, #0033FF) to a decimal color number.
 
@@ -118,7 +118,7 @@ Number representing the color.
 
 > `static` **hexToRgb**(`hex`): `object`
 
-Defined in: [src/lib/utils/color.ts:65](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L65)
+Defined in: [src/lib/utils/color.ts:65](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L65)
 
 Convert a hex color (e.g., F00, #03F, #0033FF) to an RGB color object.
 CC-BY-SA Tim Down:
@@ -156,7 +156,7 @@ null on failure, or rgb: {r: red [0,255], g: green [0,255], b: blue [0,255]}.
 
 > `static` **hsv2rgb**(`hsv`): `object`
 
-Defined in: [src/lib/utils/color.ts:107](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L107)
+Defined in: [src/lib/utils/color.ts:107](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L107)
 
 Convert hsv to rgb
 
@@ -198,7 +198,7 @@ Convert hsv to rgb
 
 > `static` **mixRgb**(`rgb0`, `rgb1`, `fraction1`): [`RGBObject`](../type-aliases/RGBObject.md)
 
-Defined in: [src/lib/utils/color.ts:161](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L161)
+Defined in: [src/lib/utils/color.ts:161](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L161)
 
 Linear interpolation between rgb0 and rgb1.
 
@@ -234,7 +234,7 @@ the interpolated color.
 
 > `static` **rgbToDecimal**(`rgb`): `number`
 
-Defined in: [src/lib/utils/color.ts:90](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L90)
+Defined in: [src/lib/utils/color.ts:90](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L90)
 
 Convert an RGB color object to a Scratch decimal color.
 
@@ -258,7 +258,7 @@ Number representing the color.
 
 > `static` **rgbToHex**(`rgb`): `string`
 
-Defined in: [src/lib/utils/color.ts:81](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L81)
+Defined in: [src/lib/utils/color.ts:81](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L81)
 
 Convert an RGB color object to a hex color.
 
@@ -282,7 +282,7 @@ Hex representation of the color.
 
 > `static` **rgbToHsv**(`rgb`): [`HSVObject`](../type-aliases/HSVObject.md)
 
-Defined in: [src/lib/utils/color.ts:134](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/color.ts#L134)
+Defined in: [src/lib/utils/color.ts:134](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/color.ts#L134)
 
 Convert an RGB color to HSV format.
 

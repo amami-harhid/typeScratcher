@@ -1,6 +1,6 @@
 # Class: SpriteMotionDirection
 
-Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:4](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionDirection.ts#L4)
+Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:4](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionDirection.ts#L4)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:4](https://github.co
 
 > **new SpriteMotionDirection**(`entity`): `SpriteMotionDirection`
 
-Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:10](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionDirection.ts#L10)
+Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:10](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionDirection.ts#L10)
 
 **`Internal`**
 
@@ -32,7 +32,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:10](https://github.c
 
 > **get** **degree**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:17](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionDirection.ts#L17)
+Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:17](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionDirection.ts#L17)
 
 向き
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:17](https://github.c
 
 > **set** **degree**(`degree`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:24](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionDirection.ts#L24)
+Defined in: [src/lib/entity/sprite/spriteMotionDirection.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionDirection.ts#L24)
 
 向き
 

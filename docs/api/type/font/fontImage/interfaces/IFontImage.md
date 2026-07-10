@@ -1,6 +1,6 @@
 # Interface: IFontImage
 
-Defined in: [src/type/font/fontImage.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/font/fontImage.ts#L9)
+Defined in: [src/type/font/fontImage.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/fontImage.ts#L9)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [src/type/font/fontImage.ts:9](https://github.com/amami-harhid/typeS
 
 > **name**: `string`
 
-Defined in: [src/type/image/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/image/index.ts#L34)
+Defined in: [src/type/image/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/image/index.ts#L34)
 
 #### Inherited from
 
@@ -24,7 +24,7 @@ Defined in: [src/type/image/index.ts:34](https://github.com/amami-harhid/typeScr
 
 > **textToSvg**(`text`): `Promise`\<`void`\>
 
-Defined in: [src/type/font/fontImage.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/font/fontImage.ts#L11)
+Defined in: [src/type/font/fontImage.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/font/fontImage.ts#L11)
 
 #### Parameters
 

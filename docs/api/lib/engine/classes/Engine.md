@@ -1,6 +1,6 @@
 # Class: Engine
 
-Defined in: [src/lib/engine/index.ts:16](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/index.ts#L16)
+Defined in: [src/lib/engine/index.ts:16](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/engine/index.ts#L16)
 
 ゲームエンジン
 
@@ -16,7 +16,7 @@ Defined in: [src/lib/engine/index.ts:16](https://github.com/amami-harhid/typeScr
 
 > **get** **mouse**(): [`TMouse`](../../../type/mouse/type-aliases/TMouse.md)
 
-Defined in: [src/lib/engine/index.ts:60](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/index.ts#L60)
+Defined in: [src/lib/engine/index.ts:60](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/engine/index.ts#L60)
 
 ##### Returns
 
@@ -30,7 +30,7 @@ Defined in: [src/lib/engine/index.ts:60](https://github.com/amami-harhid/typeScr
 
 > **get** **render**(): [`Render`](../../render/classes/Render.md)
 
-Defined in: [src/lib/engine/index.ts:112](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/index.ts#L112)
+Defined in: [src/lib/engine/index.ts:112](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/engine/index.ts#L112)
 
 ##### Returns
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/engine/index.ts:112](https://github.com/amami-harhid/typeSc
 
 > **get** **timer**(): `number`
 
-Defined in: [src/lib/engine/index.ts:41](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/index.ts#L41)
+Defined in: [src/lib/engine/index.ts:41](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/engine/index.ts#L41)
 
 実行開始からの経過時刻(ミリ秒)
 
@@ -58,7 +58,7 @@ Defined in: [src/lib/engine/index.ts:41](https://github.com/amami-harhid/typeScr
 
 > **resetTimer**(): `void`
 
-Defined in: [src/lib/engine/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/index.ts#L47)
+Defined in: [src/lib/engine/index.ts:47](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/engine/index.ts#L47)
 
 経過時刻(ミリ秒)をリセットする
 
@@ -72,7 +72,7 @@ Defined in: [src/lib/engine/index.ts:47](https://github.com/amami-harhid/typeScr
 
 > **start**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/engine/index.ts:163](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/engine/index.ts#L163)
+Defined in: [src/lib/engine/index.ts:163](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/engine/index.ts#L163)
 
 ゲームエンジン開始処理
 

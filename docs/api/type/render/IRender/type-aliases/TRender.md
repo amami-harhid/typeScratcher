@@ -2,7 +2,7 @@
 
 > **TRender** = `object`
 
-Defined in: [src/type/render/IRender.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/render/IRender.ts#L7)
+Defined in: [src/type/render/IRender.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L7)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/type/render/IRender.ts:7](https://github.com/amami-harhid/typeS
 
 > **W**: `number`
 
-Defined in: [src/type/render/IRender.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/render/IRender.ts#L23)
+Defined in: [src/type/render/IRender.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L23)
 
 ステージの横ピクセル数(CSSピクセル)
 
@@ -20,7 +20,7 @@ Defined in: [src/type/render/IRender.ts:23](https://github.com/amami-harhid/type
 
 > `readonly` **WHRate**: `number`
 
-Defined in: [src/type/render/IRender.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/render/IRender.ts#L11)
+Defined in: [src/type/render/IRender.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L11)
 
 ステージ縦横比(縦÷高さの率)
 
@@ -30,7 +30,7 @@ Defined in: [src/type/render/IRender.ts:11](https://github.com/amami-harhid/type
 
 > **monitorCanvasResize**(`w?`, `h?`): `void`
 
-Defined in: [src/type/render/IRender.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/render/IRender.ts#L18)
+Defined in: [src/type/render/IRender.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/render/IRender.ts#L18)
 
 MonitorCanvasをリサイズする
 

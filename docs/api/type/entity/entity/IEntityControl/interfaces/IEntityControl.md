@@ -1,6 +1,6 @@
 # Interface: IEntityControl
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityControl.ts#L6)
+Defined in: [src/type/entity/entity/IEntityControl.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityControl.ts#L6)
 
 Entity Control(制御)
 
@@ -14,7 +14,7 @@ Entity Control(制御)
 
 > **stopAll**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:47](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityControl.ts#L47)
+Defined in: [src/type/entity/entity/IEntityControl.ts:47](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityControl.ts#L47)
 
 全てのスプライトの動作を停止する
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:47](https://github.com/ama
 
 > **stopOtherScripts**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:60](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityControl.ts#L60)
+Defined in: [src/type/entity/entity/IEntityControl.ts:60](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityControl.ts#L60)
 
 このスプライトの他のスクリプトを停止する
 
@@ -49,7 +49,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:60](https://github.com/ama
 
 > **stopThisScript**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:51](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityControl.ts#L51)
+Defined in: [src/type/entity/entity/IEntityControl.ts:51](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityControl.ts#L51)
 
 このスクリプトを停止する
 
@@ -63,7 +63,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:51](https://github.com/ama
 
 > **wait**(`sec`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityControl.ts#L11)
+Defined in: [src/type/entity/entity/IEntityControl.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityControl.ts#L11)
 
 指定秒数分、待つ。
 
@@ -83,7 +83,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:11](https://github.com/ama
 
 > **waitUntil**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityControl.ts#L26)
+Defined in: [src/type/entity/entity/IEntityControl.ts:26](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityControl.ts#L26)
 
 条件が成立する迄、待つ
 
@@ -115,7 +115,7 @@ await this.Control.waitUntil(condition);
 
 > **waitWhile**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:41](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntityControl.ts#L41)
+Defined in: [src/type/entity/entity/IEntityControl.ts:41](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntityControl.ts#L41)
 
 条件が成立する間、待つ。
 

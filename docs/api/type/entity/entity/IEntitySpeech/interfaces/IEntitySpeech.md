@@ -1,6 +1,6 @@
 # Interface: IEntitySpeech
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:71](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L71)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:71](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L71)
 
 スピーチ機能
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:71](https://github.com/amam
 
 > **addPitch**(`pitch`): [`NextMethodsAddPitch`](NextMethodsAddPitch.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:89](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L89)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:89](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L89)
 
 ピッチを加える
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:89](https://github.com/amam
 
 > **addVolume**(`volume`): [`NextMethodsAddVolume`](NextMethodsAddVolume.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:86](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L86)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:86](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L86)
 
 音量を加える
 
@@ -50,7 +50,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:86](https://github.com/amam
 
 > **gender**(`gender`): [`NextMethodsGender`](NextMethodsGender.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:79](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L79)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:79](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L79)
 
 性別
 
@@ -70,7 +70,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:79](https://github.com/amam
 
 > **locale**(`locale`): [`NextMethodsLocale`](NextMethodsLocale.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:73](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L73)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:73](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L73)
 
 ロケール(言語)
 
@@ -90,7 +90,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:73](https://github.com/amam
 
 > **pitch**(`pitch`): [`NextMethodsPitch`](NextMethodsPitch.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:83](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L83)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:83](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L83)
 
 ピッチ
 
@@ -110,7 +110,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:83](https://github.com/amam
 
 > **speech**(`words`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:94](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L94)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:94](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L94)
 
 テキストをスピーチする
 
@@ -130,7 +130,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:94](https://github.com/amam
 
 > **stopAll**(): `void`
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:99](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L99)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:99](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L99)
 
 すべてのスピーチを停止する
 
@@ -144,7 +144,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:99](https://github.com/amam
 
 > **type**(`type`): [`NextMethodsType`](NextMethodsType.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:75](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L75)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:75](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L75)
 
 タイプを指定
 
@@ -164,7 +164,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:75](https://github.com/amam
 
 > **typeCopyTo**(`type`): [`NextMethodsCopyTo`](NextMethodsCopyTo.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:77](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L77)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:77](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L77)
 
 タイプをコピー
 
@@ -184,7 +184,7 @@ Defined in: [src/type/entity/entity/IEntitySpeech.ts:77](https://github.com/amam
 
 > **volume**(`volume`): [`NextMethodsVolume`](NextMethodsVolume.md)
 
-Defined in: [src/type/entity/entity/IEntitySpeech.ts:81](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/entity/IEntitySpeech.ts#L81)
+Defined in: [src/type/entity/entity/IEntitySpeech.ts:81](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/entity/IEntitySpeech.ts#L81)
 
 音量
 

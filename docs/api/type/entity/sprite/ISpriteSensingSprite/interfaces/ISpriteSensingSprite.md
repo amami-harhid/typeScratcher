@@ -1,6 +1,6 @@
 # Interface: ISpriteSensingSprite
 
-Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:6](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteSensingSprite.ts#L6)
+Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:6](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteSensingSprite.ts#L6)
 
 Sprite Sensing(調べる)Sprite
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる)Sprite
 
 > **degree**(`to`): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:32](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteSensingSprite.ts#L32)
+Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:32](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteSensingSprite.ts#L32)
 
 指定したスプライトへの向き
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:32](https://github.c
 
 > **distance**(`to`): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:26](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteSensingSprite.ts#L26)
+Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:26](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteSensingSprite.ts#L26)
 
 指定したスプライトまでの距離
 
@@ -54,7 +54,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:26](https://github.c
 
 > **getTouching**(`target?`): [`ISprite`](../../interfaces/ISprite.md)[]
 
-Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:20](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteSensingSprite.ts#L20)
+Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:20](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteSensingSprite.ts#L20)
 
 自分に触れているスプライトを配列にして返す
 
@@ -74,7 +74,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:20](https://github.c
 
 > **isTouching**(`sprites`, `includeClone?`): `boolean`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:13](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteSensingSprite.ts#L13)
+Defined in: [src/type/entity/sprite/ISpriteSensingSprite.ts:13](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteSensingSprite.ts#L13)
 
 スプライトに触れていることを判定する（クローンを含める）
 

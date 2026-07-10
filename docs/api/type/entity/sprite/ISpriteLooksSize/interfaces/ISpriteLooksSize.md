@@ -1,6 +1,6 @@
 # Interface: ISpriteLooksSize
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L7)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L7)
 
 スプライトのサイズ
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:7](https://github.com/am
 
 > **get** **drawingSize**(): [`TBoundsEx`](../../../../common/typeCommon/interfaces/TBoundsEx.md)
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:83](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L83)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:83](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L83)
 
 自分自身の縦横表示サイズを得る
 
@@ -34,7 +34,7 @@ TBounds
 
 > **get** **h**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:30](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L30)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:30](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L30)
 
 縦サイズ
 ```ts
@@ -49,7 +49,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:30](https://github.com/a
 
 > **set** **h**(`height`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:38](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L38)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:38](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L38)
 
 縦サイズ
 ```ts
@@ -75,7 +75,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:38](https://github.com/a
 
 > **get** **scale**(): [`ISpriteLooksSizeScale`](../../ISpriteLooksSizeScale/interfaces/ISpriteLooksSizeScale.md)
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:48](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L48)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:48](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L48)
 
 縦横サイズ
 ```ts
@@ -93,7 +93,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:48](https://github.com/a
 
 > **set** **scale**(`scale`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:61](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L61)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:61](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L61)
 
 縦横サイズ
 ```ts
@@ -124,7 +124,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:61](https://github.com/a
 
 > **get** **w**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L15)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L15)
 
 横サイズ
 ```ts
@@ -139,7 +139,7 @@ Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:15](https://github.com/a
 
 > **set** **w**(`width`): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/type/entity/sprite/ISpriteLooksSize.ts#L23)
+Defined in: [src/type/entity/sprite/ISpriteLooksSize.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/type/entity/sprite/ISpriteLooksSize.ts#L23)
 
 横サイズ
 ```ts

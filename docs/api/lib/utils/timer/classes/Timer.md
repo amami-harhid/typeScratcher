@@ -1,6 +1,6 @@
 # Class: Timer
 
-Defined in: [src/lib/utils/timer.ts:3](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/timer.ts#L3)
+Defined in: [src/lib/utils/timer.ts:3](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/timer.ts#L3)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/utils/timer.ts:3](https://github.com/amami-harhid/typeScrat
 
 > `static` **wait**(`sec`): `Promise`\<`void`\>
 
-Defined in: [src/lib/utils/timer.ts:5](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/utils/timer.ts#L5)
+Defined in: [src/lib/utils/timer.ts:5](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/utils/timer.ts#L5)
 
 #### Parameters
 

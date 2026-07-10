@@ -1,6 +1,6 @@
 # Class: SpriteMotionRotation
 
-Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionRotation.ts#L9)
+Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionRotation.ts#L9)
 
 SpriteMotionRotation
 
@@ -14,7 +14,7 @@ SpriteMotionRotation
 
 > **new SpriteMotionRotation**(`entity`): `SpriteMotionRotation`
 
-Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:15](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionRotation.ts#L15)
+Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:15](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionRotation.ts#L15)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:15](https://github.co
 
 > **get** **style**(): [`RotationValue`](../../../../../type/entity/RotationStyle/type-aliases/RotationValue.md)
 
-Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:23](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionRotation.ts#L23)
+Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:23](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionRotation.ts#L23)
 
 回転方法
 
@@ -52,7 +52,7 @@ Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:23](https://github.co
 
 > **set** **style**(`style`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:31](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/entity/sprite/spriteMotionRotation.ts#L31)
+Defined in: [src/lib/entity/sprite/spriteMotionRotation.ts:31](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/entity/sprite/spriteMotionRotation.ts#L31)
 
 回転方法
 

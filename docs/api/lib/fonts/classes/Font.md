@@ -1,6 +1,6 @@
 # Class: Font
 
-Defined in: [src/lib/fonts/index.ts:11](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/index.ts#L11)
+Defined in: [src/lib/fonts/index.ts:11](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/fonts/index.ts#L11)
 
 Font
 
@@ -14,7 +14,7 @@ Font
 
 > **new Font**(`font`): `Font`
 
-Defined in: [src/lib/fonts/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/index.ts#L18)
+Defined in: [src/lib/fonts/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/fonts/index.ts#L18)
 
 #### Parameters
 
@@ -34,7 +34,7 @@ Defined in: [src/lib/fonts/index.ts:18](https://github.com/amami-harhid/typeScra
 
 > **get** **fonts**(): `string`[]
 
-Defined in: [src/lib/fonts/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/index.ts#L39)
+Defined in: [src/lib/fonts/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/fonts/index.ts#L39)
 
 ##### Returns
 
@@ -48,7 +48,7 @@ Defined in: [src/lib/fonts/index.ts:39](https://github.com/amami-harhid/typeScra
 
 > **get** **loadCompleted**(): `boolean`
 
-Defined in: [src/lib/fonts/index.ts:42](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/index.ts#L42)
+Defined in: [src/lib/fonts/index.ts:42](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/fonts/index.ts#L42)
 
 ##### Returns
 
@@ -62,7 +62,7 @@ Defined in: [src/lib/fonts/index.ts:42](https://github.com/amami-harhid/typeScra
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/fonts/index.ts:36](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/index.ts#L36)
+Defined in: [src/lib/fonts/index.ts:36](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/fonts/index.ts#L36)
 
 ##### Returns
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/fonts/index.ts:36](https://github.com/amami-harhid/typeScra
 
 > **load**(): `Promise`\<`void`\>
 
-Defined in: [src/lib/fonts/index.ts:24](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/fonts/index.ts#L24)
+Defined in: [src/lib/fonts/index.ts:24](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/fonts/index.ts#L24)
 
 #### Returns
 

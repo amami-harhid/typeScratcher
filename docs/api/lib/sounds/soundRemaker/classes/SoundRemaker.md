@@ -1,6 +1,6 @@
 # Class: SoundRemaker
 
-Defined in: [src/lib/sounds/soundRemaker.ts:7](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/soundRemaker.ts#L7)
+Defined in: [src/lib/sounds/soundRemaker.ts:7](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundRemaker.ts#L7)
 
 SoundRemaker
 
@@ -20,7 +20,7 @@ SoundRemaker
 
 > `static` **remake**(`sound`): [`ISound`](../../../../type/sound/interfaces/ISound.md)
 
-Defined in: [src/lib/sounds/soundRemaker.ts:9](https://github.com/amami-harhid/typeScratcher/blob/088b8c4d5b9f05c65bbf70e67348fb16730c23a9/src/lib/sounds/soundRemaker.ts#L9)
+Defined in: [src/lib/sounds/soundRemaker.ts:9](https://github.com/amami-harhid/typeScratcher/blob/a4418bf571141c7abcffd6125697dd4f3ad07abf/src/lib/sounds/soundRemaker.ts#L9)
 
 #### Parameters
 
