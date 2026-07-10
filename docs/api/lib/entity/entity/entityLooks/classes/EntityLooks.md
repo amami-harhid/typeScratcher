@@ -1,6 +1,6 @@
 # Class: EntityLooks
 
-Defined in: [src/lib/entity/entity/entityLooks.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityLooks.ts#L9)
+Defined in: [src/lib/entity/entity/entityLooks.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityLooks.ts#L9)
 
 メッセージ送受信
 
@@ -19,7 +19,7 @@ Defined in: [src/lib/entity/entity/entityLooks.ts:9](https://github.com/amami-ha
 
 > **new EntityLooks**(`entity`): `EntityLooks`
 
-Defined in: [src/lib/entity/entity/entityLooks.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityLooks.ts#L17)
+Defined in: [src/lib/entity/entity/entityLooks.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityLooks.ts#L17)
 
 **`Internal`**
 
@@ -43,7 +43,7 @@ Defined in: [src/lib/entity/entity/entityLooks.ts:17](https://github.com/amami-h
 
 > **get** **effect**(): [`IEntityEffect`](../../../../../type/entity/entity/IEntityEffect/interfaces/IEntityEffect.md)
 
-Defined in: [src/lib/entity/entity/entityLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityLooks.ts#L22)
+Defined in: [src/lib/entity/entity/entityLooks.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityLooks.ts#L22)
 
 ##### Returns
 

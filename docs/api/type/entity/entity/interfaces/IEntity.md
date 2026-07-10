@@ -1,6 +1,6 @@
 # Interface: IEntity
 
-Defined in: [src/type/entity/entity/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/index.ts#L4)
+Defined in: [src/type/entity/entity/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L4)
 
 ## Extended by
 
@@ -14,7 +14,7 @@ Defined in: [src/type/entity/entity/index.ts:4](https://github.com/amami-harhid/
 
 > `readonly` **Broadcast**: [`IEntityBroadCast`](../IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/index.ts#L9)
+Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L9)
 
 メッセージ送受信
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/
 
 > `readonly` **Sound**: [`IEntitySound`](../IEntitySound/interfaces/IEntitySound.md)
 
-Defined in: [src/type/entity/entity/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/index.ts#L13)
+Defined in: [src/type/entity/entity/index.ts:13](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L13)
 
 サウンド
 
@@ -34,6 +34,6 @@ Defined in: [src/type/entity/entity/index.ts:13](https://github.com/amami-harhid
 
 > `readonly` **Speech**: [`IEntitySpeech`](../IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/index.ts#L17)
+Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L17)
 
 スピーチ

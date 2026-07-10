@@ -1,6 +1,6 @@
 # Interface: IEntityProperties
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L15)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:15](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L15)
 
 プロパティ
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/entity/IEntityProperties.ts:15](https://github.com/
 
 > **degree**: `number`
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:21](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L21)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L21)
 
 角度
 
@@ -20,7 +20,7 @@ Defined in: [src/type/entity/entity/IEntityProperties.ts:21](https://github.com/
 
 > **position**: [`IPosition`](IPosition.md)
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L17)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L17)
 
 座標
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/entity/IEntityProperties.ts:17](https://github.com/
 
 > **rotationStyle**: [`RotationValue`](../../../RotationStyle/type-aliases/RotationValue.md)
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:25](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L25)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:25](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L25)
 
 回転方法
 
@@ -40,7 +40,7 @@ Defined in: [src/type/entity/entity/IEntityProperties.ts:25](https://github.com/
 
 > **scale**: [`IScale`](IScale.md)
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:19](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L19)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L19)
 
 スケール
 
@@ -50,7 +50,7 @@ Defined in: [src/type/entity/entity/IEntityProperties.ts:19](https://github.com/
 
 > **visible**: `boolean`
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L23)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L23)
 
 表示・非表示
 
@@ -60,7 +60,7 @@ Defined in: [src/type/entity/entity/IEntityProperties.ts:23](https://github.com/
 
 > **update**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L27)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:27](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L27)
 
 プロパティをレンダラーへ反映
 
@@ -74,7 +74,7 @@ Defined in: [src/type/entity/entity/IEntityProperties.ts:27](https://github.com/
 
 > **updateDrawableProperties**(`prop`): `void`
 
-Defined in: [src/type/entity/entity/IEntityProperties.ts:29](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityProperties.ts#L29)
+Defined in: [src/type/entity/entity/IEntityProperties.ts:29](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityProperties.ts#L29)
 
 プロパティをレンダラーへ反映
 

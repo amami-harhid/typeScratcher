@@ -2,7 +2,7 @@
 
 > **TMouse** = `object`
 
-Defined in: [src/type/mouse/index.ts:2](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L2)
+Defined in: [src/type/mouse/index.ts:2](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L2)
 
 Mouse情報
 
@@ -12,7 +12,7 @@ Mouse情報
 
 > **clientX**: `number`
 
-Defined in: [src/type/mouse/index.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L16)
+Defined in: [src/type/mouse/index.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L16)
 
 ビューポート Y座標
 
@@ -22,7 +22,7 @@ Defined in: [src/type/mouse/index.ts:16](https://github.com/amami-harhid/typeScr
 
 > **clientY**: `number`
 
-Defined in: [src/type/mouse/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L18)
+Defined in: [src/type/mouse/index.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L18)
 
 ビューポート Y座標
 
@@ -32,7 +32,7 @@ Defined in: [src/type/mouse/index.ts:18](https://github.com/amami-harhid/typeScr
 
 > **down**: `boolean`
 
-Defined in: [src/type/mouse/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L10)
+Defined in: [src/type/mouse/index.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L10)
 
 マウスダウン
 
@@ -42,7 +42,7 @@ Defined in: [src/type/mouse/index.ts:10](https://github.com/amami-harhid/typeScr
 
 > **pageX**: `number`
 
-Defined in: [src/type/mouse/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L12)
+Defined in: [src/type/mouse/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L12)
 
 ページ X座標
 
@@ -52,7 +52,7 @@ Defined in: [src/type/mouse/index.ts:12](https://github.com/amami-harhid/typeScr
 
 > **pageY**: `number`
 
-Defined in: [src/type/mouse/index.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L14)
+Defined in: [src/type/mouse/index.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L14)
 
 ページ Y座標
 
@@ -62,7 +62,7 @@ Defined in: [src/type/mouse/index.ts:14](https://github.com/amami-harhid/typeScr
 
 > **scratchX**: `number`
 
-Defined in: [src/type/mouse/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L4)
+Defined in: [src/type/mouse/index.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L4)
 
 scratchベースのX座標
 
@@ -72,7 +72,7 @@ scratchベースのX座標
 
 > **scratchY**: `number`
 
-Defined in: [src/type/mouse/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L6)
+Defined in: [src/type/mouse/index.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L6)
 
 scratchベースのY座標
 
@@ -82,7 +82,7 @@ scratchベースのY座標
 
 > **x**: `number`
 
-Defined in: [src/type/mouse/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L7)
+Defined in: [src/type/mouse/index.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L7)
 
 ***
 
@@ -90,4 +90,4 @@ Defined in: [src/type/mouse/index.ts:7](https://github.com/amami-harhid/typeScra
 
 > **y**: `number`
 
-Defined in: [src/type/mouse/index.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/mouse/index.ts#L8)
+Defined in: [src/type/mouse/index.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/mouse/index.ts#L8)

@@ -2,7 +2,7 @@
 
 > **TSize** = `object`
 
-Defined in: [src/type/common/typeCommon.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L31)
+Defined in: [src/type/common/typeCommon.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L31)
 
 サイズ
 
@@ -12,7 +12,7 @@ Defined in: [src/type/common/typeCommon.ts:31](https://github.com/amami-harhid/t
 
 > **height**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:33](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L33)
+Defined in: [src/type/common/typeCommon.ts:33](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L33)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: [src/type/common/typeCommon.ts:33](https://github.com/amami-harhid/t
 
 > **width**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:32](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L32)
+Defined in: [src/type/common/typeCommon.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L32)

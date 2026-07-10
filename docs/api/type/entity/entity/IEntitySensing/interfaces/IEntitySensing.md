@@ -1,6 +1,6 @@
 # Interface: IEntitySensing
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L7)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L7)
 
 Entity Sensing(調べる)
 
@@ -14,7 +14,7 @@ Entity Sensing(調べる)
 
 > `readonly` **keyboard**: [`IEntitySensingKey`](../../IEntitySensingKey/interfaces/IEntitySensingKey.md)
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L23)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L23)
 
 キーボード関連
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/entity/IEntitySensing.ts:23](https://github.com/ama
 
 > `readonly` **mouse**: [`IEntitySensingMouse`](../../IEntitySensingMouse/interfaces/IEntitySensingMouse.md)
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L18)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L18)
 
 マウス関連
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/entity/IEntitySensing.ts:18](https://github.com/ama
 
 > `readonly` **timer**: [`IEntitySensingTimer`](../../IEntitySensingTimer/interfaces/IEntitySensingTimer.md)
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L27)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:27](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L27)
 
 タイマー関連
 
@@ -44,7 +44,7 @@ Defined in: [src/type/entity/entity/IEntitySensing.ts:27](https://github.com/ama
 
 > **askAndWait**(`question`): `Promise`\<`string`\>
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L13)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:13](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L13)
 
 質問をして答えを待つ
 

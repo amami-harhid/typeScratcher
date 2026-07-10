@@ -1,6 +1,6 @@
 # Interface: SLoop
 
-Defined in: [src/lib/engine/loop.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/loop.ts#L16)
+Defined in: [src/lib/engine/loop.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/loop.ts#L16)
 
 ## Methods
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/engine/loop.ts:16](https://github.com/amami-harhid/typeScra
 
 > **Iterator**(`n`, `base?`): `Generator`\<`number`\>
 
-Defined in: [src/lib/engine/loop.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/engine/loop.ts#L22)
+Defined in: [src/lib/engine/loop.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/engine/loop.ts#L22)
 
 繰り返し回数のイテレーター(Generator)
 

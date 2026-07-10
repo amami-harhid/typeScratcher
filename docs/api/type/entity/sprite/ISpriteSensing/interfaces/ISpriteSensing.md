@@ -1,6 +1,6 @@
 # Interface: ISpriteSensing
 
-Defined in: [src/type/entity/sprite/ISpriteSensing.ts:10](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensing.ts#L10)
+Defined in: [src/type/entity/sprite/ISpriteSensing.ts:10](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensing.ts#L10)
 
 Sprite Sensing(調べる)
 
@@ -14,7 +14,7 @@ Sprite Sensing(調べる)
 
 > `readonly` **color**: [`ISpriteSensingColor`](../../ISpriteSensingColor/interfaces/ISpriteSensingColor.md)
 
-Defined in: [src/type/entity/sprite/ISpriteSensing.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensing.ts#L23)
+Defined in: [src/type/entity/sprite/ISpriteSensing.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensing.ts#L23)
 
 色関連
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensing.ts:23](https://github.com/ama
 
 > `readonly` **dragMode**: [`ISpriteDragMode`](../../ISpriteDragMode/interfaces/ISpriteDragMode.md)
 
-Defined in: [src/type/entity/sprite/ISpriteSensing.ts:33](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensing.ts#L33)
+Defined in: [src/type/entity/sprite/ISpriteSensing.ts:33](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensing.ts#L33)
 
 Drag Mode
 
@@ -34,7 +34,7 @@ Drag Mode
 
 > `readonly` **edge**: [`ISpriteSensingEdge`](../../ISpriteSensingEdge/interfaces/ISpriteSensingEdge.md)
 
-Defined in: [src/type/entity/sprite/ISpriteSensing.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensing.ts#L15)
+Defined in: [src/type/entity/sprite/ISpriteSensing.ts:15](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensing.ts#L15)
 
 端関連
 
@@ -44,7 +44,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensing.ts:15](https://github.com/ama
 
 > `readonly` **keyboard**: [`IEntitySensingKey`](../../../entity/IEntitySensingKey/interfaces/IEntitySensingKey.md)
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L23)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L23)
 
 キーボード関連
 
@@ -58,7 +58,7 @@ Defined in: [src/type/entity/entity/IEntitySensing.ts:23](https://github.com/ama
 
 > `readonly` **mouse**: [`ISpriteSensingMouse`](../../ISpriteSensingMouse/interfaces/ISpriteSensingMouse.md)
 
-Defined in: [src/type/entity/sprite/ISpriteSensing.ts:19](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensing.ts#L19)
+Defined in: [src/type/entity/sprite/ISpriteSensing.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensing.ts#L19)
 
 マウス関連
 
@@ -72,7 +72,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensing.ts:19](https://github.com/ama
 
 > `readonly` **sprite**: [`ISpriteSensingSprite`](../../ISpriteSensingSprite/interfaces/ISpriteSensingSprite.md)
 
-Defined in: [src/type/entity/sprite/ISpriteSensing.ts:28](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensing.ts#L28)
+Defined in: [src/type/entity/sprite/ISpriteSensing.ts:28](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensing.ts#L28)
 
 スプライト関連
 
@@ -82,7 +82,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensing.ts:28](https://github.com/ama
 
 > `readonly` **timer**: [`IEntitySensingTimer`](../../../entity/IEntitySensingTimer/interfaces/IEntitySensingTimer.md)
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L27)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:27](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L27)
 
 タイマー関連
 
@@ -96,7 +96,7 @@ Defined in: [src/type/entity/entity/IEntitySensing.ts:27](https://github.com/ama
 
 > **askAndWait**(`question`): `Promise`\<`string`\>
 
-Defined in: [src/type/entity/entity/IEntitySensing.ts:13](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntitySensing.ts#L13)
+Defined in: [src/type/entity/entity/IEntitySensing.ts:13](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntitySensing.ts#L13)
 
 質問をして答えを待つ
 

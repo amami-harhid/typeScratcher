@@ -1,6 +1,6 @@
 # Interface: IStageFont
 
-Defined in: [src/type/entity/stage/IStageFont.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStageFont.ts#L4)
+Defined in: [src/type/entity/stage/IStageFont.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageFont.ts#L4)
 
 Stage Image(イメージ)
 
@@ -12,7 +12,7 @@ Stage Image(イメージ)
 
 > **get** **names**(): `string`[]
 
-Defined in: [src/type/entity/stage/IStageFont.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStageFont.ts#L8)
+Defined in: [src/type/entity/stage/IStageFont.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageFont.ts#L8)
 
 ##### Returns
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/stage/IStageFont.ts:8](https://github.com/amami-har
 
 > **add**(`fontName`): `void`
 
-Defined in: [src/type/entity/stage/IStageFont.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStageFont.ts#L6)
+Defined in: [src/type/entity/stage/IStageFont.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageFont.ts#L6)
 
 #### Parameters
 

@@ -1,6 +1,6 @@
 # Class: SvgTextMesure
 
-Defined in: [src/lib/svgText/svgTexMesure.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTexMesure.ts#L7)
+Defined in: [src/lib/svgText/svgTexMesure.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/svgText/svgTexMesure.ts#L7)
 
 文字列の長さ、高さを取り出す
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/svgText/svgTexMesure.ts:7](https://github.com/amami-harhid/
 
 > **new SvgTextMesure**(): `SvgTextMesure`
 
-Defined in: [src/lib/svgText/svgTexMesure.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTexMesure.ts#L9)
+Defined in: [src/lib/svgText/svgTexMesure.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/svgText/svgTexMesure.ts#L9)
 
 #### Returns
 
@@ -26,7 +26,7 @@ Defined in: [src/lib/svgText/svgTexMesure.ts:9](https://github.com/amami-harhid/
 
 > `static` **instance**: `SvgTextMesure`
 
-Defined in: [src/lib/svgText/svgTexMesure.ts:66](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTexMesure.ts#L66)
+Defined in: [src/lib/svgText/svgTexMesure.ts:66](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/svgText/svgTexMesure.ts#L66)
 
 ## Methods
 
@@ -34,7 +34,7 @@ Defined in: [src/lib/svgText/svgTexMesure.ts:66](https://github.com/amami-harhid
 
 > **mesure**(`texts`, `fontSize?`, `fontStyle?`, `fontFamily?`): `object`
 
-Defined in: [src/lib/svgText/svgTexMesure.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTexMesure.ts#L20)
+Defined in: [src/lib/svgText/svgTexMesure.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/svgText/svgTexMesure.ts#L20)
 
 文字列配列のうち最大文字列長の横幅、縦幅を測る
 
@@ -78,7 +78,7 @@ Defined in: [src/lib/svgText/svgTexMesure.ts:20](https://github.com/amami-harhid
 
 > `static` **getInstance**(): `SvgTextMesure`
 
-Defined in: [src/lib/svgText/svgTexMesure.ts:67](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/svgText/svgTexMesure.ts#L67)
+Defined in: [src/lib/svgText/svgTexMesure.ts:67](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/svgText/svgTexMesure.ts#L67)
 
 #### Returns
 

@@ -1,6 +1,6 @@
 # Interface: MonitoringNumber
 
-Defined in: [src/type/entity/monitor/monitoring.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L31)
+Defined in: [src/type/entity/monitor/monitoring.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L31)
 
 モニターする変数の型
 
@@ -14,7 +14,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:31](https://github.com/amami-
 
 > `optional` **callback?**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:32](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L32)
+Defined in: [src/type/entity/monitor/monitoring.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L32)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:32](https://github.com/amami-
 
 > **hide**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L5)
+Defined in: [src/type/entity/monitor/monitoring.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L5)
 
 #### Inherited from
 
@@ -34,7 +34,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:5](https://github.com/amami-h
 
 > **scale**: `object`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L18)
+Defined in: [src/type/entity/monitor/monitoring.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L18)
 
 #### h
 
@@ -54,7 +54,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:18](https://github.com/amami-
 
 > **show**: `CallableFunction`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L4)
+Defined in: [src/type/entity/monitor/monitoring.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L4)
 
 #### Inherited from
 
@@ -66,7 +66,7 @@ Defined in: [src/type/entity/monitor/monitoring.ts:4](https://github.com/amami-h
 
 > **value**: `number`
 
-Defined in: [src/type/entity/monitor/monitoring.ts:3](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/monitoring.ts#L3)
+Defined in: [src/type/entity/monitor/monitoring.ts:3](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/monitoring.ts#L3)
 
 変数(数値)
 

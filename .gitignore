@@ -80,7 +80,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist <-- 意図的に解除する( tscのビルド先にした )
+#dist <-- 意図的に解除する( tscのビルド先にした )
 .output
 
 # Gatsby files
@@ -90,7 +90,7 @@ dist <-- 意図的に解除する( tscのビルド先にした )
 # public
 
 # vuepress build output
-.vuepress/dist
+#.vuepress/dist
 
 # vuepress v2.x temp directory
 .temp

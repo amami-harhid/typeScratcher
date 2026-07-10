@@ -1,6 +1,6 @@
 # Interface: IScratchSoundPlayer
 
-Defined in: [src/type/sound/IAudioEngine.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L14)
+Defined in: [src/type/sound/IAudioEngine.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L14)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:14](https://github.com/amami-harhid/
 
 > **isPlaying**: `boolean`
 
-Defined in: [src/type/sound/IAudioEngine.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L18)
+Defined in: [src/type/sound/IAudioEngine.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L18)
 
 ***
 
@@ -20,7 +20,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:18](https://github.com/amami-harhid/
 
 > **name**: `string`
 
-Defined in: [src/type/sound/IAudioEngine.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L15)
+Defined in: [src/type/sound/IAudioEngine.ts:15](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L15)
 
 ## Methods
 
@@ -28,7 +28,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:15](https://github.com/amami-harhid/
 
 > **connect**(`effect`): `void`
 
-Defined in: [src/type/sound/IAudioEngine.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L16)
+Defined in: [src/type/sound/IAudioEngine.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L16)
 
 #### Parameters
 
@@ -46,7 +46,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:16](https://github.com/amami-harhid/
 
 > **finished**(): `Promise`\<`void`\>
 
-Defined in: [src/type/sound/IAudioEngine.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L17)
+Defined in: [src/type/sound/IAudioEngine.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L17)
 
 #### Returns
 
@@ -58,7 +58,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:17](https://github.com/amami-harhid/
 
 > **play**(): `void`
 
-Defined in: [src/type/sound/IAudioEngine.ts:19](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L19)
+Defined in: [src/type/sound/IAudioEngine.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L19)
 
 #### Returns
 
@@ -70,7 +70,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:19](https://github.com/amami-harhid/
 
 > **setPlaybackRate**(`pitch`): `void`
 
-Defined in: [src/type/sound/IAudioEngine.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L20)
+Defined in: [src/type/sound/IAudioEngine.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L20)
 
 #### Parameters
 
@@ -88,7 +88,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:20](https://github.com/amami-harhid/
 
 > **stop**(): `void`
 
-Defined in: [src/type/sound/IAudioEngine.ts:21](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L21)
+Defined in: [src/type/sound/IAudioEngine.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L21)
 
 #### Returns
 
@@ -100,7 +100,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:21](https://github.com/amami-harhid/
 
 > **stopImmediately**(): `void`
 
-Defined in: [src/type/sound/IAudioEngine.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L22)
+Defined in: [src/type/sound/IAudioEngine.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L22)
 
 #### Returns
 
@@ -112,7 +112,7 @@ Defined in: [src/type/sound/IAudioEngine.ts:22](https://github.com/amami-harhid/
 
 > **update**(): `void`
 
-Defined in: [src/type/sound/IAudioEngine.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/IAudioEngine.ts#L23)
+Defined in: [src/type/sound/IAudioEngine.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/IAudioEngine.ts#L23)
 
 #### Returns
 

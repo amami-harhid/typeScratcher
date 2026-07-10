@@ -1,6 +1,6 @@
 # Interface: ISound
 
-Defined in: [src/type/sound/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/index.ts#L12)
+Defined in: [src/type/sound/index.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/index.ts#L12)
 
 ## Properties
 
@@ -8,6 +8,6 @@ Defined in: [src/type/sound/index.ts:12](https://github.com/amami-harhid/typeScr
 
 > `readonly` **name**: `string`
 
-Defined in: [src/type/sound/index.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/sound/index.ts#L14)
+Defined in: [src/type/sound/index.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/sound/index.ts#L14)
 
 音の名前

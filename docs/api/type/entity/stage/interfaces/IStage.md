@@ -1,6 +1,6 @@
 # Interface: IStage
 
-Defined in: [src/type/entity/stage/index.ts:21](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L21)
+Defined in: [src/type/entity/stage/index.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L21)
 
 ## Extends
 
@@ -12,7 +12,7 @@ Defined in: [src/type/entity/stage/index.ts:21](https://github.com/amami-harhid/
 
 > `readonly` **Backdrop**: [`IStageBackdrop`](../IStageBackdrop/interfaces/IStageBackdrop.md)
 
-Defined in: [src/type/entity/stage/index.ts:48](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L48)
+Defined in: [src/type/entity/stage/index.ts:48](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L48)
 
 背景
 
@@ -22,7 +22,7 @@ Defined in: [src/type/entity/stage/index.ts:48](https://github.com/amami-harhid/
 
 > `readonly` **Broadcast**: [`IEntityBroadCast`](../../entity/IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/index.ts#L9)
+Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L9)
 
 メッセージ送受信
 
@@ -36,7 +36,7 @@ Defined in: [src/type/entity/entity/index.ts:9](https://github.com/amami-harhid/
 
 > `readonly` **Control**: [`IEntityControl`](../../entity/IEntityControl/interfaces/IEntityControl.md)
 
-Defined in: [src/type/entity/stage/index.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L31)
+Defined in: [src/type/entity/stage/index.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L31)
 
 制御
 
@@ -46,7 +46,7 @@ Defined in: [src/type/entity/stage/index.ts:31](https://github.com/amami-harhid/
 
 > `readonly` **Event**: [`IEntityEvent`](../../entity/IEntityEvent/interfaces/IEntityEvent.md)
 
-Defined in: [src/type/entity/stage/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L39)
+Defined in: [src/type/entity/stage/index.ts:39](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L39)
 
 イベント
 
@@ -56,7 +56,7 @@ Defined in: [src/type/entity/stage/index.ts:39](https://github.com/amami-harhid/
 
 > `readonly` **Looks**: [`IStageLooks`](../IStageLooks/interfaces/IStageLooks.md)
 
-Defined in: [src/type/entity/stage/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L27)
+Defined in: [src/type/entity/stage/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L27)
 
 見た目
 
@@ -66,7 +66,7 @@ Defined in: [src/type/entity/stage/index.ts:27](https://github.com/amami-harhid/
 
 > `readonly` **Properties**: [`IEntityProperties`](../../entity/IEntityProperties/interfaces/IEntityProperties.md)
 
-Defined in: [src/type/entity/stage/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L23)
+Defined in: [src/type/entity/stage/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L23)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [src/type/entity/stage/index.ts:23](https://github.com/amami-harhid/
 
 > `readonly` **Sensing**: [`IEntitySensing`](../../entity/IEntitySensing/interfaces/IEntitySensing.md)
 
-Defined in: [src/type/entity/stage/index.ts:35](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L35)
+Defined in: [src/type/entity/stage/index.ts:35](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L35)
 
 調べる
 
@@ -84,7 +84,7 @@ Defined in: [src/type/entity/stage/index.ts:35](https://github.com/amami-harhid/
 
 > `readonly` **Sound**: [`IEntitySound`](../../entity/IEntitySound/interfaces/IEntitySound.md)
 
-Defined in: [src/type/entity/stage/index.ts:44](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/index.ts#L44)
+Defined in: [src/type/entity/stage/index.ts:44](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/index.ts#L44)
 
 サウンド
 
@@ -98,7 +98,7 @@ Defined in: [src/type/entity/stage/index.ts:44](https://github.com/amami-harhid/
 
 > `readonly` **Speech**: [`IEntitySpeech`](../../entity/IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/index.ts#L17)
+Defined in: [src/type/entity/entity/index.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/index.ts#L17)
 
 スピーチ
 

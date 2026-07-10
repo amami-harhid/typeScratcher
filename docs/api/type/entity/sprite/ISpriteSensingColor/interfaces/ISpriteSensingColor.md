@@ -1,6 +1,6 @@
 # Interface: ISpriteSensingColor
 
-Defined in: [src/type/entity/sprite/ISpriteSensingColor.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingColor.ts#L4)
+Defined in: [src/type/entity/sprite/ISpriteSensingColor.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensingColor.ts#L4)
 
 Sprite Sensing(調べる) Color
 
@@ -10,7 +10,7 @@ Sprite Sensing(調べる) Color
 
 > **isTouching**(`targetColor`): `boolean`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingColor.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingColor.ts#L11)
+Defined in: [src/type/entity/sprite/ISpriteSensingColor.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensingColor.ts#L11)
 
 指定した色に触れたことを判定する
 
@@ -32,7 +32,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingColor.ts:11](https://github.co
 
 > **isTouchingBy**(`ownColor`, `targetColor`): `boolean`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingColor.ts:19](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingColor.ts#L19)
+Defined in: [src/type/entity/sprite/ISpriteSensingColor.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensingColor.ts#L19)
 
 指定した色(target)に自身の色(mask)が触れたことを判定する
 

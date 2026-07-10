@@ -1,6 +1,6 @@
 # Class: EntityFont
 
-Defined in: [src/lib/entity/entity/entityFont.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityFont.ts#L9)
+Defined in: [src/lib/entity/entity/entityFont.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityFont.ts#L9)
 
 Entity フォント
 
@@ -14,7 +14,7 @@ Entity フォント
 
 > **new EntityFont**(`entity`): `EntityFont`
 
-Defined in: [src/lib/entity/entity/entityFont.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityFont.ts#L17)
+Defined in: [src/lib/entity/entity/entityFont.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityFont.ts#L17)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/entity/entityFont.ts:17](https://github.com/amami-ha
 
 > **get** **fonts**(): [`IFont`](../../../../../type/font/interfaces/IFont.md)[]
 
-Defined in: [src/lib/entity/entity/entityFont.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityFont.ts#L26)
+Defined in: [src/lib/entity/entity/entityFont.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityFont.ts#L26)
 
 フォントを取得する
 
@@ -60,7 +60,7 @@ Defined in: [src/lib/entity/entity/entityFont.ts:26](https://github.com/amami-ha
 
 > **get** **names**(): `string`[]
 
-Defined in: [src/lib/entity/entity/entityFont.ts:29](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityFont.ts#L29)
+Defined in: [src/lib/entity/entity/entityFont.ts:29](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityFont.ts#L29)
 
 追加されている画像名を配列で受け取る
 
@@ -80,7 +80,7 @@ Defined in: [src/lib/entity/entity/entityFont.ts:29](https://github.com/amami-ha
 
 > **add**(`fonts`): `void`
 
-Defined in: [src/lib/entity/entity/entityFont.ts:21](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityFont.ts#L21)
+Defined in: [src/lib/entity/entity/entityFont.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityFont.ts#L21)
 
 フォントを追加する
 
@@ -104,7 +104,7 @@ Defined in: [src/lib/entity/entity/entityFont.ts:21](https://github.com/amami-ha
 
 > **imageLoadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/entityFont.ts:36](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityFont.ts#L36)
+Defined in: [src/lib/entity/entity/entityFont.ts:36](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityFont.ts#L36)
 
 #### Returns
 

@@ -1,6 +1,6 @@
 # Interface: SVar
 
-Defined in: [src/type/entity/monitor/SVar.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/SVar.ts#L6)
+Defined in: [src/type/entity/monitor/SVar.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/SVar.ts#L6)
 
 変数格納プロキシ生成
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/monitor/SVar.ts:6](https://github.com/amami-harhid/
 
 > **number**(`value`): [`NumberProxy`](../../monitoring/interfaces/NumberProxy.md)
 
-Defined in: [src/type/entity/monitor/SVar.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/SVar.ts#L12)
+Defined in: [src/type/entity/monitor/SVar.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/SVar.ts#L12)
 
 数値プロキシ生成
 
@@ -30,7 +30,7 @@ Defined in: [src/type/entity/monitor/SVar.ts:12](https://github.com/amami-harhid
 
 > **string**(`text`): [`StringProxy`](../../monitoring/interfaces/StringProxy.md)
 
-Defined in: [src/type/entity/monitor/SVar.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/monitor/SVar.ts#L17)
+Defined in: [src/type/entity/monitor/SVar.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/monitor/SVar.ts#L17)
 
 文字列プロキシ生成
 

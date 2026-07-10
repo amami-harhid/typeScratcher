@@ -1,6 +1,6 @@
 # Class: SpriteLooksCostume
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:8](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L8)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:8](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L8)
 
 サイズ
 
@@ -14,7 +14,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:8](https://github.com/a
 
 > **new SpriteLooksCostume**(`entity`): `SpriteLooksCostume`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L16)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L16)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:16](https://github.com/
 
 > **currentConstumeNo**: `number` = `-1`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L11)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L11)
 
 ## Accessors
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:11](https://github.com/
 
 > **get** **currentSkinId**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:51](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L51)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:51](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L51)
 
 使用中のSkinId
 
@@ -66,7 +66,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:51](https://github.com/
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:69](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L69)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:69](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L69)
 
 コスチューム名
 ```ts
@@ -82,7 +82,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:69](https://github.com/
 
 > **set** **name**(`name`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:82](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L82)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:82](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L82)
 
 コスチューム名
 ```ts
@@ -112,7 +112,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:82](https://github.com/
 
 > **get** **no**(): `number`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L26)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L26)
 
 コスチューム番号
 ```ts
@@ -128,7 +128,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:26](https://github.com/
 
 > **set** **no**(`no`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:37](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L37)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:37](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L37)
 
 コスチューム番号
 ```ts
@@ -156,7 +156,7 @@ Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:37](https://github.com/
 
 > **next**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:100](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteLooksCostume.ts#L100)
+Defined in: [src/lib/entity/sprite/spriteLooksCostume.ts:100](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteLooksCostume.ts#L100)
 
 次のコスチュームにする
 ```ts

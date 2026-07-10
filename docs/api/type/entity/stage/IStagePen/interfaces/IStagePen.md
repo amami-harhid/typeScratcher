@@ -1,6 +1,6 @@
 # Interface: IStagePen
 
-Defined in: [src/type/entity/stage/IStagePen.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStagePen.ts#L4)
+Defined in: [src/type/entity/stage/IStagePen.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStagePen.ts#L4)
 
 StagePen
 
@@ -10,7 +10,7 @@ StagePen
 
 > **clear**(): `void`
 
-Defined in: [src/type/entity/stage/IStagePen.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStagePen.ts#L9)
+Defined in: [src/type/entity/stage/IStagePen.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStagePen.ts#L9)
 
 ペン描画をクリアする
 

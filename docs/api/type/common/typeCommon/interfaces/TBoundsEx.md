@@ -1,6 +1,6 @@
 # Interface: TBoundsEx
 
-Defined in: [src/type/common/typeCommon.ts:54](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L54)
+Defined in: [src/type/common/typeCommon.ts:54](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L54)
 
 上下左右の大きさ
 
@@ -14,7 +14,7 @@ Defined in: [src/type/common/typeCommon.ts:54](https://github.com/amami-harhid/t
 
 > **bottom**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:49](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L49)
+Defined in: [src/type/common/typeCommon.ts:49](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L49)
 
 #### Inherited from
 
@@ -26,7 +26,7 @@ Defined in: [src/type/common/typeCommon.ts:49](https://github.com/amami-harhid/t
 
 > **height**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:56](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L56)
+Defined in: [src/type/common/typeCommon.ts:56](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L56)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/type/common/typeCommon.ts:56](https://github.com/amami-harhid/t
 
 > **left**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:50](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L50)
+Defined in: [src/type/common/typeCommon.ts:50](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L50)
 
 #### Inherited from
 
@@ -46,7 +46,7 @@ Defined in: [src/type/common/typeCommon.ts:50](https://github.com/amami-harhid/t
 
 > **right**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:51](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L51)
+Defined in: [src/type/common/typeCommon.ts:51](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L51)
 
 #### Inherited from
 
@@ -58,7 +58,7 @@ Defined in: [src/type/common/typeCommon.ts:51](https://github.com/amami-harhid/t
 
 > **top**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:48](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L48)
+Defined in: [src/type/common/typeCommon.ts:48](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L48)
 
 #### Inherited from
 
@@ -70,4 +70,4 @@ Defined in: [src/type/common/typeCommon.ts:48](https://github.com/amami-harhid/t
 
 > **width**: `number`
 
-Defined in: [src/type/common/typeCommon.ts:55](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/typeCommon.ts#L55)
+Defined in: [src/type/common/typeCommon.ts:55](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/typeCommon.ts#L55)

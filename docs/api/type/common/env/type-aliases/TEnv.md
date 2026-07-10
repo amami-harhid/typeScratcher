@@ -2,7 +2,7 @@
 
 > **TEnv** = `object`
 
-Defined in: [src/type/common/env.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/env.ts#L5)
+Defined in: [src/type/common/env.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/env.ts#L5)
 
 環境設定
 
@@ -12,7 +12,7 @@ Defined in: [src/type/common/env.ts:5](https://github.com/amami-harhid/typeScrat
 
 > **bubbleScaleLinkedToSprite**: `boolean`
 
-Defined in: [src/type/common/env.ts:14](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/env.ts#L14)
+Defined in: [src/type/common/env.ts:14](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/env.ts#L14)
 
 フキダシ(Bubble)の大きさ設定
 Trueのとき、スプライトのサイズに連動してBubbleの大きさが変わる（ ディフォルト値=false )
@@ -23,7 +23,7 @@ Trueのとき、スプライトのサイズに連動してBubbleの大きさが�
 
 > **debugMode**: `boolean`
 
-Defined in: [src/type/common/env.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/env.ts#L31)
+Defined in: [src/type/common/env.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/env.ts#L31)
 
 デバッグモード
 
@@ -33,7 +33,7 @@ Defined in: [src/type/common/env.ts:31](https://github.com/amami-harhid/typeScra
 
 > **fps**: [`FPS`](../../fps/type-aliases/FPS.md)
 
-Defined in: [src/type/common/env.ts:9](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/env.ts#L9)
+Defined in: [src/type/common/env.ts:9](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/env.ts#L9)
 
 FPS
 
@@ -43,7 +43,7 @@ FPS
 
 > **MonitorMaxRowSize**: `number`
 
-Defined in: [src/type/common/env.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/env.ts#L27)
+Defined in: [src/type/common/env.ts:27](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/env.ts#L27)
 
 モニター表示数（縦）
 
@@ -53,7 +53,7 @@ Defined in: [src/type/common/env.ts:27](https://github.com/amami-harhid/typeScra
 
 > `readonly` **StageSize**: `object`
 
-Defined in: [src/type/common/env.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/env.ts#L22)
+Defined in: [src/type/common/env.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/env.ts#L22)
 
 ステージサイズ
 
@@ -71,7 +71,7 @@ Defined in: [src/type/common/env.ts:22](https://github.com/amami-harhid/typeScra
 
 > `readonly` **WindowSize**: `object`
 
-Defined in: [src/type/common/env.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/common/env.ts#L18)
+Defined in: [src/type/common/env.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/common/env.ts#L18)
 
 ウインドウサイズ
 

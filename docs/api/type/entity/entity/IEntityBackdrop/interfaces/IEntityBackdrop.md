@@ -1,6 +1,6 @@
 # Interface: IEntityBackdrop
 
-Defined in: [src/type/entity/entity/IEntityBackdrop.ts:2](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityBackdrop.ts#L2)
+Defined in: [src/type/entity/entity/IEntityBackdrop.ts:2](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityBackdrop.ts#L2)
 
 背景
 

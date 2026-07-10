@@ -1,6 +1,6 @@
 # Interface: IStageBackdrop
 
-Defined in: [src/type/entity/stage/IStageBackdrop.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStageBackdrop.ts#L7)
+Defined in: [src/type/entity/stage/IStageBackdrop.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageBackdrop.ts#L7)
 
 StageBackdrop
 
@@ -14,7 +14,7 @@ StageBackdrop
 
 > `readonly` **names**: `string`[]
 
-Defined in: [src/type/entity/stage/IStageBackdrop.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStageBackdrop.ts#L11)
+Defined in: [src/type/entity/stage/IStageBackdrop.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageBackdrop.ts#L11)
 
 コスチューム名 配列
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/stage/IStageBackdrop.ts:11](https://github.com/amam
 
 > **add**(`images`): `void`
 
-Defined in: [src/type/entity/stage/IStageBackdrop.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/stage/IStageBackdrop.ts#L17)
+Defined in: [src/type/entity/stage/IStageBackdrop.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/stage/IStageBackdrop.ts#L17)
 
 イメージを追加する
 

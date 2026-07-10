@@ -1,6 +1,6 @@
 # Class: Entity
 
-Defined in: [src/lib/entity/entity/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L26)
+Defined in: [src/lib/entity/entity/index.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L26)
 
 ## Extends
 
@@ -22,7 +22,7 @@ Defined in: [src/lib/entity/entity/index.ts:26](https://github.com/amami-harhid/
 
 > **new Entity**(): `Entity`
 
-Defined in: [src/lib/entity/entity/index.ts:43](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L43)
+Defined in: [src/lib/entity/entity/index.ts:43](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L43)
 
 #### Returns
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/entity/index.ts:43](https://github.com/amami-harhid/
 
 > **drawableID**: `number` = `-1`
 
-Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L34)
+Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L34)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/entity/index.ts:34](https://github.com/amami-harhid/
 
 > **id**: `string`
 
-Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L33)
+Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L33)
 
 ## Accessors
 
@@ -56,7 +56,7 @@ Defined in: [src/lib/entity/entity/index.ts:33](https://github.com/amami-harhid/
 
 > **get** **$fonts**(): [`IFont`](../../../../type/font/interfaces/IFont.md)[]
 
-Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L73)
+Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L73)
 
 ##### Returns
 
@@ -70,7 +70,7 @@ Defined in: [src/lib/entity/entity/index.ts:73](https://github.com/amami-harhid/
 
 > **get** **$image**(): [`IEntityImage`](../../../../type/entity/entity/IEntityImage/interfaces/IEntityImage.md)
 
-Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L67)
+Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L67)
 
 ##### Returns
 
@@ -84,7 +84,7 @@ Defined in: [src/lib/entity/entity/index.ts:67](https://github.com/amami-harhid/
 
 > **get** **$images**(): [`IImage`](../../../../type/image/interfaces/IImage.md)[]
 
-Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L70)
+Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L70)
 
 ##### Returns
 
@@ -98,7 +98,7 @@ Defined in: [src/lib/entity/entity/index.ts:70](https://github.com/amami-harhid/
 
 > **get** **Broadcast**(): [`IEntityBroadCast`](../../../../type/entity/entity/IEntityBroadcast/interfaces/IEntityBroadCast.md)
 
-Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L76)
+Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L76)
 
 メッセージ送受信
 
@@ -120,7 +120,7 @@ Defined in: [src/lib/entity/entity/index.ts:76](https://github.com/amami-harhid/
 
 > **get** **isAlive**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L91)
+Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L91)
 
 ##### Returns
 
@@ -130,7 +130,7 @@ Defined in: [src/lib/entity/entity/index.ts:91](https://github.com/amami-harhid/
 
 > **set** **isAlive**(`isAlive`): `void`
 
-Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L94)
+Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L94)
 
 ##### Parameters
 
@@ -150,7 +150,7 @@ Defined in: [src/lib/entity/entity/index.ts:94](https://github.com/amami-harhid/
 
 > **get** **isSprite**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L88)
+Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L88)
 
 ##### Returns
 
@@ -164,7 +164,7 @@ Defined in: [src/lib/entity/entity/index.ts:88](https://github.com/amami-harhid/
 
 > **get** **mouse**(): [`TMouse`](../../../../type/mouse/type-aliases/TMouse.md)
 
-Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L85)
+Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L85)
 
 ##### Returns
 
@@ -178,7 +178,7 @@ Defined in: [src/lib/entity/entity/index.ts:85](https://github.com/amami-harhid/
 
 > **get** **name**(): `string`
 
-Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L61)
+Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L61)
 
 ##### Returns
 
@@ -192,7 +192,7 @@ Defined in: [src/lib/entity/entity/index.ts:61](https://github.com/amami-harhid/
 
 > **get** **render**(): [`Render`](../../../render/classes/Render.md)
 
-Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L64)
+Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L64)
 
 ##### Returns
 
@@ -206,7 +206,7 @@ Defined in: [src/lib/entity/entity/index.ts:64](https://github.com/amami-harhid/
 
 > **get** **Sound**(): [`IEntitySound`](../../../../type/entity/entity/IEntitySound/interfaces/IEntitySound.md)
 
-Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L79)
+Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L79)
 
 サウンド
 
@@ -228,7 +228,7 @@ Defined in: [src/lib/entity/entity/index.ts:79](https://github.com/amami-harhid/
 
 > **get** **SOUND\_FORCE\_STOP**(): `string`
 
-Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L27)
+Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L27)
 
 ##### Returns
 
@@ -242,7 +242,7 @@ Defined in: [src/lib/entity/entity/index.ts:27](https://github.com/amami-harhid/
 
 > **get** **Speech**(): [`IEntitySpeech`](../../../../type/entity/entity/IEntitySpeech/interfaces/IEntitySpeech.md)
 
-Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L82)
+Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L82)
 
 スピーチ
 
@@ -262,7 +262,7 @@ Defined in: [src/lib/entity/entity/index.ts:82](https://github.com/amami-harhid/
 
 > **createDrawable**(`layer`): `void`
 
-Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L56)
+Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L56)
 
 #### Parameters
 
@@ -280,7 +280,7 @@ Defined in: [src/lib/entity/entity/index.ts:56](https://github.com/amami-harhid/
 
 > **imageLoadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L97)
+Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L97)
 
 #### Returns
 
@@ -292,7 +292,7 @@ Defined in: [src/lib/entity/entity/index.ts:97](https://github.com/amami-harhid/
 
 > **loadCompleteAll**(): `boolean`
 
-Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L105)
+Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L105)
 
 #### Returns
 
@@ -304,7 +304,7 @@ Defined in: [src/lib/entity/entity/index.ts:105](https://github.com/amami-harhid
 
 > **update**(): `void`
 
-Defined in: [src/lib/entity/entity/index.ts:59](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/index.ts#L59)
+Defined in: [src/lib/entity/entity/index.ts:59](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/index.ts#L59)
 
 #### Returns
 

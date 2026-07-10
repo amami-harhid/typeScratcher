@@ -1,6 +1,6 @@
 # Interface: ISpriteSensingDistance
 
-Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingDistance.ts#L6)
+Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensingDistance.ts#L6)
 
 スプライト調べる（距離）
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:6](https://github.
 
 > **mousePointer**(): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingDistance.ts#L12)
+Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensingDistance.ts#L12)
 
 マウスカーソルとの距離
 
@@ -24,7 +24,7 @@ Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:12](https://github
 
 > **to**(`otherSprite`): `number`
 
-Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteSensingDistance.ts#L18)
+Defined in: [src/type/entity/sprite/ISpriteSensingDistance.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteSensingDistance.ts#L18)
 
 他スプライトとの距離
 

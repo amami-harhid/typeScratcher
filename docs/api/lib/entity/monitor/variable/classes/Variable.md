@@ -1,6 +1,6 @@
 # Class: Variable
 
-Defined in: [src/lib/entity/monitor/variable.ts:5](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/variable.ts#L5)
+Defined in: [src/lib/entity/monitor/variable.ts:5](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/monitor/variable.ts#L5)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/entity/monitor/variable.ts:5](https://github.com/amami-harh
 
 > `static` **monitoring**(`variable`): `void`
 
-Defined in: [src/lib/entity/monitor/variable.ts:17](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/variable.ts#L17)
+Defined in: [src/lib/entity/monitor/variable.ts:17](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/monitor/variable.ts#L17)
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/monitor/variable.ts:17](https://github.com/amami-har
 
 > `static` **number**(`value`): [`NumberProxy`](../../../../../type/entity/monitor/monitoring/interfaces/NumberProxy.md)
 
-Defined in: [src/lib/entity/monitor/variable.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/variable.ts#L7)
+Defined in: [src/lib/entity/monitor/variable.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/monitor/variable.ts#L7)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/entity/monitor/variable.ts:7](https://github.com/amami-harh
 
 > `static` **reposition**(): `void`
 
-Defined in: [src/lib/entity/monitor/variable.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/variable.ts#L22)
+Defined in: [src/lib/entity/monitor/variable.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/monitor/variable.ts#L22)
 
 #### Returns
 
@@ -66,7 +66,7 @@ Defined in: [src/lib/entity/monitor/variable.ts:22](https://github.com/amami-har
 
 > `static` **string**(`text`): [`StringProxy`](../../../../../type/entity/monitor/monitoring/interfaces/StringProxy.md)
 
-Defined in: [src/lib/entity/monitor/variable.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/monitor/variable.ts#L12)
+Defined in: [src/lib/entity/monitor/variable.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/monitor/variable.ts#L12)
 
 #### Parameters
 

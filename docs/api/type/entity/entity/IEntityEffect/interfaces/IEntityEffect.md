@@ -1,6 +1,6 @@
 # Interface: IEntityEffect
 
-Defined in: [src/type/entity/entity/IEntityEffect.ts:4](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityEffect.ts#L4)
+Defined in: [src/type/entity/entity/IEntityEffect.ts:4](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityEffect.ts#L4)
 
 効果
 
@@ -10,7 +10,7 @@ Defined in: [src/type/entity/entity/IEntityEffect.ts:4](https://github.com/amami
 
 > **change**(`effective`, `value`): `void`
 
-Defined in: [src/type/entity/entity/IEntityEffect.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityEffect.ts#L12)
+Defined in: [src/type/entity/entity/IEntityEffect.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityEffect.ts#L12)
 
 イメージ効果を指定量だけ変える。
 
@@ -38,7 +38,7 @@ Defined in: [src/type/entity/entity/IEntityEffect.ts:12](https://github.com/amam
 
 > **clear**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityEffect.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityEffect.ts#L22)
+Defined in: [src/type/entity/entity/IEntityEffect.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityEffect.ts#L22)
 
 イメージ効果をクリアする（初期値に戻す）
 
@@ -52,7 +52,7 @@ Defined in: [src/type/entity/entity/IEntityEffect.ts:22](https://github.com/amam
 
 > **get**(): [`TEntityEffects`](../../TEntityOptions/type-aliases/TEntityEffects.md)
 
-Defined in: [src/type/entity/entity/IEntityEffect.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityEffect.ts#L6)
+Defined in: [src/type/entity/entity/IEntityEffect.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityEffect.ts#L6)
 
 イメージ効果
 
@@ -66,7 +66,7 @@ Defined in: [src/type/entity/entity/IEntityEffect.ts:6](https://github.com/amami
 
 > **set**(`effective`, `value`): `void`
 
-Defined in: [src/type/entity/entity/IEntityEffect.ts:18](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityEffect.ts#L18)
+Defined in: [src/type/entity/entity/IEntityEffect.ts:18](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityEffect.ts#L18)
 
 イメージ効果を指定量にする。
 

@@ -1,6 +1,6 @@
 # Interface: SImage
 
-Defined in: [src/type/image/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/image/index.ts#L19)
+Defined in: [src/type/image/index.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L19)
 
 ## Constructors
 
@@ -8,7 +8,7 @@ Defined in: [src/type/image/index.ts:19](https://github.com/amami-harhid/typeScr
 
 > **new SImage**(`image`): [`IImage`](IImage.md)
 
-Defined in: [src/type/image/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/image/index.ts#L23)
+Defined in: [src/type/image/index.ts:23](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L23)
 
 #### Parameters
 
@@ -28,7 +28,7 @@ Defined in: [src/type/image/index.ts:23](https://github.com/amami-harhid/typeScr
 
 > **createSvgImage**(`image`, `attributes`): `Promise`\<[`IImage`](IImage.md)\>
 
-Defined in: [src/type/image/index.ts:29](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/image/index.ts#L29)
+Defined in: [src/type/image/index.ts:29](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/image/index.ts#L29)
 
 #### Parameters
 

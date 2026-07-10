@@ -1,6 +1,6 @@
 # Class: StageEffect
 
-Defined in: [src/lib/entity/stage/stageEffect.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageEffect.ts#L6)
+Defined in: [src/lib/entity/stage/stageEffect.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageEffect.ts#L6)
 
 効果
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/entity/stage/stageEffect.ts:6](https://github.com/amami-har
 
 > **new StageEffect**(`entity`): `StageEffect`
 
-Defined in: [src/lib/entity/stage/stageEffect.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageEffect.ts#L12)
+Defined in: [src/lib/entity/stage/stageEffect.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageEffect.ts#L12)
 
 **`Internal`**
 
@@ -46,7 +46,7 @@ Defined in: [src/lib/entity/stage/stageEffect.ts:12](https://github.com/amami-ha
 
 > **set** **effect**(`_effect`): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:21](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEffect.ts#L21)
+Defined in: [src/lib/entity/entity/entityEffect.ts:21](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityEffect.ts#L21)
 
 ##### Parameters
 
@@ -68,7 +68,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:21](https://github.com/amami-
 
 > **change**(`effective`, `value`): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:32](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEffect.ts#L32)
+Defined in: [src/lib/entity/entity/entityEffect.ts:32](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityEffect.ts#L32)
 
 イメージ効果を指定量だけ変える。
 
@@ -104,7 +104,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:32](https://github.com/amami-
 
 > **clear**(): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:89](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEffect.ts#L89)
+Defined in: [src/lib/entity/entity/entityEffect.ts:89](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityEffect.ts#L89)
 
 イメージ効果をクリアする（初期値に戻す）
 
@@ -126,7 +126,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:89](https://github.com/amami-
 
 > **get**(): [`TEntityEffects`](../../../../../type/entity/entity/TEntityOptions/type-aliases/TEntityEffects.md)
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:24](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEffect.ts#L24)
+Defined in: [src/lib/entity/entity/entityEffect.ts:24](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityEffect.ts#L24)
 
 イメージ効果
 
@@ -148,7 +148,7 @@ Defined in: [src/lib/entity/entity/entityEffect.ts:24](https://github.com/amami-
 
 > **set**(`effective`, `value`): `void`
 
-Defined in: [src/lib/entity/entity/entityEffect.ts:69](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/entity/entityEffect.ts#L69)
+Defined in: [src/lib/entity/entity/entityEffect.ts:69](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/entity/entityEffect.ts#L69)
 
 イメージ効果を指定量にする。
 

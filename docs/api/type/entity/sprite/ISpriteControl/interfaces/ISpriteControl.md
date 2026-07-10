@@ -1,6 +1,6 @@
 # Interface: ISpriteControl
 
-Defined in: [src/type/entity/sprite/ISpriteControl.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteControl.ts#L6)
+Defined in: [src/type/entity/sprite/ISpriteControl.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteControl.ts#L6)
 
 Sprite Control(制御)
 
@@ -14,7 +14,7 @@ Sprite Control(制御)
 
 > **clone**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteControl.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteControl.ts#L11)
+Defined in: [src/type/entity/sprite/ISpriteControl.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteControl.ts#L11)
 
 クローンを作る
 
@@ -28,7 +28,7 @@ Defined in: [src/type/entity/sprite/ISpriteControl.ts:11](https://github.com/ama
 
 > **removeAllClones**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteControl.ts:19](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteControl.ts#L19)
+Defined in: [src/type/entity/sprite/ISpriteControl.ts:19](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteControl.ts#L19)
 
 クローンを全て削除する
 
@@ -42,7 +42,7 @@ Defined in: [src/type/entity/sprite/ISpriteControl.ts:19](https://github.com/ama
 
 > **removeClone**(): `void`
 
-Defined in: [src/type/entity/sprite/ISpriteControl.ts:15](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/sprite/ISpriteControl.ts#L15)
+Defined in: [src/type/entity/sprite/ISpriteControl.ts:15](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/sprite/ISpriteControl.ts#L15)
 
 クローンを抹消する
 
@@ -56,7 +56,7 @@ Defined in: [src/type/entity/sprite/ISpriteControl.ts:15](https://github.com/ama
 
 > **stopAll**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:47](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityControl.ts#L47)
+Defined in: [src/type/entity/entity/IEntityControl.ts:47](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityControl.ts#L47)
 
 全てのスプライトの動作を停止する
 
@@ -76,7 +76,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:47](https://github.com/ama
 
 > **stopOtherScripts**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:60](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityControl.ts#L60)
+Defined in: [src/type/entity/entity/IEntityControl.ts:60](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityControl.ts#L60)
 
 このスプライトの他のスクリプトを停止する
 
@@ -99,7 +99,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:60](https://github.com/ama
 
 > **stopThisScript**(): `void`
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:51](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityControl.ts#L51)
+Defined in: [src/type/entity/entity/IEntityControl.ts:51](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityControl.ts#L51)
 
 このスクリプトを停止する
 
@@ -117,7 +117,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:51](https://github.com/ama
 
 > **wait**(`sec`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityControl.ts#L11)
+Defined in: [src/type/entity/entity/IEntityControl.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityControl.ts#L11)
 
 指定秒数分、待つ。
 
@@ -141,7 +141,7 @@ Defined in: [src/type/entity/entity/IEntityControl.ts:11](https://github.com/ama
 
 > **waitUntil**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:26](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityControl.ts#L26)
+Defined in: [src/type/entity/entity/IEntityControl.ts:26](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityControl.ts#L26)
 
 条件が成立する迄、待つ
 
@@ -177,7 +177,7 @@ await this.Control.waitUntil(condition);
 
 > **waitWhile**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/type/entity/entity/IEntityControl.ts:41](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityControl.ts#L41)
+Defined in: [src/type/entity/entity/IEntityControl.ts:41](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityControl.ts#L41)
 
 条件が成立する間、待つ。
 

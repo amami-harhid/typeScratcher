@@ -1,6 +1,6 @@
 # Class: SpriteControl
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:28](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L28)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:28](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L28)
 
 Sprite Control(制御)
 
@@ -14,7 +14,7 @@ Sprite Control(制御)
 
 > **new SpriteControl**(`entity`): `SpriteControl`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:42](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L42)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:42](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L42)
 
 **`Internal`**
 
@@ -36,7 +36,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:42](https://github.com/amami
 
 > **\_clonedEventElementKeys**: `string`[] = `[]`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:31](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L31)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:31](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L31)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:31](https://github.com/amami
 
 > **\_clonedFuncElements**: `CallableFunction`[] = `[]`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:30](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L30)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:30](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L30)
 
 ## Accessors
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:30](https://github.com/amami
 
 > **set** `static` **cloneCount**(`_count`): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:34](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L34)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:34](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L34)
 
 ##### Parameters
 
@@ -72,7 +72,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:34](https://github.com/amami
 
 > **clone**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:70](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L70)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:70](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L70)
 
 クローンを作る
 
@@ -90,7 +90,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:70](https://github.com/amami
 
 > **cloned**(): [`EventFunctionSetter`](../../../../../type/entity/entity/IEntityEvent/interfaces/EventFunctionSetter.md)
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:160](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L160)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:160](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L160)
 
 クローンされたときの動作を定義する
 
@@ -104,7 +104,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:160](https://github.com/amam
 
 > **clonedEventKick**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:201](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L201)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:201](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L201)
 
 クローンのイベントを開始する
 
@@ -118,7 +118,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:201](https://github.com/amam
 
 > **removeAllClones**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:252](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L252)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:252](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L252)
 
 クローンを全て削除する
 
@@ -136,7 +136,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:252](https://github.com/amam
 
 > **removeClone**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:228](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L228)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:228](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L228)
 
 クローンを抹消する
 
@@ -154,7 +154,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:228](https://github.com/amam
 
 > **stopAll**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:222](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L222)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:222](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L222)
 
 全てのスプライトの動作を停止する
 クローンや他のスプライトを含めてすべてのスクリプトが停止する。
@@ -173,7 +173,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:222](https://github.com/amam
 
 > **stopOtherScripts**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:273](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L273)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:273](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L273)
 
 このスプライトの他のスクリプトを停止する
 親スプライトから派生したクローンを含めて、同じスプライトであるとみなすので、
@@ -195,7 +195,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:273](https://github.com/amam
 
 > **stopThisScript**(): `void`
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:262](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L262)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:262](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L262)
 
 このスクリプトを停止する
 
@@ -213,7 +213,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:262](https://github.com/amam
 
 > **wait**(`sec`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:49](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L49)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:49](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L49)
 
 指定秒数分、待つ。
 
@@ -237,7 +237,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:49](https://github.com/amami
 
 > **waitUntil**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:56](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L56)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:56](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L56)
 
 条件が成立する迄、待つ。
 
@@ -263,7 +263,7 @@ Defined in: [src/lib/entity/sprite/spriteControl.ts:56](https://github.com/amami
 
 > **waitWhile**(`condition`): `Promise`\<`void`\>
 
-Defined in: [src/lib/entity/sprite/spriteControl.ts:64](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/sprite/spriteControl.ts#L64)
+Defined in: [src/lib/entity/sprite/spriteControl.ts:64](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/sprite/spriteControl.ts#L64)
 
 条件が成立する間、待つ。
 

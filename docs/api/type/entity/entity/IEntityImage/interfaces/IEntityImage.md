@@ -1,6 +1,6 @@
 # Interface: IEntityImage
 
-Defined in: [src/type/entity/entity/IEntityImage.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityImage.ts#L6)
+Defined in: [src/type/entity/entity/IEntityImage.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityImage.ts#L6)
 
 Entity Image(イメージ)
 
@@ -10,7 +10,7 @@ Entity Image(イメージ)
 
 > `readonly` **images**: [`IImage`](../../../../image/interfaces/IImage.md)[]
 
-Defined in: [src/type/entity/entity/IEntityImage.ts:40](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityImage.ts#L40)
+Defined in: [src/type/entity/entity/IEntityImage.ts:40](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityImage.ts#L40)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/type/entity/entity/IEntityImage.ts:40](https://github.com/amami
 
 > `readonly` **names**: `string`[]
 
-Defined in: [src/type/entity/entity/IEntityImage.ts:38](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityImage.ts#L38)
+Defined in: [src/type/entity/entity/IEntityImage.ts:38](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityImage.ts#L38)
 
 追加されている画像名を配列で受け取る
 ```ts
@@ -38,7 +38,7 @@ Defined in: [src/type/entity/entity/IEntityImage.ts:38](https://github.com/amami
 
 > **add**(`images`): `void`
 
-Defined in: [src/type/entity/entity/IEntityImage.ts:24](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/type/entity/entity/IEntityImage.ts#L24)
+Defined in: [src/type/entity/entity/IEntityImage.ts:24](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/type/entity/entity/IEntityImage.ts#L24)
 
 画像を追加する
 

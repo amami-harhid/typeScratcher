@@ -1,6 +1,6 @@
 # Class: StageFont
 
-Defined in: [src/lib/entity/stage/stageFont.ts:6](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageFont.ts#L6)
+Defined in: [src/lib/entity/stage/stageFont.ts:6](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageFont.ts#L6)
 
 StageFont
 
@@ -14,7 +14,7 @@ StageFont
 
 > **new StageFont**(`entity`): `StageFont`
 
-Defined in: [src/lib/entity/stage/stageFont.ts:12](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageFont.ts#L12)
+Defined in: [src/lib/entity/stage/stageFont.ts:12](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageFont.ts#L12)
 
 **`Internal`**
 
@@ -38,7 +38,7 @@ Defined in: [src/lib/entity/stage/stageFont.ts:12](https://github.com/amami-harh
 
 > **get** **names**(): `string`[]
 
-Defined in: [src/lib/entity/stage/stageFont.ts:20](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageFont.ts#L20)
+Defined in: [src/lib/entity/stage/stageFont.ts:20](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageFont.ts#L20)
 
 ##### Returns
 
@@ -54,7 +54,7 @@ Defined in: [src/lib/entity/stage/stageFont.ts:20](https://github.com/amami-harh
 
 > **add**(`fontName`): `void`
 
-Defined in: [src/lib/entity/stage/stageFont.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/entity/stage/stageFont.ts#L16)
+Defined in: [src/lib/entity/stage/stageFont.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/entity/stage/stageFont.ts#L16)
 
 #### Parameters
 

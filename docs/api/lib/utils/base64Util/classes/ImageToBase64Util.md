@@ -1,6 +1,6 @@
 # Class: ImageToBase64Util
 
-Defined in: [src/lib/utils/base64Util.ts:2](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/base64Util.ts#L2)
+Defined in: [src/lib/utils/base64Util.ts:2](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/base64Util.ts#L2)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/utils/base64Util.ts:2](https://github.com/amami-harhid/type
 
 > `static` **blobToBase64**(`blob`): `Promise`\<`string`\>
 
-Defined in: [src/lib/utils/base64Util.ts:35](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/base64Util.ts#L35)
+Defined in: [src/lib/utils/base64Util.ts:35](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/base64Util.ts#L35)
 
 BlobをBase64へ変換
 例: data:font/woff2;base64,～
@@ -39,7 +39,7 @@ BlobをBase64へ変換
 
 > `static` **getLoadInfo**(`url`): `Promise`\<\{ `data`: `string`; `size`: \{ `heigth`: `number`; `width`: `number`; \}; \}\>
 
-Defined in: [src/lib/utils/base64Util.ts:11](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/base64Util.ts#L11)
+Defined in: [src/lib/utils/base64Util.ts:11](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/base64Util.ts#L11)
 
 指定したURLを読み込み、ロード後の情報を返す
 イメージデータを前提とする。

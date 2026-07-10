@@ -1,6 +1,6 @@
 # Class: FunctionChecker
 
-Defined in: [src/lib/utils/functionChecker.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/functionChecker.ts#L16)
+Defined in: [src/lib/utils/functionChecker.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/functionChecker.ts#L16)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/utils/functionChecker.ts:16](https://github.com/amami-harhi
 
 > `static` **getFunctionDeclares**(`func`): `TFunctionChecker`
 
-Defined in: [src/lib/utils/functionChecker.ts:22](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/functionChecker.ts#L22)
+Defined in: [src/lib/utils/functionChecker.ts:22](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/functionChecker.ts#L22)
 
 関数定義を渡しアロー関数、Async、Generatorの種類を返す。
 
@@ -40,7 +40,7 @@ Defined in: [src/lib/utils/functionChecker.ts:22](https://github.com/amami-harhi
 
 > `static` **getTypeOfGenerator**(`func`): `TypeOfGenerator`
 
-Defined in: [src/lib/utils/functionChecker.ts:41](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/functionChecker.ts#L41)
+Defined in: [src/lib/utils/functionChecker.ts:41](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/functionChecker.ts#L41)
 
 未使用
 

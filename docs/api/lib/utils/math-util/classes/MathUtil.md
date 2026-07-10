@@ -1,6 +1,6 @@
 # Class: MathUtil
 
-Defined in: [src/lib/utils/math-util.ts:1](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L1)
+Defined in: [src/lib/utils/math-util.ts:1](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L1)
 
 ## Constructors
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/utils/math-util.ts:1](https://github.com/amami-harhid/typeS
 
 > `static` **clamp**(`n`, `min`, `max`): `number`
 
-Defined in: [src/lib/utils/math-util.ts:28](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L28)
+Defined in: [src/lib/utils/math-util.ts:28](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L28)
 
 Clamp a number between two limits.
 If n < min, return min. If n > max, return max. Else, return n.
@@ -55,7 +55,7 @@ Value of n clamped to min and max.
 
 > `static` **degToRad**(`deg`): `number`
 
-Defined in: [src/lib/utils/math-util.ts:7](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L7)
+Defined in: [src/lib/utils/math-util.ts:7](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L7)
 
 Convert a value from degrees to radians.
 
@@ -79,7 +79,7 @@ Equivalent value in radians.
 
 > `static` **inclusiveRandIntWithout**(`lower`, `upper`, `excluded`): `number`
 
-Defined in: [src/lib/utils/math-util.ts:93](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L93)
+Defined in: [src/lib/utils/math-util.ts:93](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L93)
 
 Return a random number given an inclusive range and a number in that
 range that should be excluded.
@@ -119,7 +119,7 @@ A random integer in the range [lower, upper] that is not "excluded"
 
 > `static` **radToDeg**(`rad`): `number`
 
-Defined in: [src/lib/utils/math-util.ts:16](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L16)
+Defined in: [src/lib/utils/math-util.ts:16](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L16)
 
 Convert a value from radians to degrees.
 
@@ -143,7 +143,7 @@ Equivalent value in degrees.
 
 > `static` **reducedSortOrdering**(`elts`): `number`[]
 
-Defined in: [src/lib/utils/math-util.ts:76](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L76)
+Defined in: [src/lib/utils/math-util.ts:76](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L76)
 
 Given an array of unique numbers,
 returns a reduced array such that each element of the reduced array
@@ -171,7 +171,7 @@ The array of reduced orderings
 
 > `static` **scale**(`i`, `iMin`, `iMax`, `oMin`, `oMax`): `number`
 
-Defined in: [src/lib/utils/math-util.ts:116](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L116)
+Defined in: [src/lib/utils/math-util.ts:116](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L116)
 
 Scales a number from one range to another.
 
@@ -219,7 +219,7 @@ scaled number
 
 > `static` **tan**(`angle`): `number`
 
-Defined in: [src/lib/utils/math-util.ts:53](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L53)
+Defined in: [src/lib/utils/math-util.ts:53](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L53)
 
 Convert a value from tan function in degrees.
 
@@ -243,7 +243,7 @@ Correct tan value
 
 > `static` **wrapClamp**(`n`, `min`, `max`): `number`
 
-Defined in: [src/lib/utils/math-util.ts:42](https://github.com/amami-harhid/typeScratcher/blob/3c033398bc9eddc7a6eafd2adfc198090050a5d3/src/lib/utils/math-util.ts#L42)
+Defined in: [src/lib/utils/math-util.ts:42](https://github.com/amami-harhid/typeScratcher/blob/8b5206f2f07e71809cdee699141d949db76458cf/src/lib/utils/math-util.ts#L42)
 
 Keep a number between two limits, wrapping "extra" into the range.
 e.g., wrapClamp(7, 1, 5) == 2
