@@ -1,1 +1,0 @@
-# type/sound/declare
