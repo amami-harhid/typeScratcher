@@ -1,5 +1,5 @@
+import type { TPositionArray } from '../../common/typeCommon';
 import type { ISprite } from '.';
-import { IEntity } from '../entity';
 
 /**
  * スプライトの動き（動かす）
@@ -12,10 +12,10 @@ export interface ISpriteMotionMove {
     steps(steps: number): void;
     /**
      * 指定座標へ移動させる
-     * @param x {number} - X座標
-     * @param y {number} - Y座標
+     * @param pos number[] - [X座標,Y座標]
      */
-    to(x:number, y:number): void;
+    to( pos: TPositionArray ): void;
+
     /**
      * もし端に振れたら跳ね返る
      */
@@ -36,9 +36,20 @@ export interface ISpriteMotionMove {
     /**
      * 指定秒数かけて指定座標へ移動させる
      * @param sec {number} - 秒数
-     * @param x {number} - X座標
-     * @param y {number} - Y座標
+     * @param pos number[] - [X座標,Y座標]
      */
-    glideTo(sec:number, x: number, y:number): Promise<void>;
+    glideTo(sec:number, pos: TPositionArray): Promise<void>;
+
+    /**
+     * 指定秒数かけてランダムな座標位置へ移動させる
+     * @param sec {number} - 秒数
+     */
+    glideToRandom(sec:number): Promise<void>;
+
+    /**
+     * 指定秒数かけてマウスポインター座標へ移動させる
+     * @param sec {number} - 秒数
+     */
+    glideToMouse(sec:number): Promise<void>;
 
 };

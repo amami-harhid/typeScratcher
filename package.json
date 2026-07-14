@@ -22,7 +22,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "vite build --config ./vite.config-build.js --emptyOutDir"
+    "build": "vite build --config ./vite.config-build.js --emptyOutDir "
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",

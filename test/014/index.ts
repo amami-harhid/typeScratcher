@@ -27,7 +27,7 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
 
 cat.Broadcast.receiver('NEXT').func = async function*(this:Sprite) {
     //this.Motion.move.to(0, 0);
-    await this.Motion.move.glideTo(1, 0, 0);
+    await this.Motion.move.glideTo(1, [0, 0]);
     for(;;) {
         this.Motion.point.toMouse();
         const distance = this.Sensing.mouse.distance;

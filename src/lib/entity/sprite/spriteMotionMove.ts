@@ -7,6 +7,7 @@ import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '../sprite';
 import { Utils } from '../../utils/utils';
 import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
+import type { TPositionArray } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteMotionMove } from '../../../type/entity/sprite/ISpriteMotionMove';
 
@@ -33,10 +34,10 @@ export class SpriteMotionMove implements ISpriteMotionMove {
     set y(y:number){
         this.prop.position.y = y;
     }
-    to(x:number, y:number) : void {
+    to( pos: TPositionArray) : void {
         const prop = this.entity.Properties;
-        prop.position.x = x;
-        prop.position.y = y;
+        prop.position.x = pos[0];
+        prop.position.y = pos[1];
         this.entity.render.renderer.updateDrawablePosition(this.entity.drawableID, [prop.position.x, prop.position.y]);
     }
     /**
@@ -51,7 +52,7 @@ export class SpriteMotionMove implements ISpriteMotionMove {
         const prop = this.entity.Properties;
         prop.position.x += dx;
         prop.position.y += dy;
-        this.to(prop.position.x, prop.position.y);
+        this.to( [prop.position.x, prop.position.y] );
     }
     /**
      * もし端に振れたら跳ね返る
@@ -137,28 +138,33 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      * ステージ上のランダムな位置へ移動する
      */
     toRandom(): void {
+        const randomPos = this.randomPosition();
+        this.entity.Properties.position.x = randomPos[0];
+        this.entity.Properties.position.y = randomPos[1];
+
+    }
+    private randomPosition(): TPositionArray {
         const width = this.entity.render.stageWidth;
         const halfWidth = Math.floor(width/2);
         const x = Utils.randomizeInRange(-halfWidth, halfWidth );
         const height = this.entity.render.stageHeight;
         const halfHeight = Math.floor(height/2);
         const y = Utils.randomizeInRange(-halfHeight, halfHeight);
-
-        this.entity.Properties.position.x = x;
-        this.entity.Properties.position.y = y;
-
+        return [x, y];
     }
     /**
      * マウスカーソルの位置へ移動する
      */
     toMouse() : void {
+        const mousePos = this.mousePosition();
+        this.entity.Properties.position.x = mousePos[0];
+        this.entity.Properties.position.y = mousePos[1];
+    }
+    private mousePosition(): TPositionArray {
         const _mouse = (engine as Engine).mouse;
         // Window全体のマウス座標をもとにCanvas上の座標へ変換する
         const stagePosition = ScratchElement.pageToScratchStagePosition(_mouse.pageX, _mouse.pageY);
-        this.entity.Properties.position.x = stagePosition.scratchX;
-        this.entity.Properties.position.y = stagePosition.scratchY;
-        //this.entity.Properties.position.x = _mouse.pageX * _rate.x;
-        //this.entity.Properties.position.y = _mouse.pageY * _rate.y;
+        return [stagePosition.scratchX, stagePosition.scratchY];
     }
     /**
      * 指定したスプライトの位置へ移動する
@@ -169,17 +175,16 @@ export class SpriteMotionMove implements ISpriteMotionMove {
         this.entity.Properties.position.y = (target as Sprite).Properties.position.y;
     }
     /**
-     * 
+     * glide to 
      * @param sec 
-     * @param x 
-     * @param y 
-     * @param proxy 
+     * @param pos
      * @returns 
      */
-    async glideTo(sec:number, x: number, y:number): Promise<void> {
+    async glideTo(sec:number, pos: TPositionArray): Promise<void> {
 
         const _proxy = this.entity as unknown as EntityProxyExt; 
-
+        const x = pos[0];
+        const y = pos[1];
         const _x = this.entity.Properties.position.x;
         const _y = this.entity.Properties.position.y;
         const _xy = {x: _x, y: _y};
@@ -217,4 +222,23 @@ export class SpriteMotionMove implements ISpriteMotionMove {
             })
         });
     }
+    /**
+     * glide to random position
+     * @param sec 
+     * @returns 
+     */
+    async glideToRandom(sec:number): Promise<void> {
+        const randomPos = this.randomPosition();
+        await this.glideTo(sec, randomPos);
+    }
+    /**
+     * glide to random position
+     * @param sec 
+     * @returns 
+     */
+    async glideToMouse(sec:number): Promise<void> {
+        const mousePos = this.mousePosition();
+        await this.glideTo(sec, mousePos);
+    }
+
 };
