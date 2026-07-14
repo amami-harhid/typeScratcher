@@ -11,6 +11,10 @@ export interface IStageLooksBackdrop extends IEntityLooksBackdrop {
     readonly currentSkinId: number;
 
     /**
+     * 次の背景にして待つ
+     */
+    nextAndWait(): Promise<void>
+    /**
      * 前の背景にして待つ
      */
     previousAndWait(): Promise<void>;

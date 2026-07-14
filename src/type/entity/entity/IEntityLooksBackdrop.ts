@@ -40,10 +40,6 @@ export interface IEntityLooksBackdrop {
      */
     next() : void;
     /**
-     * 次の背景にして待つ
-     */
-    nextAndWait(): Promise<void>
-    /**
      * 前の背景にする
      * ```ts
      *  this.Looks.Backdrop.previous();
