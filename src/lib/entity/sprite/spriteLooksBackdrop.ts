@@ -82,16 +82,6 @@ export class SpriteLooksBackdrop extends EntityBackdrop implements ISpriteLooksB
         }
     }
     /**
-     * 背景を切り替えて待つ
-     * @param name 
-     */
-    async switchAndWait(backdropName: string) : Promise<void>{
-        const _entity = (engine as Engine).getStage() as Stage;
-        if(_entity){
-            await (_entity.Backdrop as StageBackdrop).switchAndWait(backdropName);
-        }
-    }
-    /**
      * 次の背景にする
      * ```ts
      *  this.Looks.Backdrop.nextBackdrop();
@@ -101,15 +91,6 @@ export class SpriteLooksBackdrop extends EntityBackdrop implements ISpriteLooksB
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity){
             (_entity.Backdrop as StageBackdrop).next();
-        }
-    }
-    /**
-     * 次の背景にして待つ
-     */
-    async nextAndWait(): Promise<void> {
-        const _entity = (engine as Engine).getStage() as Stage;
-        if(_entity) {
-            await (_entity.Backdrop as StageBackdrop).nextAndWait();
         }
     }
     /**
@@ -123,15 +104,6 @@ export class SpriteLooksBackdrop extends EntityBackdrop implements ISpriteLooksB
     }
 
     /**
-     * 前の背景にして待つ。
-     */
-    async previousAndWait() : Promise<void> {
-        const _entity = (engine as Engine).getStage() as Stage;
-        if(_entity) {
-            await (_entity.Backdrop as StageBackdrop).previousAndWait();
-        }
-    }
-    /**
      * どれかの背景にする
      */
     switchRandom(): void {
@@ -140,14 +112,6 @@ export class SpriteLooksBackdrop extends EntityBackdrop implements ISpriteLooksB
             (_entity.Backdrop as StageBackdrop).switchRandom();
         }
         
-    }
-    /**
-     * どれかの背景にして待つ
-     */
-    async switchRandomAndWait() : Promise<void>{
-        
-        const backdropName = this.name;
-        await this.untilBackdropEventDone(backdropName);
     }
 
 }

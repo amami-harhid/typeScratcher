@@ -51,22 +51,9 @@ export interface IEntityLooksBackdrop {
      */
     previous(): void;
     /**
-     * 前の背景にして待つ
-     */
-    previousAndWait(): Promise<void>;
-    /**
      * どれかの背景にする
      */
     switchRandom(): void;
-    /**
-     * どれかの背景にして待つ
-     */
-    switchRandomAndWait(): Promise<void>;
-    /**
-     * 背景を変えて待つ
-     * @param backdropName 
-     */
-    switchAndWait(backdropName: string): Promise<void>;
 
 
 }
