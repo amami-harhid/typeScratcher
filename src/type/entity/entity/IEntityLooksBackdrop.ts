@@ -1,3 +1,5 @@
+import { IImage } from "src/type/image";
+
 /** 背景 */
 export interface IEntityLooksBackdrop {
     /**
@@ -39,6 +41,13 @@ export interface IEntityLooksBackdrop {
      * ```
      */
     next() : void;
+
+    /**
+     * 指定した背景にする
+     * @param backdrop 
+     */
+    switch(backdrop: IImage): void;
+
     /**
      * 前の背景にする
      * ```ts

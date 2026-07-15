@@ -67,6 +67,14 @@ export class SpriteLooks extends EntityLooks implements ISpriteLooks{
         return this._bubble;
     }
 
+    get visible(): { show: ()=>void, hide: ()=>void} {
+
+        return {
+            show: this.show.bind(this),
+            hide: this.hide.bind(this),
+        }
+    }
+
     /**
      * 表示する
      */

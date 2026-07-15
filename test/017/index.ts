@@ -72,11 +72,11 @@ cat.Event.cloned().func = function* (this: Sprite) {
         this.Motion.move.steps(2);
         this.Motion.move.ifOnEdgeBounce();
         if(this.Sensing.sprite.isTouching([cat])) {
-            this.Looks.hide();
+            this.Looks.visible.hide();
             break;
         }
         if(this.Sensing.edge.isTouching){
-            this.Looks.hide();
+            this.Looks.visible.hide();
             break;
         }
         this.Looks.costume.next();

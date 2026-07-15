@@ -33,7 +33,7 @@ const StageHeight = Ts.StageBounds.h;
 // 【スプライト】(ブロック)
 const block = new Ts.Sprite('block');
 block.Costume.add( [ BlockImage ] );
-block.Looks.hide(); // 非表示にする
+block.Looks.visible.hide(); // 非表示にする
 block.Looks.effect.set(Ts.ImageEffective.GHOST, 50);
 // 【ステージ】(water)
 const stage = new Ts.Stage();
@@ -52,11 +52,11 @@ dog.Event.flagPresser().func = async function*(this:Sprite){
 
 block.Event.flagPresser().func = async function*(this:Sprite){
     
-    this.Looks.show();
+    this.Looks.visible.show();
 
     this.Motion.position.xy = [0,0];
 
-    this.Looks.size.w = StageWidth;
+    this.Looks.size.drawingSize = {w:StageWidth};
 
     //const blockY = boundsHeight/2 -StageHeight/2
     this.Motion.position.y =-StageHeight/2

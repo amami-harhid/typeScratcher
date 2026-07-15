@@ -348,7 +348,7 @@ function xK() {
 }
 xK();
 var $h = {}, Ad = {}, mB, ed;
-function le() {
+function ue() {
   if (ed) return mB;
   ed = 1;
   var i = function(A) {
@@ -503,7 +503,7 @@ var Ec, ud;
 function Se() {
   if (ud) return Ec;
   ud = 1;
-  var i = le(), A = ze(), e = function(r) {
+  var i = ue(), A = ze(), e = function(r) {
     return A(r) ? r : void 0;
   };
   return Ec = function(r, n) {
@@ -521,21 +521,21 @@ var uc, Id;
 function Ji() {
   if (Id) return uc;
   Id = 1;
-  var i = le(), A = i.navigator, e = A && A.userAgent;
+  var i = ue(), A = i.navigator, e = A && A.userAgent;
   return uc = e ? String(e) : "", uc;
 }
 var lc, hd;
 function bi() {
   if (hd) return lc;
   hd = 1;
-  var i = le(), A = Ji(), e = i.process, r = i.Deno, n = e && e.versions || r && r.version, o = n && n.v8, B, Q;
+  var i = ue(), A = Ji(), e = i.process, r = i.Deno, n = e && e.versions || r && r.version, o = n && n.v8, B, Q;
   return o && (B = o.split("."), Q = B[0] > 0 && B[0] < 4 ? 1 : +(B[0] + B[1])), !Q && A && (B = A.match(/Edge\/(\d+)/), (!B || B[1] >= 74) && (B = A.match(/Chrome\/(\d+)/), B && (Q = +B[1]))), lc = Q, lc;
 }
 var Ic, dd;
 function Cs() {
   if (dd) return Ic;
   dd = 1;
-  var i = bi(), A = Be(), e = le(), r = e.String;
+  var i = bi(), A = Be(), e = ue(), r = e.String;
   return Ic = !!Object.getOwnPropertySymbols && !A(function() {
     var n = Symbol("symbol detection");
     return !r(n) || !(Object(n) instanceof Symbol) || // Chrome 38-40 symbols are not inherited from DOM collections prototypes to instances
@@ -613,7 +613,7 @@ var mc, yd;
 function Hl() {
   if (yd) return mc;
   yd = 1;
-  var i = le(), A = Object.defineProperty;
+  var i = ue(), A = Object.defineProperty;
   return mc = function(e, r) {
     try {
       A(i, e, { value: r, configurable: !0, writable: !0 });
@@ -627,7 +627,7 @@ var Ud;
 function Qo() {
   if (Ud) return Dc.exports;
   Ud = 1;
-  var i = Ke(), A = le(), e = Hl(), r = "__core-js_shared__", n = Dc.exports = A[r] || e(r, {});
+  var i = Ke(), A = ue(), e = Hl(), r = "__core-js_shared__", n = Dc.exports = A[r] || e(r, {});
   return (n.versions || (n.versions = [])).push({
     version: "3.49.0",
     mode: i ? "pure" : "global",
@@ -676,7 +676,7 @@ var vc, Rd;
 function He() {
   if (Rd) return vc;
   Rd = 1;
-  var i = le(), A = Un(), e = We(), r = ws(), n = Cs(), o = TP(), B = i.Symbol, Q = A("wks"), s = o ? B.for || B : B && B.withoutSetter || r;
+  var i = ue(), A = Un(), e = We(), r = ws(), n = Cs(), o = TP(), B = i.Symbol, Q = A("wks"), s = o ? B.for || B : B && B.withoutSetter || r;
   return vc = function(C) {
     return e(Q, C) || (Q[C] = n && e(B, C) ? B[C] : s("Symbol." + C)), Q[C];
   }, vc;
@@ -710,7 +710,7 @@ var Hc, Td;
 function Eo() {
   if (Td) return Hc;
   Td = 1;
-  var i = le(), A = Re(), e = i.document, r = A(e) && A(e.createElement);
+  var i = ue(), A = Re(), e = i.document, r = A(e) && A(e.createElement);
   return Hc = function(n) {
     return r ? e.createElement(n) : {};
   }, Hc;
@@ -824,7 +824,7 @@ var zc, Od;
 function jP() {
   if (Od) return zc;
   Od = 1;
-  var i = le(), A = ze(), e = i.WeakMap;
+  var i = ue(), A = ze(), e = i.WeakMap;
   return zc = A(e) && /native code/.test(String(e)), zc;
 }
 var Wc, Kd;
@@ -844,7 +844,7 @@ var Kc, Xd;
 function it() {
   if (Xd) return Kc;
   Xd = 1;
-  var i = jP(), A = le(), e = Re(), r = $t(), n = We(), o = Qo(), B = uo(), Q = TB(), s = "Object already initialized", C = A.TypeError, c = A.WeakMap, g, a, h, I = function(f) {
+  var i = jP(), A = ue(), e = Re(), r = $t(), n = We(), o = Qo(), B = uo(), Q = TB(), s = "Object already initialized", C = A.TypeError, c = A.WeakMap, g, a, h, I = function(f) {
     return h(f) ? a(f) : g(f, {});
   }, u = function(f) {
     return function(y) {
@@ -1078,7 +1078,7 @@ var aQ, cY;
 function oA() {
   if (cY) return aQ;
   cY = 1;
-  var i = le(), A = gr().f, e = $t(), r = at(), n = Hl(), o = AB(), B = bB();
+  var i = ue(), A = gr().f, e = $t(), r = at(), n = Hl(), o = AB(), B = bB();
   return aQ = function(Q, s) {
     var C = Q.target, c = Q.global, g = Q.stat, a, h, I, u, F, l;
     if (c ? h = i : g ? h = i[C] || n(C, {}) : h = i[C] && i[C].prototype, h) for (I in s) {
@@ -1221,7 +1221,7 @@ var dQ, MY;
 function ho() {
   if (MY) return dQ;
   MY = 1;
-  var i = le();
+  var i = ue();
   return dQ = i, dQ;
 }
 var YQ, FY;
@@ -1410,7 +1410,7 @@ var HY;
 function HK() {
   if (HY) return Ad;
   HY = 1;
-  var i = oA(), A = le(), e = Ce(), r = te(), n = Ke(), o = Ne(), B = Cs(), Q = Be(), s = We(), C = dr(), c = we(), g = qt(), a = gi(), h = Pe(), I = Vr(), u = Pt(), F = eB(), l = us(), f = kl(), y = Io(), m = gr(), D = ut(), U = bl(), T = SB(), v = at(), H = Ft(), S = Un(), p = uo(), M = TB(), G = ws(), x = He(), b = WP(), j = Rt(), P = OP(), O = Pr(), k = it(), Z = zt().forEach, iA = p("hidden"), V = "Symbol", AA = "prototype", $ = k.set, rA = k.getterFor(V), aA = Object[AA], gA = A.Symbol, tA = gA && gA[AA], DA = A.RangeError, pA = A.TypeError, LA = A.QObject, hA = m.f, MA = D.f, jA = f.f, Ae = T.f, ee = r([].push), se = S("symbols"), Ee = S("op-symbols"), SA = S("wks"), xA = !LA || !LA[AA] || !LA[AA].findChild, KA = function(uA, wA, GA) {
+  var i = oA(), A = ue(), e = Ce(), r = te(), n = Ke(), o = Ne(), B = Cs(), Q = Be(), s = We(), C = dr(), c = we(), g = qt(), a = gi(), h = Pe(), I = Vr(), u = Pt(), F = eB(), l = us(), f = kl(), y = Io(), m = gr(), D = ut(), U = bl(), T = SB(), v = at(), H = Ft(), S = Un(), p = uo(), M = TB(), G = ws(), x = He(), b = WP(), j = Rt(), P = OP(), O = Pr(), k = it(), Z = zt().forEach, iA = p("hidden"), V = "Symbol", AA = "prototype", $ = k.set, rA = k.getterFor(V), aA = Object[AA], gA = A.Symbol, tA = gA && gA[AA], DA = A.RangeError, pA = A.TypeError, LA = A.QObject, hA = m.f, MA = D.f, jA = f.f, Ae = T.f, ee = r([].push), se = S("symbols"), Ee = S("op-symbols"), SA = S("wks"), xA = !LA || !LA[AA] || !LA[AA].findChild, KA = function(uA, wA, GA) {
     var kA = hA(aA, wA);
     return kA && delete aA[wA], MA(uA, wA, GA), kA && uA !== aA && MA(aA, wA, kA), uA;
   }, _A = o && Q(function() {
@@ -1690,7 +1690,7 @@ var _Y = {}, ZY;
 function kK() {
   if (ZY) return _Y;
   ZY = 1;
-  var i = oA(), A = Ne(), e = le(), r = Ce(), n = te(), o = We(), B = ze(), Q = dr(), s = Pe(), C = Ft(), c = AB(), g = e.Symbol, a = g && g.prototype;
+  var i = oA(), A = Ne(), e = ue(), r = Ce(), n = te(), o = We(), B = ze(), Q = dr(), s = Pe(), C = Ft(), c = AB(), g = e.Symbol, a = g && g.prototype;
   if (A && B(g) && (!("description" in a) || // Safari 12 bug
   g().description !== void 0)) {
     var h = {}, I = function() {
@@ -1722,7 +1722,7 @@ var qY = {}, $Y;
 function ZP() {
   if ($Y) return qY;
   $Y = 1;
-  var i = le(), A = Rt(), e = ut().f, r = gr().f, n = i.Symbol;
+  var i = ue(), A = Rt(), e = ut().f, r = gr().f, n = i.Symbol;
   if (A("asyncDispose"), n) {
     var o = r(n, "asyncDispose");
     o.enumerable && o.configurable && o.writable && e(n, "asyncDispose", { value: o.value, enumerable: !1, configurable: !1, writable: !1 });
@@ -1740,7 +1740,7 @@ var tf = {}, rf;
 function qP() {
   if (rf) return tf;
   rf = 1;
-  var i = le(), A = Rt(), e = ut().f, r = gr().f, n = i.Symbol;
+  var i = ue(), A = Rt(), e = ut().f, r = gr().f, n = i.Symbol;
   if (A("dispose"), n) {
     var o = r(n, "dispose");
     o.enumerable && o.configurable && o.writable && e(n, "dispose", { value: o.value, enumerable: !1, configurable: !1, writable: !1 });
@@ -1985,7 +1985,7 @@ var Pf;
 function AV() {
   if (Pf) return Uf;
   Pf = 1;
-  var i = oA(), A = le(), e = Yr(), r = i8(), n = "WebAssembly", o = A[n], B = new Error("e", { cause: 7 }).cause !== 7, Q = function(C, c) {
+  var i = oA(), A = ue(), e = Yr(), r = i8(), n = "WebAssembly", o = A[n], B = new Error("e", { cause: 7 }).cause !== 7, Q = function(C, c) {
     var g = {};
     g[C] = r(C, c, B), i({ global: !0, constructor: !0, arity: 1, forced: B }, g);
   }, s = function(C, c) {
@@ -2243,7 +2243,7 @@ var aM = {}, oM;
 function a8() {
   if (oM) return aM;
   oM = 1;
-  var i = oA(), A = le(), e = dr(), r = Ar(), n = pi(), o = AB(), B = Pt(), Q = $t(), s = Vr(), C = Ll(), c = tB(), g = He(), a = Be(), h = Ke(), I = A.SuppressedError, u = g("toStringTag"), F = Error, l = !!I && I.length !== 3, f = !!I && a(function() {
+  var i = oA(), A = ue(), e = dr(), r = Ar(), n = pi(), o = AB(), B = Pt(), Q = $t(), s = Vr(), C = Ll(), c = tB(), g = He(), a = Be(), h = Ke(), I = A.SuppressedError, u = g("toStringTag"), F = Error, l = !!I && I.length !== 3, f = !!I && a(function() {
     return new I(1, 2, 3, { cause: 4 }).cause === 4;
   }), y = l || f, m = function(T, v, H) {
     var S = e(D, this), p;
@@ -2922,7 +2922,7 @@ var DC, fF;
 function mo() {
   if (fF) return DC;
   fF = 1;
-  var i = le(), A = Ji(), e = hr(), r = function(n) {
+  var i = ue(), A = Ji(), e = hr(), r = function(n) {
     return A.slice(0, n.length) === n;
   };
   return DC = (function() {
@@ -3168,7 +3168,7 @@ var xC, VF;
 function d8() {
   if (VF) return xC;
   VF = 1;
-  var i = le();
+  var i = ue();
   return xC = function(A, e) {
     var r = i[A], n = r && r.prototype;
     return n && n[e];
@@ -3374,7 +3374,7 @@ var LC, u0;
 function Uo() {
   if (u0) return LC;
   u0 = 1;
-  var i = le(), A = te(), e = Ne(), r = yo(), n = $s(), o = $t(), B = Ft(), Q = yi(), s = Be(), C = Tr(), c = Mt(), g = PB(), a = ql(), h = RV(), I = Ar(), u = pi(), F = Ol(), l = _r(), f = Is(), y = AB(), m = Pr(), D = it(), U = n.PROPER, T = n.CONFIGURABLE, v = "ArrayBuffer", H = "DataView", S = "prototype", p = "Wrong length", M = "Wrong index", G = D.getterFor(v), x = D.getterFor(H), b = D.set, j = i[v], P = j, O = P && P[S], k = i[H], Z = k && k[S], iA = Object.prototype, V = i.Array, AA = i.RangeError, $ = A(F), rA = A([].reverse), aA = h.pack, gA = h.unpack, tA = function(xA) {
+  var i = ue(), A = te(), e = Ne(), r = yo(), n = $s(), o = $t(), B = Ft(), Q = yi(), s = Be(), C = Tr(), c = Mt(), g = PB(), a = ql(), h = RV(), I = Ar(), u = pi(), F = Ol(), l = _r(), f = Is(), y = AB(), m = Pr(), D = it(), U = n.PROPER, T = n.CONFIGURABLE, v = "ArrayBuffer", H = "DataView", S = "prototype", p = "Wrong length", M = "Wrong index", G = D.getterFor(v), x = D.getterFor(H), b = D.set, j = i[v], P = j, O = P && P[S], k = i[H], Z = k && k[S], iA = Object.prototype, V = i.Array, AA = i.RangeError, $ = A(F), rA = A([].reverse), aA = h.pack, gA = h.unpack, tA = function(xA) {
     return [xA & 255];
   }, DA = function(xA) {
     return [xA & 255, xA >> 8 & 255];
@@ -3506,7 +3506,7 @@ var l0;
 function HV() {
   if (l0) return s0;
   l0 = 1;
-  var i = oA(), A = le(), e = Uo(), r = fs(), n = "ArrayBuffer", o = e[n], B = A[n];
+  var i = oA(), A = ue(), e = Uo(), r = fs(), n = "ArrayBuffer", o = e[n], B = A[n];
   return i({ global: !0, constructor: !0, forced: B !== o }, {
     ArrayBuffer: o
   }), r(n), s0;
@@ -3515,7 +3515,7 @@ var I0 = {}, zC, h0;
 function Oe() {
   if (h0) return zC;
   h0 = 1;
-  var i = yo(), A = Ne(), e = le(), r = ze(), n = Re(), o = We(), B = jr(), Q = Es(), s = $t(), C = at(), c = Ft(), g = dr(), a = Ar(), h = pi(), I = He(), u = ws(), F = it(), l = F.enforce, f = F.get, y = e.Int8Array, m = y && y.prototype, D = e.Uint8ClampedArray, U = D && D.prototype, T = y && a(y), v = m && a(m), H = Object.prototype, S = e.TypeError, p = I("toStringTag"), M = u("TYPED_ARRAY_TAG"), G = "TypedArrayConstructor", x = i && !!h && B(e.opera) !== "Opera", b = !1, j, P, O, k = {
+  var i = yo(), A = Ne(), e = ue(), r = ze(), n = Re(), o = We(), B = jr(), Q = Es(), s = $t(), C = at(), c = Ft(), g = dr(), a = Ar(), h = pi(), I = He(), u = ws(), F = it(), l = F.enforce, f = F.get, y = e.Int8Array, m = y && y.prototype, D = e.Uint8ClampedArray, U = D && D.prototype, T = y && a(y), v = m && a(m), H = Object.prototype, S = e.TypeError, p = I("toStringTag"), M = u("TYPED_ARRAY_TAG"), G = "TypedArrayConstructor", x = i && !!h && B(e.opera) !== "Opera", b = !1, j, P, O, k = {
     Int8Array: 1,
     Uint8Array: 1,
     Uint8ClampedArray: 1,
@@ -3723,7 +3723,7 @@ var x0 = {}, KC, R0;
 function N8() {
   if (R0) return KC;
   R0 = 1;
-  var i = le(), A = Yo(), e = hr(), r = i.ArrayBuffer, n = i.TypeError;
+  var i = ue(), A = Yo(), e = hr(), r = i.ArrayBuffer, n = i.TypeError;
   return KC = r && A(r.prototype, "byteLength", "get") || function(o) {
     if (e(o) !== "ArrayBuffer") throw new n("ArrayBuffer expected");
     return o.byteLength;
@@ -3733,7 +3733,7 @@ var VC, H0;
 function G8() {
   if (H0) return VC;
   H0 = 1;
-  var i = le(), A = yo(), e = N8(), r = i.DataView;
+  var i = ue(), A = yo(), e = N8(), r = i.DataView;
   return VC = function(n) {
     if (!A || e(n) !== 0) return !1;
     try {
@@ -3769,7 +3769,7 @@ var _C, b0;
 function x8() {
   if (b0) return _C;
   b0 = 1;
-  var i = le(), A = iB();
+  var i = ue(), A = iB();
   return _C = function(e) {
     if (A) {
       try {
@@ -3787,7 +3787,7 @@ var ZC, k0;
 function $l() {
   if (k0) return ZC;
   k0 = 1;
-  var i = le(), A = Be(), e = bi(), r = mo(), n = i.structuredClone;
+  var i = ue(), A = Be(), e = bi(), r = mo(), n = i.structuredClone;
   return ZC = !!n && !A(function() {
     if (r === "DENO" && e > 92 || r === "NODE" && e > 94 || r === "BROWSER" && e > 97) return !1;
     var o = new ArrayBuffer(8), B = n(o, { transfer: [o] });
@@ -3798,7 +3798,7 @@ var qC, j0;
 function R8() {
   if (j0) return qC;
   j0 = 1;
-  var i = le(), A = x8(), e = $l(), r = i.structuredClone, n = i.ArrayBuffer, o = i.MessageChannel, B = !1, Q, s, C, c;
+  var i = ue(), A = x8(), e = $l(), r = i.structuredClone, n = i.ArrayBuffer, o = i.MessageChannel, B = !1, Q, s, C, c;
   if (e)
     B = function(g) {
       r(g, { transfer: [g] });
@@ -3815,7 +3815,7 @@ var $C, P0;
 function H8() {
   if (P0) return $C;
   P0 = 1;
-  var i = le(), A = te(), e = Yo(), r = PB(), n = LB(), o = N8(), B = R8(), Q = $l(), s = i.structuredClone, C = i.ArrayBuffer, c = i.DataView, g = Math.max, a = Math.min, h = C.prototype, I = c.prototype, u = A(h.slice), F = e(h, "resizable", "get"), l = e(h, "maxByteLength", "get"), f = A(I.getInt8), y = A(I.setInt8);
+  var i = ue(), A = te(), e = Yo(), r = PB(), n = LB(), o = N8(), B = R8(), Q = $l(), s = i.structuredClone, C = i.ArrayBuffer, c = i.DataView, g = Math.max, a = Math.min, h = C.prototype, I = c.prototype, u = A(h.slice), F = e(h, "resizable", "get"), l = e(h, "maxByteLength", "get"), f = A(I.getInt8), y = A(I.setInt8);
   return $C = (Q || B) && function(m, D, U) {
     var T = o(m), v = D === void 0 ? T : r(D), H = !F || !F(m), S;
     if (n(m), Q && (m = s(m, { transfer: [m] }), T === v && (U || H)))
@@ -4164,7 +4164,7 @@ var FD = {}, DD;
 function j8() {
   if (DD) return FD;
   DD = 1;
-  var i = oA(), A = le();
+  var i = oA(), A = ue();
   return i({ global: !0, forced: A.globalThis !== A }, {
     globalThis: A
   }), FD;
@@ -4173,7 +4173,7 @@ var pD = {}, mD;
 function P8() {
   if (mD) return pD;
   mD = 1;
-  var i = oA(), A = le(), e = Tr(), r = we(), n = ze(), o = Ar(), B = Ft(), Q = Lt(), s = Be(), C = We(), c = He(), g = ds().IteratorPrototype, a = Ne(), h = Ke(), I = "constructor", u = "Iterator", F = c("toStringTag"), l = TypeError, f = A[u], y = h || !n(f) || f.prototype !== g || !s(function() {
+  var i = oA(), A = ue(), e = Tr(), r = we(), n = ze(), o = Ar(), B = Ft(), Q = Lt(), s = Be(), C = We(), c = He(), g = ds().IteratorPrototype, a = Ne(), h = Ke(), I = "constructor", u = "Iterator", F = c("toStringTag"), l = TypeError, f = A[u], y = h || !n(f) || f.prototype !== g || !s(function() {
     f({});
   }), m = function() {
     if (e(this, g), o(this) === g) throw new l("Abstract class Iterator not directly constructable");
@@ -4355,7 +4355,7 @@ var QE, bD;
 function Wi() {
   if (bD) return QE;
   bD = 1;
-  var i = le();
+  var i = ue();
   return QE = function(A, e) {
     var r = i.Iterator, n = r && r.prototype, o = n && n[A], B = !1;
     if (o) try {
@@ -4687,7 +4687,7 @@ var Qp = {}, Cp;
 function rL() {
   if (Cp) return Qp;
   Cp = 1;
-  var i = oA(), A = Ne(), e = le(), r = Se(), n = te(), o = Ce(), B = ze(), Q = Re(), s = ji(), C = We(), c = Pe(), g = Xe(), a = Lt(), h = Be(), I = XP(), u = Cs(), F = e.JSON, l = e.Number, f = e.SyntaxError, y = F && F.parse, m = r("Object", "keys"), D = Object.getOwnPropertyDescriptor, U = n("".charAt), T = n("".slice), v = n(/./.exec), H = n([].push), S = /^\d$/, p = /^[1-9]$/, M = /^[\d-]$/, G = /^[\t\n\r ]$/, x = 0, b = 1, j = function(AA, $) {
+  var i = oA(), A = Ne(), e = ue(), r = Se(), n = te(), o = Ce(), B = ze(), Q = Re(), s = ji(), C = We(), c = Pe(), g = Xe(), a = Lt(), h = Be(), I = XP(), u = Cs(), F = e.JSON, l = e.Number, f = e.SyntaxError, y = F && F.parse, m = r("Object", "keys"), D = Object.getOwnPropertyDescriptor, U = n("".charAt), T = n("".slice), v = n(/./.exec), H = n([].push), S = /^\d$/, p = /^[1-9]$/, M = /^[\d-]$/, G = /^[\t\n\r ]$/, x = 0, b = 1, j = function(AA, $) {
     AA = c(AA);
     var rA = new Z(AA, 0), aA = rA.parse(), gA = aA.value, tA = rA.skip(G, aA.end);
     if (tA < AA.length)
@@ -4860,7 +4860,7 @@ var lp = {}, Ip;
 function A5() {
   if (Ip) return lp;
   Ip = 1;
-  var i = le(), A = Pr();
+  var i = ue(), A = Pr();
   return A(i.JSON, "JSON", !0), lp;
 }
 var hp = {}, dp = {}, wE = { exports: {} }, uE, Yp;
@@ -4939,7 +4939,7 @@ var IE, Fp;
 function Ho() {
   if (Fp) return IE;
   Fp = 1;
-  var i = oA(), A = le(), e = te(), r = bB(), n = at(), o = Ms(), B = Ht(), Q = Tr(), s = ze(), C = Xr(), c = Re(), g = Be(), a = Fo(), h = Pr(), I = Is();
+  var i = oA(), A = ue(), e = te(), r = bB(), n = at(), o = Ms(), B = Ht(), Q = Tr(), s = ze(), C = Xr(), c = Re(), g = Be(), a = Fo(), h = Pr(), I = Is();
   return IE = function(u, F, l) {
     var f = u.indexOf("Map") !== -1, y = u.indexOf("Weak") !== -1, m = f ? "set" : "add", D = A[u], U = D && D.prototype, T = D, v = {}, H = function(j) {
       var P = e(U[j]);
@@ -5488,7 +5488,7 @@ var ym;
 function d5() {
   if (ym) return Fm;
   ym = 1;
-  var i = oA(), A = Ke(), e = Ne(), r = le(), n = ho(), o = te(), B = bB(), Q = We(), s = Is(), C = dr(), c = yn(), g = Co(), a = Be(), h = us().f, I = gr().f, u = ut().f, F = OB(), l = sB().trim, f = "Number", y = r[f], m = n[f], D = y.prototype, U = r.TypeError, T = o("".slice), v = o("".charCodeAt), H = function(b) {
+  var i = oA(), A = Ke(), e = Ne(), r = ue(), n = ho(), o = te(), B = bB(), Q = We(), s = Is(), C = dr(), c = yn(), g = Co(), a = Be(), h = us().f, I = gr().f, u = ut().f, F = OB(), l = sB().trim, f = "Number", y = r[f], m = n[f], D = y.prototype, U = r.TypeError, T = o("".slice), v = o("".charCodeAt), H = function(b) {
     var j = g(b, "number");
     return typeof j == "bigint" ? j : S(j);
   }, S = function(b) {
@@ -5551,7 +5551,7 @@ var Gm = {}, mE, vm;
 function QL() {
   if (vm) return mE;
   vm = 1;
-  var i = le(), A = i.isFinite;
+  var i = ue(), A = i.isFinite;
   return mE = Number.isFinite || function(r) {
     return typeof r == "number" && A(r);
   }, mE;
@@ -5625,7 +5625,7 @@ var Wm = {}, UE, Om;
 function CL() {
   if (Om) return UE;
   Om = 1;
-  var i = le(), A = Be(), e = te(), r = Pe(), n = sB().trim, o = nB(), B = e("".charAt), Q = i.parseFloat, s = i.Symbol, C = s && s.iterator, c = 1 / Q(o + "-0") !== -1 / 0 || C && !A(function() {
+  var i = ue(), A = Be(), e = te(), r = Pe(), n = sB().trim, o = nB(), B = e("".charAt), Q = i.parseFloat, s = i.Symbol, C = s && s.iterator, c = 1 / Q(o + "-0") !== -1 / 0 || C && !A(function() {
     Q(Object(C));
   });
   return UE = c ? function(a) {
@@ -5646,7 +5646,7 @@ var Vm = {}, NE, Xm;
 function EL() {
   if (Xm) return NE;
   Xm = 1;
-  var i = le(), A = Be(), e = te(), r = Pe(), n = sB().trim, o = nB(), B = i.parseInt, Q = i.Symbol, s = Q && Q.iterator, C = /^[+-]?0x/i, c = e(C.exec), g = B(o + "08") !== 8 || B(o + "0x16") !== 22 || s && !A(function() {
+  var i = ue(), A = Be(), e = te(), r = Pe(), n = sB().trim, o = nB(), B = i.parseInt, Q = i.Symbol, s = Q && Q.iterator, C = /^[+-]?0x/i, c = e(C.exec), g = B(o + "08") !== 8 || B(o + "0x16") !== 22 || s && !A(function() {
     B(Object(s));
   });
   return NE = g ? function(h, I) {
@@ -5803,7 +5803,7 @@ var a2 = {}, vE, o2;
 function To() {
   if (o2) return vE;
   o2 = 1;
-  var i = Ke(), A = le(), e = Be(), r = _l();
+  var i = Ke(), A = ue(), e = Be(), r = _l();
   return vE = i || !e(function() {
     if (!(r && r < 535)) {
       var n = Math.random();
@@ -6222,7 +6222,7 @@ var kE, dy;
 function ko() {
   if (dy) return kE;
   dy = 1;
-  var i = le(), A = Yr(), e = Et(), r = ze(), n = We(), o = Be(), B = zP(), Q = _r(), s = Eo(), C = ci(), c = dL(), g = iB(), a = i.setImmediate, h = i.clearImmediate, I = i.process, u = i.Dispatch, F = i.Function, l = i.MessageChannel, f = i.String, y = 0, m = {}, D = "onreadystatechange", U, T, v, H;
+  var i = ue(), A = Yr(), e = Et(), r = ze(), n = We(), o = Be(), B = zP(), Q = _r(), s = Eo(), C = ci(), c = dL(), g = iB(), a = i.setImmediate, h = i.clearImmediate, I = i.process, u = i.Dispatch, F = i.Function, l = i.MessageChannel, f = i.String, y = 0, m = {}, D = "onreadystatechange", U, T, v, H;
   o(function() {
     U = i.location;
   });
@@ -6267,7 +6267,7 @@ var jE, Yy;
 function YL() {
   if (Yy) return jE;
   Yy = 1;
-  var i = le(), A = Ne(), e = Object.getOwnPropertyDescriptor;
+  var i = ue(), A = Ne(), e = Object.getOwnPropertyDescriptor;
   return jE = function(r) {
     if (!A) return i[r];
     var n = e(i, r);
@@ -6313,7 +6313,7 @@ var WE, Dy;
 function ML() {
   if (Dy) return WE;
   Dy = 1;
-  var i = le(), A = YL(), e = Et(), r = ko().set, n = fL(), o = dL(), B = a7(), Q = o7(), s = iB(), C = i.MutationObserver || i.WebKitMutationObserver, c = i.document, g = i.process, a = i.Promise, h = A("queueMicrotask"), I, u, F, l, f;
+  var i = ue(), A = YL(), e = Et(), r = ko().set, n = fL(), o = dL(), B = a7(), Q = o7(), s = iB(), C = i.MutationObserver || i.WebKitMutationObserver, c = i.document, g = i.process, a = i.Promise, h = A("queueMicrotask"), I, u, F, l, f;
   if (!h) {
     var y = new n(), m = function() {
       var D, U;
@@ -6361,14 +6361,14 @@ var VE, yy;
 function BB() {
   if (yy) return VE;
   yy = 1;
-  var i = le();
+  var i = ue();
   return VE = i.Promise, VE;
 }
 var XE, Uy;
 function KB() {
   if (Uy) return XE;
   Uy = 1;
-  var i = le(), A = BB(), e = ze(), r = bB(), n = wo(), o = He(), B = mo(), Q = Ke(), s = bi(), C = A && A.prototype, c = o("species"), g = !1, a = e(i.PromiseRejectionEvent), h = r("Promise", function() {
+  var i = ue(), A = BB(), e = ze(), r = bB(), n = wo(), o = He(), B = mo(), Q = Ke(), s = bi(), C = A && A.prototype, c = o("species"), g = !1, a = e(i.PromiseRejectionEvent), h = r("Promise", function() {
     var I = n(A), u = I !== String(A);
     if (!u && s === 66 || Q && !(C.catch && C.finally)) return !0;
     if (!s || s < 51 || !/native code/.test(I)) {
@@ -6409,7 +6409,7 @@ var Gy;
 function g7() {
   if (Gy) return wy;
   Gy = 1;
-  var i = oA(), A = Ke(), e = iB(), r = le(), n = ho(), o = Ce(), B = at(), Q = pi(), s = Pr(), C = fs(), c = Te(), g = ze(), a = Re(), h = Tr(), I = bo(), u = ko().set, F = ML(), l = FL(), f = Fs(), y = fL(), m = it(), D = BB(), U = KB(), T = sn(), v = "Promise", H = U.CONSTRUCTOR, S = U.REJECTION_EVENT, p = U.SUBCLASSING, M = m.getterFor(v), G = m.set, x = D && D.prototype, b = D, j = x, P = r.TypeError, O = r.document, k = r.process, Z = T.f, iA = Z, V = !!(O && O.createEvent && r.dispatchEvent), AA = "unhandledrejection", $ = "rejectionhandled", rA = 0, aA = 1, gA = 2, tA = 1, DA = 2, pA, LA, hA, MA, jA = function(NA) {
+  var i = oA(), A = Ke(), e = iB(), r = ue(), n = ho(), o = Ce(), B = at(), Q = pi(), s = Pr(), C = fs(), c = Te(), g = ze(), a = Re(), h = Tr(), I = bo(), u = ko().set, F = ML(), l = FL(), f = Fs(), y = fL(), m = it(), D = BB(), U = KB(), T = sn(), v = "Promise", H = U.CONSTRUCTOR, S = U.REJECTION_EVENT, p = U.SUBCLASSING, M = m.getterFor(v), G = m.set, x = D && D.prototype, b = D, j = x, P = r.TypeError, O = r.document, k = r.process, Z = T.f, iA = Z, V = !!(O && O.createEvent && r.dispatchEvent), AA = "unhandledrejection", $ = "rejectionhandled", rA = 0, aA = 1, gA = 2, tA = 1, DA = 2, pA, LA, hA, MA, jA = function(NA) {
     var FA;
     return a(NA) && g(FA = NA.then) ? FA : !1;
   }, Ae = function(NA, FA) {
@@ -6698,7 +6698,7 @@ var Zy = {}, qy;
 function yL() {
   if (qy) return Zy;
   qy = 1;
-  var i = oA(), A = le(), e = Yr(), r = _r(), n = sn(), o = Te(), B = Fs(), Q = A.Promise, s = !1, C = !Q || !Q.try || B(function() {
+  var i = oA(), A = ue(), e = Yr(), r = _r(), n = sn(), o = Te(), B = Fs(), Q = A.Promise, s = !1, C = !Q || !Q.try || B(function() {
     Q.try(function(c) {
       s = c === 8;
     }, 8);
@@ -6732,7 +6732,7 @@ var eU = {}, $E, tU;
 function VB() {
   if (tU) return $E;
   tU = 1;
-  var i = le(), A = Qo(), e = ze(), r = Pt(), n = Ar(), o = at(), B = He(), Q = Ke(), s = "USE_FUNCTION_CONSTRUCTOR", C = B("asyncIterator"), c = i.AsyncIterator, g = A.AsyncIteratorPrototype, a, h;
+  var i = ue(), A = Qo(), e = ze(), r = Pt(), n = Ar(), o = at(), B = He(), Q = Ke(), s = "USE_FUNCTION_CONSTRUCTOR", C = B("asyncIterator"), c = i.AsyncIterator, g = A.AsyncIteratorPrototype, a, h;
   if (g)
     a = g;
   else if (e(c))
@@ -7267,7 +7267,7 @@ var kU = {}, jU;
 function v7() {
   if (jU) return kU;
   jU = 1;
-  var i = oA(), A = le(), e = Pr();
+  var i = oA(), A = ue(), e = Pr();
   return i({ global: !0 }, { Reflect: {} }), e(A.Reflect, "Reflect", !0), kU;
 }
 var PU = {}, sw, LU;
@@ -7284,7 +7284,7 @@ var Bw, zU;
 function HL() {
   if (zU) return Bw;
   zU = 1;
-  var i = le(), A = Be(), e = i.RegExp, r = !A(function() {
+  var i = ue(), A = Be(), e = i.RegExp, r = !A(function() {
     var n = !0;
     try {
       e(".", "d");
@@ -7334,7 +7334,7 @@ var gw, KU;
 function zo() {
   if (KU) return gw;
   KU = 1;
-  var i = Be(), A = le(), e = A.RegExp, r = i(function() {
+  var i = Be(), A = ue(), e = A.RegExp, r = i(function() {
     var B = e("a", "y");
     return B.lastIndex = 2, B.exec("abcd") !== null;
   }), n = r || i(function() {
@@ -7353,7 +7353,7 @@ var cw, VU;
 function BI() {
   if (VU) return cw;
   VU = 1;
-  var i = Be(), A = le(), e = A.RegExp;
+  var i = Be(), A = ue(), e = A.RegExp;
   return cw = i(function() {
     var r = e(".", "s");
     return !(r.dotAll && r.test(`
@@ -7364,7 +7364,7 @@ var Qw, XU;
 function SL() {
   if (XU) return Qw;
   XU = 1;
-  var i = Be(), A = le(), e = A.RegExp;
+  var i = Be(), A = ue(), e = A.RegExp;
   return Qw = i(function() {
     var r = e("(?<a>b)", "g");
     return r.exec("b").groups.a !== "b" || "b".replace(r, "$<a>c") !== "bc";
@@ -7374,7 +7374,7 @@ var _U;
 function x7() {
   if (_U) return PU;
   _U = 1;
-  var i = Ne(), A = le(), e = te(), r = bB(), n = Is(), o = $t(), B = Pt(), Q = us().f, s = dr(), C = Lo(), c = Pe(), g = Rn(), a = zo(), h = e8(), I = at(), u = Be(), F = We(), l = it().enforce, f = fs(), y = He(), m = BI(), D = SL(), U = y("match"), T = A.RegExp, v = T.prototype, H = A.SyntaxError, S = e(v.exec), p = e("".charAt), M = e("".replace), G = e("".indexOf), x = e("".slice), b = /^\?<[^\s\d!#%&*+<=>@^][^\s!#%&*+<=>@^]*>/, j = /a/g, P = /a/g, O = new T(j) !== j, k = a.MISSED_STICKY, Z = a.UNSUPPORTED_Y, iA = i && (!O || k || m || D || u(function() {
+  var i = Ne(), A = ue(), e = te(), r = bB(), n = Is(), o = $t(), B = Pt(), Q = us().f, s = dr(), C = Lo(), c = Pe(), g = Rn(), a = zo(), h = e8(), I = at(), u = Be(), F = We(), l = it().enforce, f = fs(), y = He(), m = BI(), D = SL(), U = y("match"), T = A.RegExp, v = T.prototype, H = A.SyntaxError, S = e(v.exec), p = e("".charAt), M = e("".replace), G = e("".indexOf), x = e("".slice), b = /^\?<[^\s\d!#%&*+<=>@^][^\s!#%&*+<=>@^]*>/, j = /a/g, P = /a/g, O = new T(j) !== j, k = a.MISSED_STICKY, Z = a.UNSUPPORTED_Y, iA = i && (!O || k || m || D || u(function() {
     return P[U] = !1, T(j) !== j || T(P) === P || String(T(j, "i")) !== "/a/i";
   })), V = function(gA) {
     for (var tA = gA.length, DA = 0, pA = "", LA = !1, hA; DA < tA; DA++) {
@@ -8774,7 +8774,7 @@ var yv = {}, za = { exports: {} }, zw, Uv;
 function EI() {
   if (Uv) return zw;
   Uv = 1;
-  var i = le(), A = Be(), e = Fo(), r = Oe().NATIVE_ARRAY_BUFFER_VIEWS, n = i.ArrayBuffer, o = i.Int8Array;
+  var i = ue(), A = Be(), e = Fo(), r = Oe().NATIVE_ARRAY_BUFFER_VIEWS, n = i.ArrayBuffer, o = i.Int8Array;
   return zw = !r || !A(function() {
     o(1);
   }) || !A(function() {
@@ -8851,7 +8851,7 @@ var Hv;
 function Bn() {
   if (Hv) return za.exports;
   Hv = 1;
-  var i = oA(), A = le(), e = Ce(), r = Ne(), n = EI(), o = Oe(), B = Uo(), Q = Tr(), s = Vr(), C = $t(), c = nI(), g = PB(), a = oz(), h = gz(), I = gi(), u = We(), F = jr(), l = Re(), f = yn(), y = Pt(), m = dr(), D = pi(), U = us().f, T = cz(), v = zt().forEach, H = fs(), S = Ft(), p = ut(), M = gr(), G = vn(), x = it(), b = Is(), j = x.get, P = x.set, O = x.enforce, k = p.f, Z = M.f, iA = A.RangeError, V = B.ArrayBuffer, AA = V.prototype, $ = B.DataView, rA = o.NATIVE_ARRAY_BUFFER_VIEWS, aA = o.TYPED_ARRAY_TAG, gA = o.TypedArray, tA = o.TypedArrayPrototype, DA = o.isTypedArray, pA = "BYTES_PER_ELEMENT", LA = "Wrong length", hA = function(se, Ee) {
+  var i = oA(), A = ue(), e = Ce(), r = Ne(), n = EI(), o = Oe(), B = Uo(), Q = Tr(), s = Vr(), C = $t(), c = nI(), g = PB(), a = oz(), h = gz(), I = gi(), u = We(), F = jr(), l = Re(), f = yn(), y = Pt(), m = dr(), D = pi(), U = us().f, T = cz(), v = zt().forEach, H = fs(), S = Ft(), p = ut(), M = gr(), G = vn(), x = it(), b = Is(), j = x.get, P = x.set, O = x.enforce, k = p.f, Z = M.f, iA = A.RangeError, V = B.ArrayBuffer, AA = V.prototype, $ = B.DataView, rA = o.NATIVE_ARRAY_BUFFER_VIEWS, aA = o.TYPED_ARRAY_TAG, gA = o.TypedArray, tA = o.TypedArrayPrototype, DA = o.isTypedArray, pA = "BYTES_PER_ELEMENT", LA = "Wrong length", hA = function(se, Ee) {
     S(se, Ee, {
       configurable: !0,
       get: function() {
@@ -9159,7 +9159,7 @@ var px = {}, mx;
 function J6() {
   if (mx) return px;
   mx = 1;
-  var i = le(), A = Be(), e = te(), r = Oe(), n = Do(), o = He(), B = o("iterator"), Q = i.Uint8Array, s = e(n.values), C = e(n.keys), c = e(n.entries), g = r.aTypedArray, a = r.exportTypedArrayMethod, h = Q && Q.prototype, I = !A(function() {
+  var i = ue(), A = Be(), e = te(), r = Oe(), n = Do(), o = He(), B = o("iterator"), Q = i.Uint8Array, s = e(n.values), C = e(n.keys), c = e(n.entries), g = r.aTypedArray, a = r.exportTypedArrayMethod, h = Q && Q.prototype, I = !A(function() {
     h[B].call([1]);
   }), u = !!h && h.values && h[B] === h.values && h.values.name === "values", F = function() {
     return s(g(this));
@@ -9244,7 +9244,7 @@ var Px = {}, Lx;
 function O6() {
   if (Lx) return Px;
   Lx = 1;
-  var i = le(), A = Ce(), e = Oe(), r = Xe(), n = oz(), o = Ve(), B = Be(), Q = i.RangeError, s = i.Int8Array, C = s && s.prototype, c = C && C.set, g = e.aTypedArray, a = e.exportTypedArrayMethod, h = !B(function() {
+  var i = ue(), A = Ce(), e = Oe(), r = Xe(), n = oz(), o = Ve(), B = Be(), Q = i.RangeError, s = i.Int8Array, C = s && s.prototype, c = C && C.set, g = e.aTypedArray, a = e.exportTypedArrayMethod, h = !B(function() {
     var u = new Uint8ClampedArray(2);
     return A(c, u, { length: 1, 0: 3 }, 1), u[1] !== 3;
   }), I = h && e.NATIVE_ARRAY_BUFFER_VIEWS && B(function() {
@@ -9285,7 +9285,7 @@ var Vx = {}, Xx;
 function X6() {
   if (Xx) return Vx;
   Xx = 1;
-  var i = le(), A = ls(), e = Be(), r = Te(), n = Xl(), o = Oe(), B = l8(), Q = I8(), s = bi(), C = _l(), c = o.aTypedArray, g = o.exportTypedArrayMethod, a = i.Uint16Array, h = a && A(a.prototype.sort), I = !!h && !(e(function() {
+  var i = ue(), A = ls(), e = Be(), r = Te(), n = Xl(), o = Oe(), B = l8(), Q = I8(), s = bi(), C = _l(), c = o.aTypedArray, g = o.exportTypedArrayMethod, a = i.Uint16Array, h = a && A(a.prototype.sort), I = !!h && !(e(function() {
     h(new a(2), null);
   }) && e(function() {
     h(new a(2), {});
@@ -9328,7 +9328,7 @@ var qx = {}, $x;
 function Z6() {
   if ($x) return qx;
   $x = 1;
-  var i = le(), A = Yr(), e = Oe(), r = Be(), n = _r(), o = i.Int8Array, B = e.aTypedArray, Q = e.exportTypedArrayMethod, s = [].toLocaleString, C = !!o && r(function() {
+  var i = ue(), A = Yr(), e = Oe(), r = Be(), n = _r(), o = i.Int8Array, B = e.aTypedArray, Q = e.exportTypedArrayMethod, s = [].toLocaleString, C = !!o && r(function() {
     s.call(new o(1));
   }), c = r(function() {
     return [1, 2].toLocaleString() !== new o([1, 2]).toLocaleString();
@@ -9368,7 +9368,7 @@ var i1 = {}, n1;
 function q6() {
   if (n1) return i1;
   n1 = 1;
-  var i = Oe().exportTypedArrayMethod, A = Be(), e = le(), r = te(), n = e.Uint8Array, o = n && n.prototype || {}, B = [].toString, Q = r([].join);
+  var i = Oe().exportTypedArrayMethod, A = Be(), e = ue(), r = te(), n = e.Uint8Array, o = n && n.prototype || {}, B = [].toString, Q = r([].join);
   A(function() {
     B.call({});
   }) && (B = function() {
@@ -9443,7 +9443,7 @@ var Au, Q1;
 function hz() {
   if (Q1) return Au;
   Q1 = 1;
-  var i = le(), A = te(), e = _o(), r = Wo(), n = We(), o = Zo(), B = Iz(), Q = LB(), s = o.c2i, C = o.c2iUrl, c = i.SyntaxError, g = i.TypeError, a = A("".charAt), h = function(F, l) {
+  var i = ue(), A = te(), e = _o(), r = Wo(), n = We(), o = Zo(), B = Iz(), Q = LB(), s = o.c2i, C = o.c2iUrl, c = i.SyntaxError, g = i.TypeError, a = A("".charAt), h = function(F, l) {
     for (var f = F.length; l < f; l++) {
       var y = a(F, l);
       if (y !== " " && y !== "	" && y !== `
@@ -9526,7 +9526,7 @@ var C1;
 function dz() {
   if (C1) return a1;
   C1 = 1;
-  var i = oA(), A = le(), e = vn(), r = hz(), n = A.Uint8Array, o = !n || !n.fromBase64 || !(function() {
+  var i = oA(), A = ue(), e = vn(), r = hz(), n = A.Uint8Array, o = !n || !n.fromBase64 || !(function() {
     try {
       n.fromBase64("a");
       return;
@@ -9549,7 +9549,7 @@ var E1 = {}, eu, w1;
 function Yz() {
   if (w1) return eu;
   w1 = 1;
-  var i = le(), A = te(), e = i.Uint8Array, r = i.SyntaxError, n = Math.min, o = A("".match);
+  var i = ue(), A = te(), e = i.Uint8Array, r = i.SyntaxError, n = Math.min, o = A("".match);
   return eu = function(B, Q) {
     var s = B.length;
     if (s % 2 !== 0) throw new r("String should be an even number of characters");
@@ -9566,7 +9566,7 @@ var u1;
 function fz() {
   if (u1) return E1;
   u1 = 1;
-  var i = oA(), A = le(), e = Wo(), r = Yz();
+  var i = oA(), A = ue(), e = Wo(), r = Yz();
   return A.Uint8Array && i({ target: "Uint8Array", stat: !0 }, {
     fromHex: function(o) {
       return r(e(o)).bytes;
@@ -9587,7 +9587,7 @@ var h1;
 function Mz() {
   if (h1) return l1;
   h1 = 1;
-  var i = oA(), A = le(), e = hz(), r = qo(), n = A.Uint8Array, o = !n || !n.prototype.setFromBase64 || !(function() {
+  var i = oA(), A = ue(), e = hz(), r = qo(), n = A.Uint8Array, o = !n || !n.prototype.setFromBase64 || !(function() {
     var B = new n([255, 255, 255, 255, 255]);
     try {
       B.setFromBase64("", null);
@@ -9617,7 +9617,7 @@ var d1 = {}, Y1;
 function Fz() {
   if (Y1) return d1;
   Y1 = 1;
-  var i = oA(), A = le(), e = Wo(), r = qo(), n = LB(), o = Yz();
+  var i = oA(), A = ue(), e = Wo(), r = qo(), n = LB(), o = Yz();
   function B() {
     try {
       var Q = new ArrayBuffer(16, { maxByteLength: 1024 });
@@ -9638,7 +9638,7 @@ var f1 = {}, M1;
 function Dz() {
   if (M1) return f1;
   M1 = 1;
-  var i = oA(), A = le(), e = te(), r = _o(), n = qo(), o = LB(), B = Zo(), Q = Iz(), s = B.i2c, C = B.i2cUrl, c = e("".charAt), g = A.Uint8Array, a = !g || !g.prototype.toBase64 || !(function() {
+  var i = oA(), A = ue(), e = te(), r = _o(), n = qo(), o = LB(), B = Zo(), Q = Iz(), s = B.i2c, C = B.i2cUrl, c = e("".charAt), g = A.Uint8Array, a = !g || !g.prototype.toBase64 || !(function() {
     try {
       var h = new g();
       h.toBase64(null);
@@ -9662,7 +9662,7 @@ var F1 = {}, D1;
 function pz() {
   if (D1) return F1;
   D1 = 1;
-  var i = oA(), A = le(), e = te(), r = qo(), n = LB(), o = e(1.1.toString), B = e([].join), Q = Array, s = A.Uint8Array, C = !s || !s.prototype.toHex || !(function() {
+  var i = oA(), A = ue(), e = te(), r = qo(), n = LB(), o = e(1.1.toString), B = e([].join), Q = Array, s = A.Uint8Array, C = !s || !s.prototype.toHex || !(function() {
     try {
       var c = new s([255, 255, 255, 255, 255, 255, 255, 255]);
       return c.toHex() === "ffffffffffffffff";
@@ -9798,7 +9798,7 @@ var G1;
 function AX() {
   if (G1) return U1;
   G1 = 1;
-  var i = xn(), A = le(), e = te(), r = yi(), n = Ms(), o = Ho(), B = mz(), Q = Re(), s = it().enforce, C = Be(), c = jP(), g = Object, a = Array.isArray, h = g.isExtensible, I = g.isFrozen, u = g.isSealed, F = g.freeze, l = g.seal, f = !A.ActiveXObject && "ActiveXObject" in A, y, m = function(M) {
+  var i = xn(), A = ue(), e = te(), r = yi(), n = Ms(), o = Ho(), B = mz(), Q = Re(), s = it().enforce, C = Be(), c = jP(), g = Object, a = Array.isArray, h = g.isExtensible, I = g.isFrozen, u = g.isSealed, F = g.freeze, l = g.seal, f = !A.ActiveXObject && "ActiveXObject" in A, y, m = function(M) {
     return function() {
       return M(this, arguments.length ? arguments[0] : void 0);
     };
@@ -13100,7 +13100,7 @@ var xk = {}, Rk;
 function C$() {
   if (Rk) return xk;
   Rk = 1;
-  var i = oA(), A = le(), e = Se(), r = te(), n = Ce(), o = Be(), B = Pe(), Q = ci(), s = Zo().c2i, C = /[^\d+/a-z]/i, c = /[\t\n\f\r ]+/g, g = /[=]{1,2}$/, a = e("atob"), h = Array, I = String.fromCharCode, u = r("".charAt), F = r("".replace), l = r([].join), f = r(C.exec), y = !!a && !o(function() {
+  var i = oA(), A = ue(), e = Se(), r = te(), n = Ce(), o = Be(), B = Pe(), Q = ci(), s = Zo().c2i, C = /[^\d+/a-z]/i, c = /[\t\n\f\r ]+/g, g = /[=]{1,2}$/, a = e("atob"), h = Array, I = String.fromCharCode, u = r("".charAt), F = r("".replace), l = r([].join), f = r(C.exec), y = !!a && !o(function() {
     return a("aGk=") !== "hi";
   }), m = y && o(function() {
     return a(" ") !== "";
@@ -13127,7 +13127,7 @@ var Hk = {}, Sk;
 function E$() {
   if (Sk) return Hk;
   Sk = 1;
-  var i = oA(), A = le(), e = Se(), r = te(), n = Ce(), o = Be(), B = Pe(), Q = ci(), s = Zo().i2c, C = e("btoa"), c = Array, g = r([].join), a = r("".charAt), h = r("".charCodeAt), I = !!C && !o(function() {
+  var i = oA(), A = ue(), e = Se(), r = te(), n = Ce(), o = Be(), B = Pe(), Q = ci(), s = Zo().i2c, C = e("btoa"), c = Array, g = r([].join), a = r("".charAt), h = r("".charCodeAt), I = !!C && !o(function() {
     return C("hi") !== "aGk=";
   }), u = I && !o(function() {
     C();
@@ -13193,7 +13193,7 @@ var kk;
 function w$() {
   if (kk) return Tk;
   kk = 1;
-  var i = le(), A = Kz(), e = Vz(), r = E8(), n = $t(), o = function(Q) {
+  var i = ue(), A = Kz(), e = Vz(), r = E8(), n = $t(), o = function(Q) {
     if (Q && Q.forEach !== r) try {
       n(Q, "forEach", r);
     } catch {
@@ -13208,7 +13208,7 @@ var jk = {}, Pk;
 function u$() {
   if (Pk) return jk;
   Pk = 1;
-  var i = le(), A = Kz(), e = Vz(), r = Do(), n = $t(), o = Pr(), B = He(), Q = B("iterator"), s = r.values, C = function(g, a) {
+  var i = ue(), A = Kz(), e = Vz(), r = Do(), n = $t(), o = Pr(), B = He(), Q = B("iterator"), s = r.values, C = function(g, a) {
     if (g) {
       if (g[Q] !== s) try {
         n(g, Q, s);
@@ -13316,7 +13316,7 @@ var Ok = {}, Kk;
 function I$() {
   if (Kk) return Ok;
   Kk = 1;
-  var i = oA(), A = le(), e = Se(), r = Vr(), n = ut().f, o = We(), B = Tr(), Q = Is(), s = tB(), C = Xz(), c = Pl(), g = Ne(), a = Ke(), h = "DOMException", I = e("Error"), u = e(h), F = function() {
+  var i = oA(), A = ue(), e = Se(), r = Vr(), n = ut().f, o = We(), B = Tr(), Q = Is(), s = tB(), C = Xz(), c = Pl(), g = Ne(), a = Ke(), h = "DOMException", I = e("Error"), u = e(h), F = function() {
     B(this, l);
     var G = arguments.length, x = s(G < 1 ? void 0 : arguments[0]), b = s(G < 2 ? void 0 : arguments[1], "Error"), j = new u(x, b), P = new I(x);
     return P.name = h, n(j, "stack", r(1, c(P.stack, 1))), Q(j, this, F), j;
@@ -13346,7 +13346,7 @@ var _k = {}, Zk = {}, qk;
 function d$() {
   if (qk) return Zk;
   qk = 1;
-  var i = oA(), A = le(), e = ko().clear;
+  var i = oA(), A = ue(), e = ko().clear;
   return i({ global: !0, bind: !0, enumerable: !0, forced: A.clearImmediate !== e }, {
     clearImmediate: e
   }), Zk;
@@ -13355,7 +13355,7 @@ var $k = {}, Wu, Aj;
 function MI() {
   if (Aj) return Wu;
   Aj = 1;
-  var i = le(), A = Yr(), e = ze(), r = mo(), n = Ji(), o = _r(), B = ci(), Q = i.Function, s = /MSIE .\./.test(n) || r === "BUN" && (function() {
+  var i = ue(), A = Yr(), e = ze(), r = mo(), n = Ji(), o = _r(), B = ci(), Q = i.Function, s = /MSIE .\./.test(n) || r === "BUN" && (function() {
     var C = i.Bun.version.split(".");
     return C.length < 3 || C[0] === "0" && (C[1] < 3 || C[1] === "3" && C[2] === "0");
   })();
@@ -13373,7 +13373,7 @@ var ej;
 function Y$() {
   if (ej) return $k;
   ej = 1;
-  var i = oA(), A = le(), e = ko().set, r = MI(), n = A.setImmediate ? r(e, !1) : e;
+  var i = oA(), A = ue(), e = ko().set, r = MI(), n = A.setImmediate ? r(e, !1) : e;
   return i({ global: !0, bind: !0, enumerable: !0, forced: A.setImmediate !== n }, {
     setImmediate: n
   }), $k;
@@ -13386,7 +13386,7 @@ var rj = {}, ij;
 function M$() {
   if (ij) return rj;
   ij = 1;
-  var i = oA(), A = le(), e = ML(), r = Te(), n = ci(), o = Be(), B = Ne(), Q = o(function() {
+  var i = oA(), A = ue(), e = ML(), r = Te(), n = ci(), o = Be(), B = Ne(), Q = o(function() {
     return B && Object.getOwnPropertyDescriptor(A, "queueMicrotask").value.length !== 1;
   });
   return i({ global: !0, enumerable: !0, dontCallGetSet: !0, forced: Q }, {
@@ -13399,7 +13399,7 @@ var nj = {}, sj;
 function F$() {
   if (sj) return nj;
   sj = 1;
-  var i = oA(), A = le(), e = Ft(), r = Ne(), n = TypeError, o = Object.defineProperty, B = A.self !== A;
+  var i = oA(), A = ue(), e = Ft(), r = Ne(), n = TypeError, o = Object.defineProperty, B = A.self !== A;
   try {
     if (r) {
       var Q = Object.getOwnPropertyDescriptor(A, "self");
@@ -13430,7 +13430,7 @@ var Bj = {}, aj;
 function D$() {
   if (aj) return Bj;
   aj = 1;
-  var i = Ke(), A = oA(), e = le(), r = Se(), n = te(), o = Be(), B = ws(), Q = ze(), s = Pi(), C = Xr(), c = Re(), g = yn(), a = Ht(), h = we(), I = jr(), u = We(), F = Lt(), l = $t(), f = Xe(), y = ci(), m = Rn(), D = nr(), U = cr(), T = Zr(), v = R8(), H = r8(), S = $l(), p = e.Object, M = e.Array, G = e.Date, x = e.Error, b = e.TypeError, j = e.PerformanceMark, P = r("DOMException"), O = D.Map, k = D.has, Z = D.get, iA = D.set, V = U.Set, AA = U.add, $ = U.has, rA = r("Object", "keys"), aA = n([].push), gA = n((!0).valueOf), tA = n(1.1.valueOf), DA = n("".valueOf), pA = n(G.prototype.getTime), LA = B("structuredClone"), hA = "DataCloneError", MA = "Transferring", jA = function(sA) {
+  var i = Ke(), A = oA(), e = ue(), r = Se(), n = te(), o = Be(), B = ws(), Q = ze(), s = Pi(), C = Xr(), c = Re(), g = yn(), a = Ht(), h = we(), I = jr(), u = We(), F = Lt(), l = $t(), f = Xe(), y = ci(), m = Rn(), D = nr(), U = cr(), T = Zr(), v = R8(), H = r8(), S = $l(), p = e.Object, M = e.Array, G = e.Date, x = e.Error, b = e.TypeError, j = e.PerformanceMark, P = r("DOMException"), O = D.Map, k = D.has, Z = D.get, iA = D.set, V = U.Set, AA = U.add, $ = U.has, rA = r("Object", "keys"), aA = n([].push), gA = n((!0).valueOf), tA = n(1.1.valueOf), DA = n("".valueOf), pA = n(G.prototype.getTime), LA = B("structuredClone"), hA = "DataCloneError", MA = "Transferring", jA = function(sA) {
     return !o(function() {
       var uA = new e.Set([7]), wA = sA(uA), GA = sA(p(7));
       return wA === uA || !wA.has(7) || !c(GA) || +GA != 7;
@@ -13761,7 +13761,7 @@ var oj = {}, gj = {}, cj;
 function p$() {
   if (cj) return gj;
   cj = 1;
-  var i = oA(), A = le(), e = MI(), r = e(A.setInterval, !0);
+  var i = oA(), A = ue(), e = MI(), r = e(A.setInterval, !0);
   return i({ global: !0, bind: !0, forced: A.setInterval !== r }, {
     setInterval: r
   }), gj;
@@ -13770,7 +13770,7 @@ var Qj = {}, Cj;
 function m$() {
   if (Cj) return Qj;
   Cj = 1;
-  var i = oA(), A = le(), e = MI(), r = e(A.setTimeout, !0);
+  var i = oA(), A = ue(), e = MI(), r = e(A.setTimeout, !0);
   return i({ global: !0, bind: !0, forced: A.setTimeout !== r }, {
     setTimeout: r
   }), Qj;
@@ -13854,7 +13854,7 @@ var Vu, hj;
 function _z() {
   if (hj) return Vu;
   hj = 1, Do(), $L();
-  var i = oA(), A = le(), e = YL(), r = Se(), n = Ce(), o = te(), B = Ne(), Q = eg(), s = at(), C = Ft(), c = yi(), g = Pr(), a = Ys(), h = it(), I = Tr(), u = ze(), F = We(), l = Et(), f = jr(), y = we(), m = Re(), D = Pe(), U = Pt(), T = Vr(), v = Nn(), H = Li(), S = ir(), p = ci(), M = He(), G = Xl(), x = M("iterator"), b = "URLSearchParams", j = b + "Iterator", P = h.set, O = h.getterFor(b), k = h.getterFor(j), Z = e("fetch"), iA = e("Request"), V = e("Headers"), AA = iA && iA.prototype, $ = V && V.prototype, rA = A.TypeError, aA = A.encodeURIComponent, gA = String.fromCharCode, tA = r("String", "fromCodePoint"), DA = parseInt, pA = o("".charAt), LA = o([].join), hA = o([].push), MA = o("".replace), jA = o([].shift), Ae = o([].splice), ee = o("".split), se = o("".slice), Ee = o(/./.exec), SA = /\+/g, xA = "�", KA = /^[0-9a-f]+$/i, _A = function(eA, cA) {
+  var i = oA(), A = ue(), e = YL(), r = Se(), n = Ce(), o = te(), B = Ne(), Q = eg(), s = at(), C = Ft(), c = yi(), g = Pr(), a = Ys(), h = it(), I = Tr(), u = ze(), F = We(), l = Et(), f = jr(), y = we(), m = Re(), D = Pe(), U = Pt(), T = Vr(), v = Nn(), H = Li(), S = ir(), p = ci(), M = He(), G = Xl(), x = M("iterator"), b = "URLSearchParams", j = b + "Iterator", P = h.set, O = h.getterFor(b), k = h.getterFor(j), Z = e("fetch"), iA = e("Request"), V = e("Headers"), AA = iA && iA.prototype, $ = V && V.prototype, rA = A.TypeError, aA = A.encodeURIComponent, gA = String.fromCharCode, tA = r("String", "fromCodePoint"), DA = parseInt, pA = o("".charAt), LA = o([].join), hA = o([].push), MA = o("".replace), jA = o([].shift), Ae = o([].splice), ee = o("".split), se = o("".slice), Ee = o(/./.exec), SA = /\+/g, xA = "�", KA = /^[0-9a-f]+$/i, _A = function(eA, cA) {
     var fA = se(eA, cA, cA + 2);
     return Ee(KA, fA) ? DA(fA, 16) : NaN;
   }, PA = function(eA) {
@@ -14116,7 +14116,7 @@ var dj;
 function N$() {
   if (dj) return uj;
   dj = 1, ez();
-  var i = oA(), A = Ne(), e = eg(), r = le(), n = Et(), o = te(), B = at(), Q = Ft(), s = Tr(), C = We(), c = wL(), g = w8(), a = _r(), h = oB().codeAt, I = U$(), u = Pe(), F = Pr(), l = ci(), f = _z(), y = it(), m = y.set, D = y.getterFor("URL"), U = f.URLSearchParams, T = f.getState, v = r.URL, H = r.TypeError, S = r.encodeURIComponent, p = r.parseInt, M = Math.floor, G = Math.pow, x = o("".charAt), b = o(/./.exec), j = o([].join), P = o(1.1.toString), O = o([].pop), k = o([].push), Z = o("".replace), iA = o([].shift), V = o("".split), AA = o("".slice), $ = o("".toLowerCase), rA = o([].unshift), aA = "Invalid authority", gA = "Invalid scheme", tA = "Invalid host", DA = "Invalid port", pA = /[a-z]/i, LA = /[\d+\-.a-z]/i, hA = /\d/, MA = /^0x/i, jA = /^[0-7]+$/, Ae = /^\d+$/, ee = /^[\da-f]+$/i, se = /[\0\t\n\r #%/:<>?@[\\\]^|]/, Ee = /[\0\t\n\r #/:<>?@[\\\]^|]/, SA = /^[\u0000-\u0020]+/, xA = /(^|[^\u0000-\u0020])[\u0000-\u0020]+$/, KA = /[\t\n\r]/g, _A, PA = function(WA) {
+  var i = oA(), A = Ne(), e = eg(), r = ue(), n = Et(), o = te(), B = at(), Q = Ft(), s = Tr(), C = We(), c = wL(), g = w8(), a = _r(), h = oB().codeAt, I = U$(), u = Pe(), F = Pr(), l = ci(), f = _z(), y = it(), m = y.set, D = y.getterFor("URL"), U = f.URLSearchParams, T = f.getState, v = r.URL, H = r.TypeError, S = r.encodeURIComponent, p = r.parseInt, M = Math.floor, G = Math.pow, x = o("".charAt), b = o(/./.exec), j = o([].join), P = o(1.1.toString), O = o([].pop), k = o([].push), Z = o("".replace), iA = o([].shift), V = o("".split), AA = o("".slice), $ = o("".toLowerCase), rA = o([].unshift), aA = "Invalid authority", gA = "Invalid scheme", tA = "Invalid host", DA = "Invalid port", pA = /[a-z]/i, LA = /[\d+\-.a-z]/i, hA = /\d/, MA = /^0x/i, jA = /^[0-7]+$/, Ae = /^\d+$/, ee = /^[\da-f]+$/i, se = /[\0\t\n\r #%/:<>?@[\\\]^|]/, Ee = /[\0\t\n\r #/:<>?@[\\\]^|]/, SA = /^[\u0000-\u0020]+/, xA = /(^|[^\u0000-\u0020])[\u0000-\u0020]+$/, KA = /[\t\n\r]/g, _A, PA = function(WA) {
     var $A = V(WA, "."), VA, TA;
     if ($A[$A.length - 1] === "") {
       if ($A.length === 1) return !1;
@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.72", P$ = {
+const j$ = "0.0.74", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -45343,7 +45343,7 @@ class Fi {
    */
   _whenKeyPressed(A, e) {
     const r = this, n = new os(r.entity, ss.FALSE);
-    n.entityId += `_keyPressed_${A}`, n.setFunc(e), Ti.registThread(n), this._getKeyPressEventFunc(A).threadArr.push(n), ue.runtime.scratchEvent.keyClick(A);
+    n.entityId += `_keyPressed_${A}`, n.setFunc(e), Ti.registThread(n), this._getKeyPressEventFunc(A).threadArr.push(n), le.runtime.scratchEvent.keyClick(A);
   }
   _getKeyPressEventFunc(A) {
     for (const r of Fi._keyPressEventFuncArray)
@@ -45375,18 +45375,18 @@ class Fi {
     };
   }
   async clickEventerKick() {
-    if (ue.runtime.scratchEvent.running === !1)
+    if (le.runtime.scratchEvent.running === !1)
       return;
     let e = 0;
     for (const r of Fi._clickEventFuncArray)
       e += 1, r(e);
   }
   _whenClicked(A) {
-    const e = this, r = ue.runtime.scratchEvent, n = new os(e.entity, ss.FALSE), o = async (B) => {
+    const e = this, r = le.runtime.scratchEvent, n = new os(e.entity, ss.FALSE), o = async (B) => {
       const Q = B;
       if (r.running === !1)
         return;
-      const s = ue.mouse.x, C = ue.mouse.y, c = {
+      const s = le.mouse.x, C = le.mouse.y, c = {
         touchWidth: 3,
         touchHeight: 3
       }, g = e.entity, a = g.render.renderer.pick(s, C, c.touchWidth, c.touchHeight);
@@ -45418,7 +45418,7 @@ class Fi {
    */
   _whenBackdropSwitches(A, e) {
     const r = A.name, n = this, o = new os(n.entity, ss.FALSE);
-    o.entityId += `_backdrop_${r}`, o.setFunc(e), Ti.registThread(o), this._getBackdropElement(r).threadArr.push(o), ue.runtime.scratchEvent.backdropChangerRegist(r);
+    o.entityId += `_backdrop_${r}`, o.setFunc(e), Ti.registThread(o), this._getBackdropElement(r).threadArr.push(o), le.runtime.scratchEvent.backdropChangerRegist(r);
   }
   async backdropEventKick(A) {
     const e = this._getBackdropElement(A);
@@ -45465,7 +45465,7 @@ class tn {
    */
   send(A, ...e) {
     const r = this.getMessageId(A);
-    tn.getBroadcastElement(r).funcArr.length > 0 && ue.runtime.scratchEvent.emit(r, ...e);
+    tn.getBroadcastElement(r).funcArr.length > 0 && le.runtime.scratchEvent.emit(r, ...e);
   }
   /**
    * メッセージを送り終わるまで待つ
@@ -45477,7 +45477,7 @@ class tn {
     return new Promise(async (n) => {
       const o = tn.getBroadcastElement(r);
       if (o.funcArr.length > 0)
-        for (ue.runtime.scratchEvent.emit(r, ...e); ; ) {
+        for (le.runtime.scratchEvent.emit(r, ...e); ; ) {
           let B = !0;
           for (const Q of o.funcArr)
             Q.thread.status != xt.COMPLETED && (B = !1);
@@ -45521,7 +45521,7 @@ class tn {
       thread: o,
       func: e
     };
-    B.funcArr.push(Q), ue.runtime.scratchEvent.messageReceiverRegist(n);
+    B.funcArr.push(Q), le.runtime.scratchEvent.messageReceiverRegist(n);
   }
   getMessageId(A) {
     return `message_${A}`;
@@ -45980,7 +45980,7 @@ class cB {
         return e;
   }
   backdropChangeEmit(A) {
-    const e = ue.runtime.scratchEvent, r = cB.getBackdropChangeMessageId(A);
+    const e = le.runtime.scratchEvent, r = cB.getBackdropChangeMessageId(A);
     e.isBackdropChangerExist(A) && e.emit(r);
   }
   static getBackdropChangeMessageId(A) {
@@ -46078,7 +46078,7 @@ class qe {
    * @returns 
    */
   static pageToScratchStagePosition(A, e) {
-    const r = { scratchX: 0, scratchY: 0 }, o = qe.getScratchCanvas().getBoundingClientRect(), B = { x: o.left + o.width / 2, y: o.top + o.height / 2 }, Q = { x: A - B.x, y: B.y - e }, s = ue.renderRate;
+    const r = { scratchX: 0, scratchY: 0 }, o = qe.getScratchCanvas().getBoundingClientRect(), B = { x: o.left + o.width / 2, y: o.top + o.height / 2 }, Q = { x: A - B.x, y: B.y - e }, s = le.renderRate;
     return r.scratchX = Q.x * s.x, r.scratchY = Q.y * s.y, r;
   }
   /**
@@ -46156,9 +46156,9 @@ class et extends ys.EventEmitter {
     const A = qe.getGreenFlag(), e = qe.getControlStopMark(), r = qe.getControlPauseMark(), n = this;
     A.classList.remove("not-ready"), A.addEventListener("click", (o) => {
       e.classList.remove("is-not-active"), r.classList.remove("is-not-active"), e.classList.add("is-active"), r.classList.add("is-active"), qe.changeToPauseMarkActive(r), n._restart = !1, n.emit(et.GREEN_FLAG_CLICKED), A.classList.remove("running"), o.stopPropagation();
-      for (const Q of ue.getSprites())
+      for (const Q of le.getSprites())
         Q.Event.flagPresserKick();
-      const B = ue.getStage();
+      const B = le.getStage();
       B && B.Event.flagPresserKick();
     }), this.pauseMarkClick(), this.stopMarkClick(), this.spliteClick();
   }
@@ -46176,7 +46176,7 @@ class et extends ys.EventEmitter {
   }
   spliteClick() {
     qe.getScratchCanvas().addEventListener("click", (e) => {
-      const r = ue.getSprites();
+      const r = le.getSprites();
       for (const n of r)
         n.Event.clickEventerKick();
       e.stopPropagation();
@@ -46186,24 +46186,24 @@ class et extends ys.EventEmitter {
     const e = (r) => {
       let n;
       if (A.length == 1 ? n = A.toUpperCase() : n = A, n == r) {
-        const o = ue.getSprites();
+        const o = le.getSprites();
         for (const Q of o)
           Q.Event.keyPresserKick(A);
-        const B = ue.getStage();
+        const B = le.getStage();
         B && B.Event.keyPresserKick(A);
       }
     };
-    this._keyPressedPool.includes(A) || ue.runtime.on("KEY_PRESSED", e);
+    this._keyPressedPool.includes(A) || le.runtime.on("KEY_PRESSED", e);
   }
   messageReceiverRegist(A) {
     this._messageReceiverIdsPool.includes(A) || (this._messageReceiverIdsPool.push(A), this._onMessageReceiverKick(A));
   }
   _onMessageReceiverKick(A) {
     this.on(A, (...e) => {
-      const r = ue.getSprites();
+      const r = le.getSprites();
       for (const o of r)
         o.Broadcast.broadcastReceivedKick(A, ...e);
-      const n = ue.getStage();
+      const n = le.getStage();
       n && n.Broadcast.broadcastReceivedKick(A, ...e);
     });
   }
@@ -46216,10 +46216,10 @@ class et extends ys.EventEmitter {
   _onBackdropChangerKick(A) {
     const e = cB.getBackdropChangeMessageId(A);
     this.on(e, () => {
-      const r = ue.getSprites();
+      const r = le.getSprites();
       for (const o of r)
         o.Event.backdropEventKick(A);
-      const n = ue.getStage();
+      const n = le.getStage();
       n && n.Event.backdropEventKick(A);
     });
   }
@@ -46363,7 +46363,7 @@ class ar extends tg {
       const n = await iAA.loadSound(this._soundPath, this._name);
       this._data = n.data;
     }
-    this._ready_audio_engine === !1 ? ue.runtime.scratchEvent.once(et.READY_AUDIO_ENGINE, async () => {
+    this._ready_audio_engine === !1 ? le.runtime.scratchEvent.once(et.READY_AUDIO_ENGINE, async () => {
       this._ready_audio_engine = !0, r.getSoundPlayer(this._name) == null && await e.makeSoundPlayer(A);
     }) : r.getSoundPlayer(this._name) == null && await e.makeSoundPlayer(A);
   }
@@ -46373,7 +46373,7 @@ class ar extends tg {
    * @returns 
    */
   async makeSoundPlayer(A) {
-    const e = ue.runtime.audioEngine, r = await e.decodeSoundPlayer({ data: this.data }), n = e.createEffectChain(), o = {};
+    const e = le.runtime.audioEngine, r = await e.decodeSoundPlayer({ data: this.data }), n = e.createEffectChain(), o = {};
     o.effects = n;
     const B = new $z(this.name, r, o);
     return B.connect(), A.Sound.addPlayer(this.name, B), B;
@@ -46693,7 +46693,7 @@ class ro extends tg {
    * @returns 
    */
   async makeSoundPlayer() {
-    const A = ue.runtime.audioEngine, e = await A.decodeSoundPlayer({ data: this.data }), r = A.createEffectChain(), n = {};
+    const A = le.runtime.audioEngine, e = await A.decodeSoundPlayer({ data: this.data }), r = A.createEffectChain(), n = {};
     n.effects = r;
     const o = new $z(this.name, e, n);
     return o.connect(), this._soundPlayer = o, o;
@@ -47021,7 +47021,7 @@ class FI extends ys.EventEmitter {
   _isAlive;
   constructor() {
     super();
-    const A = ue;
+    const A = le;
     this._render = A.render, this.id = this._generateUUID(), this._image = new Z$(this), this._sound = new nAA(this), this._broadcast = new tn(this), this._speech = new oAA(this), this._mouse = A.mouse, this._isSprite = !1, this._isAlive = !0;
   }
   createDrawable(A) {
@@ -47102,7 +47102,7 @@ class Os extends FI {
    */
   constructor(A, e) {
     super(), this._monitorId = A, this._monitoring = e, this._label = A, this.createDrawable(Xt.MONITOR_LAYER), this._visible = !0, this._skinId = 0, this._renderer = this._render.renderer, this._position = { x: 0, y: 0 }, this._scale = { w: 100, h: 100 }, this._dropEnabled = !0, this._moveDistance = {};
-    const r = this, n = ue, o = ue.runtime.scratchEvent;
+    const r = this, n = le, o = le.runtime.scratchEvent;
     o.on(Os.Events.DROP_START, (B) => {
       r.drawableID === B ? (r._renderer.setDrawableOrder(
         r.drawableID,
@@ -47190,7 +47190,7 @@ class Os extends FI {
     return this._mouse.down;
   }
   _drop() {
-    const A = ue.runtime.scratchEvent;
+    const A = le.runtime.scratchEvent;
     this._moveDistance.x == null && this._moveDistance.y == null ? this._isMouseTouching() && this._isMouseDown() && A.emit(Os.Events.DROP_START, this.drawableID) : this._isMouseDown() && this._moveDistance.x && this._moveDistance.y ? (this._position.x = this._mouse.scratchX - this._moveDistance.x, this._position.y = this._mouse.scratchY - this._moveDistance.y) : (A.emit(Os.Events.DROP_COMPLETE), this._moveDistance = {});
   }
 }
@@ -48242,7 +48242,7 @@ class Sr {
    * @constructor
    */
   constructor() {
-    this._monitors = [], this._render = ue.render, this._renderer = this._render.renderer;
+    this._monitors = [], this._render = le.render, this._renderer = this._render.renderer;
     const A = this;
     function e(n, o) {
       const B = A._renderer._nextSkinId++, Q = new Ks(B, A._renderer, o), s = A._renderer._allDrawables[n];
@@ -48368,7 +48368,7 @@ class lr extends ys.EventEmitter {
    * @returns Promise<void>
    */
   async askWait(A) {
-    const e = this, r = ue.runtime.scratchEvent;
+    const e = this, r = le.runtime.scratchEvent;
     return new Promise(async (n) => {
       const o = function() {
         e.forceComplete = !0;
@@ -48430,7 +48430,7 @@ class lr extends ys.EventEmitter {
     h.classList.add(StA);
     const I = document.createElement("img");
     I.classList.add(TtA), I.draggable = !1, I.src = JtA, h.appendChild(I), g.appendChild(h);
-    const u = ue.runtime;
+    const u = le.runtime;
     if (u == null) throw "runtime is undefined error";
     const F = u.ioDevices.keyboard;
     F.spaceStopPropagation = !1;
@@ -48466,7 +48466,7 @@ class lr extends ys.EventEmitter {
    * 質問を消す
    */
   static removeAsk() {
-    const A = ue.getSprites();
+    const A = le.getSprites();
     for (const e of A)
       e.Looks.bubble.say("");
     lr.removeQuestionOverlay();
@@ -48550,7 +48550,7 @@ class Bs {
       return new Promise(async (A) => {
         const e = this.entity, r = e.clones.length, n = `${e.name}_${r + 1}`, o = e.makeClone(n);
         o.Control._clonedFuncElements = [...this._clonedFuncElements], o.Control._clonedEventElementKeys = [...this._clonedEventElementKeys], o.isClone = !0, e.clones.push(o), o.parent = this.entity, o.Looks.layer.goBackwardLayers(1), o.Control._propertiesCopyFrom(e), await o.init();
-        const B = ue.runtime.scratchEvent, Q = B.getClonedEventMessageId(e);
+        const B = le.runtime.scratchEvent, Q = B.getClonedEventMessageId(e);
         B.listenerCount(Q) > 0 && B.emit(Q, o), A();
       });
   }
@@ -48589,7 +48589,7 @@ class Bs {
     const e = this.entity;
     if (e.isClone === !0)
       return;
-    const r = ue.runtime.scratchEvent, n = r.getClonedEventMessageId(e);
+    const r = le.runtime.scratchEvent, n = r.getClonedEventMessageId(e);
     this._clonedFuncElements.push(A);
     const o = new os(this.entity, ss.TRUE);
     o.setFunc(A), Ti.registThread(o), this._clonedEventElementKeys.includes(n) || (this._clonedEventElementKeys.push(n), r.clonedEventRegist(e));
@@ -48611,7 +48611,7 @@ class Bs {
    * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
    */
   stopAll() {
-    ue.runtime.scratchEvent.emit(et.STOP_CLICKED);
+    le.runtime.scratchEvent.emit(et.STOP_CLICKED);
   }
   /**
    * クローンを抹消する
@@ -48620,7 +48620,7 @@ class Bs {
     const A = this.entity;
     if (A.isClone === !0) {
       const e = A;
-      ue.removeSprites(e), e.Sound.stopImmediately(), e.render.renderer.destroyDrawable(e.drawableID, ktA.SPRITE_LAYER), e.isAlive = !1, Bs._cloneCount -= 1;
+      le.removeSprites(e), e.Sound.stopImmediately(), e.render.renderer.destroyDrawable(e.drawableID, ktA.SPRITE_LAYER), e.isAlive = !1, Bs._cloneCount -= 1;
       const n = e.parent;
       if (n) {
         const o = n, B = o.clones.filter((Q) => Q.id != e.id);
@@ -48710,7 +48710,7 @@ class vB {
   }
   start() {
     this.intervalStart();
-    const A = this, e = ue.runtime.scratchEvent, r = ue.runtime, n = () => {
+    const A = this, e = le.runtime.scratchEvent, r = le.runtime, n = () => {
       lr.removeAsk(), this.stopAllScripts(), this.clearAllScripts(), this._pauser = !1, r.audioEngine && r.audioEngine.audioContext.resume();
     };
     e.on(et.GREEN_FLAG_CLICKED, n);
@@ -48724,13 +48724,13 @@ class vB {
     e.on(et.RESTART_CLICKED, B);
     const Q = () => {
       if (A._pauser = !0, A._running === !0) {
-        lr.removeAsk(), A.stopAllScripts(), ue.runtime.scratchEvent.runningThreadCount = 0;
-        const s = ue.getSprites();
+        lr.removeAsk(), A.stopAllScripts(), le.runtime.scratchEvent.runningThreadCount = 0;
+        const s = le.getSprites();
         for (const c of s)
           c.isClone === !1 && c.Control.removeAllClones(), c.Speech.stopAll();
         Bs.cloneCount = 0;
-        const C = ue.getStage();
-        C && C.Speech.stopAll(), ue.render.renderer.draw();
+        const C = le.getStage();
+        C && C.Speech.stopAll(), le.render.renderer.draw();
       }
     };
     e.on(et.STOP_CLICKED, Q);
@@ -48757,11 +48757,11 @@ class vB {
         }
         A._pauser === !1 && n.next(), r += 1;
       }
-    if (ue.runtime.scratchEvent.runningThreadCount = r, r == 0 && A.stopMarkToNotactive(), A._pauser !== !0) {
-      for (const o of ue.getSprites())
+    if (le.runtime.scratchEvent.runningThreadCount = r, r == 0 && A.stopMarkToNotactive(), A._pauser !== !0) {
+      for (const o of le.getSprites())
         o.update();
-      const n = ue.getStage();
-      n && n.update(), Sr.drawMonitors(), ue.render.renderer.draw();
+      const n = le.getStage();
+      n && n.update(), Sr.drawMonitors(), le.render.renderer.draw();
     }
   }
   stopThisScript(A) {
@@ -51052,7 +51052,7 @@ class IrA {
     return { x: r, y: n };
   }
 }
-const ue = new IrA(), hrA = "data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22424.77466%22%20height%3D%2285.62723%22%20viewBox%3D%220%2C0%2C424.77466%2C85.62723%22%3E%3Cg%20transform%3D%22translate(-26.99997%2C-135.80002)%22%3E%3Cg%20data-paper-data%3D%22%7B%26quot%3BisPaintingLayer%26quot%3B%3Atrue%7D%22%20fill-rule%3D%22nonzero%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22butt%22%20stroke-linejoin%3D%22miter%22%20stroke-miterlimit%3D%2210%22%20stroke-dasharray%3D%22%22%20stroke-dashoffset%3D%220%22%20style%3D%22mix-blend-mode%3A%20normal%22%3E%3Cpath%20d%3D%22M66.43193%2C140.36595c0%2C0.32057%20-0.29704%2C0.64113%20-0.44556%2C0.64113c-0.3713%2C0.16028%20-0.81686%2C0.16028%20-1.26242%2C0.32057c-0.66834%2C0.16028%20-0.89112%2C0.64113%20-0.96538%2C2.08368c-0.07426%2C2.24396%200%2C4.32764%200.14852%2C6.41132c0.44556%2C5.44963%200.44556%2C10.89925%200.22278%2C16.34888c-0.3713%2C9.29642%20-0.29704%2C18.75312%20-0.14852%2C28.20982c0.07426%2C5.28934%200.14852%2C10.57868%200.22278%2C15.86803c0%2C2.72481%20-0.66834%2C4.96878%20-1.33668%2C7.21274c-0.3713%2C1.28226%20-0.66834%2C1.60283%20-1.33668%2C1.60283c-0.66834%2C0%20-1.03964%2C-0.64113%20-1.41094%2C-1.60283c-2.15353%2C-5.12906%20-4.60411%2C-9.29642%20-7.05468%2C-13.62406c-3.86151%2C-6.89217%20-7.35172%2C-14.58576%20-10.47063%2C-22.92048c-1.1139%2C-2.8851%20-2.45057%2C-5.44963%20-3.71299%2C-8.17444c-0.14852%2C0%20-0.22278%2C0%20-0.29704%2C0.16028c0%2C1.60283%200.07426%2C3.20566%200%2C4.80849c-0.3713%2C7.53331%200.29704%2C14.90633%200.22278%2C22.43963c0%2C2.40425%20-0.22278%2C4.80849%20-0.07426%2C7.21274c0.07426%2C1.12198%200.29704%2C1.76311%200.81686%2C1.9234c0.3713%2C0.16028%200.81686%2C0.32057%201.26242%2C0.32057c0.29704%2C0%200.44556%2C0.32057%200.44556%2C1.12198c0.07426%2C1.28226%20-0.14852%2C2.40425%20-0.51982%2C3.36595c-0.44556%2C1.12198%20-0.7426%2C2.40425%20-1.1139%2C3.68651c-0.22278%2C0.80142%20-0.51982%2C1.44255%20-0.96538%2C1.44255c-2.00501%2C0.16028%20-4.08429%2C0.32057%20-6.0893%2C0.48085c-0.81686%2C0%20-1.63371%2C-0.16028%20-2.45057%2C-0.16028c-0.51982%2C0%20-0.7426%2C-0.48085%20-0.7426%2C-1.60283c0%2C-1.12198%200.14852%2C-2.24396%200.59408%2C-3.04538c0.7426%2C-1.44255%201.4852%2C-3.04538%202.07927%2C-4.48793c0.14852%2C-0.32057%200.29704%2C-0.9617%200.29704%2C-1.44255c0.07426%2C-0.9617%20-0.07426%2C-1.9234%20-0.07426%2C-2.8851c0%2C-0.64113%200.07426%2C-1.44255%200.14852%2C-2.24396c0.07426%2C-0.48085%200.07426%2C-0.9617%200.07426%2C-1.44255c0.07426%2C-7.37302%200.14852%2C-14.90633%200.14852%2C-22.27935c0%2C-6.57161%200%2C-13.14321%200%2C-19.55454c0%2C-2.08368%20-0.07426%2C-4.16736%20-0.14852%2C-6.09076c-0.07426%2C-2.72481%20-0.89112%2C-4.48793%20-2.15353%2C-4.96878c-0.96538%2C-0.32057%20-2.00501%2C-0.48085%20-3.04465%2C-0.80142c-0.07426%2C0%20-0.29704%2C-0.48085%20-0.29704%2C-0.64113c0%2C-0.9617%200%2C-1.76311%200.07426%2C-2.72481c0%2C-0.16028%200.07426%2C-0.48085%200.07426%2C-0.48085c0.96538%2C-2.24396%201.85649%2C-4.48793%202.74761%2C-6.57161c0.07426%2C-0.32057%200.07426%2C-0.64113%200.14852%2C-1.28226c1.1139%2C0.16028%202.22779%2C0.16028%203.34169%2C0.64113c1.70797%2C0.32057%203.26743%2C1.60283%204.75262%2C3.52623c0.22278%2C0.16028%200.3713%2C0.48085%200.51982%2C0.80142c1.26242%2C2.8851%202.45057%2C5.60991%203.71299%2C8.495c0.7426%2C1.9234%201.4852%2C3.68651%202.30205%2C5.44963c1.33668%2C2.72481%202.74761%2C5.44963%204.08429%2C8.33472c1.41094%2C3.04538%202.67335%2C6.09076%204.01003%2C9.13614c1.41094%2C3.20566%202.82187%2C6.25104%204.23281%2C9.29642c0.44556%2C1.12198%200.96538%2C2.24396%201.55945%2C3.52623c0.07426%2C-2.24396%200.14852%2C-4.16736%200.14852%2C-6.09076c0.07426%2C-5.93047%200.22278%2C-12.02123%200.14852%2C-17.95171c0%2C-4.00708%20-0.29704%2C-8.17444%20-0.44556%2C-12.18152c-0.07426%2C-1.44255%20-0.44556%2C-2.40425%20-1.1139%2C-2.56453c-0.66834%2C-0.32057%20-1.26242%2C-0.32057%20-1.93075%2C-0.32057c-0.3713%2C0%20-0.51982%2C-0.16028%20-0.59408%2C-0.9617c0%2C-0.16028%200%2C-0.16028%200%2C-0.16028c-0.07426%2C-0.9617%20-0.3713%2C-2.24396%20-0.22278%2C-2.8851c0.29704%2C-1.12198%200.81686%2C-2.08368%201.33668%2C-3.04538c0.3713%2C-0.80142%200.7426%2C-1.44255%201.18816%2C-1.9234c0.29704%2C-0.32057%200.66834%2C-0.64113%200.96538%2C-0.64113c1.1139%2C0%202.15353%2C0%203.19317%2C0c1.4852%2C-0.16028%203.04465%2C-0.32057%204.52985%2C-0.32057c0.14852%2C0%200.29704%2C0%200.44556%2C0c0.14852%2C0%200.29704%2C0.16028%200.29704%2C0.16028c0%2C0.9617%200.07426%2C1.9234%20-0.07426%2C3.04538zM57.52076%2C138.12198c-0.7426%2C1.60283%20-1.41094%2C3.04538%20-2.15353%2C4.48793c-0.44556%2C0.9617%20-0.44556%2C1.76311%20-0.14852%2C2.8851c1.1139%2C-1.9234%202.74761%2C-2.8851%202.30205%2C-7.37302zM58.85744%2C150.78435c0.29704%2C5.44963%200.51982%2C10.89925%200.3713%2C16.34888c-0.14852%2C5.60991%20-0.07426%2C11.3801%20-0.14852%2C17.15029c-0.07426%2C1.60283%20-0.07426%2C3.20566%200.59408%2C4.32764c0.22278%2C0.16028%200.22278%2C0.80142%200.3713%2C1.12198c0.22278%2C0.64113%200.51982%2C1.12198%200.7426%2C1.60283c0.07426%2C0%200.14852%2C-0.16028%200.22278%2C-0.16028v-1.60283c-0.07426%2C-7.85387%20-0.14852%2C-15.86803%20-0.14852%2C-23.88218c0%2C-2.24396%200%2C-4.64821%200%2C-7.05246c-0.07426%2C-4.48793%20-0.59408%2C-8.97585%20-0.3713%2C-13.62406c0.07426%2C-0.9617%20-0.14852%2C-1.9234%20-0.29704%2C-2.72481c-0.29704%2C-1.44255%20-1.70797%2C-1.76311%20-2.15353%2C-0.48085c-0.59408%2C1.60283%20-1.18816%2C3.04538%20-2.00501%2C3.68651c-0.07426%2C0%20-0.07426%2C0.16028%20-0.07426%2C0.32057c0.22278%2C0.16028%200.44556%2C0.16028%200.66834%2C0.16028c1.4852%2C0.32057%202.07927%2C1.60283%202.22779%2C4.80849zM27.59408%2C147.09784c0.89112%2C-1.9234%201.78223%2C-4.00708%202.59909%2C-6.09076c0.14852%2C-0.32057%200.14852%2C-1.12198%200.22278%2C-1.9234c-0.22278%2C0.16028%20-0.29704%2C0.16028%20-0.29704%2C0.32057c-0.81686%2C2.08368%20-1.70797%2C4.00708%20-2.52483%2C5.93047c-0.14852%2C0.32057%20-0.14852%2C0.9617%20-0.22278%2C1.44255c0.07426%2C0%200.14852%2C0.16028%200.22278%2C0.32057zM33.16356%2C157.8368c0.07426%2C4.80849%200%2C9.77727%200%2C14.74604c-0.07426%2C3.04538%20-0.14852%2C6.09076%20-0.14852%2C9.29642c-0.07426%2C6.89217%20-0.07426%2C13.94463%20-0.07426%2C20.8368c0%2C0.64113%200%2C1.44255%20-0.07426%2C2.24396c-0.07426%2C1.60283%20-0.14852%2C3.36595%20-0.14852%2C4.96878c0.44556%2C0%200.81686%2C0%201.18816%2C-0.16028c1.26242%2C-0.32057%201.33668%2C-0.48085%201.4852%2C-3.20566c0.14852%2C-2.72481%200.14852%2C-5.28934%200.14852%2C-7.85387c0%2C-2.8851%20-0.22278%2C-5.77019%20-0.22278%2C-8.65529c0%2C-7.37302%200.07426%2C-14.58576%200.14852%2C-21.95878c0%2C-2.40425%200%2C-4.64821%20-0.07426%2C-6.89217c0%2C-3.52623%20-0.14852%2C-6.89217%20-0.14852%2C-10.4184c0%2C-3.68651%20-0.3713%2C-7.05246%20-2.00501%2C-8.81557c-0.59408%2C-0.80142%20-1.41094%2C-0.9617%20-2.15353%2C-1.12198c-0.22278%2C0%20-0.44556%2C1.12198%20-0.7426%2C1.76311c-0.7426%2C1.76311%20-1.55945%2C3.36595%20-2.30205%2C5.12906c0.44556%2C0%200.89112%2C0%201.41094%2C0.16028c1.26242%2C0.32057%202.59909%2C0.80142%203.11891%2C3.68651c0.3713%2C1.9234%200.51982%2C4.00708%200.59408%2C6.25104zM31.82688%2C215.53872c0.7426%2C-1.28226%201.18816%2C-2.72481%200.7426%2C-4.80849c-0.7426%2C1.76311%20-1.4852%2C3.68651%20-2.30205%2C5.44963c-0.29704%2C0.64113%20-0.3713%2C1.44255%20-0.29704%2C2.40425c0.66834%2C-1.12198%201.26242%2C-2.08368%201.85649%2C-3.04538zM33.38634%2C212.8139c-0.51982%2C2.72481%20-1.41094%2C4.32764%20-2.52483%2C5.44963c0.14852%2C0.16028%200.22278%2C0.16028%200.3713%2C0.16028c2.45057%2C-0.16028%204.90114%2C-0.32057%207.27746%2C-0.48085c0.22278%2C0%200.44556%2C-0.32057%200.59408%2C-0.64113c0.3713%2C-1.28226%200.7426%2C-2.56453%201.1139%2C-4.00708c-2.30205%2C-0.16028%20-4.60411%2C-0.32057%20-6.8319%2C-0.48085zM61.01097%2C217.6224c0.22278%2C-0.64113%200.44556%2C-1.12198%200.59408%2C-1.60283c0.29704%2C-0.9617%200.59408%2C-2.08368%200.81686%2C-3.04538c0.07426%2C-0.16028%200%2C-0.80142%20-0.07426%2C-0.9617c-0.7426%2C-1.60283%20-1.55945%2C-3.36595%20-2.37631%2C-4.96878c-1.26242%2C-2.40425%20-2.52483%2C-4.96878%20-3.71299%2C-7.53331c-0.51982%2C-1.28226%20-0.89112%2C-2.72481%20-1.41094%2C-4.00708c-0.96538%2C-2.24396%20-2.00501%2C-4.48793%20-2.97039%2C-6.89217c-0.96538%2C-2.08368%20-1.78223%2C-4.48793%20-2.74761%2C-6.73189c-1.70797%2C-4.16736%20-3.49021%2C-8.17444%20-5.19818%2C-12.18152c-0.3713%2C-0.9617%20-0.81686%2C-1.76311%20-1.26242%2C-2.72481c-0.66834%2C-1.44255%20-1.41094%2C-2.72481%20-2.07927%2C-4.16736c-0.59408%2C-1.44255%20-1.18816%2C-2.8851%20-1.85649%2C-4.48793c-0.07426%2C0.48085%20-0.14852%2C0.80142%20-0.14852%2C1.12198c-0.07426%2C2.72481%200%2C5.60991%20-0.07426%2C8.495c-0.07426%2C2.24396%200.51982%2C3.68651%201.18816%2C5.12906c1.18816%2C2.40425%202.45057%2C4.48793%203.41595%2C7.21274c3.19317%2C8.495%206.8319%2C16.34888%2010.76767%2C23.56162c2.30205%2C4.16736%204.75262%2C7.85387%206.60912%2C12.98293c0.14852%2C0.32057%200.3713%2C0.48085%200.51982%2C0.80142zM63.46154%2C213.61532c0%2C-0.16028%20-0.07426%2C-0.16028%20-0.14852%2C-0.32057c-0.7426%2C1.28226%20-0.89112%2C3.68651%20-1.85649%2C4.64821c0.07426%2C0%200.14852%2C0.16028%200.14852%2C0.32057c0.22278%2C0%200.51982%2C0%200.59408%2C-0.32057c0.44556%2C-1.44255%200.89112%2C-2.8851%201.26242%2C-4.32764z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M55.21871%2C145.495c-0.29704%2C-1.12198%20-0.29704%2C-1.9234%200.14852%2C-2.8851c0.7426%2C-1.44255%201.41094%2C-2.8851%202.15353%2C-4.48793c0.44556%2C4.48793%20-1.18816%2C5.44963%20-2.30205%2C7.37302z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M30.49021%2C139.08368c-0.07426%2C0.80142%20-0.07426%2C1.60283%20-0.22278%2C1.9234c-0.89112%2C2.08368%20-1.78223%2C4.16736%20-2.67335%2C6.09076c-0.07426%2C-0.16028%20-0.14852%2C-0.32057%20-0.22278%2C-0.32057c0.07426%2C-0.48085%200.07426%2C-1.12198%200.22278%2C-1.44255c0.81686%2C-1.9234%201.70797%2C-3.84679%202.52483%2C-5.93047c0.07426%2C0%200.14852%2C0%200.3713%2C-0.32057z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M31.82688%2C215.37843c-0.59408%2C1.12198%20-1.26242%2C2.08368%20-1.93075%2C3.20566c-0.07426%2C-0.9617%200%2C-1.76311%200.29704%2C-2.40425c0.81686%2C-1.76311%201.55945%2C-3.68651%202.30205%2C-5.44963c0.51982%2C1.9234%200.07426%2C3.52623%20-0.66834%2C4.64821z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M40.21824%2C213.29475c-0.3713%2C1.44255%20-0.7426%2C2.72481%20-1.1139%2C4.00708c-0.14852%2C0.32057%20-0.3713%2C0.64113%20-0.59408%2C0.64113c-2.37631%2C0.16028%20-4.82688%2C0.32057%20-7.27746%2C0.48085c-0.14852%2C0%20-0.22278%2C0%20-0.3713%2C-0.16028c1.1139%2C-1.12198%202.00501%2C-2.72481%202.52483%2C-5.44963c2.22779%2C0.16028%204.52985%2C0.32057%206.8319%2C0.48085z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M63.46154%2C213.61532c-0.44556%2C1.44255%20-0.81686%2C2.8851%20-1.33668%2C4.32764c-0.07426%2C0.32057%20-0.3713%2C0.32057%20-0.59408%2C0.32057c0%2C-0.16028%20-0.07426%2C-0.32057%20-0.14852%2C-0.32057c0.96538%2C-0.9617%201.1139%2C-3.36595%201.85649%2C-4.64821c0.14852%2C0%200.22278%2C0.16028%200.22278%2C0.32057z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M60.93671%2C189.57286v1.60283c-0.07426%2C0%20-0.14852%2C0.16028%20-0.22278%2C0.16028c-0.22278%2C-0.48085%20-0.51982%2C-0.9617%20-0.7426%2C-1.60283c-0.14852%2C-0.32057%20-0.14852%2C-0.9617%20-0.3713%2C-1.12198c-0.66834%2C-1.12198%20-0.66834%2C-2.72481%20-0.59408%2C-4.32764c0.07426%2C-5.77019%200%2C-11.54038%200.14852%2C-17.15029c0.14852%2C-5.44963%20-0.07426%2C-10.89925%20-0.3713%2C-16.34888c-0.14852%2C-3.36595%20-0.7426%2C-4.48793%20-2.30205%2C-4.80849c-0.22278%2C0%20-0.44556%2C0%20-0.66834%2C-0.16028c0%2C-0.16028%200%2C-0.32057%200.07426%2C-0.32057c0.96538%2C-0.64113%201.55945%2C-2.08368%202.15353%2C-3.68651c0.44556%2C-1.28226%201.85649%2C-0.9617%202.15353%2C0.48085c0.14852%2C0.80142%200.3713%2C1.76311%200.29704%2C2.72481c-0.22278%2C4.64821%200.29704%2C9.13614%200.3713%2C13.62406c0%2C2.40425%200%2C4.80849%200%2C7.05246c0%2C8.01415%200.07426%2C15.86803%200.07426%2C23.88218z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M62.42191%2C213.13447c-0.22278%2C0.9617%20-0.51982%2C2.08368%20-0.81686%2C3.04538c-0.14852%2C0.48085%20-0.3713%2C0.9617%20-0.59408%2C1.60283c-0.14852%2C-0.32057%20-0.3713%2C-0.48085%20-0.51982%2C-0.80142c-1.85649%2C-5.12906%20-4.30707%2C-8.81557%20-6.60912%2C-12.98293c-3.93577%2C-7.37302%20-7.5745%2C-15.22689%20-10.76767%2C-23.7219c-0.96538%2C-2.72481%20-2.22779%2C-4.80849%20-3.41595%2C-7.21274c-0.66834%2C-1.44255%20-1.26242%2C-2.8851%20-1.18816%2C-5.12906c0.07426%2C-2.8851%200%2C-5.77019%200.07426%2C-8.495c0%2C-0.32057%200.07426%2C-0.64113%200.14852%2C-1.12198c0.66834%2C1.60283%201.26242%2C3.04538%201.85649%2C4.48793c0.66834%2C1.44255%201.41094%2C2.72481%202.07927%2C4.16736c0.44556%2C0.9617%200.89112%2C1.76311%201.26242%2C2.72481c1.70797%2C4.00708%203.49021%2C8.01415%205.19818%2C12.18152c0.96538%2C2.24396%201.78223%2C4.64821%202.74761%2C6.73189c0.96538%2C2.40425%202.00501%2C4.64821%202.97039%2C6.89217c0.51982%2C1.28226%200.89112%2C2.72481%201.41094%2C4.00708c1.18816%2C2.56453%202.45057%2C5.12906%203.71299%2C7.53331c0.81686%2C1.60283%201.63371%2C3.36595%202.37631%2C4.96878c0.14852%2C0.32057%200.14852%2C0.80142%200.07426%2C1.12198z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M35.46561%2C206.40258c-0.14852%2C2.72481%20-0.22278%2C2.8851%20-1.4852%2C3.20566c-0.3713%2C0.16028%20-0.7426%2C0.16028%20-1.18816%2C0.16028c0%2C-1.60283%200.07426%2C-3.36595%200.14852%2C-4.96878c0%2C-0.64113%200%2C-1.44255%200%2C-2.08368c0%2C-6.89217%200%2C-13.94463%200.07426%2C-20.8368c0%2C-3.20566%200.07426%2C-6.25104%200.14852%2C-9.29642c0%2C-4.96878%200.07426%2C-9.93755%200%2C-14.74604c0%2C-2.08368%20-0.14852%2C-4.16736%20-0.51982%2C-6.09076c-0.59408%2C-3.04538%20-1.93075%2C-3.52623%20-3.19317%2C-3.84679c-0.51982%2C-0.16028%20-0.96538%2C-0.16028%20-1.41094%2C-0.16028c0.7426%2C-1.76311%201.55945%2C-3.36595%202.30205%2C-5.12906c0.29704%2C-0.64113%200.51982%2C-1.76311%200.7426%2C-1.76311c0.7426%2C0.16028%201.55945%2C0.32057%202.15353%2C1.12198c1.63371%2C1.76311%202.00501%2C5.12906%202.00501%2C8.81557c0%2C3.52623%200.14852%2C6.89217%200.14852%2C10.4184c0.07426%2C2.24396%200.07426%2C4.48793%200.07426%2C6.89217c-0.07426%2C7.37302%20-0.14852%2C14.58576%20-0.14852%2C21.95878c0%2C2.8851%200.22278%2C5.77019%200.22278%2C8.65529c0.07426%2C2.40425%200.07426%2C5.12906%20-0.07426%2C7.69359z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M147.74637%2C217.94296c-0.81686%2C1.9234%20-1.4852%2C4.00708%20-2.97039%2C3.36595c1.63371%2C-4.16736%201.63371%2C-4.16736%202.97039%2C-3.36595z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M129.03291%2C218.26353c-0.44556%2C1.9234%20-1.93075%2C3.36595%20-3.41595%2C3.04538c1.1139%2C-1.76311%202.00501%2C-3.84679%203.41595%2C-3.04538z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M109.20555%2C188.8355c-0.29704%2C4.01476%20-1.26242%2C7.81821%20-2.67335%2C11.41036c-1.1139%2C2.74694%20-2.52483%2C5.17692%20-4.23281%2C7.1843c-2.07927%2C2.42998%20-4.38133%2C4.43736%20-6.90616%2C5.70518c-1.78223%2C0.95087%20-3.63873%2C1.58478%20-5.49522%2C2.32433c-0.14852%2C0.10565%20-0.29704%2C0.10565%20-0.44556%2C0.10565c-3.04465%2C0%20-6.01504%2C-0.73956%20-8.61413%2C-3.06389c-2.07927%2C-1.79607%20-4.08429%2C-3.80345%20-5.42096%2C-6.86735c-1.55945%2C-3.4865%20-2.74761%2C-7.07865%20-2.89613%2C-11.30471c0%2C-1.79607%20-0.14852%2C-3.59216%20-0.22278%2C-5.28257c-0.14852%2C-6.44474%201.78223%2C-11.51602%204.60411%2C-16.16468c2.37631%2C-3.9091%205.3467%2C-6.65605%208.61413%2C-8.87473c1.03964%2C-0.73956%202.22779%2C-1.05651%203.41595%2C-1.37347c1.1139%2C-0.31696%202.22779%2C-0.63391%203.34169%2C-0.63391c1.41094%2C0%202.82187%2C0.4226%204.15855%2C0.73956c2.82187%2C0.52826%204.90114%2C2.95825%207.05468%2C5.28257c2.52483%2C2.85259%203.63873%2C6.86735%204.82688%2C10.88211c0.96538%2C3.16954%201.26242%2C6.44474%200.89112%2C9.93124zM84.55131%2C172.77646c-1.41094%2C3.80345%20-2.45057%2C7.81821%20-2.67335%2C12.14993c-0.14852%2C2.85259%20-0.22278%2C5.81083%200.29704%2C8.66342c0.66834%2C4.01476%201.78223%2C7.92386%203.86151%2C11.09341c1.33668%2C2.00738%202.59909%2C3.9091%204.60411%2C4.54301c1.55945%2C0.52826%202.97039%2C0.21131%204.15855%2C-1.47912c1.63371%2C-2.32433%202.74761%2C-5.07127%203.49021%2C-8.24082c0.66834%2C-3.16954%201.18816%2C-6.44474%200.89112%2C-9.82559c0.22278%2C-3.6978%20-0.22278%2C-7.28995%20-0.81686%2C-10.77646c-0.3713%2C-2.21869%20-0.81686%2C-4.43736%20-1.55945%2C-6.44474c-1.26242%2C-3.16954%20-3.04465%2C-5.17692%20-5.64374%2C-5.38823c-1.70797%2C-0.21131%20-3.26743%2C0.52826%20-4.60411%2C1.90173c-0.81686%2C0.95087%20-1.4852%2C2.32433%20-2.00501%2C3.80345zM94.87342%2C212.92404c-8.68839%2C0.21131%20-14.48065%2C-7.1843%20-17.5253%2C-16.90425c-2.37631%2C-11.30471%20-0.89112%2C-21.13031%205.64374%2C-28.94852c-0.22278%2C0%20-0.29704%2C0.10565%20-0.44556%2C0.21131c-1.63371%2C1.37347%20-3.19317%2C3.06389%20-4.52985%2C5.07127c-1.63371%2C2.42998%20-3.26743%2C4.96563%20-4.08429%2C8.24082c-0.51982%2C2.00738%20-1.03964%2C3.9091%20-1.03964%2C6.02214c-0.07426%2C3.38085%200%2C6.65605%200.44556%2C9.93124c0.29704%2C2.32433%200.7426%2C4.64867%201.70797%2C6.65605c1.33668%2C2.64129%202.82187%2C5.17692%204.67836%2C7.07865c1.55945%2C1.58478%203.19317%2C2.95825%205.04966%2C3.6978c2.59909%2C1.05651%205.19818%2C1.05651%207.72301%2C-0.10565c0.81686%2C-0.31696%201.55945%2C-0.63391%202.37631%2C-0.95087zM103.33903%2C180.27772c-0.44556%2C-3.2752%20-1.41094%2C-6.33909%20-2.67335%2C-9.08603c-1.1139%2C-2.42998%20-2.82187%2C-3.9091%20-4.60411%2C-5.38823c-1.4852%2C-1.26782%20-2.89613%2C-1.37347%20-4.45559%2C-0.95087c-1.18816%2C0.31696%20-2.22779%2C0.84521%20-3.19317%2C1.90173c0.14852%2C0%200.3713%2C-0.10565%200.51982%2C-0.10565c2.00501%2C-0.52826%203.93577%2C-0.4226%205.64374%2C1.37347c1.4852%2C1.58478%202.74761%2C3.4865%203.41595%2C6.12779c0.51982%2C2.32433%200.96538%2C4.54301%201.26242%2C6.86735c0.44556%2C2.95825%200.81686%2C5.91648%200.59408%2C8.98038c-0.14852%2C1.90173%20-0.29704%2C3.6978%20-0.51982%2C5.59953c-0.22278%2C1.79607%20-0.44556%2C3.6978%20-0.89112%2C5.28257c-0.96538%2C3.38085%20-2.37631%2C6.55039%20-4.67836%2C8.87473c1.55945%2C-0.21131%202.97039%2C-0.63391%204.08429%2C-2.11303c0.3713%2C-0.52826%200.7426%2C-0.95087%201.1139%2C-1.37347c1.63371%2C-1.90173%202.67335%2C-4.33171%203.26743%2C-7.1843c1.33668%2C-6.12779%202.00501%2C-12.36123%201.1139%2C-18.80597z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M102.22514%2C201.19672c-0.59408%2C2.85259%20-1.63371%2C5.28257%20-3.26743%2C7.1843c-0.3713%2C0.4226%20-0.7426%2C0.84521%20-1.1139%2C1.37347c-1.1139%2C1.47912%20-2.52483%2C1.90173%20-4.08429%2C2.11303c2.30205%2C-2.32433%203.71299%2C-5.49388%204.67836%2C-8.87473c0.44556%2C-1.58478%200.66834%2C-3.4865%200.89112%2C-5.28257c0.22278%2C-1.90173%200.3713%2C-3.6978%200.51982%2C-5.59953c0.22278%2C-3.06389%20-0.14852%2C-6.02214%20-0.59408%2C-8.98038c-0.29704%2C-2.32433%20-0.7426%2C-4.54301%20-1.26242%2C-6.86735c-0.66834%2C-2.64129%20-1.93075%2C-4.54301%20-3.41595%2C-6.12779c-1.70797%2C-1.79607%20-3.63873%2C-1.90173%20-5.64374%2C-1.37347c-0.14852%2C0%20-0.3713%2C0.10565%20-0.51982%2C0.10565c0.96538%2C-1.05651%202.00501%2C-1.58478%203.19317%2C-1.90173c1.55945%2C-0.4226%202.97039%2C-0.31696%204.45559%2C0.95087c1.78223%2C1.47912%203.49021%2C2.95825%204.60411%2C5.38823c1.26242%2C2.74694%202.22779%2C5.81083%202.67335%2C9.08603c0.89112%2C6.44474%200.22278%2C12.67818%20-1.1139%2C18.80597z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M94.87342%2C212.81839c-0.81686%2C0.31696%20-1.55945%2C0.73956%20-2.37631%2C1.05651c-2.52483%2C1.16216%20-5.12392%2C1.16216%20-7.72301%2C0.10565c-1.85649%2C-0.73956%20-3.49021%2C-2.11303%20-5.04966%2C-3.6978c-1.85649%2C-1.90173%20-3.34169%2C-4.43736%20-4.67836%2C-7.07865c-0.96538%2C-2.00738%20-1.41094%2C-4.33171%20-1.70797%2C-6.65605c-0.44556%2C-3.2752%20-0.51982%2C-6.55039%20-0.44556%2C-9.93124c0%2C-2.11303%200.51982%2C-4.01476%201.03964%2C-6.02214c0.81686%2C-3.2752%202.45057%2C-5.81083%204.08429%2C-8.24082c1.33668%2C-2.00738%202.89613%2C-3.6978%204.52985%2C-5.07127c0.14852%2C-0.10565%200.22278%2C-0.21131%200.44556%2C-0.21131c-6.53486%2C7.81821%20-8.02005%2C17.64381%20-5.64374%2C28.94852c3.04465%2C9.71994%208.83691%2C17.11555%2017.5253%2C16.79859z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M165.42019%2C166.85997c0.07426%2C0.63391%20-0.22278%2C0.63391%20-0.59408%2C0.63391c-1.78223%2C-0.10565%20-3.56447%2C1.16216%20-4.15855%2C3.06389c-0.3713%2C1.26782%20-0.7426%2C2.42998%20-1.03964%2C3.6978c-1.18816%2C5.38823%20-2.67335%2C10.6708%20-4.30707%2C15.74208c-0.89112%2C2.74694%20-1.4852%2C5.81083%20-2.22779%2C8.66342c-0.59408%2C2.21869%20-1.1139%2C4.43736%20-1.70797%2C6.65605c-0.66834%2C2.42998%20-1.41094%2C4.75432%20-2.15353%2C7.07865c-0.07426%2C0.21131%20-0.14852%2C0.31696%20-0.14852%2C0.4226c-0.29704%2C2.32433%20-1.55945%2C3.59216%20-2.67335%2C4.96563c-0.22278%2C0.21131%20-0.59408%2C0.21131%20-0.96538%2C0.21131c-0.51982%2C0.10565%20-0.96538%2C0%20-1.41094%2C-0.10565c-0.14852%2C0%20-0.29704%2C-0.21131%20-0.3713%2C-0.31696c-1.03964%2C-3.4865%20-2.15353%2C-7.07865%20-3.19317%2C-10.6708c-0.22278%2C-1.05651%20-0.29704%2C-2.11303%20-0.51982%2C-3.16954c-0.44556%2C-1.90173%20-0.89112%2C-3.59216%20-1.26242%2C-5.49388c-0.51982%2C-2.74694%20-0.96538%2C-5.49388%20-1.41094%2C-8.13517c-0.07426%2C-0.10565%20-0.07426%2C-0.31696%20-0.14852%2C-0.73956c-0.07426%2C0.4226%20-0.22278%2C0.63391%20-0.22278%2C0.84521c-0.44556%2C2.64129%20-1.26242%2C5.07127%20-2.00501%2C7.60691c-0.96538%2C3.16954%20-1.78223%2C6.44474%20-2.67335%2C9.71994c-0.66834%2C2.42998%20-1.26242%2C4.96563%20-2.00501%2C7.28995c-0.22278%2C0.84521%20-0.96538%2C1.37347%20-1.4852%2C2.11303c-0.81686%2C1.16216%20-1.78223%2C1.26782%20-2.82187%2C1.05651c0%2C0%20-0.07426%2C0%20-0.14852%2C0c-1.03964%2C-0.10565%20-0.96538%2C-0.10565%20-1.33668%2C-1.58478c-0.51982%2C-2.00738%20-1.03964%2C-3.9091%20-1.55945%2C-5.91648c-0.51982%2C-2.11303%20-0.96538%2C-4.33171%20-1.4852%2C-6.55039c-0.3713%2C-1.47912%20-0.66834%2C-2.95825%20-0.96538%2C-4.43736c-1.1139%2C-4.96563%20-2.15353%2C-9.93124%20-3.26743%2C-14.89687c-0.51982%2C-2.32433%20-0.89112%2C-4.75432%20-1.4852%2C-7.07865c-0.3713%2C-1.47912%20-0.89112%2C-2.95825%20-1.4852%2C-4.43736c-0.22278%2C-0.4226%20-0.66834%2C-0.84521%20-1.03964%2C-0.95087c-0.81686%2C-0.10565%20-1.70797%2C0%20-2.52483%2C-0.10565c-0.14852%2C0%20-0.44556%2C-0.21131%20-0.44556%2C-0.4226c0%2C-0.84521%200%2C-1.58478%200%2C-2.21869c0.29704%2C-0.4226%200.59408%2C-0.73956%200.7426%2C-1.05651c0.81686%2C-1.26782%201.63371%2C-2.53563%202.45057%2C-3.9091c0.07426%2C-0.10565%200.22278%2C-0.21131%200.29704%2C-0.21131c1.33668%2C0.4226%202.67335%2C-0.21131%203.93577%2C-0.31696c2.00501%2C0.21131%203.93577%2C0.31696%205.94078%2C0.4226c1.18816%2C0.10565%201.18816%2C0%201.1139%2C1.69042c0%2C0.31696%20-0.07426%2C0.52826%20-0.07426%2C0.84521c0%2C0.63391%20-0.22278%2C0.84521%20-0.66834%2C0.84521c-0.51982%2C0%20-1.1139%2C0.21131%20-1.63371%2C0.4226c-0.59408%2C0.31696%20-0.66834%2C0.52826%20-0.44556%2C1.47912c0.59408%2C2.42998%201.1139%2C4.96563%201.70797%2C7.50126c0.59408%2C2.42998%201.26242%2C4.75432%201.85649%2C7.1843c1.18816%2C4.75432%202.30205%2C9.40299%203.41595%2C14.1573c0%2C0.10565%200.07426%2C0.10565%200.14852%2C0.31696c0.22278%2C-0.95087%200.44556%2C-1.90173%200.7426%2C-2.85259c0.59408%2C-1.90173%201.26242%2C-3.80345%201.85649%2C-5.70518c0.29704%2C-1.05651%200.66834%2C-2.11303%200.96538%2C-3.16954c0.66834%2C-2.21869%201.41094%2C-4.33171%202.07927%2C-6.55039c0.07426%2C-0.31696%200.14852%2C-0.73956%200.07426%2C-0.95087c-0.3713%2C-1.69042%20-0.81686%2C-3.2752%20-1.26242%2C-4.96563c-0.22278%2C-0.73956%20-0.51982%2C-1.47912%20-0.7426%2C-2.21869c-0.3713%2C-1.05651%20-1.03964%2C-1.58478%20-1.85649%2C-1.58478c-0.81686%2C-0.10565%20-1.55945%2C-0.10565%20-2.37631%2C-0.10565c-0.14852%2C0%20-0.3713%2C-0.21131%20-0.3713%2C-0.4226c-0.07426%2C-0.63391%20-0.07426%2C-1.37347%20-0.07426%2C-2.11303c0%2C-0.21131%200.22278%2C-0.4226%200.29704%2C-0.52826c0.59408%2C-0.4226%201.26242%2C-0.95087%201.93075%2C-1.37347c2.74761%2C-1.79607%205.64374%2C-1.47912%208.53987%2C-1.26782c1.78223%2C0.10565%203.56447%2C0%205.3467%2C0c0.14852%2C0%200.3713%2C0.21131%200.3713%2C0.4226c0.07426%2C0.63391%200.07426%2C1.37347%200.07426%2C2.00738c0%2C0.95087%20-0.14852%2C0.95087%20-0.7426%2C0.84521c-0.7426%2C-0.10565%20-1.4852%2C-0.10565%20-2.15353%2C0c-1.1139%2C0.21131%20-1.33668%2C1.05651%20-0.96538%2C2.53563c0.29704%2C1.05651%200.51982%2C2.21869%200.7426%2C3.2752c0.59408%2C2.21869%201.1139%2C4.54301%201.70797%2C6.86735c1.1139%2C4.33171%202.15353%2C8.66342%203.19317%2C12.99514c0.3713%2C1.37347%200.66834%2C2.74694%201.03964%2C4.43736c0.44556%2C-1.37347%200.81686%2C-2.53563%201.1139%2C-3.80345c1.41094%2C-5.07127%202.74761%2C-10.14255%204.08429%2C-15.21382c0.44556%2C-1.58478%200.81686%2C-3.2752%201.18816%2C-4.96563c0.14852%2C-0.52826%200.14852%2C-1.16216%200.07426%2C-1.79607c0%2C-0.73956%20-0.44556%2C-1.05651%20-0.96538%2C-1.05651c-0.81686%2C0%20-1.55945%2C0%20-2.37631%2C0c-0.07426%2C0%20-0.29704%2C-0.21131%20-0.29704%2C-0.31696c-0.29704%2C-1.26782%200.07426%2C-2.74694%200.89112%2C-3.38085c0.81686%2C-0.63391%201.70797%2C-1.26782%202.52483%2C-1.90173c0.14852%2C-0.10565%200.29704%2C-0.21131%200.3713%2C-0.31696c0.44556%2C-1.05651%201.1139%2C-0.73956%201.85649%2C-0.73956c2.00501%2C0.10565%204.01003%2C0%205.94078%2C0c1.03964%2C0%202.15353%2C-0.21131%203.19317%2C0c0.89112%2C0.31696%200.29704%2C1.58478%200.44556%2C2.00738zM150.86528%2C170.24082c0.96538%2C-0.73956%201.93075%2C-1.47912%202.89613%2C-2.21869c0.66834%2C-0.52826%200.81686%2C-0.84521%200.7426%2C-2.00738c-0.96538%2C0.63391%20-1.85649%2C1.37347%20-2.74761%2C1.90173c-1.18816%2C0.73956%20-1.18816%2C0.73956%20-1.1139%2C2.53563c-0.07426%2C0%20-0.07426%2C0%200%2C0c0.07426%2C0%200.14852%2C0%200.22278%2C-0.21131zM128.58735%2C169.71257c1.03964%2C-0.73956%202.15353%2C-1.58478%203.19317%2C-2.32433c0.7426%2C-0.52826%200.7426%2C-0.73956%200.3713%2C-1.79607c-0.44556%2C0.4226%20-0.89112%2C0.73956%20-1.33668%2C1.05651c-0.59408%2C0.4226%20-1.18816%2C0.73956%20-1.78223%2C1.16216c-0.7426%2C0.63391%20-0.81686%2C0.84521%20-0.44556%2C1.90173zM110.83927%2C170.87473c0.14852%2C-0.21131%200.29704%2C-0.4226%200.44556%2C-0.52826c0.66834%2C-1.05651%201.33668%2C-2.11303%202.00501%2C-3.06389c0.3713%2C-0.4226%200.44556%2C-1.05651%200.29704%2C-1.90173c-1.03964%2C1.47912%20-1.93075%2C2.85259%20-2.82187%2C4.22606c-0.14852%2C0.31696%20-0.14852%2C0.73956%20-0.14852%2C1.16216c0.07426%2C0%200.14852%2C0%200.22278%2C0.10565zM125.1714%2C217.25576c0.66834%2C-0.84521%201.26242%2C-1.47912%201.85649%2C-2.21869c0.14852%2C-0.10565%200.22278%2C-0.63391%200.14852%2C-0.84521c-0.22278%2C-1.26782%20-0.44556%2C-2.53563%20-0.7426%2C-3.6978c-0.59408%2C-2.53563%20-1.33668%2C-4.96563%20-1.85649%2C-7.50126c-1.18816%2C-5.38823%20-2.22779%2C-10.77646%20-3.49021%2C-16.16468c-0.81686%2C-3.59216%20-2.07927%2C-7.07865%20-3.04465%2C-10.56515c-0.44556%2C-1.47912%20-0.81686%2C-3.06389%20-1.03964%2C-4.64867c-0.29704%2C-1.90173%20-1.33668%2C-3.38085%20-2.74761%2C-3.38085c-0.22278%2C0%20-0.59408%2C-0.10565%20-0.7426%2C0.10565c-0.7426%2C0.95087%20-1.4852%2C2.00738%20-2.22779%2C3.06389c0.07426%2C0.10565%200.14852%2C0.10565%200.14852%2C0.10565c0.14852%2C-0.10565%200.29704%2C-0.10565%200.44556%2C-0.10565c1.1139%2C-0.10565%202.22779%2C-0.21131%202.82187%2C1.58478c0.66834%2C1.90173%201.41094%2C3.9091%201.85649%2C6.02214c0.96538%2C4.22606%201.78223%2C8.45212%202.67335%2C12.67818c0.59408%2C2.85259%201.26242%2C5.70518%201.85649%2C8.55777c0.7426%2C3.38085%201.4852%2C6.86735%202.30205%2C10.2482c0.3713%2C1.58478%200.89112%2C3.16954%201.33668%2C4.75432c0.14852%2C0.63391%200.29704%2C1.26782%200.44556%2C2.00738zM129.10717%2C215.45968c-1.4852%2C-0.52826%20-2.37631%2C0.84521%20-3.41595%2C2.00738c1.41094%2C0.31696%202.97039%2C-0.63391%203.41595%2C-2.00738zM137.05296%2C179.74946c0%2C0%20-0.07426%2C-0.10565%20-0.14852%2C-0.10565c-0.66834%2C0.73956%20-1.78223%2C0.95087%20-2.15353%2C2.32433c-0.51982%2C1.90173%20-1.03964%2C3.6978%20-1.63371%2C5.59953c-0.22278%2C0.63391%20-0.3713%2C1.26782%20-0.59408%2C1.90173c-0.59408%2C1.79607%20-1.26242%2C3.6978%20-1.85649%2C5.59953c-0.44556%2C1.58478%20-0.89112%2C3.06389%20-1.33668%2C4.64867c-0.07426%2C0.21131%20-0.07426%2C0.4226%20-0.07426%2C0.52826c0.29704%2C1.16216%200.59408%2C2.42998%200.89112%2C3.6978c2.37631%2C-8.13517%204.67836%2C-16.16468%206.90616%2C-24.1942zM137.35%2C178.48164c-0.51982%2C-2.21869%20-1.1139%2C-4.43736%20-1.63371%2C-6.65605c-0.29704%2C-1.37347%20-0.7426%2C-2.42998%20-1.4852%2C-3.38085c-0.59408%2C-0.73956%20-1.33668%2C-0.84521%20-2.07927%2C-0.31696c-0.44556%2C0.31696%20-0.96538%2C0.63391%20-1.41094%2C0.95087c-0.3713%2C0.21131%20-0.7426%2C0.52826%20-1.1139%2C0.84521c0.3713%2C0.21131%200.7426%2C0.10565%201.1139%2C0.21131c0.59408%2C0.21131%201.18816%2C0.21131%201.63371%2C0.73956c0.51982%2C0.52826%200.89112%2C1.47912%201.18816%2C2.32433c0.44556%2C1.47912%200.81686%2C3.06389%201.26242%2C4.64867c0.22278%2C0.63391%200.44556%2C1.26782%200.66834%2C2.00738c0.59408%2C-0.52826%201.18816%2C-0.95087%201.85649%2C-1.37347zM144.33042%2C217.57271c0.22278%2C-0.4226%200.3713%2C-0.73956%200.51982%2C-1.05651c0.3713%2C-0.73956%200.96538%2C-1.37347%201.03964%2C-2.11303c0.07426%2C-0.73956%20-0.44556%2C-1.47912%20-0.66834%2C-2.32433c-0.89112%2C-3.38085%20-1.70797%2C-6.7617%20-2.52483%2C-10.14255c-0.96538%2C-3.9091%20-1.93075%2C-7.81821%20-2.89613%2C-11.83297c-0.44556%2C-1.79607%20-0.89112%2C-3.59216%20-1.33668%2C-5.49388c-0.14852%2C0.31696%20-0.22278%2C0.63391%20-0.29704%2C0.95087c-0.51982%2C1.47912%20-0.96538%2C3.06389%20-0.3713%2C4.75432c0.07426%2C0.21131%200.07426%2C0.31696%200.07426%2C0.52826c0.3713%2C2.32433%200.7426%2C4.64867%201.18816%2C6.86735c0.3713%2C2.11303%200.89112%2C4.12041%201.33668%2C6.12779c0.22278%2C0.95087%200.29704%2C2.00738%200.51982%2C2.95825c0.51982%2C1.79607%201.03964%2C3.4865%201.55945%2C5.28257c0.51982%2C1.47912%200.96538%2C3.06389%201.41094%2C4.54301c0.14852%2C0.21131%200.22278%2C0.4226%200.44556%2C0.95087zM147.82063%2C215.35403c-1.41094%2C-0.52826%20-1.41094%2C-0.52826%20-2.97039%2C2.21869c1.41094%2C0.4226%202.15353%2C-1.05651%202.97039%2C-2.21869zM158.21699%2C168.7617c-1.03964%2C-0.95087%20-2.30205%2C-0.95087%20-3.41595%2C-0.52826c-1.03964%2C0.31696%20-1.93075%2C1.47912%20-2.97039%2C2.32433c0.3713%2C0%200.59408%2C0%200.81686%2C0c0.22278%2C0.10565%200.44556%2C0.10565%200.66834%2C0.21131c0.66834%2C0.21131%201.18816%2C0.95087%201.18816%2C1.90173c0%2C1.05651%20-0.14852%2C2.21869%20-0.3713%2C3.2752c-0.44556%2C1.90173%20-1.03964%2C3.6978%20-1.55945%2C5.49388c-1.55945%2C5.70518%20-3.11891%2C11.51602%20-4.67836%2C17.2212c-0.07426%2C0.31696%20-0.22278%2C0.63391%20-0.14852%2C0.84521c0.3713%2C1.58478%200.7426%2C3.16954%201.1139%2C4.75432c0.07426%2C0%200.07426%2C0%200.14852%2C0c0.14852%2C-0.52826%200.29704%2C-1.05651%200.44556%2C-1.58478c1.4852%2C-5.38823%202.97039%2C-10.88211%204.45559%2C-16.27034c1.1139%2C-4.22606%202.22779%2C-8.34647%203.34169%2C-12.57253c0.3713%2C-1.37347%200.7426%2C-2.85259%201.1139%2C-4.33171c0%2C-0.21131%20-0.07426%2C-0.73956%20-0.14852%2C-0.73956z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M153.76141%2C168.12779c-0.96538%2C0.73956%20-1.93075%2C1.47912%20-2.89613%2C2.21869c-0.07426%2C0.10565%20-0.14852%2C0.10565%20-0.22278%2C0.10565l-0.07426%2C-0.10565c0%2C-1.79607%200%2C-1.69042%201.18816%2C-2.42998c0.89112%2C-0.52826%201.78223%2C-1.26782%202.74761%2C-1.90173c0.07426%2C1.37347%20-0.07426%2C1.58478%20-0.7426%2C2.11303z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M131.70626%2C167.49388c-1.03964%2C0.73956%20-2.15353%2C1.58478%20-3.19317%2C2.32433c-0.29704%2C-1.26782%20-0.22278%2C-1.47912%200.51982%2C-2.00738c0.59408%2C-0.4226%201.18816%2C-0.73956%201.78223%2C-1.16216c0.44556%2C-0.31696%200.89112%2C-0.63391%201.33668%2C-1.05651c0.3713%2C1.16216%200.29704%2C1.37347%20-0.44556%2C1.90173z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M113.28984%2C167.28258c-0.66834%2C0.95087%20-1.33668%2C2.00738%20-2.00501%2C3.06389c-0.14852%2C0.10565%20-0.29704%2C0.31696%20-0.44556%2C0.52826c-0.07426%2C0%20-0.14852%2C0%20-0.14852%2C-0.10565c0%2C-0.4226%200%2C-0.84521%200.14852%2C-1.16216c0.89112%2C-1.37347%201.78223%2C-2.74694%202.82187%2C-4.22606c0.07426%2C0.84521%200%2C1.47912%20-0.3713%2C1.90173z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M137.35%2C178.37599c-0.59408%2C0.52826%20-1.18816%2C0.95087%20-1.85649%2C1.47912c-0.22278%2C-0.73956%20-0.44556%2C-1.37347%20-0.66834%2C-2.00738c-0.44556%2C-1.58478%20-0.81686%2C-3.16954%20-1.26242%2C-4.64867c-0.29704%2C-0.84521%20-0.66834%2C-1.79607%20-1.18816%2C-2.32433c-0.44556%2C-0.52826%20-1.03964%2C-0.52826%20-1.63371%2C-0.73956c-0.3713%2C-0.10565%20-0.7426%2C0%20-1.1139%2C-0.21131c0.3713%2C-0.31696%200.7426%2C-0.63391%201.1139%2C-0.84521c0.44556%2C-0.31696%200.96538%2C-0.63391%201.41094%2C-0.95087c0.7426%2C-0.52826%201.4852%2C-0.4226%202.07927%2C0.31696c0.7426%2C0.95087%201.18816%2C2.00738%201.4852%2C3.38085c0.44556%2C2.11303%201.03964%2C4.33171%201.63371%2C6.55039z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M158.36551%2C169.50126c-0.3713%2C1.47912%20-0.7426%2C2.95825%20-1.1139%2C4.33171c-1.1139%2C4.22606%20-2.22779%2C8.34647%20-3.34169%2C12.57253c-1.4852%2C5.38823%20-2.97039%2C10.88211%20-4.45559%2C16.27034c-0.14852%2C0.52826%20-0.29704%2C1.05651%20-0.44556%2C1.58478c-0.07426%2C0%20-0.07426%2C0%20-0.14852%2C0c-0.3713%2C-1.58478%20-0.7426%2C-3.16954%20-1.1139%2C-4.75432c-0.07426%2C-0.21131%200.07426%2C-0.52826%200.14852%2C-0.84521c1.55945%2C-5.70518%203.11891%2C-11.51602%204.67836%2C-17.2212c0.51982%2C-1.79607%201.1139%2C-3.59216%201.55945%2C-5.49388c0.22278%2C-1.05651%200.3713%2C-2.21869%200.3713%2C-3.2752c0%2C-0.95087%20-0.51982%2C-1.69042%20-1.18816%2C-1.90173c-0.22278%2C-0.10565%20-0.44556%2C-0.10565%20-0.66834%2C-0.21131c-0.22278%2C0%20-0.44556%2C0%20-0.81686%2C0c1.03964%2C-0.84521%201.93075%2C-2.00738%202.97039%2C-2.32433c1.1139%2C-0.4226%202.37631%2C-0.4226%203.41595%2C0.52826c0.07426%2C0%200.14852%2C0.52826%200.14852%2C0.73956z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M145.88987%2C214.50882c-0.07426%2C0.73956%20-0.66834%2C1.37347%20-1.03964%2C2.11303c-0.14852%2C0.31696%20-0.29704%2C0.63391%20-0.51982%2C1.05651c-0.22278%2C-0.4226%20-0.3713%2C-0.63391%20-0.44556%2C-0.95087c-0.44556%2C-1.47912%20-0.89112%2C-3.06389%20-1.41094%2C-4.54301c-0.51982%2C-1.79607%20-1.03964%2C-3.4865%20-1.55945%2C-5.28257c-0.22278%2C-0.95087%20-0.29704%2C-2.00738%20-0.51982%2C-2.95825c-0.44556%2C-2.00738%20-0.96538%2C-4.01476%20-1.33668%2C-6.12779c-0.44556%2C-2.21869%20-0.81686%2C-4.54301%20-1.18816%2C-6.86735c0%2C-0.21131%200%2C-0.31696%20-0.07426%2C-0.52826c-0.59408%2C-1.69042%20-0.14852%2C-3.2752%200.3713%2C-4.75432c0.07426%2C-0.31696%200.14852%2C-0.63391%200.29704%2C-0.95087c0.44556%2C1.90173%200.89112%2C3.6978%201.33668%2C5.49388c0.96538%2C4.01476%201.93075%2C7.92386%202.89613%2C11.83297c0.81686%2C3.38085%201.63371%2C6.7617%202.52483%2C10.14255c0.22278%2C0.73956%200.7426%2C1.58478%200.66834%2C2.32433z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M137.12722%2C179.74946c-2.30205%2C8.02952%20-4.60411%2C16.05903%20-6.98042%2C24.29985c-0.29704%2C-1.26782%20-0.59408%2C-2.53563%20-0.89112%2C-3.6978c0%2C-0.10565%200%2C-0.31696%200.07426%2C-0.52826c0.44556%2C-1.58478%200.89112%2C-3.06389%201.33668%2C-4.64867c0.59408%2C-1.90173%201.26242%2C-3.80345%201.85649%2C-5.59953c0.22278%2C-0.63391%200.3713%2C-1.26782%200.59408%2C-1.90173c0.59408%2C-1.90173%201.1139%2C-3.6978%201.63371%2C-5.59953c0.3713%2C-1.37347%201.4852%2C-1.58478%202.15353%2C-2.32433c0.14852%2C-0.10565%200.14852%2C-0.10565%200.22278%2C0z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M126.95364%2C215.03707c-0.59408%2C0.73956%20-1.18816%2C1.37347%20-1.85649%2C2.21869c-0.14852%2C-0.73956%20-0.22278%2C-1.37347%20-0.44556%2C-2.00738c-0.44556%2C-1.58478%20-0.96538%2C-3.16954%20-1.33668%2C-4.75432c-0.81686%2C-3.38085%20-1.55945%2C-6.86735%20-2.30205%2C-10.2482c-0.59408%2C-2.85259%20-1.26242%2C-5.70518%20-1.85649%2C-8.55777c-0.89112%2C-4.22606%20-1.70797%2C-8.45212%20-2.67335%2C-12.67818c-0.3713%2C-2.11303%20-1.1139%2C-4.12041%20-1.78223%2C-6.02214c-0.59408%2C-1.79607%20-1.70797%2C-1.69042%20-2.82187%2C-1.58478c-0.14852%2C0%20-0.29704%2C0%20-0.44556%2C0.10565c0%2C0%20-0.07426%2C0%20-0.14852%2C-0.10565c0.7426%2C-1.05651%201.4852%2C-2.11303%202.22779%2C-3.06389c0.14852%2C-0.21131%200.51982%2C-0.10565%200.7426%2C-0.10565c1.41094%2C0%202.45057%2C1.47912%202.74761%2C3.38085c0.22278%2C1.58478%200.59408%2C3.16954%201.03964%2C4.64867c0.96538%2C3.4865%202.22779%2C6.973%203.04465%2C10.56515c1.26242%2C5.38823%202.30205%2C10.77646%203.49021%2C16.16468c0.51982%2C2.53563%201.26242%2C4.96563%201.85649%2C7.50126c0.29704%2C1.16216%200.51982%2C2.42998%200.7426%2C3.6978c0%2C0.21131%20-0.07426%2C0.63391%20-0.22278%2C0.84521z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M217%2C194.12246c-0.2%2C1.57203%20-0.3%2C3.14407%20-0.5%2C4.7161c-0.3%2C2.51525%20-0.5%2C4.87331%20-0.7%2C7.38856c-0.2%2C1.41483%20-0.3%2C2.82966%20-0.6%2C4.24449c-0.1%2C0.62881%20-0.5%2C0.94322%20-0.7%2C1.41483c-1.1%2C1.88644%20-2.1%2C3.93008%20-3.2%2C5.81653c-0.1%2C0.1572%20-0.5%2C0.31441%20-0.7%2C0.31441c-0.7%2C0.1572%20-1.4%2C0.1572%20-2.1%2C0.1572c-3.1%2C0%20-6.1%2C-0.1572%20-9.1%2C-0.1572c-4.4%2C0%20-8.8%2C0.1572%20-13.2%2C0.1572c-2.8%2C0.1572%20-5.6%2C0%20-8.4%2C0c-0.5%2C0%20-0.8%2C-0.31441%20-0.8%2C-1.10042c0%2C-1.41483%200%2C-2.67246%200.8%2C-3.93008c1.1%2C-1.57203%202.1%2C-3.45847%203.3%2C-5.18771c0.3%2C-0.47161%200.7%2C-0.47161%201.1%2C-0.78602c-0.5%2C-4.40169%20-0.2%2C-8.80339%20-0.1%2C-13.36229c0%2C-3.45847%200%2C-6.75975%200%2C-10.21822c0%2C-8.48898%200.1%2C-17.13517%200.1%2C-25.78136c0%2C-2.82966%20-0.2%2C-5.81653%20-0.2%2C-8.96059c-0.1%2C-1.88644%20-0.5%2C-2.35805%20-1.7%2C-2.35805c-0.8%2C0%20-1.5%2C0.1572%20-2.3%2C0.1572c-0.6%2C0%20-0.8%2C-0.31441%20-0.7%2C-1.10042c0%2C-0.1572%200%2C-0.1572%200%2C-0.1572c-0.2%2C-2.04364%200.5%2C-3.61568%201.4%2C-5.03051c0.3%2C-0.47161%200.5%2C-1.10042%200.8%2C-1.57203c0.9%2C-1.57203%201.8%2C-2.82966%203.4%2C-2.98686c3.3%2C0.1572%206.7%2C0.1572%2010%2C0.1572c0.9%2C0.1572%201.9%2C0.1572%202.8%2C0.31441c0.2%2C0%200.4%2C0.62881%200.6%2C0.94322c0%2C0.1572%200%2C0.1572%200%2C0.31441c0.1%2C2.20085%200.1%2C2.35805%20-1.2%2C2.67246c-1.6%2C0.31441%20-2.4%2C1.10042%20-2.4%2C3.93008c0.1%2C3.14407%20-0.2%2C6.28814%20-0.3%2C9.4322c-0.1%2C2.20085%20-0.1%2C4.24449%20-0.1%2C6.28814c-0.1%2C3.77288%20-0.2%2C7.54576%20-0.2%2C11.31864c-0.1%2C5.81653%20-0.1%2C11.63305%20-0.1%2C17.44958c0%2C3.77288%200.1%2C7.38856%200.1%2C11.00424c0%2C1.25763%200%2C2.51525%20-0.1%2C3.77288c-0.1%2C1.10042%200.4%2C1.41483%200.9%2C1.41483c3.8%2C-0.1572%207.5%2C-0.31441%2011.3%2C-0.47161c1.1%2C-0.1572%202.4%2C-0.1572%203.5%2C-0.47161c0.7%2C-0.1572%201.4%2C-0.94322%201.7%2C-1.88644c0.4%2C-1.10042%200.9%2C-1.88644%201.4%2C-2.82966c1%2C-1.57203%202%2C-3.30127%202.9%2C-5.03051c0.8%2C-1.41483%201.9%2C-0.94322%202.9%2C-0.94322c0.1%2C0%200.3%2C0.62881%200.4%2C0.94322zM210.1%2C203.71186c0.7%2C-0.47161%201.7%2C-0.78602%202.2%2C-1.72924c0.9%2C-1.88644%201.5%2C-4.08729%201.5%2C-6.60254c-1%2C2.98686%20-3.1%2C4.87331%20-3.7%2C8.33178zM178.1%2C145.2322c1.2%2C-2.35805%202.5%2C-4.40169%203.4%2C-6.91695c-0.1%2C-0.1572%20-0.2%2C-0.1572%20-0.3%2C-0.31441c-1%2C1.41483%20-1.8%2C2.82966%20-2.8%2C4.24449c-0.6%2C0.94322%20-0.7%2C1.72924%20-0.3%2C2.98686zM182.7%2C148.37627c0.1%2C3.77288%200.2%2C7.54576%200.2%2C11.31864c0.1%2C7.38856%200%2C14.77712%200%2C22.16568c0%2C6.60254%20-0.1%2C13.04788%20-0.2%2C19.65042c0%2C1.72924%200%2C3.45847%200%2C5.34492c2.2%2C-0.31441%202.7%2C-1.10042%202.7%2C-4.40169c0%2C-0.31441%200.1%2C-0.62881%200.1%2C-0.94322c0.2%2C-1.10042%200.4%2C-2.20085%200.4%2C-3.30127c-0.1%2C-8.33178%20-0.4%2C-16.66356%20-0.4%2C-24.99534c-0.1%2C-8.01737%200.1%2C-16.19195%200.1%2C-24.20932c0%2C-1.57203%20-0.1%2C-3.30127%20-0.1%2C-5.03051c0%2C-2.82966%20-0.2%2C-3.45847%20-2%2C-3.93008c-0.4%2C0%20-0.8%2C-0.1572%20-1.2%2C0c-0.3%2C0.1572%20-0.7%2C0.31441%20-0.9%2C0.78602c-0.9%2C1.41483%20-1.7%2C3.14407%20-2.6%2C4.87331h1.8c1.4%2C0%202%2C0.78602%202.1%2C2.67246zM180.4%2C212.82966c1.1%2C-1.25763%201.3%2C-2.04364%200.9%2C-4.24449c-1.2%2C2.04364%20-2.4%2C4.24449%20-3.5%2C6.28814c-0.1%2C0.31441%20-0.1%2C0.94322%20-0.1%2C1.25763c1%2C-1.10042%201.8%2C-2.20085%202.7%2C-3.30127zM213.8%2C210.94322c-10.6%2C0%20-21%2C0.1572%20-31.4%2C0.1572c-0.9%2C2.98686%20-3.1%2C3.45847%20-4.1%2C5.97373c0.1%2C0%200.2%2C0%200.3%2C0c4.7%2C0%209.5%2C0%2014.2%2C0c2.7%2C0%205.3%2C-0.1572%208%2C-0.1572c3.1%2C0.1572%206.3%2C0.31441%209.5%2C0.31441c0.2%2C0%200.6%2C-0.1572%200.7%2C-0.47161c1%2C-1.88644%201.9%2C-3.77288%202.8%2C-5.81653z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M181.4%2C138.31525c-0.8%2C2.51525%20-2.1%2C4.5589%20-3.3%2C6.91695c-0.4%2C-1.25763%20-0.3%2C-2.04364%200.3%2C-2.98686c1%2C-1.41483%201.8%2C-2.82966%202.8%2C-4.24449c0%2C0.1572%200.1%2C0.31441%200.2%2C0.31441z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M185.8%2C198.36695c0%2C1.10042%20-0.2%2C2.20085%20-0.4%2C3.30127c0%2C0.31441%20-0.1%2C0.62881%20-0.1%2C0.94322c0%2C3.30127%20-0.5%2C4.08729%20-2.7%2C4.40169c0%2C-1.88644%200%2C-3.61568%200%2C-5.34492c0.1%2C-6.60254%200.2%2C-13.04788%200.2%2C-19.65042c0%2C-7.38856%200.1%2C-14.77712%200%2C-22.16568c0%2C-3.77288%20-0.1%2C-7.54576%20-0.2%2C-11.31864c0%2C-2.04364%20-0.6%2C-2.82966%20-2%2C-2.82966h-1.8c0.9%2C-1.72924%201.7%2C-3.45847%202.6%2C-4.87331c0.2%2C-0.47161%200.6%2C-0.62881%200.9%2C-0.78602c0.4%2C-0.1572%200.8%2C0%201.2%2C0c1.8%2C0.47161%202%2C1.10042%202%2C3.93008c0%2C1.72924%200.1%2C3.45847%200.1%2C5.03051c0%2C8.01737%20-0.2%2C16.19195%20-0.1%2C24.20932c0%2C8.48898%200.2%2C16.82076%200.3%2C25.15254z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M180.5%2C212.82966c-0.9%2C1.10042%20-1.8%2C2.20085%20-2.8%2C3.30127c0%2C-0.31441%200%2C-0.94322%200.1%2C-1.25763c1.1%2C-2.04364%202.3%2C-4.24449%203.5%2C-6.28814c0.5%2C2.35805%200.2%2C3.14407%20-0.8%2C4.24449z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M213.8%2C195.38008c0%2C2.51525%20-0.6%2C4.7161%20-1.5%2C6.60254c-0.5%2C0.94322%20-1.5%2C1.25763%20-2.2%2C1.72924c0.6%2C-3.45847%202.7%2C-5.34492%203.7%2C-8.33178z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M213.9%2C210.94322c-1%2C2.20085%20-2%2C4.08729%20-2.9%2C5.97373c-0.1%2C0.31441%20-0.5%2C0.47161%20-0.7%2C0.47161c-3.2%2C0%20-6.4%2C-0.1572%20-9.5%2C-0.31441c-2.7%2C0%20-5.3%2C0.1572%20-8%2C0.1572c-4.7%2C0%20-9.5%2C0%20-14.2%2C0c-0.1%2C0%20-0.2%2C0%20-0.3%2C0c1%2C-2.51525%203.2%2C-2.98686%204.1%2C-5.97373c10.4%2C-0.31441%2020.9%2C-0.31441%2031.5%2C-0.31441z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M250.76677%2C188.40394c-0.27179%2C4.0998%20-1.15512%2C7.98383%20-2.44613%2C11.65207c-1.01922%2C2.80513%20-2.31024%2C5.28659%20-3.87304%2C7.33649c-1.90255%2C2.48146%20-4.00894%2C4.53136%20-6.31918%2C5.82604c-1.63076%2C0.97101%20-3.32946%2C1.61834%20-5.02816%2C2.37357c-0.1359%2C0.10789%20-0.27179%2C0.10789%20-0.40769%2C0.10789c-2.78587%2C0%20-5.5038%2C-0.75523%20-7.88199%2C-3.1288c-1.90255%2C-1.83412%20-3.73715%2C-3.88402%20-4.96022%2C-7.01282c-1.42691%2C-3.56036%20-2.51408%2C-7.2286%20-2.64998%2C-11.54418c0%2C-1.83412%20-0.1359%2C-3.66824%20-0.20384%2C-5.39448c-0.1359%2C-6.58126%201.63076%2C-11.75996%204.21279%2C-16.5071c2.17434%2C-3.99191%204.89227%2C-6.79704%207.88199%2C-9.06272c0.95127%2C-0.75523%202.03844%2C-1.0789%203.12562%2C-1.40256c1.01922%2C-0.32367%202.03844%2C-0.64734%203.05767%2C-0.64734c1.29101%2C0%202.58203%2C0.43156%203.8051%2C0.75523c2.58203%2C0.53945%204.48458%2C3.02091%206.45507%2C5.39448c2.31024%2C2.91302%203.32946%2C7.01282%204.41663%2C11.11262c0.88333%2C3.23669%201.15512%2C6.58126%200.81538%2C10.14162zM228.20799%2C172.00473c-1.29101%2C3.88402%20-2.24229%2C7.98383%20-2.44613%2C12.4073c-0.1359%2C2.91302%20-0.20384%2C5.93393%200.27179%2C8.84694c0.61153%2C4.0998%201.63076%2C8.09172%203.5333%2C11.3284c1.22307%2C2.0499%202.37819%2C3.99191%204.21279%2C4.63925c1.42691%2C0.53945%202.71793%2C0.21578%203.8051%2C-1.51045c1.49486%2C-2.37357%202.51408%2C-5.1787%203.19356%2C-8.41538c0.61153%2C-3.23669%201.08717%2C-6.58126%200.81538%2C-10.03373c0.20384%2C-3.77613%20-0.20384%2C-7.44438%20-0.74743%2C-11.00473c-0.33974%2C-2.26568%20-0.74743%2C-4.53136%20-1.42691%2C-6.58126c-1.15512%2C-3.23669%20-2.78587%2C-5.28659%20-5.16406%2C-5.50237c-1.56281%2C-0.21578%20-2.98972%2C0.53945%20-4.21279%2C1.94201c-0.74743%2C0.97101%20-1.35896%2C2.37357%20-1.8346%2C3.88402zM237.65278%2C213.00276c-7.94993%2C0.21578%20-13.24989%2C-7.33649%20-16.03576%2C-17.26233c-2.17434%2C-11.54418%20-0.81538%2C-21.57791%205.16406%2C-29.56174c-0.20384%2C0%20-0.27179%2C0.10789%20-0.40769%2C0.21578c-1.49486%2C1.40256%20-2.92177%2C3.1288%20-4.14484%2C5.1787c-1.49486%2C2.48146%20-2.98972%2C5.07081%20-3.73715%2C8.41538c-0.47564%2C2.0499%20-0.95127%2C3.99191%20-0.95127%2C6.1497c-0.06795%2C3.45247%200%2C6.79704%200.40769%2C10.14162c0.27179%2C2.37357%200.67948%2C4.74714%201.56281%2C6.79704c1.22307%2C2.69724%202.58203%2C5.28659%204.28073%2C7.2286c1.42691%2C1.61834%202.92177%2C3.02091%204.62047%2C3.77613c2.37819%2C1.0789%204.75637%2C1.0789%207.06661%2C-0.10789c0.74743%2C-0.32367%201.42691%2C-0.64734%202.17434%2C-0.97101zM245.39887%2C179.66489c-0.40769%2C-3.34458%20-1.29101%2C-6.47337%20-2.44613%2C-9.2785c-1.01922%2C-2.48146%20-2.58203%2C-3.99191%20-4.21279%2C-5.50237c-1.35896%2C-1.29467%20-2.64998%2C-1.40256%20-4.07689%2C-0.97101c-1.08717%2C0.32367%20-2.03844%2C0.86312%20-2.92177%2C1.94201c0.1359%2C0%200.33974%2C-0.10789%200.47564%2C-0.10789c1.8346%2C-0.53945%203.60125%2C-0.43156%205.16406%2C1.40256c1.35896%2C1.61834%202.51408%2C3.56036%203.12562%2C6.25759c0.47564%2C2.37357%200.88333%2C4.63925%201.15512%2C7.01282c0.40769%2C3.02091%200.74743%2C6.04181%200.54359%2C9.17061c-0.1359%2C1.94201%20-0.27179%2C3.77613%20-0.47564%2C5.71815c-0.20384%2C1.83412%20-0.40769%2C3.77613%20-0.81538%2C5.39448c-0.88333%2C3.45247%20-2.17434%2C6.68915%20-4.28073%2C9.06272c1.42691%2C-0.21578%202.71793%2C-0.64734%203.73715%2C-2.15779c0.33974%2C-0.53945%200.67948%2C-0.97101%201.01922%2C-1.40256c1.49486%2C-1.94201%202.44613%2C-4.42347%202.98972%2C-7.33649c1.22307%2C-6.25759%201.8346%2C-12.62308%201.01922%2C-19.20434z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M244.37965%2C198.86923c-0.54359%2C2.91302%20-1.49486%2C5.39448%20-2.98972%2C7.33649c-0.33974%2C0.43156%20-0.67948%2C0.86312%20-1.01922%2C1.40256c-1.01922%2C1.51045%20-2.31024%2C1.94201%20-3.73715%2C2.15779c2.10639%2C-2.37357%203.39741%2C-5.61026%204.28073%2C-9.06272c0.40769%2C-1.61834%200.61153%2C-3.56036%200.81538%2C-5.39448c0.20384%2C-1.94201%200.33974%2C-3.77613%200.47564%2C-5.71815c0.20384%2C-3.1288%20-0.1359%2C-6.1497%20-0.54359%2C-9.17061c-0.27179%2C-2.37357%20-0.67948%2C-4.63925%20-1.15512%2C-7.01282c-0.61153%2C-2.69724%20-1.76665%2C-4.63925%20-3.12562%2C-6.25759c-1.56281%2C-1.83412%20-3.32946%2C-1.94201%20-5.16406%2C-1.40256c-0.1359%2C0%20-0.33974%2C0.10789%20-0.47564%2C0.10789c0.88333%2C-1.0789%201.8346%2C-1.61834%202.92177%2C-1.94201c1.42691%2C-0.43156%202.71793%2C-0.32367%204.07689%2C0.97101c1.63076%2C1.51045%203.19356%2C3.02091%204.21279%2C5.50237c1.15512%2C2.80513%202.03844%2C5.93393%202.44613%2C9.2785c0.81538%2C6.58126%200.20384%2C12.94675%20-1.01922%2C19.20434z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M237.65278%2C212.89487c-0.74743%2C0.32367%20-1.42691%2C0.75523%20-2.17434%2C1.0789c-2.31024%2C1.18679%20-4.68842%2C1.18679%20-7.06661%2C0.10789c-1.6987%2C-0.75523%20-3.19356%2C-2.15779%20-4.62047%2C-3.77613c-1.6987%2C-1.94201%20-3.05767%2C-4.53136%20-4.28073%2C-7.2286c-0.88333%2C-2.0499%20-1.29101%2C-4.42347%20-1.56281%2C-6.79704c-0.40769%2C-3.34458%20-0.47564%2C-6.68915%20-0.40769%2C-10.14162c0%2C-2.15779%200.47564%2C-4.0998%200.95127%2C-6.1497c0.74743%2C-3.34458%202.24229%2C-5.93393%203.73715%2C-8.41538c1.22307%2C-2.0499%202.64998%2C-3.77613%204.14484%2C-5.1787c0.1359%2C-0.10789%200.20384%2C-0.21578%200.40769%2C-0.21578c-5.97944%2C7.98383%20-7.3384%2C18.01755%20-5.16406%2C29.56174c2.78587%2C9.92584%208.08583%2C17.47811%2016.03576%2C17.15444z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M290.777%2C212.94935c-0.62645%2C0.86076%20-1.16341%2C1.93672%20-1.61087%2C2.90508c-0.26848%2C0.53798%20-0.62645%2C0.64557%20-1.07391%2C0.64557c-2.32681%2C-0.1076%20-4.56413%2C-0.21519%20-6.89094%2C-0.32279c-1.61087%2C-0.1076%20-3.22174%2C-0.1076%20-4.83261%2C-0.1076c-0.71594%2C0%20-0.98442%2C-0.32279%20-0.71594%2C-1.07595c0.53696%2C-1.50634%201.16341%2C-2.90508%201.87935%2C-4.30382c0.17899%2C-0.43038%200.80543%2C-0.53798%201.2529%2C-0.75317c-0.26848%2C-1.07595%20-0.53696%2C-2.15191%20-0.80543%2C-3.22786c-0.44746%2C-1.82912%20-0.89493%2C-3.65825%20-1.34239%2C-5.48737c-0.17899%2C-0.64557%20-0.26848%2C-1.29115%20-0.53696%2C-1.93672c-0.08949%2C-0.21519%20-0.53696%2C-0.43038%20-0.71594%2C-0.43038c-4.11667%2C0.43038%20-8.14384%2C0.32279%20-12.17101%2C0c-0.53696%2C0%20-0.80543%2C0.21519%20-0.98442%2C0.86076c-0.26848%2C1.07595%20-0.80543%2C2.15191%20-1.16341%2C3.33546c-0.62645%2C1.61393%20-1.07391%2C3.33546%20-1.61087%2C4.94939c-0.17899%2C0.53798%20-0.08949%2C1.07595%200.44746%2C1.29115c0.44746%2C0.21519%200.89493%2C0.32279%201.34239%2C0.43038c0.80543%2C0.1076%201.61087%2C0.32279%202.4163%2C0.43038c0.44746%2C0%200.71594%2C0.43038%200.62645%2C0.96836c-0.08949%2C0.75317%20-0.26848%2C1.39874%20-0.62645%2C2.04431c-0.44746%2C0.86076%20-1.07391%2C1.61393%20-1.61087%2C2.3671c-0.17899%2C0.21519%20-0.53696%2C0.32279%20-0.80543%2C0.32279c-2.4163%2C-0.1076%20-4.74311%2C-0.21519%20-7.15942%2C-0.32279c-1.34239%2C-0.1076%20-2.77427%2C-0.1076%20-4.20616%2C-0.1076c-0.89493%2C0%20-1.2529%2C-0.64557%20-0.89493%2C-1.72153c0.44746%2C-1.07595%200.89493%2C-2.2595%201.34239%2C-3.33546c0.08949%2C-0.21519%200.35797%2C-0.32279%200.62645%2C-0.43038c0.44746%2C-0.1076%200.89493%2C-0.21519%201.34239%2C-0.21519c1.07391%2C-0.1076%201.61087%2C-0.96836%202.05833%2C-2.04431c1.70036%2C-4.30382%203.40072%2C-8.71523%204.29565%2C-13.44943c0.62645%2C-3.55065%201.78985%2C-6.88611%202.95326%2C-10.22157c0.26848%2C-0.64557%200.35797%2C-1.39874%200.62645%2C-2.15191c0.44746%2C-1.50634%200.98442%2C-3.01267%201.52138%2C-4.51901c0.17899%2C-0.53798%200.26848%2C-0.96836%200.44746%2C-1.50634c0.71594%2C-2.58229%201.43188%2C-5.05699%202.14783%2C-7.63928c0.08949%2C-0.43038%200.08949%2C-0.75317%200.26848%2C-1.07595c0.44746%2C-0.96836%200.71594%2C-1.93672%201.2529%2C-2.68989c0.80543%2C-1.18355%201.96884%2C-2.2595%202.77427%2C-3.76584c0.53696%2C-1.18355%201.07391%2C-0.86076%201.78985%2C-0.43038c0.62645%2C0.32279%201.34239%2C0.64557%201.87935%2C1.07595c0.35797%2C0.32279%200.62645%2C0.86076%200.80543%2C1.29115c1.16341%2C3.12027%201.70036%2C6.45573%202.4163%2C9.79119c0.17899%2C0.75317%200.53696%2C1.50634%200.71594%2C2.2595c0.44746%2C1.72153%200.80543%2C3.55065%201.34239%2C5.37977c0.44746%2C1.72153%200.98442%2C3.33546%201.52138%2C5.05699c0.35797%2C1.39874%200.71594%2C2.79748%201.16341%2C4.19622c0.98442%2C3.12027%201.96884%2C6.24054%202.68478%2C9.4684c0.17899%2C1.07595%200.71594%2C2.04431%200.98442%2C3.12027c0.35797%2C1.39874%200.62645%2C2.68989%201.07391%2C3.98103c0.35797%2C1.18355%200.98442%2C2.2595%201.70036%2C3.22786c0.35797%2C0.43038%201.16341%2C0.53798%201.78985%2C0.53798c0.62645%2C0%200.80543%2C0.32279%200.89493%2C0.96836c0.08949%2C0.96836%200%2C1.61393%20-0.62645%2C2.3671zM270.46215%2C175.07575c0.17899%2C1.39874%200.62645%2C2.90508%200.89493%2C4.30382c0.17899%2C1.07595%200.26848%2C2.15191%200.53696%2C3.12027c0.53696%2C2.2595%201.07391%2C4.41141%201.70036%2C6.56332c0.08949%2C0.21519%200.26848%2C0.43038%200.35797%2C0.43038c0.62645%2C0%201.16341%2C0%201.87935%2C0c-0.08949%2C-0.43038%20-0.17899%2C-0.64557%20-0.26848%2C-0.86076c-0.53696%2C-1.93672%20-1.16341%2C-3.65825%20-1.70036%2C-5.59496c-0.71594%2C-2.4747%20-1.2529%2C-5.16458%20-1.96884%2C-7.74687c-0.26848%2C-0.96836%20-0.71594%2C-1.93672%20-1.07391%2C-2.90508c0%2C0%20-0.08949%2C0%20-0.17899%2C0c-0.08949%2C0.96836%20-0.35797%2C1.82912%20-0.17899%2C2.68989zM272.60998%2C188.30999c-0.62645%2C-2.4747%20-1.2529%2C-4.94939%20-1.78985%2C-7.53168c-0.35797%2C-1.61393%20-0.62645%2C-3.33546%20-0.89493%2C-4.94939c-0.08949%2C-0.1076%20-0.17899%2C-0.1076%20-0.26848%2C-0.1076c-1.34239%2C4.51901%20-2.68478%2C9.03802%20-4.11667%2C13.66462c0.35797%2C0.1076%200.44746%2C0.1076%200.62645%2C0.1076c1.96884%2C0%203.84819%2C0%205.81703%2C0c1.07391%2C0%201.07391%2C0%200.62645%2C-1.18355zM250.68426%2C212.08859c0%2C-0.1076%20-0.08949%2C-0.1076%20-0.17899%2C-0.1076c-0.08949%2C0.96836%20-0.80543%2C1.72153%20-0.71594%2C2.79748c0%2C0.1076%200.08949%2C0.1076%200.17899%2C0.1076c0.17899%2C-0.96836%200.44746%2C-1.93672%200.71594%2C-2.79748zM251.84766%2C212.30378c-0.17899%2C0%20-0.44746%2C0.1076%20-0.53696%2C0.21519c-0.35797%2C0.75317%20-0.71594%2C1.50634%20-1.07391%2C2.3671c1.43188%2C0%202.77427%2C0%204.02717%2C0c2.23732%2C0.1076%204.56413%2C0.21519%206.80145%2C0.32279c0.08949%2C0%200.35797%2C0%200.44746%2C-0.1076c0.62645%2C-0.75317%201.16341%2C-1.50634%201.70036%2C-2.2595c-0.08949%2C0%20-0.08949%2C-0.1076%20-0.08949%2C-0.21519c-0.71594%2C0%20-1.52138%2C0%20-2.32681%2C0c-2.95326%2C0%20-5.99601%2C-0.1076%20-8.94927%2C-0.32279zM263.39222%2C184.75934c0.62645%2C-1.93672%201.07391%2C-3.98103%201.70036%2C-6.02535c0.35797%2C-1.29115%200.89493%2C-2.68989%201.34239%2C-3.98103c0.62645%2C-2.04431%201.34239%2C-4.08863%201.96884%2C-6.13294c0.53696%2C-1.82912%201.16341%2C-3.76584%201.70036%2C-5.59496c-0.08949%2C0%20-0.08949%2C-0.1076%20-0.17899%2C-0.1076c-0.35797%2C0.43038%20-0.80543%2C0.75317%20-1.07391%2C1.29115c-0.53696%2C0.86076%20-1.16341%2C1.72153%20-1.43188%2C2.68989c-0.89493%2C2.90508%20-1.61087%2C5.91775%20-2.4163%2C8.82283c-0.26848%2C1.07595%20-0.44746%2C2.04431%20-0.80543%2C3.12027c-0.44746%2C1.39874%20-0.98442%2C2.79748%20-1.43188%2C4.08863c-0.17899%2C0.53798%20-0.26848%2C0.96836%20-0.44746%2C1.39874c-0.80543%2C2.68989%20-1.78985%2C5.27218%20-2.4163%2C7.96206c-1.07391%2C4.6266%20-2.32681%2C9.14561%20-3.93768%2C13.44943c-0.44746%2C1.18355%20-0.89493%2C2.2595%20-1.34239%2C3.44305c0.08949%2C0%200.08949%2C0.1076%200.17899%2C0.1076c0.53696%2C-0.86076%201.07391%2C-1.72153%201.43188%2C-2.58229c0.71594%2C-2.04431%201.34239%2C-4.08863%202.05833%2C-6.13294c0.89493%2C-2.79748%201.78985%2C-5.48737%202.68478%2C-8.17725c0.26848%2C-0.75317%200.35797%2C-1.50634%200.62645%2C-2.2595c0.53696%2C-1.72153%201.16341%2C-3.55065%201.78985%2C-5.37977zM277.08461%2C194.22774c-0.44746%2C-0.1076%20-0.89493%2C-0.21519%20-1.34239%2C-0.21519c-3.75869%2C-0.1076%20-7.60688%2C-0.21519%20-11.45507%2C-0.32279c-0.17899%2C0%20-0.44746%2C0.21519%20-0.53696%2C0.43038c-0.35797%2C1.18355%20-0.62645%2C2.3671%20-0.89493%2C3.65825c0.62645%2C0.1076%201.34239%2C0.21519%201.96884%2C0.21519c3.57971%2C0%207.15942%2C0%2010.73913%2C0c0.17899%2C0%200.44746%2C-0.1076%200.53696%2C-0.32279c0.35797%2C-1.07595%200.71594%2C-2.15191%200.98442%2C-3.44305zM279.32193%2C209.18351c0.08949%2C0.43038%200.35797%2C0.53798%200.71594%2C0.32279c0.98442%2C-0.43038%201.43188%2C-1.29115%201.16341%2C-2.58229c-0.26848%2C-1.50634%20-0.71594%2C-3.01267%20-1.16341%2C-4.51901c-0.26848%2C-1.07595%20-0.53696%2C-2.15191%20-0.89493%2C-3.22786c-0.44746%2C-1.50634%20-0.89493%2C-3.01267%20-1.34239%2C-4.51901c0%2C0%20-0.08949%2C0%20-0.17899%2C0c-0.35797%2C1.29115%20-0.71594%2C2.58229%20-1.07391%2C3.87344c-0.08949%2C0.1076%200.08949%2C0.32279%200.08949%2C0.43038c0.35797%2C0.96836%200.80543%2C1.93672%201.07391%2C3.01267c0.62645%2C2.3671%201.16341%2C4.7342%201.61087%2C7.20889zM276.54766%2C215.31645c0.44746%2C-0.96836%200.89493%2C-2.04431%201.34239%2C-3.12027c0%2C-0.1076%20-0.08949%2C-0.43038%20-0.26848%2C-0.86076c-0.44746%2C1.39874%20-0.89493%2C2.68989%20-1.34239%2C3.87344c0.08949%2C0.1076%200.17899%2C0.1076%200.26848%2C0.1076zM290.24005%2C212.19618c-0.53696%2C0.1076%20-0.89493%2C0.1076%20-1.34239%2C0.1076c-0.62645%2C0%20-1.34239%2C0.1076%20-2.05833%2C0.1076c-2.4163%2C0%20-4.9221%2C-0.1076%20-7.4279%2C-0.21519c-0.17899%2C0%20-0.53696%2C0%20-0.62645%2C0.21519c-0.62645%2C0.86076%20-1.07391%2C1.93672%20-1.70036%2C3.01267c0.44746%2C0%200.71594%2C0%201.07391%2C0c0.89493%2C0%201.87935%2C0%202.86377%2C0c2.32681%2C0.1076%204.65362%2C0.21519%206.98043%2C0.32279c0.17899%2C0%200.44746%2C-0.1076%200.53696%2C-0.32279c0.62645%2C-0.96836%201.16341%2C-2.04431%201.70036%2C-3.22786z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M277.89005%2C212.30378c-0.44746%2C1.07595%20-0.89493%2C2.15191%20-1.34239%2C3.12027c-0.08949%2C0%20-0.17899%2C-0.1076%20-0.26848%2C-0.1076c0.44746%2C-1.18355%200.89493%2C-2.4747%201.34239%2C-3.87344c0.17899%2C0.32279%200.35797%2C0.64557%200.26848%2C0.86076z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M290.32954%2C212.19618c-0.62645%2C1.18355%20-1.16341%2C2.2595%20-1.78985%2C3.22786c-0.08949%2C0.21519%20-0.35797%2C0.32279%20-0.53696%2C0.32279c-2.32681%2C-0.1076%20-4.65362%2C-0.21519%20-6.98043%2C-0.32279c-0.98442%2C0%20-1.96884%2C0%20-2.86377%2C0c-0.35797%2C0%20-0.62645%2C0%20-1.07391%2C0c0.62645%2C-1.07595%201.07391%2C-2.15191%201.70036%2C-3.01267c0.08949%2C-0.21519%200.44746%2C-0.21519%200.62645%2C-0.21519c2.5058%2C0.1076%205.01159%2C0.21519%207.4279%2C0.21519c0.71594%2C0%201.43188%2C-0.1076%202.05833%2C-0.1076c0.44746%2C-0.1076%200.89493%2C-0.1076%201.43188%2C-0.1076z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M280.12737%2C209.5063c-0.35797%2C0.21519%20-0.62645%2C0.1076%20-0.71594%2C-0.32279c-0.53696%2C-2.3671%20-1.07391%2C-4.7342%20-1.70036%2C-7.20889c-0.26848%2C-1.07595%20-0.71594%2C-2.04431%20-1.07391%2C-3.01267c0%2C-0.1076%20-0.17899%2C-0.32279%20-0.08949%2C-0.43038c0.35797%2C-1.29115%200.71594%2C-2.58229%201.07391%2C-3.87344c0.08949%2C0%200.17899%2C0%200.17899%2C0c0.44746%2C1.50634%200.89493%2C3.01267%201.34239%2C4.51901c0.35797%2C1.07595%200.62645%2C2.15191%200.89493%2C3.22786c0.44746%2C1.50634%200.89493%2C3.01267%201.16341%2C4.51901c0.35797%2C1.29115%20-0.08949%2C2.04431%20-1.07391%2C2.58229z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M263.21324%2C212.94935c-0.53696%2C0.75317%20-1.07391%2C1.50634%20-1.70036%2C2.2595c-0.08949%2C0.1076%20-0.35797%2C0.1076%20-0.44746%2C0.1076c-2.23732%2C-0.21519%20-4.56413%2C-0.32279%20-6.80145%2C-0.43038c-1.2529%2C0%20-2.59529%2C0%20-4.02717%2C0c0.35797%2C-0.86076%200.71594%2C-1.61393%201.07391%2C-2.3671c0.08949%2C-0.1076%200.35797%2C-0.21519%200.53696%2C-0.21519c2.95326%2C0.1076%205.99601%2C0.21519%208.94927%2C0.32279c0.80543%2C0%201.61087%2C0%202.32681%2C0c0.08949%2C0.1076%200.08949%2C0.21519%200.08949%2C0.32279z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M277.17411%2C194.33534c-0.35797%2C1.18355%20-0.71594%2C2.2595%20-1.07391%2C3.33546c-0.08949%2C0.21519%20-0.35797%2C0.32279%20-0.53696%2C0.32279c-3.57971%2C0%20-7.15942%2C0%20-10.73913%2C0c-0.62645%2C0%20-1.34239%2C-0.1076%20-1.96884%2C-0.21519c0.26848%2C-1.29115%200.53696%2C-2.4747%200.89493%2C-3.65825c0.08949%2C-0.21519%200.35797%2C-0.43038%200.53696%2C-0.43038c3.84819%2C0.1076%207.69638%2C0.21519%2011.45507%2C0.32279c0.53696%2C0.1076%200.98442%2C0.21519%201.43188%2C0.32279z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M275.83171%2C189.49354c-0.71594%2C0%20-1.2529%2C0%20-1.87935%2C0c-0.08949%2C0%20-0.26848%2C-0.21519%20-0.35797%2C-0.43038c-0.62645%2C-2.15191%20-1.16341%2C-4.30382%20-1.70036%2C-6.56332c-0.26848%2C-0.96836%20-0.35797%2C-2.04431%20-0.53696%2C-3.12027c-0.26848%2C-1.39874%20-0.71594%2C-2.90508%20-0.89493%2C-4.30382c-0.08949%2C-0.86076%200.17899%2C-1.82912%200.26848%2C-2.68989c0.08949%2C0%200.17899%2C0%200.17899%2C0c0.35797%2C0.96836%200.80543%2C1.93672%201.07391%2C2.90508c0.71594%2C2.58229%201.2529%2C5.27218%201.96884%2C7.74687c0.53696%2C1.93672%201.16341%2C3.65825%201.70036%2C5.59496c0%2C0.32279%200.08949%2C0.53798%200.17899%2C0.86076z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M270.10418%2C163.13266c-0.53696%2C1.82912%20-1.16341%2C3.76584%20-1.70036%2C5.59496c-0.62645%2C2.04431%20-1.34239%2C4.08863%20-1.96884%2C6.13294c-0.44746%2C1.29115%20-0.98442%2C2.68989%20-1.34239%2C3.98103c-0.62645%2C2.04431%20-1.07391%2C4.08863%20-1.70036%2C6.02535c-0.53696%2C1.72153%20-1.16341%2C3.55065%20-1.70036%2C5.27218c-0.26848%2C0.75317%20-0.35797%2C1.50634%20-0.62645%2C2.2595c-0.89493%2C2.68989%20-1.78985%2C5.37977%20-2.68478%2C8.17725c-0.71594%2C2.04431%20-1.34239%2C4.08863%20-2.05833%2C6.13294c-0.35797%2C0.86076%20-0.89493%2C1.72153%20-1.43188%2C2.58229c-0.08949%2C0%20-0.08949%2C-0.1076%20-0.17899%2C-0.1076c0.44746%2C-1.18355%200.89493%2C-2.2595%201.34239%2C-3.44305c1.61087%2C-4.30382%202.86377%2C-8.82283%203.93768%2C-13.44943c0.62645%2C-2.68989%201.61087%2C-5.27218%202.4163%2C-7.96206c0.17899%2C-0.43038%200.26848%2C-0.86076%200.44746%2C-1.39874c0.44746%2C-1.29115%200.98442%2C-2.68989%201.43188%2C-4.08863c0.35797%2C-1.07595%200.53696%2C-2.04431%200.80543%2C-3.12027c0.80543%2C-2.90508%201.52138%2C-5.91775%202.4163%2C-8.82283c0.26848%2C-0.96836%200.89493%2C-1.82912%201.43188%2C-2.68989c0.26848%2C-0.53798%200.71594%2C-0.86076%201.07391%2C-1.29115c-0.08949%2C0.1076%200%2C0.21519%200.08949%2C0.21519z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M332.50547%2C186.40532c0.07283%2C1.20456%20-0.14565%2C2.51863%20-0.21848%2C3.8327c-0.14565%2C3.28517%20-0.94674%2C6.24183%20-1.82065%2C9.19848c-1.01957%2C3.50418%20-2.84022%2C6.13232%20-4.80653%2C8.43194c-1.74783%2C2.19011%20-3.64131%2C4.16122%20-5.53479%2C6.02281c-1.3837%2C1.20456%20-2.91305%2C2.19011%20-4.36957%2C3.06616c-1.09239%2C0.54753%20-2.25761%2C0.98555%20-3.13152%2C1.31407c-2.47609%2C0%20-4.7337%2C-0.21901%20-6.99131%2C-0.21901c-2.11196%2C0%20-4.15109%2C0.10951%20-6.26305%2C0.21901c-1.09239%2C0.10951%20-2.18478%2C0.21901%20-3.27718%2C0.32852c-0.43696%2C0%20-0.50978%2C-0.21901%20-0.58261%2C-0.76654c-0.07283%2C-0.54753%20-0.14565%2C-1.20456%20-0.14565%2C-1.75209c0%2C-0.32852%200.14565%2C-0.65703%200.2913%2C-0.87605c0.80109%2C-0.98555%201.52935%2C-1.9711%202.40326%2C-2.73764c0.65544%2C-0.65703%200.94674%2C-1.42357%200.87391%2C-2.62814c-0.07283%2C-3.28517%20-0.14565%2C-6.67985%20-0.14565%2C-10.07452c0%2C-5.14677%200%2C-10.18403%200.07283%2C-15.3308c0%2C-1.8616%200.21848%2C-3.8327%200.2913%2C-5.6943c0%2C-1.20456%20-0.14565%2C-2.40913%20-0.14565%2C-3.61369c0%2C-0.76654%200%2C-1.53308%200.07283%2C-2.29962c0.14565%2C-1.31407%20-0.14565%2C-1.8616%20-1.09239%2C-1.75209c-0.87391%2C0.10951%20-1.82065%2C0%20-2.69457%2C-0.10951c-0.14565%2C0%20-0.2913%2C-0.32852%20-0.2913%2C-0.54753c0%2C-0.87605%200.07283%2C-1.8616%200.14565%2C-2.73764c0%2C-0.21901%200%2C-0.32852%200.07283%2C-0.43802c1.31087%2C-1.8616%202.54892%2C-3.72319%203.85979%2C-5.47529c0.14565%2C-0.21901%200.50978%2C-0.43802%200.72826%2C-0.43802c0.80109%2C-0.21901%201.52935%2C-0.32852%202.25761%2C-0.32852c4.58805%2C0.10951%209.1761%2C0.21901%2013.76414%2C0.32852c2.62174%2C0.10951%205.09783%2C1.20456%207.42827%2C2.95665c2.18478%2C1.64259%204.15109%2C3.72319%205.60761%2C6.78935c0.72826%2C1.64259%201.3837%2C3.39468%201.82065%2C5.14677c0.87391%2C3.28517%201.60218%2C6.67985%201.82065%2C10.18403zM295.58261%2C169.65095c0.21848%2C-0.32852%200.36413%2C-0.54753%200.50978%2C-0.65703c0.87391%2C-1.20456%201.74783%2C-2.62814%202.69457%2C-3.72319c0.58261%2C-0.76654%200.58261%2C-1.53308%200.43696%2C-2.51863c-0.14565%2C0.10951%20-0.21848%2C0.32852%20-0.36413%2C0.54753c-0.94674%2C1.20456%20-1.82065%2C2.51863%20-2.76739%2C3.72319c-0.72826%2C0.87605%20-0.80109%2C0.87605%20-0.50978%2C2.62814zM299.51522%2C172.4981c-0.07283%2C0.54753%20-0.07283%2C1.09506%20-0.07283%2C1.64259c0.07283%2C1.53308%200.21848%2C3.06616%200.21848%2C4.59924c0%2C1.9711%20-0.2913%2C3.94221%20-0.2913%2C5.91331c-0.07283%2C4.16122%20-0.07283%2C8.32243%20-0.07283%2C12.48365c0%2C4.48973%200.07283%2C8.86996%200.07283%2C13.25019c0%2C0.10951%200.07283%2C0.32852%200.07283%2C0.43802c0.36413%2C-0.10951%200.80109%2C-0.21901%201.16522%2C-0.32852c1.52935%2C-0.43802%201.82065%2C-1.20456%201.74783%2C-3.50418c-0.07283%2C-1.42357%20-0.07283%2C-2.95665%20-0.07283%2C-4.38023c0%2C-5.58479%200.14565%2C-11.16958%200.14565%2C-16.64487c0%2C-2.73764%20-0.21848%2C-5.36578%20-0.21848%2C-8.10342c0%2C-2.62814%200%2C-5.36578%200%2C-7.99392c0%2C-1.42357%200%2C-2.73764%200%2C-4.16122c0%2C-0.87605%20-0.2913%2C-1.42357%20-0.87391%2C-1.42357c-0.65544%2C0%20-1.31087%2C-0.10951%20-1.82065%2C0.76654c-0.43696%2C0.76654%20-1.09239%2C1.42357%20-1.60218%2C2.19011c-0.65544%2C0.98555%20-1.31087%2C1.9711%20-2.03913%2C2.95665c0%2C0.10951%200.07283%2C0.21901%200.07283%2C0.32852c0.72826%2C0%201.45652%2C-0.10951%202.18478%2C-0.21901c1.09239%2C-0.10951%201.45652%2C0.54753%201.3837%2C2.19011zM299.36957%2C213.45323c0.36413%2C-0.43802%200.36413%2C-0.98555%200.14565%2C-1.64259c-1.01957%2C1.20456%20-2.11196%2C2.29962%20-3.13152%2C3.50418c-0.72826%2C0.76654%20-0.72826%2C0.87605%20-0.43696%2C2.29962c1.16522%2C-1.42357%202.25761%2C-2.84715%203.42283%2C-4.16122zM320.63481%2C212.35817c0%2C0%20-0.07283%2C-0.10951%20-0.07283%2C-0.21901c-1.3837%2C0.76654%20-2.76739%2C0.76654%20-4.22392%2C0.65703c-1.01957%2C0%20-1.96631%2C-0.10951%20-2.98587%2C-0.10951c-2.84022%2C0%20-5.68044%2C0.10951%20-8.59349%2C0.10951c-1.23804%2C0.10951%20-2.40326%2C0.21901%20-3.56848%2C0.21901c-0.58261%2C0%20-1.16522%2C0.21901%20-1.52935%2C0.98555c-0.14565%2C0.43802%20-0.43696%2C0.65703%20-0.72826%2C0.98555c-0.72826%2C0.98555%20-1.45652%2C1.8616%20-2.25761%2C2.84715c1.82065%2C-0.10951%203.56848%2C-0.32852%205.31631%2C-0.32852c2.91305%2C0%205.75327%2C0.10951%208.59349%2C0.10951c2.54892%2C-0.10951%205.025%2C-0.87605%207.28262%2C-2.62814c0.94674%2C-0.76654%201.89348%2C-1.64259%202.76739%2C-2.62814zM321.14459%2C206.22586c1.52935%2C-2.51863%202.33044%2C-5.8038%202.69457%2C-9.08897c0.36413%2C-2.95665%200.36413%2C-6.02281%200.43696%2C-8.97947c0%2C-1.53308%200%2C-3.17567%20-0.2913%2C-4.59924c-0.50978%2C-2.19011%20-1.23804%2C-4.38023%20-1.96631%2C-6.35133c-0.72826%2C-1.8616%20-2.03913%2C-3.06616%20-3.13152%2C-4.38023c-1.3837%2C-1.53308%20-2.84022%2C-2.08061%20-4.51522%2C-2.08061c-2.25761%2C0%20-4.4424%2C-0.10951%20-6.70001%2C-0.10951v0.43802c0.07283%2C5.36578%200.14565%2C10.62205%200.14565%2C15.98783c0%2C7.00837%20-0.07283%2C13.90722%20-0.14565%2C20.91559c0%2C1.20456%200.14565%2C1.42357%200.87391%2C1.75209c0.21848%2C0.10951%200.43696%2C0.10951%200.65544%2C0.10951c2.18478%2C0%204.29674%2C0.10951%206.4087%2C0c2.11196%2C-0.10951%203.93261%2C-1.31407%205.53479%2C-3.61369zM326.4609%2C179.72548c-0.72826%2C-2.84715%20-1.675%2C-5.47529%20-2.62174%2C-8.21293c-1.16522%2C-3.39468%20-3.20435%2C-5.36578%20-5.53479%2C-6.46084c-2.98587%2C-1.42357%20-6.04457%2C-0.87605%20-9.10327%2C-0.76654c-0.87391%2C0%20-1.52935%2C0.98555%20-1.52935%2C2.19011c0%2C1.09506%200%2C2.19011%200%2C3.50418c0.94674%2C0%201.89348%2C0%202.91305%2C0c2.03913%2C0.10951%204.15109%2C-0.43802%206.19022%2C0.32852c1.52935%2C0.54753%202.84022%2C1.9711%204.00544%2C3.50418c1.01957%2C1.42357%201.74783%2C3.28517%202.54892%2C5.03726c0.2913%2C0.65703%200.58261%2C1.31407%200.72826%2C2.08061c0.2913%2C1.8616%200.65544%2C3.8327%200.72826%2C5.8038c0.2913%2C5.36578%20-0.07283%2C10.73156%20-1.675%2C15.76882c-0.2913%2C0.87605%20-0.65544%2C1.8616%20-1.01957%2C2.73764c-0.14565%2C0.32852%20-0.21848%2C0.65703%20-0.36413%2C0.98555c0.07283%2C0%200.07283%2C0.10951%200.14565%2C0.10951c0%2C-0.10951%200.07283%2C-0.10951%200.14565%2C-0.21901c0.14565%2C-0.21901%200.2913%2C-0.43802%200.43696%2C-0.65703c1.52935%2C-2.40913%202.47609%2C-5.47529%203.49566%2C-8.54144c0.14565%2C-0.43802%200.2913%2C-1.09506%200.36413%2C-1.64259c0.2913%2C-2.40913%200.50978%2C-4.81825%200.72826%2C-7.22738c0.21848%2C-2.84715%200.07283%2C-5.6943%20-0.58261%2C-8.32243z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M327.04351%2C188.04791c-0.21848%2C2.40913%20-0.43696%2C4.81825%20-0.72826%2C7.22738c-0.07283%2C0.54753%20-0.21848%2C1.20456%20-0.36413%2C1.64259c-1.01957%2C3.06616%20-1.96631%2C6.13232%20-3.49566%2C8.54144c-0.14565%2C0.21901%20-0.2913%2C0.43802%20-0.43696%2C0.65703c-0.07283%2C0.10951%20-0.14565%2C0.10951%20-0.14565%2C0.21901c-0.07283%2C0%20-0.07283%2C-0.10951%20-0.14565%2C-0.10951c0.14565%2C-0.32852%200.21848%2C-0.65703%200.36413%2C-0.98555c0.36413%2C-0.87605%200.72826%2C-1.8616%201.01957%2C-2.73764c1.60218%2C-5.03726%201.96631%2C-10.40304%201.675%2C-15.76882c-0.07283%2C-1.9711%20-0.43696%2C-3.94221%20-0.72826%2C-5.8038c-0.14565%2C-0.76654%20-0.43696%2C-1.42357%20-0.72826%2C-2.08061c-0.80109%2C-1.75209%20-1.52935%2C-3.61369%20-2.54892%2C-5.03726c-1.16522%2C-1.53308%20-2.47609%2C-2.95665%20-4.00544%2C-3.50418c-2.03913%2C-0.76654%20-4.15109%2C-0.21901%20-6.19022%2C-0.32852c-1.01957%2C0%20-1.96631%2C0%20-2.91305%2C0c0%2C-1.31407%200%2C-2.40913%200%2C-3.50418c0%2C-1.20456%200.65544%2C-2.19011%201.52935%2C-2.19011c3.0587%2C-0.10951%206.1174%2C-0.65703%209.10327%2C0.76654c2.33044%2C1.09506%204.36957%2C3.06616%205.53479%2C6.46084c0.94674%2C2.73764%201.89348%2C5.36578%202.62174%2C8.21293c0.65544%2C2.62814%200.80109%2C5.47529%200.58261%2C8.32243z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M320.70763%2C212.57719c-0.94674%2C0.76654%20-1.82065%2C1.75209%20-2.84022%2C2.40913c-2.25761%2C1.75209%20-4.7337%2C2.51863%20-7.28262%2C2.62814c-2.84022%2C0%20-5.68044%2C-0.10951%20-8.59349%2C-0.10951c-1.74783%2C0%20-3.49566%2C0.21901%20-5.31631%2C0.32852c0.80109%2C-0.98555%201.52935%2C-1.8616%202.25761%2C-2.84715c0.2913%2C-0.32852%200.58261%2C-0.54753%200.72826%2C-0.98555c0.36413%2C-0.76654%200.94674%2C-0.98555%201.52935%2C-0.98555c1.16522%2C0%202.33044%2C-0.10951%203.56848%2C-0.21901c2.91305%2C0%205.75327%2C-0.10951%208.59349%2C-0.10951c1.01957%2C0%201.96631%2C0.10951%202.98587%2C0.10951c1.45652%2C0.10951%202.84022%2C0.10951%204.22392%2C-0.65703c0.07283%2C0.21901%200.07283%2C0.32852%200.14565%2C0.43802z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M299.36957%2C213.34373c-1.16522%2C1.42357%20-2.25761%2C2.84715%20-3.42283%2C4.27072c-0.2913%2C-1.42357%20-0.2913%2C-1.53308%200.43696%2C-2.29962c1.01957%2C-1.20456%202.11196%2C-2.29962%203.13152%2C-3.50418c0.2913%2C0.54753%200.21848%2C1.09506%20-0.14565%2C1.53308z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M298.78696%2C165.27072c-0.94674%2C1.09506%20-1.82065%2C2.51863%20-2.69457%2C3.72319c-0.14565%2C0.10951%20-0.2913%2C0.32852%20-0.50978%2C0.65703c-0.2913%2C-1.75209%20-0.21848%2C-1.75209%200.50978%2C-2.62814c0.94674%2C-1.20456%201.82065%2C-2.51863%202.76739%2C-3.72319c0.14565%2C-0.21901%200.21848%2C-0.43802%200.36413%2C-0.54753c0.14565%2C0.98555%200.14565%2C1.75209%20-0.43696%2C2.51863z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M302.35544%2C207.1019c0.07283%2C2.29962%20-0.21848%2C3.06616%20-1.74783%2C3.50418c-0.36413%2C0.10951%20-0.80109%2C0.21901%20-1.16522%2C0.32852c0%2C-0.10951%20-0.07283%2C-0.32852%20-0.07283%2C-0.43802c0%2C-4.48973%20-0.07283%2C-8.86996%20-0.07283%2C-13.3597c0%2C-4.16122%200%2C-8.32243%200.07283%2C-12.48365c0%2C-1.9711%200.2913%2C-3.94221%200.2913%2C-5.91331c0%2C-1.53308%20-0.14565%2C-3.06616%20-0.21848%2C-4.59924c0%2C-0.54753%200%2C-1.09506%200.07283%2C-1.64259c0.07283%2C-1.64259%20-0.2913%2C-2.29962%20-1.3837%2C-2.19011c-0.72826%2C0.10951%20-1.45652%2C0.21901%20-2.18478%2C0.21901c0%2C-0.10951%20-0.07283%2C-0.21901%20-0.07283%2C-0.32852c0.72826%2C-0.98555%201.3837%2C-1.9711%202.03913%2C-2.95665c0.50978%2C-0.76654%201.16522%2C-1.42357%201.60218%2C-2.19011c0.50978%2C-0.87605%201.16522%2C-0.76654%201.82065%2C-0.76654c0.58261%2C0%200.87391%2C0.54753%200.87391%2C1.42357c0%2C1.42357%200%2C2.73764%200%2C4.16122c0%2C2.62814%200%2C5.36578%200%2C7.99392c0%2C2.73764%200.21848%2C5.36578%200.21848%2C8.10342c0%2C5.47529%20-0.14565%2C11.06008%20-0.14565%2C16.64487c0%2C1.53308%200%2C2.95665%200.07283%2C4.48973z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M358.3%2C209.8c-0.8%2C1.6%20-1.7%2C3.2%20-2.6%2C4.8c-0.1%2C0.2%20-0.5%2C0.4%20-0.7%2C0.4c-4.1%2C-0.1%20-8.3%2C-0.3%20-12.4%2C-0.5c-1%2C0%20-2%2C-0.3%20-3%2C-0.5c-0.1%2C0%20-0.2%2C0%20-0.3%2C-0.1c-0.5%2C-0.4%20-0.4%2C-2.6%200.1%2C-3c1.3%2C-1%202.7%2C-2.1%204%2C-3.2c0.1%2C-0.2%200.2%2C-0.5%200.2%2C-0.7c0%2C-2.6%20-0.3%2C-5.1%20-0.1%2C-7.6c0.3%2C-5.1%20-0.3%2C-10.2%20-0.1%2C-15.3c0.1%2C-3.8%200.1%2C-7.5%200.2%2C-11.3c0%2C-0.9%200.1%2C-1.8%200.1%2C-2.7c0%2C-0.6%20-0.5%2C-1%20-1.1%2C-1.1c-0.7%2C-0.2%20-1.5%2C-0.3%20-2.3%2C-0.3c-0.5%2C0%20-0.7%2C-0.1%20-0.7%2C-0.5c0%2C-0.8%20-0.2%2C-1.7%200.6%2C-2.4c1.1%2C-0.9%202%2C-2%203%2C-3c0.5%2C-0.6%201.2%2C-0.8%201.9%2C-0.8c0.9%2C0%201.7%2C0%202.5%2C0v0.3h9.9c0.2%2C0%200.4%2C0.1%200.6%2C0.1c0.6%2C-0.1%200.8%2C0.3%200.8%2C0.9c0%2C0.6%200.1%2C1.2%20-0.8%2C1.2c-0.3%2C0%20-0.7%2C0.1%20-1%2C0.2c-1.1%2C0.2%20-1.7%2C0.9%20-1.7%2C2c-0.1%2C0.9%20-0.2%2C1.8%20-0.2%2C2.7c-0.2%2C3.7%20-0.4%2C7.4%20-0.5%2C11.1c-0.1%2C3.5%200.1%2C7%200.1%2C10.5c0%2C4.4%200.1%2C8.9%200.1%2C13.4c0%2C0.5%200.1%2C0.9%200.1%2C1.4c0.1%2C1%200.7%2C1.3%201.6%2C1.4c0%2C0%200.1%2C0%200.2%2C0c1.8%2C0.1%202.4%2C1.1%201.5%2C2.6zM343.6%2C164.9c0.7%2C-0.6%200.6%2C-1.3%200.5%2C-2.1c-0.2%2C0.1%20-0.3%2C0.2%20-0.3%2C0.2c-1%2C1.2%20-2%2C2.4%20-3.1%2C3.5c-0.5%2C0.5%20-0.6%2C0.9%20-0.5%2C1.3c1.1%2C-0.9%202.2%2C-2%203.4%2C-2.9zM344.2%2C169.7c0.1%2C0.8%200%2C1.6%200%2C2.4c0%2C3.6%20-0.2%2C7.1%20-0.2%2C10.6c0%2C3.9%200.1%2C7.8%200.1%2C11.8c0.1%2C3.4%200.2%2C6.8%200.2%2C10.2c0%2C0.9%20-0.1%2C1.8%20-0.2%2C2.8c1%2C-0.1%202.1%2C0.1%202.8%2C-0.7c0.5%2C-0.6%200.9%2C-1.4%201.1%2C-2.2c0.2%2C-1%200.2%2C-2.1%200.2%2C-3.2c-0.1%2C-4.6%20-0.3%2C-9.3%20-0.4%2C-13.9c-0.1%2C-7.1%20-0.1%2C-14.3%20-0.2%2C-21.4c0%2C-1.3%20-0.3%2C-1.7%20-1.6%2C-1.7c-0.6%2C0%20-1.1%2C0.1%20-1.6%2C0.6c-1%2C1.1%20-2.2%2C2%20-3.4%2C3c0%2C0%200.1%2C0.1%200.1%2C0.2c0.4%2C0%200.9%2C-0.1%201.3%2C0c0.9%2C0.1%201.7%2C0.5%201.8%2C1.5zM342.8%2C210.5c0.6%2C-0.5%201.3%2C-1.2%200.9%2C-2.1c-1.1%2C0.9%20-2.2%2C1.9%20-3.4%2C2.8c-0.7%2C0.5%20-0.7%2C1%20-0.7%2C1.8c1.1%2C-0.8%202.2%2C-1.6%203.2%2C-2.5zM357.7%2C210.1c-4.6%2C-0.2%20-9%2C-0.4%20-13.4%2C-0.6c-0.6%2C2.1%20-2.8%2C2.7%20-4%2C4.2c1.1%2C0.1%202.1%2C0.3%203.1%2C0.3c3.8%2C0.1%207.6%2C0.3%2011.4%2C0.4c0.2%2C0%200.6%2C-0.3%200.7%2C-0.5c0.6%2C-0.9%201.1%2C-1.9%201.7%2C-2.9c0.2%2C-0.3%200.3%2C-0.6%200.5%2C-0.9z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M343.5%2C164.9c-1.2%2C0.9%20-2.2%2C2%20-3.3%2C2.9c-0.1%2C-0.4%200%2C-0.8%200.5%2C-1.3c1.1%2C-1.1%202.1%2C-2.3%203.1%2C-3.5c0%2C0%200.1%2C-0.1%200.3%2C-0.2c0.1%2C0.8%200.1%2C1.5%20-0.6%2C2.1z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M342.8%2C210.5c-1%2C0.9%20-2.1%2C1.6%20-3.2%2C2.5c0%2C-0.8%200%2C-1.3%200.7%2C-1.8c1.2%2C-0.9%202.3%2C-1.9%203.4%2C-2.8c0.4%2C0.9%20-0.3%2C1.6%20-0.9%2C2.1z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M357.7%2C210c-0.2%2C0.4%20-0.3%2C0.7%20-0.5%2C1c-0.6%2C1%20-1.1%2C2%20-1.7%2C2.9c-0.1%2C0.2%20-0.5%2C0.5%20-0.7%2C0.5c-3.8%2C-0.1%20-7.6%2C-0.3%20-11.4%2C-0.4c-1%2C0%20-2%2C-0.2%20-3.1%2C-0.3c1.2%2C-1.5%203.4%2C-2.1%204%2C-4.2c4.5%2C0.1%208.9%2C0.3%2013.4%2C0.5z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M348%2C204.6c-0.2%2C0.8%20-0.6%2C1.6%20-1.1%2C2.2c-0.7%2C0.8%20-1.8%2C0.6%20-2.8%2C0.7c0.1%2C-1%200.2%2C-1.9%200.2%2C-2.8c0%2C-3.4%20-0.1%2C-6.8%20-0.2%2C-10.2c0%2C-4%20-0.1%2C-7.9%20-0.1%2C-11.8c0%2C-3.5%200.2%2C-7%200.2%2C-10.6c0%2C-0.8%200.1%2C-1.6%200%2C-2.4c-0.1%2C-1%20-0.9%2C-1.4%20-1.9%2C-1.5c-0.4%2C-0.1%20-0.9%2C0%20-1.3%2C0c0.1%2C-0.1%200%2C-0.2%200%2C-0.2c1.2%2C-1%202.4%2C-1.9%203.4%2C-3c0.5%2C-0.5%201%2C-0.6%201.6%2C-0.6c1.3%2C0%201.6%2C0.4%201.6%2C1.7c0.1%2C7.1%200.1%2C14.3%200.2%2C21.4c0.1%2C4.6%200.3%2C9.3%200.4%2C13.9c0%2C1.1%200%2C2.1%20-0.2%2C3.2z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M408.12818%2C160.38488c0%2C0.22713%20-0.30982%2C0.45426%20-0.46473%2C0.45426c-0.38727%2C0.11357%20-0.852%2C0.11357%20-1.31672%2C0.22713c-0.69709%2C0.11357%20-0.92945%2C0.45426%20-1.0069%2C1.47636c-0.07745%2C1.58992%200%2C3.06628%200.15491%2C4.54264c0.46473%2C3.86124%200.46473%2C7.72248%200.23236%2C11.58372c-0.38727%2C6.58682%20-0.30982%2C13.28721%20-0.15491%2C19.9876c0.07745%2C3.74767%200.15491%2C7.49535%200.23236%2C11.24302c0%2C1.93062%20-0.69709%2C3.52054%20-1.39418%2C5.11047c-0.38727%2C0.90853%20-0.69709%2C1.13566%20-1.39418%2C1.13566c-0.69709%2C0%20-1.08436%2C-0.45426%20-1.47163%2C-1.13566c-2.24617%2C-3.63411%20-4.80216%2C-6.58682%20-7.35815%2C-9.6531c-4.02762%2C-4.88333%20-7.66797%2C-10.3345%20-10.92104%2C-16.23992c-1.16181%2C-2.04419%20-2.55599%2C-3.86124%20-3.87271%2C-5.79186c-0.15491%2C0%20-0.23236%2C0%20-0.30982%2C0.11357c0%2C1.13566%200.07745%2C2.27132%200%2C3.40698c-0.38727%2C5.3376%200.30982%2C10.56163%200.23236%2C15.89922c0%2C1.70349%20-0.23236%2C3.40698%20-0.07745%2C5.11047c0.07745%2C0.79496%200.30982%2C1.24922%200.852%2C1.36279c0.38727%2C0.11357%200.852%2C0.22713%201.31672%2C0.22713c0.30982%2C0%200.46473%2C0.22713%200.46473%2C0.79496c0.07745%2C0.90853%20-0.15491%2C1.70349%20-0.54218%2C2.38488c-0.46473%2C0.79496%20-0.77454%2C1.70349%20-1.16181%2C2.61202c-0.23236%2C0.56783%20-0.54218%2C1.02209%20-1.0069%2C1.02209c-2.09126%2C0.11357%20-4.25998%2C0.22713%20-6.35124%2C0.3407c-0.852%2C0%20-1.70399%2C-0.11357%20-2.55599%2C-0.11357c-0.54218%2C0%20-0.77454%2C-0.3407%20-0.77454%2C-1.13566c0%2C-0.79496%200.15491%2C-1.58992%200.61963%2C-2.15775c0.77454%2C-1.02209%201.54908%2C-2.15775%202.16872%2C-3.17984c0.15491%2C-0.22713%200.30982%2C-0.6814%200.30982%2C-1.02209c0.07745%2C-0.6814%20-0.07745%2C-1.36279%20-0.07745%2C-2.04419c0%2C-0.45426%200.07745%2C-1.02209%200.15491%2C-1.58992c0.07745%2C-0.3407%200.07745%2C-0.6814%200.07745%2C-1.02209c0.07745%2C-5.22403%200.15491%2C-10.56163%200.15491%2C-15.78566c0%2C-4.6562%200%2C-9.3124%200%2C-13.85504c0%2C-1.47636%20-0.07745%2C-2.95271%20-0.15491%2C-4.3155c-0.07745%2C-1.93062%20-0.92945%2C-3.17984%20-2.24617%2C-3.52054c-1.0069%2C-0.22713%20-2.09126%2C-0.3407%20-3.17562%2C-0.56783c-0.07745%2C0%20-0.30982%2C-0.3407%20-0.30982%2C-0.45426c0%2C-0.6814%200%2C-1.24922%200.07745%2C-1.93062c0%2C-0.11357%200.07745%2C-0.3407%200.07745%2C-0.3407c1.0069%2C-1.58992%201.93636%2C-3.17984%202.86581%2C-4.6562c0.07745%2C-0.22713%200.07745%2C-0.45426%200.15491%2C-0.90853c1.16181%2C0.11357%202.32363%2C0.11357%203.48544%2C0.45426c1.78145%2C0.22713%203.40798%2C1.13566%204.95707%2C2.49845c0.23236%2C0.11357%200.38727%2C0.3407%200.54218%2C0.56783c1.31672%2C2.04419%202.55599%2C3.97481%203.87271%2C6.01899c0.77454%2C1.36279%201.54908%2C2.61202%202.40108%2C3.86124c1.39418%2C1.93062%202.86581%2C3.86124%204.25998%2C5.90543c1.47163%2C2.15775%202.78835%2C4.3155%204.18253%2C6.47326c1.47163%2C2.27132%202.94326%2C4.42907%204.41489%2C6.58682c0.46473%2C0.79496%201.0069%2C1.58992%201.62654%2C2.49845c0.07745%2C-1.58992%200.15491%2C-2.95271%200.15491%2C-4.3155c0.07745%2C-4.20194%200.23236%2C-8.51744%200.15491%2C-12.71938c0%2C-2.83915%20-0.30982%2C-5.79186%20-0.46473%2C-8.63101c-0.07745%2C-1.02209%20-0.46473%2C-1.70349%20-1.16181%2C-1.81705c-0.69709%2C-0.22713%20-1.31672%2C-0.22713%20-2.01381%2C-0.22713c-0.38727%2C0%20-0.54218%2C-0.11357%20-0.61963%2C-0.6814c0%2C-0.11357%200%2C-0.11357%200%2C-0.11357c-0.07745%2C-0.6814%20-0.38727%2C-1.58992%20-0.23236%2C-2.04419c0.30982%2C-0.79496%200.852%2C-1.47636%201.39418%2C-2.15775c0.38727%2C-0.56783%200.77454%2C-1.02209%201.23927%2C-1.36279c0.30982%2C-0.22713%200.69709%2C-0.45426%201.0069%2C-0.45426c1.16181%2C0%202.24617%2C0%203.33053%2C0c1.54908%2C-0.11357%203.17562%2C-0.22713%204.72471%2C-0.22713c0.15491%2C0%200.30982%2C0%200.46473%2C0c0.15491%2C0%200.30982%2C0.11357%200.30982%2C0.11357c0%2C0.6814%200.07745%2C1.36279%20-0.07745%2C2.15775zM398.83368%2C158.79496c-0.77454%2C1.13566%20-1.47163%2C2.15775%20-2.24617%2C3.17984c-0.46473%2C0.6814%20-0.46473%2C1.24922%20-0.15491%2C2.04419c1.16181%2C-1.36279%202.86581%2C-2.04419%202.40108%2C-5.22403zM400.22785%2C167.76667c0.30982%2C3.86124%200.54218%2C7.72248%200.38727%2C11.58372c-0.15491%2C3.97481%20-0.07745%2C8.06318%20-0.15491%2C12.15155c-0.07745%2C1.13566%20-0.07745%2C2.27132%200.61963%2C3.06628c0.23236%2C0.11357%200.23236%2C0.56783%200.38727%2C0.79496c0.23236%2C0.45426%200.54218%2C0.79496%200.77454%2C1.13566c0.07745%2C0%200.15491%2C-0.11357%200.23236%2C-0.11357v-1.13566c-0.07745%2C-5.56473%20-0.15491%2C-11.24302%20-0.15491%2C-16.92132c0%2C-1.58992%200%2C-3.29341%200%2C-4.9969c-0.07745%2C-3.17984%20-0.61963%2C-6.35969%20-0.38727%2C-9.6531c0.07745%2C-0.6814%20-0.15491%2C-1.36279%20-0.30982%2C-1.93062c-0.30982%2C-1.02209%20-1.78145%2C-1.24922%20-2.24617%2C-0.3407c-0.61963%2C1.13566%20-1.23927%2C2.15775%20-2.09126%2C2.61202c-0.07745%2C0%20-0.07745%2C0.11357%20-0.07745%2C0.22713c0.23236%2C0.11357%200.46473%2C0.11357%200.69709%2C0.11357c1.54908%2C0.22713%202.16872%2C1.13566%202.32363%2C3.40698zM367.61963%2C165.15465c0.92945%2C-1.36279%201.8589%2C-2.83915%202.7109%2C-4.3155c0.15491%2C-0.22713%200.15491%2C-0.79496%200.23236%2C-1.36279c-0.23236%2C0.11357%20-0.30982%2C0.11357%20-0.30982%2C0.22713c-0.852%2C1.47636%20-1.78145%2C2.83915%20-2.63344%2C4.20194c-0.15491%2C0.22713%20-0.15491%2C0.6814%20-0.23236%2C1.02209c0.07745%2C0%200.15491%2C0.11357%200.23236%2C0.22713zM373.4287%2C172.76357c0.07745%2C3.40698%200%2C6.92752%200%2C10.44806c-0.07745%2C2.15775%20-0.15491%2C4.3155%20-0.15491%2C6.58682c-0.07745%2C4.88333%20-0.07745%2C9.88023%20-0.07745%2C14.76357c0%2C0.45426%200%2C1.02209%20-0.07745%2C1.58992c-0.07745%2C1.13566%20-0.15491%2C2.38488%20-0.15491%2C3.52054c0.46473%2C0%200.852%2C0%201.23927%2C-0.11357c1.31672%2C-0.22713%201.39418%2C-0.3407%201.54908%2C-2.27132c0.15491%2C-1.93062%200.15491%2C-3.74767%200.15491%2C-5.56473c0%2C-2.04419%20-0.23236%2C-4.08837%20-0.23236%2C-6.13256c0%2C-5.22403%200.07745%2C-10.3345%200.15491%2C-15.55853c0%2C-1.70349%200%2C-3.29341%20-0.07745%2C-4.88333c0%2C-2.49845%20-0.15491%2C-4.88333%20-0.15491%2C-7.38178c0%2C-2.61202%20-0.38727%2C-4.9969%20-2.09126%2C-6.24612c-0.61963%2C-0.56783%20-1.47163%2C-0.6814%20-2.24617%2C-0.79496c-0.23236%2C0%20-0.46473%2C0.79496%20-0.77454%2C1.24922c-0.77454%2C1.24922%20-1.62654%2C2.38488%20-2.40108%2C3.63411c0.46473%2C0%200.92945%2C0%201.47163%2C0.11357c1.31672%2C0.22713%202.7109%2C0.56783%203.25308%2C2.61202c0.38727%2C1.36279%200.54218%2C2.83915%200.61963%2C4.42907zM372.03452%2C213.64729c0.77454%2C-0.90853%201.23927%2C-1.93062%200.77454%2C-3.40698c-0.77454%2C1.24922%20-1.54908%2C2.61202%20-2.40108%2C3.86124c-0.30982%2C0.45426%20-0.38727%2C1.02209%20-0.30982%2C1.70349c0.69709%2C-0.79496%201.31672%2C-1.47636%201.93636%2C-2.15775zM373.66106%2C211.71667c-0.54218%2C1.93062%20-1.47163%2C3.06628%20-2.63344%2C3.86124c0.15491%2C0.11357%200.23236%2C0.11357%200.38727%2C0.11357c2.55599%2C-0.11357%205.11198%2C-0.22713%207.59051%2C-0.3407c0.23236%2C0%200.46473%2C-0.22713%200.61963%2C-0.45426c0.38727%2C-0.90853%200.77454%2C-1.81705%201.16181%2C-2.83915c-2.40108%2C-0.11357%20-4.80216%2C-0.22713%20-7.12579%2C-0.3407zM402.47403%2C215.12364c0.23236%2C-0.45426%200.46473%2C-0.79496%200.61963%2C-1.13566c0.30982%2C-0.6814%200.61963%2C-1.47636%200.852%2C-2.15775c0.07745%2C-0.11357%200%2C-0.56783%20-0.07745%2C-0.6814c-0.77454%2C-1.13566%20-1.62654%2C-2.38488%20-2.47853%2C-3.52054c-1.31672%2C-1.70349%20-2.63344%2C-3.52054%20-3.87271%2C-5.3376c-0.54218%2C-0.90853%20-0.92945%2C-1.93062%20-1.47163%2C-2.83915c-1.0069%2C-1.58992%20-2.09126%2C-3.17984%20-3.09817%2C-4.88333c-1.0069%2C-1.47636%20-1.8589%2C-3.17984%20-2.86581%2C-4.76977c-1.78145%2C-2.95271%20-3.64035%2C-5.79186%20-5.42179%2C-8.63101c-0.38727%2C-0.6814%20-0.852%2C-1.24922%20-1.31672%2C-1.93062c-0.69709%2C-1.02209%20-1.47163%2C-1.93062%20-2.16872%2C-2.95271c-0.61963%2C-1.02209%20-1.23927%2C-2.04419%20-1.93636%2C-3.17984c-0.07745%2C0.3407%20-0.15491%2C0.56783%20-0.15491%2C0.79496c-0.07745%2C1.93062%200%2C3.97481%20-0.07745%2C6.01899c-0.07745%2C1.58992%200.54218%2C2.61202%201.23927%2C3.63411c1.23927%2C1.70349%202.55599%2C3.17984%203.56289%2C5.11047c3.33053%2C6.01899%207.12579%2C11.58372%2011.23086%2C16.69419c2.40108%2C2.95271%204.95707%2C5.56473%206.89342%2C9.19884c0.15491%2C0.22713%200.38727%2C0.3407%200.54218%2C0.56783zM405.03001%2C212.2845c0%2C-0.11357%20-0.07745%2C-0.11357%20-0.15491%2C-0.22713c-0.77454%2C0.90853%20-0.92945%2C2.61202%20-1.93636%2C3.29341c0.07745%2C0%200.15491%2C0.11357%200.15491%2C0.22713c0.23236%2C0%200.54218%2C0%200.61963%2C-0.22713c0.46473%2C-1.02209%200.92945%2C-2.04419%201.31672%2C-3.06628z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M396.4326%2C164.01899c-0.30982%2C-0.79496%20-0.30982%2C-1.36279%200.15491%2C-2.04419c0.77454%2C-1.02209%201.47163%2C-2.04419%202.24617%2C-3.17984c0.46473%2C3.17984%20-1.23927%2C3.86124%20-2.40108%2C5.22403z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M370.64035%2C157.47636c-0.07745%2C0.56783%20-0.07745%2C1.13566%20-0.23236%2C1.36279c-0.92945%2C1.47636%20-1.8589%2C2.95271%20-2.78835%2C4.3155c-0.07745%2C-0.11357%20-0.15491%2C-0.22713%20-0.23236%2C-0.22713c0.07745%2C-0.3407%200.07745%2C-0.79496%200.23236%2C-1.02209c0.852%2C-1.36279%201.78145%2C-2.72558%202.63344%2C-4.20194c0.07745%2C0%200.15491%2C0%200.38727%2C-0.22713z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M372.03452%2C211.53372c-0.61963%2C0.79496%20-1.31672%2C1.47636%20-2.01381%2C2.27132c-0.07745%2C-0.6814%200%2C-1.24922%200.30982%2C-1.70349c0.852%2C-1.24922%201.62654%2C-2.61202%202.40108%2C-3.86124c0.54218%2C1.36279%200.07745%2C2.49845%20-0.69709%2C3.29341z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M380.78685%2C210.05736c-0.38727%2C1.02209%20-0.77454%2C1.93062%20-1.16181%2C2.83915c-0.15491%2C0.22713%20-0.38727%2C0.45426%20-0.61963%2C0.45426c-2.47853%2C0.11357%20-5.03452%2C0.22713%20-7.59051%2C0.3407c-0.15491%2C0%20-0.23236%2C0%20-0.38727%2C-0.11357c1.16181%2C-0.79496%202.09126%2C-1.93062%202.63344%2C-3.86124c2.32363%2C0.11357%204.72471%2C0.22713%207.12579%2C0.3407z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M405.03001%2C212.2845c-0.46473%2C1.02209%20-0.852%2C2.04419%20-1.39418%2C3.06628c-0.07745%2C0.22713%20-0.38727%2C0.22713%20-0.61963%2C0.22713c0%2C-0.11357%20-0.07745%2C-0.22713%20-0.15491%2C-0.22713c1.0069%2C-0.6814%201.16181%2C-2.38488%201.93636%2C-3.29341c0.15491%2C0%200.23236%2C0.11357%200.23236%2C0.22713z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M402.39657%2C195.24961v1.13566c-0.07745%2C0%20-0.15491%2C0.11357%20-0.23236%2C0.11357c-0.23236%2C-0.3407%20-0.54218%2C-0.6814%20-0.77454%2C-1.13566c-0.15491%2C-0.22713%20-0.15491%2C-0.6814%20-0.38727%2C-0.79496c-0.69709%2C-0.79496%20-0.69709%2C-1.93062%20-0.61963%2C-3.06628c0.07745%2C-4.08837%200%2C-8.17674%200.15491%2C-12.15155c0.15491%2C-3.86124%20-0.07745%2C-7.72248%20-0.38727%2C-11.58372c-0.15491%2C-2.38488%20-0.77454%2C-3.17984%20-2.40108%2C-3.40698c-0.23236%2C0%20-0.46473%2C0%20-0.69709%2C-0.11357c0%2C-0.11357%200%2C-0.22713%200.07745%2C-0.22713c1.0069%2C-0.45426%201.62654%2C-1.47636%202.24617%2C-2.61202c0.46473%2C-0.90853%201.93636%2C-0.6814%202.24617%2C0.3407c0.15491%2C0.56783%200.38727%2C1.24922%200.30982%2C1.93062c-0.23236%2C3.29341%200.30982%2C6.47326%200.38727%2C9.6531c0%2C1.70349%200%2C3.40698%200%2C4.9969c0%2C5.67829%200.07745%2C11.24302%200.07745%2C16.92132z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M403.94566%2C211.9438c-0.23236%2C0.6814%20-0.54218%2C1.47636%20-0.852%2C2.15775c-0.15491%2C0.3407%20-0.38727%2C0.6814%20-0.61963%2C1.13566c-0.15491%2C-0.22713%20-0.38727%2C-0.3407%20-0.54218%2C-0.56783c-1.93636%2C-3.63411%20-4.49234%2C-6.24612%20-6.89342%2C-9.19884c-4.10507%2C-5.22403%20-7.90033%2C-10.78876%20-11.23086%2C-16.80775c-1.0069%2C-1.93062%20-2.32363%2C-3.40698%20-3.56289%2C-5.11047c-0.69709%2C-1.02209%20-1.31672%2C-2.04419%20-1.23927%2C-3.63411c0.07745%2C-2.04419%200%2C-4.08837%200.07745%2C-6.01899c0%2C-0.22713%200.07745%2C-0.45426%200.15491%2C-0.79496c0.69709%2C1.13566%201.31672%2C2.15775%201.93636%2C3.17984c0.69709%2C1.02209%201.47163%2C1.93062%202.16872%2C2.95271c0.46473%2C0.6814%200.92945%2C1.24922%201.31672%2C1.93062c1.78145%2C2.83915%203.64035%2C5.67829%205.42179%2C8.63101c1.0069%2C1.58992%201.8589%2C3.29341%202.86581%2C4.76977c1.0069%2C1.70349%202.09126%2C3.29341%203.09817%2C4.88333c0.54218%2C0.90853%200.92945%2C1.93062%201.47163%2C2.83915c1.23927%2C1.81705%202.55599%2C3.63411%203.87271%2C5.3376c0.852%2C1.13566%201.70399%2C2.38488%202.47853%2C3.52054c0.15491%2C0.22713%200.15491%2C0.56783%200.07745%2C0.79496z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M375.82978%2C205.17403c-0.15491%2C1.93062%20-0.23236%2C2.04419%20-1.54908%2C2.27132c-0.38727%2C0.11357%20-0.77454%2C0.11357%20-1.23927%2C0.11357c0%2C-1.13566%200.07745%2C-2.38488%200.15491%2C-3.52054c0%2C-0.45426%200%2C-1.02209%200%2C-1.47636c0%2C-4.88333%200%2C-9.88023%200.07745%2C-14.76357c0%2C-2.27132%200.07745%2C-4.42907%200.15491%2C-6.58682c0%2C-3.52054%200.07745%2C-7.04109%200%2C-10.44806c0%2C-1.47636%20-0.15491%2C-2.95271%20-0.54218%2C-4.3155c-0.61963%2C-2.15775%20-2.01381%2C-2.49845%20-3.33053%2C-2.72558c-0.54218%2C-0.11357%20-1.0069%2C-0.11357%20-1.47163%2C-0.11357c0.77454%2C-1.24922%201.62654%2C-2.38488%202.40108%2C-3.63411c0.30982%2C-0.45426%200.54218%2C-1.24922%200.77454%2C-1.24922c0.77454%2C0.11357%201.62654%2C0.22713%202.24617%2C0.79496c1.70399%2C1.24922%202.09126%2C3.63411%202.09126%2C6.24612c0%2C2.49845%200.15491%2C4.88333%200.15491%2C7.38178c0.07745%2C1.58992%200.07745%2C3.17984%200.07745%2C4.88333c-0.07745%2C5.22403%20-0.15491%2C10.3345%20-0.15491%2C15.55853c0%2C2.04419%200.23236%2C4.08837%200.23236%2C6.13256c0.07745%2C1.70349%200.07745%2C3.63411%20-0.07745%2C5.45116z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M451.71276%2C187.74103c-0.08291%2C0.83552%20-0.24872%2C1.1936%20-0.82905%2C1.1936c-1.82392%2C-0.11936%20-2.48716%2C1.7904%20-2.48716%2C3.5808c-0.08291%2C1.90976%200.08291%2C3.81952%200.16581%2C5.72927c0.08291%2C2.14848%200.08291%2C4.1776%200%2C6.32607c0%2C0.83552%20-0.41453%2C1.90976%20-0.82905%2C2.50656c-2.73588%2C3.81952%20-5.38885%2C7.75839%20-9.11959%2C9.31007c-2.48716%2C1.07424%20-5.14013%2C1.67104%20-7.7931%2C1.07424c-1.24358%2C-0.23872%20-2.65297%2C-0.47744%20-3.89655%2C-0.95488c-0.99486%2C-0.47744%20-1.82392%2C-1.1936%20-2.73588%2C-1.7904c-0.24872%2C-0.23872%20-0.58034%2C-0.47744%20-0.82905%2C-0.5968c-1.90682%2C-0.83552%20-3.23331%2C-2.74528%20-4.39398%2C-5.01311c-1.65811%2C-3.22272%20-3.31621%2C-6.44543%20-4.22817%2C-10.26495c-0.99486%2C-4.29696%20-1.90682%2C-8.59391%20-1.74101%2C-14.32319c0%2C-2.50656%200.41453%2C-5.96799%201.65811%2C-9.19071c1.16067%2C-3.22272%202.57007%2C-6.44543%204.72561%2C-8.71327c1.98973%2C-2.26784%204.14527%2C-4.41632%206.38371%2C-6.32607c1.98973%2C-2.02912%204.31108%2C-2.86464%206.63243%2C-3.46144c1.24358%2C-0.35808%202.48716%2C-0.83552%203.73074%2C-0.71616c1.4923%2C0%203.0675%2C0.47744%204.55979%2C0.95488c0.91196%2C0.23872%201.65811%2C0.35808%202.48716%2C-0.35808c1.07777%2C-0.95488%202.23844%2C-0.5968%203.39912%2C-0.5968c0.08291%2C0%200.33162%2C0.35808%200.33162%2C0.5968c0.08291%2C3.81952%200.08291%2C7.63903%200.16581%2C11.33919c0%2C0.95488%20-0.24872%2C1.67104%20-0.74615%2C2.26784c-0.66324%2C0.83552%20-1.16067%2C1.7904%20-1.82392%2C2.62592c-0.16581%2C0.23872%20-0.41453%2C0.47744%20-0.66324%2C0.47744c-0.82905%2C0.11936%20-1.65811%2C0.11936%20-2.48716%2C0.11936c-0.24872%2C0%20-0.58034%2C-0.23872%20-0.66324%2C-0.47744c-0.49743%2C-1.31296%20-0.82905%2C-2.62592%20-1.40939%2C-3.81952c-2.07263%2C-4.53568%20-5.88628%2C-5.72927%20-9.11959%2C-4.1776c-2.23844%2C0.95488%20-3.64784%2C3.34208%20-5.05723%2C5.72927c-1.65811%2C2.86464%20-1.98973%2C6.44543%20-2.32135%2C9.90687c-0.33162%2C3.93888%20-0.24872%2C7.99711%200.58034%2C11.81663c0.66324%2C2.86464%201.24358%2C5.72927%202.32135%2C8.11647c1.5752%2C3.70016%203.64784%2C6.80351%206.79824%2C7.75839c2.48716%2C0.71616%204.89142%2C-0.23872%207.04696%2C-1.90976c0.91196%2C-0.71616%201.40939%2C-2.02912%201.40939%2C-3.46144c0%2C-2.3872%20-0.08291%2C-4.65504%20-0.24872%2C-7.04223c-0.08291%2C-1.07424%20-0.66324%2C-1.55168%20-1.4923%2C-1.55168c-0.91196%2C0.11936%20-1.90682%2C0.11936%20-2.81878%2C0.23872c-0.49743%2C0%20-0.82905%2C-0.11936%20-0.82905%2C-0.95488c0%2C-0.11936%200%2C-0.23872%200%2C-0.23872c-0.66324%2C-1.67104%200%2C-2.74528%200.82905%2C-3.81952c0.74615%2C-0.95488%201.5752%2C-1.90976%202.23844%2C-2.984c0.66324%2C-0.95488%201.5752%2C-0.83552%202.32135%2C-0.83552c3.1504%2C-0.23872%206.30081%2C-0.35808%209.45121%2C-0.47744c1.40939%2C0%201.4923%2C0.23872%201.32649%2C2.3872zM443.25641%2C170.19513c-0.41453%2C0.83552%20-1.07777%2C1.55168%20-1.65811%2C2.26784l0.08291%2C0.23872c0.74615%2C-0.11936%201.65811%2C0.11936%202.23844%2C-0.35808c0.82905%2C-0.71616%201.4923%2C-2.02912%202.23844%2C-3.10336c-0.16581%2C-0.11936%20-0.24872%2C-0.23872%20-0.33162%2C-0.23872c-0.91196%2C-0.11936%20-1.82392%2C-0.35808%20-2.57007%2C1.1936zM442.34445%2C157.66235c0.58034%2C0.35808%200.91196%2C0.5968%201.4923%2C0.95488c-0.08291%2C-0.5968%20-0.08291%2C-0.95488%20-0.16581%2C-1.43232c-0.41453%2C0.23872%20-0.74615%2C0.35808%20-1.32649%2C0.47744zM428.41635%2C164.82394c5.72047%2C-2.984%209.86574%2C-0.5968%2012.60161%2C7.16159c0.99486%2C-1.31296%201.98973%2C-2.3872%202.90169%2C-3.5808c0.16581%2C-0.11936%200.24872%2C-0.47744%200.24872%2C-0.71616c-0.41453%2C-2.86464%20-1.40939%2C-5.01311%20-3.31621%2C-6.08735c-2.65297%2C-1.43232%20-5.30594%2C-1.7904%20-8.04182%2C-0.5968c-1.65811%2C0.71616%20-3.1504%2C1.90976%20-4.39398%2C3.81952zM438.365%2C208.15157c0%2C0%200.08291%2C0.11936%200.08291%2C0.23872c0.91196%2C-0.47744%201.82392%2C-0.95488%202.65297%2C-1.55168c0.99486%2C-0.71616%201.4923%2C-2.14848%201.4923%2C-3.70016c0.08291%2C-3.70016%200.16581%2C-7.51967%200.16581%2C-11.21983c0.08291%2C-1.90976%20-1.74101%2C-3.46144%20-2.81878%2C-2.3872c-1.16067%2C1.1936%20-2.15554%2C2.62592%20-3.23331%2C4.05824c0%2C0.11936%200.08291%2C0.11936%200.08291%2C0.23872c0.66324%2C-0.11936%201.40939%2C-0.23872%202.07263%2C-0.35808c1.40939%2C-0.23872%201.98973%2C0.35808%202.32135%2C2.3872c0.33162%2C2.3872%200.33162%2C4.65504%200.16581%2C7.04223c-0.08291%2C2.02912%20-0.66324%2C3.46144%20-1.90682%2C4.41632c-0.33162%2C0.23872%20-0.66324%2C0.47744%20-1.07777%2C0.83552zM443.50513%2C211.37429c-1.07777%2C0.35808%20-2.15554%2C0.95488%20-3.23331%2C1.31296c-2.57007%2C0.95488%20-5.22304%2C1.1936%20-7.87601%2C0.5968c-3.73074%2C-0.95488%20-6.88114%2C-3.81952%20-9.61702%2C-7.28095c-2.32135%2C-2.86464%20-4.06236%2C-6.56479%20-5.05723%2C-10.98111c-1.07777%2C-4.65504%20-1.5752%2C-9.42943%20-1.40939%2C-14.32319c0.08291%2C-2.02912%200.49743%2C-4.1776%200.99486%2C-6.20671c0.74615%2C-2.86464%201.65811%2C-5.60991%203.0675%2C-8.11647c-0.99486%2C1.07424%20-1.90682%2C2.14848%20-2.65297%2C3.46144c-1.24358%2C2.14848%20-2.15554%2C4.53568%20-2.98459%2C7.16159c-0.33162%2C0.95488%20-0.58034%2C2.02912%20-0.74615%2C3.10336c-0.49743%2C3.10336%20-0.58034%2C6.32607%20-0.24872%2C9.54879c0.33162%2C3.70016%200.91196%2C7.28095%201.98973%2C10.74239c1.07777%2C3.22272%202.57007%2C6.08735%204.06236%2C8.83263c0.66324%2C1.1936%201.5752%2C2.26784%202.48716%2C3.10336c1.07777%2C1.07424%202.23844%2C1.7904%203.39912%2C2.50656c2.15554%2C1.1936%204.39398%2C1.7904%206.63243%2C2.02912c2.07263%2C0.11936%204.06236%2C-0.35808%206.05209%2C-1.1936c1.98973%2C-0.71616%203.64784%2C-2.62592%205.14013%2C-4.29696z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M443.83675%2C158.61723c-0.58034%2C-0.35808%20-0.91196%2C-0.5968%20-1.4923%2C-0.95488c0.58034%2C-0.11936%200.91196%2C-0.23872%201.32649%2C-0.47744c0.08291%2C0.47744%200.16581%2C0.83552%200.16581%2C1.43232z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M446.1581%2C169.24025c-0.74615%2C1.07424%20-1.40939%2C2.3872%20-2.23844%2C3.10336c-0.58034%2C0.47744%20-1.4923%2C0.23872%20-2.23844%2C0.35808l-0.08291%2C-0.23872c0.58034%2C-0.71616%201.24358%2C-1.43232%201.65811%2C-2.26784c0.66324%2C-1.43232%201.5752%2C-1.31296%202.57007%2C-1.07424c0.08291%2C-0.11936%200.16581%2C0%200.33162%2C0.11936z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M444.16837%2C167.68858c0%2C0.23872%20-0.08291%2C0.5968%20-0.24872%2C0.71616c-0.91196%2C1.1936%20-1.90682%2C2.26784%20-2.90169%2C3.5808c-2.73588%2C-7.75839%20-6.88114%2C-10.14559%20-12.60161%2C-7.16159c1.24358%2C-1.90976%202.73588%2C-3.10336%204.47689%2C-3.81952c2.73588%2C-1.1936%205.38885%2C-0.83552%208.04182%2C0.5968c1.82392%2C1.07424%202.90169%2C3.22272%203.23331%2C6.08735z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M442.75898%2C191.91863c0%2C3.70016%20-0.08291%2C7.51967%20-0.16581%2C11.21983c0%2C1.55168%20-0.49743%2C2.984%20-1.4923%2C3.70016c-0.82905%2C0.5968%20-1.74101%2C1.07424%20-2.65297%2C1.55168c0%2C-0.11936%20-0.08291%2C-0.23872%20-0.08291%2C-0.23872c0.33162%2C-0.23872%200.66324%2C-0.47744%200.99486%2C-0.71616c1.24358%2C-0.95488%201.82392%2C-2.3872%201.90682%2C-4.41632c0.16581%2C-2.3872%200.16581%2C-4.65504%20-0.16581%2C-7.04223c-0.33162%2C-2.02912%20-0.91196%2C-2.62592%20-2.32135%2C-2.3872c-0.66324%2C0.11936%20-1.40939%2C0.23872%20-2.07263%2C0.35808c0%2C-0.11936%20-0.08291%2C-0.11936%20-0.08291%2C-0.23872c1.07777%2C-1.43232%202.07263%2C-2.86464%203.23331%2C-4.05824c1.16067%2C-1.1936%202.90169%2C0.35808%202.90169%2C2.26784z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M443.58803%2C211.25493c-1.65811%2C1.7904%20-3.23331%2C3.70016%20-5.30594%2C4.41632c-1.98973%2C0.83552%20-3.97946%2C1.31296%20-6.05209%2C1.1936c-2.23844%2C-0.23872%20-4.47689%2C-0.83552%20-6.63243%2C-2.02912c-1.16067%2C-0.71616%20-2.32135%2C-1.43232%20-3.39912%2C-2.50656c-0.91196%2C-0.83552%20-1.82392%2C-1.90976%20-2.48716%2C-3.10336c-1.4923%2C-2.74528%20-2.98459%2C-5.60991%20-4.06236%2C-8.83263c-1.07777%2C-3.46144%20-1.65811%2C-7.04223%20-1.98973%2C-10.74239c-0.33162%2C-3.22272%20-0.24872%2C-6.44543%200.24872%2C-9.54879c0.16581%2C-1.07424%200.41453%2C-2.14848%200.74615%2C-3.10336c0.82905%2C-2.62592%201.74101%2C-5.01311%202.98459%2C-7.16159c0.74615%2C-1.31296%201.65811%2C-2.3872%202.65297%2C-3.46144c-1.40939%2C2.50656%20-2.32135%2C5.25183%20-3.0675%2C8.11647c-0.41453%2C2.02912%20-0.82905%2C4.1776%20-0.91196%2C6.20671c-0.16581%2C4.89375%200.33162%2C9.66815%201.40939%2C14.32319c0.99486%2C4.41632%202.73588%2C8.11647%205.05723%2C10.98111c2.73588%2C3.46144%205.88628%2C6.32607%209.61702%2C7.28095c2.65297%2C0.5968%205.30594%2C0.35808%207.87601%2C-0.5968c1.16067%2C-0.47744%202.23844%2C-0.95488%203.31621%2C-1.43232z%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E", drA = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const le = new IrA(), hrA = "data:image/svg+xml;charset=utf8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22424.77466%22%20height%3D%2285.62723%22%20viewBox%3D%220%2C0%2C424.77466%2C85.62723%22%3E%3Cg%20transform%3D%22translate(-26.99997%2C-135.80002)%22%3E%3Cg%20data-paper-data%3D%22%7B%26quot%3BisPaintingLayer%26quot%3B%3Atrue%7D%22%20fill-rule%3D%22nonzero%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20stroke-linecap%3D%22butt%22%20stroke-linejoin%3D%22miter%22%20stroke-miterlimit%3D%2210%22%20stroke-dasharray%3D%22%22%20stroke-dashoffset%3D%220%22%20style%3D%22mix-blend-mode%3A%20normal%22%3E%3Cpath%20d%3D%22M66.43193%2C140.36595c0%2C0.32057%20-0.29704%2C0.64113%20-0.44556%2C0.64113c-0.3713%2C0.16028%20-0.81686%2C0.16028%20-1.26242%2C0.32057c-0.66834%2C0.16028%20-0.89112%2C0.64113%20-0.96538%2C2.08368c-0.07426%2C2.24396%200%2C4.32764%200.14852%2C6.41132c0.44556%2C5.44963%200.44556%2C10.89925%200.22278%2C16.34888c-0.3713%2C9.29642%20-0.29704%2C18.75312%20-0.14852%2C28.20982c0.07426%2C5.28934%200.14852%2C10.57868%200.22278%2C15.86803c0%2C2.72481%20-0.66834%2C4.96878%20-1.33668%2C7.21274c-0.3713%2C1.28226%20-0.66834%2C1.60283%20-1.33668%2C1.60283c-0.66834%2C0%20-1.03964%2C-0.64113%20-1.41094%2C-1.60283c-2.15353%2C-5.12906%20-4.60411%2C-9.29642%20-7.05468%2C-13.62406c-3.86151%2C-6.89217%20-7.35172%2C-14.58576%20-10.47063%2C-22.92048c-1.1139%2C-2.8851%20-2.45057%2C-5.44963%20-3.71299%2C-8.17444c-0.14852%2C0%20-0.22278%2C0%20-0.29704%2C0.16028c0%2C1.60283%200.07426%2C3.20566%200%2C4.80849c-0.3713%2C7.53331%200.29704%2C14.90633%200.22278%2C22.43963c0%2C2.40425%20-0.22278%2C4.80849%20-0.07426%2C7.21274c0.07426%2C1.12198%200.29704%2C1.76311%200.81686%2C1.9234c0.3713%2C0.16028%200.81686%2C0.32057%201.26242%2C0.32057c0.29704%2C0%200.44556%2C0.32057%200.44556%2C1.12198c0.07426%2C1.28226%20-0.14852%2C2.40425%20-0.51982%2C3.36595c-0.44556%2C1.12198%20-0.7426%2C2.40425%20-1.1139%2C3.68651c-0.22278%2C0.80142%20-0.51982%2C1.44255%20-0.96538%2C1.44255c-2.00501%2C0.16028%20-4.08429%2C0.32057%20-6.0893%2C0.48085c-0.81686%2C0%20-1.63371%2C-0.16028%20-2.45057%2C-0.16028c-0.51982%2C0%20-0.7426%2C-0.48085%20-0.7426%2C-1.60283c0%2C-1.12198%200.14852%2C-2.24396%200.59408%2C-3.04538c0.7426%2C-1.44255%201.4852%2C-3.04538%202.07927%2C-4.48793c0.14852%2C-0.32057%200.29704%2C-0.9617%200.29704%2C-1.44255c0.07426%2C-0.9617%20-0.07426%2C-1.9234%20-0.07426%2C-2.8851c0%2C-0.64113%200.07426%2C-1.44255%200.14852%2C-2.24396c0.07426%2C-0.48085%200.07426%2C-0.9617%200.07426%2C-1.44255c0.07426%2C-7.37302%200.14852%2C-14.90633%200.14852%2C-22.27935c0%2C-6.57161%200%2C-13.14321%200%2C-19.55454c0%2C-2.08368%20-0.07426%2C-4.16736%20-0.14852%2C-6.09076c-0.07426%2C-2.72481%20-0.89112%2C-4.48793%20-2.15353%2C-4.96878c-0.96538%2C-0.32057%20-2.00501%2C-0.48085%20-3.04465%2C-0.80142c-0.07426%2C0%20-0.29704%2C-0.48085%20-0.29704%2C-0.64113c0%2C-0.9617%200%2C-1.76311%200.07426%2C-2.72481c0%2C-0.16028%200.07426%2C-0.48085%200.07426%2C-0.48085c0.96538%2C-2.24396%201.85649%2C-4.48793%202.74761%2C-6.57161c0.07426%2C-0.32057%200.07426%2C-0.64113%200.14852%2C-1.28226c1.1139%2C0.16028%202.22779%2C0.16028%203.34169%2C0.64113c1.70797%2C0.32057%203.26743%2C1.60283%204.75262%2C3.52623c0.22278%2C0.16028%200.3713%2C0.48085%200.51982%2C0.80142c1.26242%2C2.8851%202.45057%2C5.60991%203.71299%2C8.495c0.7426%2C1.9234%201.4852%2C3.68651%202.30205%2C5.44963c1.33668%2C2.72481%202.74761%2C5.44963%204.08429%2C8.33472c1.41094%2C3.04538%202.67335%2C6.09076%204.01003%2C9.13614c1.41094%2C3.20566%202.82187%2C6.25104%204.23281%2C9.29642c0.44556%2C1.12198%200.96538%2C2.24396%201.55945%2C3.52623c0.07426%2C-2.24396%200.14852%2C-4.16736%200.14852%2C-6.09076c0.07426%2C-5.93047%200.22278%2C-12.02123%200.14852%2C-17.95171c0%2C-4.00708%20-0.29704%2C-8.17444%20-0.44556%2C-12.18152c-0.07426%2C-1.44255%20-0.44556%2C-2.40425%20-1.1139%2C-2.56453c-0.66834%2C-0.32057%20-1.26242%2C-0.32057%20-1.93075%2C-0.32057c-0.3713%2C0%20-0.51982%2C-0.16028%20-0.59408%2C-0.9617c0%2C-0.16028%200%2C-0.16028%200%2C-0.16028c-0.07426%2C-0.9617%20-0.3713%2C-2.24396%20-0.22278%2C-2.8851c0.29704%2C-1.12198%200.81686%2C-2.08368%201.33668%2C-3.04538c0.3713%2C-0.80142%200.7426%2C-1.44255%201.18816%2C-1.9234c0.29704%2C-0.32057%200.66834%2C-0.64113%200.96538%2C-0.64113c1.1139%2C0%202.15353%2C0%203.19317%2C0c1.4852%2C-0.16028%203.04465%2C-0.32057%204.52985%2C-0.32057c0.14852%2C0%200.29704%2C0%200.44556%2C0c0.14852%2C0%200.29704%2C0.16028%200.29704%2C0.16028c0%2C0.9617%200.07426%2C1.9234%20-0.07426%2C3.04538zM57.52076%2C138.12198c-0.7426%2C1.60283%20-1.41094%2C3.04538%20-2.15353%2C4.48793c-0.44556%2C0.9617%20-0.44556%2C1.76311%20-0.14852%2C2.8851c1.1139%2C-1.9234%202.74761%2C-2.8851%202.30205%2C-7.37302zM58.85744%2C150.78435c0.29704%2C5.44963%200.51982%2C10.89925%200.3713%2C16.34888c-0.14852%2C5.60991%20-0.07426%2C11.3801%20-0.14852%2C17.15029c-0.07426%2C1.60283%20-0.07426%2C3.20566%200.59408%2C4.32764c0.22278%2C0.16028%200.22278%2C0.80142%200.3713%2C1.12198c0.22278%2C0.64113%200.51982%2C1.12198%200.7426%2C1.60283c0.07426%2C0%200.14852%2C-0.16028%200.22278%2C-0.16028v-1.60283c-0.07426%2C-7.85387%20-0.14852%2C-15.86803%20-0.14852%2C-23.88218c0%2C-2.24396%200%2C-4.64821%200%2C-7.05246c-0.07426%2C-4.48793%20-0.59408%2C-8.97585%20-0.3713%2C-13.62406c0.07426%2C-0.9617%20-0.14852%2C-1.9234%20-0.29704%2C-2.72481c-0.29704%2C-1.44255%20-1.70797%2C-1.76311%20-2.15353%2C-0.48085c-0.59408%2C1.60283%20-1.18816%2C3.04538%20-2.00501%2C3.68651c-0.07426%2C0%20-0.07426%2C0.16028%20-0.07426%2C0.32057c0.22278%2C0.16028%200.44556%2C0.16028%200.66834%2C0.16028c1.4852%2C0.32057%202.07927%2C1.60283%202.22779%2C4.80849zM27.59408%2C147.09784c0.89112%2C-1.9234%201.78223%2C-4.00708%202.59909%2C-6.09076c0.14852%2C-0.32057%200.14852%2C-1.12198%200.22278%2C-1.9234c-0.22278%2C0.16028%20-0.29704%2C0.16028%20-0.29704%2C0.32057c-0.81686%2C2.08368%20-1.70797%2C4.00708%20-2.52483%2C5.93047c-0.14852%2C0.32057%20-0.14852%2C0.9617%20-0.22278%2C1.44255c0.07426%2C0%200.14852%2C0.16028%200.22278%2C0.32057zM33.16356%2C157.8368c0.07426%2C4.80849%200%2C9.77727%200%2C14.74604c-0.07426%2C3.04538%20-0.14852%2C6.09076%20-0.14852%2C9.29642c-0.07426%2C6.89217%20-0.07426%2C13.94463%20-0.07426%2C20.8368c0%2C0.64113%200%2C1.44255%20-0.07426%2C2.24396c-0.07426%2C1.60283%20-0.14852%2C3.36595%20-0.14852%2C4.96878c0.44556%2C0%200.81686%2C0%201.18816%2C-0.16028c1.26242%2C-0.32057%201.33668%2C-0.48085%201.4852%2C-3.20566c0.14852%2C-2.72481%200.14852%2C-5.28934%200.14852%2C-7.85387c0%2C-2.8851%20-0.22278%2C-5.77019%20-0.22278%2C-8.65529c0%2C-7.37302%200.07426%2C-14.58576%200.14852%2C-21.95878c0%2C-2.40425%200%2C-4.64821%20-0.07426%2C-6.89217c0%2C-3.52623%20-0.14852%2C-6.89217%20-0.14852%2C-10.4184c0%2C-3.68651%20-0.3713%2C-7.05246%20-2.00501%2C-8.81557c-0.59408%2C-0.80142%20-1.41094%2C-0.9617%20-2.15353%2C-1.12198c-0.22278%2C0%20-0.44556%2C1.12198%20-0.7426%2C1.76311c-0.7426%2C1.76311%20-1.55945%2C3.36595%20-2.30205%2C5.12906c0.44556%2C0%200.89112%2C0%201.41094%2C0.16028c1.26242%2C0.32057%202.59909%2C0.80142%203.11891%2C3.68651c0.3713%2C1.9234%200.51982%2C4.00708%200.59408%2C6.25104zM31.82688%2C215.53872c0.7426%2C-1.28226%201.18816%2C-2.72481%200.7426%2C-4.80849c-0.7426%2C1.76311%20-1.4852%2C3.68651%20-2.30205%2C5.44963c-0.29704%2C0.64113%20-0.3713%2C1.44255%20-0.29704%2C2.40425c0.66834%2C-1.12198%201.26242%2C-2.08368%201.85649%2C-3.04538zM33.38634%2C212.8139c-0.51982%2C2.72481%20-1.41094%2C4.32764%20-2.52483%2C5.44963c0.14852%2C0.16028%200.22278%2C0.16028%200.3713%2C0.16028c2.45057%2C-0.16028%204.90114%2C-0.32057%207.27746%2C-0.48085c0.22278%2C0%200.44556%2C-0.32057%200.59408%2C-0.64113c0.3713%2C-1.28226%200.7426%2C-2.56453%201.1139%2C-4.00708c-2.30205%2C-0.16028%20-4.60411%2C-0.32057%20-6.8319%2C-0.48085zM61.01097%2C217.6224c0.22278%2C-0.64113%200.44556%2C-1.12198%200.59408%2C-1.60283c0.29704%2C-0.9617%200.59408%2C-2.08368%200.81686%2C-3.04538c0.07426%2C-0.16028%200%2C-0.80142%20-0.07426%2C-0.9617c-0.7426%2C-1.60283%20-1.55945%2C-3.36595%20-2.37631%2C-4.96878c-1.26242%2C-2.40425%20-2.52483%2C-4.96878%20-3.71299%2C-7.53331c-0.51982%2C-1.28226%20-0.89112%2C-2.72481%20-1.41094%2C-4.00708c-0.96538%2C-2.24396%20-2.00501%2C-4.48793%20-2.97039%2C-6.89217c-0.96538%2C-2.08368%20-1.78223%2C-4.48793%20-2.74761%2C-6.73189c-1.70797%2C-4.16736%20-3.49021%2C-8.17444%20-5.19818%2C-12.18152c-0.3713%2C-0.9617%20-0.81686%2C-1.76311%20-1.26242%2C-2.72481c-0.66834%2C-1.44255%20-1.41094%2C-2.72481%20-2.07927%2C-4.16736c-0.59408%2C-1.44255%20-1.18816%2C-2.8851%20-1.85649%2C-4.48793c-0.07426%2C0.48085%20-0.14852%2C0.80142%20-0.14852%2C1.12198c-0.07426%2C2.72481%200%2C5.60991%20-0.07426%2C8.495c-0.07426%2C2.24396%200.51982%2C3.68651%201.18816%2C5.12906c1.18816%2C2.40425%202.45057%2C4.48793%203.41595%2C7.21274c3.19317%2C8.495%206.8319%2C16.34888%2010.76767%2C23.56162c2.30205%2C4.16736%204.75262%2C7.85387%206.60912%2C12.98293c0.14852%2C0.32057%200.3713%2C0.48085%200.51982%2C0.80142zM63.46154%2C213.61532c0%2C-0.16028%20-0.07426%2C-0.16028%20-0.14852%2C-0.32057c-0.7426%2C1.28226%20-0.89112%2C3.68651%20-1.85649%2C4.64821c0.07426%2C0%200.14852%2C0.16028%200.14852%2C0.32057c0.22278%2C0%200.51982%2C0%200.59408%2C-0.32057c0.44556%2C-1.44255%200.89112%2C-2.8851%201.26242%2C-4.32764z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M55.21871%2C145.495c-0.29704%2C-1.12198%20-0.29704%2C-1.9234%200.14852%2C-2.8851c0.7426%2C-1.44255%201.41094%2C-2.8851%202.15353%2C-4.48793c0.44556%2C4.48793%20-1.18816%2C5.44963%20-2.30205%2C7.37302z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M30.49021%2C139.08368c-0.07426%2C0.80142%20-0.07426%2C1.60283%20-0.22278%2C1.9234c-0.89112%2C2.08368%20-1.78223%2C4.16736%20-2.67335%2C6.09076c-0.07426%2C-0.16028%20-0.14852%2C-0.32057%20-0.22278%2C-0.32057c0.07426%2C-0.48085%200.07426%2C-1.12198%200.22278%2C-1.44255c0.81686%2C-1.9234%201.70797%2C-3.84679%202.52483%2C-5.93047c0.07426%2C0%200.14852%2C0%200.3713%2C-0.32057z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M31.82688%2C215.37843c-0.59408%2C1.12198%20-1.26242%2C2.08368%20-1.93075%2C3.20566c-0.07426%2C-0.9617%200%2C-1.76311%200.29704%2C-2.40425c0.81686%2C-1.76311%201.55945%2C-3.68651%202.30205%2C-5.44963c0.51982%2C1.9234%200.07426%2C3.52623%20-0.66834%2C4.64821z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M40.21824%2C213.29475c-0.3713%2C1.44255%20-0.7426%2C2.72481%20-1.1139%2C4.00708c-0.14852%2C0.32057%20-0.3713%2C0.64113%20-0.59408%2C0.64113c-2.37631%2C0.16028%20-4.82688%2C0.32057%20-7.27746%2C0.48085c-0.14852%2C0%20-0.22278%2C0%20-0.3713%2C-0.16028c1.1139%2C-1.12198%202.00501%2C-2.72481%202.52483%2C-5.44963c2.22779%2C0.16028%204.52985%2C0.32057%206.8319%2C0.48085z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M63.46154%2C213.61532c-0.44556%2C1.44255%20-0.81686%2C2.8851%20-1.33668%2C4.32764c-0.07426%2C0.32057%20-0.3713%2C0.32057%20-0.59408%2C0.32057c0%2C-0.16028%20-0.07426%2C-0.32057%20-0.14852%2C-0.32057c0.96538%2C-0.9617%201.1139%2C-3.36595%201.85649%2C-4.64821c0.14852%2C0%200.22278%2C0.16028%200.22278%2C0.32057z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M60.93671%2C189.57286v1.60283c-0.07426%2C0%20-0.14852%2C0.16028%20-0.22278%2C0.16028c-0.22278%2C-0.48085%20-0.51982%2C-0.9617%20-0.7426%2C-1.60283c-0.14852%2C-0.32057%20-0.14852%2C-0.9617%20-0.3713%2C-1.12198c-0.66834%2C-1.12198%20-0.66834%2C-2.72481%20-0.59408%2C-4.32764c0.07426%2C-5.77019%200%2C-11.54038%200.14852%2C-17.15029c0.14852%2C-5.44963%20-0.07426%2C-10.89925%20-0.3713%2C-16.34888c-0.14852%2C-3.36595%20-0.7426%2C-4.48793%20-2.30205%2C-4.80849c-0.22278%2C0%20-0.44556%2C0%20-0.66834%2C-0.16028c0%2C-0.16028%200%2C-0.32057%200.07426%2C-0.32057c0.96538%2C-0.64113%201.55945%2C-2.08368%202.15353%2C-3.68651c0.44556%2C-1.28226%201.85649%2C-0.9617%202.15353%2C0.48085c0.14852%2C0.80142%200.3713%2C1.76311%200.29704%2C2.72481c-0.22278%2C4.64821%200.29704%2C9.13614%200.3713%2C13.62406c0%2C2.40425%200%2C4.80849%200%2C7.05246c0%2C8.01415%200.07426%2C15.86803%200.07426%2C23.88218z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M62.42191%2C213.13447c-0.22278%2C0.9617%20-0.51982%2C2.08368%20-0.81686%2C3.04538c-0.14852%2C0.48085%20-0.3713%2C0.9617%20-0.59408%2C1.60283c-0.14852%2C-0.32057%20-0.3713%2C-0.48085%20-0.51982%2C-0.80142c-1.85649%2C-5.12906%20-4.30707%2C-8.81557%20-6.60912%2C-12.98293c-3.93577%2C-7.37302%20-7.5745%2C-15.22689%20-10.76767%2C-23.7219c-0.96538%2C-2.72481%20-2.22779%2C-4.80849%20-3.41595%2C-7.21274c-0.66834%2C-1.44255%20-1.26242%2C-2.8851%20-1.18816%2C-5.12906c0.07426%2C-2.8851%200%2C-5.77019%200.07426%2C-8.495c0%2C-0.32057%200.07426%2C-0.64113%200.14852%2C-1.12198c0.66834%2C1.60283%201.26242%2C3.04538%201.85649%2C4.48793c0.66834%2C1.44255%201.41094%2C2.72481%202.07927%2C4.16736c0.44556%2C0.9617%200.89112%2C1.76311%201.26242%2C2.72481c1.70797%2C4.00708%203.49021%2C8.01415%205.19818%2C12.18152c0.96538%2C2.24396%201.78223%2C4.64821%202.74761%2C6.73189c0.96538%2C2.40425%202.00501%2C4.64821%202.97039%2C6.89217c0.51982%2C1.28226%200.89112%2C2.72481%201.41094%2C4.00708c1.18816%2C2.56453%202.45057%2C5.12906%203.71299%2C7.53331c0.81686%2C1.60283%201.63371%2C3.36595%202.37631%2C4.96878c0.14852%2C0.32057%200.14852%2C0.80142%200.07426%2C1.12198z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M35.46561%2C206.40258c-0.14852%2C2.72481%20-0.22278%2C2.8851%20-1.4852%2C3.20566c-0.3713%2C0.16028%20-0.7426%2C0.16028%20-1.18816%2C0.16028c0%2C-1.60283%200.07426%2C-3.36595%200.14852%2C-4.96878c0%2C-0.64113%200%2C-1.44255%200%2C-2.08368c0%2C-6.89217%200%2C-13.94463%200.07426%2C-20.8368c0%2C-3.20566%200.07426%2C-6.25104%200.14852%2C-9.29642c0%2C-4.96878%200.07426%2C-9.93755%200%2C-14.74604c0%2C-2.08368%20-0.14852%2C-4.16736%20-0.51982%2C-6.09076c-0.59408%2C-3.04538%20-1.93075%2C-3.52623%20-3.19317%2C-3.84679c-0.51982%2C-0.16028%20-0.96538%2C-0.16028%20-1.41094%2C-0.16028c0.7426%2C-1.76311%201.55945%2C-3.36595%202.30205%2C-5.12906c0.29704%2C-0.64113%200.51982%2C-1.76311%200.7426%2C-1.76311c0.7426%2C0.16028%201.55945%2C0.32057%202.15353%2C1.12198c1.63371%2C1.76311%202.00501%2C5.12906%202.00501%2C8.81557c0%2C3.52623%200.14852%2C6.89217%200.14852%2C10.4184c0.07426%2C2.24396%200.07426%2C4.48793%200.07426%2C6.89217c-0.07426%2C7.37302%20-0.14852%2C14.58576%20-0.14852%2C21.95878c0%2C2.8851%200.22278%2C5.77019%200.22278%2C8.65529c0.07426%2C2.40425%200.07426%2C5.12906%20-0.07426%2C7.69359z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M147.74637%2C217.94296c-0.81686%2C1.9234%20-1.4852%2C4.00708%20-2.97039%2C3.36595c1.63371%2C-4.16736%201.63371%2C-4.16736%202.97039%2C-3.36595z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M129.03291%2C218.26353c-0.44556%2C1.9234%20-1.93075%2C3.36595%20-3.41595%2C3.04538c1.1139%2C-1.76311%202.00501%2C-3.84679%203.41595%2C-3.04538z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M109.20555%2C188.8355c-0.29704%2C4.01476%20-1.26242%2C7.81821%20-2.67335%2C11.41036c-1.1139%2C2.74694%20-2.52483%2C5.17692%20-4.23281%2C7.1843c-2.07927%2C2.42998%20-4.38133%2C4.43736%20-6.90616%2C5.70518c-1.78223%2C0.95087%20-3.63873%2C1.58478%20-5.49522%2C2.32433c-0.14852%2C0.10565%20-0.29704%2C0.10565%20-0.44556%2C0.10565c-3.04465%2C0%20-6.01504%2C-0.73956%20-8.61413%2C-3.06389c-2.07927%2C-1.79607%20-4.08429%2C-3.80345%20-5.42096%2C-6.86735c-1.55945%2C-3.4865%20-2.74761%2C-7.07865%20-2.89613%2C-11.30471c0%2C-1.79607%20-0.14852%2C-3.59216%20-0.22278%2C-5.28257c-0.14852%2C-6.44474%201.78223%2C-11.51602%204.60411%2C-16.16468c2.37631%2C-3.9091%205.3467%2C-6.65605%208.61413%2C-8.87473c1.03964%2C-0.73956%202.22779%2C-1.05651%203.41595%2C-1.37347c1.1139%2C-0.31696%202.22779%2C-0.63391%203.34169%2C-0.63391c1.41094%2C0%202.82187%2C0.4226%204.15855%2C0.73956c2.82187%2C0.52826%204.90114%2C2.95825%207.05468%2C5.28257c2.52483%2C2.85259%203.63873%2C6.86735%204.82688%2C10.88211c0.96538%2C3.16954%201.26242%2C6.44474%200.89112%2C9.93124zM84.55131%2C172.77646c-1.41094%2C3.80345%20-2.45057%2C7.81821%20-2.67335%2C12.14993c-0.14852%2C2.85259%20-0.22278%2C5.81083%200.29704%2C8.66342c0.66834%2C4.01476%201.78223%2C7.92386%203.86151%2C11.09341c1.33668%2C2.00738%202.59909%2C3.9091%204.60411%2C4.54301c1.55945%2C0.52826%202.97039%2C0.21131%204.15855%2C-1.47912c1.63371%2C-2.32433%202.74761%2C-5.07127%203.49021%2C-8.24082c0.66834%2C-3.16954%201.18816%2C-6.44474%200.89112%2C-9.82559c0.22278%2C-3.6978%20-0.22278%2C-7.28995%20-0.81686%2C-10.77646c-0.3713%2C-2.21869%20-0.81686%2C-4.43736%20-1.55945%2C-6.44474c-1.26242%2C-3.16954%20-3.04465%2C-5.17692%20-5.64374%2C-5.38823c-1.70797%2C-0.21131%20-3.26743%2C0.52826%20-4.60411%2C1.90173c-0.81686%2C0.95087%20-1.4852%2C2.32433%20-2.00501%2C3.80345zM94.87342%2C212.92404c-8.68839%2C0.21131%20-14.48065%2C-7.1843%20-17.5253%2C-16.90425c-2.37631%2C-11.30471%20-0.89112%2C-21.13031%205.64374%2C-28.94852c-0.22278%2C0%20-0.29704%2C0.10565%20-0.44556%2C0.21131c-1.63371%2C1.37347%20-3.19317%2C3.06389%20-4.52985%2C5.07127c-1.63371%2C2.42998%20-3.26743%2C4.96563%20-4.08429%2C8.24082c-0.51982%2C2.00738%20-1.03964%2C3.9091%20-1.03964%2C6.02214c-0.07426%2C3.38085%200%2C6.65605%200.44556%2C9.93124c0.29704%2C2.32433%200.7426%2C4.64867%201.70797%2C6.65605c1.33668%2C2.64129%202.82187%2C5.17692%204.67836%2C7.07865c1.55945%2C1.58478%203.19317%2C2.95825%205.04966%2C3.6978c2.59909%2C1.05651%205.19818%2C1.05651%207.72301%2C-0.10565c0.81686%2C-0.31696%201.55945%2C-0.63391%202.37631%2C-0.95087zM103.33903%2C180.27772c-0.44556%2C-3.2752%20-1.41094%2C-6.33909%20-2.67335%2C-9.08603c-1.1139%2C-2.42998%20-2.82187%2C-3.9091%20-4.60411%2C-5.38823c-1.4852%2C-1.26782%20-2.89613%2C-1.37347%20-4.45559%2C-0.95087c-1.18816%2C0.31696%20-2.22779%2C0.84521%20-3.19317%2C1.90173c0.14852%2C0%200.3713%2C-0.10565%200.51982%2C-0.10565c2.00501%2C-0.52826%203.93577%2C-0.4226%205.64374%2C1.37347c1.4852%2C1.58478%202.74761%2C3.4865%203.41595%2C6.12779c0.51982%2C2.32433%200.96538%2C4.54301%201.26242%2C6.86735c0.44556%2C2.95825%200.81686%2C5.91648%200.59408%2C8.98038c-0.14852%2C1.90173%20-0.29704%2C3.6978%20-0.51982%2C5.59953c-0.22278%2C1.79607%20-0.44556%2C3.6978%20-0.89112%2C5.28257c-0.96538%2C3.38085%20-2.37631%2C6.55039%20-4.67836%2C8.87473c1.55945%2C-0.21131%202.97039%2C-0.63391%204.08429%2C-2.11303c0.3713%2C-0.52826%200.7426%2C-0.95087%201.1139%2C-1.37347c1.63371%2C-1.90173%202.67335%2C-4.33171%203.26743%2C-7.1843c1.33668%2C-6.12779%202.00501%2C-12.36123%201.1139%2C-18.80597z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M102.22514%2C201.19672c-0.59408%2C2.85259%20-1.63371%2C5.28257%20-3.26743%2C7.1843c-0.3713%2C0.4226%20-0.7426%2C0.84521%20-1.1139%2C1.37347c-1.1139%2C1.47912%20-2.52483%2C1.90173%20-4.08429%2C2.11303c2.30205%2C-2.32433%203.71299%2C-5.49388%204.67836%2C-8.87473c0.44556%2C-1.58478%200.66834%2C-3.4865%200.89112%2C-5.28257c0.22278%2C-1.90173%200.3713%2C-3.6978%200.51982%2C-5.59953c0.22278%2C-3.06389%20-0.14852%2C-6.02214%20-0.59408%2C-8.98038c-0.29704%2C-2.32433%20-0.7426%2C-4.54301%20-1.26242%2C-6.86735c-0.66834%2C-2.64129%20-1.93075%2C-4.54301%20-3.41595%2C-6.12779c-1.70797%2C-1.79607%20-3.63873%2C-1.90173%20-5.64374%2C-1.37347c-0.14852%2C0%20-0.3713%2C0.10565%20-0.51982%2C0.10565c0.96538%2C-1.05651%202.00501%2C-1.58478%203.19317%2C-1.90173c1.55945%2C-0.4226%202.97039%2C-0.31696%204.45559%2C0.95087c1.78223%2C1.47912%203.49021%2C2.95825%204.60411%2C5.38823c1.26242%2C2.74694%202.22779%2C5.81083%202.67335%2C9.08603c0.89112%2C6.44474%200.22278%2C12.67818%20-1.1139%2C18.80597z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M94.87342%2C212.81839c-0.81686%2C0.31696%20-1.55945%2C0.73956%20-2.37631%2C1.05651c-2.52483%2C1.16216%20-5.12392%2C1.16216%20-7.72301%2C0.10565c-1.85649%2C-0.73956%20-3.49021%2C-2.11303%20-5.04966%2C-3.6978c-1.85649%2C-1.90173%20-3.34169%2C-4.43736%20-4.67836%2C-7.07865c-0.96538%2C-2.00738%20-1.41094%2C-4.33171%20-1.70797%2C-6.65605c-0.44556%2C-3.2752%20-0.51982%2C-6.55039%20-0.44556%2C-9.93124c0%2C-2.11303%200.51982%2C-4.01476%201.03964%2C-6.02214c0.81686%2C-3.2752%202.45057%2C-5.81083%204.08429%2C-8.24082c1.33668%2C-2.00738%202.89613%2C-3.6978%204.52985%2C-5.07127c0.14852%2C-0.10565%200.22278%2C-0.21131%200.44556%2C-0.21131c-6.53486%2C7.81821%20-8.02005%2C17.64381%20-5.64374%2C28.94852c3.04465%2C9.71994%208.83691%2C17.11555%2017.5253%2C16.79859z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M165.42019%2C166.85997c0.07426%2C0.63391%20-0.22278%2C0.63391%20-0.59408%2C0.63391c-1.78223%2C-0.10565%20-3.56447%2C1.16216%20-4.15855%2C3.06389c-0.3713%2C1.26782%20-0.7426%2C2.42998%20-1.03964%2C3.6978c-1.18816%2C5.38823%20-2.67335%2C10.6708%20-4.30707%2C15.74208c-0.89112%2C2.74694%20-1.4852%2C5.81083%20-2.22779%2C8.66342c-0.59408%2C2.21869%20-1.1139%2C4.43736%20-1.70797%2C6.65605c-0.66834%2C2.42998%20-1.41094%2C4.75432%20-2.15353%2C7.07865c-0.07426%2C0.21131%20-0.14852%2C0.31696%20-0.14852%2C0.4226c-0.29704%2C2.32433%20-1.55945%2C3.59216%20-2.67335%2C4.96563c-0.22278%2C0.21131%20-0.59408%2C0.21131%20-0.96538%2C0.21131c-0.51982%2C0.10565%20-0.96538%2C0%20-1.41094%2C-0.10565c-0.14852%2C0%20-0.29704%2C-0.21131%20-0.3713%2C-0.31696c-1.03964%2C-3.4865%20-2.15353%2C-7.07865%20-3.19317%2C-10.6708c-0.22278%2C-1.05651%20-0.29704%2C-2.11303%20-0.51982%2C-3.16954c-0.44556%2C-1.90173%20-0.89112%2C-3.59216%20-1.26242%2C-5.49388c-0.51982%2C-2.74694%20-0.96538%2C-5.49388%20-1.41094%2C-8.13517c-0.07426%2C-0.10565%20-0.07426%2C-0.31696%20-0.14852%2C-0.73956c-0.07426%2C0.4226%20-0.22278%2C0.63391%20-0.22278%2C0.84521c-0.44556%2C2.64129%20-1.26242%2C5.07127%20-2.00501%2C7.60691c-0.96538%2C3.16954%20-1.78223%2C6.44474%20-2.67335%2C9.71994c-0.66834%2C2.42998%20-1.26242%2C4.96563%20-2.00501%2C7.28995c-0.22278%2C0.84521%20-0.96538%2C1.37347%20-1.4852%2C2.11303c-0.81686%2C1.16216%20-1.78223%2C1.26782%20-2.82187%2C1.05651c0%2C0%20-0.07426%2C0%20-0.14852%2C0c-1.03964%2C-0.10565%20-0.96538%2C-0.10565%20-1.33668%2C-1.58478c-0.51982%2C-2.00738%20-1.03964%2C-3.9091%20-1.55945%2C-5.91648c-0.51982%2C-2.11303%20-0.96538%2C-4.33171%20-1.4852%2C-6.55039c-0.3713%2C-1.47912%20-0.66834%2C-2.95825%20-0.96538%2C-4.43736c-1.1139%2C-4.96563%20-2.15353%2C-9.93124%20-3.26743%2C-14.89687c-0.51982%2C-2.32433%20-0.89112%2C-4.75432%20-1.4852%2C-7.07865c-0.3713%2C-1.47912%20-0.89112%2C-2.95825%20-1.4852%2C-4.43736c-0.22278%2C-0.4226%20-0.66834%2C-0.84521%20-1.03964%2C-0.95087c-0.81686%2C-0.10565%20-1.70797%2C0%20-2.52483%2C-0.10565c-0.14852%2C0%20-0.44556%2C-0.21131%20-0.44556%2C-0.4226c0%2C-0.84521%200%2C-1.58478%200%2C-2.21869c0.29704%2C-0.4226%200.59408%2C-0.73956%200.7426%2C-1.05651c0.81686%2C-1.26782%201.63371%2C-2.53563%202.45057%2C-3.9091c0.07426%2C-0.10565%200.22278%2C-0.21131%200.29704%2C-0.21131c1.33668%2C0.4226%202.67335%2C-0.21131%203.93577%2C-0.31696c2.00501%2C0.21131%203.93577%2C0.31696%205.94078%2C0.4226c1.18816%2C0.10565%201.18816%2C0%201.1139%2C1.69042c0%2C0.31696%20-0.07426%2C0.52826%20-0.07426%2C0.84521c0%2C0.63391%20-0.22278%2C0.84521%20-0.66834%2C0.84521c-0.51982%2C0%20-1.1139%2C0.21131%20-1.63371%2C0.4226c-0.59408%2C0.31696%20-0.66834%2C0.52826%20-0.44556%2C1.47912c0.59408%2C2.42998%201.1139%2C4.96563%201.70797%2C7.50126c0.59408%2C2.42998%201.26242%2C4.75432%201.85649%2C7.1843c1.18816%2C4.75432%202.30205%2C9.40299%203.41595%2C14.1573c0%2C0.10565%200.07426%2C0.10565%200.14852%2C0.31696c0.22278%2C-0.95087%200.44556%2C-1.90173%200.7426%2C-2.85259c0.59408%2C-1.90173%201.26242%2C-3.80345%201.85649%2C-5.70518c0.29704%2C-1.05651%200.66834%2C-2.11303%200.96538%2C-3.16954c0.66834%2C-2.21869%201.41094%2C-4.33171%202.07927%2C-6.55039c0.07426%2C-0.31696%200.14852%2C-0.73956%200.07426%2C-0.95087c-0.3713%2C-1.69042%20-0.81686%2C-3.2752%20-1.26242%2C-4.96563c-0.22278%2C-0.73956%20-0.51982%2C-1.47912%20-0.7426%2C-2.21869c-0.3713%2C-1.05651%20-1.03964%2C-1.58478%20-1.85649%2C-1.58478c-0.81686%2C-0.10565%20-1.55945%2C-0.10565%20-2.37631%2C-0.10565c-0.14852%2C0%20-0.3713%2C-0.21131%20-0.3713%2C-0.4226c-0.07426%2C-0.63391%20-0.07426%2C-1.37347%20-0.07426%2C-2.11303c0%2C-0.21131%200.22278%2C-0.4226%200.29704%2C-0.52826c0.59408%2C-0.4226%201.26242%2C-0.95087%201.93075%2C-1.37347c2.74761%2C-1.79607%205.64374%2C-1.47912%208.53987%2C-1.26782c1.78223%2C0.10565%203.56447%2C0%205.3467%2C0c0.14852%2C0%200.3713%2C0.21131%200.3713%2C0.4226c0.07426%2C0.63391%200.07426%2C1.37347%200.07426%2C2.00738c0%2C0.95087%20-0.14852%2C0.95087%20-0.7426%2C0.84521c-0.7426%2C-0.10565%20-1.4852%2C-0.10565%20-2.15353%2C0c-1.1139%2C0.21131%20-1.33668%2C1.05651%20-0.96538%2C2.53563c0.29704%2C1.05651%200.51982%2C2.21869%200.7426%2C3.2752c0.59408%2C2.21869%201.1139%2C4.54301%201.70797%2C6.86735c1.1139%2C4.33171%202.15353%2C8.66342%203.19317%2C12.99514c0.3713%2C1.37347%200.66834%2C2.74694%201.03964%2C4.43736c0.44556%2C-1.37347%200.81686%2C-2.53563%201.1139%2C-3.80345c1.41094%2C-5.07127%202.74761%2C-10.14255%204.08429%2C-15.21382c0.44556%2C-1.58478%200.81686%2C-3.2752%201.18816%2C-4.96563c0.14852%2C-0.52826%200.14852%2C-1.16216%200.07426%2C-1.79607c0%2C-0.73956%20-0.44556%2C-1.05651%20-0.96538%2C-1.05651c-0.81686%2C0%20-1.55945%2C0%20-2.37631%2C0c-0.07426%2C0%20-0.29704%2C-0.21131%20-0.29704%2C-0.31696c-0.29704%2C-1.26782%200.07426%2C-2.74694%200.89112%2C-3.38085c0.81686%2C-0.63391%201.70797%2C-1.26782%202.52483%2C-1.90173c0.14852%2C-0.10565%200.29704%2C-0.21131%200.3713%2C-0.31696c0.44556%2C-1.05651%201.1139%2C-0.73956%201.85649%2C-0.73956c2.00501%2C0.10565%204.01003%2C0%205.94078%2C0c1.03964%2C0%202.15353%2C-0.21131%203.19317%2C0c0.89112%2C0.31696%200.29704%2C1.58478%200.44556%2C2.00738zM150.86528%2C170.24082c0.96538%2C-0.73956%201.93075%2C-1.47912%202.89613%2C-2.21869c0.66834%2C-0.52826%200.81686%2C-0.84521%200.7426%2C-2.00738c-0.96538%2C0.63391%20-1.85649%2C1.37347%20-2.74761%2C1.90173c-1.18816%2C0.73956%20-1.18816%2C0.73956%20-1.1139%2C2.53563c-0.07426%2C0%20-0.07426%2C0%200%2C0c0.07426%2C0%200.14852%2C0%200.22278%2C-0.21131zM128.58735%2C169.71257c1.03964%2C-0.73956%202.15353%2C-1.58478%203.19317%2C-2.32433c0.7426%2C-0.52826%200.7426%2C-0.73956%200.3713%2C-1.79607c-0.44556%2C0.4226%20-0.89112%2C0.73956%20-1.33668%2C1.05651c-0.59408%2C0.4226%20-1.18816%2C0.73956%20-1.78223%2C1.16216c-0.7426%2C0.63391%20-0.81686%2C0.84521%20-0.44556%2C1.90173zM110.83927%2C170.87473c0.14852%2C-0.21131%200.29704%2C-0.4226%200.44556%2C-0.52826c0.66834%2C-1.05651%201.33668%2C-2.11303%202.00501%2C-3.06389c0.3713%2C-0.4226%200.44556%2C-1.05651%200.29704%2C-1.90173c-1.03964%2C1.47912%20-1.93075%2C2.85259%20-2.82187%2C4.22606c-0.14852%2C0.31696%20-0.14852%2C0.73956%20-0.14852%2C1.16216c0.07426%2C0%200.14852%2C0%200.22278%2C0.10565zM125.1714%2C217.25576c0.66834%2C-0.84521%201.26242%2C-1.47912%201.85649%2C-2.21869c0.14852%2C-0.10565%200.22278%2C-0.63391%200.14852%2C-0.84521c-0.22278%2C-1.26782%20-0.44556%2C-2.53563%20-0.7426%2C-3.6978c-0.59408%2C-2.53563%20-1.33668%2C-4.96563%20-1.85649%2C-7.50126c-1.18816%2C-5.38823%20-2.22779%2C-10.77646%20-3.49021%2C-16.16468c-0.81686%2C-3.59216%20-2.07927%2C-7.07865%20-3.04465%2C-10.56515c-0.44556%2C-1.47912%20-0.81686%2C-3.06389%20-1.03964%2C-4.64867c-0.29704%2C-1.90173%20-1.33668%2C-3.38085%20-2.74761%2C-3.38085c-0.22278%2C0%20-0.59408%2C-0.10565%20-0.7426%2C0.10565c-0.7426%2C0.95087%20-1.4852%2C2.00738%20-2.22779%2C3.06389c0.07426%2C0.10565%200.14852%2C0.10565%200.14852%2C0.10565c0.14852%2C-0.10565%200.29704%2C-0.10565%200.44556%2C-0.10565c1.1139%2C-0.10565%202.22779%2C-0.21131%202.82187%2C1.58478c0.66834%2C1.90173%201.41094%2C3.9091%201.85649%2C6.02214c0.96538%2C4.22606%201.78223%2C8.45212%202.67335%2C12.67818c0.59408%2C2.85259%201.26242%2C5.70518%201.85649%2C8.55777c0.7426%2C3.38085%201.4852%2C6.86735%202.30205%2C10.2482c0.3713%2C1.58478%200.89112%2C3.16954%201.33668%2C4.75432c0.14852%2C0.63391%200.29704%2C1.26782%200.44556%2C2.00738zM129.10717%2C215.45968c-1.4852%2C-0.52826%20-2.37631%2C0.84521%20-3.41595%2C2.00738c1.41094%2C0.31696%202.97039%2C-0.63391%203.41595%2C-2.00738zM137.05296%2C179.74946c0%2C0%20-0.07426%2C-0.10565%20-0.14852%2C-0.10565c-0.66834%2C0.73956%20-1.78223%2C0.95087%20-2.15353%2C2.32433c-0.51982%2C1.90173%20-1.03964%2C3.6978%20-1.63371%2C5.59953c-0.22278%2C0.63391%20-0.3713%2C1.26782%20-0.59408%2C1.90173c-0.59408%2C1.79607%20-1.26242%2C3.6978%20-1.85649%2C5.59953c-0.44556%2C1.58478%20-0.89112%2C3.06389%20-1.33668%2C4.64867c-0.07426%2C0.21131%20-0.07426%2C0.4226%20-0.07426%2C0.52826c0.29704%2C1.16216%200.59408%2C2.42998%200.89112%2C3.6978c2.37631%2C-8.13517%204.67836%2C-16.16468%206.90616%2C-24.1942zM137.35%2C178.48164c-0.51982%2C-2.21869%20-1.1139%2C-4.43736%20-1.63371%2C-6.65605c-0.29704%2C-1.37347%20-0.7426%2C-2.42998%20-1.4852%2C-3.38085c-0.59408%2C-0.73956%20-1.33668%2C-0.84521%20-2.07927%2C-0.31696c-0.44556%2C0.31696%20-0.96538%2C0.63391%20-1.41094%2C0.95087c-0.3713%2C0.21131%20-0.7426%2C0.52826%20-1.1139%2C0.84521c0.3713%2C0.21131%200.7426%2C0.10565%201.1139%2C0.21131c0.59408%2C0.21131%201.18816%2C0.21131%201.63371%2C0.73956c0.51982%2C0.52826%200.89112%2C1.47912%201.18816%2C2.32433c0.44556%2C1.47912%200.81686%2C3.06389%201.26242%2C4.64867c0.22278%2C0.63391%200.44556%2C1.26782%200.66834%2C2.00738c0.59408%2C-0.52826%201.18816%2C-0.95087%201.85649%2C-1.37347zM144.33042%2C217.57271c0.22278%2C-0.4226%200.3713%2C-0.73956%200.51982%2C-1.05651c0.3713%2C-0.73956%200.96538%2C-1.37347%201.03964%2C-2.11303c0.07426%2C-0.73956%20-0.44556%2C-1.47912%20-0.66834%2C-2.32433c-0.89112%2C-3.38085%20-1.70797%2C-6.7617%20-2.52483%2C-10.14255c-0.96538%2C-3.9091%20-1.93075%2C-7.81821%20-2.89613%2C-11.83297c-0.44556%2C-1.79607%20-0.89112%2C-3.59216%20-1.33668%2C-5.49388c-0.14852%2C0.31696%20-0.22278%2C0.63391%20-0.29704%2C0.95087c-0.51982%2C1.47912%20-0.96538%2C3.06389%20-0.3713%2C4.75432c0.07426%2C0.21131%200.07426%2C0.31696%200.07426%2C0.52826c0.3713%2C2.32433%200.7426%2C4.64867%201.18816%2C6.86735c0.3713%2C2.11303%200.89112%2C4.12041%201.33668%2C6.12779c0.22278%2C0.95087%200.29704%2C2.00738%200.51982%2C2.95825c0.51982%2C1.79607%201.03964%2C3.4865%201.55945%2C5.28257c0.51982%2C1.47912%200.96538%2C3.06389%201.41094%2C4.54301c0.14852%2C0.21131%200.22278%2C0.4226%200.44556%2C0.95087zM147.82063%2C215.35403c-1.41094%2C-0.52826%20-1.41094%2C-0.52826%20-2.97039%2C2.21869c1.41094%2C0.4226%202.15353%2C-1.05651%202.97039%2C-2.21869zM158.21699%2C168.7617c-1.03964%2C-0.95087%20-2.30205%2C-0.95087%20-3.41595%2C-0.52826c-1.03964%2C0.31696%20-1.93075%2C1.47912%20-2.97039%2C2.32433c0.3713%2C0%200.59408%2C0%200.81686%2C0c0.22278%2C0.10565%200.44556%2C0.10565%200.66834%2C0.21131c0.66834%2C0.21131%201.18816%2C0.95087%201.18816%2C1.90173c0%2C1.05651%20-0.14852%2C2.21869%20-0.3713%2C3.2752c-0.44556%2C1.90173%20-1.03964%2C3.6978%20-1.55945%2C5.49388c-1.55945%2C5.70518%20-3.11891%2C11.51602%20-4.67836%2C17.2212c-0.07426%2C0.31696%20-0.22278%2C0.63391%20-0.14852%2C0.84521c0.3713%2C1.58478%200.7426%2C3.16954%201.1139%2C4.75432c0.07426%2C0%200.07426%2C0%200.14852%2C0c0.14852%2C-0.52826%200.29704%2C-1.05651%200.44556%2C-1.58478c1.4852%2C-5.38823%202.97039%2C-10.88211%204.45559%2C-16.27034c1.1139%2C-4.22606%202.22779%2C-8.34647%203.34169%2C-12.57253c0.3713%2C-1.37347%200.7426%2C-2.85259%201.1139%2C-4.33171c0%2C-0.21131%20-0.07426%2C-0.73956%20-0.14852%2C-0.73956z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M153.76141%2C168.12779c-0.96538%2C0.73956%20-1.93075%2C1.47912%20-2.89613%2C2.21869c-0.07426%2C0.10565%20-0.14852%2C0.10565%20-0.22278%2C0.10565l-0.07426%2C-0.10565c0%2C-1.79607%200%2C-1.69042%201.18816%2C-2.42998c0.89112%2C-0.52826%201.78223%2C-1.26782%202.74761%2C-1.90173c0.07426%2C1.37347%20-0.07426%2C1.58478%20-0.7426%2C2.11303z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M131.70626%2C167.49388c-1.03964%2C0.73956%20-2.15353%2C1.58478%20-3.19317%2C2.32433c-0.29704%2C-1.26782%20-0.22278%2C-1.47912%200.51982%2C-2.00738c0.59408%2C-0.4226%201.18816%2C-0.73956%201.78223%2C-1.16216c0.44556%2C-0.31696%200.89112%2C-0.63391%201.33668%2C-1.05651c0.3713%2C1.16216%200.29704%2C1.37347%20-0.44556%2C1.90173z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M113.28984%2C167.28258c-0.66834%2C0.95087%20-1.33668%2C2.00738%20-2.00501%2C3.06389c-0.14852%2C0.10565%20-0.29704%2C0.31696%20-0.44556%2C0.52826c-0.07426%2C0%20-0.14852%2C0%20-0.14852%2C-0.10565c0%2C-0.4226%200%2C-0.84521%200.14852%2C-1.16216c0.89112%2C-1.37347%201.78223%2C-2.74694%202.82187%2C-4.22606c0.07426%2C0.84521%200%2C1.47912%20-0.3713%2C1.90173z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M137.35%2C178.37599c-0.59408%2C0.52826%20-1.18816%2C0.95087%20-1.85649%2C1.47912c-0.22278%2C-0.73956%20-0.44556%2C-1.37347%20-0.66834%2C-2.00738c-0.44556%2C-1.58478%20-0.81686%2C-3.16954%20-1.26242%2C-4.64867c-0.29704%2C-0.84521%20-0.66834%2C-1.79607%20-1.18816%2C-2.32433c-0.44556%2C-0.52826%20-1.03964%2C-0.52826%20-1.63371%2C-0.73956c-0.3713%2C-0.10565%20-0.7426%2C0%20-1.1139%2C-0.21131c0.3713%2C-0.31696%200.7426%2C-0.63391%201.1139%2C-0.84521c0.44556%2C-0.31696%200.96538%2C-0.63391%201.41094%2C-0.95087c0.7426%2C-0.52826%201.4852%2C-0.4226%202.07927%2C0.31696c0.7426%2C0.95087%201.18816%2C2.00738%201.4852%2C3.38085c0.44556%2C2.11303%201.03964%2C4.33171%201.63371%2C6.55039z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M158.36551%2C169.50126c-0.3713%2C1.47912%20-0.7426%2C2.95825%20-1.1139%2C4.33171c-1.1139%2C4.22606%20-2.22779%2C8.34647%20-3.34169%2C12.57253c-1.4852%2C5.38823%20-2.97039%2C10.88211%20-4.45559%2C16.27034c-0.14852%2C0.52826%20-0.29704%2C1.05651%20-0.44556%2C1.58478c-0.07426%2C0%20-0.07426%2C0%20-0.14852%2C0c-0.3713%2C-1.58478%20-0.7426%2C-3.16954%20-1.1139%2C-4.75432c-0.07426%2C-0.21131%200.07426%2C-0.52826%200.14852%2C-0.84521c1.55945%2C-5.70518%203.11891%2C-11.51602%204.67836%2C-17.2212c0.51982%2C-1.79607%201.1139%2C-3.59216%201.55945%2C-5.49388c0.22278%2C-1.05651%200.3713%2C-2.21869%200.3713%2C-3.2752c0%2C-0.95087%20-0.51982%2C-1.69042%20-1.18816%2C-1.90173c-0.22278%2C-0.10565%20-0.44556%2C-0.10565%20-0.66834%2C-0.21131c-0.22278%2C0%20-0.44556%2C0%20-0.81686%2C0c1.03964%2C-0.84521%201.93075%2C-2.00738%202.97039%2C-2.32433c1.1139%2C-0.4226%202.37631%2C-0.4226%203.41595%2C0.52826c0.07426%2C0%200.14852%2C0.52826%200.14852%2C0.73956z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M145.88987%2C214.50882c-0.07426%2C0.73956%20-0.66834%2C1.37347%20-1.03964%2C2.11303c-0.14852%2C0.31696%20-0.29704%2C0.63391%20-0.51982%2C1.05651c-0.22278%2C-0.4226%20-0.3713%2C-0.63391%20-0.44556%2C-0.95087c-0.44556%2C-1.47912%20-0.89112%2C-3.06389%20-1.41094%2C-4.54301c-0.51982%2C-1.79607%20-1.03964%2C-3.4865%20-1.55945%2C-5.28257c-0.22278%2C-0.95087%20-0.29704%2C-2.00738%20-0.51982%2C-2.95825c-0.44556%2C-2.00738%20-0.96538%2C-4.01476%20-1.33668%2C-6.12779c-0.44556%2C-2.21869%20-0.81686%2C-4.54301%20-1.18816%2C-6.86735c0%2C-0.21131%200%2C-0.31696%20-0.07426%2C-0.52826c-0.59408%2C-1.69042%20-0.14852%2C-3.2752%200.3713%2C-4.75432c0.07426%2C-0.31696%200.14852%2C-0.63391%200.29704%2C-0.95087c0.44556%2C1.90173%200.89112%2C3.6978%201.33668%2C5.49388c0.96538%2C4.01476%201.93075%2C7.92386%202.89613%2C11.83297c0.81686%2C3.38085%201.63371%2C6.7617%202.52483%2C10.14255c0.22278%2C0.73956%200.7426%2C1.58478%200.66834%2C2.32433z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M137.12722%2C179.74946c-2.30205%2C8.02952%20-4.60411%2C16.05903%20-6.98042%2C24.29985c-0.29704%2C-1.26782%20-0.59408%2C-2.53563%20-0.89112%2C-3.6978c0%2C-0.10565%200%2C-0.31696%200.07426%2C-0.52826c0.44556%2C-1.58478%200.89112%2C-3.06389%201.33668%2C-4.64867c0.59408%2C-1.90173%201.26242%2C-3.80345%201.85649%2C-5.59953c0.22278%2C-0.63391%200.3713%2C-1.26782%200.59408%2C-1.90173c0.59408%2C-1.90173%201.1139%2C-3.6978%201.63371%2C-5.59953c0.3713%2C-1.37347%201.4852%2C-1.58478%202.15353%2C-2.32433c0.14852%2C-0.10565%200.14852%2C-0.10565%200.22278%2C0z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M126.95364%2C215.03707c-0.59408%2C0.73956%20-1.18816%2C1.37347%20-1.85649%2C2.21869c-0.14852%2C-0.73956%20-0.22278%2C-1.37347%20-0.44556%2C-2.00738c-0.44556%2C-1.58478%20-0.96538%2C-3.16954%20-1.33668%2C-4.75432c-0.81686%2C-3.38085%20-1.55945%2C-6.86735%20-2.30205%2C-10.2482c-0.59408%2C-2.85259%20-1.26242%2C-5.70518%20-1.85649%2C-8.55777c-0.89112%2C-4.22606%20-1.70797%2C-8.45212%20-2.67335%2C-12.67818c-0.3713%2C-2.11303%20-1.1139%2C-4.12041%20-1.78223%2C-6.02214c-0.59408%2C-1.79607%20-1.70797%2C-1.69042%20-2.82187%2C-1.58478c-0.14852%2C0%20-0.29704%2C0%20-0.44556%2C0.10565c0%2C0%20-0.07426%2C0%20-0.14852%2C-0.10565c0.7426%2C-1.05651%201.4852%2C-2.11303%202.22779%2C-3.06389c0.14852%2C-0.21131%200.51982%2C-0.10565%200.7426%2C-0.10565c1.41094%2C0%202.45057%2C1.47912%202.74761%2C3.38085c0.22278%2C1.58478%200.59408%2C3.16954%201.03964%2C4.64867c0.96538%2C3.4865%202.22779%2C6.973%203.04465%2C10.56515c1.26242%2C5.38823%202.30205%2C10.77646%203.49021%2C16.16468c0.51982%2C2.53563%201.26242%2C4.96563%201.85649%2C7.50126c0.29704%2C1.16216%200.51982%2C2.42998%200.7426%2C3.6978c0%2C0.21131%20-0.07426%2C0.63391%20-0.22278%2C0.84521z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M217%2C194.12246c-0.2%2C1.57203%20-0.3%2C3.14407%20-0.5%2C4.7161c-0.3%2C2.51525%20-0.5%2C4.87331%20-0.7%2C7.38856c-0.2%2C1.41483%20-0.3%2C2.82966%20-0.6%2C4.24449c-0.1%2C0.62881%20-0.5%2C0.94322%20-0.7%2C1.41483c-1.1%2C1.88644%20-2.1%2C3.93008%20-3.2%2C5.81653c-0.1%2C0.1572%20-0.5%2C0.31441%20-0.7%2C0.31441c-0.7%2C0.1572%20-1.4%2C0.1572%20-2.1%2C0.1572c-3.1%2C0%20-6.1%2C-0.1572%20-9.1%2C-0.1572c-4.4%2C0%20-8.8%2C0.1572%20-13.2%2C0.1572c-2.8%2C0.1572%20-5.6%2C0%20-8.4%2C0c-0.5%2C0%20-0.8%2C-0.31441%20-0.8%2C-1.10042c0%2C-1.41483%200%2C-2.67246%200.8%2C-3.93008c1.1%2C-1.57203%202.1%2C-3.45847%203.3%2C-5.18771c0.3%2C-0.47161%200.7%2C-0.47161%201.1%2C-0.78602c-0.5%2C-4.40169%20-0.2%2C-8.80339%20-0.1%2C-13.36229c0%2C-3.45847%200%2C-6.75975%200%2C-10.21822c0%2C-8.48898%200.1%2C-17.13517%200.1%2C-25.78136c0%2C-2.82966%20-0.2%2C-5.81653%20-0.2%2C-8.96059c-0.1%2C-1.88644%20-0.5%2C-2.35805%20-1.7%2C-2.35805c-0.8%2C0%20-1.5%2C0.1572%20-2.3%2C0.1572c-0.6%2C0%20-0.8%2C-0.31441%20-0.7%2C-1.10042c0%2C-0.1572%200%2C-0.1572%200%2C-0.1572c-0.2%2C-2.04364%200.5%2C-3.61568%201.4%2C-5.03051c0.3%2C-0.47161%200.5%2C-1.10042%200.8%2C-1.57203c0.9%2C-1.57203%201.8%2C-2.82966%203.4%2C-2.98686c3.3%2C0.1572%206.7%2C0.1572%2010%2C0.1572c0.9%2C0.1572%201.9%2C0.1572%202.8%2C0.31441c0.2%2C0%200.4%2C0.62881%200.6%2C0.94322c0%2C0.1572%200%2C0.1572%200%2C0.31441c0.1%2C2.20085%200.1%2C2.35805%20-1.2%2C2.67246c-1.6%2C0.31441%20-2.4%2C1.10042%20-2.4%2C3.93008c0.1%2C3.14407%20-0.2%2C6.28814%20-0.3%2C9.4322c-0.1%2C2.20085%20-0.1%2C4.24449%20-0.1%2C6.28814c-0.1%2C3.77288%20-0.2%2C7.54576%20-0.2%2C11.31864c-0.1%2C5.81653%20-0.1%2C11.63305%20-0.1%2C17.44958c0%2C3.77288%200.1%2C7.38856%200.1%2C11.00424c0%2C1.25763%200%2C2.51525%20-0.1%2C3.77288c-0.1%2C1.10042%200.4%2C1.41483%200.9%2C1.41483c3.8%2C-0.1572%207.5%2C-0.31441%2011.3%2C-0.47161c1.1%2C-0.1572%202.4%2C-0.1572%203.5%2C-0.47161c0.7%2C-0.1572%201.4%2C-0.94322%201.7%2C-1.88644c0.4%2C-1.10042%200.9%2C-1.88644%201.4%2C-2.82966c1%2C-1.57203%202%2C-3.30127%202.9%2C-5.03051c0.8%2C-1.41483%201.9%2C-0.94322%202.9%2C-0.94322c0.1%2C0%200.3%2C0.62881%200.4%2C0.94322zM210.1%2C203.71186c0.7%2C-0.47161%201.7%2C-0.78602%202.2%2C-1.72924c0.9%2C-1.88644%201.5%2C-4.08729%201.5%2C-6.60254c-1%2C2.98686%20-3.1%2C4.87331%20-3.7%2C8.33178zM178.1%2C145.2322c1.2%2C-2.35805%202.5%2C-4.40169%203.4%2C-6.91695c-0.1%2C-0.1572%20-0.2%2C-0.1572%20-0.3%2C-0.31441c-1%2C1.41483%20-1.8%2C2.82966%20-2.8%2C4.24449c-0.6%2C0.94322%20-0.7%2C1.72924%20-0.3%2C2.98686zM182.7%2C148.37627c0.1%2C3.77288%200.2%2C7.54576%200.2%2C11.31864c0.1%2C7.38856%200%2C14.77712%200%2C22.16568c0%2C6.60254%20-0.1%2C13.04788%20-0.2%2C19.65042c0%2C1.72924%200%2C3.45847%200%2C5.34492c2.2%2C-0.31441%202.7%2C-1.10042%202.7%2C-4.40169c0%2C-0.31441%200.1%2C-0.62881%200.1%2C-0.94322c0.2%2C-1.10042%200.4%2C-2.20085%200.4%2C-3.30127c-0.1%2C-8.33178%20-0.4%2C-16.66356%20-0.4%2C-24.99534c-0.1%2C-8.01737%200.1%2C-16.19195%200.1%2C-24.20932c0%2C-1.57203%20-0.1%2C-3.30127%20-0.1%2C-5.03051c0%2C-2.82966%20-0.2%2C-3.45847%20-2%2C-3.93008c-0.4%2C0%20-0.8%2C-0.1572%20-1.2%2C0c-0.3%2C0.1572%20-0.7%2C0.31441%20-0.9%2C0.78602c-0.9%2C1.41483%20-1.7%2C3.14407%20-2.6%2C4.87331h1.8c1.4%2C0%202%2C0.78602%202.1%2C2.67246zM180.4%2C212.82966c1.1%2C-1.25763%201.3%2C-2.04364%200.9%2C-4.24449c-1.2%2C2.04364%20-2.4%2C4.24449%20-3.5%2C6.28814c-0.1%2C0.31441%20-0.1%2C0.94322%20-0.1%2C1.25763c1%2C-1.10042%201.8%2C-2.20085%202.7%2C-3.30127zM213.8%2C210.94322c-10.6%2C0%20-21%2C0.1572%20-31.4%2C0.1572c-0.9%2C2.98686%20-3.1%2C3.45847%20-4.1%2C5.97373c0.1%2C0%200.2%2C0%200.3%2C0c4.7%2C0%209.5%2C0%2014.2%2C0c2.7%2C0%205.3%2C-0.1572%208%2C-0.1572c3.1%2C0.1572%206.3%2C0.31441%209.5%2C0.31441c0.2%2C0%200.6%2C-0.1572%200.7%2C-0.47161c1%2C-1.88644%201.9%2C-3.77288%202.8%2C-5.81653z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M181.4%2C138.31525c-0.8%2C2.51525%20-2.1%2C4.5589%20-3.3%2C6.91695c-0.4%2C-1.25763%20-0.3%2C-2.04364%200.3%2C-2.98686c1%2C-1.41483%201.8%2C-2.82966%202.8%2C-4.24449c0%2C0.1572%200.1%2C0.31441%200.2%2C0.31441z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M185.8%2C198.36695c0%2C1.10042%20-0.2%2C2.20085%20-0.4%2C3.30127c0%2C0.31441%20-0.1%2C0.62881%20-0.1%2C0.94322c0%2C3.30127%20-0.5%2C4.08729%20-2.7%2C4.40169c0%2C-1.88644%200%2C-3.61568%200%2C-5.34492c0.1%2C-6.60254%200.2%2C-13.04788%200.2%2C-19.65042c0%2C-7.38856%200.1%2C-14.77712%200%2C-22.16568c0%2C-3.77288%20-0.1%2C-7.54576%20-0.2%2C-11.31864c0%2C-2.04364%20-0.6%2C-2.82966%20-2%2C-2.82966h-1.8c0.9%2C-1.72924%201.7%2C-3.45847%202.6%2C-4.87331c0.2%2C-0.47161%200.6%2C-0.62881%200.9%2C-0.78602c0.4%2C-0.1572%200.8%2C0%201.2%2C0c1.8%2C0.47161%202%2C1.10042%202%2C3.93008c0%2C1.72924%200.1%2C3.45847%200.1%2C5.03051c0%2C8.01737%20-0.2%2C16.19195%20-0.1%2C24.20932c0%2C8.48898%200.2%2C16.82076%200.3%2C25.15254z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M180.5%2C212.82966c-0.9%2C1.10042%20-1.8%2C2.20085%20-2.8%2C3.30127c0%2C-0.31441%200%2C-0.94322%200.1%2C-1.25763c1.1%2C-2.04364%202.3%2C-4.24449%203.5%2C-6.28814c0.5%2C2.35805%200.2%2C3.14407%20-0.8%2C4.24449z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M213.8%2C195.38008c0%2C2.51525%20-0.6%2C4.7161%20-1.5%2C6.60254c-0.5%2C0.94322%20-1.5%2C1.25763%20-2.2%2C1.72924c0.6%2C-3.45847%202.7%2C-5.34492%203.7%2C-8.33178z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M213.9%2C210.94322c-1%2C2.20085%20-2%2C4.08729%20-2.9%2C5.97373c-0.1%2C0.31441%20-0.5%2C0.47161%20-0.7%2C0.47161c-3.2%2C0%20-6.4%2C-0.1572%20-9.5%2C-0.31441c-2.7%2C0%20-5.3%2C0.1572%20-8%2C0.1572c-4.7%2C0%20-9.5%2C0%20-14.2%2C0c-0.1%2C0%20-0.2%2C0%20-0.3%2C0c1%2C-2.51525%203.2%2C-2.98686%204.1%2C-5.97373c10.4%2C-0.31441%2020.9%2C-0.31441%2031.5%2C-0.31441z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M250.76677%2C188.40394c-0.27179%2C4.0998%20-1.15512%2C7.98383%20-2.44613%2C11.65207c-1.01922%2C2.80513%20-2.31024%2C5.28659%20-3.87304%2C7.33649c-1.90255%2C2.48146%20-4.00894%2C4.53136%20-6.31918%2C5.82604c-1.63076%2C0.97101%20-3.32946%2C1.61834%20-5.02816%2C2.37357c-0.1359%2C0.10789%20-0.27179%2C0.10789%20-0.40769%2C0.10789c-2.78587%2C0%20-5.5038%2C-0.75523%20-7.88199%2C-3.1288c-1.90255%2C-1.83412%20-3.73715%2C-3.88402%20-4.96022%2C-7.01282c-1.42691%2C-3.56036%20-2.51408%2C-7.2286%20-2.64998%2C-11.54418c0%2C-1.83412%20-0.1359%2C-3.66824%20-0.20384%2C-5.39448c-0.1359%2C-6.58126%201.63076%2C-11.75996%204.21279%2C-16.5071c2.17434%2C-3.99191%204.89227%2C-6.79704%207.88199%2C-9.06272c0.95127%2C-0.75523%202.03844%2C-1.0789%203.12562%2C-1.40256c1.01922%2C-0.32367%202.03844%2C-0.64734%203.05767%2C-0.64734c1.29101%2C0%202.58203%2C0.43156%203.8051%2C0.75523c2.58203%2C0.53945%204.48458%2C3.02091%206.45507%2C5.39448c2.31024%2C2.91302%203.32946%2C7.01282%204.41663%2C11.11262c0.88333%2C3.23669%201.15512%2C6.58126%200.81538%2C10.14162zM228.20799%2C172.00473c-1.29101%2C3.88402%20-2.24229%2C7.98383%20-2.44613%2C12.4073c-0.1359%2C2.91302%20-0.20384%2C5.93393%200.27179%2C8.84694c0.61153%2C4.0998%201.63076%2C8.09172%203.5333%2C11.3284c1.22307%2C2.0499%202.37819%2C3.99191%204.21279%2C4.63925c1.42691%2C0.53945%202.71793%2C0.21578%203.8051%2C-1.51045c1.49486%2C-2.37357%202.51408%2C-5.1787%203.19356%2C-8.41538c0.61153%2C-3.23669%201.08717%2C-6.58126%200.81538%2C-10.03373c0.20384%2C-3.77613%20-0.20384%2C-7.44438%20-0.74743%2C-11.00473c-0.33974%2C-2.26568%20-0.74743%2C-4.53136%20-1.42691%2C-6.58126c-1.15512%2C-3.23669%20-2.78587%2C-5.28659%20-5.16406%2C-5.50237c-1.56281%2C-0.21578%20-2.98972%2C0.53945%20-4.21279%2C1.94201c-0.74743%2C0.97101%20-1.35896%2C2.37357%20-1.8346%2C3.88402zM237.65278%2C213.00276c-7.94993%2C0.21578%20-13.24989%2C-7.33649%20-16.03576%2C-17.26233c-2.17434%2C-11.54418%20-0.81538%2C-21.57791%205.16406%2C-29.56174c-0.20384%2C0%20-0.27179%2C0.10789%20-0.40769%2C0.21578c-1.49486%2C1.40256%20-2.92177%2C3.1288%20-4.14484%2C5.1787c-1.49486%2C2.48146%20-2.98972%2C5.07081%20-3.73715%2C8.41538c-0.47564%2C2.0499%20-0.95127%2C3.99191%20-0.95127%2C6.1497c-0.06795%2C3.45247%200%2C6.79704%200.40769%2C10.14162c0.27179%2C2.37357%200.67948%2C4.74714%201.56281%2C6.79704c1.22307%2C2.69724%202.58203%2C5.28659%204.28073%2C7.2286c1.42691%2C1.61834%202.92177%2C3.02091%204.62047%2C3.77613c2.37819%2C1.0789%204.75637%2C1.0789%207.06661%2C-0.10789c0.74743%2C-0.32367%201.42691%2C-0.64734%202.17434%2C-0.97101zM245.39887%2C179.66489c-0.40769%2C-3.34458%20-1.29101%2C-6.47337%20-2.44613%2C-9.2785c-1.01922%2C-2.48146%20-2.58203%2C-3.99191%20-4.21279%2C-5.50237c-1.35896%2C-1.29467%20-2.64998%2C-1.40256%20-4.07689%2C-0.97101c-1.08717%2C0.32367%20-2.03844%2C0.86312%20-2.92177%2C1.94201c0.1359%2C0%200.33974%2C-0.10789%200.47564%2C-0.10789c1.8346%2C-0.53945%203.60125%2C-0.43156%205.16406%2C1.40256c1.35896%2C1.61834%202.51408%2C3.56036%203.12562%2C6.25759c0.47564%2C2.37357%200.88333%2C4.63925%201.15512%2C7.01282c0.40769%2C3.02091%200.74743%2C6.04181%200.54359%2C9.17061c-0.1359%2C1.94201%20-0.27179%2C3.77613%20-0.47564%2C5.71815c-0.20384%2C1.83412%20-0.40769%2C3.77613%20-0.81538%2C5.39448c-0.88333%2C3.45247%20-2.17434%2C6.68915%20-4.28073%2C9.06272c1.42691%2C-0.21578%202.71793%2C-0.64734%203.73715%2C-2.15779c0.33974%2C-0.53945%200.67948%2C-0.97101%201.01922%2C-1.40256c1.49486%2C-1.94201%202.44613%2C-4.42347%202.98972%2C-7.33649c1.22307%2C-6.25759%201.8346%2C-12.62308%201.01922%2C-19.20434z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M244.37965%2C198.86923c-0.54359%2C2.91302%20-1.49486%2C5.39448%20-2.98972%2C7.33649c-0.33974%2C0.43156%20-0.67948%2C0.86312%20-1.01922%2C1.40256c-1.01922%2C1.51045%20-2.31024%2C1.94201%20-3.73715%2C2.15779c2.10639%2C-2.37357%203.39741%2C-5.61026%204.28073%2C-9.06272c0.40769%2C-1.61834%200.61153%2C-3.56036%200.81538%2C-5.39448c0.20384%2C-1.94201%200.33974%2C-3.77613%200.47564%2C-5.71815c0.20384%2C-3.1288%20-0.1359%2C-6.1497%20-0.54359%2C-9.17061c-0.27179%2C-2.37357%20-0.67948%2C-4.63925%20-1.15512%2C-7.01282c-0.61153%2C-2.69724%20-1.76665%2C-4.63925%20-3.12562%2C-6.25759c-1.56281%2C-1.83412%20-3.32946%2C-1.94201%20-5.16406%2C-1.40256c-0.1359%2C0%20-0.33974%2C0.10789%20-0.47564%2C0.10789c0.88333%2C-1.0789%201.8346%2C-1.61834%202.92177%2C-1.94201c1.42691%2C-0.43156%202.71793%2C-0.32367%204.07689%2C0.97101c1.63076%2C1.51045%203.19356%2C3.02091%204.21279%2C5.50237c1.15512%2C2.80513%202.03844%2C5.93393%202.44613%2C9.2785c0.81538%2C6.58126%200.20384%2C12.94675%20-1.01922%2C19.20434z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M237.65278%2C212.89487c-0.74743%2C0.32367%20-1.42691%2C0.75523%20-2.17434%2C1.0789c-2.31024%2C1.18679%20-4.68842%2C1.18679%20-7.06661%2C0.10789c-1.6987%2C-0.75523%20-3.19356%2C-2.15779%20-4.62047%2C-3.77613c-1.6987%2C-1.94201%20-3.05767%2C-4.53136%20-4.28073%2C-7.2286c-0.88333%2C-2.0499%20-1.29101%2C-4.42347%20-1.56281%2C-6.79704c-0.40769%2C-3.34458%20-0.47564%2C-6.68915%20-0.40769%2C-10.14162c0%2C-2.15779%200.47564%2C-4.0998%200.95127%2C-6.1497c0.74743%2C-3.34458%202.24229%2C-5.93393%203.73715%2C-8.41538c1.22307%2C-2.0499%202.64998%2C-3.77613%204.14484%2C-5.1787c0.1359%2C-0.10789%200.20384%2C-0.21578%200.40769%2C-0.21578c-5.97944%2C7.98383%20-7.3384%2C18.01755%20-5.16406%2C29.56174c2.78587%2C9.92584%208.08583%2C17.47811%2016.03576%2C17.15444z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M290.777%2C212.94935c-0.62645%2C0.86076%20-1.16341%2C1.93672%20-1.61087%2C2.90508c-0.26848%2C0.53798%20-0.62645%2C0.64557%20-1.07391%2C0.64557c-2.32681%2C-0.1076%20-4.56413%2C-0.21519%20-6.89094%2C-0.32279c-1.61087%2C-0.1076%20-3.22174%2C-0.1076%20-4.83261%2C-0.1076c-0.71594%2C0%20-0.98442%2C-0.32279%20-0.71594%2C-1.07595c0.53696%2C-1.50634%201.16341%2C-2.90508%201.87935%2C-4.30382c0.17899%2C-0.43038%200.80543%2C-0.53798%201.2529%2C-0.75317c-0.26848%2C-1.07595%20-0.53696%2C-2.15191%20-0.80543%2C-3.22786c-0.44746%2C-1.82912%20-0.89493%2C-3.65825%20-1.34239%2C-5.48737c-0.17899%2C-0.64557%20-0.26848%2C-1.29115%20-0.53696%2C-1.93672c-0.08949%2C-0.21519%20-0.53696%2C-0.43038%20-0.71594%2C-0.43038c-4.11667%2C0.43038%20-8.14384%2C0.32279%20-12.17101%2C0c-0.53696%2C0%20-0.80543%2C0.21519%20-0.98442%2C0.86076c-0.26848%2C1.07595%20-0.80543%2C2.15191%20-1.16341%2C3.33546c-0.62645%2C1.61393%20-1.07391%2C3.33546%20-1.61087%2C4.94939c-0.17899%2C0.53798%20-0.08949%2C1.07595%200.44746%2C1.29115c0.44746%2C0.21519%200.89493%2C0.32279%201.34239%2C0.43038c0.80543%2C0.1076%201.61087%2C0.32279%202.4163%2C0.43038c0.44746%2C0%200.71594%2C0.43038%200.62645%2C0.96836c-0.08949%2C0.75317%20-0.26848%2C1.39874%20-0.62645%2C2.04431c-0.44746%2C0.86076%20-1.07391%2C1.61393%20-1.61087%2C2.3671c-0.17899%2C0.21519%20-0.53696%2C0.32279%20-0.80543%2C0.32279c-2.4163%2C-0.1076%20-4.74311%2C-0.21519%20-7.15942%2C-0.32279c-1.34239%2C-0.1076%20-2.77427%2C-0.1076%20-4.20616%2C-0.1076c-0.89493%2C0%20-1.2529%2C-0.64557%20-0.89493%2C-1.72153c0.44746%2C-1.07595%200.89493%2C-2.2595%201.34239%2C-3.33546c0.08949%2C-0.21519%200.35797%2C-0.32279%200.62645%2C-0.43038c0.44746%2C-0.1076%200.89493%2C-0.21519%201.34239%2C-0.21519c1.07391%2C-0.1076%201.61087%2C-0.96836%202.05833%2C-2.04431c1.70036%2C-4.30382%203.40072%2C-8.71523%204.29565%2C-13.44943c0.62645%2C-3.55065%201.78985%2C-6.88611%202.95326%2C-10.22157c0.26848%2C-0.64557%200.35797%2C-1.39874%200.62645%2C-2.15191c0.44746%2C-1.50634%200.98442%2C-3.01267%201.52138%2C-4.51901c0.17899%2C-0.53798%200.26848%2C-0.96836%200.44746%2C-1.50634c0.71594%2C-2.58229%201.43188%2C-5.05699%202.14783%2C-7.63928c0.08949%2C-0.43038%200.08949%2C-0.75317%200.26848%2C-1.07595c0.44746%2C-0.96836%200.71594%2C-1.93672%201.2529%2C-2.68989c0.80543%2C-1.18355%201.96884%2C-2.2595%202.77427%2C-3.76584c0.53696%2C-1.18355%201.07391%2C-0.86076%201.78985%2C-0.43038c0.62645%2C0.32279%201.34239%2C0.64557%201.87935%2C1.07595c0.35797%2C0.32279%200.62645%2C0.86076%200.80543%2C1.29115c1.16341%2C3.12027%201.70036%2C6.45573%202.4163%2C9.79119c0.17899%2C0.75317%200.53696%2C1.50634%200.71594%2C2.2595c0.44746%2C1.72153%200.80543%2C3.55065%201.34239%2C5.37977c0.44746%2C1.72153%200.98442%2C3.33546%201.52138%2C5.05699c0.35797%2C1.39874%200.71594%2C2.79748%201.16341%2C4.19622c0.98442%2C3.12027%201.96884%2C6.24054%202.68478%2C9.4684c0.17899%2C1.07595%200.71594%2C2.04431%200.98442%2C3.12027c0.35797%2C1.39874%200.62645%2C2.68989%201.07391%2C3.98103c0.35797%2C1.18355%200.98442%2C2.2595%201.70036%2C3.22786c0.35797%2C0.43038%201.16341%2C0.53798%201.78985%2C0.53798c0.62645%2C0%200.80543%2C0.32279%200.89493%2C0.96836c0.08949%2C0.96836%200%2C1.61393%20-0.62645%2C2.3671zM270.46215%2C175.07575c0.17899%2C1.39874%200.62645%2C2.90508%200.89493%2C4.30382c0.17899%2C1.07595%200.26848%2C2.15191%200.53696%2C3.12027c0.53696%2C2.2595%201.07391%2C4.41141%201.70036%2C6.56332c0.08949%2C0.21519%200.26848%2C0.43038%200.35797%2C0.43038c0.62645%2C0%201.16341%2C0%201.87935%2C0c-0.08949%2C-0.43038%20-0.17899%2C-0.64557%20-0.26848%2C-0.86076c-0.53696%2C-1.93672%20-1.16341%2C-3.65825%20-1.70036%2C-5.59496c-0.71594%2C-2.4747%20-1.2529%2C-5.16458%20-1.96884%2C-7.74687c-0.26848%2C-0.96836%20-0.71594%2C-1.93672%20-1.07391%2C-2.90508c0%2C0%20-0.08949%2C0%20-0.17899%2C0c-0.08949%2C0.96836%20-0.35797%2C1.82912%20-0.17899%2C2.68989zM272.60998%2C188.30999c-0.62645%2C-2.4747%20-1.2529%2C-4.94939%20-1.78985%2C-7.53168c-0.35797%2C-1.61393%20-0.62645%2C-3.33546%20-0.89493%2C-4.94939c-0.08949%2C-0.1076%20-0.17899%2C-0.1076%20-0.26848%2C-0.1076c-1.34239%2C4.51901%20-2.68478%2C9.03802%20-4.11667%2C13.66462c0.35797%2C0.1076%200.44746%2C0.1076%200.62645%2C0.1076c1.96884%2C0%203.84819%2C0%205.81703%2C0c1.07391%2C0%201.07391%2C0%200.62645%2C-1.18355zM250.68426%2C212.08859c0%2C-0.1076%20-0.08949%2C-0.1076%20-0.17899%2C-0.1076c-0.08949%2C0.96836%20-0.80543%2C1.72153%20-0.71594%2C2.79748c0%2C0.1076%200.08949%2C0.1076%200.17899%2C0.1076c0.17899%2C-0.96836%200.44746%2C-1.93672%200.71594%2C-2.79748zM251.84766%2C212.30378c-0.17899%2C0%20-0.44746%2C0.1076%20-0.53696%2C0.21519c-0.35797%2C0.75317%20-0.71594%2C1.50634%20-1.07391%2C2.3671c1.43188%2C0%202.77427%2C0%204.02717%2C0c2.23732%2C0.1076%204.56413%2C0.21519%206.80145%2C0.32279c0.08949%2C0%200.35797%2C0%200.44746%2C-0.1076c0.62645%2C-0.75317%201.16341%2C-1.50634%201.70036%2C-2.2595c-0.08949%2C0%20-0.08949%2C-0.1076%20-0.08949%2C-0.21519c-0.71594%2C0%20-1.52138%2C0%20-2.32681%2C0c-2.95326%2C0%20-5.99601%2C-0.1076%20-8.94927%2C-0.32279zM263.39222%2C184.75934c0.62645%2C-1.93672%201.07391%2C-3.98103%201.70036%2C-6.02535c0.35797%2C-1.29115%200.89493%2C-2.68989%201.34239%2C-3.98103c0.62645%2C-2.04431%201.34239%2C-4.08863%201.96884%2C-6.13294c0.53696%2C-1.82912%201.16341%2C-3.76584%201.70036%2C-5.59496c-0.08949%2C0%20-0.08949%2C-0.1076%20-0.17899%2C-0.1076c-0.35797%2C0.43038%20-0.80543%2C0.75317%20-1.07391%2C1.29115c-0.53696%2C0.86076%20-1.16341%2C1.72153%20-1.43188%2C2.68989c-0.89493%2C2.90508%20-1.61087%2C5.91775%20-2.4163%2C8.82283c-0.26848%2C1.07595%20-0.44746%2C2.04431%20-0.80543%2C3.12027c-0.44746%2C1.39874%20-0.98442%2C2.79748%20-1.43188%2C4.08863c-0.17899%2C0.53798%20-0.26848%2C0.96836%20-0.44746%2C1.39874c-0.80543%2C2.68989%20-1.78985%2C5.27218%20-2.4163%2C7.96206c-1.07391%2C4.6266%20-2.32681%2C9.14561%20-3.93768%2C13.44943c-0.44746%2C1.18355%20-0.89493%2C2.2595%20-1.34239%2C3.44305c0.08949%2C0%200.08949%2C0.1076%200.17899%2C0.1076c0.53696%2C-0.86076%201.07391%2C-1.72153%201.43188%2C-2.58229c0.71594%2C-2.04431%201.34239%2C-4.08863%202.05833%2C-6.13294c0.89493%2C-2.79748%201.78985%2C-5.48737%202.68478%2C-8.17725c0.26848%2C-0.75317%200.35797%2C-1.50634%200.62645%2C-2.2595c0.53696%2C-1.72153%201.16341%2C-3.55065%201.78985%2C-5.37977zM277.08461%2C194.22774c-0.44746%2C-0.1076%20-0.89493%2C-0.21519%20-1.34239%2C-0.21519c-3.75869%2C-0.1076%20-7.60688%2C-0.21519%20-11.45507%2C-0.32279c-0.17899%2C0%20-0.44746%2C0.21519%20-0.53696%2C0.43038c-0.35797%2C1.18355%20-0.62645%2C2.3671%20-0.89493%2C3.65825c0.62645%2C0.1076%201.34239%2C0.21519%201.96884%2C0.21519c3.57971%2C0%207.15942%2C0%2010.73913%2C0c0.17899%2C0%200.44746%2C-0.1076%200.53696%2C-0.32279c0.35797%2C-1.07595%200.71594%2C-2.15191%200.98442%2C-3.44305zM279.32193%2C209.18351c0.08949%2C0.43038%200.35797%2C0.53798%200.71594%2C0.32279c0.98442%2C-0.43038%201.43188%2C-1.29115%201.16341%2C-2.58229c-0.26848%2C-1.50634%20-0.71594%2C-3.01267%20-1.16341%2C-4.51901c-0.26848%2C-1.07595%20-0.53696%2C-2.15191%20-0.89493%2C-3.22786c-0.44746%2C-1.50634%20-0.89493%2C-3.01267%20-1.34239%2C-4.51901c0%2C0%20-0.08949%2C0%20-0.17899%2C0c-0.35797%2C1.29115%20-0.71594%2C2.58229%20-1.07391%2C3.87344c-0.08949%2C0.1076%200.08949%2C0.32279%200.08949%2C0.43038c0.35797%2C0.96836%200.80543%2C1.93672%201.07391%2C3.01267c0.62645%2C2.3671%201.16341%2C4.7342%201.61087%2C7.20889zM276.54766%2C215.31645c0.44746%2C-0.96836%200.89493%2C-2.04431%201.34239%2C-3.12027c0%2C-0.1076%20-0.08949%2C-0.43038%20-0.26848%2C-0.86076c-0.44746%2C1.39874%20-0.89493%2C2.68989%20-1.34239%2C3.87344c0.08949%2C0.1076%200.17899%2C0.1076%200.26848%2C0.1076zM290.24005%2C212.19618c-0.53696%2C0.1076%20-0.89493%2C0.1076%20-1.34239%2C0.1076c-0.62645%2C0%20-1.34239%2C0.1076%20-2.05833%2C0.1076c-2.4163%2C0%20-4.9221%2C-0.1076%20-7.4279%2C-0.21519c-0.17899%2C0%20-0.53696%2C0%20-0.62645%2C0.21519c-0.62645%2C0.86076%20-1.07391%2C1.93672%20-1.70036%2C3.01267c0.44746%2C0%200.71594%2C0%201.07391%2C0c0.89493%2C0%201.87935%2C0%202.86377%2C0c2.32681%2C0.1076%204.65362%2C0.21519%206.98043%2C0.32279c0.17899%2C0%200.44746%2C-0.1076%200.53696%2C-0.32279c0.62645%2C-0.96836%201.16341%2C-2.04431%201.70036%2C-3.22786z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M277.89005%2C212.30378c-0.44746%2C1.07595%20-0.89493%2C2.15191%20-1.34239%2C3.12027c-0.08949%2C0%20-0.17899%2C-0.1076%20-0.26848%2C-0.1076c0.44746%2C-1.18355%200.89493%2C-2.4747%201.34239%2C-3.87344c0.17899%2C0.32279%200.35797%2C0.64557%200.26848%2C0.86076z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M290.32954%2C212.19618c-0.62645%2C1.18355%20-1.16341%2C2.2595%20-1.78985%2C3.22786c-0.08949%2C0.21519%20-0.35797%2C0.32279%20-0.53696%2C0.32279c-2.32681%2C-0.1076%20-4.65362%2C-0.21519%20-6.98043%2C-0.32279c-0.98442%2C0%20-1.96884%2C0%20-2.86377%2C0c-0.35797%2C0%20-0.62645%2C0%20-1.07391%2C0c0.62645%2C-1.07595%201.07391%2C-2.15191%201.70036%2C-3.01267c0.08949%2C-0.21519%200.44746%2C-0.21519%200.62645%2C-0.21519c2.5058%2C0.1076%205.01159%2C0.21519%207.4279%2C0.21519c0.71594%2C0%201.43188%2C-0.1076%202.05833%2C-0.1076c0.44746%2C-0.1076%200.89493%2C-0.1076%201.43188%2C-0.1076z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M280.12737%2C209.5063c-0.35797%2C0.21519%20-0.62645%2C0.1076%20-0.71594%2C-0.32279c-0.53696%2C-2.3671%20-1.07391%2C-4.7342%20-1.70036%2C-7.20889c-0.26848%2C-1.07595%20-0.71594%2C-2.04431%20-1.07391%2C-3.01267c0%2C-0.1076%20-0.17899%2C-0.32279%20-0.08949%2C-0.43038c0.35797%2C-1.29115%200.71594%2C-2.58229%201.07391%2C-3.87344c0.08949%2C0%200.17899%2C0%200.17899%2C0c0.44746%2C1.50634%200.89493%2C3.01267%201.34239%2C4.51901c0.35797%2C1.07595%200.62645%2C2.15191%200.89493%2C3.22786c0.44746%2C1.50634%200.89493%2C3.01267%201.16341%2C4.51901c0.35797%2C1.29115%20-0.08949%2C2.04431%20-1.07391%2C2.58229z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M263.21324%2C212.94935c-0.53696%2C0.75317%20-1.07391%2C1.50634%20-1.70036%2C2.2595c-0.08949%2C0.1076%20-0.35797%2C0.1076%20-0.44746%2C0.1076c-2.23732%2C-0.21519%20-4.56413%2C-0.32279%20-6.80145%2C-0.43038c-1.2529%2C0%20-2.59529%2C0%20-4.02717%2C0c0.35797%2C-0.86076%200.71594%2C-1.61393%201.07391%2C-2.3671c0.08949%2C-0.1076%200.35797%2C-0.21519%200.53696%2C-0.21519c2.95326%2C0.1076%205.99601%2C0.21519%208.94927%2C0.32279c0.80543%2C0%201.61087%2C0%202.32681%2C0c0.08949%2C0.1076%200.08949%2C0.21519%200.08949%2C0.32279z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M277.17411%2C194.33534c-0.35797%2C1.18355%20-0.71594%2C2.2595%20-1.07391%2C3.33546c-0.08949%2C0.21519%20-0.35797%2C0.32279%20-0.53696%2C0.32279c-3.57971%2C0%20-7.15942%2C0%20-10.73913%2C0c-0.62645%2C0%20-1.34239%2C-0.1076%20-1.96884%2C-0.21519c0.26848%2C-1.29115%200.53696%2C-2.4747%200.89493%2C-3.65825c0.08949%2C-0.21519%200.35797%2C-0.43038%200.53696%2C-0.43038c3.84819%2C0.1076%207.69638%2C0.21519%2011.45507%2C0.32279c0.53696%2C0.1076%200.98442%2C0.21519%201.43188%2C0.32279z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M275.83171%2C189.49354c-0.71594%2C0%20-1.2529%2C0%20-1.87935%2C0c-0.08949%2C0%20-0.26848%2C-0.21519%20-0.35797%2C-0.43038c-0.62645%2C-2.15191%20-1.16341%2C-4.30382%20-1.70036%2C-6.56332c-0.26848%2C-0.96836%20-0.35797%2C-2.04431%20-0.53696%2C-3.12027c-0.26848%2C-1.39874%20-0.71594%2C-2.90508%20-0.89493%2C-4.30382c-0.08949%2C-0.86076%200.17899%2C-1.82912%200.26848%2C-2.68989c0.08949%2C0%200.17899%2C0%200.17899%2C0c0.35797%2C0.96836%200.80543%2C1.93672%201.07391%2C2.90508c0.71594%2C2.58229%201.2529%2C5.27218%201.96884%2C7.74687c0.53696%2C1.93672%201.16341%2C3.65825%201.70036%2C5.59496c0%2C0.32279%200.08949%2C0.53798%200.17899%2C0.86076z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M270.10418%2C163.13266c-0.53696%2C1.82912%20-1.16341%2C3.76584%20-1.70036%2C5.59496c-0.62645%2C2.04431%20-1.34239%2C4.08863%20-1.96884%2C6.13294c-0.44746%2C1.29115%20-0.98442%2C2.68989%20-1.34239%2C3.98103c-0.62645%2C2.04431%20-1.07391%2C4.08863%20-1.70036%2C6.02535c-0.53696%2C1.72153%20-1.16341%2C3.55065%20-1.70036%2C5.27218c-0.26848%2C0.75317%20-0.35797%2C1.50634%20-0.62645%2C2.2595c-0.89493%2C2.68989%20-1.78985%2C5.37977%20-2.68478%2C8.17725c-0.71594%2C2.04431%20-1.34239%2C4.08863%20-2.05833%2C6.13294c-0.35797%2C0.86076%20-0.89493%2C1.72153%20-1.43188%2C2.58229c-0.08949%2C0%20-0.08949%2C-0.1076%20-0.17899%2C-0.1076c0.44746%2C-1.18355%200.89493%2C-2.2595%201.34239%2C-3.44305c1.61087%2C-4.30382%202.86377%2C-8.82283%203.93768%2C-13.44943c0.62645%2C-2.68989%201.61087%2C-5.27218%202.4163%2C-7.96206c0.17899%2C-0.43038%200.26848%2C-0.86076%200.44746%2C-1.39874c0.44746%2C-1.29115%200.98442%2C-2.68989%201.43188%2C-4.08863c0.35797%2C-1.07595%200.53696%2C-2.04431%200.80543%2C-3.12027c0.80543%2C-2.90508%201.52138%2C-5.91775%202.4163%2C-8.82283c0.26848%2C-0.96836%200.89493%2C-1.82912%201.43188%2C-2.68989c0.26848%2C-0.53798%200.71594%2C-0.86076%201.07391%2C-1.29115c-0.08949%2C0.1076%200%2C0.21519%200.08949%2C0.21519z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M332.50547%2C186.40532c0.07283%2C1.20456%20-0.14565%2C2.51863%20-0.21848%2C3.8327c-0.14565%2C3.28517%20-0.94674%2C6.24183%20-1.82065%2C9.19848c-1.01957%2C3.50418%20-2.84022%2C6.13232%20-4.80653%2C8.43194c-1.74783%2C2.19011%20-3.64131%2C4.16122%20-5.53479%2C6.02281c-1.3837%2C1.20456%20-2.91305%2C2.19011%20-4.36957%2C3.06616c-1.09239%2C0.54753%20-2.25761%2C0.98555%20-3.13152%2C1.31407c-2.47609%2C0%20-4.7337%2C-0.21901%20-6.99131%2C-0.21901c-2.11196%2C0%20-4.15109%2C0.10951%20-6.26305%2C0.21901c-1.09239%2C0.10951%20-2.18478%2C0.21901%20-3.27718%2C0.32852c-0.43696%2C0%20-0.50978%2C-0.21901%20-0.58261%2C-0.76654c-0.07283%2C-0.54753%20-0.14565%2C-1.20456%20-0.14565%2C-1.75209c0%2C-0.32852%200.14565%2C-0.65703%200.2913%2C-0.87605c0.80109%2C-0.98555%201.52935%2C-1.9711%202.40326%2C-2.73764c0.65544%2C-0.65703%200.94674%2C-1.42357%200.87391%2C-2.62814c-0.07283%2C-3.28517%20-0.14565%2C-6.67985%20-0.14565%2C-10.07452c0%2C-5.14677%200%2C-10.18403%200.07283%2C-15.3308c0%2C-1.8616%200.21848%2C-3.8327%200.2913%2C-5.6943c0%2C-1.20456%20-0.14565%2C-2.40913%20-0.14565%2C-3.61369c0%2C-0.76654%200%2C-1.53308%200.07283%2C-2.29962c0.14565%2C-1.31407%20-0.14565%2C-1.8616%20-1.09239%2C-1.75209c-0.87391%2C0.10951%20-1.82065%2C0%20-2.69457%2C-0.10951c-0.14565%2C0%20-0.2913%2C-0.32852%20-0.2913%2C-0.54753c0%2C-0.87605%200.07283%2C-1.8616%200.14565%2C-2.73764c0%2C-0.21901%200%2C-0.32852%200.07283%2C-0.43802c1.31087%2C-1.8616%202.54892%2C-3.72319%203.85979%2C-5.47529c0.14565%2C-0.21901%200.50978%2C-0.43802%200.72826%2C-0.43802c0.80109%2C-0.21901%201.52935%2C-0.32852%202.25761%2C-0.32852c4.58805%2C0.10951%209.1761%2C0.21901%2013.76414%2C0.32852c2.62174%2C0.10951%205.09783%2C1.20456%207.42827%2C2.95665c2.18478%2C1.64259%204.15109%2C3.72319%205.60761%2C6.78935c0.72826%2C1.64259%201.3837%2C3.39468%201.82065%2C5.14677c0.87391%2C3.28517%201.60218%2C6.67985%201.82065%2C10.18403zM295.58261%2C169.65095c0.21848%2C-0.32852%200.36413%2C-0.54753%200.50978%2C-0.65703c0.87391%2C-1.20456%201.74783%2C-2.62814%202.69457%2C-3.72319c0.58261%2C-0.76654%200.58261%2C-1.53308%200.43696%2C-2.51863c-0.14565%2C0.10951%20-0.21848%2C0.32852%20-0.36413%2C0.54753c-0.94674%2C1.20456%20-1.82065%2C2.51863%20-2.76739%2C3.72319c-0.72826%2C0.87605%20-0.80109%2C0.87605%20-0.50978%2C2.62814zM299.51522%2C172.4981c-0.07283%2C0.54753%20-0.07283%2C1.09506%20-0.07283%2C1.64259c0.07283%2C1.53308%200.21848%2C3.06616%200.21848%2C4.59924c0%2C1.9711%20-0.2913%2C3.94221%20-0.2913%2C5.91331c-0.07283%2C4.16122%20-0.07283%2C8.32243%20-0.07283%2C12.48365c0%2C4.48973%200.07283%2C8.86996%200.07283%2C13.25019c0%2C0.10951%200.07283%2C0.32852%200.07283%2C0.43802c0.36413%2C-0.10951%200.80109%2C-0.21901%201.16522%2C-0.32852c1.52935%2C-0.43802%201.82065%2C-1.20456%201.74783%2C-3.50418c-0.07283%2C-1.42357%20-0.07283%2C-2.95665%20-0.07283%2C-4.38023c0%2C-5.58479%200.14565%2C-11.16958%200.14565%2C-16.64487c0%2C-2.73764%20-0.21848%2C-5.36578%20-0.21848%2C-8.10342c0%2C-2.62814%200%2C-5.36578%200%2C-7.99392c0%2C-1.42357%200%2C-2.73764%200%2C-4.16122c0%2C-0.87605%20-0.2913%2C-1.42357%20-0.87391%2C-1.42357c-0.65544%2C0%20-1.31087%2C-0.10951%20-1.82065%2C0.76654c-0.43696%2C0.76654%20-1.09239%2C1.42357%20-1.60218%2C2.19011c-0.65544%2C0.98555%20-1.31087%2C1.9711%20-2.03913%2C2.95665c0%2C0.10951%200.07283%2C0.21901%200.07283%2C0.32852c0.72826%2C0%201.45652%2C-0.10951%202.18478%2C-0.21901c1.09239%2C-0.10951%201.45652%2C0.54753%201.3837%2C2.19011zM299.36957%2C213.45323c0.36413%2C-0.43802%200.36413%2C-0.98555%200.14565%2C-1.64259c-1.01957%2C1.20456%20-2.11196%2C2.29962%20-3.13152%2C3.50418c-0.72826%2C0.76654%20-0.72826%2C0.87605%20-0.43696%2C2.29962c1.16522%2C-1.42357%202.25761%2C-2.84715%203.42283%2C-4.16122zM320.63481%2C212.35817c0%2C0%20-0.07283%2C-0.10951%20-0.07283%2C-0.21901c-1.3837%2C0.76654%20-2.76739%2C0.76654%20-4.22392%2C0.65703c-1.01957%2C0%20-1.96631%2C-0.10951%20-2.98587%2C-0.10951c-2.84022%2C0%20-5.68044%2C0.10951%20-8.59349%2C0.10951c-1.23804%2C0.10951%20-2.40326%2C0.21901%20-3.56848%2C0.21901c-0.58261%2C0%20-1.16522%2C0.21901%20-1.52935%2C0.98555c-0.14565%2C0.43802%20-0.43696%2C0.65703%20-0.72826%2C0.98555c-0.72826%2C0.98555%20-1.45652%2C1.8616%20-2.25761%2C2.84715c1.82065%2C-0.10951%203.56848%2C-0.32852%205.31631%2C-0.32852c2.91305%2C0%205.75327%2C0.10951%208.59349%2C0.10951c2.54892%2C-0.10951%205.025%2C-0.87605%207.28262%2C-2.62814c0.94674%2C-0.76654%201.89348%2C-1.64259%202.76739%2C-2.62814zM321.14459%2C206.22586c1.52935%2C-2.51863%202.33044%2C-5.8038%202.69457%2C-9.08897c0.36413%2C-2.95665%200.36413%2C-6.02281%200.43696%2C-8.97947c0%2C-1.53308%200%2C-3.17567%20-0.2913%2C-4.59924c-0.50978%2C-2.19011%20-1.23804%2C-4.38023%20-1.96631%2C-6.35133c-0.72826%2C-1.8616%20-2.03913%2C-3.06616%20-3.13152%2C-4.38023c-1.3837%2C-1.53308%20-2.84022%2C-2.08061%20-4.51522%2C-2.08061c-2.25761%2C0%20-4.4424%2C-0.10951%20-6.70001%2C-0.10951v0.43802c0.07283%2C5.36578%200.14565%2C10.62205%200.14565%2C15.98783c0%2C7.00837%20-0.07283%2C13.90722%20-0.14565%2C20.91559c0%2C1.20456%200.14565%2C1.42357%200.87391%2C1.75209c0.21848%2C0.10951%200.43696%2C0.10951%200.65544%2C0.10951c2.18478%2C0%204.29674%2C0.10951%206.4087%2C0c2.11196%2C-0.10951%203.93261%2C-1.31407%205.53479%2C-3.61369zM326.4609%2C179.72548c-0.72826%2C-2.84715%20-1.675%2C-5.47529%20-2.62174%2C-8.21293c-1.16522%2C-3.39468%20-3.20435%2C-5.36578%20-5.53479%2C-6.46084c-2.98587%2C-1.42357%20-6.04457%2C-0.87605%20-9.10327%2C-0.76654c-0.87391%2C0%20-1.52935%2C0.98555%20-1.52935%2C2.19011c0%2C1.09506%200%2C2.19011%200%2C3.50418c0.94674%2C0%201.89348%2C0%202.91305%2C0c2.03913%2C0.10951%204.15109%2C-0.43802%206.19022%2C0.32852c1.52935%2C0.54753%202.84022%2C1.9711%204.00544%2C3.50418c1.01957%2C1.42357%201.74783%2C3.28517%202.54892%2C5.03726c0.2913%2C0.65703%200.58261%2C1.31407%200.72826%2C2.08061c0.2913%2C1.8616%200.65544%2C3.8327%200.72826%2C5.8038c0.2913%2C5.36578%20-0.07283%2C10.73156%20-1.675%2C15.76882c-0.2913%2C0.87605%20-0.65544%2C1.8616%20-1.01957%2C2.73764c-0.14565%2C0.32852%20-0.21848%2C0.65703%20-0.36413%2C0.98555c0.07283%2C0%200.07283%2C0.10951%200.14565%2C0.10951c0%2C-0.10951%200.07283%2C-0.10951%200.14565%2C-0.21901c0.14565%2C-0.21901%200.2913%2C-0.43802%200.43696%2C-0.65703c1.52935%2C-2.40913%202.47609%2C-5.47529%203.49566%2C-8.54144c0.14565%2C-0.43802%200.2913%2C-1.09506%200.36413%2C-1.64259c0.2913%2C-2.40913%200.50978%2C-4.81825%200.72826%2C-7.22738c0.21848%2C-2.84715%200.07283%2C-5.6943%20-0.58261%2C-8.32243z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M327.04351%2C188.04791c-0.21848%2C2.40913%20-0.43696%2C4.81825%20-0.72826%2C7.22738c-0.07283%2C0.54753%20-0.21848%2C1.20456%20-0.36413%2C1.64259c-1.01957%2C3.06616%20-1.96631%2C6.13232%20-3.49566%2C8.54144c-0.14565%2C0.21901%20-0.2913%2C0.43802%20-0.43696%2C0.65703c-0.07283%2C0.10951%20-0.14565%2C0.10951%20-0.14565%2C0.21901c-0.07283%2C0%20-0.07283%2C-0.10951%20-0.14565%2C-0.10951c0.14565%2C-0.32852%200.21848%2C-0.65703%200.36413%2C-0.98555c0.36413%2C-0.87605%200.72826%2C-1.8616%201.01957%2C-2.73764c1.60218%2C-5.03726%201.96631%2C-10.40304%201.675%2C-15.76882c-0.07283%2C-1.9711%20-0.43696%2C-3.94221%20-0.72826%2C-5.8038c-0.14565%2C-0.76654%20-0.43696%2C-1.42357%20-0.72826%2C-2.08061c-0.80109%2C-1.75209%20-1.52935%2C-3.61369%20-2.54892%2C-5.03726c-1.16522%2C-1.53308%20-2.47609%2C-2.95665%20-4.00544%2C-3.50418c-2.03913%2C-0.76654%20-4.15109%2C-0.21901%20-6.19022%2C-0.32852c-1.01957%2C0%20-1.96631%2C0%20-2.91305%2C0c0%2C-1.31407%200%2C-2.40913%200%2C-3.50418c0%2C-1.20456%200.65544%2C-2.19011%201.52935%2C-2.19011c3.0587%2C-0.10951%206.1174%2C-0.65703%209.10327%2C0.76654c2.33044%2C1.09506%204.36957%2C3.06616%205.53479%2C6.46084c0.94674%2C2.73764%201.89348%2C5.36578%202.62174%2C8.21293c0.65544%2C2.62814%200.80109%2C5.47529%200.58261%2C8.32243z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M320.70763%2C212.57719c-0.94674%2C0.76654%20-1.82065%2C1.75209%20-2.84022%2C2.40913c-2.25761%2C1.75209%20-4.7337%2C2.51863%20-7.28262%2C2.62814c-2.84022%2C0%20-5.68044%2C-0.10951%20-8.59349%2C-0.10951c-1.74783%2C0%20-3.49566%2C0.21901%20-5.31631%2C0.32852c0.80109%2C-0.98555%201.52935%2C-1.8616%202.25761%2C-2.84715c0.2913%2C-0.32852%200.58261%2C-0.54753%200.72826%2C-0.98555c0.36413%2C-0.76654%200.94674%2C-0.98555%201.52935%2C-0.98555c1.16522%2C0%202.33044%2C-0.10951%203.56848%2C-0.21901c2.91305%2C0%205.75327%2C-0.10951%208.59349%2C-0.10951c1.01957%2C0%201.96631%2C0.10951%202.98587%2C0.10951c1.45652%2C0.10951%202.84022%2C0.10951%204.22392%2C-0.65703c0.07283%2C0.21901%200.07283%2C0.32852%200.14565%2C0.43802z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M299.36957%2C213.34373c-1.16522%2C1.42357%20-2.25761%2C2.84715%20-3.42283%2C4.27072c-0.2913%2C-1.42357%20-0.2913%2C-1.53308%200.43696%2C-2.29962c1.01957%2C-1.20456%202.11196%2C-2.29962%203.13152%2C-3.50418c0.2913%2C0.54753%200.21848%2C1.09506%20-0.14565%2C1.53308z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M298.78696%2C165.27072c-0.94674%2C1.09506%20-1.82065%2C2.51863%20-2.69457%2C3.72319c-0.14565%2C0.10951%20-0.2913%2C0.32852%20-0.50978%2C0.65703c-0.2913%2C-1.75209%20-0.21848%2C-1.75209%200.50978%2C-2.62814c0.94674%2C-1.20456%201.82065%2C-2.51863%202.76739%2C-3.72319c0.14565%2C-0.21901%200.21848%2C-0.43802%200.36413%2C-0.54753c0.14565%2C0.98555%200.14565%2C1.75209%20-0.43696%2C2.51863z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M302.35544%2C207.1019c0.07283%2C2.29962%20-0.21848%2C3.06616%20-1.74783%2C3.50418c-0.36413%2C0.10951%20-0.80109%2C0.21901%20-1.16522%2C0.32852c0%2C-0.10951%20-0.07283%2C-0.32852%20-0.07283%2C-0.43802c0%2C-4.48973%20-0.07283%2C-8.86996%20-0.07283%2C-13.3597c0%2C-4.16122%200%2C-8.32243%200.07283%2C-12.48365c0%2C-1.9711%200.2913%2C-3.94221%200.2913%2C-5.91331c0%2C-1.53308%20-0.14565%2C-3.06616%20-0.21848%2C-4.59924c0%2C-0.54753%200%2C-1.09506%200.07283%2C-1.64259c0.07283%2C-1.64259%20-0.2913%2C-2.29962%20-1.3837%2C-2.19011c-0.72826%2C0.10951%20-1.45652%2C0.21901%20-2.18478%2C0.21901c0%2C-0.10951%20-0.07283%2C-0.21901%20-0.07283%2C-0.32852c0.72826%2C-0.98555%201.3837%2C-1.9711%202.03913%2C-2.95665c0.50978%2C-0.76654%201.16522%2C-1.42357%201.60218%2C-2.19011c0.50978%2C-0.87605%201.16522%2C-0.76654%201.82065%2C-0.76654c0.58261%2C0%200.87391%2C0.54753%200.87391%2C1.42357c0%2C1.42357%200%2C2.73764%200%2C4.16122c0%2C2.62814%200%2C5.36578%200%2C7.99392c0%2C2.73764%200.21848%2C5.36578%200.21848%2C8.10342c0%2C5.47529%20-0.14565%2C11.06008%20-0.14565%2C16.64487c0%2C1.53308%200%2C2.95665%200.07283%2C4.48973z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M358.3%2C209.8c-0.8%2C1.6%20-1.7%2C3.2%20-2.6%2C4.8c-0.1%2C0.2%20-0.5%2C0.4%20-0.7%2C0.4c-4.1%2C-0.1%20-8.3%2C-0.3%20-12.4%2C-0.5c-1%2C0%20-2%2C-0.3%20-3%2C-0.5c-0.1%2C0%20-0.2%2C0%20-0.3%2C-0.1c-0.5%2C-0.4%20-0.4%2C-2.6%200.1%2C-3c1.3%2C-1%202.7%2C-2.1%204%2C-3.2c0.1%2C-0.2%200.2%2C-0.5%200.2%2C-0.7c0%2C-2.6%20-0.3%2C-5.1%20-0.1%2C-7.6c0.3%2C-5.1%20-0.3%2C-10.2%20-0.1%2C-15.3c0.1%2C-3.8%200.1%2C-7.5%200.2%2C-11.3c0%2C-0.9%200.1%2C-1.8%200.1%2C-2.7c0%2C-0.6%20-0.5%2C-1%20-1.1%2C-1.1c-0.7%2C-0.2%20-1.5%2C-0.3%20-2.3%2C-0.3c-0.5%2C0%20-0.7%2C-0.1%20-0.7%2C-0.5c0%2C-0.8%20-0.2%2C-1.7%200.6%2C-2.4c1.1%2C-0.9%202%2C-2%203%2C-3c0.5%2C-0.6%201.2%2C-0.8%201.9%2C-0.8c0.9%2C0%201.7%2C0%202.5%2C0v0.3h9.9c0.2%2C0%200.4%2C0.1%200.6%2C0.1c0.6%2C-0.1%200.8%2C0.3%200.8%2C0.9c0%2C0.6%200.1%2C1.2%20-0.8%2C1.2c-0.3%2C0%20-0.7%2C0.1%20-1%2C0.2c-1.1%2C0.2%20-1.7%2C0.9%20-1.7%2C2c-0.1%2C0.9%20-0.2%2C1.8%20-0.2%2C2.7c-0.2%2C3.7%20-0.4%2C7.4%20-0.5%2C11.1c-0.1%2C3.5%200.1%2C7%200.1%2C10.5c0%2C4.4%200.1%2C8.9%200.1%2C13.4c0%2C0.5%200.1%2C0.9%200.1%2C1.4c0.1%2C1%200.7%2C1.3%201.6%2C1.4c0%2C0%200.1%2C0%200.2%2C0c1.8%2C0.1%202.4%2C1.1%201.5%2C2.6zM343.6%2C164.9c0.7%2C-0.6%200.6%2C-1.3%200.5%2C-2.1c-0.2%2C0.1%20-0.3%2C0.2%20-0.3%2C0.2c-1%2C1.2%20-2%2C2.4%20-3.1%2C3.5c-0.5%2C0.5%20-0.6%2C0.9%20-0.5%2C1.3c1.1%2C-0.9%202.2%2C-2%203.4%2C-2.9zM344.2%2C169.7c0.1%2C0.8%200%2C1.6%200%2C2.4c0%2C3.6%20-0.2%2C7.1%20-0.2%2C10.6c0%2C3.9%200.1%2C7.8%200.1%2C11.8c0.1%2C3.4%200.2%2C6.8%200.2%2C10.2c0%2C0.9%20-0.1%2C1.8%20-0.2%2C2.8c1%2C-0.1%202.1%2C0.1%202.8%2C-0.7c0.5%2C-0.6%200.9%2C-1.4%201.1%2C-2.2c0.2%2C-1%200.2%2C-2.1%200.2%2C-3.2c-0.1%2C-4.6%20-0.3%2C-9.3%20-0.4%2C-13.9c-0.1%2C-7.1%20-0.1%2C-14.3%20-0.2%2C-21.4c0%2C-1.3%20-0.3%2C-1.7%20-1.6%2C-1.7c-0.6%2C0%20-1.1%2C0.1%20-1.6%2C0.6c-1%2C1.1%20-2.2%2C2%20-3.4%2C3c0%2C0%200.1%2C0.1%200.1%2C0.2c0.4%2C0%200.9%2C-0.1%201.3%2C0c0.9%2C0.1%201.7%2C0.5%201.8%2C1.5zM342.8%2C210.5c0.6%2C-0.5%201.3%2C-1.2%200.9%2C-2.1c-1.1%2C0.9%20-2.2%2C1.9%20-3.4%2C2.8c-0.7%2C0.5%20-0.7%2C1%20-0.7%2C1.8c1.1%2C-0.8%202.2%2C-1.6%203.2%2C-2.5zM357.7%2C210.1c-4.6%2C-0.2%20-9%2C-0.4%20-13.4%2C-0.6c-0.6%2C2.1%20-2.8%2C2.7%20-4%2C4.2c1.1%2C0.1%202.1%2C0.3%203.1%2C0.3c3.8%2C0.1%207.6%2C0.3%2011.4%2C0.4c0.2%2C0%200.6%2C-0.3%200.7%2C-0.5c0.6%2C-0.9%201.1%2C-1.9%201.7%2C-2.9c0.2%2C-0.3%200.3%2C-0.6%200.5%2C-0.9z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M343.5%2C164.9c-1.2%2C0.9%20-2.2%2C2%20-3.3%2C2.9c-0.1%2C-0.4%200%2C-0.8%200.5%2C-1.3c1.1%2C-1.1%202.1%2C-2.3%203.1%2C-3.5c0%2C0%200.1%2C-0.1%200.3%2C-0.2c0.1%2C0.8%200.1%2C1.5%20-0.6%2C2.1z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M342.8%2C210.5c-1%2C0.9%20-2.1%2C1.6%20-3.2%2C2.5c0%2C-0.8%200%2C-1.3%200.7%2C-1.8c1.2%2C-0.9%202.3%2C-1.9%203.4%2C-2.8c0.4%2C0.9%20-0.3%2C1.6%20-0.9%2C2.1z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M357.7%2C210c-0.2%2C0.4%20-0.3%2C0.7%20-0.5%2C1c-0.6%2C1%20-1.1%2C2%20-1.7%2C2.9c-0.1%2C0.2%20-0.5%2C0.5%20-0.7%2C0.5c-3.8%2C-0.1%20-7.6%2C-0.3%20-11.4%2C-0.4c-1%2C0%20-2%2C-0.2%20-3.1%2C-0.3c1.2%2C-1.5%203.4%2C-2.1%204%2C-4.2c4.5%2C0.1%208.9%2C0.3%2013.4%2C0.5z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M348%2C204.6c-0.2%2C0.8%20-0.6%2C1.6%20-1.1%2C2.2c-0.7%2C0.8%20-1.8%2C0.6%20-2.8%2C0.7c0.1%2C-1%200.2%2C-1.9%200.2%2C-2.8c0%2C-3.4%20-0.1%2C-6.8%20-0.2%2C-10.2c0%2C-4%20-0.1%2C-7.9%20-0.1%2C-11.8c0%2C-3.5%200.2%2C-7%200.2%2C-10.6c0%2C-0.8%200.1%2C-1.6%200%2C-2.4c-0.1%2C-1%20-0.9%2C-1.4%20-1.9%2C-1.5c-0.4%2C-0.1%20-0.9%2C0%20-1.3%2C0c0.1%2C-0.1%200%2C-0.2%200%2C-0.2c1.2%2C-1%202.4%2C-1.9%203.4%2C-3c0.5%2C-0.5%201%2C-0.6%201.6%2C-0.6c1.3%2C0%201.6%2C0.4%201.6%2C1.7c0.1%2C7.1%200.1%2C14.3%200.2%2C21.4c0.1%2C4.6%200.3%2C9.3%200.4%2C13.9c0%2C1.1%200%2C2.1%20-0.2%2C3.2z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M408.12818%2C160.38488c0%2C0.22713%20-0.30982%2C0.45426%20-0.46473%2C0.45426c-0.38727%2C0.11357%20-0.852%2C0.11357%20-1.31672%2C0.22713c-0.69709%2C0.11357%20-0.92945%2C0.45426%20-1.0069%2C1.47636c-0.07745%2C1.58992%200%2C3.06628%200.15491%2C4.54264c0.46473%2C3.86124%200.46473%2C7.72248%200.23236%2C11.58372c-0.38727%2C6.58682%20-0.30982%2C13.28721%20-0.15491%2C19.9876c0.07745%2C3.74767%200.15491%2C7.49535%200.23236%2C11.24302c0%2C1.93062%20-0.69709%2C3.52054%20-1.39418%2C5.11047c-0.38727%2C0.90853%20-0.69709%2C1.13566%20-1.39418%2C1.13566c-0.69709%2C0%20-1.08436%2C-0.45426%20-1.47163%2C-1.13566c-2.24617%2C-3.63411%20-4.80216%2C-6.58682%20-7.35815%2C-9.6531c-4.02762%2C-4.88333%20-7.66797%2C-10.3345%20-10.92104%2C-16.23992c-1.16181%2C-2.04419%20-2.55599%2C-3.86124%20-3.87271%2C-5.79186c-0.15491%2C0%20-0.23236%2C0%20-0.30982%2C0.11357c0%2C1.13566%200.07745%2C2.27132%200%2C3.40698c-0.38727%2C5.3376%200.30982%2C10.56163%200.23236%2C15.89922c0%2C1.70349%20-0.23236%2C3.40698%20-0.07745%2C5.11047c0.07745%2C0.79496%200.30982%2C1.24922%200.852%2C1.36279c0.38727%2C0.11357%200.852%2C0.22713%201.31672%2C0.22713c0.30982%2C0%200.46473%2C0.22713%200.46473%2C0.79496c0.07745%2C0.90853%20-0.15491%2C1.70349%20-0.54218%2C2.38488c-0.46473%2C0.79496%20-0.77454%2C1.70349%20-1.16181%2C2.61202c-0.23236%2C0.56783%20-0.54218%2C1.02209%20-1.0069%2C1.02209c-2.09126%2C0.11357%20-4.25998%2C0.22713%20-6.35124%2C0.3407c-0.852%2C0%20-1.70399%2C-0.11357%20-2.55599%2C-0.11357c-0.54218%2C0%20-0.77454%2C-0.3407%20-0.77454%2C-1.13566c0%2C-0.79496%200.15491%2C-1.58992%200.61963%2C-2.15775c0.77454%2C-1.02209%201.54908%2C-2.15775%202.16872%2C-3.17984c0.15491%2C-0.22713%200.30982%2C-0.6814%200.30982%2C-1.02209c0.07745%2C-0.6814%20-0.07745%2C-1.36279%20-0.07745%2C-2.04419c0%2C-0.45426%200.07745%2C-1.02209%200.15491%2C-1.58992c0.07745%2C-0.3407%200.07745%2C-0.6814%200.07745%2C-1.02209c0.07745%2C-5.22403%200.15491%2C-10.56163%200.15491%2C-15.78566c0%2C-4.6562%200%2C-9.3124%200%2C-13.85504c0%2C-1.47636%20-0.07745%2C-2.95271%20-0.15491%2C-4.3155c-0.07745%2C-1.93062%20-0.92945%2C-3.17984%20-2.24617%2C-3.52054c-1.0069%2C-0.22713%20-2.09126%2C-0.3407%20-3.17562%2C-0.56783c-0.07745%2C0%20-0.30982%2C-0.3407%20-0.30982%2C-0.45426c0%2C-0.6814%200%2C-1.24922%200.07745%2C-1.93062c0%2C-0.11357%200.07745%2C-0.3407%200.07745%2C-0.3407c1.0069%2C-1.58992%201.93636%2C-3.17984%202.86581%2C-4.6562c0.07745%2C-0.22713%200.07745%2C-0.45426%200.15491%2C-0.90853c1.16181%2C0.11357%202.32363%2C0.11357%203.48544%2C0.45426c1.78145%2C0.22713%203.40798%2C1.13566%204.95707%2C2.49845c0.23236%2C0.11357%200.38727%2C0.3407%200.54218%2C0.56783c1.31672%2C2.04419%202.55599%2C3.97481%203.87271%2C6.01899c0.77454%2C1.36279%201.54908%2C2.61202%202.40108%2C3.86124c1.39418%2C1.93062%202.86581%2C3.86124%204.25998%2C5.90543c1.47163%2C2.15775%202.78835%2C4.3155%204.18253%2C6.47326c1.47163%2C2.27132%202.94326%2C4.42907%204.41489%2C6.58682c0.46473%2C0.79496%201.0069%2C1.58992%201.62654%2C2.49845c0.07745%2C-1.58992%200.15491%2C-2.95271%200.15491%2C-4.3155c0.07745%2C-4.20194%200.23236%2C-8.51744%200.15491%2C-12.71938c0%2C-2.83915%20-0.30982%2C-5.79186%20-0.46473%2C-8.63101c-0.07745%2C-1.02209%20-0.46473%2C-1.70349%20-1.16181%2C-1.81705c-0.69709%2C-0.22713%20-1.31672%2C-0.22713%20-2.01381%2C-0.22713c-0.38727%2C0%20-0.54218%2C-0.11357%20-0.61963%2C-0.6814c0%2C-0.11357%200%2C-0.11357%200%2C-0.11357c-0.07745%2C-0.6814%20-0.38727%2C-1.58992%20-0.23236%2C-2.04419c0.30982%2C-0.79496%200.852%2C-1.47636%201.39418%2C-2.15775c0.38727%2C-0.56783%200.77454%2C-1.02209%201.23927%2C-1.36279c0.30982%2C-0.22713%200.69709%2C-0.45426%201.0069%2C-0.45426c1.16181%2C0%202.24617%2C0%203.33053%2C0c1.54908%2C-0.11357%203.17562%2C-0.22713%204.72471%2C-0.22713c0.15491%2C0%200.30982%2C0%200.46473%2C0c0.15491%2C0%200.30982%2C0.11357%200.30982%2C0.11357c0%2C0.6814%200.07745%2C1.36279%20-0.07745%2C2.15775zM398.83368%2C158.79496c-0.77454%2C1.13566%20-1.47163%2C2.15775%20-2.24617%2C3.17984c-0.46473%2C0.6814%20-0.46473%2C1.24922%20-0.15491%2C2.04419c1.16181%2C-1.36279%202.86581%2C-2.04419%202.40108%2C-5.22403zM400.22785%2C167.76667c0.30982%2C3.86124%200.54218%2C7.72248%200.38727%2C11.58372c-0.15491%2C3.97481%20-0.07745%2C8.06318%20-0.15491%2C12.15155c-0.07745%2C1.13566%20-0.07745%2C2.27132%200.61963%2C3.06628c0.23236%2C0.11357%200.23236%2C0.56783%200.38727%2C0.79496c0.23236%2C0.45426%200.54218%2C0.79496%200.77454%2C1.13566c0.07745%2C0%200.15491%2C-0.11357%200.23236%2C-0.11357v-1.13566c-0.07745%2C-5.56473%20-0.15491%2C-11.24302%20-0.15491%2C-16.92132c0%2C-1.58992%200%2C-3.29341%200%2C-4.9969c-0.07745%2C-3.17984%20-0.61963%2C-6.35969%20-0.38727%2C-9.6531c0.07745%2C-0.6814%20-0.15491%2C-1.36279%20-0.30982%2C-1.93062c-0.30982%2C-1.02209%20-1.78145%2C-1.24922%20-2.24617%2C-0.3407c-0.61963%2C1.13566%20-1.23927%2C2.15775%20-2.09126%2C2.61202c-0.07745%2C0%20-0.07745%2C0.11357%20-0.07745%2C0.22713c0.23236%2C0.11357%200.46473%2C0.11357%200.69709%2C0.11357c1.54908%2C0.22713%202.16872%2C1.13566%202.32363%2C3.40698zM367.61963%2C165.15465c0.92945%2C-1.36279%201.8589%2C-2.83915%202.7109%2C-4.3155c0.15491%2C-0.22713%200.15491%2C-0.79496%200.23236%2C-1.36279c-0.23236%2C0.11357%20-0.30982%2C0.11357%20-0.30982%2C0.22713c-0.852%2C1.47636%20-1.78145%2C2.83915%20-2.63344%2C4.20194c-0.15491%2C0.22713%20-0.15491%2C0.6814%20-0.23236%2C1.02209c0.07745%2C0%200.15491%2C0.11357%200.23236%2C0.22713zM373.4287%2C172.76357c0.07745%2C3.40698%200%2C6.92752%200%2C10.44806c-0.07745%2C2.15775%20-0.15491%2C4.3155%20-0.15491%2C6.58682c-0.07745%2C4.88333%20-0.07745%2C9.88023%20-0.07745%2C14.76357c0%2C0.45426%200%2C1.02209%20-0.07745%2C1.58992c-0.07745%2C1.13566%20-0.15491%2C2.38488%20-0.15491%2C3.52054c0.46473%2C0%200.852%2C0%201.23927%2C-0.11357c1.31672%2C-0.22713%201.39418%2C-0.3407%201.54908%2C-2.27132c0.15491%2C-1.93062%200.15491%2C-3.74767%200.15491%2C-5.56473c0%2C-2.04419%20-0.23236%2C-4.08837%20-0.23236%2C-6.13256c0%2C-5.22403%200.07745%2C-10.3345%200.15491%2C-15.55853c0%2C-1.70349%200%2C-3.29341%20-0.07745%2C-4.88333c0%2C-2.49845%20-0.15491%2C-4.88333%20-0.15491%2C-7.38178c0%2C-2.61202%20-0.38727%2C-4.9969%20-2.09126%2C-6.24612c-0.61963%2C-0.56783%20-1.47163%2C-0.6814%20-2.24617%2C-0.79496c-0.23236%2C0%20-0.46473%2C0.79496%20-0.77454%2C1.24922c-0.77454%2C1.24922%20-1.62654%2C2.38488%20-2.40108%2C3.63411c0.46473%2C0%200.92945%2C0%201.47163%2C0.11357c1.31672%2C0.22713%202.7109%2C0.56783%203.25308%2C2.61202c0.38727%2C1.36279%200.54218%2C2.83915%200.61963%2C4.42907zM372.03452%2C213.64729c0.77454%2C-0.90853%201.23927%2C-1.93062%200.77454%2C-3.40698c-0.77454%2C1.24922%20-1.54908%2C2.61202%20-2.40108%2C3.86124c-0.30982%2C0.45426%20-0.38727%2C1.02209%20-0.30982%2C1.70349c0.69709%2C-0.79496%201.31672%2C-1.47636%201.93636%2C-2.15775zM373.66106%2C211.71667c-0.54218%2C1.93062%20-1.47163%2C3.06628%20-2.63344%2C3.86124c0.15491%2C0.11357%200.23236%2C0.11357%200.38727%2C0.11357c2.55599%2C-0.11357%205.11198%2C-0.22713%207.59051%2C-0.3407c0.23236%2C0%200.46473%2C-0.22713%200.61963%2C-0.45426c0.38727%2C-0.90853%200.77454%2C-1.81705%201.16181%2C-2.83915c-2.40108%2C-0.11357%20-4.80216%2C-0.22713%20-7.12579%2C-0.3407zM402.47403%2C215.12364c0.23236%2C-0.45426%200.46473%2C-0.79496%200.61963%2C-1.13566c0.30982%2C-0.6814%200.61963%2C-1.47636%200.852%2C-2.15775c0.07745%2C-0.11357%200%2C-0.56783%20-0.07745%2C-0.6814c-0.77454%2C-1.13566%20-1.62654%2C-2.38488%20-2.47853%2C-3.52054c-1.31672%2C-1.70349%20-2.63344%2C-3.52054%20-3.87271%2C-5.3376c-0.54218%2C-0.90853%20-0.92945%2C-1.93062%20-1.47163%2C-2.83915c-1.0069%2C-1.58992%20-2.09126%2C-3.17984%20-3.09817%2C-4.88333c-1.0069%2C-1.47636%20-1.8589%2C-3.17984%20-2.86581%2C-4.76977c-1.78145%2C-2.95271%20-3.64035%2C-5.79186%20-5.42179%2C-8.63101c-0.38727%2C-0.6814%20-0.852%2C-1.24922%20-1.31672%2C-1.93062c-0.69709%2C-1.02209%20-1.47163%2C-1.93062%20-2.16872%2C-2.95271c-0.61963%2C-1.02209%20-1.23927%2C-2.04419%20-1.93636%2C-3.17984c-0.07745%2C0.3407%20-0.15491%2C0.56783%20-0.15491%2C0.79496c-0.07745%2C1.93062%200%2C3.97481%20-0.07745%2C6.01899c-0.07745%2C1.58992%200.54218%2C2.61202%201.23927%2C3.63411c1.23927%2C1.70349%202.55599%2C3.17984%203.56289%2C5.11047c3.33053%2C6.01899%207.12579%2C11.58372%2011.23086%2C16.69419c2.40108%2C2.95271%204.95707%2C5.56473%206.89342%2C9.19884c0.15491%2C0.22713%200.38727%2C0.3407%200.54218%2C0.56783zM405.03001%2C212.2845c0%2C-0.11357%20-0.07745%2C-0.11357%20-0.15491%2C-0.22713c-0.77454%2C0.90853%20-0.92945%2C2.61202%20-1.93636%2C3.29341c0.07745%2C0%200.15491%2C0.11357%200.15491%2C0.22713c0.23236%2C0%200.54218%2C0%200.61963%2C-0.22713c0.46473%2C-1.02209%200.92945%2C-2.04419%201.31672%2C-3.06628z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M396.4326%2C164.01899c-0.30982%2C-0.79496%20-0.30982%2C-1.36279%200.15491%2C-2.04419c0.77454%2C-1.02209%201.47163%2C-2.04419%202.24617%2C-3.17984c0.46473%2C3.17984%20-1.23927%2C3.86124%20-2.40108%2C5.22403z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M370.64035%2C157.47636c-0.07745%2C0.56783%20-0.07745%2C1.13566%20-0.23236%2C1.36279c-0.92945%2C1.47636%20-1.8589%2C2.95271%20-2.78835%2C4.3155c-0.07745%2C-0.11357%20-0.15491%2C-0.22713%20-0.23236%2C-0.22713c0.07745%2C-0.3407%200.07745%2C-0.79496%200.23236%2C-1.02209c0.852%2C-1.36279%201.78145%2C-2.72558%202.63344%2C-4.20194c0.07745%2C0%200.15491%2C0%200.38727%2C-0.22713z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M372.03452%2C211.53372c-0.61963%2C0.79496%20-1.31672%2C1.47636%20-2.01381%2C2.27132c-0.07745%2C-0.6814%200%2C-1.24922%200.30982%2C-1.70349c0.852%2C-1.24922%201.62654%2C-2.61202%202.40108%2C-3.86124c0.54218%2C1.36279%200.07745%2C2.49845%20-0.69709%2C3.29341z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M380.78685%2C210.05736c-0.38727%2C1.02209%20-0.77454%2C1.93062%20-1.16181%2C2.83915c-0.15491%2C0.22713%20-0.38727%2C0.45426%20-0.61963%2C0.45426c-2.47853%2C0.11357%20-5.03452%2C0.22713%20-7.59051%2C0.3407c-0.15491%2C0%20-0.23236%2C0%20-0.38727%2C-0.11357c1.16181%2C-0.79496%202.09126%2C-1.93062%202.63344%2C-3.86124c2.32363%2C0.11357%204.72471%2C0.22713%207.12579%2C0.3407z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M405.03001%2C212.2845c-0.46473%2C1.02209%20-0.852%2C2.04419%20-1.39418%2C3.06628c-0.07745%2C0.22713%20-0.38727%2C0.22713%20-0.61963%2C0.22713c0%2C-0.11357%20-0.07745%2C-0.22713%20-0.15491%2C-0.22713c1.0069%2C-0.6814%201.16181%2C-2.38488%201.93636%2C-3.29341c0.15491%2C0%200.23236%2C0.11357%200.23236%2C0.22713z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M402.39657%2C195.24961v1.13566c-0.07745%2C0%20-0.15491%2C0.11357%20-0.23236%2C0.11357c-0.23236%2C-0.3407%20-0.54218%2C-0.6814%20-0.77454%2C-1.13566c-0.15491%2C-0.22713%20-0.15491%2C-0.6814%20-0.38727%2C-0.79496c-0.69709%2C-0.79496%20-0.69709%2C-1.93062%20-0.61963%2C-3.06628c0.07745%2C-4.08837%200%2C-8.17674%200.15491%2C-12.15155c0.15491%2C-3.86124%20-0.07745%2C-7.72248%20-0.38727%2C-11.58372c-0.15491%2C-2.38488%20-0.77454%2C-3.17984%20-2.40108%2C-3.40698c-0.23236%2C0%20-0.46473%2C0%20-0.69709%2C-0.11357c0%2C-0.11357%200%2C-0.22713%200.07745%2C-0.22713c1.0069%2C-0.45426%201.62654%2C-1.47636%202.24617%2C-2.61202c0.46473%2C-0.90853%201.93636%2C-0.6814%202.24617%2C0.3407c0.15491%2C0.56783%200.38727%2C1.24922%200.30982%2C1.93062c-0.23236%2C3.29341%200.30982%2C6.47326%200.38727%2C9.6531c0%2C1.70349%200%2C3.40698%200%2C4.9969c0%2C5.67829%200.07745%2C11.24302%200.07745%2C16.92132z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M403.94566%2C211.9438c-0.23236%2C0.6814%20-0.54218%2C1.47636%20-0.852%2C2.15775c-0.15491%2C0.3407%20-0.38727%2C0.6814%20-0.61963%2C1.13566c-0.15491%2C-0.22713%20-0.38727%2C-0.3407%20-0.54218%2C-0.56783c-1.93636%2C-3.63411%20-4.49234%2C-6.24612%20-6.89342%2C-9.19884c-4.10507%2C-5.22403%20-7.90033%2C-10.78876%20-11.23086%2C-16.80775c-1.0069%2C-1.93062%20-2.32363%2C-3.40698%20-3.56289%2C-5.11047c-0.69709%2C-1.02209%20-1.31672%2C-2.04419%20-1.23927%2C-3.63411c0.07745%2C-2.04419%200%2C-4.08837%200.07745%2C-6.01899c0%2C-0.22713%200.07745%2C-0.45426%200.15491%2C-0.79496c0.69709%2C1.13566%201.31672%2C2.15775%201.93636%2C3.17984c0.69709%2C1.02209%201.47163%2C1.93062%202.16872%2C2.95271c0.46473%2C0.6814%200.92945%2C1.24922%201.31672%2C1.93062c1.78145%2C2.83915%203.64035%2C5.67829%205.42179%2C8.63101c1.0069%2C1.58992%201.8589%2C3.29341%202.86581%2C4.76977c1.0069%2C1.70349%202.09126%2C3.29341%203.09817%2C4.88333c0.54218%2C0.90853%200.92945%2C1.93062%201.47163%2C2.83915c1.23927%2C1.81705%202.55599%2C3.63411%203.87271%2C5.3376c0.852%2C1.13566%201.70399%2C2.38488%202.47853%2C3.52054c0.15491%2C0.22713%200.15491%2C0.56783%200.07745%2C0.79496z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M375.82978%2C205.17403c-0.15491%2C1.93062%20-0.23236%2C2.04419%20-1.54908%2C2.27132c-0.38727%2C0.11357%20-0.77454%2C0.11357%20-1.23927%2C0.11357c0%2C-1.13566%200.07745%2C-2.38488%200.15491%2C-3.52054c0%2C-0.45426%200%2C-1.02209%200%2C-1.47636c0%2C-4.88333%200%2C-9.88023%200.07745%2C-14.76357c0%2C-2.27132%200.07745%2C-4.42907%200.15491%2C-6.58682c0%2C-3.52054%200.07745%2C-7.04109%200%2C-10.44806c0%2C-1.47636%20-0.15491%2C-2.95271%20-0.54218%2C-4.3155c-0.61963%2C-2.15775%20-2.01381%2C-2.49845%20-3.33053%2C-2.72558c-0.54218%2C-0.11357%20-1.0069%2C-0.11357%20-1.47163%2C-0.11357c0.77454%2C-1.24922%201.62654%2C-2.38488%202.40108%2C-3.63411c0.30982%2C-0.45426%200.54218%2C-1.24922%200.77454%2C-1.24922c0.77454%2C0.11357%201.62654%2C0.22713%202.24617%2C0.79496c1.70399%2C1.24922%202.09126%2C3.63411%202.09126%2C6.24612c0%2C2.49845%200.15491%2C4.88333%200.15491%2C7.38178c0.07745%2C1.58992%200.07745%2C3.17984%200.07745%2C4.88333c-0.07745%2C5.22403%20-0.15491%2C10.3345%20-0.15491%2C15.55853c0%2C2.04419%200.23236%2C4.08837%200.23236%2C6.13256c0.07745%2C1.70349%200.07745%2C3.63411%20-0.07745%2C5.45116z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M451.71276%2C187.74103c-0.08291%2C0.83552%20-0.24872%2C1.1936%20-0.82905%2C1.1936c-1.82392%2C-0.11936%20-2.48716%2C1.7904%20-2.48716%2C3.5808c-0.08291%2C1.90976%200.08291%2C3.81952%200.16581%2C5.72927c0.08291%2C2.14848%200.08291%2C4.1776%200%2C6.32607c0%2C0.83552%20-0.41453%2C1.90976%20-0.82905%2C2.50656c-2.73588%2C3.81952%20-5.38885%2C7.75839%20-9.11959%2C9.31007c-2.48716%2C1.07424%20-5.14013%2C1.67104%20-7.7931%2C1.07424c-1.24358%2C-0.23872%20-2.65297%2C-0.47744%20-3.89655%2C-0.95488c-0.99486%2C-0.47744%20-1.82392%2C-1.1936%20-2.73588%2C-1.7904c-0.24872%2C-0.23872%20-0.58034%2C-0.47744%20-0.82905%2C-0.5968c-1.90682%2C-0.83552%20-3.23331%2C-2.74528%20-4.39398%2C-5.01311c-1.65811%2C-3.22272%20-3.31621%2C-6.44543%20-4.22817%2C-10.26495c-0.99486%2C-4.29696%20-1.90682%2C-8.59391%20-1.74101%2C-14.32319c0%2C-2.50656%200.41453%2C-5.96799%201.65811%2C-9.19071c1.16067%2C-3.22272%202.57007%2C-6.44543%204.72561%2C-8.71327c1.98973%2C-2.26784%204.14527%2C-4.41632%206.38371%2C-6.32607c1.98973%2C-2.02912%204.31108%2C-2.86464%206.63243%2C-3.46144c1.24358%2C-0.35808%202.48716%2C-0.83552%203.73074%2C-0.71616c1.4923%2C0%203.0675%2C0.47744%204.55979%2C0.95488c0.91196%2C0.23872%201.65811%2C0.35808%202.48716%2C-0.35808c1.07777%2C-0.95488%202.23844%2C-0.5968%203.39912%2C-0.5968c0.08291%2C0%200.33162%2C0.35808%200.33162%2C0.5968c0.08291%2C3.81952%200.08291%2C7.63903%200.16581%2C11.33919c0%2C0.95488%20-0.24872%2C1.67104%20-0.74615%2C2.26784c-0.66324%2C0.83552%20-1.16067%2C1.7904%20-1.82392%2C2.62592c-0.16581%2C0.23872%20-0.41453%2C0.47744%20-0.66324%2C0.47744c-0.82905%2C0.11936%20-1.65811%2C0.11936%20-2.48716%2C0.11936c-0.24872%2C0%20-0.58034%2C-0.23872%20-0.66324%2C-0.47744c-0.49743%2C-1.31296%20-0.82905%2C-2.62592%20-1.40939%2C-3.81952c-2.07263%2C-4.53568%20-5.88628%2C-5.72927%20-9.11959%2C-4.1776c-2.23844%2C0.95488%20-3.64784%2C3.34208%20-5.05723%2C5.72927c-1.65811%2C2.86464%20-1.98973%2C6.44543%20-2.32135%2C9.90687c-0.33162%2C3.93888%20-0.24872%2C7.99711%200.58034%2C11.81663c0.66324%2C2.86464%201.24358%2C5.72927%202.32135%2C8.11647c1.5752%2C3.70016%203.64784%2C6.80351%206.79824%2C7.75839c2.48716%2C0.71616%204.89142%2C-0.23872%207.04696%2C-1.90976c0.91196%2C-0.71616%201.40939%2C-2.02912%201.40939%2C-3.46144c0%2C-2.3872%20-0.08291%2C-4.65504%20-0.24872%2C-7.04223c-0.08291%2C-1.07424%20-0.66324%2C-1.55168%20-1.4923%2C-1.55168c-0.91196%2C0.11936%20-1.90682%2C0.11936%20-2.81878%2C0.23872c-0.49743%2C0%20-0.82905%2C-0.11936%20-0.82905%2C-0.95488c0%2C-0.11936%200%2C-0.23872%200%2C-0.23872c-0.66324%2C-1.67104%200%2C-2.74528%200.82905%2C-3.81952c0.74615%2C-0.95488%201.5752%2C-1.90976%202.23844%2C-2.984c0.66324%2C-0.95488%201.5752%2C-0.83552%202.32135%2C-0.83552c3.1504%2C-0.23872%206.30081%2C-0.35808%209.45121%2C-0.47744c1.40939%2C0%201.4923%2C0.23872%201.32649%2C2.3872zM443.25641%2C170.19513c-0.41453%2C0.83552%20-1.07777%2C1.55168%20-1.65811%2C2.26784l0.08291%2C0.23872c0.74615%2C-0.11936%201.65811%2C0.11936%202.23844%2C-0.35808c0.82905%2C-0.71616%201.4923%2C-2.02912%202.23844%2C-3.10336c-0.16581%2C-0.11936%20-0.24872%2C-0.23872%20-0.33162%2C-0.23872c-0.91196%2C-0.11936%20-1.82392%2C-0.35808%20-2.57007%2C1.1936zM442.34445%2C157.66235c0.58034%2C0.35808%200.91196%2C0.5968%201.4923%2C0.95488c-0.08291%2C-0.5968%20-0.08291%2C-0.95488%20-0.16581%2C-1.43232c-0.41453%2C0.23872%20-0.74615%2C0.35808%20-1.32649%2C0.47744zM428.41635%2C164.82394c5.72047%2C-2.984%209.86574%2C-0.5968%2012.60161%2C7.16159c0.99486%2C-1.31296%201.98973%2C-2.3872%202.90169%2C-3.5808c0.16581%2C-0.11936%200.24872%2C-0.47744%200.24872%2C-0.71616c-0.41453%2C-2.86464%20-1.40939%2C-5.01311%20-3.31621%2C-6.08735c-2.65297%2C-1.43232%20-5.30594%2C-1.7904%20-8.04182%2C-0.5968c-1.65811%2C0.71616%20-3.1504%2C1.90976%20-4.39398%2C3.81952zM438.365%2C208.15157c0%2C0%200.08291%2C0.11936%200.08291%2C0.23872c0.91196%2C-0.47744%201.82392%2C-0.95488%202.65297%2C-1.55168c0.99486%2C-0.71616%201.4923%2C-2.14848%201.4923%2C-3.70016c0.08291%2C-3.70016%200.16581%2C-7.51967%200.16581%2C-11.21983c0.08291%2C-1.90976%20-1.74101%2C-3.46144%20-2.81878%2C-2.3872c-1.16067%2C1.1936%20-2.15554%2C2.62592%20-3.23331%2C4.05824c0%2C0.11936%200.08291%2C0.11936%200.08291%2C0.23872c0.66324%2C-0.11936%201.40939%2C-0.23872%202.07263%2C-0.35808c1.40939%2C-0.23872%201.98973%2C0.35808%202.32135%2C2.3872c0.33162%2C2.3872%200.33162%2C4.65504%200.16581%2C7.04223c-0.08291%2C2.02912%20-0.66324%2C3.46144%20-1.90682%2C4.41632c-0.33162%2C0.23872%20-0.66324%2C0.47744%20-1.07777%2C0.83552zM443.50513%2C211.37429c-1.07777%2C0.35808%20-2.15554%2C0.95488%20-3.23331%2C1.31296c-2.57007%2C0.95488%20-5.22304%2C1.1936%20-7.87601%2C0.5968c-3.73074%2C-0.95488%20-6.88114%2C-3.81952%20-9.61702%2C-7.28095c-2.32135%2C-2.86464%20-4.06236%2C-6.56479%20-5.05723%2C-10.98111c-1.07777%2C-4.65504%20-1.5752%2C-9.42943%20-1.40939%2C-14.32319c0.08291%2C-2.02912%200.49743%2C-4.1776%200.99486%2C-6.20671c0.74615%2C-2.86464%201.65811%2C-5.60991%203.0675%2C-8.11647c-0.99486%2C1.07424%20-1.90682%2C2.14848%20-2.65297%2C3.46144c-1.24358%2C2.14848%20-2.15554%2C4.53568%20-2.98459%2C7.16159c-0.33162%2C0.95488%20-0.58034%2C2.02912%20-0.74615%2C3.10336c-0.49743%2C3.10336%20-0.58034%2C6.32607%20-0.24872%2C9.54879c0.33162%2C3.70016%200.91196%2C7.28095%201.98973%2C10.74239c1.07777%2C3.22272%202.57007%2C6.08735%204.06236%2C8.83263c0.66324%2C1.1936%201.5752%2C2.26784%202.48716%2C3.10336c1.07777%2C1.07424%202.23844%2C1.7904%203.39912%2C2.50656c2.15554%2C1.1936%204.39398%2C1.7904%206.63243%2C2.02912c2.07263%2C0.11936%204.06236%2C-0.35808%206.05209%2C-1.1936c1.98973%2C-0.71616%203.64784%2C-2.62592%205.14013%2C-4.29696z%22%20fill%3D%22%2353ad4e%22%2F%3E%3Cpath%20d%3D%22M443.83675%2C158.61723c-0.58034%2C-0.35808%20-0.91196%2C-0.5968%20-1.4923%2C-0.95488c0.58034%2C-0.11936%200.91196%2C-0.23872%201.32649%2C-0.47744c0.08291%2C0.47744%200.16581%2C0.83552%200.16581%2C1.43232z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M446.1581%2C169.24025c-0.74615%2C1.07424%20-1.40939%2C2.3872%20-2.23844%2C3.10336c-0.58034%2C0.47744%20-1.4923%2C0.23872%20-2.23844%2C0.35808l-0.08291%2C-0.23872c0.58034%2C-0.71616%201.24358%2C-1.43232%201.65811%2C-2.26784c0.66324%2C-1.43232%201.5752%2C-1.31296%202.57007%2C-1.07424c0.08291%2C-0.11936%200.16581%2C0%200.33162%2C0.11936z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M444.16837%2C167.68858c0%2C0.23872%20-0.08291%2C0.5968%20-0.24872%2C0.71616c-0.91196%2C1.1936%20-1.90682%2C2.26784%20-2.90169%2C3.5808c-2.73588%2C-7.75839%20-6.88114%2C-10.14559%20-12.60161%2C-7.16159c1.24358%2C-1.90976%202.73588%2C-3.10336%204.47689%2C-3.81952c2.73588%2C-1.1936%205.38885%2C-0.83552%208.04182%2C0.5968c1.82392%2C1.07424%202.90169%2C3.22272%203.23331%2C6.08735z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M442.75898%2C191.91863c0%2C3.70016%20-0.08291%2C7.51967%20-0.16581%2C11.21983c0%2C1.55168%20-0.49743%2C2.984%20-1.4923%2C3.70016c-0.82905%2C0.5968%20-1.74101%2C1.07424%20-2.65297%2C1.55168c0%2C-0.11936%20-0.08291%2C-0.23872%20-0.08291%2C-0.23872c0.33162%2C-0.23872%200.66324%2C-0.47744%200.99486%2C-0.71616c1.24358%2C-0.95488%201.82392%2C-2.3872%201.90682%2C-4.41632c0.16581%2C-2.3872%200.16581%2C-4.65504%20-0.16581%2C-7.04223c-0.33162%2C-2.02912%20-0.91196%2C-2.62592%20-2.32135%2C-2.3872c-0.66324%2C0.11936%20-1.40939%2C0.23872%20-2.07263%2C0.35808c0%2C-0.11936%20-0.08291%2C-0.11936%20-0.08291%2C-0.23872c1.07777%2C-1.43232%202.07263%2C-2.86464%203.23331%2C-4.05824c1.16067%2C-1.1936%202.90169%2C0.35808%202.90169%2C2.26784z%22%20fill%3D%22%23ffffff%22%2F%3E%3Cpath%20d%3D%22M443.58803%2C211.25493c-1.65811%2C1.7904%20-3.23331%2C3.70016%20-5.30594%2C4.41632c-1.98973%2C0.83552%20-3.97946%2C1.31296%20-6.05209%2C1.1936c-2.23844%2C-0.23872%20-4.47689%2C-0.83552%20-6.63243%2C-2.02912c-1.16067%2C-0.71616%20-2.32135%2C-1.43232%20-3.39912%2C-2.50656c-0.91196%2C-0.83552%20-1.82392%2C-1.90976%20-2.48716%2C-3.10336c-1.4923%2C-2.74528%20-2.98459%2C-5.60991%20-4.06236%2C-8.83263c-1.07777%2C-3.46144%20-1.65811%2C-7.04223%20-1.98973%2C-10.74239c-0.33162%2C-3.22272%20-0.24872%2C-6.44543%200.24872%2C-9.54879c0.16581%2C-1.07424%200.41453%2C-2.14848%200.74615%2C-3.10336c0.82905%2C-2.62592%201.74101%2C-5.01311%202.98459%2C-7.16159c0.74615%2C-1.31296%201.65811%2C-2.3872%202.65297%2C-3.46144c-1.40939%2C2.50656%20-2.32135%2C5.25183%20-3.0675%2C8.11647c-0.41453%2C2.02912%20-0.82905%2C4.1776%20-0.91196%2C6.20671c-0.16581%2C4.89375%200.33162%2C9.66815%201.40939%2C14.32319c0.99486%2C4.41632%202.73588%2C8.11647%205.05723%2C10.98111c2.73588%2C3.46144%205.88628%2C6.32607%209.61702%2C7.28095c2.65297%2C0.5968%205.30594%2C0.35808%207.87601%2C-0.5968c1.16067%2C-0.47744%202.23844%2C-0.95488%203.31621%2C-1.43232z%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E", drA = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   NowLoadingSVG: hrA
 }, Symbol.toStringTag, { value: "Module" })), { NowLoadingSVG: YrA } = await Promise.resolve().then(() => drA), frA = () => {
@@ -51400,7 +51400,7 @@ html, body{
 }, Symbol.toStringTag, { value: "Module" })), { insertCss: FrA } = await Promise.resolve().then(() => MrA), DrA = () => {
   FrA();
   const i = qe.getScratchCanvas();
-  ue.createRenderer(i), ue.mouseEventStart();
+  le.createRenderer(i), le.mouseEventStart();
 };
 class gs {
   /**
@@ -51574,7 +51574,7 @@ class Vs {
    */
   async createSvgData(A, e) {
     const r = [];
-    for (const C of ue.getFonts())
+    for (const C of le.getFonts())
       r.push(C.load());
     await Promise.all(r), this.textAttributes = e;
     const n = this.createSvg(A), B = new XMLSerializer().serializeToString(n), Q = new Blob([B], { type: prA });
@@ -51642,7 +51642,7 @@ class RrA {
   _loadCompleted = !1;
   constructor(A) {
     const e = At.varNameValues(A);
-    this._name = e[0], this._fontPath = e[1], ue.addFont(this);
+    this._name = e[0], this._fontPath = e[1], le.addFont(this);
   }
   async load() {
     if (this.loadCompleted === !0)
@@ -51693,7 +51693,7 @@ class Si {
     return r.match(Si.REGEX_DATA_XML_SVG) ? r : "ERROR";
   }
   static async _bitmapLoad(A) {
-    const e = ue.render, r = { W: e.stageWidth, H: e.stageHeight }, n = await ng.getLoadInfo(A), o = n.size.width, B = n.size.heigth, Q = n.data;
+    const e = le.render, r = { W: e.stageWidth, H: e.stageHeight }, n = await ng.getLoadInfo(A), o = n.size.width, B = n.size.heigth, Q = n.data;
     return o > r.W && B > r.H ? Si.toSvg(Q, r.W, r.H) : Si.toSvg(Q, o / 2, B / 2);
   }
   static toSvg(A, e, r) {
@@ -52125,7 +52125,7 @@ class RP {
    * @returns 
    */
   stampStage() {
-    const A = ue.getStage();
+    const A = le.getStage();
     if (A == null)
       return;
     const e = A.drawableID;
@@ -52331,7 +52331,7 @@ class TrA {
   dragStart() {
     const A = this.sprite;
     A.render.renderer.setDrawableOrder(A.drawableID, 1 / 0, Xt.SPRITE_LAYER, !0);
-    const e = ue.renderRate, r = A.mouse.pageX, n = A.mouse.pageY, B = qe.getScratchCanvas().getBoundingClientRect(), Q = B.x, s = B.y, C = ue.render.stageWidth / 2, c = ue.render.stageHeight / 2, g = { x: r - Q, y: n - s }, a = {
+    const e = le.renderRate, r = A.mouse.pageX, n = A.mouse.pageY, B = qe.getScratchCanvas().getBoundingClientRect(), Q = B.x, s = B.y, C = le.render.stageWidth / 2, c = le.render.stageHeight / 2, g = { x: r - Q, y: n - s }, a = {
       x: g.x * e.x - C - A.Properties.position.x,
       y: c - g.y * e.y - A.Properties.position.y
     };
@@ -52628,7 +52628,7 @@ class LrA extends cB {
    * 背景名の配列
    */
   get names() {
-    const A = ue.getStage();
+    const A = le.getStage();
     return A ? A.Backdrop.names : [];
   }
   /**
@@ -52639,7 +52639,7 @@ class LrA extends cB {
    * ```
    */
   get no() {
-    const A = ue.getStage();
+    const A = le.getStage();
     return A ? A.Backdrop.no : -1;
   }
   /**
@@ -52650,7 +52650,7 @@ class LrA extends cB {
    * ```
    */
   set no(A) {
-    const e = ue.getStage();
+    const e = le.getStage();
     e && (e.Backdrop.no = A);
   }
   /**
@@ -52661,7 +52661,7 @@ class LrA extends cB {
    * ```
    */
   get name() {
-    const A = ue.getStage();
+    const A = le.getStage();
     return A ? A.Backdrop.name : "";
   }
   /**
@@ -52672,16 +52672,8 @@ class LrA extends cB {
    * ```
    */
   set name(A) {
-    const e = ue.getStage();
+    const e = le.getStage();
     e && (e.Backdrop.name = A);
-  }
-  /**
-   * 背景を切り替えて待つ
-   * @param name 
-   */
-  async switchAndWait(A) {
-    const e = ue.getStage();
-    e && await e.Backdrop.switchAndWait(A);
   }
   /**
    * 次の背景にする
@@ -52690,43 +52682,22 @@ class LrA extends cB {
    * ```
    */
   next() {
-    const A = ue.getStage();
+    const A = le.getStage();
     A && A.Backdrop.next();
-  }
-  /**
-   * 次の背景にして待つ
-   */
-  async nextAndWait() {
-    const A = ue.getStage();
-    A && await A.Backdrop.nextAndWait();
   }
   /**
    * 前の背景にする
    */
   previous() {
-    const A = ue.getStage();
+    const A = le.getStage();
     A && A.Backdrop.previous();
-  }
-  /**
-   * 前の背景にして待つ。
-   */
-  async previousAndWait() {
-    const A = ue.getStage();
-    A && await A.Backdrop.previousAndWait();
   }
   /**
    * どれかの背景にする
    */
   switchRandom() {
-    const A = ue.getStage();
+    const A = le.getStage();
     A && A.Backdrop.switchRandom();
-  }
-  /**
-   * どれかの背景にして待つ
-   */
-  async switchRandomAndWait() {
-    const A = this.name;
-    await this.untilBackdropEventDone(A);
   }
 }
 class zrA {
@@ -52853,6 +52824,9 @@ class WrA {
     const e = this.entity.$image.images.length, r = this.entity.Costume;
     r.currentConstumeNo < 0 || e - 1 < r.currentConstumeNo ? r.currentConstumeNo = 0 : (r.currentConstumeNo += 1, r.currentConstumeNo = r.currentConstumeNo % e);
   }
+  switch(A) {
+    this.name = A.name;
+  }
 }
 class OrA {
   entity;
@@ -52966,6 +52940,9 @@ class KrA extends ys.EventEmitter {
     this.entity.Properties.update();
     const A = this.entity.render.renderer.getBounds(this.entity.drawableID);
     return { ...A, width: A.right - A.left, height: A.top - A.bottom };
+  }
+  set drawingSize(A) {
+    A.w && A.h ? (this._w = A.w, this.h = A.h) : A.w ? this.w = A.w : A.h && (this.h = A.h);
   }
   hasSkin() {
     const A = this.entity.render.renderer._allDrawables[this.entity.drawableID];
@@ -53122,7 +53099,7 @@ class XrA {
     this.entity.Properties.position.x = A[0], this.entity.Properties.position.y = A[1];
   }
   mousePosition() {
-    const A = ue.mouse, e = qe.pageToScratchStagePosition(A.pageX, A.pageY);
+    const A = le.mouse, e = qe.pageToScratchStagePosition(A.pageX, A.pageY);
     return [e.scratchX, e.scratchY];
   }
   /**
@@ -53429,13 +53406,13 @@ class iiA {
    * タイマー値
    */
   get timer() {
-    return ue.timer;
+    return le.timer;
   }
   /**
    * タイマーリセット
    */
   reset() {
-    ue.resetTimer();
+    le.resetTimer();
   }
 }
 class HW {
@@ -53557,7 +53534,7 @@ class siA {
    * @returns {boolean} キー押下判定
    */
   isDown(A) {
-    return ue.runtime.keyIsDown(A);
+    return le.runtime.keyIsDown(A);
   }
   /**
    * キーが押されていないことの判定
@@ -53565,7 +53542,7 @@ class siA {
    * @returns {boolean} キー押下判定
    */
   isNotDown(A) {
-    return !ue.runtime.keyIsDown(A);
+    return !le.runtime.keyIsDown(A);
   }
 }
 class BiA {
@@ -53763,7 +53740,7 @@ class giA extends oiA {
       }
       return this.getTouchingTarget(r);
     } else {
-      const r = ue.getSprites();
+      const r = le.getSprites();
       return this.getTouchingTarget(r);
     }
   }
@@ -53847,7 +53824,7 @@ class GI extends FI {
    * @param name
    */
   constructor(A) {
-    super(), this.createDrawable(Xt.SPRITE_LAYER), this._name = A, this._properties = new riA(this), this._costume = new SrA(this), this._motion = new AiA(this), this._looks = new VrA(this), this._control = new Bs(this), this._event = new brA(this), this._sensing = new ciA(this), this._dragMode = new JrA(this), this._penSprite = new RP(this), rn.debugMode === !0 && (this._debugSprite = new RP(this, !0)), this._isSprite = !0, ue.addSprite(this);
+    super(), this.createDrawable(Xt.SPRITE_LAYER), this._name = A, this._properties = new riA(this), this._costume = new SrA(this), this._motion = new AiA(this), this._looks = new VrA(this), this._control = new Bs(this), this._event = new brA(this), this._sensing = new ciA(this), this._dragMode = new JrA(this), this._penSprite = new RP(this), rn.debugMode === !0 && (this._debugSprite = new RP(this, !0)), this._isSprite = !0, le.addSprite(this);
   }
   get Properties() {
     return this._properties;
@@ -54095,7 +54072,7 @@ class CiA {
    * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
    */
   stopAll() {
-    ue.runtime.scratchEvent.emit(et.STOP_CLICKED);
+    le.runtime.scratchEvent.emit(et.STOP_CLICKED);
   }
   /**
    * このスクリプトを停止する
@@ -54264,7 +54241,7 @@ class IiA {
    * @returns {boolean} キー押下判定
    */
   isDown(A) {
-    return ue.runtime.keyIsDown(A);
+    return le.runtime.keyIsDown(A);
   }
   /**
    * キーが押されていないことの判定
@@ -54272,7 +54249,7 @@ class IiA {
    * @returns {boolean} キー押下判定
    */
   isNotDown(A) {
-    return !ue.runtime.keyIsDown(A);
+    return !le.runtime.keyIsDown(A);
   }
 }
 class hiA {
@@ -54317,13 +54294,13 @@ class diA {
    * タイマー値
    */
   get timer() {
-    return ue.timer;
+    return le.timer;
   }
   /**
    * タイマーリセット
    */
   reset() {
-    ue.resetTimer();
+    le.resetTimer();
   }
 }
 class YiA {
@@ -54377,7 +54354,7 @@ class fiA extends FI {
   _sensing;
   _backdrop;
   constructor() {
-    super(), this.createDrawable(Xt.BACKGROUND_LAYER), this._name = "STAGE", this._properties = new liA(this), this._isSprite = !1, ue.setStage(this), this._looks = new uiA(this), this._control = new CiA(this), this._event = new EiA(this), this._sensing = new YiA(this), this._backdrop = new QiA(this);
+    super(), this.createDrawable(Xt.BACKGROUND_LAYER), this._name = "STAGE", this._properties = new liA(this), this._isSprite = !1, le.setStage(this), this._looks = new uiA(this), this._control = new CiA(this), this._event = new EiA(this), this._sensing = new YiA(this), this._backdrop = new QiA(this);
   }
   get Properties() {
     return this._properties;
@@ -54492,7 +54469,7 @@ class piA extends NW {
   }
   async fontLoad() {
     const A = [];
-    for (const e of ue.getFonts())
+    for (const e of le.getFonts())
       A.push(e.load());
     await Promise.all(A);
   }
@@ -54506,14 +54483,14 @@ class piA extends NW {
     this.image = o, this.updateSkin();
   }
   createSkin() {
-    const e = ue.render.renderer.createSVGSkin(this.image);
+    const e = le.render.renderer.createSVGSkin(this.image);
     this.skinId = e;
   }
   updateSkin() {
     if (this.skinId == -1)
       this.createSkin();
     else {
-      const A = ue.render.renderer;
+      const A = le.render.renderer;
       A._allSkins[this.skinId] && A.updateSVGSkin(this.skinId, this.image);
     }
   }
@@ -54522,11 +54499,11 @@ const miA = async function() {
   console.log(`Library Version = "${L$}"`), DrA();
 };
 await miA();
-const yiA = ue.render.stageWidth, UiA = ue.render.stageHeight, NiA = {
+const yiA = le.render.stageWidth, UiA = le.render.stageHeight, NiA = {
   w: yiA,
   h: UiA
 }, JiA = {
-  engine: ue,
+  engine: le,
   Env: rn,
   Image: NW,
   Font: RrA,

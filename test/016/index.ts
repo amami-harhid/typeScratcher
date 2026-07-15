@@ -68,7 +68,7 @@ cat.Event.flagPresser().func = async function* (this: Sprite) {
 cat.Event.cloned().func = async function* (this: Sprite) {
     // this.Sound.setVolume(CatSound, 10);
     // this.Sound.setPitch(CatSound, 30);
-    //this.Looks.show();  
+    //this.Looks.visible.show();  
     this.Looks.effect.set(Ts.ImageEffective.GHOST, 0);
     const mousePos = {x:this.Sensing.mouse.x, y:this.Sensing.mouse.y}
     this.Motion.position.xy = [mousePos.x, mousePos.y];
@@ -82,7 +82,7 @@ cat.Event.cloned().func = async function* (this: Sprite) {
             this.Sound.play(CatSound);
         }
         if(this.Sensing.sprite.isTouching([cat])) {
-            this.Looks.hide();
+            this.Looks.visible.hide();
             break;
         }
         this.Looks.costume.next();

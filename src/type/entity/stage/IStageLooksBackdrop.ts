@@ -1,5 +1,6 @@
 /** 背景 */
-import { IEntityLooksBackdrop } from "../entity/IEntityLooksBackdrop";
+import type { IEntityLooksBackdrop } from "../entity/IEntityLooksBackdrop";
+import type { IImage } from "../../image";
 /**
  * StageBackdrop
  */
@@ -24,8 +25,8 @@ export interface IStageLooksBackdrop extends IEntityLooksBackdrop {
     switchRandomAndWait(): Promise<void>;
     /**
      * 背景を変えて待つ
-     * @param backdropName 
+     * @param backdrop
      */
-    switchAndWait(backdropName: string): Promise<void>;
+    switchAndWait(backdrop: IImage): Promise<void>;
 
 }

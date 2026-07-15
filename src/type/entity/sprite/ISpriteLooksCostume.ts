@@ -46,5 +46,10 @@ export interface ISpriteLooksCostume {
      * 次のコスチュームにする
      */
     next(): void;
-
+    
+    /**
+     * 指定したコスチュームにする
+     * @param costume 
+     */
+    switch(costume: IImage): void;
 }

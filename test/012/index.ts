@@ -60,8 +60,8 @@ cat.Event.cloned().func = async function*(this:Sprite) {
     for(;;) {
         this.Motion.move.steps(15);
         this.Looks.costume.next();
-        this.Looks.size.w += 2;
-        this.Looks.size.h += 2;
+        this.Looks.size.scale.w += 2;
+        this.Looks.size.scale.h += 2;
 
         if(this.Sensing.edge.isTouching === true) {
             this.Sound.play(CatSound);
@@ -70,7 +70,7 @@ cat.Event.cloned().func = async function*(this:Sprite) {
         await this.Control.wait(0.05);
         yield;
     }
-    this.Looks.hide();
+    this.Looks.visible.hide();
     await this.Control.wait(1);
     this.Control.removeClone();
 }

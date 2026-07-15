@@ -2,8 +2,10 @@ import { Engine, engine } from '../../engine';
 import { EntityBackdrop } from '../entity/entityBackdrop';
 import { Stage } from '../stage';
 import { StageBackdrop } from '../stage/stageBackdrop';
+import type { IImage } from '../../../type/image';
 import type { ISpriteLooksBackdrop } from '../../../type/entity/sprite/ISpriteLooksBackdrop';
 import type { ISprite } from '../../../type/entity/sprite';
+import { StageLooksBackdrop } from '../stage/stageLooksBackdrop';
 
 /** 
  * 背景 
@@ -91,6 +93,13 @@ export class SpriteLooksBackdrop extends EntityBackdrop implements ISpriteLooksB
         const _entity = (engine as Engine).getStage() as Stage;
         if(_entity){
             (_entity.Backdrop as StageBackdrop).next();
+        }
+    }
+
+    switch( backdrop: IImage): void {
+        const _entity = (engine as Engine).getStage() as Stage;
+        if(_entity){
+            (_entity.Backdrop as StageLooksBackdrop).switch( backdrop );
         }
     }
     /**

@@ -117,7 +117,8 @@ export class EntityBackdrop implements IEntityBackdrop {
      * 背景を切り替えて待つ
      * @param name 
      */
-    async switchAndWait(backdropName: string) : Promise<void>{
+    async switchAndWait(backdrop: IImage) : Promise<void>{
+        const backdropName = backdrop.name;
         this.name = backdropName;
         await this.untilBackdropEventDone(backdropName);                
     }

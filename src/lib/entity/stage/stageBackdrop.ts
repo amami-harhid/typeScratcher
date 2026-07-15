@@ -1,7 +1,7 @@
 import { EntityBackdrop } from '../entity/entityBackdrop';
+import type { IImage } from '../../../type/image';
 import type { IStage } from '../../../type/entity/stage';
 import type { IStageBackdrop } from '../../../type/entity/stage/IStageBackdrop';
-import { Stage } from '.';
 
 /** サイズ */
 export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
@@ -63,8 +63,8 @@ export class StageBackdrop extends EntityBackdrop implements IStageBackdrop {
      * 背景を切り替えて待つ
      * @param name 
      */
-    async switchAndWait(backdropName: string) : Promise<void>{
-        await super.switchAndWait(backdropName);
+    async switchAndWait(backdrop: IImage) : Promise<void>{
+        await super.switchAndWait(backdrop);
     }
     /**
      * 次の背景にする

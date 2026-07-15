@@ -1,4 +1,4 @@
-import type { TBounds, TBoundsEx, TScaleArr } from "../../common/typeCommon";
+import type { TBoundsEx, TScaleArr, TScaleCanEmpty } from "../../common/typeCommon";
 import { ISpriteLooksSizeScale } from "./ISpriteLooksSizeScale";
 
 /**
@@ -8,55 +8,26 @@ export interface ISpriteLooksSize {
 
     /**
      * 横サイズ
-     * ```ts
-     *  const width = this.Looks.Size.w;
-     * ```
      */
-    get w () : number;
+    //get w () : number;
     /**
      * 横サイズ
-     * ```ts
-     *  this.Looks.Size.w = 150; // 150%
-     *  this.Looks.Size.w += 10; // 10ずつ増やす
-     * ```
      */
-    set w (width: number);
+    //set w (width: number);
     /**
      * 縦サイズ
-     * ```ts
-     *  const height = this.Looks.Size.h;
-     * ```
      */
-    get h () : number;
+    //get h () : number;
     /**
      * 縦サイズ
-     * ```ts
-     *  this.Looks.Size.h = 150; // 150%
-     *  this.Looks.Size.h += 10; // 10ずつ増やす
-     * ```
      */
-    set h (height: number);
+    //set h (height: number);
     /**
      * 縦横サイズ
-     * ```ts
-     *  // 横150%, 縦100% にする
-     *  const scale = this.Looks.Size.scale;
-     *  console.log('横', scale.w);
-     *  console.log('縦', scale.h);
-     * ```
      */
     get scale() : ISpriteLooksSizeScale;
     /**
      * 縦横サイズ
-     * ```ts
-     *  // 横150%, 縦100% にする
-     *  this.Looks.Size.scale = {w:150, h:100};
-     * ```
-     * ```ts
-     *  // 横10,縦20 ずつ増やす
-     *  const scale = this.Looks.Size.scale;
-     *  this.Looks.Size.scale = {w:scale.w +10, h:scale.h +20};
-     * ```
      */
     set scale(scale:TScaleArr);
 
@@ -81,5 +52,9 @@ export interface ISpriteLooksSize {
      * ```
      */
     get drawingSize() : TBoundsEx;
-
+    
+    /**
+     * 表示サイズを変える(ピクセルサイズ)
+     */
+    set drawingSize( size: TScaleCanEmpty);
 }

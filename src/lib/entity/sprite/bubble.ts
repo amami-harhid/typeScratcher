@@ -1,6 +1,7 @@
 /**
  * Bubble
  */
+import { Env } from "../../common/env";
 import { ScratchElement } from "../../gui/scratchElement";
 import { Sprite } from "../sprite";
 import { StageLayering } from "../../../type/entity/stage/CStageLayering";
@@ -136,17 +137,20 @@ export class Bubble  {
         }
         if( this._bubbleState.uid == '' ) {
             this.createDrawable();
-            await this.createTextSkin();    
-            if( Object.keys(_properties).length > 0 ) {
-                if( _properties.scale ) {
-                    this.updateScale( _properties.scale.w, _properties.scale.h );
-                }                }
+            await this.createTextSkin();
+            if( Object.keys(_properties).length > 0 && _properties.scale) {
+                this.updateScale( _properties.scale.w, _properties.scale.h );
+            }else if( Env.bubbleScaleLinkedToSprite === true ){
+                // スプライト連動のとき
+                this.updateScale( this.sprite.Looks.size.scale.w, this.sprite.Looks.size.scale.h );
+            }
             renderer.updateDrawableSkinId(this._bubbleState.drawableID, this._bubbleState.skinId);
         }else if(this._bubbleState.skinId) {
-            if( Object.keys(_properties).length > 0 ) {
-                if( _properties.scale ) {
-                    this.updateScale( _properties.scale.w, _properties.scale.h );
-                }
+            if( Object.keys(_properties).length > 0 && _properties.scale) {
+                this.updateScale( _properties.scale.w, _properties.scale.h );
+            }else if( Env.bubbleScaleLinkedToSprite === true ){
+                // スプライト連動のとき
+                this.updateScale( this.sprite.Looks.size.scale.w, this.sprite.Looks.size.scale.h );            
             }
             renderer.updateTextSkin(this._bubbleState.skinId, this._bubbleState.type, this._bubbleState.text, this._bubbleState.onSpriteRight);
         }    

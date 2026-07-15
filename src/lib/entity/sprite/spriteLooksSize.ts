@@ -2,7 +2,7 @@ import { EventEmitter } from 'events';
 import { ScratchEvent } from '../../engine/scratchEvent';
 import { Sprite } from '.';
 import { SpriteLooksSizeScale } from './spriteLooksSizeScale';
-import type { TBoundsEx, TScaleArr } from '../../../type/common/typeCommon';
+import type { TBoundsEx, TScaleArr, TScaleCanEmpty } from '../../../type/common/typeCommon';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteLooksSize } from '../../../type/entity/sprite/ISpriteLooksSize';
 
@@ -125,6 +125,22 @@ export class SpriteLooksSize extends EventEmitter implements ISpriteLooksSize{
         const _bounds: TBoundsEx = {...bounds, width: bounds.right-bounds.left, height: bounds.top - bounds.bottom};
         return _bounds;
     }
+
+    set drawingSize( size: TScaleCanEmpty) {
+        if(size.w && size.h ) {
+            this._w = size.w;
+            this.h = size.h;
+            
+        }else{
+            if(size.w) {
+                this.w = size.w;
+
+            }else if(size.h){
+                this.h = size.h;
+            }
+        }
+    }
+
     private hasSkin() : boolean {
         const _drawable = this.entity.render.renderer._allDrawables[this.entity.drawableID];
         if(_drawable == undefined){

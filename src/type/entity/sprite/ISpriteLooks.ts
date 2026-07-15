@@ -34,14 +34,18 @@ export interface ISpriteLooks extends IEntityLooks {
      */
     readonly bubble : ISpriteLooksBubble;
 
-        /**
+    /**
      * 表示する
      */
-    show() : void;
+    //show() : void;
     /**
      * 隠す
      */
-    hide() : void;
+    //hide() : void;
 
+    /**
+     * 見え方
+     */
+    readonly visible: {show:()=>void, hide:()=>void};
 };
 

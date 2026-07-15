@@ -3,6 +3,7 @@ import { Sprite } from '.';
 import { SpriteCostume } from './spriteCostume';
 import type { ISprite } from '../../../type/entity/sprite';
 import type { ISpriteLooksCostume } from '../../../type/entity/sprite/ISpriteLooksCostume';
+import { IImage } from 'src/type/image';
 
 /** サイズ */
 export class SpriteLooksCostume implements ISpriteLooksCostume {
@@ -107,6 +108,10 @@ export class SpriteLooksCostume implements ISpriteLooksCostume {
             _entityCostume.currentConstumeNo += 1;
             _entityCostume.currentConstumeNo = _entityCostume.currentConstumeNo % length;
         }
+    }
+
+    switch(costume: IImage): void {
+        this.name = costume.name;
     }
 
 }
