@@ -10,7 +10,7 @@ export interface ISpriteControl extends IEntityControl {
      */
     clone(): void;
     /**
-     * クローンを抹消する
+     * クローンを削除する
      */
     removeClone() : void;
     /**
