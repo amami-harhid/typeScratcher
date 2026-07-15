@@ -1,5 +1,4 @@
 import type { IEntityControl } from '../entity/IEntityControl';
-import { EventFunctionSetter } from '../entity/IEntityEvent';
 /**
  * Sprite Control(制御)
  */
