@@ -14,7 +14,7 @@ export interface IPenSprite {
     /**
      * ペンを準備する
      */
-    prepare(): void;
+    //prepare(): void;
 
     /**
      * ペンを破棄する

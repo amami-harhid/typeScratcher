@@ -6,7 +6,7 @@ import { Typescratcher as TS } from '../../src/index';
 import type { Sprite } from '../../src/index';
 import { cat } from './sub/sprites';
 import { stage as _} from './sub/stage';
-cat.Pen.prepare();
+//cat.Pen.prepare();
 cat.Pen.penClear();
 cat.Event.flagPresser().func = async function* (this: Sprite) {
     this.Motion.position.xy = [200,200];

@@ -11,7 +11,7 @@ const apple = new TS.Sprite('apple');
 apple.Costume.add([appleImage]);
 apple.Motion.direction.degree = 95;
 
-apple.Pen.prepare();
+//apple.Pen.prepare();
 apple.Pen.penDown();
 
 apple.Event.flagPresser().func = async function*(this: Sprite){
