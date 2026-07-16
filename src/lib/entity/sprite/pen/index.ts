@@ -4,7 +4,7 @@ import { Render } from '../../../render';
 import { Sprite } from '../../sprite';
 import { PenSpriteSize } from './penSpriteSize';
 import { PenSpriteHSVColor } from './penSpriteHSVColor';
-import { StageLayering, StageLayeringValue } from '../../../../type/entity/stage/CStageLayering';
+import { StageLayering } from '../../../../type/entity/stage/CStageLayering';
 import type { TPenAttributes } from '../../../../type/pen';
 import type { IPenSprite } from '../../../../type/entity/sprite/pen';
 
@@ -142,6 +142,8 @@ export class PenSprite implements IPenSprite {
             return;
         }
         this.render.renderer.penClear(this._skinId);
+        // クリア時にはペンを破棄することで、メモリ節約になるかも。
+        this.dispose();
     }
     penUp() : void {
         if(this._skinId == -1 || this._prepareDone == false){

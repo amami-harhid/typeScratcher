@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.76", P$ = {
+const j$ = "0.0.77", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -52037,7 +52037,7 @@ class RP {
       console.error(xP);
       return;
     }
-    this.render.renderer.penClear(this._skinId);
+    this.render.renderer.penClear(this._skinId), this.dispose();
   }
   penUp() {
     (this._skinId == -1 || this._prepareDone == !1) && this.prepare(), this._penDown = !1;

@@ -7,26 +7,6 @@ import type { IPenSpriteHSVColor } from './IPenSpriteHSVColor';
 export interface IPenSprite {
 
     /**
-     * 更新
-     */
-    update(): void;
-
-    /**
-     * ペンを準備する
-     */
-    //prepare(): void;
-
-    /**
-     * ペンを破棄する
-     */
-    dispose(): void;
-
-    /**
-     * ペン準備済
-     */
-    isPrepareDone(): boolean;
-
-    /**
      * ペン描画をクリアする
      */
     penClear(): void;
@@ -38,10 +18,6 @@ export interface IPenSprite {
      * ペンを下げる
      */
     penDown(): void;
-    /**
-     * ペンが下がっている判定
-     */
-    isPenDown() : boolean;
 
     /**
      * HSVカラー
@@ -52,16 +28,14 @@ export interface IPenSprite {
      * スタンプ
      */
     stamp(): void;
+
     /**
      * ステージをスタンプする
      */
-    stampStage(): void;
+    //stampStage(): void;
+
     /**
      * サイズ
      */
     readonly Size: IPenSpriteSize;
-    /**
-     * スプライトの矩形をラインで描く
-     */
-    drawBounds(): void;
 }
