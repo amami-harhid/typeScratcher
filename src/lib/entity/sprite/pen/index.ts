@@ -338,7 +338,7 @@ export class PenSprite implements IPenSprite {
             this._y0 = y0;
         }
     }
-    get Size(): PenSpriteSize {
+    get size(): PenSpriteSize {
         return this._Size;
     }
     /** @internal */
@@ -360,5 +360,4 @@ export class PenSprite implements IPenSprite {
             this.drawLine();
         }
     }
-
 }

@@ -48,7 +48,7 @@ export interface ISpriteLooksSize {
      * @returns TBounds
      * ```ts
      *  // スプライトの表示サイズを得る
-     *  const {w,h} = this.Looks.Size.drawingSize;
+     *  const {w,h} = this.Looks.size.drawingSize;
      * ```
      */
     get drawingSize() : TBoundsEx;

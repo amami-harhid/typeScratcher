@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.77", P$ = {
+const j$ = "0.0.78", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -52186,7 +52186,7 @@ class RP {
       this.render.renderer.penPoint(this._skinId, this._penRgbAttributes, A, e), this._x0 = A, this._y0 = e;
     }
   }
-  get Size() {
+  get size() {
     return this._Size;
   }
   /** @internal */

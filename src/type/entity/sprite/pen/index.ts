@@ -37,5 +37,5 @@ export interface IPenSprite {
     /**
      * サイズ
      */
-    readonly Size: IPenSpriteSize;
+    readonly size: IPenSpriteSize;
 }
