@@ -7,11 +7,11 @@ import type { IEngine } from '../type/engine';
 import type { TEnv } from './common/env';
 import type { SImage } from '../type/image';
 import type { SLoop } from '../lib/engine/loop';
+import type { IOperations } from './operations';
 import type { SSound } from '../type/sound';
 import type { SSprite } from '../type/entity/sprite';
 import type { SStage } from '../type/entity/stage';
 import type { ITextToSvg } from '../type/svgText';
-import type { IUtils } from '../type/util/utils';
 import { SPEECH_LOCALE } from '../type/speech/IVoice';
 import { VOICE_ID } from '../type/speech/IVoice';
 import { SVariable } from './entity/monitor/SVariable';
@@ -33,11 +33,11 @@ export type ExportType = {
     Env: TEnv,
     textToSvg: ITextToSvg,
     Loop: SLoop,
+    Operations: IOperations,
     ScratchFontFamily: typeof _ScratchFontFamily,
     VoiceType: typeof VOICE_ID,
     SpeechGender: typeof SPEECH_GENDER
     SpeechLocale: typeof SPEECH_LOCALE,
     StageBounds: stageBounds,
-    Utils: IUtils,
     Variable: SVariable,
 }

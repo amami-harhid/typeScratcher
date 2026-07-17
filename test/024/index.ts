@@ -129,7 +129,7 @@ cage.Event.cloned().func = async function*(this:IWall) {
     CageBank[this.name] = me;
 
     for(;;){
-        await this.Control.wait(Ts.Utils.randomValue(3.5, 5.5));
+        await this.Control.wait(Ts.Operations.randomValue(3.5, 5.5));
         if(this.type == 2) {
             this.Looks.costume.name = CageImage.name;
             this.type = 3;
@@ -189,7 +189,7 @@ const moveToRandomCage = function(this:Sprite) {
         }
     }
     // ランダムに選ぶ
-    const _idx = Ts.Utils.randomValue(0, otherArr.length-1 );
+    const _idx = Ts.Operations.randomValue(0, otherArr.length-1 );
     const _randomCage = otherArr[_idx];
     this.Motion.position.xy = [_randomCage.Motion.position.x, _randomCage.Motion.position.y];
     Count.value += 1;

@@ -38,6 +38,7 @@ import { Engine, engine } from './lib/engine';
 import { Env } from './lib/common/env';
 import { Font } from './lib/fonts';
 import { Image as _Image } from './lib/image';
+import { operations } from './lib/operations';
 import { ImageEffective, type ImageEffectiveType } from './type/entity/ImageEffective';
 import { KEYBOARD_KEYS, type KEYBOARD_KEYS_Type } from './type/engine/keyboad';
 import { Rotation, type RotationStyle } from './type/entity/RotationStyle';
@@ -49,7 +50,6 @@ import { SPEECH_GENDER } from './type/speech';
 import { textToSvg } from './lib/svgText';
 import { Loop } from './lib/engine/loop';
 import { Variable } from './lib/entity/monitor/variable';
-import { Utils } from './lib/utils/utils';
 import type { createSvgImageAttributes } from './type/image';
 import type { TBoundsEx } from './type/common/typeCommon';
 import type { IEngine } from './type/engine';
@@ -102,6 +102,7 @@ export const Typescratcher: ExportType = {
     FontImage: FontImage as SFontImage,
     ImageEffective: ImageEffective as ImageEffectiveType,
     Keyboard: KEYBOARD_KEYS as KEYBOARD_KEYS_Type,
+    Operations: operations,
     Loop: Loop as SLoop,
     Rotation: Rotation as RotationStyle,
     ScratchFontFamily: _ScratchFontFamily as typeof _ScratchFontFamily,
@@ -114,7 +115,6 @@ export const Typescratcher: ExportType = {
     textToSvg: textToSvg as ITextToSvg,
     Variable: Variable as SVariable,
     VoiceType: VOICE_ID,
-    Utils: Utils,
     
 } as const;
 
