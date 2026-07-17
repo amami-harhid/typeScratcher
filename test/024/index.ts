@@ -191,12 +191,12 @@ const moveToRandomCage = function(this:Sprite) {
     // ランダムに選ぶ
     const _idx = Ts.Utils.randomValue(0, otherArr.length-1 );
     const _randomCage = otherArr[_idx];
-    console.log(_randomCage.name)
     this.Motion.position.xy = [_randomCage.Motion.position.x, _randomCage.Motion.position.y];
     Count.value += 1;
 }
 slime.Event.cloned().func = async function*(this:Sprite) {
     // 大きさの設定
+    console.log({w: w*0.7, h: h*0.7})
     this.Looks.size.drawingSize = {w: w*0.7, h: h*0.7};
     this.Looks.visible.show();
 

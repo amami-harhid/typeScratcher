@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.78", P$ = {
+const j$ = "0.0.79", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -51900,56 +51900,67 @@ class HrA {
     this.penSprite = A;
   }
   /**
-   * 色相
+   * 色相 [0 - 360]
    */
   get hue() {
     return this.penSprite._penAttributes.color4f[0];
   }
   /**
-   * 色相
+   * 色相 [0 - 360]
    * @param hue {number} - 色相 [0 - 360]
    */
   set hue(A) {
     this.penSprite.setPenHue(A);
   }
   /**
-   * 彩度
+   * 彩度  [0 - 100]
    */
   get saturation() {
     return this.penSprite._penAttributes.color4f[1];
   }
   /**
-   * 彩度
+   * 彩度 [0 - 100]
    * @param saturation {number} - 彩度 [0 - 100]
    */
   set saturation(A) {
     this.penSprite.setPenSaturation(A);
   }
   /**
-   * 明度
+   * 明度 [0 - 100]
    */
   get brightness() {
     return this.penSprite._penAttributes.color4f[2];
   }
   /**
-   * 明度
+   * 明度 [0 - 100]
    * @param brightness {number} - 明度 [0 - 100]
    */
   set brightness(A) {
     this.penSprite.setPenBrightness(A);
   }
   /**
-   * 透明度
+   * 透明度 [0 - 100]
    */
   get transparency() {
     return this.penSprite._penAttributes.color4f[3];
   }
   /**
-   * 透明度
+   * 透明度 [0 - 100]
    * @param transparency {number} - 透明度 [0 - 100]
    */
   set transparency(A) {
     this.penSprite.setPenTransparency(A);
+  }
+  get hsv() {
+    return {
+      hue: this.hue,
+      saturation: this.saturation,
+      brightness: this.brightness,
+      transparency: this.transparency
+    };
+  }
+  set hsv(A) {
+    this.hue = A.hue, this.saturation = A.saturation, this.brightness = A.brightness, this.transparency = A.transparency;
   }
 }
 const xP = "prepareが行われていません";
@@ -52947,7 +52958,7 @@ class KrA extends ys.EventEmitter {
     return { ...A, width: A.right - A.left, height: A.top - A.bottom };
   }
   set drawingSize(A) {
-    A.w && A.h ? (this._w = A.w, this.h = A.h) : A.w ? this.w = A.w : A.h && (this.h = A.h);
+    A.w && A.h ? (this.w = A.w, this.h = A.h) : A.w ? this.w = A.w : A.h && (this.h = A.h);
   }
   hasSkin() {
     const A = this.entity.render.renderer._allDrawables[this.entity.drawableID];

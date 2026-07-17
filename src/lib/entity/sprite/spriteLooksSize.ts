@@ -128,7 +128,7 @@ export class SpriteLooksSize extends EventEmitter implements ISpriteLooksSize{
 
     set drawingSize( size: TScaleCanEmpty) {
         if(size.w && size.h ) {
-            this._w = size.w;
+            this.w = size.w;
             this.h = size.h;
             
         }else{
