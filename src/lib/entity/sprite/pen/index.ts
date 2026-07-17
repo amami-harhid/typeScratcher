@@ -139,11 +139,10 @@ export class PenSprite implements IPenSprite {
     penClear() : void {
         if(this._skinId == -1){
             console.error(NotPrepareMessage);
-            return;
+            this.prepare();
+            //return;
         }
         this.render.renderer.penClear(this._skinId);
-        // クリア時にはペンを破棄することで、メモリ節約になるかも。
-        this.dispose();
     }
     penUp() : void {
         if(this._skinId == -1 || this._prepareDone == false){
@@ -327,7 +326,9 @@ export class PenSprite implements IPenSprite {
     }
     /** @internal */
     drawPoint() : void {
+        console.log(this._skinId, this._prepareDone)
         if(this._skinId == -1 || this._prepareDone == false){
+            console.log('this.prepare()')
             this.prepare();
         }
         if(this._skinId > -1 && this._sprite.DragMode.dragging == false){

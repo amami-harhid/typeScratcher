@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.79", P$ = {
+const j$ = "0.0.80", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -52044,11 +52044,7 @@ class RP {
     this.penClear(), this._prepareDone = !0;
   }
   penClear() {
-    if (this._skinId == -1) {
-      console.error(xP);
-      return;
-    }
-    this.render.renderer.penClear(this._skinId), this.dispose();
+    this._skinId == -1 && (console.error(xP), this.prepare()), this.render.renderer.penClear(this._skinId);
   }
   penUp() {
     (this._skinId == -1 || this._prepareDone == !1) && this.prepare(), this._penDown = !1;
@@ -52192,7 +52188,7 @@ class RP {
   }
   /** @internal */
   drawPoint() {
-    if ((this._skinId == -1 || this._prepareDone == !1) && this.prepare(), this._skinId > -1 && this._sprite.DragMode.dragging == !1) {
+    if (console.log(this._skinId, this._prepareDone), (this._skinId == -1 || this._prepareDone == !1) && (console.log("this.prepare()"), this.prepare()), this._skinId > -1 && this._sprite.DragMode.dragging == !1) {
       const A = this._sprite.Properties.position.x, e = this._sprite.Properties.position.y;
       this.render.renderer.penPoint(this._skinId, this._penRgbAttributes, A, e), this._x0 = A, this._y0 = e;
     }
