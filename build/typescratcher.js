@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.80", P$ = {
+const j$ = "0.0.81", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -51750,7 +51750,20 @@ let NW = class GW {
     this._skinId = A;
   }
 };
-const go = {
+class HrA {
+  /**
+   * min,max の範囲でランダム値を取得する
+   * min,max 両方とも整数の場合、min,maxを含む整数のランダム値を返す
+   * 上記以外の場合は minを含みmaxを含まない範囲で小数値のランダム値を返す。
+   * @param min 
+   * @param max 
+   * @returns 
+   */
+  randomValue(A, e) {
+    return At.randomizeInRange(A, e);
+  }
+}
+const SrA = new HrA(), go = {
   /** 左右のみ回転 */
   LEFT_RIGHT: "left-right",
   /** 回転しない */
@@ -51890,7 +51903,7 @@ class co {
     return { min: 1, max: 1200 };
   }
 }
-class HrA {
+class TrA {
   penSprite;
   /**
    * @constructor
@@ -52023,7 +52036,7 @@ class RP {
    * @param render { Render } 
    */
   constructor(A, e = !1) {
-    this._sprite = A, this.render = A.render, this._penDown = !1, this._prepareDone = !1, e === !0 ? (this._penAttributes = { color4f: [0, 1, 1, 1], diameter: 1 }, this._penRgbAttributes = { color4f: [1, 0, 0, 1], diameter: 1 }, this._penSize = 1) : (this._penAttributes = { color4f: [240, 1, 1, 1], diameter: 1 }, this._penRgbAttributes = { color4f: [0, 0, 1, 1], diameter: 1 }, this._penSize = 1), this._Size = new co(this), this._HSVColor = new HrA(this), this._debugMode = e, this._penDrawable = Xs.getInstance(), e === !0 && (this._debugDrawable = new _s()), this._skinId = this._penDrawable.skinId;
+    this._sprite = A, this.render = A.render, this._penDown = !1, this._prepareDone = !1, e === !0 ? (this._penAttributes = { color4f: [0, 1, 1, 1], diameter: 1 }, this._penRgbAttributes = { color4f: [1, 0, 0, 1], diameter: 1 }, this._penSize = 1) : (this._penAttributes = { color4f: [240, 1, 1, 1], diameter: 1 }, this._penRgbAttributes = { color4f: [0, 0, 1, 1], diameter: 1 }, this._penSize = 1), this._Size = new co(this), this._HSVColor = new TrA(this), this._debugMode = e, this._penDrawable = Xs.getInstance(), e === !0 && (this._debugDrawable = new _s()), this._skinId = this._penDrawable.skinId;
   }
   _createPen() {
     this._debugMode === !0 ? this._skinId = this._debugDrawable.createPen(this.render) : this._skinId = this._penDrawable.createPen(this.render);
@@ -52209,7 +52222,7 @@ class RP {
     this.isPenDown() === !0 && this.drawLine();
   }
 }
-class SrA {
+class JrA {
   entity;
   currentConstumeNo = -1;
   /**
@@ -52301,7 +52314,7 @@ class SrA {
     r.currentConstumeNo < 0 || e - 1 < r.currentConstumeNo ? r.currentConstumeNo = 0 : (r.currentConstumeNo += 1, r.currentConstumeNo = r.currentConstumeNo % e);
   }
 }
-class TrA {
+class brA {
   /** @internal */
   static PROPERTIES_CHANGE = "properties_change";
   sprite;
@@ -52388,14 +52401,14 @@ class TrA {
     this.dragging = !1;
   }
 }
-class JrA {
+class krA {
   dragSprite;
   /**
    * @internal
    * @param entity {ISprite}
    */
   constructor(A) {
-    this.dragSprite = new TrA(A);
+    this.dragSprite = new brA(A);
   }
   get dragging() {
     return this.dragSprite.dragging;
@@ -52407,7 +52420,7 @@ class JrA {
     this.dragSprite.draggable = A;
   }
 }
-class brA extends Fi {
+class jrA extends Fi {
   /**
    * @internal
    * @param entity {ISprite}
@@ -52437,13 +52450,13 @@ class xW {
     return this.entity.$image.effect;
   }
 }
-const HP = "!#%()*+,-./:;=?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", krA = function() {
+const HP = "!#%()*+,-./:;=?@[]^_`{|}~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", PrA = function() {
   const A = HP.length, e = [];
   for (let r = 0; r < 20; r++)
     e[r] = HP.charAt(Math.random() * A);
   return e.join("");
 };
-class jrA {
+class LrA {
   _bubbleState;
   sprite;
   _scale;
@@ -52503,7 +52516,7 @@ class jrA {
         this._bubbleState.onSpriteRight
       );
       const r = A.render.renderer._allSkins[this._bubbleState.skinId];
-      r._canvas = qe.RemakeCanvasWillReadFrequentlyTrue, r._context = r._canvas.getContext("2d", { willReadFrequently: !0 }), this._bubbleState.uid = krA();
+      r._canvas = qe.RemakeCanvasWillReadFrequentlyTrue, r._context = r._canvas.getContext("2d", { willReadFrequently: !0 }), this._bubbleState.uid = PrA();
     }
   }
   async say(A, e = {}) {
@@ -52568,7 +52581,7 @@ class jrA {
     this.isBubbleActive && this._bubbleState.drawableID > -1 && (e.destroyDrawable(this._bubbleState.drawableID, Xt.SPRITE_LAYER), e.destroySkin(this._bubbleState.skinId), this._createBubbleState(), this._bubbleState.drawableID = -1, this._bubbleState.skinId = -1, this._bubbleState.uid = "");
   }
 }
-class PrA {
+class zrA {
   entity;
   bubble;
   /**
@@ -52576,7 +52589,7 @@ class PrA {
    * @param entity {ISprite}
    */
   constructor(A) {
-    this.entity = A, this.bubble = new jrA(this.entity);
+    this.entity = A, this.bubble = new LrA(this.entity);
   }
   /**
    * 言う
@@ -52624,7 +52637,7 @@ class PrA {
     this.bubble.isBubbleActive === !0 && this.bubble.moveWithSprite();
   }
 }
-class LrA extends cB {
+class WrA extends cB {
   /**
    * @internal
    * @param entity {ISprite}
@@ -52712,7 +52725,7 @@ class LrA extends cB {
     A && A.Backdrop.switchRandom();
   }
 }
-class zrA {
+class OrA {
   entity;
   /**
    * @internal
@@ -52751,7 +52764,7 @@ class zrA {
     this.entity.render.renderer.setDrawableOrder(this.entity.drawableID, -A, Xt.SPRITE_LAYER, !0);
   }
 }
-class WrA {
+class KrA {
   entity;
   currentConstumeNo = -1;
   /**
@@ -52840,7 +52853,7 @@ class WrA {
     this.name = A.name;
   }
 }
-class OrA {
+class VrA {
   entity;
   constructor(A) {
     this.entity = A;
@@ -52858,7 +52871,7 @@ class OrA {
     this.entity.Properties.scale.h = A;
   }
 }
-class KrA extends ys.EventEmitter {
+class XrA extends ys.EventEmitter {
   entity;
   _scale;
   _w;
@@ -52868,7 +52881,7 @@ class KrA extends ys.EventEmitter {
    * @param entity {ISprite}
    */
   constructor(A) {
-    super(), this.entity = A, this._scale = new OrA(A);
+    super(), this.entity = A, this._scale = new VrA(A);
   }
   /**
    * 横サイズ
@@ -52961,7 +52974,7 @@ class KrA extends ys.EventEmitter {
     return !(A == null || A.skin == null);
   }
 }
-class VrA extends xW {
+class _rA extends xW {
   _layer;
   _size;
   _bubble;
@@ -52972,7 +52985,7 @@ class VrA extends xW {
    * @param entity {Sprite}
    */
   constructor(A) {
-    super(A), this._layer = new zrA(A), this._size = new KrA(A), this._bubble = new PrA(A), this._costume = new WrA(A), this._backdrop = new LrA(A);
+    super(A), this._layer = new OrA(A), this._size = new XrA(A), this._bubble = new zrA(A), this._costume = new KrA(A), this._backdrop = new WrA(A);
   }
   /**
    * コスチューム番号、コスチューム名を取り出すためのオブジェクト
@@ -53027,7 +53040,7 @@ class VrA extends xW {
     A.Properties.visible = !1, A.render.renderer.updateDrawableVisible(A.drawableID, !1);
   }
 }
-class XrA {
+class ZrA {
   entity;
   prop;
   /**
@@ -53164,7 +53177,7 @@ class XrA {
     await this.glideTo(A, e);
   }
 }
-class _rA {
+class qrA {
   entity;
   /**
    * @internal
@@ -53202,7 +53215,7 @@ class _rA {
     this.entity.Properties.degree = A;
   }
 }
-class ZrA {
+class $rA {
   entity;
   /**
    * @internal
@@ -53227,7 +53240,7 @@ class ZrA {
     e > 180 && (e -= 360), this.entity.Properties.degree = e;
   }
 }
-class qrA {
+class AiA {
   entity;
   /**
    * @internal
@@ -53253,7 +53266,7 @@ class qrA {
     this.entity.Properties.rotationStyle = A;
   }
 }
-class $rA {
+class eiA {
   entity;
   /**
    * @internal
@@ -53281,7 +53294,7 @@ class $rA {
     this.entity.Properties.position.x = A[0], this.entity.Properties.position.y = A[1];
   }
 }
-class AiA {
+class tiA {
   entity;
   _move;
   _point;
@@ -53293,7 +53306,7 @@ class AiA {
    * @param entity {ISprite}
    */
   constructor(A) {
-    this.entity = A, this._move = new XrA(A), this._point = new _rA(A), this._position = new $rA(A), this._direction = new ZrA(A), this._rotation = new qrA(A);
+    this.entity = A, this._move = new ZrA(A), this._point = new qrA(A), this._position = new eiA(A), this._direction = new $rA(A), this._rotation = new AiA(A);
   }
   get position() {
     return this._position;
@@ -53311,7 +53324,7 @@ class AiA {
     return this._point;
   }
 }
-class eiA {
+class riA {
   _scale = { w: 100, h: 100 };
   get w() {
     return this._scale.w;
@@ -53326,7 +53339,7 @@ class eiA {
     this._scale.h = A;
   }
 }
-class tiA {
+class iiA {
   _position = { x: 0, y: 0 };
   get x() {
     return this._position.x;
@@ -53349,7 +53362,7 @@ class RW {
   _visible = !0;
   _rotation;
   constructor(A) {
-    this.entity = A, this._position = new tiA(), this._scale = new eiA(), this._rotation = go.ALL_AROUND;
+    this.entity = A, this._position = new iiA(), this._scale = new riA(), this._rotation = go.ALL_AROUND;
   }
   get position() {
     return this._position;
@@ -53388,7 +53401,7 @@ class RW {
     Object.assign(A, n), e.render.renderer.updateDrawableProperties(e.drawableID, A);
   }
 }
-class riA extends RW {
+class niA extends RW {
   constructor(A) {
     super(A);
   }
@@ -53411,7 +53424,7 @@ class riA extends RW {
     this.updateDrawableProperties(B);
   }
 }
-class iiA {
+class siA {
   entity;
   /**
    * @internal
@@ -53472,7 +53485,7 @@ class HW {
     return At.distance(r, n);
   }
 }
-class niA {
+class BiA {
   entity;
   Distance;
   /**
@@ -53537,7 +53550,7 @@ class niA {
     return n !== !1 && n == this.entity.drawableID;
   }
 }
-class siA {
+class aiA {
   entity;
   /**
    * @internal
@@ -53563,7 +53576,7 @@ class siA {
     return !le.runtime.keyIsDown(A);
   }
 }
-class BiA {
+class oiA {
   entity;
   _touchingEdge;
   /**
@@ -53626,7 +53639,7 @@ class BiA {
     return s < h && (h = s, a = "left"), C < h && (h = C, a = "top"), c < h && (h = c, a = "right"), g < h && (h = g, a = "bottom"), h > 0 ? { minDist: 0, nearestEdge: "" } : { minDist: h, nearestEdge: a };
   }
 }
-class aiA {
+class giA {
   entity;
   /**
    * @internal
@@ -53662,7 +53675,7 @@ class aiA {
     return !1;
   }
 }
-class oiA {
+class ciA {
   entity;
   constructor(A) {
     this.entity = A;
@@ -53712,7 +53725,7 @@ class oiA {
     return e;
   }
 }
-class giA extends oiA {
+class QiA extends ciA {
   Distance;
   /**
    * @internal
@@ -53763,7 +53776,7 @@ class giA extends oiA {
     }
   }
 }
-class ciA {
+class CiA {
   entity;
   _mouse;
   _timer;
@@ -53776,7 +53789,7 @@ class ciA {
    * @param entity {Sprite}
    */
   constructor(A) {
-    this.entity = A, this._mouse = new niA(A), this._timer = new iiA(A), this._key = new siA(A), this._edge = new BiA(A), this._color = new aiA(A), this._sprite = new giA(A);
+    this.entity = A, this._mouse = new BiA(A), this._timer = new siA(A), this._key = new aiA(A), this._edge = new oiA(A), this._color = new giA(A), this._sprite = new QiA(A);
   }
   /**
    * 質問をして答えを待つ
@@ -53842,7 +53855,7 @@ class GI extends FI {
    * @param name
    */
   constructor(A) {
-    super(), this.createDrawable(Xt.SPRITE_LAYER), this._name = A, this._properties = new riA(this), this._costume = new SrA(this), this._motion = new AiA(this), this._looks = new VrA(this), this._control = new Bs(this), this._event = new brA(this), this._sensing = new ciA(this), this._dragMode = new JrA(this), this._penSprite = new RP(this), Di.debugMode === !0 && (this._debugSprite = new RP(this, !0)), this._isSprite = !0, le.addSprite(this);
+    super(), this.createDrawable(Xt.SPRITE_LAYER), this._name = A, this._properties = new niA(this), this._costume = new JrA(this), this._motion = new tiA(this), this._looks = new _rA(this), this._control = new Bs(this), this._event = new jrA(this), this._sensing = new CiA(this), this._dragMode = new krA(this), this._penSprite = new RP(this), Di.debugMode === !0 && (this._debugSprite = new RP(this, !0)), this._isSprite = !0, le.addSprite(this);
   }
   get Properties() {
     return this._properties;
@@ -53935,7 +53948,7 @@ class GI extends FI {
     return new GI(A);
   }
 }
-class QiA extends cB {
+class EiA extends cB {
   /**
    * @internal
    * @param entity {IStage}
@@ -54037,7 +54050,7 @@ class QiA extends cB {
     await super.untilBackdropEventDone(A);
   }
 }
-class CiA {
+class wiA {
   entity;
   /**
    * @internal
@@ -54110,7 +54123,7 @@ class CiA {
     Ji.stopOtherScripts(A);
   }
 }
-class EiA extends Fi {
+class uiA extends Fi {
   /**
    * @internal
    * @param entity {IStage}
@@ -54119,7 +54132,7 @@ class EiA extends Fi {
     super(A);
   }
 }
-class wiA extends cB {
+class liA extends cB {
   /**
    * @internal
    * @param entity {IStage}
@@ -54219,14 +54232,14 @@ class wiA extends cB {
     await A.Backdrop.untilBackdropEventDone(e);
   }
 }
-class uiA extends xW {
+class IiA extends xW {
   _backdrop;
   /**
    * @internal
    * @param entity {IStage}
    */
   constructor(A) {
-    super(A), this._backdrop = new wiA(A);
+    super(A), this._backdrop = new liA(A);
   }
   /**
    * 背景番号、背景名を取り出すためのオブジェクト
@@ -54235,7 +54248,7 @@ class uiA extends xW {
     return this._backdrop;
   }
 }
-class liA extends RW {
+class hiA extends RW {
   constructor(A) {
     super(A);
   }
@@ -54247,7 +54260,7 @@ class liA extends RW {
     this.updateDrawableProperties(e);
   }
 }
-class IiA {
+class diA {
   entity;
   /**
    * @internal
@@ -54273,7 +54286,7 @@ class IiA {
     return !le.runtime.keyIsDown(A);
   }
 }
-class hiA {
+class YiA {
   entity;
   /**
    * @internal
@@ -54302,7 +54315,7 @@ class hiA {
     return this.entity.mouse.scratchY;
   }
 }
-class diA {
+class fiA {
   entity;
   /**
    * @internal
@@ -54324,7 +54337,7 @@ class diA {
     le.resetTimer();
   }
 }
-class YiA {
+class MiA {
   entity;
   _key;
   _mouse;
@@ -54334,7 +54347,7 @@ class YiA {
    * @param entity {IStage}
    */
   constructor(A) {
-    this.entity = A, this._key = new IiA(A), this._mouse = new hiA(A), this._timer = new diA(A);
+    this.entity = A, this._key = new diA(A), this._mouse = new YiA(A), this._timer = new fiA(A);
   }
   /**
    * 質問をする
@@ -54367,7 +54380,7 @@ class YiA {
     return this._timer;
   }
 }
-class fiA extends FI {
+class FiA extends FI {
   _properties;
   _looks;
   _control;
@@ -54375,7 +54388,7 @@ class fiA extends FI {
   _sensing;
   _backdrop;
   constructor() {
-    super(), this.createDrawable(Xt.BACKGROUND_LAYER), this._name = "STAGE", this._properties = new liA(this), this._isSprite = !1, le.setStage(this), this._looks = new uiA(this), this._control = new CiA(this), this._event = new EiA(this), this._sensing = new YiA(this), this._backdrop = new QiA(this);
+    super(), this.createDrawable(Xt.BACKGROUND_LAYER), this._name = "STAGE", this._properties = new hiA(this), this._isSprite = !1, le.setStage(this), this._looks = new IiA(this), this._control = new wiA(this), this._event = new uiA(this), this._sensing = new MiA(this), this._backdrop = new EiA(this);
   }
   get Properties() {
     return this._properties;
@@ -54424,7 +54437,7 @@ class fiA extends FI {
     this._properties.update();
   }
 }
-const MiA = class {
+const DiA = class {
   /**
    * 繰り返し回数のイテレーター(Generator)
    * @param n {number} - 繰り返し回数
@@ -54434,7 +54447,7 @@ const MiA = class {
     for (let e = A; e < A + i; e++)
       yield e;
   }
-}, FiA = MiA;
+}, piA = DiA;
 class SP {
   static number(A) {
     const e = { value: A, scale: { w: 100, h: 100 }, show: () => {
@@ -54465,7 +54478,7 @@ class SP {
     });
   }
 }
-class DiA {
+class miA {
   static number(A) {
     return SP.number(A);
   }
@@ -54479,7 +54492,7 @@ class DiA {
     Sr.allReposition();
   }
 }
-class piA extends NW {
+class yiA extends NW {
   _attributes;
   _text;
   constructor(A) {
@@ -54516,35 +54529,35 @@ class piA extends NW {
     }
   }
 }
-const miA = async function() {
+const UiA = async function() {
   console.log(`Library Version = "${L$}"`), DrA();
 };
-await miA();
-const yiA = le.render.stageWidth, UiA = le.render.stageHeight, NiA = {
-  w: yiA,
-  h: UiA
-}, JiA = {
+await UiA();
+const NiA = le.render.stageWidth, GiA = le.render.stageHeight, viA = {
+  w: NiA,
+  h: GiA
+}, kiA = {
   engine: le,
   Env: Di,
   Image: NW,
   Font: RrA,
-  FontImage: piA,
+  FontImage: yiA,
   ImageEffective: Rr,
   Keyboard: Vt,
-  Loop: FiA,
+  Operations: SrA,
+  Loop: piA,
   Rotation: go,
   ScratchFontFamily: UW,
   Sound: ar,
   SpeechGender: Ws,
   SpeechLocale: AW,
   Sprite: GI,
-  Stage: fiA,
-  StageBounds: NiA,
+  Stage: FiA,
+  StageBounds: viA,
   textToSvg: qs,
-  Variable: DiA,
-  VoiceType: sAA,
-  Utils: At
+  Variable: miA,
+  VoiceType: sAA
 };
 export {
-  JiA as Typescratcher
+  kiA as Typescratcher
 };
