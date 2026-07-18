@@ -12,4 +12,13 @@ export interface IOperations {
      */
     randomValue(min: number, max: number): number
 
+    /**
+     * min,max の範囲でランダム値を取得する
+     * minを含みmaxを含まない範囲で小数値のランダム値を返す。
+     * @param min 
+     * @param max 
+     * @returns 
+     */
+    randomDecimalValue(min: number, max: number): number;
+
 }

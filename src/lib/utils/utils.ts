@@ -29,15 +29,30 @@ export class Utils {
     }
     /**
      * min,max の範囲でランダム値を取得する
-     * min,max 両方とも整数の場合、min,maxを含む整数のランダム値を返す
-     * 上記以外の場合は minを含みmaxを含まない範囲で小数値のランダム値を返す。
+     * （範囲：min/max を含む）
+     * min,max に少数点があるとき少数部を切り捨てて範囲とする
      * @param min 
      * @param max 
      * @returns 
      */
     static randomValue(min: number, max: number): number {
-        return Utils.randomizeInRange(min, max);
+        const _min = Math.floor(min);
+        const _max = Math.floor(max);
+        return Utils.randomizeInRange(_min, _max);
     }
+
+    /**
+     * min,max の範囲でランダム値を取得する
+     * minを含みmaxを含まない範囲で小数値のランダム値を返す。
+     * @param min 
+     * @param max 
+     * @returns 
+     */
+    static randomDecimalValue(min: number, max: number): number {
+
+        return Utils.randomizeInRange(min, max, true);
+    }
+
     /**
      * min,max の範囲でランダム値を取得する
      * min,max 両方とも整数の場合、min,maxを含む整数のランダム値を返す

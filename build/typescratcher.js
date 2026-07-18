@@ -13913,7 +13913,7 @@ function _z() {
           }
           var bt = NA(ve);
           if (bt === null) {
-            for (var $e = 0; $e < De; $e++) fA += xA;
+            for (var At = 0; At < De; At++) fA += xA;
             RA++;
             continue;
           } else
@@ -14258,7 +14258,7 @@ function N$() {
     return WA === "." || $(WA) === "%2e";
   }, cA = function(WA) {
     return WA = $(WA), WA === ".." || WA === "%2e." || WA === ".%2e" || WA === "%2e%2e";
-  }, fA = {}, RA = {}, ne = {}, fe = {}, De = {}, ve = {}, Ge = {}, Yt = {}, bt = {}, $e = {}, Mr = {}, Fr = {}, sr = {}, Ki = {}, gn = {}, Qi = {}, Ie = {}, _t = {}, Ci = {}, Qr = {}, Dr = {}, Ai = function(WA, $A, VA) {
+  }, fA = {}, RA = {}, ne = {}, fe = {}, De = {}, ve = {}, Ge = {}, Yt = {}, bt = {}, At = {}, Mr = {}, Fr = {}, sr = {}, Ki = {}, gn = {}, Qi = {}, Ie = {}, _t = {}, Ci = {}, Qr = {}, Dr = {}, Ai = function(WA, $A, VA) {
     var TA = u(WA), re, ye, he;
     if ($A) {
       if (ye = this.parse(TA), ye) throw new H(ye);
@@ -14321,7 +14321,7 @@ function N$() {
             break;
           case De:
             if (ie === "/") {
-              re = $e;
+              re = At;
               break;
             } else {
               re = _t;
@@ -14345,7 +14345,7 @@ function N$() {
             if (TA.isSpecial() && (ie === "/" || ie === "\\"))
               re = bt;
             else if (ie === "/")
-              re = $e;
+              re = At;
             else {
               TA.username = VA.username, TA.password = VA.password, TA.host = VA.host, TA.port = VA.port, re = _t;
               continue;
@@ -14357,11 +14357,11 @@ function N$() {
             break;
           case bt:
             if (ie !== "/" && ie !== "\\") {
-              re = $e;
+              re = At;
               continue;
             }
             break;
-          case $e:
+          case At:
             if (ie === "@") {
               tt && (he = "%40" + he), tt = !0, ct = g(he);
               for (var Ei = 0; Ei < ct.length; Ei++) {
@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.81", P$ = {
+const j$ = "0.0.82", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -28148,7 +28148,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     const pe = uA.createElement("template");
                     pe.content && pe.content.ownerDocument && (uA = pe.content.ownerDocument);
                   }
-                  let $e, Mr = "";
+                  let At, Mr = "";
                   const {
                     implementation: Fr,
                     createNodeIterator: sr,
@@ -28235,9 +28235,9 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                           throw x('TRUSTED_TYPES_POLICY configuration option must provide a "createHTML" hook.');
                         if (typeof HA.TRUSTED_TYPES_POLICY.createScriptURL != "function")
                           throw x('TRUSTED_TYPES_POLICY configuration option must provide a "createScriptURL" hook.');
-                        $e = HA.TRUSTED_TYPES_POLICY, Mr = $e.createHTML("");
+                        At = HA.TRUSTED_TYPES_POLICY, Mr = At.createHTML("");
                       } else
-                        $e === void 0 && ($e = FA(ne, GA)), $e !== null && typeof Mr == "string" && (Mr = $e.createHTML(""));
+                        At === void 0 && (At = FA(ne, GA)), At !== null && typeof Mr == "string" && (Mr = At.createHTML(""));
                       a && a(HA), ni = HA;
                     }
                   }, en = P({}, [...V, ...AA, ...$]), En = P({}, [...rA, ...aA]), Me = function(HA) {
@@ -28289,7 +28289,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                       Fe = ht && ht[0];
                     }
                     Ri === "application/xhtml+xml" && je === br && (HA = '<html xmlns="http://www.w3.org/1999/xhtml"><head></head><body>' + HA + "</body></html>");
-                    const Qt = $e ? $e.createHTML(HA) : HA;
+                    const Qt = At ? At.createHTML(HA) : HA;
                     if (je === br)
                       try {
                         ce = new RA().parseFromString(Qt, Ri);
@@ -28431,14 +28431,14 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                         kr(ht, HA);
                         continue;
                       }
-                      if ($e && typeof ne == "object" && typeof ne.getAttributeType == "function" && !tr)
+                      if (At && typeof ne == "object" && typeof ne.getAttributeType == "function" && !tr)
                         switch (ne.getAttributeType(On, si)) {
                           case "TrustedHTML": {
-                            jt = $e.createHTML(jt);
+                            jt = At.createHTML(jt);
                             break;
                           }
                           case "TrustedScriptURL": {
-                            jt = $e.createScriptURL(jt);
+                            jt = At.createScriptURL(jt);
                             break;
                           }
                         }
@@ -28478,7 +28478,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     else {
                       if (!Ut && !ie && !Tt && // eslint-disable-next-line unicorn/prefer-includes
                       pe.indexOf("<") === -1)
-                        return $e && wi ? $e.createHTML(pe) : pe;
+                        return At && wi ? At.createHTML(pe) : pe;
                       if (ce = wn(pe), !ce)
                         return Ut ? null : wi ? Mr : "";
                     }
@@ -28500,7 +28500,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
                     return Tt && nt["!doctype"] && ce.ownerDocument && ce.ownerDocument.doctype && ce.ownerDocument.doctype.name && G(xA, ce.ownerDocument.doctype.name) && (tr = "<!DOCTYPE " + ce.ownerDocument.doctype.name + `>
 ` + tr), ie && l([_t, Ci, Qr], (Or) => {
                       tr = H(tr, Or, " ");
-                    }), $e && wi ? $e.createHTML(tr) : tr;
+                    }), At && wi ? At.createHTML(tr) : tr;
                   }, sA.setConfig = function() {
                     let pe = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
                     li(pe), Ei = !0;
@@ -31834,7 +31834,7 @@ void main() {
                   getGLTypeForTypedArray: function() {
                     return (
                       /* binding */
-                      $e
+                      At
                     );
                   },
                   /* harmony export */
@@ -32398,7 +32398,7 @@ void main() {
                   const Y = bt;
                   Y[wA] = Int8Array, Y[GA] = Uint8Array, Y[kA] = Int16Array, Y[X] = Uint16Array, Y[L] = Int32Array, Y[W] = Uint32Array, Y[eA] = Float32Array, Y[cA] = Uint16Array, Y[fA] = Uint16Array, Y[RA] = Uint16Array, Y[ne] = Uint16Array, Y[fe] = Uint32Array, Y[De] = Uint32Array, Y[ve] = Uint32Array, Y[Ge] = Uint32Array, Y[Yt] = Uint32Array;
                 }
-                function $e(Y) {
+                function At(Y) {
                   if (Y instanceof Int8Array)
                     return wA;
                   if (Y instanceof Uint8Array || Y instanceof Uint8ClampedArray)
@@ -32445,7 +32445,7 @@ void main() {
                 };
                 var Ki = /* @__PURE__ */ Object.freeze({
                   __proto__: null,
-                  getGLTypeForTypedArray: $e,
+                  getGLTypeForTypedArray: At,
                   getGLTypeForTypedArrayType: Mr,
                   getTypedArrayTypeForGLType: Fr,
                   isArrayBuffer: sr
@@ -32554,7 +32554,7 @@ void main() {
                           dA = Mr(zA), mA = q.normalize !== void 0 ? q.normalize : Ei(zA), vA = q.numComponents || q.size || wi(z, bA), CA = Y.createBuffer(), Y.bindBuffer(ot, CA), Y.bufferData(ot, JA, q.drawType || yt);
                         } else {
                           const bA = ui(q, z);
-                          CA = ie(Y, bA, void 0, q.drawType), dA = $e(bA), mA = q.normalize !== void 0 ? q.normalize : Tt(bA), vA = Gi(q, z);
+                          CA = ie(Y, bA, void 0, q.drawType), dA = At(bA), mA = q.normalize !== void 0 ? q.normalize : Tt(bA), vA = Gi(q, z);
                         }
                         R[BA] = {
                           buffer: CA,
@@ -32612,7 +32612,7 @@ void main() {
                   const BA = N.indices;
                   if (BA) {
                     const CA = ui(BA, "indices");
-                    q.indices = ie(Y, CA, zr), q.numElements = CA.length, q.elementType = $e(CA);
+                    q.indices = ie(Y, CA, zr), q.numElements = CA.length, q.elementType = At(CA);
                   } else q.numElements || (q.numElements = bn(Y, q.attribs));
                   return q;
                 }
@@ -32624,7 +32624,7 @@ void main() {
                   const R = {};
                   return Object.keys(N).forEach(function(z) {
                     R[z] = ii(Y, N[z], z);
-                  }), N.indices ? (R.numElements = N.indices.length, R.elementType = $e(ui(N.indices))) : R.numElements = ri(N), R;
+                  }), N.indices ? (R.numElements = N.indices.length, R.elementType = At(ui(N.indices))) : R.numElements = ri(N), R;
                 }
                 var Wr = /* @__PURE__ */ Object.freeze({
                   __proto__: null,
@@ -33933,7 +33933,7 @@ void main() {
                   return N.numColorComponents;
                 }
                 function JI(Y, N, R) {
-                  return UA(N) ? $e(N) : R || Dt;
+                  return UA(N) ? At(N) : R || Dt;
                 }
                 function da(Y, N, R, z, q) {
                   if (q % 1 !== 0)
@@ -37018,9 +37018,9 @@ function X$() {
   function bt(K, E, t) {
     return K === 64 && E === 64 && W(t);
   }
-  const $e = /* @__PURE__ */ new Set(["break", "case", "catch", "continue", "debugger", "default", "do", "else", "finally", "for", "function", "if", "return", "switch", "throw", "try", "var", "const", "while", "with", "new", "this", "super", "class", "extends", "export", "import", "null", "true", "false", "in", "instanceof", "typeof", "void", "delete", "implements", "interface", "let", "package", "private", "protected", "public", "static", "yield", "eval", "arguments", "enum", "await"]);
+  const At = /* @__PURE__ */ new Set(["break", "case", "catch", "continue", "debugger", "default", "do", "else", "finally", "for", "function", "if", "return", "switch", "throw", "try", "var", "const", "while", "with", "new", "this", "super", "class", "extends", "export", "import", "null", "true", "false", "in", "instanceof", "typeof", "void", "delete", "implements", "interface", "let", "package", "private", "protected", "public", "static", "yield", "eval", "arguments", "enum", "await"]);
   function Mr(K) {
-    return $e.has(K);
+    return At.has(K);
   }
   class Fr {
     constructor(E) {
@@ -45676,7 +45676,7 @@ class Z$ {
     }
   }
 }
-class At {
+class $e {
   /**
    * 距離を計算する
    * @param {{x:number, y:number}} obj1 
@@ -45686,7 +45686,7 @@ class At {
   static distance(A, e) {
     if (A && e && A.x != null && A.y != null && e.x != null && e.y != null) {
       const r = A.x, n = A.y, o = e.x, B = e.y;
-      if (At.isNumber(r) && At.isNumber(n) && At.isNumber(o) && At.isNumber(B)) {
+      if ($e.isNumber(r) && $e.isNumber(n) && $e.isNumber(o) && $e.isNumber(B)) {
         const Q = r - o, s = n - B, C = Q * Q + s * s;
         return Math.sqrt(C);
       }
@@ -45695,14 +45695,25 @@ class At {
   }
   /**
    * min,max の範囲でランダム値を取得する
-   * min,max 両方とも整数の場合、min,maxを含む整数のランダム値を返す
-   * 上記以外の場合は minを含みmaxを含まない範囲で小数値のランダム値を返す。
+   * （範囲：min/max を含む）
+   * min,max に少数点があるとき少数部を切り捨てて範囲とする
    * @param min 
    * @param max 
    * @returns 
    */
   static randomValue(A, e) {
-    return At.randomizeInRange(A, e);
+    const r = Math.floor(A), n = Math.floor(e);
+    return $e.randomizeInRange(r, n);
+  }
+  /**
+   * min,max の範囲でランダム値を取得する
+   * minを含みmaxを含まない範囲で小数値のランダム値を返す。
+   * @param min 
+   * @param max 
+   * @returns 
+   */
+  static randomDecimalValue(A, e) {
+    return $e.randomizeInRange(A, e, !0);
   }
   /**
    * min,max の範囲でランダム値を取得する
@@ -45716,9 +45727,9 @@ class At {
    * @returns 
    */
   static randomizeInRange(A, e, r = !1) {
-    if (At.isNumber(A) && At.isNumber(e)) {
+    if ($e.isNumber(A) && $e.isNumber(e)) {
       const n = e, o = A;
-      if (r === !1 && At.isInteger(A) && At.isInteger(e)) {
+      if (r === !1 && $e.isInteger(A) && $e.isInteger(e)) {
         const B = n - o + 1, Q = Math.random() * B + o;
         return Math.floor(Q);
       } else if (o < n) {
@@ -45729,7 +45740,7 @@ class At {
     return 0;
   }
   static isNumber(A) {
-    return !!(A != null && (typeof A == "number" || At.isInteger(A)) && isFinite(Number(A)));
+    return !!(A != null && (typeof A == "number" || $e.isInteger(A)) && isFinite(Number(A)));
   }
   static isInteger(A) {
     return !!Number.isInteger(A);
@@ -45758,7 +45769,7 @@ class At {
     return new Promise(async (n) => {
       let o;
       for (r ? o = A.bind(r) : o = A; o() !== !0; )
-        await At.wait(e);
+        await $e.wait(e);
       n();
     });
   }
@@ -45942,7 +45953,7 @@ class cB {
    * どれかの背景にする
    */
   switchRandom() {
-    const A = this.no, r = this.entity.$image.images.length, n = At.randomizeInRange(0, r - 1);
+    const A = this.no, r = this.entity.$image.images.length, n = $e.randomizeInRange(0, r - 1);
     if (this.no = n, A != this.no) {
       const o = this.name;
       this.backdropChangeEmit(o);
@@ -46347,7 +46358,7 @@ class ar extends tg {
   //private _pitch: number = 0;
   constructor(A, e = !1) {
     super();
-    const r = At.varNameValues(A);
+    const r = $e.varNameValues(A);
     this._name = r[0];
     const n = r[1];
     this._ready_audio_engine = !1, e === !0 ? (this._ready_audio_engine = !0, this._soundPath = "", this._data = n) : this._soundPath = n;
@@ -46683,7 +46694,7 @@ class ro extends tg {
   _soundPlayer;
   constructor(A) {
     super();
-    const e = At.varNameValues(A);
+    const e = $e.varNameValues(A);
     this._name = e[0];
     const r = e[1];
     this._ready_audio_engine = !1, this._ready_audio_engine = !0, this._data = r;
@@ -47076,7 +47087,7 @@ class FI extends ys.EventEmitter {
     return this.imageLoadCompleteAll() === !1, !1;
   }
   _generateUUID() {
-    return At.generateUUID();
+    return $e.generateUUID();
   }
 }
 class Os extends FI {
@@ -47134,10 +47145,10 @@ class Os extends FI {
     return this._position;
   }
   set position(A) {
-    A != null && A.x != null && A.y != null && At.isNumber(A.x) && At.isNumber(A.y) && (this._position.x = A.x, this._position.y = A.y, this.renderDraw());
+    A != null && A.x != null && A.y != null && $e.isNumber(A.x) && $e.isNumber(A.y) && (this._position.x = A.x, this._position.y = A.y, this.renderDraw());
   }
   set scale(A) {
-    A != null && A.w != null && A.h != null && At.isNumber(A.w) && At.isNumber(A.h) && (this._scale.w = A.w, this._scale.h = A.h, this.renderDraw());
+    A != null && A.w != null && A.h != null && $e.isNumber(A.w) && $e.isNumber(A.h) && (this._scale.w = A.w, this._scale.h = A.h, this.renderDraw());
   }
   show() {
     this._visible = !0, this._skin != null && this._skin.show();
@@ -48383,7 +48394,7 @@ class lr extends ys.EventEmitter {
         }
         if (B == null)
           break;
-        await At.wait(0.033), B = document.getElementById(GB);
+        await $e.wait(0.033), B = document.getElementById(GB);
       }
       e.forceComplete === !0 ? n(!1) : (r.removeListener(lr.QuestionBoxForceComplete, o), n(!0));
     });
@@ -48850,7 +48861,7 @@ class os extends tg {
   _args;
   _isDeadThread;
   constructor(A, e = !1) {
-    super(), this._entity = A, this.threadId = At.generateUUID(), this.entityId = A.id, this._foreverExist = e, this._proxy = this.genProxy(), this._args = [], this._isDeadThread = !1;
+    super(), this._entity = A, this.threadId = $e.generateUUID(), this.entityId = A.id, this._foreverExist = e, this._proxy = this.genProxy(), this._args = [], this._isDeadThread = !1;
   }
   clear() {
     this.entity.isSprite && this.entity.isClone && (this._entity = null);
@@ -48902,7 +48913,7 @@ class os extends tg {
     return this._foreverExist;
   }
   _generateUUID() {
-    return At.generateUUID();
+    return $e.generateUUID();
   }
   get isStarted() {
     return this._isStarted;
@@ -51642,7 +51653,7 @@ class RrA {
   _fonts;
   _loadCompleted = !1;
   constructor(A) {
-    const e = At.varNameValues(A);
+    const e = $e.varNameValues(A);
     this._name = e[0], this._fontPath = e[1], le.addFont(this);
   }
   async load() {
@@ -51711,7 +51722,7 @@ let NW = class GW {
    * @returns 
    */
   static async createSvgImage(A, e) {
-    const r = At.varNameValues(A), n = r[0], o = r[1], B = {};
+    const r = $e.varNameValues(A), n = r[0], o = r[1], B = {};
     e.scratch_font_family && (qs.scratchFontFamily = e.scratch_font_family), e.fill && (B.fill = e.fill), e.font_family && (B.font = e.font_family), e.font_size && (B.font_size = e.font_size), e.font_weight && (B.font_weight = e.font_weight), e.stroke && (B.stroke = e.stroke), e.stroke_mode && (B.stroke_mode = e.stroke_mode), e.stroke_width && (B.stroke_width = e.stroke_width);
     const Q = await qs.createSvgData(o, B), s = {};
     return s[n] = Q, new GW(s);
@@ -51722,7 +51733,7 @@ let NW = class GW {
   _loadCompleted = !1;
   _skinId = -1;
   constructor(A) {
-    const e = At.varNameValues(A);
+    const e = $e.varNameValues(A);
     this._name = e[0], this._imagePath = e[1];
   }
   async load() {
@@ -51753,14 +51764,24 @@ let NW = class GW {
 class HrA {
   /**
    * min,max の範囲でランダム値を取得する
-   * min,max 両方とも整数の場合、min,maxを含む整数のランダム値を返す
-   * 上記以外の場合は minを含みmaxを含まない範囲で小数値のランダム値を返す。
+   * （範囲：min/max を含む）
+   * min,max に少数点があるとき少数部を切り捨てて範囲とする
    * @param min 
    * @param max 
    * @returns 
    */
   randomValue(A, e) {
-    return At.randomizeInRange(A, e);
+    return $e.randomValue(A, e);
+  }
+  /**
+   * min,max の範囲でランダム値を取得する
+   * minを含みmaxを含まない範囲で小数値のランダム値を返す。
+   * @param min 
+   * @param max 
+   * @returns 
+   */
+  randomDecimalValue(A, e) {
+    return $e.randomDecimalValue(A, e);
   }
 }
 const SrA = new HrA(), go = {
@@ -53119,7 +53140,7 @@ class ZrA {
     this.entity.Properties.position.x = A[0], this.entity.Properties.position.y = A[1];
   }
   randomPosition() {
-    const A = this.entity.render.stageWidth, e = Math.floor(A / 2), r = At.randomizeInRange(-e, e), n = this.entity.render.stageHeight, o = Math.floor(n / 2), B = At.randomizeInRange(-o, o);
+    const A = this.entity.render.stageWidth, e = Math.floor(A / 2), r = $e.randomizeInRange(-e, e), n = this.entity.render.stageHeight, o = Math.floor(n / 2), B = $e.randomizeInRange(-o, o);
     return [r, B];
   }
   /**
@@ -53211,7 +53232,7 @@ class qrA {
    * どこかを向く
    */
   toRandom() {
-    const A = At.randomValue(-179, 180);
+    const A = $e.randomValue(-179, 180);
     this.entity.Properties.degree = A;
   }
 }
@@ -53467,7 +53488,7 @@ class HW {
       x: n.scratchX,
       y: n.scratchY
     };
-    return At.distance(A, o);
+    return $e.distance(A, o);
   }
   /**
    * 他スプライトとの距離(中心同士の距離)
@@ -53482,7 +53503,7 @@ class HW {
       x: e.Properties.position.x,
       y: e.Properties.position.y
     };
-    return At.distance(r, n);
+    return $e.distance(r, n);
   }
 }
 class BiA {
