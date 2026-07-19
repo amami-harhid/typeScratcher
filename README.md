@@ -4,7 +4,8 @@
 
 ---
 
-[![Guidance](https://amami-harhid.github.io/typescratcherDoc/web/)](https://amami-harhid.github.io/typescratcherDoc/web/)
+<iframe width="100%" src="https://amami-harhid.github.io/typescratcherDoc/web/" frameborder="0" allowfullscreen></iframe>
+
 ---
 
 
