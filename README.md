@@ -1,8 +1,9 @@
 # TypeScracherとは何？
 
-『`TypeScratcher`』は、コードプログラミングにより、Scratch3風の動きを実現する『`Typescript`』で書かれたゲームエンジンのライブラリです。
+『`TypeScratcher`』は、コードプログラミングを使ってScratch3風の動きを実現する『`Typescript`』で書かれたゲームエンジンのライブラリです。
 
 ---
+
 <a href="https://amami-harhid.github.io/typescratcherDoc/web/">
 <img src="https://amami-harhid.github.io/typescratcherDoc/web/topImage.png"/>
 </a>
