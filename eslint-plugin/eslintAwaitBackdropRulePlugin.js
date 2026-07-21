@@ -1,5 +1,5 @@
 'use strict'
-const awaitMoveRule = {
+const awaitBackdropRule = {
     meta: {
         type: 'problem',
         fixable: 'code',
@@ -13,17 +13,18 @@ const awaitMoveRule = {
             Identifier(node) {
                 if(node.type == 'Identifier' &&
                   (
-                      node.name == 'glideTo' ||
-                      node.name == 'glideToRandom' ||
-                      node.name == 'glideToMouse'
+                      node.name == 'nextAndWait' ||
+                      node.name == 'previousAndWait' ||
+                      node.name == 'switchRandomAndWait' ||
+                      node.name == 'switchAndWait'
                   )
                 ) {
                     const parent = node.parent;
                     if(parent.type == 'MemberExpression') {
                         if(parent.object && parent.object.property 
-                            && parent.object.property.name == 'move' &&
+                            && parent.object.property.name == 'backdrop' &&
                             parent.object.object && parent.object.object.property && 
-                            parent.object.object.property.name == 'Motion'){
+                            parent.object.object.property.name == 'Looks'){
                             const parent2 = parent.parent;
                             if(parent2.type == 'CallExpression') {
                                 const parent3 = parent2.parent;
@@ -44,10 +45,10 @@ const awaitMoveRule = {
         }
     },
 }
-export const awaitMoveRulesPlugin = { 
+export const awaitBackdropRulesPlugin = { 
     meta:{
-        name: 'await-move-plugin',
+        name: 'await-backdrop-plugin',
         version: '0.1.0',
     },
-    rules: { "await-move-plugin": awaitMoveRule },
+    rules: { "await-backdrop-plugin": awaitBackdropRule },
 };

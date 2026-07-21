@@ -35,6 +35,7 @@ import {awaitSensingRulesPlugin} from "./eslintAwaitSensingRulePlugin.js";
 import {eventAsyncRulesPlugin} from "./eslintEventAsyncRulePlugin.js";
 import {controlAsyncRulesPlugin} from "./eslintControlAsyncRulePlugin.js";
 import {s3LoopRulesPlugin} from "./eslintLoopRulePlugin.js";
+import { awaitBackdropRulesPlugin } from "./eslintAwaitBackdropRulePlugin.js";
 
 /** @type {import('eslint').Linter.Config[]} */
 const eslint_S3_config = [
@@ -56,6 +57,7 @@ const eslint_S3_config = [
             //awaitImage : awaitImageRulesPlugin,
             awaitLooks : awaitLooksRulesPlugin,
             awaitMove: awaitMoveRulesPlugin,
+            awaitBackdrop: awaitBackdropRulesPlugin,
             //awaitLib : awaitLibRulesPlugin,
             awaitSound : awaitSoundRulesPlugin,
             awaitSensing : awaitSensingRulesPlugin,
@@ -88,6 +90,7 @@ const eslint_S3_config = [
                     "destructuredArrayIgnorePattern": "^_"
                 }
             ],
+            'awaitBackdrop/await-backdrop-plugin': 'error',
             'awaitControl/await-control-plugin': 'error',
             'awaitEvent/await-event-plugin': 'error',
             'awaitSpeech/await-speech-plugin': 'error',

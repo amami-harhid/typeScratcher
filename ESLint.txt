@@ -1,0 +1,43 @@
+EntityBroadcast
+sendAndWait(messageId: string, ...args:unknown[]): Promise<void>;
+
+EntityControl
+wait(sec: number): Promise<void>;
+waitUntil(condition: CallableFunction): Promise<void>;
+waitWhile(condition: CallableFunction): Promise<void>;
+
+EntitySensing
+askAndWait(question:string): Promise<string>;
+
+
+
+EntitySuond
+playUntilDone(sound: ISound): Promise<void>;
+clearEffects(): Promise<void>; // 本当にPromise<void>は必要か？
+
+EntitySpeech
+speech(words: string) : Promise<void>;
+
+EntityTextToSpeech
+speechAndWait(words: string, propertyType: string ): Promise<void>;
+
+
+SpriteLooksBubble
+sayForSecs(text: string, sec:number, properties?: BubbleProperties): Promise<void>;
+thinkForSecs(text: string, sec: number, properties?: BubbleProperties): Promise<void>;
+
+SpriteMotionMove
+glideTo(sec:number, pos: TPositionArray): Promise<void>;
+glideToRandom(sec:number): Promise<void>;
+glideToMouse(sec:number): Promise<void>;
+
+StageLooksBackdrop
+nextAndWait(): Promise<void>
+previousAndWait(): Promise<void>;
+switchRandomAndWait(): Promise<void>;
+switchAndWait(backdrop: IImage): Promise<void>;
+
+FontImage
+textToSvg( text: string ) : Promise<void>;
+
+
