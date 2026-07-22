@@ -89,6 +89,5 @@ cat.Event.cloned().func = async function* (this: Sprite) {
     }
     this.Control.removeClone();
 };
-
 // 開始
 Ts.engine.start();

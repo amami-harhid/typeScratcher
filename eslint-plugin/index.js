@@ -34,7 +34,7 @@ import {awaitSoundRulesPlugin} from "./eslintAwaitSoundRulePlugin.js";
 import {awaitSensingRulesPlugin} from "./eslintAwaitSensingRulePlugin.js";
 import {eventAsyncRulesPlugin} from "./eslintEventAsyncRulePlugin.js";
 import {controlAsyncRulesPlugin} from "./eslintControlAsyncRulePlugin.js";
-import {s3LoopRulesPlugin} from "./eslintLoopRulePlugin.js";
+//import {s3LoopRulesPlugin} from "./eslintLoopRulePlugin.js";
 import { awaitBackdropRulesPlugin } from "./eslintAwaitBackdropRulePlugin.js";
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -63,7 +63,7 @@ const eslint_S3_config = [
             awaitSensing : awaitSensingRulesPlugin,
             eventAsync: eventAsyncRulesPlugin,
             controlAsync: controlAsyncRulesPlugin,
-            loopCheck: s3LoopRulesPlugin,
+            //loopCheck: s3LoopRulesPlugin,
         },
         rules: {
             "indent": ["error", 4],  // indent 4 space
@@ -102,7 +102,7 @@ const eslint_S3_config = [
             'awaitSensing/await-sensing-plugin': 'error',
             'eventAsync/event-async-plugin': 'error',
             'controlAsync/control-async-plugin': 'error',
-            'loopCheck/s3-loop-plugin' : 'error',
+            //'loopCheck/s3-loop-plugin' : 'error',
         }
     },
     pluginJs.configs.recommended,

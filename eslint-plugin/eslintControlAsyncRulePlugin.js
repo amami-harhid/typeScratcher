@@ -5,7 +5,7 @@ const controlAsyncRule = {
         fixable: 'code',
         schema: [],
         messages: {
-            EventFunctionId: 'async をつけてください',
+            EventFunctionId: 'async関数にしてください',
         },
     },
     create(context){
