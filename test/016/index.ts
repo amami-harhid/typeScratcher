@@ -54,12 +54,6 @@ cat.Event.flagPresser().func = async function* (this: Sprite) {
         if (this.Sensing.mouse.isDown) {
             this.Control.clone();
         }
-        //await this.Control.wait(2);
-        // クリックしたとき
-        // if (this.Sensing.mouse.isTouching && this.Sensing.mouse.isDown) {
-        //     this.Control.clone(); 
-        //     this.Sound.play(CatSound);
-        // }
         yield;
     }
 };
