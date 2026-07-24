@@ -1,4 +1,5 @@
 {
+    "eslint.runtime": "node",
     "eslint.useFlatConfig": true,
     "eslint.format.enable": true,
     "eslint.problems.shortenToSingleLine": true,

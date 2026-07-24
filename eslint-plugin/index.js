@@ -23,19 +23,10 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 
-import {awaitControlRulesPlugin} from "./eslintAwaitControlRulePlugin.js";
-import {awaitEventRulesPlugin } from "./eslintAwaitEventRulePlugin.js";
-import {awaitSpeechRulesPlugin} from "./eslintAwaitSpeechRulePlugin.js";
-//import {awaitImageRulesPlugin} from "./eslintAwaitImageRulePlugin.js";
-import {awaitLooksRulesPlugin} from "./eslintAwaitLooksRulePlugin.js";
-import {awaitMoveRulesPlugin} from "./eslintAwaitMoveRulePlugin.js";
-//import {awaitLibRulesPlugin} from "./eslintAwaitLibRulePlugin.js";
-import {awaitSoundRulesPlugin} from "./eslintAwaitSoundRulePlugin.js";
-import {awaitSensingRulesPlugin} from "./eslintAwaitSensingRulePlugin.js";
 import {eventAsyncRulesPlugin} from "./eslintEventAsyncRulePlugin.js";
 import {controlAsyncRulesPlugin} from "./eslintControlAsyncRulePlugin.js";
 import {s3LoopRulesPlugin} from "./eslintLoopRulePlugin.js";
-import { awaitBackdropRulesPlugin } from "./eslintAwaitBackdropRulePlugin.js";
+import {awaitRulesPlugin } from "./eslintAwaitRulePlugin.js";
 
 /** @type {import('eslint').Linter.Config[]} */
 const eslint_S3_config = [
@@ -51,16 +42,7 @@ const eslint_S3_config = [
             }
         },
         plugins: {
-            awaitControl : awaitControlRulesPlugin,
-            awaitEvent : awaitEventRulesPlugin,
-            awaitSpeech: awaitSpeechRulesPlugin,
-            //awaitImage : awaitImageRulesPlugin,
-            awaitLooks : awaitLooksRulesPlugin,
-            awaitMove: awaitMoveRulesPlugin,
-            awaitBackdrop: awaitBackdropRulesPlugin,
-            //awaitLib : awaitLibRulesPlugin,
-            awaitSound : awaitSoundRulesPlugin,
-            awaitSensing : awaitSensingRulesPlugin,
+            awaitRule: awaitRulesPlugin,
             eventAsync: eventAsyncRulesPlugin,
             controlAsync: controlAsyncRulesPlugin,
             loopCheck: s3LoopRulesPlugin,
@@ -90,16 +72,7 @@ const eslint_S3_config = [
                     "destructuredArrayIgnorePattern": "^_"
                 }
             ],
-            'awaitBackdrop/await-backdrop-plugin': 'error',
-            'awaitControl/await-control-plugin': 'error',
-            'awaitEvent/await-event-plugin': 'error',
-            'awaitSpeech/await-speech-plugin': 'error',
-            //'awaitImage/await-image-plugin': 'error',
-            //'awaitLib/await-lib-plugin': 'error',
-            'awaitLooks/await-looks-plugin': 'error',
-            'awaitMove/await-move-plugin': 'error',
-            'awaitSound/await-sound-plugin': 'error',
-            'awaitSensing/await-sensing-plugin': 'error',
+            'awaitRule/await-plugin': 'error',
             'eventAsync/event-async-plugin': 'error',
             'controlAsync/control-async-plugin': 'error',
             'loopCheck/s3-loop-plugin' : 'error',

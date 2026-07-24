@@ -5,12 +5,12 @@ import type { ISpriteSensingColor } from './ISpriteSensingColor';
 import type { ISpriteSensingMouse } from './ISpriteSensingMouse';
 import type { ISpriteSensingSprite } from './ISpriteSensingSprite';
 /**
- * Sprite Sensing(調べる)
+ * Sprite Sensing
  */
 export interface ISpriteSensing extends IEntitySensing{
 
     /**
-     * 端関連
+     * Methods Related to Edges
      */
     readonly edge: ISpriteSensingEdge;
     /**
