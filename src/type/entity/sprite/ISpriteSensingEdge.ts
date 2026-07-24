@@ -4,25 +4,25 @@
 export interface ISpriteSensingEdge{
  
      /**
-     * 枠に触っていることの判定
+     * Detection of contact with the frame
      * @returns 
      */
     readonly isTouching : boolean;
 
     /**
-     * 縦の枠に触っていることを判定する
+     * Determine whether it is touching the vertical frame.
      * @returns 
      */
     readonly isTouchingVirtical : boolean;
 
     /**
-     * 水平方向の枠に触っていることを判定する
+     * Determine whether contact is being made with a horizontal frame.
      */
     readonly isTouchingHorizontal: boolean;
 
     /**
      * 端タッチ情報を取得する
      */
-    isTouchingEdge(): {touch:boolean, judge:{'minDist': number, 'nearestEdge': string}};
+    //isTouchingEdge(): {touch:boolean, judge:{'minDist': number, 'nearestEdge': string}};
 
 };

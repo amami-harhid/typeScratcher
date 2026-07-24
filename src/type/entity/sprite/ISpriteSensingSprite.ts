@@ -6,27 +6,32 @@ import type { ISprite } from '.';
 export interface ISpriteSensingSprite extends IEntitySensingSprite{
 
     /**
-     * スプライトに触れていることを判定する（クローンを含める）
+     * Detect contact with a sprite (including clones)<br>
+     * When `includeClone` is false, the check is performed without including clones.
+     * 
      * @param sprites 
      * @param includeClone falseのときはクローンを含めずに検査する
      */
     isTouching(sprites: ISprite[], includeClone?: boolean): boolean;
 
     /**
-     * 自分に触れているスプライトを配列にして返す
+     * Get an array of sprites touching the object.
+     * 
      * @param targets 
      * @returns 
      */
     getTouching(target?: ISprite[]) : ISprite[];
 
     /**
-     * 指定したスプライトまでの距離
+     * Distance to the specified sprite.
+     * 
      * @param to 
      */
     distance(to: ISprite): number;
 
     /**
-     * 指定したスプライトへの向き
+     * Direction to the specified sprite.
+     * 
      * @param to
      */
     degree( to: ISprite ): number;

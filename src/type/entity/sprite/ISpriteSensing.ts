@@ -10,25 +10,25 @@ import type { ISpriteSensingSprite } from './ISpriteSensingSprite';
 export interface ISpriteSensing extends IEntitySensing{
 
     /**
-     * Methods Related to Edges
+     * Methods Related to edge
      */
     readonly edge: ISpriteSensingEdge;
     /**
-     * マウス関連
+     * Methods Related to Mouse
      */
     readonly mouse: ISpriteSensingMouse;
     /**
-     * 色関連
+     * Methods Related to Color
      */
     readonly color: ISpriteSensingColor;
 
     /**
-     * スプライト関連
+     * Methods Related to Sprite
      */
     readonly sprite: ISpriteSensingSprite;
 
     /**
-     * Drag Mode
+     * Methods Related to Dragging
      */
     readonly dragMode :ISpriteDragMode;
 };

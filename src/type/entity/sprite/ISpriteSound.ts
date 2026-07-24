@@ -1,5 +1,5 @@
 import type { IEntitySound } from "../entity/IEntitySound";
 /**
- * Sprite Sound(サウンド)
+ * Sprite Sound
  */
 export type ISpriteSound = IEntitySound

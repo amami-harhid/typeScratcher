@@ -5,23 +5,18 @@ import type { IEntitySensingMouse } from "../entity/IEntitySensingMouse";
 export interface ISpriteSensingMouse extends IEntitySensingMouse{
 
     /**
-     * マウスタッチしていることの判定
+     * Detecting mouse touch
+     * 
      * @returns 
      */
     readonly isTouching: boolean;
 
-    // /**
-    //  * マウスタッチしていないことの判定
-    //  * @returns 
-    //  */
-    // readonly isNotTouching : boolean;
-
     /**
-     * マウスカーソルまでの距離
+     * Distance to the mouse cursor
      */
     readonly distance : number;
     /**
-     * マウスカーソルへの向き
+     * Orientation towards the mouse pointer
      */
     readonly degree: number;
 };

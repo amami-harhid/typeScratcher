@@ -6,14 +6,16 @@ import type { ISprite } from ".";
 export interface ISpriteSensingDistance {
 
     /**
-     * マウスカーソルとの距離
-     * @returns 
+     * Distance from the mouse cursor
+     * 
+     * @returns distance
      */
     mousePointer(): number;
     /**
-     * 他スプライトとの距離
+     * Distance to other sprites
+     * 
      * @param otherSprite 
-     * @returns 
+     * @returns distance
      */
     to(otherSprite:ISprite) : number;
 }

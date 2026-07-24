@@ -4,16 +4,18 @@
 export interface ISpriteSensingColor{
  
     /**
-     * 指定した色に触れたことを判定する
-     * @param targetColor {string} - 色,先頭#,16進数
+     * Detect contact with a specified color.
+     * 
+     * @param targetColor {string} - color
      * @returns 
      */
     isTouching(targetColor: string): boolean;
 
     /**
-     * 指定した色(target)に自身の色(mask)が触れたことを判定する
-     * @param ownColor {string} - 自身の色,先頭#,16進数
-     * @param targetColor {string} - 相手の色,先頭#,16進数
+     * Detect when own color (mask) comes into contact with specified color (target).
+     * 
+     * @param ownColor {string} - own color
+     * @param targetColor {string} - target color
      * @returns 
      */
     isTouchingBy(ownColor: string, targetColor: string): boolean;
