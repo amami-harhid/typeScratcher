@@ -6,23 +6,23 @@ import type { IEntitySensingTimer } from './IEntitySensingTimer';
  */
 export interface IEntitySensing {
     /**
-     * 質問をして答えを待つ
-     * @param question {string} - 質問テキスト
+     * Ask a question and wait for the answer.
+     * @param question {string} - Question text
      * @returns {Promise<string>} - answer
      */
     askAndWait(question:string): Promise<string>;
 
     /**
-     * マウス関連
+     * Sensor for Mouse
      */
     readonly mouse: IEntitySensingMouse;
 
     /**
-     * キーボード関連
+     * Sensor for Keyboard
      */
     readonly keyboard : IEntitySensingKey;
     /**
-     * タイマー関連
+     * Sensor for Timer
      */
     readonly timer : IEntitySensingTimer;
 };

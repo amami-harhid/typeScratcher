@@ -23,78 +23,53 @@ export interface SSprite{
 };
 export interface ISprite extends IEntity {
     /**
-     * スプライト名
+     * Name of sprite
      */
     readonly name: string;
 
     /**
-     * 動き
+     * Sprite motion
      */
     readonly Motion: ISpriteMotion;
 
     /**
-     * PEN
+     * Pen
      */
     readonly Pen: IPenSprite;
 
     /**
-     * コスチューム番号、コスチューム名を取り出すためのオブジェクト
-     * 使用例：this.Costume.no, this.Costume.name
-     * @returns
+     * Sprite Costume
      */
     readonly Costume: ISpriteCostume;
+
     /**
-     * 見た目
+     * Sprite Looks Appearance
      */
     readonly Looks: ISpriteLooks;
+
     /**
-     * 制御
+     * Sprite Control
      */
     readonly Control: ISpriteControl;
+
     /**
-     * 調べる
+     * Sprite Sensing
      */
     readonly Sensing: ISpriteSensing;
+
     /**
-     * イベント
+     * Sprite Event
      */
     readonly Event: ISpriteEvent;
 
     /**
-     * サウンド
+     * Sound
      */
     readonly Sound: ISpriteSound;
 
     /**
-     * Font
-     */
-    //readonly Font : ISpriteFont;
-    /**
-     * SvgText
-     */
-    //readonly SvgText: ISvgText;
-
-    /**
-     * 音声合成
-     */
-    //readonly TextToSpeech: ISpriteTextToSpeech;
-
-    /**
-     * DragModeを設定するためのオブジェクト
+     * DragMode
      */
     readonly DragMode: ISpriteDragMode;
 
-    /**
-     * ペン機能
-     */
-    //readonly Pen : ISpritePen;
-
-    /**
-     * クローンの配列
-     */
-    //clones : ISprite[];
-
-    //isClone: boolean;
-
-    
 };

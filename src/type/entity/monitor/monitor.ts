@@ -4,13 +4,18 @@ import type { TPosition, TScale } from "../../common/typeCommon";
  * Monitor
  */
 export interface IMonitor {
+    /** Variable Monitor Id */
     get monitorId(): string;
+    /** Position */
     get position(): TPosition;
+    /** Position */
     set position(_position: TPosition)
+    /** Scale */
     get scale(): TScale;
+    /** Scale */
     set scale(_scale:TScale)
-    /** 表示する */
+    /** show */
     show (): void;
-    /** 隠す */
+    /** hide */
     hide (): void;
 }

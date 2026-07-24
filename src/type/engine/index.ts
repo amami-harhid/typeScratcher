@@ -3,7 +3,7 @@
  */
 export interface IEngine {
     /**
-     * 開始処理 
+     * Engine start 
      */
     start(): void;
 }

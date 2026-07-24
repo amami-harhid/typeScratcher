@@ -1,41 +1,22 @@
 import type { IImage } from "../../image";
-//import type { IEntityEffect } from "./IEntityEffect";
+
 /**
- * Entity Image(イメージ)
+ * Entity Image
  */
 export interface IEntityImage {
 
-    //readonly effect: IEntityEffect;
-
     /**
-     * 画像を追加する
+     * Add images
      * @param images {IImages[]} 
-     * ```ts
-     *  // スプライトへ画像を追加
-     *  // Cat01の名前の画像を追加する
-     *  await sprite.Image.add('Cat01');
-     * ```
-     * ```ts
-     *  // ステージへ画像を追加
-     *  // Jurassicの名前の画像を追加する
-     *  await stage.Image.add('Jurassic');
-     * ```
      */
     add(images: IImage[]): void;
     /**
-     * 追加されている画像名を配列で受け取る
-     * ```ts
-     *  // this がスプライトのとき
-     *  const costumeNames = this.Image.names();
-     *  console.log( costumeNames ); // --> ['Cat01','Cat02']
-     * ```
-     * ```ts
-     *  // this がステージのとき
-     *  const backdropNames = this.Image.names();
-     *  console.log( backdropNames ); // --> ['Jurassic','Backdrops']
-     * ```
+     * Receive the names of the images as an array.
      */
     readonly names: string[];
 
+    /**
+     * Receive the images as an array.
+     */
     readonly images: IImage[];
 };

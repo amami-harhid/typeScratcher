@@ -1,19 +1,19 @@
 import type { IFont } from "../../font";
 /**
- * Entity Font(フォント)
+ * Entity Font
  */
 export interface IEntityFont {
 
     /**
-     * フォントを追加する
+     * Add font datas
      */
     add(fonts: IFont[]): void;
     /**
-     * 追加されている画像名を配列で受け取る
+     * Receive the names of the added images as an array.
      */
     readonly names: string[];
     /**
-     * フォントを取得する
+     * Get the font datas
      */
     readonly fonts: IFont[];
 };

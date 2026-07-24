@@ -3,14 +3,16 @@
  */
 export interface ISpriteMotionDirection {
     /**
-     * 向き
-     * @returns {number} - 向き
+     * angle degree
+     * 
+     * @returns {number} - angle degree
      */
     get degree() : number;
 
     /**
-     * 向き
-     * @param degree {number} - 向き
+     * angle degree
+     * 
+     * @param degree {number} - angle degree
      */
     set degree(degree: number);
 };

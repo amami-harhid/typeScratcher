@@ -3,16 +3,16 @@
  */
 export interface IEntitySensingMouse {
     /**
-     * マウスが押されていることの判定
-     * @returns {boolean} - マウスが押されている判定
+     * pressed mouse button 
+     * @returns {boolean} - result
      */
     readonly isDown : boolean;
     /**
-     * マウス情報( x座標 )
+     * Mouse x position
      */
     readonly x : number;
     /**
-     * マウス情報( y座標 )
+     * Mouse y position
      */
     readonly y : number;
 

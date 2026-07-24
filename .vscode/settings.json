@@ -2,7 +2,12 @@
     "eslint.useFlatConfig": true,
     "eslint.format.enable": true,
     "eslint.problems.shortenToSingleLine": true,
-    "eslint.codeActionsOnSave.options": {
-        
-    }
+    "commentTranslate.sourceLanguage": "en",
+    "commentTranslate.targetLanguage": "ja",
+    "commentTranslate.selectTargetLanguageWhenReplacing": false,
+    "commentTranslate.maxTranslationLength": 2000,
+    "commentTranslate.mutualTranslate": false,
+    "commentTranslate.browse.enabled": false,
+    "commentTranslate.multiLineMerge": true,
+
 }

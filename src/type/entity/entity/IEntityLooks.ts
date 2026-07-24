@@ -1,9 +1,10 @@
 import type { IEntityEffect } from "./IEntityEffect";
 /**
- * Entity Looks(見た目)
+ * Entity Looks
  */
 export interface IEntityLooks {
 
+    /** Image Effect */
     readonly effect: IEntityEffect;
 
 };

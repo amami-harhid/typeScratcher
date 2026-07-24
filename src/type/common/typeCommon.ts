@@ -1,6 +1,6 @@
 import { type IScratchSoundPlayer, type TEffectChain } from '../sound/IAudioEngine';
 
-/** 位置 */
+/** Positon */
 export declare type TPositionCanEmpty = {
     x?: number,
     y?: number,
@@ -15,42 +15,42 @@ declare interface TwoNumberArray {
     length: 2,
 }
 export declare type TPositionArray = TwoNumberArray;
-/** スケール */
+/** Scale */
 export declare type TScaleCanEmpty = {
     w?: number,
     h?: number,
 }
-/** スケール */
+/** Scale */
 export declare type TScale = {
     w: number,
     h: number,
 }
 export declare type TScaleArr = TwoNumberArray;
 
-/** サイズ */
+/** Size */
 export declare type TSize = {
     width: number,
     height: number,
 }
-/** サイズ (X,Y) */
+/** Size (X,Y) */
 export declare type TSizeXY = {
     x: number,
     y: number,
 }
-/** 距離 */
+/** Distance */
 export declare type TDistance = {
     x?: number,
     y?: number,
 }
 
-/** 上下左右の大きさ */
+/** Dimensions (top, bottom, left, and right) */
 export declare type TBounds = {
     top: number,
     bottom: number,
     left: number,
     right: number,
 }
-/** 上下左右の大きさ */
+/** Size (width, heigth) and Dimensions */
 export interface TBoundsEx extends TBounds {
     width: number,
     height: number,

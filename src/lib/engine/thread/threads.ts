@@ -190,7 +190,7 @@ export class ThreadManager {
                         (thread.proxy as unknown as  EntityProxyExt).emit(ScratchEvent.SPRITE_GLIDE);
                     }
                 }
-            }else if(thread.status == ThreadStatus.YIELD) {
+            }else if(thread.status == ThreadStatus.STAND_BY) {
                 if(thread.isDeadThread === true){
                     thread.status = ThreadStatus.COMPLETED;
                     continue;
@@ -287,7 +287,7 @@ export class ThreadManager {
         // すべてのスレッドについて終了処理をする
         for(const thread of ThreadBank.threadArr){
             thread.isDeadThread = true; // 停止スレッド
-            if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.YIELD){
+            if( thread.status == ThreadStatus.RUNNING || thread.status == ThreadStatus.STAND_BY){
                 const entity = thread.entity as Entity;
 
                 if(entity.isSprite) {
@@ -461,12 +461,12 @@ export class ThreadObj<T> extends EventEmitter implements IThreadObj<any>{
                 // スレッドのなかで再実行のために「YIELD」に変更する場合がある
                 // 例）メッセージ受信処理のなかで同じメッセージを送信する場合。
                 // YIELDをCOMPLETEDにされると再実行できないので次の処置をしている。
-                if(me.status != ThreadStatus.YIELD) {
+                if(me.status != ThreadStatus.STAND_BY) {
                     me.status = ThreadStatus.COMPLETED;
                 }
                 me._proxy.setStopThisScriptSwitch(false); // 再実行時に落ちないようにする
             }else{
-                me.status = ThreadStatus.YIELD;
+                me.status = ThreadStatus.STAND_BY;
             }
 
         }).catch(e=>{

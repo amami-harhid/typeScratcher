@@ -1,54 +1,43 @@
 import type { IImage } from "../../image";
 
-/** コスチューム */
+/** 
+ * Sprite Costume 
+ */
 export interface ISpriteLooksCostume {
 
     /**
-     * コスチューム番号
-     * ```ts
-     *  // コスチューム番号
-     *  const no = this.Looks.Costume.no;
-     * ```
-     */
-    get no(): number;
-
-    /**
-     * 現在のSkinID
+     * Current costume skin id
      */
     get currentSkinId() : number;
 
     /**
-     * コスチューム番号
-     * ```ts
-     *  // コスチューム番号
-     *  this.Looks.Costume.no = 1;
-     * ```
+     * Costume index number
+     */
+    get no(): number;
+
+    /**
+     * Costume index number
      */
     set no(no:number);
+
     /**
-     * コスチューム名
-     * ```ts
-     *  // コスチューム名
-     *  const name = this.Looks.Costume.name;
-     * ```
+     * Costume name
      */
     get name(): string;
+
     /**
-     * コスチューム名
-     * ```ts
-     *  // コスチューム名
-     *  this.Looks.Costume.name = "Cat01";
-     * ```
+     * Costume name
      */
     set name(name:string);
 
     /**
-     * 次のコスチュームにする
+     * Change to the next costume
      */
     next(): void;
     
     /**
-     * 指定したコスチュームにする
+     * Change to the specified costume
+     * 
      * @param costume 
      */
     switch(costume: IImage): void;

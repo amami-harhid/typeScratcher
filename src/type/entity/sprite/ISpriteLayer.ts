@@ -1,23 +1,29 @@
-/** 階層 */
+/** 
+ * Layer 
+ */
 export interface ISpriteLayer {
  
     /**
-     * 最前面にする
+     * Go to the front
      */
     gotoFront() : void;
+
     /**
-     * 最背面にする
+     * Go to the back.
      */
     gotoBack() : void;
+
     /**
-     * 手前に出す
-     * @param nLayer {number} - 階層数 
+     * Move to the layer above.
+     * 
+     * @param nLayer {number} - number of layer 
      */
     goForwardLayers(nLayer: number) : void;
 
     /**
-     * 奥に下げる
-     * @param nLayer {number} - 階層数
+     * Move to the layer below.
+     * 
+     * @param nLayer {number} - number of layer
      */
     goBackwardLayers(nLayer: number) : void;
 

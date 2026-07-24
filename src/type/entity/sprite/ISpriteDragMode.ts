@@ -3,16 +3,17 @@
  */
 export interface ISpriteDragMode {
     /**
-     * ドラッグ中
+     * Dragging
      */
     get dragging(): boolean;
+
     /**
-     * ドラッグ可能
+     * Draggable
      */
     get draggable(): boolean;
 
     /**
-     * ドラッグ可能
+     * Draggable
      */
     set draggable(draggable: boolean);
 }

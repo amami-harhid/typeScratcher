@@ -9,11 +9,11 @@ export interface IEntityProxy extends IEntity {
     threadId:string;
     threadName: string;
     threadCounter: number;
-    /** このスクリプトを止めるスイッチを設定する */
+    /** Set up a switch to stop this script. */
     setStopThisScriptSwitch(stop:boolean): void;
-    /** このスクリプトを止めるスイッチ */
+    /** A switch to stop this script */
     getStopThisScriptSwitch(): boolean;
-    /** 強制終了 */
+    /** Forced termination */
     throwForceStopThisScripts(): void;
 
 }

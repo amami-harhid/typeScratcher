@@ -119,7 +119,7 @@ export class EntityBroadCast implements IEntityBroadCast {
             // ジェネレーター再設定( 引数付き )
             threadObj.setFunc((threadObj as ThreadObj<any>).originalF, ...args);
             // 待機中にする
-            threadObj.status = ThreadStatus.YIELD;
+            threadObj.status = ThreadStatus.STAND_BY;
             // ↑ 実行中スレッドのなかでYIELDにしたとき、Threadプロセスのなかで
             // スレッドが終わったときにCompletedにならないようにしている。
         }

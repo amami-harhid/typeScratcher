@@ -21,6 +21,7 @@ const BasketballImage = new Ts.Image({ BasketballPng });
 const CatSound = new Ts.Sound({ CatWav });
 
 // スプライト作成
+/** Sprite cat */
 const cat = new Ts.Sprite("apple");
 cat.Costume.add([CatImage, Cat2Image]); // イメージを１個追加
 cat.Sound.add([CatSound]); // サウンドを１個追加
@@ -59,6 +60,7 @@ cat.Event.flagPresser().func = async function* (this: Sprite) {
         //     this.Control.clone(); 
         //     this.Sound.play(CatSound);
         // }
+        this.Motion.move.steps(5);
         yield;
     }
 };

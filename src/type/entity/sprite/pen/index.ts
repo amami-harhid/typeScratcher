@@ -7,35 +7,35 @@ import type { IPenSpriteHSVColor } from './IPenSpriteHSVColor';
 export interface IPenSprite {
 
     /**
-     * ペン描画をクリアする
+     * Clear pen drawings
      */
     penClear(): void;
     /**
-     * ペンを上げる
+     * Lift the pen.
      */
     penUp(): void;
     /**
-     * ペンを下げる
+     * Lower the pen.
      */
     penDown(): void;
 
     /**
-     * HSVカラー
+     * HSV color
      */
     readonly HSVColor : IPenSpriteHSVColor;
 
     /**
-     * スタンプ
+     * Stamp
      */
     stamp(): void;
 
     /**
-     * ステージをスタンプする
+     * Stamp the stage
      */
     //stampStage(): void;
 
     /**
-     * サイズ
+     * Size
      */
     readonly size: IPenSpriteSize;
 }

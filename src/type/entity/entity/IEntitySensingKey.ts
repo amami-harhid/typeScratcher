@@ -1,17 +1,17 @@
 /**
- * Entity Sensing(調べる) Key
+ * Entity Sensing Keyboard
  */
 export interface IEntitySensingKey {
     /**
-     * キーが押されていることの判定
+     * Detecting whether a key is pressed
      * @param key {string}
-     * @returns {boolean} キー押下判定
+     * @returns {boolean} result
      */
     isDown(key: string) : boolean;
     /**
-     * キーが押されていないことの判定
+     * Determining that no key is pressed
      * @param key {string}
-     * @returns {boolean} キー押下判定
+     * @returns {boolean} result
      */
     isNotDown(key: string) : boolean;
 

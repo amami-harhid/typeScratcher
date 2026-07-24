@@ -1,61 +1,41 @@
 import { IEntity } from ".";
 
 /**
- * Entity Control(制御)
+ * Entity Control
  */
 export interface IEntityControl {
     /**
-     * 指定秒数分、待つ。
+     * Wait for the specified number of seconds.
      * @param sec 
      */
     wait(sec: number): Promise<void>;
     /**
-     * 条件が成立する迄、待つ
+     * Wait until the conditions are met.
      * 
-     * ```ts
-     * const condition = ()=>{
-     *  // マウスの押下を判定
-     *  return Lib.mouseIsPressed() === true;
-     * };
-     * // マウスが押されるまで待つ
-     * await this.Control.waitUntil(condition);
-     * 
-     * ```
-     * @param condition {CallableFunction} - 条件結果を返す関数
+     * @param condition {CallableFunction} - Arrow function
      */
     waitUntil(condition: CallableFunction): Promise<void>;
     /**
-     * 条件が成立する間、待つ。
+     * Wait until the conditions are met.
      * 
-     * ```ts
-     * const condition = ()=>{
-     *  // マウスの押下を判定
-     *  return Lib.mouseIsPressed() === true;
-     * };
-     * // マウスが押されている間、待つ
-     * await this.Control.waitWhile(condition);
-     * 
-     * ```
-     * @param condition {CallableFunction} - 条件結果を返す関数
+     * @param condition {CallableFunction} - Arrow function
      */
     waitWhile(condition: CallableFunction): Promise<void>;
     /**
-     * 全てのスプライトの動作を停止する
-     * 
-     * クローンや他のスプライトを含めてすべてのスクリプトが停止する。
+     * Stop the movement of all sprites.<br>
+     * All scripts stop, including those for clones and other sprites.
      */
     stopAll() : void;
     /**
-     * このスクリプトを停止する
+     * Stop this script
      */
     stopThisScript() : void;
     /**
-     * このスプライトの他のスクリプトを停止する
-     * 
-     * 親スプライトから派生したクローンを含めて、同じスプライトであるとみなす。
-     * クローンからこのメソッドを実行する場合、他のクローン、親スプライトは同じスプライトとはみなさない。
-     * 親スプライトからこのメソッドを実行すると、親の他のスクリプトと派生したクローンの全てのスクリプトを停止する。
-     * クローンからこのメソッドを実行すると、当該クローンの他のスクリプトだけを停止する。
+     * Stop other scripts in this sprite.<br>
+     * Clones derived from a parent sprite are considered to be the same sprite.<br>
+     * When executing this method from a clone, other clones and the parent sprite are not considered the same sprite.<br>
+     * Executing this method from the parent sprite stops the parent's other scripts as well as all scripts of the derived clones.<br>
+     * When this method is executed from a clone, it stops only the other scripts of that clone.
      */
     stopOtherScripts() : void;
 

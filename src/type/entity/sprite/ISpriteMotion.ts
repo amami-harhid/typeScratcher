@@ -5,22 +5,22 @@ import type { ISpriteMotionDirection} from './ISpriteMotionDirection';
 import type { ISpriteMotionRotation } from './ISpriteMotionRotation';
 import type { IEntityMotion } from '../entity/IEntityMotion';
 /**
- * スプライトの動き
+ * Motion of sprite
  */
 export interface ISpriteMotion extends IEntityMotion {
-    /** 位置 */
+    /** Position */
     get position(): ISpriteMotionPosition;
 
-    /** 向き */
+    /** Direction */
     get direction(): ISpriteMotionDirection;
     
-    /** 回転 */
+    /** Style of rotation */
     get rotation() : ISpriteMotionRotation;
 
-    /** 動き */
+    /** Movement */
     get move(): ISpriteMotionMove;
 
-    /** 方向へ向く */
+    /** Point */
     get point(): ISpriteMotionPoint;
 
 };

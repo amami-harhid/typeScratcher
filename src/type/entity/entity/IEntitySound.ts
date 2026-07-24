@@ -2,44 +2,44 @@ import { type ISound } from "../../sound";
 /** イベント */
 export interface IEntitySound {
     /**
-     * 音を追加する
-     * @param soundName {string} - 音の名前
+     * Add sound data
+     * @param soundName {string} - name of sound
      */
     add(sounds: ISound[]) : void;
 
     /**
-     * 音を鳴らす
-     * @param soundName {string} - 音の名前
+     * Play the sound.
+     * @param sound {ISound} - sound data
      */
     play(sound: ISound): void;
     /**
-     * 終わるまで音を鳴らす
-     * @param soundName {string} - 音の名前
+     * Play the sound until it finishes.
+     * @param sound {ISound} - sound data
      */
     playUntilDone(sound: ISound): Promise<void>;
     /**
-     * サウンドオプションをクリアする
+     * Clear sound options
      */
     clearEffects(): Promise<void>;
     /**
-     * 鳴っている音を止める
+     * Stop the sound that is playing.
      */
     stop(): void;
     /**
-     * 鳴っている音を「すぐに」止める
+     * Stop immediately the sound that is playing.
      */
     stopImmediately(): void;
-    /** 音量を取得する */
+    /** Volume */
     getVolume(sound: ISound) : number;
-    /** 音量を変える */
+    /** Add volume */
     addVolume(sound: ISound, volume: number) : void;
-    /** 音量を設定する */
+    /** Set volume */
     setVolume(sound: ISound, volume: number) : void;
-    /** ピッチを取得する */
+    /** Pitch */
     getPitch(sound: ISound) : number;
-    /** ピッチを変える */
+    /** Add pitch */
     addPitch(sound: ISound, pitch: number) : void;
-    /** ピッチを設定する */
+    /** Set pitch */
     setPitch(sound: ISound, pitch: number) : void;
 
 }

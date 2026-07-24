@@ -1,4 +1,4 @@
 import type { IEntityEffect } from '../entity/IEntityEffect';
 
-/** 効果 */
+/** Image Effect */
 export type ISpriteEffect = IEntityEffect

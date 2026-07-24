@@ -1,4 +1,6 @@
 'use strict'
+import { ErrorMessages } from "./messages.js";
+
 /**
  * Event, Broadcast のスレッドは async関数、generator関数で有る必要がある。
  * エラーを検知し、Fixerで修正可能とする。
@@ -9,8 +11,8 @@ const eventAsyncRule = {
         fixable: 'code',
         schema: [],
         messages: {
-            EventFunctionId: 'async関数にしてください',
-            GeneratorFunctionId: 'Generator関数にしてください',
+            AsyncFunctionNeededId: ErrorMessages.AsyncFunctionNeededId, //'Change to "async function".',
+            GeneratorFunctionNeededId:  ErrorMessages.GeneratorFunctionNeededId, //'Change to "function* ".',
         },
     },
     create(context){
@@ -23,7 +25,7 @@ const eventAsyncRule = {
                 if (!isAsync) {
                     context.report({
                         node: node,
-                        messageId: "EventFunctionId",
+                        messageId: "AsyncFunctionNeededId",
                         fix(fixer) {
                             return fixer.insertTextBefore(node, "async ");
                         }
@@ -37,7 +39,7 @@ const eventAsyncRule = {
                     const rplSrc = srcText.replace(/function\s*\(/, 'function* (');
                     context.report({
                         node: node,
-                        messageId: "GeneratorFunctionId",
+                        messageId: "GeneratorFunctionNeededId",
                         fix(fixer) {
                             return fixer.replaceText(node, rplSrc);
                         }

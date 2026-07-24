@@ -3,12 +3,12 @@
  */
 export interface IPenSpriteSize {
     /** 
-     * ペンの太さ 
+     * Thickness
      */
     get thickness() : number;
 
     /**
-     * ペンの太さ
+     * Thickness
      */
     set thickness(thickness: number);
 }

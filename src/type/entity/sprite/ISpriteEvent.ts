@@ -1,12 +1,12 @@
 import type { EventFunctionSetter, IEntityEvent } from '../entity/IEntityEvent';
 /**
- * Sprite Event(イベント)
+ * Sprite Event
  */
 export interface ISpriteEvent extends IEntityEvent {
 
     /**
-     * クローンされたときイベントのセッターを返す
-     * @returns イベントセッター
+     * Returns the thread setter when cloned.
+     * @returns Thread setter
      */
     cloned() :EventFunctionSetter;
 }

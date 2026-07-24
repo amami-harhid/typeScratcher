@@ -1,17 +1,17 @@
 import { NumberProxy, StringProxy } from "./monitoring";
 
 /**
- * 変数格納プロキシ生成
+ * Variable-Storing Proxy Generation
  */
 export interface SVar {
 
     /**
-     * 数値プロキシ生成
+     * Numeric-type Proxy Generation
      * @param value 
      */
     number(value:number) : NumberProxy;
     /**
-     * 文字列プロキシ生成
+     * String-type proxy generation
      * @param text
      */
     string(text:string) : StringProxy;

@@ -1,21 +1,24 @@
+/**
+ * Sprite Scale
+ */
 export interface ISpriteLooksSizeScale {
     /**
-     * スケール幅（％）
+     * Scale width (%)
      */
     get w(): number;
 
     /**
-     * スケール高さ（％）
+     * Scale height (%)
      */
     get h(): number;
 
-        /**
-     * スケール幅（％）
+    /**
+     * Scale width (%)
      */
     set w(w:number);
 
     /**
-     * スケール高さ（％）
+     * Scale height (%)
      */
     set h(h:number);
 

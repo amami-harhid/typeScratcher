@@ -1,30 +1,30 @@
 import { ScratchRenderProperties } from "../../render/IRenderWebGL";
 import type { RotationValue } from "../RotationStyle";
 
-/** 座標 */
+/** Coordinate */
 export interface IPosition {
     x: number;
     y: number;
 }
-/** スケール */
+/** Scale */
 export interface IScale {
     w: number;
     h: number;
 }
-/** プロパティ */
+/** Properties */
 export interface IEntityProperties {
-    /** 座標 */
+    /** Coordinate(position) */
     position: IPosition;
-    /** スケール */
+    /** Scale */
     scale: IScale;
-    /** 角度 */
+    /** angle degree */
     degree: number;
-    /** 表示・非表示 */
+    /** visibility */
     visible: boolean;
-    /** 回転方法 */
+    /** Style of rotation */
     rotationStyle: RotationValue;
-    /** プロパティをレンダラーへ反映 */
+    /** Apply properties to the renderer */
     update():void;
-    /** プロパティをレンダラーへ反映 */
+    /** Apply properties to the renderer */
     updateDrawableProperties(prop: ScratchRenderProperties):void;
 }

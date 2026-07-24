@@ -6,68 +6,75 @@ import { MonitoringVars } from "./monitoring";
  */
 export interface SMonitors{
     /**
-     * モニターを追加する.
+     * Add a variable monitor.
      * @param vars 
      */
     addVar(vars: MonitoringVars):void;
     /**
-     * モニターを再配置する
+     * Reposition the variable monitor.
      */
     allReposition(): void;
     /**
-     * 指定したIDのモニターを返す
+     * Returns the variable monitor for the specified ID.
+     * 
      * @param monitorId {string}
      * @returns {Monitor}
      */
     getMonitor(monitorId: string): IMonitor;
     /**
-     * 指定したIDのモニターを表示する
+     * Display the variable monitor for the specified ID.
+     * 
      * @param monitorId 
      */
     showMonitor(monitorId: string): void;
     /**
-     * 指定したIDのモニターを隠す
+     * Hide the variable monitor with the specified ID.
+     * 
      * @param monitorId {string}
      */
     hideMonitor(monitorId: string): void;
 
     /**
-     * 全てのMonitorを描画する
+     * Draw all Monitor variables.
      */
     drawMonitors() : void;
 
 }
 export interface IMonitors {
     /**
-     * IDとラベルを指定して モニターを追加する.
-     * IDが重複する場合は追加しない.
+     * Add a variable monitor by specifying the ID and label.
+     * Do not add if the ID is a duplicate.
+     * 
      * @param {string} monitorId - Monitor id 
      * @param {string} label - Monitor label 
      */
     add(vars: MonitoringVars): void;
     /**
-     * 指定したIDのモニターを返す
+     * Returns the variable monitor for the specified ID.
+     * 
      * @param monitorId {string}
      * @returns {Monitor}
      */
     get(monitorId: string): IMonitor;
     /**
-     * 指定したIDのモニターを表示する
+     * Display the variable monitor for the specified ID.
+     * 
      * @param monitorId 
      */
     show(monitorId: string):void;
     /**
-     * 指定したIDのモニターを隠す
+     * Hide the variable monitor with the specified ID.
+     * 
      * @param monitorId {string}
      */
     hide(monitorId: string): void;
     /**
-     * 全てのMonitorを描画する
+     * Draw all Monitor variables.
      */
     draw(): void;
 
     /**
-     * モニターを再配置する
+     * Reposition the variable monitor.
      */
     reposition(): void;
 };

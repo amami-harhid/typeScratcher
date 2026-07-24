@@ -1,33 +1,39 @@
 import type { BubbleProperties } from '../TBubble';
 
-/** 吹き出し */
+/** 
+ * Sprite Bubble 
+ */
 export interface ISpriteLooksBubble {
 
     /**
-     * 言う
+     * Display "saying" bubble
      * 
-     * @param text - テキスト
-     * @param properties - プロパティ
+     * @param text -text
+     * @param properties - properties
      */
-    say(text?: string, properties?: BubbleProperties) :void;
+    say(text: string, properties?: BubbleProperties) :void;
     /**
-     * 指定した秒数分、言う。
-     * @param text -テキスト
-     * @param sec -秒数
-     * @param properties -プロパティ
+     * Display "saying" bubble for the specified number of seconds.
+     * 
+     * @param text -text
+     * @param sec - seconds
+     * @param properties - properties
      */
     sayForSecs(text: string, sec:number, properties?: BubbleProperties): Promise<void>;
     /**
-     * 考える
-     * @param text {string} - テキスト 
-     * @param properties {BubbleProperties}
+     * Display "thinking" bubble
+     * 
+     * @param text -text
+     * @param properties - properties
      */
-    think(text?: string, properties?: BubbleProperties) : void;
+    think(text: string, properties?: BubbleProperties) : void;
+
     /**
-     * 指定した秒数分、考える。
-     * @param text {string} - テキスト
-     * @param sec {number} - 秒数
-     * @param properties {BubbleProperties}
+     * Display "thinking" bubble for the specified number of seconds.
+     * 
+     * @param text -text
+     * @param sec - seconds
+     * @param properties - properties
      */
     thinkForSecs(text: string, sec: number, properties?: BubbleProperties): Promise<void>;
 }

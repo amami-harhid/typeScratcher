@@ -32,7 +32,7 @@ const stage = new Ts.Stage();
 stage.Backdrop.add([BasketballImage]); // 背景を１個追加
 
 // 旗を押したときのイベント定義
-cat.Event.flagPresser().func = function*(this: Sprite) {
+cat.Event.flagPresser().func = async function*(this: Sprite) {
     // 回転を「回転しない」にする
     this.Motion.rotation.style = Ts.Rotation.DONT_ROTATE;
     // 角度を設定する
@@ -46,7 +46,7 @@ cat.Event.flagPresser().func = function*(this: Sprite) {
 };
 
 // 旗を押したときのイベント定義
-cat.Event.flagPresser().func = function* (this: Sprite) {
+cat.Event.flagPresser().func = async function* (this: Sprite) {
     clone.value = 0;
     cloneCounterStr.text = 'START';
     // ずっと繰り返す
@@ -61,7 +61,7 @@ cat.Event.flagPresser().func = function* (this: Sprite) {
 };
 // クローンされたとき
 // クローンすると本体の半透明効果が一瞬無くなる
-cat.Event.cloned().func = function* (this: Sprite) {
+cat.Event.cloned().func = async function* (this: Sprite) {
     this.Looks.effect.set(Ts.ImageEffective.GHOST, 0);
     const mousePos = {x:this.Sensing.mouse.x, y:this.Sensing.mouse.y}
     this.Motion.position.xy = [mousePos.x, mousePos.y];
@@ -88,7 +88,7 @@ cat.Event.cloned().func = function* (this: Sprite) {
 };
 
 let cloneCounterStrView = true;
-stage.Event.keyPresser(Ts.Keyboard.SPACE).func = function*(this: Stage) {
+stage.Event.keyPresser(Ts.Keyboard.SPACE).func = async function*(this: Stage) {
     cloneCounterStrView = !(cloneCounterStrView);
     if(cloneCounterStrView===true){
         clone.show();
@@ -99,7 +99,7 @@ stage.Event.keyPresser(Ts.Keyboard.SPACE).func = function*(this: Stage) {
     }
     //Ts.Variable.reposition();
 }
-cat.Event.keyPresser("s").func = function*(this: Sprite) {
+cat.Event.keyPresser("s").func = async function*(this: Sprite) {
     // これはクローンのイベントも止めるべき。
     this.Control.stopOtherScripts();
 }

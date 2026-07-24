@@ -1,37 +1,38 @@
 import { IEntity } from "../../entity/entity";
 import { IEntityProxy } from "../../entity/entity/IEntityProxy";
 
+/** Status of thread */
 export const ThreadStatus = {
-    /** 初期化中 */
+    /** Initializing */
     INITIALIZING: 'INITIALIZING',
-    /** 待機中 */
-    YIELD: 'YIELD',
-    /** 実行中 */
+    /** Standby */
+    STAND_BY: 'STAND_BY',
+    /** Running */
     RUNNING: 'RUNNING',
-    /** 終了 */
+    /** Completed */
     COMPLETED: 'COMPLETED',
 } as const;
 
 export type ThreadStatusType = keyof typeof ThreadStatus;
 
 export interface IThreadObj<T> {
-    /** 完了フラグ */
+    /** Completion flag */
     readonly done: boolean;
-    /** スレッドID */
+    /** Thread ID */
     threadId: string;
-    /** ステータス */
+    /** Thread Status type */
     status: ThreadStatusType;
-    /** エンティティID */
+    /** Entity ID */
     entityId: string;
-    /** プロキシ生成 */
+    /** Proxy generation */
     genProxy(): void;
-    /** イベント関数を設定する */
+    /** Set function for thread */
     setFunc (func: CallableFunction, ...args:T[]):void;
-    /** エンティティ */
+    /** Entity */
     readonly entity : IEntity;
-    /** エンティティプロキシ */
+    /** Proxy for entity */
     readonly proxy : IEntityProxy;
-    /** 開始フラグ */
+    /** property of thread Starting */
     readonly isStarted: boolean;
 
     

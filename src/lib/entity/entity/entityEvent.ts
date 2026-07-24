@@ -89,7 +89,7 @@ export class EntityEvent implements IEntityEvent{
             const func = this._flagPressFuncArray[funcIdx];
             const threadObj = this._flagPressEventFuncArray[funcIdx];
             threadObj.setFunc(func);
-            threadObj.status = ThreadStatus.YIELD;
+            threadObj.status = ThreadStatus.STAND_BY;
         }
         /*
         for(const threadObj of EntityEvent._flagPressEventFuncArray) {
@@ -152,7 +152,7 @@ export class EntityEvent implements IEntityEvent{
             const func = threadObj.originalF;
             threadObj.setFunc(func);
             // 待機中にする
-            threadObj.status = ThreadStatus.YIELD;
+            threadObj.status = ThreadStatus.STAND_BY;
         }
     }
     /**
@@ -209,7 +209,7 @@ export class EntityEvent implements IEntityEvent{
                     proxy.threadCounter = CLICK_COUNTER;
                 }
                 threadManager.registThread(threadObj);
-                threadObj.status = ThreadStatus.YIELD;
+                threadObj.status = ThreadStatus.STAND_BY;
             }
         }
         EntityEvent._clickEventFuncArray.push(eventf);
@@ -250,7 +250,7 @@ export class EntityEvent implements IEntityEvent{
         for(const threadObj of element.threadArr) {
             const f = threadObj.originalF;
             threadObj.setFunc(f); // 再生成
-            threadObj.status = ThreadStatus.YIELD; // 待機中
+            threadObj.status = ThreadStatus.STAND_BY; // 待機中
         }
     }
 

@@ -1,11 +1,13 @@
 'use strict'
+import { ErrorMessages } from "./messages.js";
+
 const controlAsyncRule = {
     meta: {
         type: 'problem',
         fixable: 'code',
         schema: [],
         messages: {
-            EventFunctionId: 'async関数にしてください',
+            AsyncFunctionNeededId: ErrorMessages.AsyncFunctionNeededId, //'Change to "async function".',
         },
     },
     create(context){
@@ -31,7 +33,7 @@ const controlAsyncRule = {
                                         // Eventへ渡すファンクションがasyncでないとき
                                         context.report({
                                             node,
-                                            messageId: "EventFunctionId",
+                                            messageId: "AsyncFunctionNeededId",
                                             data: {
                                                 notAsync: functionExpression.async,
                                             },

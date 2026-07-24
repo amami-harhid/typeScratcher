@@ -5,46 +5,35 @@ import type { ISpriteLayer } from './ISpriteLayer';
 import type { ISpriteLooksBubble } from './ISpriteLooksBubble';
 import type { ISpriteLooksCostume } from './ISpriteLooksCostume';
 /**
- * Sprite Looks(見た目)
+ * Sprite Looks Appearance
  */
 export interface ISpriteLooks extends IEntityLooks {
     /**
-     * コスチュームを操作する
+     * Sprite costume
      */
     readonly costume: ISpriteLooksCostume;
     /**
-     * 背景を操作する
+     * Stage Backdrop
      */
     readonly backdrop: ISpriteLooksBackdrop;
 
     /**
-     * サイズ
+     * Size
      */
     readonly size : ISpriteLooksSize;
 
     /**
-     * 階層
-     * 
-     * {@link Layer}
+     * Sprite Layer
      */
     readonly layer : ISpriteLayer;
 
     /**
-     * フキダシ
+     * Sprite bubble
      */
     readonly bubble : ISpriteLooksBubble;
 
     /**
-     * 表示する
-     */
-    //show() : void;
-    /**
-     * 隠す
-     */
-    //hide() : void;
-
-    /**
-     * 見え方
+     * Visibility
      */
     readonly visible: {show:()=>void, hide:()=>void};
 };

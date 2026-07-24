@@ -1,15 +1,17 @@
 import type { IImage } from "../../image";
 
-/** コスチューム */
+/** 
+ * Sprite Costume 
+ */
 export interface ISpriteCostume {
     /**
-     * 画像を追加
+     * Add images
      * @param images 
      */
     add(images: IImage[]) : void;
 
     /**
-     * コスチューム名 配列
+     * Names array
      */
     readonly names : string[]
 

@@ -4,11 +4,11 @@
 export interface IEntitySensingTimer {
 
     /**
-     * タイマー値
+     * timer ( ms )
      */
     readonly timer : number;
     /**
-     * タイマーリセット
+     * reset timer
      */
     reset(): void;
 };

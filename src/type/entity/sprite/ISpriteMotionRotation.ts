@@ -1,18 +1,14 @@
 import type { RotationValue } from '../RotationStyle';
 /**
- * スプライトの動き（回転方法）
+ * Motion of rotation
  */
 export interface ISpriteMotionRotation {
     /**
-     * 回転方法
-     * 
-     * {@link TypeRotationStyle}
+     * Style of rotation
      */
     get style(): RotationValue;
     /**
-     * 回転方法
-     * 
-     * {@link TypeRotationStyle}
+     * Style of rotation
      */
     set style(style: RotationValue);
 };

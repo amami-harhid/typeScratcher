@@ -2,59 +2,29 @@ import type { TBoundsEx, TScaleArr, TScaleCanEmpty } from "../../common/typeComm
 import { ISpriteLooksSizeScale } from "./ISpriteLooksSizeScale";
 
 /**
- * スプライトのサイズ
+ * Sprite size
  */
 export interface ISpriteLooksSize {
 
     /**
-     * 横サイズ
-     */
-    //get w () : number;
-    /**
-     * 横サイズ
-     */
-    //set w (width: number);
-    /**
-     * 縦サイズ
-     */
-    //get h () : number;
-    /**
-     * 縦サイズ
-     */
-    //set h (height: number);
-    /**
-     * 縦横サイズ
+     * Vertical and horizontal scale
      */
     get scale() : ISpriteLooksSizeScale;
+
     /**
-     * 縦横サイズ
+     * Vertical and horizontal scale
      */
     set scale(scale:TScaleArr);
 
-    /** 
-     * 大きさ 
-     * 横/縦の大きさが違うときは小さいほうを返す 
-     */
-    //get size(): number;
-
-    /** 
-     * 大きさ
-     * 横/縦に同じ大きさを設定する 
-     */
-    //set size(size:number);
-
     /**
-     * 自分自身の縦横表示サイズを得る
+     * Own display dimensions (width and height)
+     * 
      * @returns TBounds
-     * ```ts
-     *  // スプライトの表示サイズを得る
-     *  const {w,h} = this.Looks.size.drawingSize;
-     * ```
      */
     get drawingSize() : TBoundsEx;
     
     /**
-     * 表示サイズを変える(ピクセルサイズ)
+     * Set the display dimensions (width and height)
      */
     set drawingSize( size: TScaleCanEmpty);
 }

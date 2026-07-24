@@ -3,60 +3,38 @@ import { IImage } from "src/type/image";
 /** 背景 */
 export interface IEntityLooksBackdrop {
     /**
-     * 背景番号
-     * ```ts
-     *  // 背景番号
-     *  const no = this.Looks.Backdrop.no;
-     * ```
+     * Background index number
      */
     get no(): number;
     /**
-     * 背景番号
-     * ```ts
-     *  // 背景番号
-     *  this.Looks.Backdrop.no = 1;
-     * ```
+     * Background index number
      */
     set no(no:number);
     /**
-     * 背景名
-     * ```ts
-     *  // 背景名
-     *  const name = this.Looks.Backdrop.name;
-     * ```
+     * Name of background
      */
     get name(): string;
     /**
-     * 背景名
-     * ```ts
-     *  // 背景名
-     *  this.Looks.Backdrop.name = "backdrop";
-     * ```
+     * Name of background
      */
     set name(backdropName:string);
     /**
-     * 次の背景にする
-     * ```ts
-     *  this.Looks.Backdrop.next();
-     * ```
+     * Change to the next background
      */
     next() : void;
 
     /**
-     * 指定した背景にする
+     * Change to the specified background.
      * @param backdrop 
      */
     switch(backdrop: IImage): void;
 
     /**
-     * 前の背景にする
-     * ```ts
-     *  this.Looks.Backdrop.previous();
-     * ```
+     * Change to the previous background
      */
     previous(): void;
     /**
-     * どれかの背景にする
+     * Change to the random background
      */
     switchRandom(): void;
 

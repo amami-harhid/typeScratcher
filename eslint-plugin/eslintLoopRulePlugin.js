@@ -1,4 +1,5 @@
 'use strict'
+import { ErrorMessages } from "./messages.js";
 
 const yieldCheckCommon = function(context,node){
     if(node.body && node.body.body){
@@ -163,74 +164,32 @@ const S3LoopRule = {
         fixable: 'code',
         schema: [],
         messages: {
-            NoLineErrorId: '空の処理は禁止です',
-            YieldNeededId: '最終行は yield にしてください',
-            FunctionNeededId: 'Functionが必要です',
-            GeneratorFunctionNeededId: 'ここを含むfunctionを Generator関数にしてください',
-            ProhibitionLoopId: 'whenRightNowではループ処理は禁止です',
-            ProhibitionGeneratorFunctionId: 'whenRightNowでは Generator関数は禁止です',
+            NoLineErrorId: ErrorMessages.NoLineErrorId, //'Handling empty values ​​is prohibited.',
+            YieldNeededId: ErrorMessages.YieldNeededId, //'"yield" is missing from the last line.',
+            FunctionNeededId: ErrorMessages.FunctionNeededId, //'The loop must be written inside the function.',
+            GeneratorFunctionNeededId: ErrorMessages.GeneratorFunctionNeededId, //'Change to "function* ".',
         },
     },
     create(context){
         return {
             WhileStatement(node) {
                 if (node.type == 'WhileStatement') {
-                    const callee = foundParentCallee(node, "whenRightNow");
-                    if(callee !== false){
-                        // whenRightNow中でのLoop禁止
-                        const rslt01 = prohibitionLoopCommon(context,node);
-                        const rslt02 = prohibitionGenerator(context,node, callee);
-                        if(rslt01 === false && rslt02 === false){
-                            yieldCheckCommon(context,node);
-                        }
-                    }else{
-                        yieldCheckCommon(context,node);
-                    }
+                    yieldCheckCommon(context,node);
                 }
             },
             ForStatement(node) {
                 if (node.type == 'ForStatement') {
-                    const callee = foundParentCallee(node, "whenRightNow");
-                    if(callee !== false){
-                        // whenRightNow中でのLoop禁止
-                        const rslt01 = prohibitionLoopCommon(context,node);
-                        const rslt02 = prohibitionGenerator(context,node, callee);
-                        if(rslt01 === false && rslt02 === false){
-                            yieldCheckCommon(context,node);
-                        }
-                    }else{
-                        yieldCheckCommon(context,node);
-                    }
+                    yieldCheckCommon(context,node);
                 }
             },
             ForOfStatement(node) {
                 if (node.type == 'ForOfStatement') {
-                    const callee = foundParentCallee(node, "whenRightNow");
-                    if(callee !== false){
-                        // whenRightNow中でのLoop禁止
-                        const rslt01 = prohibitionLoopCommon(context,node);
-                        const rslt02 = prohibitionGenerator(context,node, callee);
-                        if(rslt01 === false && rslt02 === false){
-                            yieldCheckCommon(context,node);
-                        }
-                    }else{
-                        yieldCheckCommon(context,node);
-                    }
+                    yieldCheckCommon(context,node);
                 }
             },
             DoWhileStatement(node) {
                 if (node.type == 'DoWhileStatement') {
-                    const callee = foundParentCallee(node);
-                    if(callee !== false){
-                        // whenRightNow中でのLoop禁止
-                        const rslt01 = prohibitionLoopCommon(context,node);
-                        const rslt02 = prohibitionGenerator(context,node, callee);
-                        if(rslt01 === false && rslt02 === false){
-                            yieldCheckCommon(context,node);
-                        }
-                    }else{
-                        yieldCheckCommon(context,node);
-                    }
+                    yieldCheckCommon(context,node);
                 }
             }
         }

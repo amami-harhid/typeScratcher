@@ -1,11 +1,13 @@
 'use strict'
+import { ErrorMessages } from "./messages.js";
+
 const awaitLooksRule = {
     meta: {
         type: 'problem',
         fixable: 'code',
         schema: [],
         messages: {
-            AwaitNeededId: 'await をつけてください',
+            AwaitRequired: ErrorMessages.AwaitRequired, //'"await" is required.',
         },
     },
     create(context){
@@ -33,7 +35,7 @@ const awaitLooksRule = {
                                     // AwaitExpression でない場合( await がついていない場合)
                                     context.report({
                                         node,
-                                        messageId: "AwaitNeededId",
+                                        messageId: "AwaitRequired",
                                         fix(fixer) {
                                             return fixer.insertTextBefore(parent_parent, "await ");
                                         }

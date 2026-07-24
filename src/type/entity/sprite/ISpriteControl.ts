@@ -1,19 +1,19 @@
 import type { IEntityControl } from '../entity/IEntityControl';
 /**
- * Sprite Control(制御)
+ * Sprite Control 
  */
 export interface ISpriteControl extends IEntityControl {
 
     /**
-     * クローンを作る
+     * Clone
      */
     clone(): void;
     /**
-     * クローンを削除する
+     * Delete the clone.
      */
     removeClone() : void;
     /**
-     * クローンを全て削除する
+     * Delete all clones.
      */
     removeAllClones() : void;
 

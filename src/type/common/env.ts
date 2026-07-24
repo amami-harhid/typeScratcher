@@ -8,25 +8,26 @@ export type TEnv = {
      */
     fps : FPS,
     /**
-     * フキダシ(Bubble)の大きさ設定
-     * Trueのとき、スプライトのサイズに連動してBubbleの大きさが変わる（ ディフォルト値=false )
+     * Speech Bubble Size Settings
+     * 
+     * When True, the Bubble size changes in conjunction with the sprite size (default value = false).
      */
     bubbleScaleLinkedToSprite : boolean,
     /**
-     * ウインドウサイズ
+     * Window size
      */
     readonly WindowSize : {w: number, h: number},
     /**
-     * ステージサイズ
+     * Stage size
      */
     readonly StageSize: {W: number, H:number},
 
     /**
-     * モニター表示数（縦）
+     * Monitor display count (vertical)
      */
     MonitorMaxRowSize: number,
     /**
-     * デバッグモード
+     * Debug mode
      */
     debugMode: boolean;
 };

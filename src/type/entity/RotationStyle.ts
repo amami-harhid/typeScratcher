@@ -5,7 +5,7 @@ export const Rotation = {
     /** 左右のみ回転 */
     LEFT_RIGHT : 'left-right',
     
-    /** 回転しない */
+    /** Does not rotate */
     DONT_ROTATE : 'do-not-rotate',
     
     /** 自由に回転 */

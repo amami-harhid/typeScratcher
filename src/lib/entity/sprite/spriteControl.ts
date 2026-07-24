@@ -211,7 +211,7 @@ export class SpriteControl implements ISpriteControl {
             const threadObj = new ThreadObj(this.entity, DoubleRunning.FALSE); // 多重起動許さない
             threadObj.setFunc(func);
             threadManager.registThread(threadObj);
-            threadObj.status = ThreadStatus.YIELD;
+            threadObj.status = ThreadStatus.STAND_BY;
         }
     }
 

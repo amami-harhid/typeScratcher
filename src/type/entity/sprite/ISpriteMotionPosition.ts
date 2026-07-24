@@ -1,31 +1,31 @@
 import type { TPositionArray } from "../../common/typeCommon";
 
 /**
- * スプライトの動き（位置）
+ * Motion of positioning
  */
 export interface ISpriteMotionPosition {
     /** 
-     * X座標 
+     * X coordinate
      */
     get x() : number;
     /** 
-     * Y座標 
+     * Y coordinate
      */
     get y() : number;
     /** 
-     * XY座標 
+     * X,Y coordinate
      */
     get xy() : TPositionArray;
     /** 
-     * X座標 
+     * X coordinate
      */
     set x(x: number);
     /** 
-     * Y座標 
+     * Y coordinate
      */
     set y(y: number);
     /** 
-     * XY座標 
+     * X,Y coordinate
      */
     set xy( xy: TPositionArray);
 };

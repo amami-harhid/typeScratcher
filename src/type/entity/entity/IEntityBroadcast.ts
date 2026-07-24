@@ -11,35 +11,25 @@ export type TBroadcastElement = {
     "funcArr": TBroadcastElementFunc[],
 }
 
-/** メッセージ送受信 */
+/** Sending and receiving messages */
 export interface IEntityBroadCast {
 
     /**
-     * メッセージを送る
-     * @param messageId - メッセージID
-     * @param args - 引数
-     * ```ts
-     *  const count: number = 100;
-     *  const mouseDown: boolean = false;
-     *  this.Event.broadcast('Start', count, mouseDown );
-     * ```
+     * Send a message
+     * @param messageId - Message ID
+     * @param args - argument
      */
     send(messageId: string, ...args:unknown[]): void;
 
     /**
-     * メッセージを送り終わるまで待つ
-     * @param messageId - メッセージID
-     * @param args - 引数
-     * ```ts
-     *  const count: number = 100;
-     *  const mouseDown: boolean = false;
-     *  await this.Event.broadcastAndWait('Start', count, mouseDown );
-     * ```
+     * Wait until the message has been sent.
+     * @param messageId - Message ID
+     * @param args - argument
      */
     sendAndWait(messageId: string, ...args:unknown[]): Promise<void>;
 
     /**
-     * メッセージ受信時のイベント定義セッター
+     * message reception event definition
      * @param messageId 
      */
     receiver(messageId: string): EventFunctionSetter;

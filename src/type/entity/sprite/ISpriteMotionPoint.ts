@@ -1,23 +1,27 @@
 import type { ISprite } from '.';
 /**
- * スプライトの動き（向かせる）
+ * Motion of pointing
  */
 export interface ISpriteMotionPoint {
     /**
-     * マウスカーソルへ向く
+     * Face to the mouse cursor, when the mouse cursor is inside the stage.
      */
     toMouseInStage(): void;
+
     /**
-     * マウスカーソルへ向く(ステージ外でもOK)
+     * Face to the mouse cursor
      */
     toMouse(): void;
+
     /**
-     * ターゲットの位置へ向く
-     * @param target {Sprite} - ターゲット
+     * Face to the target's position.
+     * 
+     * @param target {Sprite} - target
      */
     toTarget(target: ISprite): void;
+
     /**
-     * どこかを向く
+     * Face the random direction
      */
     toRandom(): void ;
 };

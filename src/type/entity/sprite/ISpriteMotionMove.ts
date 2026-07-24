@@ -6,7 +6,7 @@ import type { ISprite } from '.';
  */
 export interface ISpriteMotionMove {
     /**
-     * ステップ数分、進ませる
+     * move for the specified number
      * @param steps {number} - ステップ数
      */
     steps(steps: number): void;
@@ -17,7 +17,7 @@ export interface ISpriteMotionMove {
     to( pos: TPositionArray ): void;
 
     /**
-     * もし端に振れたら跳ね返る
+     * if on edge Bounce
      */
     ifOnEdgeBounce(): void;
     /**

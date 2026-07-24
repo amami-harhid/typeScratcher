@@ -1,6 +1,7 @@
 import { IImage } from "../../image";
 
 export interface EventFunctionSetter {
+    /** Setter for the event thread */
     set func(func: CallableFunction);
 }
 
@@ -8,7 +9,7 @@ export interface EventFunctionSetter {
 export interface IEntityEvent {
 
     /**
-     * 旗が押されたイベントのセッターを返す
+     * return a setter for the "flag clicked" event thread
      * @returns イベントセッター
      */
     flagPresser(): EventFunctionSetter;

@@ -66,35 +66,35 @@ export interface NextMethodsAddPitch {
 
 
 /**
- * スピーチ機能
+ * Speech
  */
 export interface IEntitySpeech {
-    /** ロケール(言語) */
+    /** Language locale */
     locale(locale: V_SPEECH_LOCALE): NextMethodsLocale;
-    /** タイプを指定 */
+    /** Type of speech */
     type(type: string): NextMethodsType;
-    /** タイプをコピー */
+    /** Copy and create type */
     typeCopyTo( type: string ): NextMethodsCopyTo;
-    /** 性別 */
+    /** Gender */
     gender(gender:Type_speech_gender): NextMethodsGender;
-    /** 音量 */
+    /** Volume */
     volume(volume: number) : NextMethodsVolume;
-    /** ピッチ */
+    /** Pitch */
     pitch(pitch: number) : NextMethodsPitch;
 
-    /** 音量を加える */
+    /** Add volume */
     addVolume(volume:number): NextMethodsAddVolume;
 
-    /** ピッチを加える */
+    /** Add pitch */
     addPitch(pitch: number): NextMethodsAddPitch;
     /**
-     * テキストをスピーチする
+     * Speech text
      * @param words 
      */
     speech(words: string) : Promise<void>;
 
     /**
-     * すべてのスピーチを停止する
+     * Stop all speech
      */
     stopAll() : void
 

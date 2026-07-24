@@ -1,11 +1,13 @@
 'use strict'
+import { ErrorMessages } from "./messages.js";
+
 const awaitBackdropRule = {
     meta: {
         type: 'problem',
         fixable: 'code',
         schema: [],
         messages: {
-            AwaitNeededId: 'await をつけてください',
+            AsyncFunctionNeededId: ErrorMessages.AsyncFunctionNeededId, //'Change to "async function".',
         },
     },
     create(context){
@@ -31,7 +33,7 @@ const awaitBackdropRule = {
                                 if(parent3.type!='AwaitExpression'){
                                     context.report({
                                         node,
-                                        messageId: "AwaitNeededId",
+                                        messageId: "AsyncFunctionNeededId",
                                         fix(fixer) {
                                             return fixer.insertTextBefore(parent2, "await ");
                                         }

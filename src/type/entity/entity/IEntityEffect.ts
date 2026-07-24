@@ -2,22 +2,22 @@ import type { TImageEffectiveValue } from '../ImageEffective';
 import type { TEntityEffects } from './TEntityOptions';
 /** 効果 */
 export interface IEntityEffect {
-    /** イメージ効果 */
+    /** get image effect  */
     get(): TEntityEffects;
     /**
-     * イメージ効果を指定量だけ変える。
-     * @param effective {TImageEffectiveValue} - イメージ効果
-     * @param value {number} - 変更量
+     * Change the image effect by a specified amount.
+     * @param effective {TImageEffectiveValue} - Image effect
+     * @param value {number} - Amount of change
      */
     change(effective:TImageEffectiveValue, value:number): void;
     /**
-     * イメージ効果を指定量にする。
-     * @param effective {TImageEffectiveValue} - イメージ効果
-     * @param value {number} - 指定量
+     * Set the image effect to a specified amount.
+     * @param effective {TImageEffectiveValue} - Image effect
+     * @param value {number} - Amount of change
      */
     set(effective:TImageEffectiveValue, value:number): void;
     /**
-     * イメージ効果をクリアする（初期値に戻す）
+     * Clear image effects (reset to default values)
      */
     clear() : void;
 
