@@ -61,6 +61,7 @@ export interface IEntitySound {
 
     /** 
      * Volume 
+     * 
      * ---
      * 音量
      */
@@ -68,6 +69,7 @@ export interface IEntitySound {
 
     /** 
      * Add volume 
+     * 
      * ---
      * 音量を指定量だけ変える
      */
@@ -75,6 +77,7 @@ export interface IEntitySound {
 
     /** 
      * Set volume 
+     * 
      * ---
      * 音量を設定する
      */
@@ -82,6 +85,7 @@ export interface IEntitySound {
 
     /** 
      * Pitch 
+     * 
      * ---
      * ピッチ
      */
@@ -89,6 +93,7 @@ export interface IEntitySound {
 
     /** 
      * Add pitch 
+     * 
      * ---
      * ピッチを指定量だけ変える
      */
@@ -96,6 +101,7 @@ export interface IEntitySound {
 
     /** 
      * Set pitch 
+     * 
      * ---
      * ピッチを設定する
      */

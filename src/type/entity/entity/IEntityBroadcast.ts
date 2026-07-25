@@ -16,6 +16,7 @@ export interface IEntityBroadCast {
 
     /**
      * Send a message
+     * 
      * ---
      * メッセージを送る
      * 
@@ -26,6 +27,7 @@ export interface IEntityBroadCast {
 
     /**
      * Wait until the message has been sent.
+     * 
      * ---
      * メッセージを送り終わるまで待つ
      * 
@@ -36,6 +38,7 @@ export interface IEntityBroadCast {
 
     /**
      * message reception event definition.
+     * 
      * ---
      * メッセージが送られたときのスレッドを定義
      * 

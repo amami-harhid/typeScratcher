@@ -6,6 +6,7 @@ import type { IImage } from "../../image";
 export interface ISpriteCostume {
     /**
      * Add images
+     * 
      * ---
      * イメージ配列をスプライトへ追加する
      * 
@@ -15,6 +16,7 @@ export interface ISpriteCostume {
 
     /**
      * Names array
+     * 
      * ---
      * イメージの名前の配列
      */

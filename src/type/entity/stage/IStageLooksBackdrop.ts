@@ -12,7 +12,7 @@ export interface IStageLooksBackdrop extends IEntityLooksBackdrop {
      * ---
      * 現在の背景のSkinID
      */
-    readonly currentSkinId: number;
+    //readonly currentSkinId: number;
 
     /**
      * Change to the next background and wait.

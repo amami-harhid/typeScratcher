@@ -5,6 +5,7 @@ import type { RotationValue } from '../RotationStyle';
 export interface ISpriteMotionRotation {
     /**
      * Style of rotation
+     * 
      * ---
      * 回転方法
      */
@@ -12,6 +13,7 @@ export interface ISpriteMotionRotation {
 
     /**
      * Style of rotation
+     * 
      * ---
      * 回転方法
      */

@@ -4,7 +4,7 @@ import type { IEntitySpeech } from "./IEntitySpeech";
 export declare interface IEntity {
 
     /**
-     * messages
+     * Broadcast
      * ---
      * メッセージ操作
      */

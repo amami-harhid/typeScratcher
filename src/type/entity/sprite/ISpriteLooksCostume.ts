@@ -11,7 +11,7 @@ export interface ISpriteLooksCostume {
      * ---
      * コスチュームのSkinId
      */
-    get currentSkinId() : number;
+    //get currentSkinId() : number;
 
     /**
      * Costume index number

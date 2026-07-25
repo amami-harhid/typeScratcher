@@ -6,6 +6,7 @@ import type { TPositionArray } from "../../common/typeCommon";
 export interface ISpriteMotionPosition {
     /** 
      * X coordinate
+     * 
      * ---
      * X 座標
      */
@@ -13,6 +14,7 @@ export interface ISpriteMotionPosition {
 
     /** 
      * Y coordinate
+     * 
      * ---
      * Y 座標
      */
@@ -20,6 +22,7 @@ export interface ISpriteMotionPosition {
 
     /** 
      * X,Y coordinate
+     * 
      * ---
      * X,Y 座標
      */
@@ -27,6 +30,7 @@ export interface ISpriteMotionPosition {
 
     /** 
      * X coordinate
+     * 
      * ---
      * X 座標
      */
@@ -34,6 +38,7 @@ export interface ISpriteMotionPosition {
 
     /** 
      * Y coordinate
+     * 
      * ---
      * Y 座標
      */
@@ -41,6 +46,7 @@ export interface ISpriteMotionPosition {
 
     /** 
      * X,Y coordinate
+     * 
      * ---
      * X,Y 座標
      */

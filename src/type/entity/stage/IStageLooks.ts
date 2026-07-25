@@ -7,6 +7,8 @@ import type { IStageLooksBackdrop } from './IStageLooksBackdrop';
  */
 export interface IStageLooks extends IEntityLooks {
     /**
+     * Backdrop
+     * ---
      * 背景に関する処理
      */
     readonly backdrop: IStageLooksBackdrop;
