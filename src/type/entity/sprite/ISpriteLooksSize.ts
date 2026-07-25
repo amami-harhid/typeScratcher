@@ -8,23 +8,35 @@ export interface ISpriteLooksSize {
 
     /**
      * Vertical and horizontal scale
+     * 
+     * ---
+     * 縦横の大きさ（%) 
      */
     get scale() : ISpriteLooksSizeScale;
 
     /**
      * Vertical and horizontal scale
+     * 
+     * ---
+     * 縦横の大きさ（%) 
      */
     set scale(scale:TScaleArr);
 
     /**
      * Own display dimensions (width and height)
      * 
+     * ---
+     * 表示されている自身の大きさ(ピクセル)
+     * 
      * @returns TBounds
      */
     get drawingSize() : TBoundsEx;
     
     /**
-     * Set the display dimensions (width and height)
+     * Own display dimensions (width and height)
+     * 
+     * ---
+     * 表示されている自身の大きさ(ピクセル)
      */
     set drawingSize( size: TScaleCanEmpty);
 }

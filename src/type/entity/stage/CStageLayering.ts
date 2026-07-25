@@ -1,17 +1,17 @@
 /**
- * レイアー
+ * Layer
  */
 export const StageLayering = {
-    /** 背景 */
+    /** Background layer */
     BACKGROUND_LAYER : 'background',
     
-    /** ビデオ */
+    /** Video layer */
     VIDEO_LAYER : 'video',
     
-    /** ペン */
+    /** Pen layer */
     PEN_LAYER : 'pen',
 
-    /** スプライト */
+    /** Sprite layer */
     SPRITE_LAYER : 'sprite',
 
     /** テキスト */

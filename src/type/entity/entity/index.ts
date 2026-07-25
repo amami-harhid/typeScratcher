@@ -4,15 +4,21 @@ import type { IEntitySpeech } from "./IEntitySpeech";
 export declare interface IEntity {
 
     /**
-     * Sending and receiving messages
+     * messages
+     * ---
+     * メッセージ操作
      */
     readonly Broadcast: IEntityBroadCast;
     /**
      * Sound
+     * ---
+     * サウンド操作
      */
     readonly Sound: IEntitySound;
     /**
      * Speech
+     * ---
+     * スピーチ操作
      */
     readonly Speech: IEntitySpeech;
 };

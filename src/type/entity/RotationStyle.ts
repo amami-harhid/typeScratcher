@@ -2,13 +2,25 @@
  * 回転方向
  */
 export const Rotation = {
-    /** 左右のみ回転 */
+    /**
+     * Rotate left and right only.
+     * ---
+     * 左右のみ回転 
+     */
     LEFT_RIGHT : 'left-right',
     
-    /** Does not rotate */
+    /**
+     * Do not rotate.
+     * ---
+     * 回転しない
+     */
     DONT_ROTATE : 'do-not-rotate',
     
-    /** 自由に回転 */
+    /**
+     * All Around.
+     * --- 
+     * 自由に回転 
+     */
     ALL_AROUND : 'all-around',
 } as const;
 

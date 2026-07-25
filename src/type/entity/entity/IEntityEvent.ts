@@ -5,31 +5,54 @@ export interface EventFunctionSetter {
     set func(func: CallableFunction);
 }
 
-/** イベント */
+/** 
+ * Event processings
+ * ---
+ * イベントに関する操作
+ */
 export interface IEntityEvent {
 
     /**
-     * return a setter for the "flag clicked" event thread
-     * @returns イベントセッター
+     * Define "flag clicked" event thread.
+     * 
+     * ---
+     * 旗が押されたときのイベントスレッドを定義する
+     * 
+     * @returns thread setter
      */
     flagPresser(): EventFunctionSetter;
+
     /**
-     * キー押下イベントのセッターを返す
-     * @param key キーの指定
-     * @returns イベントセッター
+     * Define "Key pressed" event thread.
+     * 
+     * ---
+     * キー押下時のイベントスレッドを定義する
+     * 
+     * @param key key
+     * @returns thread setter
      */
     keyPresser( key: string ): {
         set func(func: CallableFunction);
     };
+
     /**
-     * クリックイベントのセッターを返す
-     * @returns イベントセッター
+     * Define "pressed" event thread.
+     * 
+     * ---
+     * 押されたときのイベントスレッドを定義する
+     * 
+     * @returns thread setter
      */
     clicker(): EventFunctionSetter;
+
     /**
-     * 背景が〇〇になったときのイベントセッターを返す
+     * Define "change backdrop" event thread.
+     * 
+     * ---
+     * 背景が〇〇になったときのイベントスレッドを定義する
+     * 
      * @param backdropName 
-     * @returns イベントセッター
+     * @returns thread setter
      */
     backdropSwitcher(backdrop: IImage) :EventFunctionSetter;
 

@@ -4,7 +4,10 @@
 export interface IStagePen {
 
     /**
-     * ペン描画をクリアする
+     * Erase pen drawings
+     * 
+     * ---
+     * ペン描画を消去する
      */
     clear(): void;
 

@@ -4,6 +4,8 @@
 import { Typescratcher as Ts } from '../../src/importer';
 import type { Sprite, Stage as _ } from '../../src/importer';
 
+Ts.Env.debugMode = true;
+
 // 【画像 import 】
 import CatSvg from "../assets/cat.svg";
 import Cat2Svg from "../assets/cat2.svg";

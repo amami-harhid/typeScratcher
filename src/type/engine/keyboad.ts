@@ -2,21 +2,53 @@
  * キーボードキー
  */
 export const KEYBOARD_KEYS = {
-    /** Any keys */
+    /** 
+     * Any keys
+     * ---
+     * 任意のキー
+     */
     ANY: 'any',
-    /** Space key */
+    /** 
+     * Space key
+     * ---
+     * スペースキー 
+     */
     SPACE : 'Space',
-    /** Arrow Left key */
+    /** 
+     * Arrow Left key
+     * ---
+     * 左向き矢印キー 
+     */
     LEFT : 'LeftArrow',
-    /** Arrow up key */
+    /** 
+     * Arrow up key 
+     * ---
+     * 上向き矢印キー 
+     */
     UP : 'UpArrow',
-    /** Arrow right key */
+    /** 
+     * Arrow right key 
+     * ---
+     * 右向き矢印キー 
+     */
     RIGHT : 'RightArrow',
-    /** Arrow down key */
+    /** 
+     * Arrow down key 
+     * ---
+     * 下向き矢印キー 
+     */
     DOWN : 'DownArrow',
-    /** Enter key */
+    /** 
+     * Enter key 
+     * ---
+     * エンターキー 
+     */
     ENTER : 'Enter',
-    /** Escape key */
+    /** 
+     * Escape key 
+     * ---
+     * エスケープキー 
+     */
     ESCAPE : 'Escape',
 } as const;
 

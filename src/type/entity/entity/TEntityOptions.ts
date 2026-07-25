@@ -18,18 +18,46 @@ export type TEntityOptions = {
 };
 
 export type TEntityEffects = {
-    /** color */
+    /** 
+     * color effect
+     * ---
+     * 色の効果 
+     */
     color?: number,
-    /** fish eye */
+    /** 
+     * fish eye effect
+     * ---
+     * 魚眼レンズの効果
+     */
     fisheye?: number,
-    /** whirl */
+    /** 
+     * whirl effect
+     * ---
+     * 渦巻きの効果 
+     */
     whirl?: number,
-    /** pixelate */
+    /** 
+     * pixelate effect
+     * ---
+     * ピクセル効果 
+     */
     pixelate?: number,
-    /** mosaic */
+    /** 
+     * mosaic effect
+     * ---
+     * モザイク効果 
+     */
     mosaic?: number,
-    /** brightness */
+    /** 
+     * brightness effect
+     * ---
+     * 明るさの効果 
+     */
     brightness?: number,
-    /** ghost */
+    /** 
+     * ghost effect
+     * ---
+     * 幽霊の効果 
+     */
     ghost?: number,
 }

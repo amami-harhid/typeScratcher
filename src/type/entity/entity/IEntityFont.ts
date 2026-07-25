@@ -1,4 +1,7 @@
 import type { IFont } from "../../font";
+
+// 未使用のはず。あとで消す。
+
 /**
  * Entity Font
  */
@@ -6,6 +9,8 @@ export interface IEntityFont {
 
     /**
      * Add font datas
+     * ---
+     * フォントデータを
      */
     add(fonts: IFont[]): void;
     /**

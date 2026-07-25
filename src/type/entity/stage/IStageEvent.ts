@@ -1,5 +1,7 @@
 import type { IEntityEvent } from '../entity/IEntityEvent';
 /**
- * Stage Event(イベント)
+ * Stage Event
+ * ---
+ * ステージのイベント
  */
 export type IStageEvent = IEntityEvent;

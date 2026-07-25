@@ -16,6 +16,9 @@ export interface IEntityBroadCast {
 
     /**
      * Send a message
+     * ---
+     * メッセージを送る
+     * 
      * @param messageId - Message ID
      * @param args - argument
      */
@@ -23,13 +26,19 @@ export interface IEntityBroadCast {
 
     /**
      * Wait until the message has been sent.
+     * ---
+     * メッセージを送り終わるまで待つ
+     * 
      * @param messageId - Message ID
      * @param args - argument
      */
     sendAndWait(messageId: string, ...args:unknown[]): Promise<void>;
 
     /**
-     * message reception event definition
+     * message reception event definition.
+     * ---
+     * メッセージが送られたときのスレッドを定義
+     * 
      * @param messageId 
      */
     receiver(messageId: string): EventFunctionSetter;

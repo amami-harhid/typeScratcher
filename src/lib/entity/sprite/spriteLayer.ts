@@ -1,9 +1,10 @@
 import { Sprite } from '../sprite';
 import { StageLayering } from '../../../type/entity/stage/CStageLayering';
 import type { ISprite } from '../../../type/entity/sprite';
+import type { ISpriteLayer } from '../../../type/entity/sprite/ISpriteLayer';
 
 /** 階層 */
-export class SpriteLayer {
+export class SpriteLayer implements ISpriteLayer {
  
     protected entity: Sprite;
     /**
@@ -18,14 +19,14 @@ export class SpriteLayer {
      * @internal
      * 最前面にする
      */
-    gotoFront() : void {
+    gotoFrontLayer() : void {
         this.entity.render.renderer.setDrawableOrder(this.entity.drawableID, Infinity, StageLayering.SPRITE_LAYER, true);
     }
     /**
      * @internal
      * 最背面にする
      */
-    gotoBack() : void {
+    gotoBackLayer() : void {
         this.entity.render.renderer.setDrawableOrder(this.entity.drawableID, -Infinity, StageLayering.SPRITE_LAYER, true);
     }
     /**

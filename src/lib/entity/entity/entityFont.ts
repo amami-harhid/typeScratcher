@@ -1,11 +1,13 @@
-import { Entity } from '.';
 import { Font } from '../../fonts';
-import { Image } from '../../image';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityFont } from '../../../type/entity/entity/IEntityFont';
 import type { IFont } from '../../../type/font';
 
-/** Entity フォント */
+// 未使用のはず。あとで消す。
+
+/** 
+ * Entity フォント 
+ */
 export class EntityFont implements IEntityFont{
 
     protected entity: IEntity;

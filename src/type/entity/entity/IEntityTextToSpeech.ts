@@ -1,10 +1,13 @@
 import type { TSoundPlayerOption } from '../../sound/IAudioEngine';
 
+// 使われていない様子です　確認後、消す
+
 /** Speech */
 export interface ISpriteTextToSpeech {
 
     /**
      * Speech
+     * 
      * @param words {string} - text
      * @param propertyType {string} - Speech property type
      */

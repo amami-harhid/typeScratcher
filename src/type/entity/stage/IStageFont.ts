@@ -1,5 +1,7 @@
 /**
- * Stage Image(イメージ)
+ * Stage Font
+ * ---
+ * ステージのフォント
  */
 export interface IStageFont {
 

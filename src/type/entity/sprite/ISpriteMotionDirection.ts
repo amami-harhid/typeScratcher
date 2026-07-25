@@ -4,6 +4,8 @@
 export interface ISpriteMotionDirection {
     /**
      * angle degree
+     * ---
+     * 向きの角度
      * 
      * @returns {number} - angle degree
      */
@@ -11,6 +13,8 @@ export interface ISpriteMotionDirection {
 
     /**
      * angle degree
+     * ---
+     * 向きの角度
      * 
      * @param degree {number} - angle degree
      */

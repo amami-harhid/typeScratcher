@@ -6,12 +6,19 @@ import type { IImage } from "../../image";
  */
 export interface IStageBackdrop extends IEntityBackdrop {
     /**
-     * コスチューム名 配列
+     * Names of Backdrop iamges
+     * 
+     * ---
+     * 背景のイメージ名(配列)
      */
     readonly names : string[];
 
     /**
-     * イメージを追加する
+     * Add Backdrop images
+     * 
+     * ---
+     * 背景イメージを追加する
+     * 
      * @param images 
      */
     add(images: IImage[]): void;

@@ -22,27 +22,32 @@ export interface IStage extends IEntity {
     
     readonly Properties: IStageProperties;
     /**
+     * Looks appearance<br>
      * 見た目
      */
     readonly Looks : IStageLooks;
     /**
+     * Control<br>
      * 制御
      */
     readonly Control : IStageControl;
     /**
+     * Sensing<br>
      * 調べる
      */
     readonly Sensing : IStageSensing;
     /**
-     * イベント
+     * Event
      */
     readonly Event : IStageEvent;
 
     /**
+     * Sound<br>
      * サウンド
      */
     readonly Sound : IStageSound;
     /**
+     * Backdrop
      * 背景
      */
     readonly Backdrop: IStageBackdrop;

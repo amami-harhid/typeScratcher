@@ -6,22 +6,33 @@ import type { BubbleProperties } from '../TBubble';
 export interface ISpriteLooksBubble {
 
     /**
-     * Display "saying" bubble
+     * "Saying" bubble
+     * 
+     * ---
+     * フキダシ『言う』
      * 
      * @param text -text
      * @param properties - properties
      */
     say(text: string, properties?: BubbleProperties) :void;
+
     /**
-     * Display "saying" bubble for the specified number of seconds.
+     * "Saying" bubble for the specified number of seconds.
+     * 
+     * ---
+     * フキダシ『言う』を指定秒数だけ表示して待つ
      * 
      * @param text -text
      * @param sec - seconds
      * @param properties - properties
      */
     sayForSecs(text: string, sec:number, properties?: BubbleProperties): Promise<void>;
+
     /**
-     * Display "thinking" bubble
+     * "Thinking" bubble
+     * 
+     * ---
+     * フキダシ『考える』
      * 
      * @param text -text
      * @param properties - properties
@@ -29,7 +40,10 @@ export interface ISpriteLooksBubble {
     think(text: string, properties?: BubbleProperties) : void;
 
     /**
-     * Display "thinking" bubble for the specified number of seconds.
+     * "Thinking" bubble for the specified number of seconds.
+     * 
+     * ---
+     * フキダシ『考える』を指定秒数だけ表示して待つ
      * 
      * @param text -text
      * @param sec - seconds

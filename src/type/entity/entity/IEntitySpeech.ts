@@ -69,32 +69,70 @@ export interface NextMethodsAddPitch {
  * Speech
  */
 export interface IEntitySpeech {
-    /** Language locale */
+    /** 
+     * Language locale
+     * ---
+     * 言語ロケール(地域・国) 
+     */
     locale(locale: V_SPEECH_LOCALE): NextMethodsLocale;
-    /** Type of speech */
+    /** 
+     * Type of speech
+     * ---
+     * スピーチのタイプ
+     */
     type(type: string): NextMethodsType;
-    /** Copy and create type */
+    /** 
+     * Copy and create type
+     * ---
+     * 既存のスピーチタイプをコピーして新しいタイプを作る
+     */
     typeCopyTo( type: string ): NextMethodsCopyTo;
-    /** Gender */
+    /** 
+     * Gender
+     * ---
+     * 声の性別 
+     */
     gender(gender:Type_speech_gender): NextMethodsGender;
-    /** Volume */
+    /** 
+     * Volume
+     * ---
+     * スピーチの音量 
+     */
     volume(volume: number) : NextMethodsVolume;
-    /** Pitch */
+    /** 
+     * Pitch
+     * ---
+     * スピーチのピッチ 
+     */
     pitch(pitch: number) : NextMethodsPitch;
 
-    /** Add volume */
+    /** 
+     * Add volume 
+     * ---
+     * スピーチの音量を指定量、変える 
+     */
     addVolume(volume:number): NextMethodsAddVolume;
 
-    /** Add pitch */
+    /** 
+     * Add pitch 
+     * ---
+     * スピーチのピッチを指定量、変える 
+     */
     addPitch(pitch: number): NextMethodsAddPitch;
+
     /**
      * Speech text
-     * @param words 
+     * ---
+     * スピーチするテキスト
+     * 
+     * @param text 
      */
-    speech(words: string) : Promise<void>;
+    speech(text: string) : Promise<void>;
 
     /**
      * Stop all speech
+     * ---
+     * スピーチを全て停止する
      */
     stopAll() : void
 

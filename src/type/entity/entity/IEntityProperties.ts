@@ -1,7 +1,11 @@
 import { ScratchRenderProperties } from "../../render/IRenderWebGL";
 import type { RotationValue } from "../RotationStyle";
 
-/** Coordinate */
+/** 
+ * Coordinate 
+ * ---
+ * 座標
+ */
 export interface IPosition {
     x: number;
     y: number;

@@ -8,11 +8,17 @@ export interface ISpriteSensingDistance {
     /**
      * Distance from the mouse cursor
      * 
+     * ---
+     * マウスカーソルまでの距離
+     * 
      * @returns distance
      */
     mousePointer(): number;
     /**
      * Distance to other sprites
+     * 
+     * ---
+     * ターゲットスプライトまでの距離
      * 
      * @param otherSprite 
      * @returns distance

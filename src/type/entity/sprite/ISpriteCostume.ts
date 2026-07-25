@@ -6,12 +6,17 @@ import type { IImage } from "../../image";
 export interface ISpriteCostume {
     /**
      * Add images
+     * ---
+     * イメージ配列をスプライトへ追加する
+     * 
      * @param images 
      */
     add(images: IImage[]) : void;
 
     /**
      * Names array
+     * ---
+     * イメージの名前の配列
      */
     readonly names : string[]
 

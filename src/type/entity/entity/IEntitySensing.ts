@@ -2,27 +2,41 @@ import type { IEntitySensingMouse } from './IEntitySensingMouse';
 import type { IEntitySensingKey } from './IEntitySensingKey';
 import type { IEntitySensingTimer } from './IEntitySensingTimer';
 /**
- * Entity Sensing(調べる)
+ * Sensing
+ * ---
+ * 調べる
  */
 export interface IEntitySensing {
     /**
      * Ask a question and wait for the answer.
+     * 
+     * ---
+     * 質問をする( 答えを受け取るまで待つ )
+     * 
      * @param question {string} - Question text
      * @returns {Promise<string>} - answer
      */
     askAndWait(question:string): Promise<string>;
 
     /**
-     * Sensor for Mouse
+     * Sensing Mouse
+     * 
+     * ---
+     * 『調べる』（マウス）
      */
     readonly mouse: IEntitySensingMouse;
 
     /**
-     * Sensor for Keyboard
+     * Sensing Keyboard
+     * 
+     * ---
+     * 『調べる』（キーボード）
      */
     readonly keyboard : IEntitySensingKey;
     /**
-     * Sensor for Timer
+     * Sensing fTimer
+     * ---
+     * 『調べる』（タイマー）
      */
     readonly timer : IEntitySensingTimer;
 };

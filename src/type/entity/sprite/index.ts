@@ -11,8 +11,9 @@ import type { ISpriteSensing } from './ISpriteSensing';
 import type { IPenSprite } from './pen';
 /**
  * Sprite
+ * ---
+ * スプライト
  */
-
 export interface SSprite{
     /**
      * @param name
@@ -21,54 +22,79 @@ export interface SSprite{
     new(name:string, options?:TEntityOptions):ISprite;
 
 };
+/**
+ * Sprite class
+ * ---
+ * スプライトクラス
+ */
 export interface ISprite extends IEntity {
     /**
      * Name of sprite
+     * ---
+     * スプライトの名前
      */
     readonly name: string;
 
     /**
-     * Sprite motion
+     * Sprite motion processing
+     * ---
+     * 『動き』の処理
      */
     readonly Motion: ISpriteMotion;
 
     /**
-     * Pen
+     * Pen processing
+     * ---
+     * 『ペン』の処理
      */
     readonly Pen: IPenSprite;
 
     /**
-     * Sprite Costume
+     * Sprite Costume processing
+     * ---
+     * 『コスチューム』の処理
      */
     readonly Costume: ISpriteCostume;
 
     /**
-     * Sprite Looks Appearance
+     * Sprite Looks processing
+     * ---
+     * 『見た目』の処理
      */
     readonly Looks: ISpriteLooks;
 
     /**
-     * Sprite Control
+     * Sprite Control processing
+     * ---
+     * 『制御』の処理
      */
     readonly Control: ISpriteControl;
 
     /**
-     * Sprite Sensing
+     * Sprite Sensing processing
+     * ---
+     * 『調べる』の処理
      */
     readonly Sensing: ISpriteSensing;
 
     /**
-     * Sprite Event
+     * Sprite Event processing
+     * ---
+     * 『イベント』の処理
      */
     readonly Event: ISpriteEvent;
 
     /**
-     * Sound
+     * Sound processing
+     * ---
+     * 『音』に関する処理
      */
     readonly Sound: ISpriteSound;
 
     /**
-     * DragMode
+     * DragMode controls
+     * ---
+     * ドラッグに関する操作
      */
     readonly DragMode: ISpriteDragMode;
 

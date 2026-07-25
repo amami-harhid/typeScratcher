@@ -3,7 +3,6 @@
  */
 import { engine, Engine } from "../../engine";
 import { EntityBroadCast } from "./entityBroadcast";
-import { EntityFont } from "./entityFont";
 import { EntityImage } from "./entityImage";
 import { EntitySound } from "./entitySound";
 import { EntitySpeech } from "./entitySpeech";
@@ -14,7 +13,6 @@ import { Render } from "../../render";
 import { Utils } from "../../utils/utils";
 import type { IEntity } from "../../../type/entity/entity";
 import type { IEntityBroadCast } from "../../../type/entity/entity/IEntityBroadcast";
-import type { IEntityFont } from "../../../type/entity/entity/IEntityFont";
 import type { IEntityImage } from "../../../type/entity/entity/IEntityImage";
 import type { IEntitySound } from "../../../type/entity/entity/IEntitySound";
 import type { IEntitySpeech } from "../../../type/entity/entity/IEntitySpeech";

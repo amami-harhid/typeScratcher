@@ -5,7 +5,10 @@ import type { EventFunctionSetter, IEntityEvent } from '../entity/IEntityEvent';
 export interface ISpriteEvent extends IEntityEvent {
 
     /**
-     * Returns the thread setter when cloned.
+     * Define the thread used when cloned.
+     * ---
+     * クローンされたときのスレッド定義
+     * 
      * @returns Thread setter
      */
     cloned() :EventFunctionSetter;

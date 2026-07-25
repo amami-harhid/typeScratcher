@@ -112,12 +112,17 @@ export const Typescratcher: ExportType = {
     Sprite: _Sprite as SSprite,
     Stage: _Stage as SStage,
     StageBounds: stageBounds,
-    textToSvg: textToSvg as ITextToSvg,
+    //textToSvg: textToSvg as ITextToSvg,
     Variable: Variable as SVariable,
     VoiceType: VOICE_ID,
     
 } as const;
 
+/**
+ * Sprite
+ * ---
+ * スプライト
+ */
 export type Sprite = ISprite;
 export type Stage = IStage;
 export type Image = IImage;

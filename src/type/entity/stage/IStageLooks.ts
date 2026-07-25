@@ -1,11 +1,13 @@
 import type { IEntityLooks } from '../entity/IEntityLooks';
 import type { IStageLooksBackdrop } from './IStageLooksBackdrop';
 /**
- * Sprite Looks(見た目)
+ * Stage Looks
+ * ---
+ * ステージの見た目
  */
 export interface IStageLooks extends IEntityLooks {
     /**
-     * 背景
+     * 背景に関する処理
      */
     readonly backdrop: IStageLooksBackdrop;
 }
