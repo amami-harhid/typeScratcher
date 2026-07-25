@@ -5,6 +5,10 @@ export interface ISpriteSensingEdge{
  
      /**
      * Detection of contact with the frame
+     * 
+     * ---
+     * ステージ枠に触れているか否かの判定
+     * 
      * @returns 
      */
     readonly isTouching : boolean;

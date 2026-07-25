@@ -8,6 +8,14 @@ export interface SFontImage {
 
 export interface IFontImage extends IImage{
 
+    /**
+     * text to svg image
+     * 
+     * ---
+     * 文字列をSVGイメージに変換する
+     * 
+     * @param text 
+     */
     textToSvg( text: string ) : Promise<void>;
 
 }

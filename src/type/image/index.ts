@@ -30,9 +30,11 @@ export interface SImage{
 
 };
 export interface IImage {
-    //skinId: number;
+    /**
+     * name of image
+     * 
+     * ---
+     * イメージ名
+     */
     name: string;
-    //image: string;
-    //loadCompleted: boolean;
-    //load(): Promise<void>;
 }

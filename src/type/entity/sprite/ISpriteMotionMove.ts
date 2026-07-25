@@ -11,16 +11,17 @@ export interface ISpriteMotionMove {
      * ---
      * 指定した数だけ進める
      * 
-     * @param steps {number} - ステップ数
+     * @param steps {number} 
      */
     steps(steps: number): void;
+    
     /**
      * Move to the specified coordinates.
      * 
      * ---
      * 指定座標へ移動させる
      * 
-     * @param pos number[] - [X座標,Y座標]
+     * @param pos number[] - coordinates(X,Y)
      */
     to( pos: TPositionArray ): void;
 
@@ -57,6 +58,7 @@ export interface ISpriteMotionMove {
      * @param target {Sprite} - target sprite
      */
     toSprite(target: ISprite) : void;
+
     /**
      * Move to the specified coordinates over the specified number of seconds.
      * 
