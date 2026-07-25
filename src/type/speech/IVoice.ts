@@ -1,5 +1,20 @@
+/**
+ * SPEECH LOCALE
+ * ---
+ * スピーチロケール(地域・国)
+ */
 export const SPEECH_LOCALE = {
+    /**
+     * ENGLISH
+     * ---
+     * 英語
+     */
     ENGLISH: 'en-EN',
+    /**
+     * JAPANESE
+     * ---
+     * 日本語
+     */
     JAPANESE: 'ja-JP',
 } as const;
 
@@ -32,11 +47,31 @@ const GIANT_ID = 'GIANT';
  */
 const KITTEN_ID = 'KITTEN';
 
+/**
+ * VOICE ID
+ * ---
+ * 声のタイプID
+ */
 export const VOICE_ID = {
+    /**
+     * ALTO
+     */
     ALTO: ALTO_ID,
+    /**
+     * TENOR
+     */
     TENOR: TENOR_ID,
+    /**
+     * SQUEAK
+     */
     SQUEAK: SQUEAK_ID,
+    /**
+     * GIANT
+     */
     GIANT: GIANT_ID,
+    /**
+     * KITTEN
+     */
     KITTEN: KITTEN_ID,
 } as const;
 
