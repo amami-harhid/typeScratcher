@@ -13,7 +13,7 @@ export interface IEntitySound {
      * 
      * @param soundName {string} - name of sound
      */
-    add(sounds: ISound[]) : void;
+    add(...sounds: ISound[]) : void;
 
     /**
      * Play the sound.

@@ -12,7 +12,7 @@ export interface ISpriteCostume {
      * 
      * @param images 
      */
-    add(images: IImage[]) : void;
+    add(...images: IImage[]) : void;
 
     /**
      * Names array

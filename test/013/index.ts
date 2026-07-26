@@ -10,7 +10,7 @@ import CatSvg from '../assets/cat.svg';
 const CatImage = new TS.Image({CatSvg});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([CatImage]);
+cat.Costume.add(CatImage);
 
 // 1秒ごとに 秒数をスピーチする
 cat.Speech.locale(TS.SpeechLocale.ENGLISH)

@@ -15,10 +15,10 @@ const BasketballImage = new TS.Image({BasketBallPng});
 const CatImage = new TS.Image({CatSvg});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([CatImage]);
+cat.Costume.add( CatImage );
 
 const stage = new TS.Stage();
-stage.Backdrop.add([BlueskyImage, BasketballImage]);
+stage.Backdrop.add( BlueskyImage, BasketballImage );
 
 cat.Event.flagPresser().func = async function*(this: Sprite) {
     for(;;){

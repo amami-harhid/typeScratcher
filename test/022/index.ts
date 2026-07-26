@@ -18,7 +18,7 @@ const WaterImage = new Ts.Image({WaterSvg});
 const cat = new Ts.Sprite('cat');
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 大きさの設定
@@ -26,7 +26,7 @@ cat.Looks.size.scale = [250, 250];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 変数
 const speechText = Ts.Variable.string( 'おーい、触っちゃだめよ' ); // タッチ

@@ -8,7 +8,7 @@ import AmonPng from '../assets/Amon.png';
 
 const appleImage = new TS.Image( {AmonPng} ); 
 const apple = new TS.Sprite('apple');
-apple.Costume.add([appleImage]);
+apple.Costume.add( appleImage );
 apple.Motion.direction.degree = 95;
 
 //apple.Pen.prepare();

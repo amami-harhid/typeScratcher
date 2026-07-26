@@ -25,14 +25,14 @@ const CatSound = new Ts.Sound({ CatWav });
 // スプライト作成
 /** Sprite cat */
 const cat = new Ts.Sprite("apple");
-cat.Costume.add([CatImage, Cat2Image]); // イメージを１個追加
-cat.Sound.add([CatSound]); // サウンドを１個追加
+cat.Costume.add( CatImage, Cat2Image ); // イメージを２個追加
+cat.Sound.add( CatSound ); // サウンドを１個追加
 cat.Sound.setVolume(CatSound, 10);
 cat.Sound.setPitch(CatSound, 30);
 
 // ステージ作成
 const stage = new Ts.Stage();
-stage.Backdrop.add([BasketballImage]); // 背景を１個追加
+stage.Backdrop.add( BasketballImage ); // 背景を１個追加
 
 // 旗を押したときのイベント定義
 cat.Event.flagPresser().func = async function* (this: Sprite) {
@@ -78,7 +78,7 @@ cat.Event.cloned().func = async function* (this: Sprite) {
         if(this.Sensing.edge.isTouching){
             this.Sound.play(CatSound);
         }
-        if(this.Sensing.sprite.isTouching([cat])) {
+        if(this.Sensing.sprite.isTouching( cat )) {
             this.Looks.visible.hide();
             break;
         }

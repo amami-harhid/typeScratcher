@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.90", P$ = {
+const j$ = "0.0.92", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -45870,7 +45870,7 @@ class gB {
   constructor(A) {
     this.entity = A;
   }
-  add(A) {
+  add(...A) {
     const e = this.entity;
     e.isSprite === !1 && (e.$image.add(A), this.currentBackdropNo == -1 && (this.no = 0));
   }
@@ -46530,7 +46530,7 @@ class nAA {
    * 音を追加する
    * @param soundName {string} - 音の名前
    */
-  add(A) {
+  add(...A) {
     for (const e of A) {
       this.currentSound == null && (this.currentSound = e);
       const r = e.name;
@@ -52380,7 +52380,7 @@ class JrA {
   constructor(A) {
     this.entity = A;
   }
-  add(A) {
+  add(...A) {
     this.entity.$image.add(A), this.currentConstumeNo == -1 && (this.currentConstumeNo = 0);
   }
   get names() {
@@ -53881,10 +53881,10 @@ class QiA extends ciA {
   constructor(A) {
     super(A), this.Distance = new HW(A);
   }
-  isTouching(A) {
+  isTouching(...A) {
     return this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !0);
   }
-  isTouchingWithoutClone(A) {
+  isTouchingWithoutClone(...A) {
     return this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !1);
   }
   /**
@@ -53911,9 +53911,9 @@ class QiA extends ciA {
    * @param targets 
    * @returns 
    */
-  getTouching(A) {
+  getTouching(...A) {
     const e = this.entity;
-    if (e.render.renderer.updateDrawableScale(e.drawableID, [e.Properties.scale.w, e.Properties.scale.h]), A) {
+    if (e.render.renderer.updateDrawableScale(e.drawableID, [e.Properties.scale.w, e.Properties.scale.h]), A.length > 0) {
       const r = [];
       for (const o of A) {
         const B = o;

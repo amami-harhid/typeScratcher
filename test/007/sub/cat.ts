@@ -4,7 +4,7 @@ import CatSvg from '../../assets/cat.svg';
 const CatImage = new TS.Image({CatSvg});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([ CatImage]);
+cat.Costume.add(CatImage);
 cat.Looks.layer.gotoBackLayer();
 
 export {cat};

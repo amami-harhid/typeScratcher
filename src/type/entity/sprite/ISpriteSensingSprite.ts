@@ -13,7 +13,7 @@ export interface ISpriteSensingSprite extends IEntitySensingSprite{
      * 
      * @param sprites 
      */
-    isTouching(sprites: ISprite[]): boolean;
+    isTouching(...sprites: ISprite[]): boolean;
 
     /**
      * Detect contact with a sprite (not including clones)
@@ -23,7 +23,7 @@ export interface ISpriteSensingSprite extends IEntitySensingSprite{
      * 
      * @param sprites 
      */
-    isTouchingWithoutClone(sprites: ISprite[]): boolean;
+    isTouchingWithoutClone(...sprites: ISprite[]): boolean;
 
     /**
      * Get an array of sprites touching the object.
@@ -34,7 +34,7 @@ export interface ISpriteSensingSprite extends IEntitySensingSprite{
      * @param targets 
      * @returns 
      */
-    getTouching(target?: ISprite[]) : ISprite[];
+    getTouching(...targets: ISprite[]) : ISprite[];
 
     /**
      * Distance to the specified sprite.

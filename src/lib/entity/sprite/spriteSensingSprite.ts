@@ -18,13 +18,13 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
         super(entity);
         this.Distance = new SpriteSensingDistance(entity);
     }
-    isTouching(sprites: ISprite[]): boolean {
+    isTouching(...sprites: ISprite[]): boolean {
         const _entity = this.entity as Sprite;
         _entity.Properties.update(); 
         //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
         return this.isTouchingTargetToTarget(sprites, true);
     }
-    isTouchingWithoutClone(sprites: ISprite[]): boolean {
+    isTouchingWithoutClone(...sprites: ISprite[]): boolean {
         const _entity = this.entity as Sprite;
         _entity.Properties.update(); 
         //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
@@ -55,10 +55,10 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
      * @param targets 
      * @returns 
      */
-    getTouching(targets?: ISprite[]) : ISprite[] {
+    getTouching(...targets: ISprite[]) : ISprite[] {
         const _entity = this.entity as Sprite;
         _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
-        if( targets ) {
+        if( targets.length > 0 ) {
             const targetSprites: ISprite[] = [];
             for(const _target of targets){
                 const __target = _target as Sprite;

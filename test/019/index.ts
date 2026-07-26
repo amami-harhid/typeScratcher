@@ -22,7 +22,7 @@ const WaterImage = new Ts.Image({WaterSvg});
 // 【スプライト】(犬)
 const dog = new Ts.Sprite('dog');
 // 画像をスプライトへ追加
-dog.Costume.add( [DogImage, CatImage] );
+dog.Costume.add( DogImage, CatImage );
 dog.Looks.size.scale = [20, 20];
 dog.Motion.position.xy = [ 0, 200 ];
 
@@ -32,12 +32,12 @@ const StageHeight = Ts.StageBounds.h;
 
 // 【スプライト】(ブロック)
 const block = new Ts.Sprite('block');
-block.Costume.add( [ BlockImage ] );
+block.Costume.add( BlockImage );
 block.Looks.visible.hide(); // 非表示にする
 block.Looks.effect.set(Ts.ImageEffective.GHOST, 50);
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 変数
 const mouse = Ts.Variable.string(''); 

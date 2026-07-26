@@ -13,11 +13,11 @@ const BlueskyImage = new TS.Image({BlueskySvg});
 const BasketballImage = new TS.Image({BasketballPng});
 
 const amon = new TS.Sprite('amon');
-amon.Costume.add([AmonImage]);
+amon.Costume.add( AmonImage );
 amon.Motion.direction.degree = 95; // 少し傾ける
 
 const stage = new TS.Stage();
-stage.Backdrop.add([BlueskyImage, BasketballImage]);
+stage.Backdrop.add( BlueskyImage, BasketballImage );
 
 amon.Event.flagPresser().func = async function*(this: Sprite){
     this.Looks.effect.clear();

@@ -23,11 +23,11 @@ const TennishitSound = new TS.Sound({TennishitWav});
 const SquawkSound = new TS.Sound({SquawkWav});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([CatImage, AmonImage]);
-cat.Sound.add([CatSound, TennishitSound, SquawkSound]);
+cat.Costume.add( CatImage, AmonImage );
+cat.Sound.add( CatSound, TennishitSound, SquawkSound );
 
 const stage = new TS.Stage();
-stage.Backdrop.add([BlueskyImage, BasketballImage]);
+stage.Backdrop.add( BlueskyImage, BasketballImage );
 
 const BackDropName = TS.Variable.string(BlueskyImage.name)
 TS.Variable.monitoring({BackDropName});

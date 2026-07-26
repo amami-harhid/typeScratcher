@@ -7,10 +7,10 @@ import ArrowSvg from '../../assets/Arrow1-a.svg';
 const ArrowImage = new TS.Image({ArrowSvg});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([ CatImage]);
+cat.Costume.add( CatImage );
 cat.Looks.layer.gotoBackLayer();
 
 const arrow = new TS.Sprite('arrow');
-arrow.Costume.add([ ArrowImage ]);
+arrow.Costume.add(ArrowImage);
 
 export {cat, arrow};

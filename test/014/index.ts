@@ -10,7 +10,7 @@ import CatSvg from '../assets/cat.svg';
 const CatImage = new TS.Image({CatSvg});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([CatImage]);
+cat.Costume.add( CatImage );
 
 cat.Event.flagPresser().func = async function*(this:Sprite) {
     this.Motion.direction.degree = 90;

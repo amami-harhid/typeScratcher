@@ -38,7 +38,7 @@ cat.Event.flagPresser().func = async function*(this: Sprite) {
 }
 cat.Event.flagPresser().func = async function*(this: Sprite) {
     for(;;){
-        if(this.Sensing.sprite.isTouching([num])){
+        if(this.Sensing.sprite.isTouching( num )){
             this.Looks.bubble.say("TOUCH");
         }else{
             this.Looks.bubble.say("");

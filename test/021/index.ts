@@ -18,7 +18,7 @@ const WaterImage = new Ts.Image({WaterSvg});
 const cat = new Ts.Sprite('cat');
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add(CatImage);
 cat.Motion.position.xy = [ 0, 0 ];
 
 // 大きさの設定
@@ -26,7 +26,7 @@ cat.Looks.size.scale = [250, 250];
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 文字列イメージ化
 const HELLO = 'Hello world';
@@ -38,7 +38,7 @@ const attribute: SvgImageAttributes = {
 const helloImage = await Ts.Image.createSvgImage({HELLO}, attribute); // ESLint で await をつける
 
 const moji = new Ts.Sprite('moji');
-moji.Costume.add( [helloImage] ); // <--- 文字中央にならない！！改良必要。
+moji.Costume.add( helloImage );
 moji.Looks.layer.gotoBackLayer();
 
 // 変数

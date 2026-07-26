@@ -18,7 +18,7 @@ for(const idx of TS.Loop.Iterator(10, 1)){
 }
 
 const num = new TS.Sprite('num');
-num.Costume.add( imageArr );
+num.Costume.add( ...imageArr );
 num.Looks.size.scale = [700,500];
 num.Looks.effect.set(TS.ImageEffective.GHOST, 20);
 

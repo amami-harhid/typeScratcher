@@ -7,5 +7,5 @@ const BasketballImage = new TS.Image({BasketBallPng});
 const BlueskyImage = new TS.Image({BlueskySvg});
 
 const stage = new TS.Stage();
-stage.Backdrop.add([BasketballImage, BlueskyImage]);
+stage.Backdrop.add( BasketballImage, BlueskyImage );
 export {stage};

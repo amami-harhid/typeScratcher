@@ -22,7 +22,7 @@ const WaterImage = new Ts.Image({WaterSvg});
 const cat = new Ts.Sprite('cat');
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add( CatImage );
 
 //await HarryPotterFont.load();
 
@@ -42,12 +42,12 @@ const attribute: SvgImageAttributes = {
 
 const moji = new Ts.Sprite('moji');
 const helloImage = new Ts.FontImage(attribute);
-moji.Costume.add( [helloImage] );
+moji.Costume.add( helloImage );
 await helloImage.textToSvg(HELLO);
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 変数
 const speechText = Ts.Variable.string( 'おーい、触っちゃだめよ' ); // タッチ

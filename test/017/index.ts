@@ -25,11 +25,11 @@ const BasketballImage = new Ts.Image({ BasketballPng });
 
 // スプライト作成
 const cat = new Ts.Sprite("apple");
-cat.Costume.add([CatImage]); // イメージを１個追加
+cat.Costume.add( CatImage ); // イメージを１個追加
 
 // ステージ作成
 const stage = new Ts.Stage();
-stage.Backdrop.add([BasketballImage]); // 背景を１個追加
+stage.Backdrop.add( BasketballImage ); // 背景を１個追加
 
 // 旗を押したときのイベント定義
 cat.Event.flagPresser().func = async function*(this: Sprite) {
@@ -71,7 +71,7 @@ cat.Event.cloned().func = async function* (this: Sprite) {
     for (;;) {
         this.Motion.move.steps(2);
         this.Motion.move.ifOnEdgeBounce();
-        if(this.Sensing.sprite.isTouching([cat])) {
+        if(this.Sensing.sprite.isTouching( cat )) {
             this.Looks.visible.hide();
             break;
         }

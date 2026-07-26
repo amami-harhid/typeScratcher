@@ -22,15 +22,15 @@ const ChillSound = new Ts.Sound({ChillWav});
 const cat = new Ts.Sprite('cat');
 
 // 画像をスプライトへ追加
-cat.Costume.add( [CatImage] );
+cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
 
 // サウンドをスプライトへ追加
-cat.Sound.add([ ChillSound ]);
+cat.Sound.add( ChillSound );
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage] );
+stage.Backdrop.add( WaterImage );
 
 // 変数
 const volume = Ts.Variable.number( 100 ); 

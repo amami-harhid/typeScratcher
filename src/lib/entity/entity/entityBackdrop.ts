@@ -23,7 +23,7 @@ export class EntityBackdrop implements IEntityBackdrop {
     constructor(entity:IEntity){
         this.entity = entity as Entity;
     }
-    add(images: IImage[]) {
+    add(...images: IImage[]) {
         const _entity = this.entity as Entity;
         if( _entity.isSprite === false ) {
             // ステージの場合

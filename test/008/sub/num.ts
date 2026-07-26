@@ -25,7 +25,7 @@ const image03 = await TS.Image.createSvgImage(
 
 // 文字スプライトを生成、コスチュームに文字イメージを追加する 
 const num = new TS.Sprite('num');
-num.Costume.add( [ image01, image02, image03] );
+num.Costume.add( image01, image02, image03 );
 // 大きさを設定する
 num.Looks.size.scale = [400,300];
 // やや透明ぎみにする

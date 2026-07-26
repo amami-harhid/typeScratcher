@@ -1,13 +1,14 @@
 import { Sound } from '../../sounds';
 import { Timer } from '../../utils/timer';
 import type { IEntity } from '../../../type/entity/entity';
+import type { IEntitySound } from '../../../type/entity/entity/IEntitySound';
 import type { ISound } from '../../../type/sound';
 import type { ISoundPlayer } from '../../../type/sound/ISoundPlayer';
 
 /** 
  * サウンド 
  */
-export class EntitySound {
+export class EntitySound implements IEntitySound{
 
     protected entity: IEntity;
     public soundMap: Map<string, ISound>;
@@ -31,7 +32,7 @@ export class EntitySound {
      * 音を追加する
      * @param soundName {string} - 音の名前
      */
-    add(sounds: ISound[]) : void {        
+    add(...sounds: ISound[]) : void {        
         for(const s of sounds) {
             if(this.currentSound == undefined){
                 this.currentSound = s;

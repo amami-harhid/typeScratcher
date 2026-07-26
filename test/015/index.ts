@@ -12,8 +12,8 @@ const CatImage = new TS.Image({CatSvg});
 const CatSound = new TS.Sound({CatWav});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([CatImage]);
-cat.Sound.add( [CatSound] );
+cat.Costume.add( CatImage );
+cat.Sound.add( CatSound );
 
 // 旗を押したときのイベント定義
 cat.Event.flagPresser().func = async function*(this:Sprite){

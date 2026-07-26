@@ -21,6 +21,6 @@ export interface IStageBackdrop extends IEntityBackdrop {
      * 
      * @param images 
      */
-    add(images: IImage[]): void;
+    add(...images: IImage[]): void;
 
 }

@@ -13,14 +13,14 @@ const BlueskyImage = new TS.Image({BlueskySvg});
 const CatImage = new TS.Image({CatSvg});
 
 const cat = new TS.Sprite('cat');
-cat.Costume.add([CatImage]);
+cat.Costume.add( CatImage );
 
 const apple = new TS.Sprite('apple');
-apple.Costume.add([AmonImage]);
+apple.Costume.add( AmonImage );
 apple.Motion.direction.degree = 95;
 
 const stage = new TS.Stage();
-stage.Backdrop.add([BlueskyImage, CatImage]);
+stage.Backdrop.add( BlueskyImage, CatImage );
 
 apple.Event.flagPresser().func = async function*(this: Sprite){
     this.Motion.position.xy = [0,0];

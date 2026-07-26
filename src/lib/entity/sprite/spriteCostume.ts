@@ -16,7 +16,7 @@ export class SpriteCostume implements ISpriteCostume {
     constructor(entity:ISprite){
         this.entity = entity;
     }
-    add(images: IImage[]) : void{
+    add(...images: IImage[]) : void{
         const _sprite = this.entity as Sprite;
         _sprite.$image.add(images);
         if(this.currentConstumeNo == -1){

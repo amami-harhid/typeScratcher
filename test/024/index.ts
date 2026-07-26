@@ -19,7 +19,7 @@ import { CollectSound, ChirpSound, CrashBeatboxSound } from "./sub/sound";
 
 // 【スプライト】壁
 const wall = new Wall('wall');
-wall.Costume.add( [WallImage] );
+wall.Costume.add( WallImage );
 const w = WallWidth;
 const h = WallHeight;
 wall.Looks.size.drawingSize ={w:WallWidth, h:WallHeight};
@@ -27,7 +27,7 @@ wall.Looks.visible.hide();
 
 // 【スプライト】Cage
 const cage = new Wall('cage');
-cage.Costume.add( [DoorImage, CageImage] );
+cage.Costume.add( DoorImage, CageImage );
 cage.Looks.size.drawingSize = {w:w, h:h};
 cage.Looks.visible.hide();
 
@@ -38,8 +38,8 @@ const slime = new Ts.Sprite('slime');
 slime.Looks.visible.hide();
 
 // 画像をスプライトへ追加
-slime.Costume.add( [SlimeImage] );
-slime.Sound.add([ChirpSound, CollectSound, CrashBeatboxSound]);
+slime.Costume.add( SlimeImage );
+slime.Sound.add( ChirpSound, CollectSound, CrashBeatboxSound );
 slime.Motion.position.xy = [ 0, 0 ];
 slime.Looks.size.drawingSize = {w:w*0.8, h:h*0.8};
 
@@ -148,7 +148,7 @@ slime.Broadcast.receiver('SLIME').func = async function*(this:Sprite) {
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
-stage.Backdrop.add( [WaterImage, BackdropBlackImage] );
+stage.Backdrop.add( WaterImage, BackdropBlackImage );
 
 // 文字列イメージ化
 const HELLO = 'Hello world';
@@ -160,7 +160,7 @@ const helloImage = new Ts.FontImage(attribute);
 await helloImage.textToSvg(HELLO);
 
 const moji = new Ts.Sprite('moji');
-moji.Costume.add( [helloImage] );
+moji.Costume.add( helloImage );
 moji.Looks.layer.gotoBackLayer();
 
 slime.Event.flagPresser().func = async function*(this:Sprite) {
@@ -207,11 +207,11 @@ slime.Event.cloned().func = async function*(this:Sprite) {
     for(;;) {
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.UP)) {
             this.Motion.position.y += h;
-            if(this.Sensing.sprite.isTouching([wall])) {
+            if(this.Sensing.sprite.isTouching( wall )) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.y -= h;
             }else{
-                const _cages = this.Sensing.sprite.getTouching([cage]);
+                const _cages = this.Sensing.sprite.getTouching( cage );
                 if(_cages.length>0) {
                     const _cage = _cages[0] as IWall;
                     if(_cage.Looks.costume.name == DoorImage.name){
@@ -228,11 +228,11 @@ slime.Event.cloned().func = async function*(this:Sprite) {
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.DOWN)) {
             this.Motion.position.y -= h;
-            if(this.Sensing.sprite.isTouching([wall])) {
+            if(this.Sensing.sprite.isTouching( wall )) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.y += h;
             }else{
-                const _cages = this.Sensing.sprite.getTouching([cage]);
+                const _cages = this.Sensing.sprite.getTouching( cage );
                 if(_cages.length>0) {
                     const _cage = _cages[0] as IWall;
                     if(_cage.Looks.costume.name == DoorImage.name){
@@ -249,11 +249,11 @@ slime.Event.cloned().func = async function*(this:Sprite) {
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.RIGHT)) {
             this.Motion.position.x += w;
-            if(this.Sensing.sprite.isTouching([wall])) {
+            if(this.Sensing.sprite.isTouching( wall )) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.x -= w;
             }else{
-                const _cages = this.Sensing.sprite.getTouching([cage]);
+                const _cages = this.Sensing.sprite.getTouching( cage );
                 if(_cages.length>0) {
                     const _cage = _cages[0] as IWall;
                     if(_cage.Looks.costume.name == DoorImage.name){
@@ -270,11 +270,11 @@ slime.Event.cloned().func = async function*(this:Sprite) {
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)) {
             this.Motion.position.x -= w;
-            if(this.Sensing.sprite.isTouching([wall])) {
+            if(this.Sensing.sprite.isTouching( wall )) {
                 this.Sound.play(CollectSound);
                 this.Motion.position.x += w;
             }else{
-                const _cages = this.Sensing.sprite.getTouching([cage]);
+                const _cages = this.Sensing.sprite.getTouching( cage );
                 if(_cages.length>0) {
                     const _cage = _cages[0] as IWall;
                     if(_cage.Looks.costume.name == DoorImage.name){

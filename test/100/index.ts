@@ -17,15 +17,15 @@ const CatSound = new Ts.Sound({CatWav});
 const ChillSound = new Ts.Sound({ChillWav});
 
 const stage = new Ts.Stage();
-stage.Sound.add([ChillSound]);
-stage.Backdrop.add( [BlueskyImage] );
+stage.Sound.add( ChillSound );
+stage.Backdrop.add( BlueskyImage );
 
 const cat = new Ts.Sprite('cat');
-cat.Costume.add([CatImage]);
+cat.Costume.add(CatImage);
 
 const apple = new Ts.Sprite('apple');
-apple.Costume.add([AppleImage]);
-apple.Sound.add([CatSound]);
+apple.Costume.add(AppleImage);
+apple.Sound.add( CatSound );
 apple.Looks.size.scale = [100,100];
 apple.Motion.direction.degree = 45;
 apple.Motion.rotation.style = Ts.Rotation.DONT_ROTATE;
@@ -175,14 +175,14 @@ apple.Event.flagPresser().func = async function*(this: Sprite){
         console.log(this.Sensing.sprite.distance);
         const _touchSprites = this.Sensing.sprite.getTouching();
         console.log(_touchSprites);
-        if(this.Sensing.sprite.isTouching(_touchSprites)){
-            if(this.Sensing.sprite.isTouchingWithoutClone([cat])){
+        if(this.Sensing.sprite.isTouching( ..._touchSprites )){
+            if(this.Sensing.sprite.isTouchingWithoutClone( cat )){
             }
         }
         this.Sensing.timer.reset();
         console.log(this.Sensing.timer.msValue);
         // this.Sound
-        this.Sound.add([CatSound]);
+        this.Sound.add( CatSound );
         this.Sound.addPitch(CatSound, 10);
         this.Sound.addVolume(CatSound, 10);
         this.Sound.clearEffects();
@@ -205,7 +205,7 @@ apple.Event.flagPresser().func = async function*(this: Sprite){
     }
 }
 stage.Event.flagPresser().func = async function*(this: Stage){
-    this.Backdrop.add([BlueskyImage]);
+    this.Backdrop.add( BlueskyImage );
     console.log(this.Backdrop.names);
     this.Broadcast.send('BG', 200);
     await this.Broadcast.sendAndWait('BG', 200);
