@@ -19,7 +19,10 @@
     "noImplicitAny": false,     /* 暗黙的な「any」型を許可。 */
     "noImplicitThis": true,     /* 暗黙的なthisの型推定を「禁止」。 */
     "skipLibCheck": true,       /* Skip type checking all .d.ts files. */
-
+    
+    "allowJs": true,
+    "maxNodeModuleJsDepth": 1,
+    
     "resolveJsonModule": true
   }
 

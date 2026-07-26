@@ -38,7 +38,7 @@ export default defineConfig({
             output: {
                 format:"es",
                 // 強制単一チャンク
-                manualChunks: () => '${name}.js'
+                manualChunks: () => `${name}.js`
             }
         },
     },

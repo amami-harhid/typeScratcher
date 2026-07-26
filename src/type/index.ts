@@ -11,7 +11,6 @@ import type { IOperations } from './operations';
 import type { SSound } from '../type/sound';
 import type { SSprite } from '../type/entity/sprite';
 import type { SStage } from '../type/entity/stage';
-import type { ITextToSvg } from '../type/svgText';
 import { SPEECH_LOCALE } from '../type/speech/IVoice';
 import { SPEECH_VOICE_ID } from '../type/speech/IVoice';
 import { SVariable } from './entity/monitor/SVariable';
