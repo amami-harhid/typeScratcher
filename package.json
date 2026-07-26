@@ -1,6 +1,6 @@
 {
   "name": "@tscratch3/typescratcher",
-  "version": "0.0.87",
+  "version": "0.0.88",
   "description": "TypeScript library that generates Scratch 3-style drawings",
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
+    "check": "tsc --noEmit",
     "build": "vite build --config ./vite.config-build.js --emptyOutDir "
   },
   "devDependencies": {

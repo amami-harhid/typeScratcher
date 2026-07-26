@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.87", P$ = {
+const j$ = "0.0.88", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -45621,7 +45621,15 @@ class qz {
     this._effect = A;
   }
   get() {
-    return this._effect;
+    return {
+      color: this._effect.color || 0,
+      fisheye: this._effect.fisheye || 0,
+      whirl: this._effect.whirl || 0,
+      pixelate: this._effect.pixelate || 0,
+      mosaic: this._effect.mosaic || 0,
+      brightness: this._effect.brightness || 0,
+      ghost: this._effect.ghost || 0
+    };
   }
   /**
    * イメージ効果を指定量だけ変える。
@@ -53576,7 +53584,7 @@ class siA {
   /**
    * タイマー値
    */
-  get timer() {
+  get msValue() {
     return le.timer;
   }
   /**
@@ -53718,13 +53726,12 @@ class aiA {
 }
 class oiA {
   entity;
-  _touchingEdge;
   /**
    * @internal
    * @param entity {ISprite}
    */
   constructor(A) {
-    this.entity = A, this._touchingEdge = !1;
+    this.entity = A;
   }
   /**
    * 枠に触っていることの判定
@@ -53874,8 +53881,11 @@ class QiA extends ciA {
   constructor(A) {
     super(A), this.Distance = new HW(A);
   }
-  isTouching(A, e = !0) {
-    return this.entity.Properties.update(), this.isTouchingTargetToTarget(A, e);
+  isTouching(A) {
+    return this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !0);
+  }
+  isTouchingWithoutClone(A) {
+    return this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !1);
   }
   /**
    * スプライトまでの距離
@@ -54467,7 +54477,7 @@ class fiA {
   /**
    * タイマー値
    */
-  get timer() {
+  get msValue() {
     return le.timer;
   }
   /**
@@ -54696,7 +54706,7 @@ const NiA = le.render.stageWidth, GiA = le.render.stageHeight, viA = {
   StageBounds: viA,
   //textToSvg: textToSvg as ITextToSvg,
   Variable: miA,
-  VoiceType: sAA
+  SpeechVoiceType: sAA
 };
 export {
   kiA as Typescratcher

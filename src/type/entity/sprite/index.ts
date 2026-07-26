@@ -87,15 +87,8 @@ export interface ISprite extends IEntity {
     /**
      * Sound processing
      * ---
-     * 『音』に関する処理
+     * 『音』の処理
      */
     readonly Sound: ISpriteSound;
-
-    /**
-     * DragMode controls
-     * ---
-     * ドラッグに関する操作
-     */
-    readonly DragMode: ISpriteDragMode;
 
 };

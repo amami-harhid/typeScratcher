@@ -61,3 +61,48 @@ export type TEntityEffects = {
      */
     ghost?: number,
 }
+
+export type TEntityGetEffects = {
+    /** 
+     * color effect
+     * ---
+     * 色の効果 
+     */
+    color: number,
+    /** 
+     * fish eye effect
+     * ---
+     * 魚眼レンズの効果
+     */
+    fisheye: number,
+    /** 
+     * whirl effect
+     * ---
+     * 渦巻きの効果 
+     */
+    whirl: number,
+    /** 
+     * pixelate effect
+     * ---
+     * ピクセル効果 
+     */
+    pixelate: number,
+    /** 
+     * mosaic effect
+     * ---
+     * モザイク効果 
+     */
+    mosaic: number,
+    /** 
+     * brightness effect
+     * ---
+     * 明るさの効果 
+     */
+    brightness: number,
+    /** 
+     * ghost effect
+     * ---
+     * 幽霊の効果 
+     */
+    ghost: number,
+}

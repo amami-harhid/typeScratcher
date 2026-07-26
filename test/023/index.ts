@@ -55,8 +55,8 @@ Ts.Variable.monitoring( { text: speechText } );
 
 cat.Event.flagPresser().func = async function*(this:Sprite){
     this.Looks.size.scale = [250, 250];
-    this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.VoiceType.KITTEN).typeCopyTo("001").gender(Ts.SpeechGender.FEMALE).addPitch(100);
-    this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.VoiceType.TENOR).typeCopyTo("002").addPitch(150);
+    this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.SpeechVoiceType.KITTEN).typeCopyTo("001").gender(Ts.SpeechGender.FEMALE).addPitch(100);
+    this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.SpeechVoiceType.TENOR).typeCopyTo("002").addPitch(150);
     const _touch = () => {
         return this.Sensing.mouse.isTouching;
     }

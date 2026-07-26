@@ -6,14 +6,12 @@ import type { ISpriteSensingEdge } from '../../../type/entity/sprite/ISpriteSens
  */
 export class SpriteSensingEdge implements ISpriteSensingEdge {
     protected entity: Sprite;
-    private _touchingEdge:boolean;
     /**
      * @internal
      * @param entity {ISprite}
      */
     constructor(entity:ISprite){
         this.entity = entity as Sprite;
-        this._touchingEdge = false;
     }
     /**
      * 枠に触っていることの判定

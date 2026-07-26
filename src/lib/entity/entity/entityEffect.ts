@@ -1,7 +1,7 @@
 import { ImageEffective, type TImageEffectiveValue } from '../../../type/entity/ImageEffective';
 import type { IEntity } from '../../../type/entity/entity';
 import type { IEntityEffect } from '../../../type/entity/entity/IEntityEffect';
-import type { TEntityEffects } from '../../../type/entity/entity/TEntityOptions';
+import type { TEntityEffects, TEntityGetEffects } from '../../../type/entity/entity/TEntityOptions';
 
 /** 効果 */
 export class EntityEffect implements IEntityEffect {
@@ -21,8 +21,17 @@ export class EntityEffect implements IEntityEffect {
     set effect( _effect: TEntityEffects) {
         this._effect = _effect;
     }
-    get(): TEntityEffects {
-        return this._effect;
+    get(): TEntityGetEffects {
+        const _effect:TEntityGetEffects = {
+            color: this._effect.color || 0,
+            fisheye: this._effect.fisheye || 0,
+            whirl: this._effect.whirl || 0,
+            pixelate: this._effect.pixelate || 0,
+            mosaic: this._effect.mosaic || 0,
+            brightness: this._effect.brightness || 0,
+            ghost: this._effect.ghost || 0,
+        }
+        return _effect;
     }
     /**
      * イメージ効果を指定量だけ変える。

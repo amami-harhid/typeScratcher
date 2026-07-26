@@ -1,5 +1,5 @@
 import type { TImageEffectiveValue } from '../ImageEffective';
-import type { TEntityEffects } from './TEntityOptions';
+import type { TEntityGetEffects } from './TEntityOptions';
 /** 
  * 画像効果 
  */
@@ -9,7 +9,7 @@ export interface IEntityEffect {
      * ---
      * 画像効果の設定値を取得する
      */
-    get(): TEntityEffects;
+    get(): TEntityGetEffects;
 
     /**
      * Change the image effect by a specified amount.

@@ -33,7 +33,6 @@ export interface IPenSprite {
 
     /**
      * HSV color
-     * 
      * ---
      * HSVカラー
      */

@@ -17,52 +17,52 @@ export interface SStage {
 }
 export interface IStage extends IEntity {
 
-    /**
-     * Properties
-     * ---
-     * プロパティ
-     */
-    readonly Properties: IStageProperties;
+    // /**
+    //  * Properties
+    //  * ---
+    //  * プロパティ
+    //  */
+    // readonly Properties: IStageProperties;
 
     /**
      * Looks
      * ---
-     * 見た目
+     * 『見た目』の処理
      */
     readonly Looks : IStageLooks;
 
     /**
      * Control
      * ---
-     * 制御
+     * 『制御』の処理
      */
     readonly Control : IStageControl;
 
     /**
      * Sensing
      * ---
-     * 調べる
+     * 『調べる』の処理
      */
     readonly Sensing : IStageSensing;
 
     /**
      * Event
      * ---
-     * イベント
+     * 『イベント』の処理
      */
     readonly Event : IStageEvent;
 
     /**
      * Sound
      * ---
-     * サウンド
+     * 『サウンド』の処理
      */
     readonly Sound : IStageSound;
 
     /**
      * Backdrop
      * ---
-     * 背景
+     * 『背景』の処理
      */
     readonly Backdrop: IStageBackdrop;
 };

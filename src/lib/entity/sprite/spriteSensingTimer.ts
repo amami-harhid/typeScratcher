@@ -17,7 +17,7 @@ export class SpriteSensingTimer implements IEntitySensingTimer {
     /**
      * タイマー値
      */
-    get timer() {
+    get msValue() {
         return (engine as Engine).timer;
     }
     /**

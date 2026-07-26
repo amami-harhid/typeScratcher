@@ -14,6 +14,7 @@ import type { IEntitySensingKey } from '../../../type/entity/entity/IEntitySensi
 import type { ISpriteSensingEdge } from '../../../type/entity/sprite/ISpriteSensingEdge';
 import type { ISpriteSensingColor } from '../../../type/entity/sprite/ISpriteSensingColor';
 import type { ISpriteSensingSprite } from '../../../type/entity/sprite/ISpriteSensingSprite';
+import { Sprite } from '.';
 /**
  * Sprite Sensing(調べる)
  */
@@ -82,6 +83,6 @@ export class SpriteSensing implements ISpriteSensing {
      * Drag Mode
      */
     get dragMode() :ISpriteDragMode{
-        return this.entity.DragMode;
+        return (this.entity as Sprite).DragMode;
     }
 };

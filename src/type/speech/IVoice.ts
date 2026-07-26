@@ -52,7 +52,7 @@ const KITTEN_ID = 'KITTEN';
  * ---
  * 声のタイプID
  */
-export const VOICE_ID = {
+export const SPEECH_VOICE_ID = {
     /**
      * ALTO
      */
@@ -75,8 +75,8 @@ export const VOICE_ID = {
     KITTEN: KITTEN_ID,
 } as const;
 
-export type K_VOICE_ID = keyof typeof VOICE_ID;
-export type V_VOICE_ID = typeof VOICE_ID[keyof typeof VOICE_ID];
+export type K_VOICE_ID = keyof typeof SPEECH_VOICE_ID;
+export type V_VOICE_ID = typeof SPEECH_VOICE_ID[keyof typeof SPEECH_VOICE_ID];
 export type T_VOICE_INFO_ELEMENT = {gender: Type_speech_gender, volume:number, pitch: number};
 export const VOICE_INFO : {[key in K_VOICE_ID]: T_VOICE_INFO_ELEMENT} = {
     [ALTO_ID]: {

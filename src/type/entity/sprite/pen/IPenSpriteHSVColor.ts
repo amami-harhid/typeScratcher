@@ -9,6 +9,7 @@ export interface IPenSpriteHSVColor {
 
     /**
      * HSV Color
+     * 
      * ---
      * HSV カラー
      * 
@@ -18,6 +19,7 @@ export interface IPenSpriteHSVColor {
 
     /** 
      * HSV Color
+     * 
      * ---
      * HSVカラー
      * 
@@ -27,6 +29,7 @@ export interface IPenSpriteHSVColor {
 
     /**
      * Hue [0 - 360]
+     * 
      * ---
      * 色相
      */
@@ -34,6 +37,7 @@ export interface IPenSpriteHSVColor {
 
     /**
      * Hue [0 - 360]
+     * 
      * ---
      * 色相
      * 
@@ -43,12 +47,14 @@ export interface IPenSpriteHSVColor {
 
     /**
      * Saturation [0 - 100]
+     * 
      * ---
      * 彩度
      */
     get saturation() : number;
     /**
      * Saturation [0 - 100]
+     * 
      * ---
      * 彩度
      * 
@@ -58,15 +64,18 @@ export interface IPenSpriteHSVColor {
 
     /**
      * Brightness [0 - 100]
+     * 
      * ---
-     * 明るさ
+     * 明るさ [0 - 100]
      */
     get brightness() : number;
 
     /**
-     * Brightness  [0 - 100]
+     * Brightness [0 - 100]
+     * 
      * ---
-     * 明るさ
+     * 明るさ [0 - 100]
+     * 
      * 
      * @param brightness {Brightness} - Brightness [0 - 100]
      */
@@ -74,15 +83,17 @@ export interface IPenSpriteHSVColor {
 
     /**
      * Transparency [0 - 100]
+     * 
      * ---
-     * 透明度
+     * 透明度 [0 - 100]
      */
     get transparency() : number;
 
     /**
-     * Transparency  [0 - 100]
+     * Transparency [0 - 100]
+     * 
      * ---
-     * 透明度
+     * 透明度 [0 - 100]
      * 
      * @param transparency {Transparency} - Transparency [0 - 100]
      */

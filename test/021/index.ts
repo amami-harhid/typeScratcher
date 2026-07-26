@@ -39,7 +39,7 @@ const helloImage = await Ts.Image.createSvgImage({HELLO}, attribute); // ESLint 
 
 const moji = new Ts.Sprite('moji');
 moji.Costume.add( [helloImage] ); // <--- 文字中央にならない！！改良必要。
-moji.Looks.layer.gotoBack();
+moji.Looks.layer.gotoBackLayer();
 
 // 変数
 const mouse = Ts.Variable.string( '' ); // マウス

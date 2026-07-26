@@ -18,15 +18,15 @@ cat.Event.flagPresser().func = async function*(this:Sprite) {
     for(const _second of TS.Loop.Iterator(10)){
         // 秒数により スピーチの設定を変える
         if(_second % 4 == 0) {
-            this.Speech.type(TS.VoiceType.ALTO);
+            this.Speech.type(TS.SpeechVoiceType.ALTO);
         }else if(_second % 4 == 1) {
             // 実行するたびに 前回のGIANTのピッチより-5 変化することに注意！
-            this.Speech.type(TS.VoiceType.GIANT).addPitch(-5); 
+            this.Speech.type(TS.SpeechVoiceType.GIANT).addPitch(-5); 
         }else if(_second % 4 == 2) {
-            this.Speech.type(TS.VoiceType.KITTEN);
+            this.Speech.type(TS.SpeechVoiceType.KITTEN);
         }else{
             // 実行するたびに 前回のTENORのピッチより +25 変化することに注意！
-            this.Speech.type(TS.VoiceType.TENOR).addPitch(25); 
+            this.Speech.type(TS.SpeechVoiceType.TENOR).addPitch(25); 
         }
         const text = `${_second+1}`;
         this.Broadcast.send('SPEECH', text);

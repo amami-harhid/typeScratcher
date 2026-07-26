@@ -8,7 +8,7 @@ const ArrowImage = new TS.Image({ArrowSvg});
 
 const cat = new TS.Sprite('cat');
 cat.Costume.add([ CatImage]);
-cat.Looks.layer.gotoBack();
+cat.Looks.layer.gotoBackLayer();
 
 const arrow = new TS.Sprite('arrow');
 arrow.Costume.add([ ArrowImage ]);

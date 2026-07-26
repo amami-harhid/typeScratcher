@@ -4,6 +4,7 @@ import { Env } from '../../common/env';
 import { MathUtil } from '../../utils/math-util';
 import { ScratchElement } from '../../gui/scratchElement';
 import { ScratchEvent } from '../../engine/scratchEvent';
+import { SpriteSensingEdge } from './spriteSensingEdge';
 import { Sprite } from '../sprite';
 import { Utils } from '../../utils/utils';
 import type { IEntityProperties } from '../../../type/entity/entity/IEntityProperties';
@@ -58,7 +59,7 @@ export class SpriteMotionMove implements ISpriteMotionMove {
      * もし端に振れたら跳ね返る
      */
     ifOnEdgeBounce(): void {
-        const touch = this.entity.Sensing.edge.isTouchingEdge()
+        const touch = (this.entity.Sensing.edge as SpriteSensingEdge).isTouchingEdge()
         if(touch.touch === true){
             const radians = MathUtil.degToRad(90 - this.entity.Properties.degree);
             let dx = Math.cos(radians);

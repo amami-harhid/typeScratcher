@@ -13,7 +13,7 @@ import type { SSprite } from '../type/entity/sprite';
 import type { SStage } from '../type/entity/stage';
 import type { ITextToSvg } from '../type/svgText';
 import { SPEECH_LOCALE } from '../type/speech/IVoice';
-import { VOICE_ID } from '../type/speech/IVoice';
+import { SPEECH_VOICE_ID } from '../type/speech/IVoice';
 import { SVariable } from './entity/monitor/SVariable';
 import { SFont } from './font';
 import { SFontImage } from './font/fontImage';
@@ -113,7 +113,7 @@ export type ExportType = {
      * ---
      * Scratch3 声の種類
      */
-    VoiceType: typeof VOICE_ID,
+    SpeechVoiceType: typeof SPEECH_VOICE_ID,
     /**
      * Speech gender
      * ---

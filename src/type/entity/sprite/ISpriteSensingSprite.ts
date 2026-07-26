@@ -11,16 +11,19 @@ export interface ISpriteSensingSprite extends IEntitySensingSprite{
      * ---
      * 相手スプライトに触れているか否かの判定（クローンを含める）
      * 
-     * ---
-     * When `includeClone` is false, the check is performed without including clones.
+     * @param sprites 
+     */
+    isTouching(sprites: ISprite[]): boolean;
+
+    /**
+     * Detect contact with a sprite (not including clones)
      * 
      * ---
-     * 引数(`includeClone`)がfalseのときはクローンを含めずに検査する
+     * 相手スプライトに触れているか否かの判定（クローンを含めない）
      * 
      * @param sprites 
-     * @param includeClone falseのときはクローンを含めずに検査する
      */
-    isTouching(sprites: ISprite[], includeClone?: boolean): boolean;
+    isTouchingWithoutClone(sprites: ISprite[]): boolean;
 
     /**
      * Get an array of sprites touching the object.

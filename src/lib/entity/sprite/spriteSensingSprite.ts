@@ -18,11 +18,17 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
         super(entity);
         this.Distance = new SpriteSensingDistance(entity);
     }
-    isTouching(sprites: ISprite[], includeClone: boolean = true): boolean {
+    isTouching(sprites: ISprite[]): boolean {
         const _entity = this.entity as Sprite;
         _entity.Properties.update(); 
         //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
-        return this.isTouchingTargetToTarget(sprites, includeClone);
+        return this.isTouchingTargetToTarget(sprites, true);
+    }
+    isTouchingWithoutClone(sprites: ISprite[]): boolean {
+        const _entity = this.entity as Sprite;
+        _entity.Properties.update(); 
+        //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
+        return this.isTouchingTargetToTarget(sprites, false);
     }
     /**
      * スプライトまでの距離
