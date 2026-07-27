@@ -4,16 +4,15 @@
  * 音の効果を変えてみよう（音量・ピッチ）
  */
 import { Typescratcher as Ts } from "../../src";
-import { Sprite } from "../../src";
+import type { Sprite, BubbleProperties } from "../../src";
+
+Ts.Env.bubbleScaleLinkedToSprite = true;
 
 // 【画像読み込み】
 import catSvg from '../assets/cat.svg';
 const CatImage = new Ts.Image( {catSvg} );
 import WaterSvg from '../assets/water.svg';
 const WaterImage = new Ts.Image({WaterSvg});
-// 【音読み込み】
-import ChillWav from '../assets/Chill.wav';
-const ChillSound = new Ts.Sound({ChillWav});
 
 // 【スプライト】(Spriteネコ)
 const cat = new Ts.Sprite('cat');
@@ -21,9 +20,8 @@ const cat = new Ts.Sprite('cat');
 // 画像をスプライトへ追加
 cat.Costume.add( CatImage );
 cat.Motion.position.xy = [ 0, 0 ];
+cat.Motion.direction.degree = 95;
 
-// サウンドをスプライトへ追加
-cat.Sound.add( ChillSound );
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
@@ -38,31 +36,25 @@ Ts.Variable.monitoring( { pitch } );
 cat.Event.flagPresser().func = async function*(this:Sprite){
     // ずっと繰り返し音を鳴らす
     for(;;) {
-        await this.Sound.playUntilDone(ChillSound);
+        this.Motion.move.steps(5);
+        this.Motion.move.ifOnEdgeBounce();
         yield;
     }
 };
 
-cat.Event.keyPresser( 'a' ).func = async function*(this:Sprite) {
-    // ボリュームを あげる
-    this.Sound.addVolume(ChillSound, +5);
-    volume.value = this.Sound.getVolume(ChillSound);
-}
-cat.Event.keyPresser( 'd' ).func = async function*(this:Sprite) {
-    // ボリュームを さげる
-    this.Sound.addVolume(ChillSound, -5);
-    volume.value = this.Sound.getVolume(ChillSound);
-}
-cat.Event.keyPresser( 'w' ).func = async function*(this:Sprite) {
-    // ピッチを あげる
-    this.Sound.addPitch(ChillSound, +5);
-    pitch.value = this.Sound.getPitch(ChillSound);
-}
-cat.Event.keyPresser( 'x' ).func = async function*(this:Sprite) {
-    // ピッチを さげる
-    this.Sound.addPitch(ChillSound, -5);
-    pitch.value = this.Sound.getPitch(ChillSound);
-}
+cat.Event.flagPresser().func = async function*(this:Sprite){
+    // ずっと繰り返し音を鳴らす
+    for(;;) {
+        this.Looks.size.scale = [-300, 20];
+        this.Looks.bubble.say('Hello');
+        await this.Control.wait(2);
+        this.Looks.size.scale = [20, 300];
+        const _prop: BubbleProperties = {scale: {w: 50, h:50}};
+        this.Looks.bubble.think('Hello', _prop);
+        await this.Control.wait(2);
+        yield;
+    }
+};
 
 
 // 開始

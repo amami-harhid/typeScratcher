@@ -34,6 +34,7 @@ import * as GUI from './lib/gui';
 
 import { ExportType } from './type';
 
+import { BubbleProperties as TBubbleProperties } from './type/entity/TBubble';
 import { Engine, engine } from './lib/engine';
 import { Env } from './lib/common/env';
 import { Font } from './lib/fonts';
@@ -126,3 +127,4 @@ export type Stage = IStage;
 export type Image = IImage;
 export type Bounds = TBoundsEx;
 export type SvgImageAttributes = createSvgImageAttributes;
+export type BubbleProperties = TBubbleProperties;
