@@ -24,12 +24,14 @@ export class EntityBackdrop implements IEntityBackdrop {
         this.entity = entity as Entity;
     }
     add(...images: IImage[]) {
-        const _entity = this.entity as Entity;
-        if( _entity.isSprite === false ) {
-            // ステージの場合
-            _entity.$image.add(images);
-            if(this.currentBackdropNo == -1){
-                this.no = 0;
+        if(images && images.length > 0) {
+            const _entity = this.entity as Entity;
+            if( _entity.isSprite === false ) {
+                // ステージの場合
+                _entity.$image.add(images);
+                if(this.currentBackdropNo == -1){
+                    this.no = 0;
+                }
             }
         }
     }

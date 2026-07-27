@@ -32,18 +32,20 @@ export class EntitySound implements IEntitySound{
      * 音を追加する
      * @param soundName {string} - 音の名前
      */
-    add(...sounds: ISound[]) : void {        
-        for(const s of sounds) {
-            if(this.currentSound == undefined){
-                this.currentSound = s;
+    add(...sounds: ISound[]) : void {
+        if(sounds && sounds.length > 0) {
+            for(const s of sounds) {
+                if(this.currentSound == undefined){
+                    this.currentSound = s;
+                }
+                const soundName = s.name;
+                this.soundMap.set(soundName, s);
+                if( !this.effectMap.has(soundName)) {
+                    this.effectMap.set(soundName,{volume:100, pitch:0});
+                }
+                this.soundKeys.push(s.name);
             }
-            const soundName = s.name;
-            this.soundMap.set(soundName, s);
-            if( !this.effectMap.has(soundName)) {
-                this.effectMap.set(soundName,{volume:100, pitch:0});
-            }
-            this.soundKeys.push(s.name);
-        }
+        }      
     }
     addPlayer( name: string, player: ISoundPlayer): void {
         if(this._soundPlayerKeys.includes(name)) {

@@ -19,16 +19,25 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
         this.Distance = new SpriteSensingDistance(entity);
     }
     isTouching(...sprites: ISprite[]): boolean {
-        const _entity = this.entity as Sprite;
-        _entity.Properties.update(); 
-        //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
-        return this.isTouchingTargetToTarget(sprites, true);
+
+        if(sprites && sprites.length > 0){
+            const _entity = this.entity as Sprite;
+            _entity.Properties.update(); 
+            //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
+            return this.isTouchingTargetToTarget(sprites, true);
+        }else{
+            return false;
+        }
     }
     isTouchingWithoutClone(...sprites: ISprite[]): boolean {
-        const _entity = this.entity as Sprite;
-        _entity.Properties.update(); 
-        //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
-        return this.isTouchingTargetToTarget(sprites, false);
+        if(sprites && sprites.length > 0){
+            const _entity = this.entity as Sprite;
+            _entity.Properties.update(); 
+            //_entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
+            return this.isTouchingTargetToTarget(sprites, false);
+        }else{
+            return false;
+        }
     }
     /**
      * スプライトまでの距離
@@ -58,7 +67,7 @@ export class SpriteSensingSprite extends EntitySensingSprite implements ISpriteS
     getTouching(...targets: ISprite[]) : ISprite[] {
         const _entity = this.entity as Sprite;
         _entity.render.renderer.updateDrawableScale(_entity.drawableID, [_entity.Properties.scale.w, _entity.Properties.scale.h]);
-        if( targets.length > 0 ) {
+        if( targets && targets.length > 0 ) {
             const targetSprites: ISprite[] = [];
             for(const _target of targets){
                 const __target = _target as Sprite;

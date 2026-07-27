@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.93", P$ = {
+const j$ = "0.0.94", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -45871,8 +45871,10 @@ class gB {
     this.entity = A;
   }
   add(...A) {
-    const e = this.entity;
-    e.isSprite === !1 && (e.$image.add(A), this.currentBackdropNo == -1 && (this.no = 0));
+    if (A && A.length > 0) {
+      const e = this.entity;
+      e.isSprite === !1 && (e.$image.add(A), this.currentBackdropNo == -1 && (this.no = 0));
+    }
   }
   /**
    * 背景名の配列
@@ -46531,11 +46533,12 @@ class nAA {
    * @param soundName {string} - 音の名前
    */
   add(...A) {
-    for (const e of A) {
-      this.currentSound == null && (this.currentSound = e);
-      const r = e.name;
-      this.soundMap.set(r, e), this.effectMap.has(r) || this.effectMap.set(r, { volume: 100, pitch: 0 }), this.soundKeys.push(e.name);
-    }
+    if (A && A.length > 0)
+      for (const e of A) {
+        this.currentSound == null && (this.currentSound = e);
+        const r = e.name;
+        this.soundMap.set(r, e), this.effectMap.has(r) || this.effectMap.set(r, { volume: 100, pitch: 0 }), this.soundKeys.push(e.name);
+      }
   }
   addPlayer(A, e) {
     this._soundPlayerKeys.includes(A) || (this._soundPlayerKeys.push(A), this._soundPlayers.set(A, e));
@@ -48645,7 +48648,7 @@ class Bs {
     const e = this.entity;
     if (e.isClone === !0) {
       const r = A.$image.images;
-      e.Costume.add(...r);
+      r && r.length > 0 && e.Costume.add(...r);
       const n = A.Sound.soundMap, o = A.Sound.soundKeys, B = [], Q = A.Sound, s = e.Sound;
       for (const g of o) {
         const a = n.get(g), h = a.deepCopy(), I = Q.getVolume(a), u = Q.getPitch(a);
@@ -52381,7 +52384,7 @@ class JrA {
     this.entity = A;
   }
   add(...A) {
-    this.entity.$image.add(A), this.currentConstumeNo == -1 && (this.currentConstumeNo = 0);
+    A && A.length > 0 && (this.entity.$image.add(A), this.currentConstumeNo == -1 && (this.currentConstumeNo = 0));
   }
   get names() {
     return this.entity.$image.names;
@@ -53882,10 +53885,10 @@ class QiA extends ciA {
     super(A), this.Distance = new HW(A);
   }
   isTouching(...A) {
-    return this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !0);
+    return A && A.length > 0 ? (this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !0)) : !1;
   }
   isTouchingWithoutClone(...A) {
-    return this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !1);
+    return A && A.length > 0 ? (this.entity.Properties.update(), this.isTouchingTargetToTarget(A, !1)) : !1;
   }
   /**
    * スプライトまでの距離
@@ -53913,7 +53916,7 @@ class QiA extends ciA {
    */
   getTouching(...A) {
     const e = this.entity;
-    if (e.render.renderer.updateDrawableScale(e.drawableID, [e.Properties.scale.w, e.Properties.scale.h]), A.length > 0) {
+    if (e.render.renderer.updateDrawableScale(e.drawableID, [e.Properties.scale.w, e.Properties.scale.h]), A && A.length > 0) {
       const r = [];
       for (const o of A) {
         const B = o;

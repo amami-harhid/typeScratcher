@@ -112,7 +112,9 @@ export class SpriteControl implements ISpriteControl {
         if(_sprite.isClone === true) {
             // Imageコピー
             const _images = (target as Sprite).$image.images;
-            _sprite.Costume.add(..._images);
+            if(_images && _images.length > 0) {
+                _sprite.Costume.add(..._images);
+            }
             // Soundコピー(DeepCopy)
             const _soundMap = (target.Sound as EntitySound).soundMap;
             const _soundKeys = (target.Sound as EntitySound).soundKeys;

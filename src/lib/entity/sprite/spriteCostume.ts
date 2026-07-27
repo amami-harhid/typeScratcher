@@ -17,10 +17,12 @@ export class SpriteCostume implements ISpriteCostume {
         this.entity = entity;
     }
     add(...images: IImage[]) : void{
-        const _sprite = this.entity as Sprite;
-        _sprite.$image.add(images);
-        if(this.currentConstumeNo == -1){
-            this.currentConstumeNo = 0;
+        if(images && images.length > 0){
+            const _sprite = this.entity as Sprite;
+            _sprite.$image.add(images);
+            if(this.currentConstumeNo == -1){
+                this.currentConstumeNo = 0;
+            }
         }
     }
     get names() : string[] {
