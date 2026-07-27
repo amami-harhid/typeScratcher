@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.92", P$ = {
+const j$ = "0.0.93", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -48645,13 +48645,13 @@ class Bs {
     const e = this.entity;
     if (e.isClone === !0) {
       const r = A.$image.images;
-      e.Costume.add(r);
+      e.Costume.add(...r);
       const n = A.Sound.soundMap, o = A.Sound.soundKeys, B = [], Q = A.Sound, s = e.Sound;
       for (const g of o) {
         const a = n.get(g), h = a.deepCopy(), I = Q.getVolume(a), u = Q.getPitch(a);
         s.effectMap.set(h.name, { volume: I, pitch: u }), B.push(h);
       }
-      B.length > 0 && e.Sound.add(B), e.Properties.degree = A.Properties.degree, e.Properties.position.x = A.Properties.position.x, e.Properties.position.y = A.Properties.position.y, e.Properties.rotationStyle = A.Properties.rotationStyle, e.Properties.scale.w = A.Properties.scale.w, e.Properties.scale.h = A.Properties.scale.h, e.Properties.visible = A.Properties.visible, e.Costume.no = A.Costume.no;
+      B.length > 0 && e.Sound.add(...B), e.Properties.degree = A.Properties.degree, e.Properties.position.x = A.Properties.position.x, e.Properties.position.y = A.Properties.position.y, e.Properties.rotationStyle = A.Properties.rotationStyle, e.Properties.scale.w = A.Properties.scale.w, e.Properties.scale.h = A.Properties.scale.h, e.Properties.visible = A.Properties.visible, e.Costume.no = A.Costume.no;
       const c = { ...A.Looks.effect.get() };
       e.Looks.effect.effect = c;
     }

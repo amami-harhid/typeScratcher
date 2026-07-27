@@ -199,7 +199,7 @@ const moveToRandomCage = function(this:Sprite) {
 }
 slime.Event.cloned().func = async function*(this:Sprite) {
     // 大きさの設定
-    console.log({w: w*0.7, h: h*0.7})
+    //console.log({w: w*0.7, h: h*0.7})
     this.Looks.size.drawingSize = {w: w*0.7, h: h*0.7};
     this.Looks.visible.show();
 
