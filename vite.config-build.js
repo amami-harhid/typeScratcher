@@ -22,7 +22,6 @@ const rollupOpsionsInput = {}
 for(const target of targetDir){
     rollupOpsionsInput[target] = resolve(root, 'index.ts')
 }
-console.log(rollupOpsionsInput);
 // ビルド結果を出力する先
 const outDir = resolve(__dirname, 'build');
 

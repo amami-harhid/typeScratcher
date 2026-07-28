@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.94", P$ = {
+const j$ = "0.0.95", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
