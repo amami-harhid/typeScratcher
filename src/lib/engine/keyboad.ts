@@ -10,6 +10,17 @@ const KEY_NAME_LIST:string[] = Object.keys(KEYBOARD_KEYS).map((name:string) => K
 /**
  * @hidden
  */
+const KeysToBlock = new Set([
+    'ArrowUp',      // 上向き矢印
+    'ArrowDown',    // 下向き矢印
+    'ArrowLeft',    // 左向き矢印 (横スクロール防止)
+    'ArrowRight',   // 右向き矢印 (横スクロール防止)
+    ' ',            // スペースキー (ページダウン防止)
+    'PageUp',       // ページアップ
+    'PageDown',     // ページダウン
+    'Home',         // ホーム
+    'End'           // エンド
+]);
 export class Keyboard {
     private _keysPressed: string[] = [];
     private _runtime : Runtime;
@@ -18,12 +29,18 @@ export class Keyboard {
         this._runtime = runtime;
         const me = this;
         document.addEventListener('keydown', (e:KeyboardEvent) => {
+            // 押されたキーがブロック対象のリストに含まれているか判定
+            if (KeysToBlock.has(e.key)) {
+                // ブラウザのデフォルト挙動（スクロールなど）をキャンセル
+                e.preventDefault();
+            }
             const data: POST_DATA = {
                 isDown: true,
                 key : e.key,
             };
             this.postData(data);
-        });
+        }, { passive: false }); // preventDefaultを確実に動作させるためのオプション
+
         document.addEventListener('keyup', (e:KeyboardEvent) => {
             const data: POST_DATA = {
                 isDown: false,

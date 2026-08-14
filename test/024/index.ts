@@ -179,7 +179,7 @@ moji.Event.flagPresser().func = async function*(this:Sprite) {
 }
 
 const moveToRandomCage = function(this:Sprite) {
-    this.Sound.play(CrashBeatboxSound);
+    //this.Sound.play(CrashBeatboxSound);
     const otherArr: IWall[] = [];
     // eslint-disable-next-line loopCheck/s3-loop-plugin
     for(const idx of Ts.Loop.Iterator(Object.keys(CageBank).length)){
@@ -208,7 +208,7 @@ slime.Event.cloned().func = async function*(this:Sprite) {
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.UP)) {
             this.Motion.position.y += h;
             if(this.Sensing.sprite.isTouching( wall )) {
-                this.Sound.play(CollectSound);
+                //this.Sound.play(CollectSound);
                 this.Motion.position.y -= h;
             }else{
                 const _cages = this.Sensing.sprite.getTouching( cage );
@@ -218,18 +218,18 @@ slime.Event.cloned().func = async function*(this:Sprite) {
                         //this.Motion.position.x += w;
                         _moveToRandomCage();
                     }else{
-                        this.Sound.play(CollectSound);
+                        //this.Sound.play(CollectSound);
                         this.Motion.position.y -= h;
                     }
                 }else{
-                    this.Sound.play(ChirpSound);
+                    //this.Sound.play(ChirpSound);
                 }
             }
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.DOWN)) {
             this.Motion.position.y -= h;
             if(this.Sensing.sprite.isTouching( wall )) {
-                this.Sound.play(CollectSound);
+                //this.Sound.play(CollectSound);
                 this.Motion.position.y += h;
             }else{
                 const _cages = this.Sensing.sprite.getTouching( cage );
@@ -239,18 +239,18 @@ slime.Event.cloned().func = async function*(this:Sprite) {
                         //this.Motion.position.x += w;
                         _moveToRandomCage();
                     }else{
-                        this.Sound.play(CollectSound);
+                        //this.Sound.play(CollectSound);
                         this.Motion.position.y += h;
                     }
                 }else{
-                    this.Sound.play(ChirpSound);
+                    //this.Sound.play(ChirpSound);
                 }
             }
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.RIGHT)) {
             this.Motion.position.x += w;
             if(this.Sensing.sprite.isTouching( wall )) {
-                this.Sound.play(CollectSound);
+                //this.Sound.play(CollectSound);
                 this.Motion.position.x -= w;
             }else{
                 const _cages = this.Sensing.sprite.getTouching( cage );
@@ -260,18 +260,18 @@ slime.Event.cloned().func = async function*(this:Sprite) {
                         //this.Motion.position.x += w;
                         _moveToRandomCage();
                     }else{
-                        this.Sound.play(CollectSound);
+                        //this.Sound.play(CollectSound);
                         this.Motion.position.x -= w;
                     }
                 }else{
-                    this.Sound.play(ChirpSound);
+                    //this.Sound.play(ChirpSound);
                 }
             }
         }
         if(this.Sensing.keyboard.isDown(Ts.Keyboard.LEFT)) {
             this.Motion.position.x -= w;
             if(this.Sensing.sprite.isTouching( wall )) {
-                this.Sound.play(CollectSound);
+                //this.Sound.play(CollectSound);
                 this.Motion.position.x += w;
             }else{
                 const _cages = this.Sensing.sprite.getTouching( cage );
@@ -281,11 +281,11 @@ slime.Event.cloned().func = async function*(this:Sprite) {
                         //this.Motion.position.x += w;
                         _moveToRandomCage();
                     }else{
-                        this.Sound.play(CollectSound);
+                        //this.Sound.play(CollectSound);
                         this.Motion.position.x += w;
                     }
                 }else{
-                    this.Sound.play(ChirpSound);
+                    //this.Sound.play(ChirpSound);
                 }
             }
         }

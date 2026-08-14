@@ -218,6 +218,7 @@ html, body{
     display: block;
     border: 1px solid #141414;
     border-radius: 15px;
+    touch-action: none; /*  */
   }  
 `,
     textCanvasCss : `
