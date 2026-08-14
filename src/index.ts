@@ -81,6 +81,10 @@ const Initialize = async function() {
     GUI.guiInitialize();    
 };
 
+window.addEventListener('blur', ()=>{
+    // 表示初期化
+    window.location.reload() ;
+});
 
 // 表示初期化
 await Initialize();

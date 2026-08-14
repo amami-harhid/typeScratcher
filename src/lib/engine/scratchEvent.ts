@@ -80,9 +80,9 @@ export class ScratchEvent extends EventEmitter {
             me.emit(ScratchEvent.START_AUDIO_ENGINE);
             event.stopPropagation();
             main.removeChild(overlay);
-            overlay.removeEventListener('click', f);
+            overlay.removeEventListener('pointerdown', f);
         }
-        overlay.addEventListener('click', f);
+        overlay.addEventListener('pointerdown', f);
     }
     public greenFlagClick() {
         const greenFlag = ScratchElement.getGreenFlag();
@@ -90,7 +90,7 @@ export class ScratchEvent extends EventEmitter {
         const pauseMark = ScratchElement.getControlPauseMark();
         const me = this;
         greenFlag.classList.remove('not-ready');
-        greenFlag.addEventListener('click',(event:MouseEvent)=>{
+        greenFlag.addEventListener('pointerdown',(event:PointerEvent)=>{
             stopMark.classList.remove('is-not-active');
             pauseMark.classList.remove('is-not-active');
             stopMark.classList.add('is-active');
@@ -119,7 +119,7 @@ export class ScratchEvent extends EventEmitter {
         const stopMark = ScratchElement.getControlStopMark();
         const pauseMark = ScratchElement.getControlPauseMark();
         const me = this;
-        stopMark.addEventListener('click',(event:MouseEvent)=>{
+        stopMark.addEventListener('pointerdown',(event:PointerEvent)=>{
             stopMark.classList.remove('is-active');
             stopMark.classList.add('is-not-active');
             ScratchElement.changeToPauseMarkActive(pauseMark);
@@ -133,7 +133,7 @@ export class ScratchEvent extends EventEmitter {
         const pauseMark = ScratchElement.getControlPauseMark();
         const me = this;
         //let restart = false;
-        pauseMark.addEventListener('click',(event:MouseEvent)=>{
+        pauseMark.addEventListener('pointerdown',(event:PointerEvent)=>{
             if(me._runningThreadCount > 0) {
                 if(me._restart===true){
                     me.emit(ScratchEvent.RESTART_CLICKED);
@@ -151,7 +151,7 @@ export class ScratchEvent extends EventEmitter {
     public spliteClick() {
         const canvas = ScratchElement.getScratchCanvas();
         const me = this;
-        canvas.addEventListener('click', (event:MouseEvent)=>{
+        canvas.addEventListener('pointerdown', (event:PointerEvent)=>{
             //me.emit(ScratchEvent.CANVAS_CLICKED);
             const sprites = (engine as Engine).getSprites();
             for(const s of sprites){

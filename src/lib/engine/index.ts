@@ -6,8 +6,6 @@ import { Stage } from "../entity/stage";
 import { ScratchElement } from "../gui/scratchElement";
 import type { TMouse } from "../../type/mouse";
 import type { IEngine } from "../../type/engine";
-import { Variable } from "../entity/monitor/variable";
-import { Monitors } from "../entity/monitor/monitors";
 import { Font } from "../fonts";
 
 /**
@@ -67,18 +65,18 @@ export class Engine implements IEngine {
         const _rate = this.renderRate;
         this.initMouseInfo();
         const body = document.querySelector('#main') as HTMLElement;
-        body?.addEventListener('mousedown', (e:MouseEvent)=>{
+        body?.addEventListener('pointerdown', (e:PointerEvent)=>{
             me._mouse.pageX = e.pageX;
             me._mouse.pageY = e.pageY;
             me._mouse.down = true;
             e.stopPropagation()
         });
-        body?.addEventListener('mousemove', (e:MouseEvent) => {
+        body?.addEventListener('pointermove', (e:PointerEvent) => {
             me._mouse.pageX = e.pageX;
             me._mouse.pageY = e.pageY;
             e.stopPropagation()        
         });
-        body?.addEventListener('mouseup', (e:MouseEvent)=>{
+        body?.addEventListener('pointerup', (e:PointerEvent)=>{
             me._mouse.pageX = e.pageX;
             me._mouse.pageY = e.pageY;
             me._mouse.down = false;
@@ -86,7 +84,7 @@ export class Engine implements IEngine {
         });
         const canvas = ScratchElement.getScratchCanvas();
         const me = this;
-        canvas.addEventListener('mousemove', (e:MouseEvent)=>{
+        canvas.addEventListener('pointermove', (e:PointerEvent)=>{
             me._mouse.x = e.offsetX;
             me._mouse.y = e.offsetY;
 
@@ -96,13 +94,13 @@ export class Engine implements IEngine {
             me._mouse.scratchX = (e.offsetX - canvas.width/2)*_rate.x;
             me._mouse.scratchY = (canvas.height/2 - e.offsetY)*_rate.y;
         });
-        canvas.addEventListener('mousedown', (e:MouseEvent) => {
+        canvas.addEventListener('pointerdown', (e:PointerEvent) => {
             me._mouse.x = e.offsetX;
             me._mouse.y = e.offsetY;
             me._mouse.down = true;
             e.stopPropagation();
         });
-        canvas.addEventListener('mouseup', (e:MouseEvent) => {
+        canvas.addEventListener('pointerup', (e:PointerEvent) => {
             me._mouse.x = e.offsetX;
             me._mouse.y = e.offsetY;
             me._mouse.down = false;

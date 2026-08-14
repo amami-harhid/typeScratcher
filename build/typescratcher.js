@@ -14777,7 +14777,7 @@ function k$() {
   return Tj || (Tj = 1, _u = b$()), _u;
 }
 k$();
-const j$ = "0.0.95", P$ = {
+const j$ = "0.0.96", P$ = {
   version: j$
 }, L$ = P$.version, ft = {
   main_id: "main",
@@ -46202,13 +46202,13 @@ class et extends ys.EventEmitter {
   }
   stageFirstClick() {
     const A = qe.getMain(), e = qe.getOverlay(), r = this, n = (o) => {
-      r.emit(et.START_AUDIO_ENGINE), o.stopPropagation(), A.removeChild(e), e.removeEventListener("click", n);
+      r.emit(et.START_AUDIO_ENGINE), o.stopPropagation(), A.removeChild(e), e.removeEventListener("pointerdown", n);
     };
-    e.addEventListener("click", n);
+    e.addEventListener("pointerdown", n);
   }
   greenFlagClick() {
     const A = qe.getGreenFlag(), e = qe.getControlStopMark(), r = qe.getControlPauseMark(), n = this;
-    A.classList.remove("not-ready"), A.addEventListener("click", (o) => {
+    A.classList.remove("not-ready"), A.addEventListener("pointerdown", (o) => {
       e.classList.remove("is-not-active"), r.classList.remove("is-not-active"), e.classList.add("is-active"), r.classList.add("is-active"), qe.changeToPauseMarkActive(r), n._restart = !1, n.emit(et.GREEN_FLAG_CLICKED), A.classList.remove("running"), o.stopPropagation();
       for (const Q of le.getSprites())
         Q.Event.flagPresserKick();
@@ -46218,18 +46218,18 @@ class et extends ys.EventEmitter {
   }
   stopMarkClick() {
     const A = qe.getControlStopMark(), e = qe.getControlPauseMark(), r = this;
-    A.addEventListener("click", (n) => {
+    A.addEventListener("pointerdown", (n) => {
       A.classList.remove("is-active"), A.classList.add("is-not-active"), qe.changeToPauseMarkActive(e), r._restart = !1, r.emit(et.STOP_CLICKED), n.stopPropagation();
     });
   }
   pauseMarkClick() {
     const A = qe.getControlPauseMark(), e = this;
-    A.addEventListener("click", (r) => {
+    A.addEventListener("pointerdown", (r) => {
       e._runningThreadCount > 0 && (e._restart === !0 ? (e.emit(et.RESTART_CLICKED), qe.changeToPauseMarkActive(A)) : (e.emit(et.PAUSE_CLICKED), qe.changeToRestartMark(A)), e._restart = !e._restart), r.stopPropagation();
     });
   }
   spliteClick() {
-    qe.getScratchCanvas().addEventListener("click", (e) => {
+    qe.getScratchCanvas().addEventListener("pointerdown", (e) => {
       const r = le.getSprites();
       for (const n of r)
         n.Event.clickEventerKick();
@@ -51100,19 +51100,19 @@ class IrA {
     const A = this.renderRate;
     this.initMouseInfo();
     const e = document.querySelector("#main");
-    e?.addEventListener("mousedown", (o) => {
+    e?.addEventListener("pointerdown", (o) => {
       n._mouse.pageX = o.pageX, n._mouse.pageY = o.pageY, n._mouse.down = !0, o.stopPropagation();
-    }), e?.addEventListener("mousemove", (o) => {
+    }), e?.addEventListener("pointermove", (o) => {
       n._mouse.pageX = o.pageX, n._mouse.pageY = o.pageY, o.stopPropagation();
-    }), e?.addEventListener("mouseup", (o) => {
+    }), e?.addEventListener("pointerup", (o) => {
       n._mouse.pageX = o.pageX, n._mouse.pageY = o.pageY, n._mouse.down = !1, o.stopPropagation();
     });
     const r = qe.getScratchCanvas(), n = this;
-    r.addEventListener("mousemove", (o) => {
+    r.addEventListener("pointermove", (o) => {
       n._mouse.x = o.offsetX, n._mouse.y = o.offsetY, n._mouse.clientX = o.clientX, n._mouse.clientY = o.clientY, n._mouse.scratchX = (o.offsetX - r.width / 2) * A.x, n._mouse.scratchY = (r.height / 2 - o.offsetY) * A.y;
-    }), r.addEventListener("mousedown", (o) => {
+    }), r.addEventListener("pointerdown", (o) => {
       n._mouse.x = o.offsetX, n._mouse.y = o.offsetY, n._mouse.down = !0, o.stopPropagation();
-    }), r.addEventListener("mouseup", (o) => {
+    }), r.addEventListener("pointerup", (o) => {
       n._mouse.x = o.offsetX, n._mouse.y = o.offsetY, n._mouse.down = !1, o.stopPropagation();
     });
   }
@@ -54685,6 +54685,9 @@ class yiA extends NW {
 const UiA = async function() {
   console.log(`Library Version = "${L$}"`), DrA();
 };
+window.addEventListener("blur", () => {
+  window.location.reload();
+});
 await UiA();
 const NiA = le.render.stageWidth, GiA = le.render.stageHeight, viA = {
   w: NiA,
