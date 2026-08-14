@@ -83,7 +83,7 @@ const Initialize = async function() {
 
 window.addEventListener('blur', ()=>{
     // 表示初期化
-    window.location.reload() ;
+    //window.location.reload() ;
 });
 
 // 表示初期化

@@ -29,7 +29,6 @@ export class Keyboard {
     private _runtime : Runtime;
     private _spaceStopPropagation!: boolean;
     constructor ( runtime: Runtime ) {
-        console.log('Keyboard init');
         this._runtime = runtime;
         const me = this;
         const keyDown = (e: KeyboardEvent) => {

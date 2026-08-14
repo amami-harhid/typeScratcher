@@ -144,9 +144,6 @@ export class ScratchElement {
 		scratchCanvas.classList.add(GUI_CONST.canvas_class);
 		scratchCanvasDiv.appendChild(scratchCanvas);
 
-		// タッチパネルの場合
-		console.log(`InputMedia.isCoarse=${InputMedia.isCoarse}`)
-
 		return scratchCanvas as HTMLCanvasElement;
 	}
 	static virtualPad() {
