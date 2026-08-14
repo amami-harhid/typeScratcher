@@ -2,6 +2,7 @@
  * Element
  */
 import { engine, Engine } from "../engine";
+import { InputMedia } from "../utils/inputMedia";
 import { GUI_CONST } from "./gui_const";
 
 /** ロゴ */
@@ -142,7 +143,42 @@ export class ScratchElement {
 		scratchCanvas.id = ScratchCanvasID;
 		scratchCanvas.classList.add(GUI_CONST.canvas_class);
 		scratchCanvasDiv.appendChild(scratchCanvas);
+
+		// タッチパネルの場合
+		console.log(`InputMedia.isCoarse=${InputMedia.isCoarse}`)
+
 		return scratchCanvas as HTMLCanvasElement;
+	}
+	static virtualPad() {
+		const scratchCanvasDiv = document.querySelector(`#stageCanvasWrapper`);
+		if(scratchCanvasDiv == null) return;
+		// バーチャルパッド
+		const virtualPadDiv = document.createElement('div');
+		virtualPadDiv.id = 'virtualPad';
+		scratchCanvasDiv.append(virtualPadDiv);
+		const dPadDiv = document.createElement('div');
+		dPadDiv.classList.add('d-pad');
+		virtualPadDiv.append(dPadDiv);
+		const btunUp = document.createElement('button');
+		btunUp.id = 'btnUp';
+		btunUp.innerText = '▲';
+		dPadDiv.append(btunUp);
+		const horizontalBtns = document.createElement('div');
+		dPadDiv.append(horizontalBtns);
+		horizontalBtns.classList.add('horizontal-btns');
+		const btnLeft = document.createElement('button');
+		btnLeft.id = 'btnLeft';
+		btnLeft.innerText = '◀';
+		horizontalBtns.append(btnLeft);
+		const btnRight = document.createElement('button');
+		btnRight.id = 'btnRight';
+		btnRight.innerText = '▶';
+		horizontalBtns.append(btnRight);
+		const btnDown = document.createElement('button');
+		btnDown.id = 'btnDown';
+		btnDown.innerText = '▼';
+		dPadDiv.append(btnDown);
+
 	}
 	static getControlStopMark(): HTMLElement {
         let element = document.querySelector(`#${GUI_CONST.ControlStopMark}`) as HTMLElement;

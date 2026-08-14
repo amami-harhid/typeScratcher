@@ -6,6 +6,7 @@ export type TS3CSS = {
     textCanvasCss: string,
     mainTmpCss: string,
     askCss: string,
+    virtualPad: string,
 
 }
 // static interface

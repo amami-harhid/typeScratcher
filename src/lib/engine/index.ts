@@ -7,6 +7,7 @@ import { ScratchElement } from "../gui/scratchElement";
 import type { TMouse } from "../../type/mouse";
 import type { IEngine } from "../../type/engine";
 import { Font } from "../fonts";
+import { threadId } from "node:worker_threads";
 
 /**
  * ゲームエンジン
@@ -19,6 +20,8 @@ export class Engine implements IEngine {
     private _fonts: Font[] = [];
     private _timer: number;
     private _mouse!: TMouse;
+    private _etcVartualPad: CallableFunction | undefined = undefined;
+    private _btn: {buttonId:string, keyName:string}[] = [];
     /**
      * @hidden
      */
@@ -106,6 +109,15 @@ export class Engine implements IEngine {
             me._mouse.down = false;
             e.stopPropagation();        
         });
+        // バーチャルパッド
+        this.runtime.ioDevices.keyboard.addVirtualPad(this._etcVartualPad, this._btn);
+    }
+
+    set etcVirtualPad( pad: CallableFunction ) {
+        this._etcVartualPad = pad;
+    }
+    set etcButtonLink( btn: {buttonId:string, keyName:string}[]) {
+        this._btn = btn;
     }
     get render(): Render {
         return this._render;

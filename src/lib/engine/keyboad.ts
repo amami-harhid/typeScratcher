@@ -1,6 +1,8 @@
 import { Cast } from "../utils/cast";
 import { Runtime } from "./runtime";
 import { KEYBOARD_KEYS } from "../../type/engine/keyboad";
+import { InputMedia } from "../utils/inputMedia";
+import { ScratchElement } from "../gui/scratchElement";
 declare type POST_DATA = {
     isDown: boolean,
     key : string,
@@ -21,14 +23,16 @@ const KeysToBlock = new Set([
     'Home',         // ホーム
     'End'           // エンド
 ]);
+
 export class Keyboard {
     private _keysPressed: string[] = [];
     private _runtime : Runtime;
     private _spaceStopPropagation!: boolean;
     constructor ( runtime: Runtime ) {
+        console.log('Keyboard init');
         this._runtime = runtime;
         const me = this;
-        document.addEventListener('keydown', (e:KeyboardEvent) => {
+        const keyDown = (e: KeyboardEvent) => {
             // 押されたキーがブロック対象のリストに含まれているか判定
             if (KeysToBlock.has(e.key)) {
                 // ブラウザのデフォルト挙動（スクロールなど）をキャンセル
@@ -39,16 +43,73 @@ export class Keyboard {
                 key : e.key,
             };
             this.postData(data);
-        }, { passive: false }); // preventDefaultを確実に動作させるためのオプション
-
-        document.addEventListener('keyup', (e:KeyboardEvent) => {
+        }
+        const keyUp = (e:KeyboardEvent) => {
             const data: POST_DATA = {
                 isDown: false,
                 key : e.key,
             };
             this.postData(data);
-        });
+        }
+
+        document.addEventListener('keydown', keyDown, { passive: false }); // preventDefaultを確実に動作させるためのオプション
+        document.addEventListener('keyup', keyUp, {passive: false});
         this._spaceStopPropagation = true;
+    }
+
+    /**
+     * タッチボタン
+     */
+    addVirtualPad(pad: CallableFunction|undefined, btnLinkArr: {buttonId:string, keyName:string}[]) {
+        const isCoarse = InputMedia.isCoarse;
+        if( isCoarse === false ) return;
+
+		// バーチャルパッドを作る
+		ScratchElement.virtualPad();
+
+
+        // タッチボタンのイベントを設定する関数
+        const setupTouchButton = (buttonId:string, keyName:string) : void => {
+            const btn = document.getElementById(buttonId);
+            if (!btn) return;
+
+            // 指が触れた時（PointerEventでマウス・タッチ両対応）
+            btn.addEventListener('pointerdown', (e: PointerEvent ) => {
+                e.preventDefault(); // 押しっぱなし時のブラウザの変な挙動を防ぐ
+                const data: POST_DATA = {
+                    isDown: true,
+                    key : keyName,
+                };
+                this.postData(data);
+
+            });
+
+            // 指が離れた時、またはボタンの外に指がずれた時
+            const stopInput = () => { 
+                const data: POST_DATA = {
+                    isDown: false,
+                    key : keyName,
+                };
+                this.postData(data);
+            };
+            btn.addEventListener('pointerup', stopInput);
+            btn.addEventListener('pointerleave', stopInput);
+        }
+        // 各ボタンをキーボードのキーと紐付け
+        setupTouchButton('btnUp', 'ArrowUp');
+        setupTouchButton('btnDown', 'ArrowDown');
+        setupTouchButton('btnLeft', 'ArrowLeft');
+        setupTouchButton('btnRight', 'ArrowRight');
+
+        if(pad == undefined) {
+            return;
+        }
+        
+        pad();
+
+        for(const btn of btnLinkArr) {
+            setupTouchButton(btn.buttonId, btn.keyName);
+        }
     }
     postData(data: POST_DATA) {
         if (!data.key) return;
