@@ -81,8 +81,13 @@ export class ScratchEvent extends EventEmitter {
             event.stopPropagation();
             main.removeChild(overlay);
             overlay.removeEventListener('pointerdown', f);
+            window.addEventListener('blur', ()=>{
+                // 表示初期化
+                window.location.reload();
+            });
         }
         overlay.addEventListener('pointerdown', f);
+
     }
     public greenFlagClick() {
         const greenFlag = ScratchElement.getGreenFlag();

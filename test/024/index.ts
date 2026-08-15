@@ -6,6 +6,10 @@
 import { Typescratcher as Ts } from "../../src";
 import { Sprite, Stage, SvgImageAttributes } from "../../src";
 
+import { virtualPad } from "./sub/virtualPad";
+
+virtualPad();
+
 //Ts.Env.debugMode = true;
 // 【MAP読み込み】
 import { Map01, WallWidth, WallHeight, Wall, type IWall } from "./sub/wall";
@@ -196,6 +200,15 @@ const moveToRandomCage = function(this:Sprite) {
     const _randomCage = otherArr[_idx];
     this.Motion.position.xy = [_randomCage.Motion.position.x, _randomCage.Motion.position.y];
     Count.value += 1;
+}
+slime.Event.keyPresser(Ts.Keyboard.SPACE).func = async function*(this: Sprite) {
+    this.Sound.play(CollectSound)
+}
+slime.Event.keyPresser('A').func = async function*(this: Sprite) {
+    this.Sound.play(ChirpSound)
+}
+slime.Event.keyPresser('B').func = async function*(this: Sprite) {
+    this.Sound.play(CrashBeatboxSound)
 }
 slime.Event.cloned().func = async function*(this:Sprite) {
     // 大きさの設定

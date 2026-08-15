@@ -16,6 +16,7 @@ import { SPEECH_VOICE_ID } from '../type/speech/IVoice';
 import { SVariable } from './entity/monitor/SVariable';
 import { SFont } from './font';
 import { SFontImage } from './font/fontImage';
+import { SVirtualPad } from './gui/virtualPad';
 type stageBounds = {w: number, h: number};
 
 export type ExportType = {
@@ -137,4 +138,7 @@ export type ExportType = {
      * 変数定義
      */
     Variable: SVariable,
+
+    /** バーチャルパッド */
+    VirtualPad: SVirtualPad,
 }

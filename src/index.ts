@@ -66,6 +66,7 @@ import { SPEECH_LOCALE } from './type/speech/IVoice';
 import { SPEECH_VOICE_ID } from './type/speech/IVoice';
 import { FontImage } from './lib/fonts/fontImage';
 import { SFontImage } from './type/font/fontImage';
+import { VirtualPad } from './lib/gui/virtualPad';
 /**
  * 【2026/06/06】
  *  scratch-render@2.0.356 では、グローバルのBufferを使っていない（様子）
@@ -80,11 +81,6 @@ const Initialize = async function() {
     console.log(`Library Version = "${Version}"`);
     GUI.guiInitialize();    
 };
-
-window.addEventListener('blur', ()=>{
-    // 表示初期化
-    //window.location.reload() ;
-});
 
 // 表示初期化
 await Initialize();
@@ -118,6 +114,7 @@ export const Typescratcher: ExportType = {
     //textToSvg: textToSvg as ITextToSvg,
     Variable: Variable as SVariable,
     SpeechVoiceType: SPEECH_VOICE_ID,
+    VirtualPad: VirtualPad,
     
 } as const;
 

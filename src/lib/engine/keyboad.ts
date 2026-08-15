@@ -37,82 +37,36 @@ export class Keyboard {
                 // ブラウザのデフォルト挙動（スクロールなど）をキャンセル
                 e.preventDefault();
             }
-            const data: POST_DATA = {
-                isDown: true,
-                key : e.key,
-            };
-            this.postData(data);
+            const scratchKey = this._keyStringToScratchKey(e.key);
+            this.pressKey(scratchKey);
         }
         const keyUp = (e:KeyboardEvent) => {
-            const data: POST_DATA = {
-                isDown: false,
-                key : e.key,
-            };
-            this.postData(data);
+            const scratchKey = this._keyStringToScratchKey(e.key);
+            this.releaseKey(scratchKey);
         }
 
         document.addEventListener('keydown', keyDown, { passive: false }); // preventDefaultを確実に動作させるためのオプション
         document.addEventListener('keyup', keyUp, {passive: false});
         this._spaceStopPropagation = true;
     }
-
-    /**
-     * タッチボタン
-     */
-    addVirtualPad(pad: CallableFunction|undefined, btnLinkArr: {buttonId:string, keyName:string}[]) {
-        const isCoarse = InputMedia.isCoarse;
-        if( isCoarse === false ) return;
-
-		// バーチャルパッドを作る
-		ScratchElement.virtualPad();
-
-
-        // タッチボタンのイベントを設定する関数
-        const setupTouchButton = (buttonId:string, keyName:string) : void => {
-            const btn = document.getElementById(buttonId);
-            if (!btn) return;
-
-            // 指が触れた時（PointerEventでマウス・タッチ両対応）
-            btn.addEventListener('pointerdown', (e: PointerEvent ) => {
-                e.preventDefault(); // 押しっぱなし時のブラウザの変な挙動を防ぐ
-                const data: POST_DATA = {
-                    isDown: true,
-                    key : keyName,
-                };
-                this.postData(data);
-
-            });
-
-            // 指が離れた時、またはボタンの外に指がずれた時
-            const stopInput = () => { 
-                const data: POST_DATA = {
-                    isDown: false,
-                    key : keyName,
-                };
-                this.postData(data);
-            };
-            btn.addEventListener('pointerup', stopInput);
-            btn.addEventListener('pointerleave', stopInput);
-        }
-        // 各ボタンをキーボードのキーと紐付け
-        setupTouchButton('btnUp', 'ArrowUp');
-        setupTouchButton('btnDown', 'ArrowDown');
-        setupTouchButton('btnLeft', 'ArrowLeft');
-        setupTouchButton('btnRight', 'ArrowRight');
-
-        if(pad == undefined) {
-            return;
-        }
-        
-        pad();
-
-        for(const btn of btnLinkArr) {
-            setupTouchButton(btn.buttonId, btn.keyName);
-        }
+    pressKey(keyName:string) {
+        const data: POST_DATA = {
+            isDown: true,
+            key : keyName,
+        };
+        this.postData(data);
+    }
+    releaseKey(keyName:string) {
+        const data: POST_DATA = {
+            isDown: false,
+            key : keyName,
+        };
+        this.postData(data);
     }
     postData(data: POST_DATA) {
         if (!data.key) return;
-        const scratchKey = this._keyStringToScratchKey(data.key);
+        //const scratchKey = this._keyStringToScratchKey(data.key);
+        const scratchKey = data.key;
         if (scratchKey === '') return;
         const index = this._keysPressed.indexOf(scratchKey);
         if (data.isDown) {
@@ -144,6 +98,36 @@ export class Keyboard {
         return this._keysPressed.indexOf(scratchKey) > -1;
     }
 
+    _scratchKeyToKeyString( scratchKey: string ): string {
+        switch (scratchKey) {
+        case KEYBOARD_KEYS.SPACE:
+            return ' ';
+        case KEYBOARD_KEYS.LEFT:
+            return 'ArrowLeft';
+        case KEYBOARD_KEYS.UP:
+            return 'ArrowUp';
+        case KEYBOARD_KEYS.RIGHT:
+            return 'ArrowRight';
+        case KEYBOARD_KEYS.DOWN:
+            return 'ArrowDown';
+        case KEYBOARD_KEYS.ENTER:
+            return 'Enter';
+        case KEYBOARD_KEYS.ESCAPE:
+            return 'Escape';
+        }
+        if(scratchKey.length == 0) {
+            // 1文字の場合は、空文字
+            return '';
+        }else if(scratchKey.length == 1) {
+            // １文字のキーは大文字にする
+            return scratchKey.toUpperCase();
+        }else {
+            // 2文字以上の場合は、先頭の文字にする（大文字）
+            const firstCharacter = scratchKey.charAt(0);
+            return firstCharacter.toUpperCase();
+        }
+    }
+
     /**
      * Convert from a keyboard event key name to a Scratch key name.
      * @param  {string} keyString the input key string.
@@ -152,7 +136,6 @@ export class Keyboard {
     _keyStringToScratchKey (keyString: string) : string {
         keyString = Cast.toString(keyString);
         // Convert space and arrow keys to their Scratch key names.
-        //console.log('keyString', keyString);
         switch (keyString) {
         case ' ': return KEYBOARD_KEYS.SPACE;
         case 'ArrowLeft':return KEYBOARD_KEYS.LEFT;

@@ -109,8 +109,6 @@ export class Engine implements IEngine {
             me._mouse.down = false;
             e.stopPropagation();        
         });
-        // バーチャルパッド
-        this.runtime.ioDevices.keyboard.addVirtualPad(this._etcVartualPad, this._btn);
     }
 
     set etcVirtualPad( pad: CallableFunction ) {
