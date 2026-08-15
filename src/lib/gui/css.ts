@@ -198,7 +198,15 @@ html, body{
     padding-bottom: 0.375rem;
     font-size: 0.8rem  
 }
-
+button {
+    /* テキストの選択を禁止する */
+    -webkit-user-select: none;  /* iOS Safari, Chrome */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE10+/Edge */
+    user-select: none;          /* 標準 */
+    /* iOSでの長押しによるポップアップメニュー（リンクや画像の保存など）を禁止する */
+    -webkit-touch-callout: none;
+}
 `,
     canvasCss : `
 .stageCanvasWrapper {
