@@ -14777,7 +14777,7 @@ function j$() {
   return Jj || (Jj = 1, Zu = k$()), Zu;
 }
 j$();
-const P$ = "0.1.2", L$ = {
+const P$ = "0.1.3", L$ = {
   version: P$
 }, z$ = L$.version, Mt = {
   main_id: "main",
@@ -51299,7 +51299,8 @@ html, body{
 }
 #start-flag{
         z-index:2147483647;
-  }
+}
+
 .likeScratch-flag {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -51311,11 +51312,12 @@ html, body{
     border: 2px solid #007900;
     border-radius: 65px;
     cursor: pointer;
-  }
+}
 
 .green-flag.is-active {
     background-color: $looks-transparent;
 }
+
 #main {
     position: absolute;
     width:100%;
@@ -51324,7 +51326,17 @@ html, body{
     justify-content: center;
     align-items: center;
     background: #e0ffff;
-  }
+}
+
+#main {
+    /* テキストの選択を禁止する */
+    -webkit-user-select: none;  /* iOS Safari, Chrome */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE10+/Edge */
+    user-select: none;          /* 標準 */
+    /* iOSでの長押しによるポップアップメニュー（リンクや画像の保存など）を禁止する */
+    -webkit-touch-callout: none;
+}
 .scratch3-overlay {
     position: absolute;
     display:flex;
@@ -51451,15 +51463,7 @@ html, body{
     padding-bottom: 0.375rem;
     font-size: 0.8rem  
 }
-button {
-    /* テキストの選択を禁止する */
-    -webkit-user-select: none;  /* iOS Safari, Chrome */
-    -moz-user-select: none;     /* Firefox */
-    -ms-user-select: none;      /* IE10+/Edge */
-    user-select: none;          /* 標準 */
-    /* iOSでの長押しによるポップアップメニュー（リンクや画像の保存など）を禁止する */
-    -webkit-touch-callout: none;
-}
+
 `,
   canvasCss: `
 .stageCanvasWrapper {
