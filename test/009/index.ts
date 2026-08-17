@@ -19,7 +19,7 @@ num.Event.flagPresser().func = async function*(this: Sprite) {
         yield;
     }
 }
-cat.Event.flagPresser().func = async function*(this: Sprite) {
+cat.Event.flagPresser().func = async function* (this: Sprite) {
     this.Motion.direction.degree = 30;
     for(;;){
         this.Motion.move.steps(5);

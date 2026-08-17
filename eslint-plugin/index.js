@@ -23,13 +23,13 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 
+import {awaitRulesPlugin } from "./eslintAwaitRulePlugin.js";
 import {eventAsyncRulesPlugin} from "./eslintEventAsyncRulePlugin.js";
 import {controlAsyncRulesPlugin} from "./eslintControlAsyncRulePlugin.js";
 import {s3LoopRulesPlugin} from "./eslintLoopRulePlugin.js";
-import {awaitRulesPlugin } from "./eslintAwaitRulePlugin.js";
 
 /** @type {import('eslint').Linter.Config[]} */
-const eslint_S3_config = [
+export const eslint_S3_config = [
     {
         ignores: ["**/*.d.ts", "lib/**/*.ts", "node_modules/**/*", "eslint-plugin/**/*.js", "./*.js"],
     },
@@ -45,7 +45,7 @@ const eslint_S3_config = [
             awaitRule: awaitRulesPlugin,
             eventAsync: eventAsyncRulesPlugin,
             controlAsync: controlAsyncRulesPlugin,
-            loopCheck: s3LoopRulesPlugin,
+            //loopCheck: s3LoopRulesPlugin,
         },
         rules: {
             "indent": ["error", 4],  // indent 4 space
@@ -75,7 +75,7 @@ const eslint_S3_config = [
             'awaitRule/await-plugin': 'error',
             'eventAsync/event-async-plugin': 'error',
             'controlAsync/control-async-plugin': 'error',
-            'loopCheck/s3-loop-plugin' : 'error',
+            //'loopCheck/s3-loop-plugin' : 'error',
         }
     },
     pluginJs.configs.recommended,
@@ -87,4 +87,19 @@ const eslint_S3_config = [
         }
     }
 ];
-export {eslint_S3_config};
+
+/** @type {import('eslint').Linter.Config[]} */
+export const eslint_TS_loop_config = [
+    {
+        ignores: ["**/*.d.ts", "lib/**/*.ts", "node_modules/**/*", "eslint-plugin/**/*.js", "./*.js"],
+    },
+    {
+        files: ["**/*.ts","**/*.js"],
+        plugins: {
+            loopCheck: s3LoopRulesPlugin,
+        },
+        rules: {
+            'loopCheck/s3-loop-plugin' : 'error',
+        }
+    }
+];

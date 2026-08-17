@@ -83,6 +83,10 @@ export const VirtualPad = class {
     }
     static addVirtualPad( htmlString: string, cssString: string ) : void {
 
+        if(InputMedia.isCoarse == false ){
+            return;
+        }
+        
         const parentElement: HTMLDivElement = document.querySelector(`#${StageCanvasWrapper}`) as HTMLDivElement;
 
         if(!parentElement){

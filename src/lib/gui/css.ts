@@ -225,6 +225,8 @@ html, body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: content-box; /* 子要素の高さを自身の高さにする */
+    height: auto;
 }
 .likeScratch-canvas {
     display: block;
