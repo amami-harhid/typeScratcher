@@ -1,11 +1,11 @@
 'use strict'
 /**
  * 【no-restricted-syntax】 
- * (1) while構文の最後の行はyieldでなければならない
- * (2) do...while構文の最後の行はyieldでなければならない
- * (3) for構文の最後の行はyieldでなければならない
- * (4) for...of, for...inは任意とするのでエラーにはしない（対象外）
- * (5) Array#forEachは yieldが使えないのでエラーにはしない（対象外）
+ * (1) while構文の最後の行はyieldでなければならない(×)
+ * (2) do...while構文の最後の行はyieldでなければならない(×)
+ * (3) for構文の最後の行はyieldでなければならない(×)
+ * (4) for...of, for...inは任意とするのでエラーにはしない（対象外）(×)
+ * (5) Array#forEachは yieldが使えないのでエラーにはしない（対象外）(×)
  * 
  * 【plugin】
  * (1) 【Error】xxx.Sound.～ の awaitを必要とするメソッドに awaitを強制する
@@ -13,7 +13,7 @@
  * (3) 【Error】xxx.Extensions.～ の awaitを必要とするメソッドに awaitを強制する
  * (4) 【Error】xxx.Looks.～ の awaitを必要とするメソッドに awaitを強制する
  * (5) 【Error】xxx.Control.～ の awaitを必要とするメソッドに awaitを強制する
- * (6) 【Error】HatEventメソッドの引数とするFunctionには asyncをつける
+ * (6) 【Error】HatEventメソッドの引数とするFunctionには asyncをつける(×)
  * 
  * ASTチェックは 次で実施している
  * https://astexplorer.net/
@@ -25,7 +25,7 @@ import tseslint from "typescript-eslint";
 
 import {awaitRulesPlugin } from "./eslintAwaitRulePlugin.js";
 import {eventAsyncRulesPlugin} from "./eslintEventAsyncRulePlugin.js";
-import {controlAsyncRulesPlugin} from "./eslintControlAsyncRulePlugin.js";
+//import {controlAsyncRulesPlugin} from "./eslintControlAsyncRulePlugin.js";
 import {s3LoopRulesPlugin} from "./eslintLoopRulePlugin.js";
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -43,8 +43,8 @@ export const eslint_S3_config = [
         },
         plugins: {
             awaitRule: awaitRulesPlugin,
-            eventAsync: eventAsyncRulesPlugin,
-            controlAsync: controlAsyncRulesPlugin,
+            //eventAsync: eventAsyncRulesPlugin,
+            //controlAsync: controlAsyncRulesPlugin,
             //loopCheck: s3LoopRulesPlugin,
         },
         rules: {
@@ -73,8 +73,8 @@ export const eslint_S3_config = [
                 }
             ],
             'awaitRule/await-plugin': 'error',
-            'eventAsync/event-async-plugin': 'error',
-            'controlAsync/control-async-plugin': 'error',
+            //'eventAsync/event-async-plugin': 'error',
+            //'controlAsync/control-async-plugin': 'error',
             //'loopCheck/s3-loop-plugin' : 'error',
         }
     },
@@ -100,6 +100,24 @@ export const eslint_TS_loop_config = [
         },
         rules: {
             'loopCheck/s3-loop-plugin' : 'error',
+        }
+    }
+];
+
+/** @type {import('eslint').Linter.Config[]} */
+export const eslint_TS_async_config = [
+    {
+        ignores: ["**/*.d.ts", "lib/**/*.ts", "node_modules/**/*", "eslint-plugin/**/*.js", "./*.js"],
+    },
+    {
+        files: ["**/*.ts","**/*.js"],
+        plugins: {
+            eventAsync: eventAsyncRulesPlugin,
+            //controlAsync: controlAsyncRulesPlugin,
+        },
+        rules: {
+            'eventAsync/event-async-plugin': 'error',
+            //'controlAsync/control-async-plugin': 'error',
         }
     }
 ];
