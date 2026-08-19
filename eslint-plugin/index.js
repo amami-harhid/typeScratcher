@@ -41,12 +41,12 @@ export const eslint_S3_config = [
                 ...globals.browser 
             }
         },
-        plugins: {
-            awaitRule: awaitRulesPlugin,
+        //plugins: {
+            //awaitRule: awaitRulesPlugin,
             //eventAsync: eventAsyncRulesPlugin,
             //controlAsync: controlAsyncRulesPlugin,
             //loopCheck: s3LoopRulesPlugin,
-        },
+        //},
         rules: {
             "indent": ["error", 4],  // indent 4 space
             "no-this-alias": "off",
@@ -72,7 +72,7 @@ export const eslint_S3_config = [
                     "destructuredArrayIgnorePattern": "^_"
                 }
             ],
-            'awaitRule/await-plugin': 'error',
+            //'awaitRule/await-plugin': 'error',
             //'eventAsync/event-async-plugin': 'error',
             //'controlAsync/control-async-plugin': 'error',
             //'loopCheck/s3-loop-plugin' : 'error',
@@ -84,6 +84,22 @@ export const eslint_S3_config = [
         rules: {
             "no-empty": "off",
             "require-yield": "off",
+        }
+    }
+];
+
+/** @type {import('eslint').Linter.Config[]} */
+export const eslint_TS_await_config = [
+    {
+        ignores: ["**/*.d.ts", "lib/**/*.ts", "node_modules/**/*", "eslint-plugin/**/*.js", "./*.js"],
+    },
+    {
+        files: ["**/*.ts","**/*.js"],
+        plugins: {
+            awaitRule: awaitRulesPlugin,
+        },
+        rules: {
+            'awaitRule/await-plugin': 'error',
         }
     }
 ];
