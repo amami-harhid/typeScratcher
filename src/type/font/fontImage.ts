@@ -6,6 +6,7 @@ export interface SFontImage {
     new (attributes: createSvgImageAttributes): IFontImage;
 }
 
+/** 文字列を操作する */
 type text = {
     /**
      * text to svg image
@@ -20,6 +21,9 @@ type text = {
 
 export interface IFontImage extends IImage{
 
+    /**
+     * 文字列を操作する
+     */
     readonly Text: text;
 
     /**
