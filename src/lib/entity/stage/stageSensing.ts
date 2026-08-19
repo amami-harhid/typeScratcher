@@ -15,6 +15,7 @@ export class StageSensing implements IStageSensing {
     private _key: IEntitySensingKey;
     private _mouse: IEntitySensingMouse;
     private _timer: IEntitySensingTimer;
+    private _answer : string;
     /**
      * @internal
      * @param entity {IStage}
@@ -24,19 +25,28 @@ export class StageSensing implements IStageSensing {
         this._key = new StageSensingKey(entity);
         this._mouse = new StageSensingMouse(entity);
         this._timer = new StageSensingTimer(entity);
+        this._answer = '';
     }
     /**
      * 質問をする
      * @param question {string} - 質問テキスト
-     * @returns {Promise<string>} - answer
+     * @returns {Promise<void>} 
      */
-    async askAndWait(question:string): Promise<string>{
+    async askAndWait(question:string): Promise<void>{
+        this._answer = '';
         const questionBox = new QuestionBoxElement();
         const me = this.entity;
-        return new Promise<string>(async (resolve)=>{
+        return new Promise<void>(async (resolve)=>{
             const answer = await questionBox.ask(me, question);
-            resolve(answer);
+            this._answer = answer;
+            resolve();
         });
+    }
+    /**
+     * 質問の答え
+     */
+    get answer() : string {
+        return this._answer;
     }
     /**
      * Key 関連

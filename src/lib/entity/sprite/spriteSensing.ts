@@ -26,6 +26,7 @@ export class SpriteSensing implements ISpriteSensing {
     private _edge: ISpriteSensingEdge;
     private _color : ISpriteSensingColor;
     private _sprite: ISpriteSensingSprite;
+    private _answer : string;
     /**
      * @internal
      * @param entity {Sprite}
@@ -38,20 +39,30 @@ export class SpriteSensing implements ISpriteSensing {
         this._edge = new SpriteSensingEdge(entity);
         this._color = new SpriteSensingColor(entity);
         this._sprite = new SpriteSensingSprite(entity);
+        this._answer = '';
     }
     /**
      * 質問をして答えを待つ
      * @param question {string} - 質問テキスト
      * @returns {Promise<string>} - answer
      */
-    async askAndWait(question:string): Promise<string>{
+    async askAndWait(question:string): Promise<void>{
+        this._answer = '';
         const questionBox = new QuestionBoxElement();
         const me = this.entity;
-        return new Promise<string>( async (resolve)=>{
+        return new Promise<void>( async (resolve)=>{
             const answer = await questionBox.ask(me, question);
-            resolve(answer);
+            this._answer = answer;
+            resolve();
         });
     }
+    /**
+     * 質問の答え
+     */
+    get answer(): string {
+        return this._answer;
+    }
+
     /**
      * マウス情報
      */

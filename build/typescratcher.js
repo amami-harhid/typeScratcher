@@ -15022,7 +15022,7 @@ function wAA() {
   return nP || (nP = 1, rl = EAA()), rl;
 }
 wAA();
-const uAA = "0.1.8", lAA = {
+const uAA = "0.1.10", lAA = {
   version: uAA
 }, IAA = lAA.version, Dt = {
   main_id: "main",
@@ -54263,12 +54263,13 @@ class LiA {
   _edge;
   _color;
   _sprite;
+  _answer;
   /**
    * @internal
    * @param entity {Sprite}
    */
   constructor(A) {
-    this.entity = A, this._mouse = new TiA(A), this._timer = new SiA(A), this._key = new JiA(A), this._edge = new biA(A), this._color = new kiA(A), this._sprite = new PiA(A);
+    this.entity = A, this._mouse = new TiA(A), this._timer = new SiA(A), this._key = new JiA(A), this._edge = new biA(A), this._color = new kiA(A), this._sprite = new PiA(A), this._answer = "";
   }
   /**
    * 質問をして答えを待つ
@@ -54276,11 +54277,18 @@ class LiA {
    * @returns {Promise<string>} - answer
    */
   async askAndWait(A) {
+    this._answer = "";
     const e = new Yr(), r = this.entity;
     return new Promise(async (n) => {
       const o = await e.ask(r, A);
-      n(o);
+      this._answer = o, n();
     });
+  }
+  /**
+   * 質問の答え
+   */
+  get answer() {
+    return this._answer;
   }
   /**
    * マウス情報
@@ -54821,24 +54829,32 @@ class $iA {
   _key;
   _mouse;
   _timer;
+  _answer;
   /**
    * @internal
    * @param entity {IStage}
    */
   constructor(A) {
-    this.entity = A, this._key = new _iA(A), this._mouse = new ZiA(A), this._timer = new qiA(A);
+    this.entity = A, this._key = new _iA(A), this._mouse = new ZiA(A), this._timer = new qiA(A), this._answer = "";
   }
   /**
    * 質問をする
    * @param question {string} - 質問テキスト
-   * @returns {Promise<string>} - answer
+   * @returns {Promise<void>} 
    */
   async askAndWait(A) {
+    this._answer = "";
     const e = new Yr(), r = this.entity;
     return new Promise(async (n) => {
       const o = await e.ask(r, A);
-      n(o);
+      this._answer = o, n();
     });
+  }
+  /**
+   * 質問の答え
+   */
+  get answer() {
+    return this._answer;
   }
   /**
    * Key 関連

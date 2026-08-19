@@ -301,7 +301,8 @@ apple.Event.keyPresser("b").func = async function*(this: Sprite){
 }
 apple.Event.keyPresser("c").func = async function*(this: Sprite){
     for(;;){
-        const answer = await this.Sensing.askAndWait("質問をするよ");
+        await this.Sensing.askAndWait("質問をするよ");
+        const answer = this.Sensing.answer;
         console.log(answer);
         if(answer == 'y') {
             break;
@@ -311,7 +312,8 @@ apple.Event.keyPresser("c").func = async function*(this: Sprite){
 }
 stage.Event.keyPresser("d").func = async function*(this: Stage){
     for(;;){
-        const answer = await this.Sensing.askAndWait("ステージが質問をするよ");
+        await this.Sensing.askAndWait("ステージが質問をするよ");
+        const answer = this.Sensing.answer;
         console.log(answer);
         if(answer == 'y') {
             break;

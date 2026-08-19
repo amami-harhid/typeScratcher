@@ -14,9 +14,16 @@ export interface IEntitySensing {
      * 質問をする( 答えを受け取るまで待つ )
      * 
      * @param question {string} - Question text
-     * @returns {Promise<string>} - answer
+     * @returns {Promise<void>}
      */
-    askAndWait(question:string): Promise<string>;
+    askAndWait(question:string): Promise<void>;
+    /**
+     * Answer of Ask a question
+     * 
+     * ---
+     * 質問をした答え
+     */
+    readonly answer: string;
 
     /**
      * Sensing Mouse
