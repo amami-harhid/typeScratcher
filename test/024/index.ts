@@ -161,7 +161,7 @@ const attribute : SvgImageAttributes = {
     font_family: Ts.ScratchFontFamily.Scratch
 };
 const helloImage = new Ts.FontImage(attribute);
-await helloImage.textToSvg(HELLO);
+await helloImage.Text.textToSvg(HELLO);
 
 const moji = new Ts.Sprite('moji');
 moji.Costume.add( helloImage );

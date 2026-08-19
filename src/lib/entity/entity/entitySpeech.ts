@@ -25,9 +25,6 @@ export class EntitySpeech implements IEntitySpeech{
             static type(type: string) : NextMethodsType {
                 return me.type(type);
             }
-            static async speech(words: string) : Promise<void>{
-                await me.speech(words);
-            }
         }
     }
     public type(type:string) : NextMethodsType{
@@ -48,9 +45,6 @@ export class EntitySpeech implements IEntitySpeech{
             }
             static addPitch(pitch:number) : NextMethodsAddPitch {
                 return me.addPitch(pitch); 
-            }
-            static async speech(words: string) : Promise<void>{
-                await me.speech(words);
             }
         }
     }
@@ -82,9 +76,6 @@ export class EntitySpeech implements IEntitySpeech{
             static addPitch(pitch:number) : NextMethodsAddPitch {
                 return me.addPitch(pitch); 
             }
-            static async speech(words: string) : Promise<void>{
-                await me.speech(words);
-            }
         }
     }
     public gender(gender: Type_speech_gender) :NextMethodsGender {
@@ -104,9 +95,6 @@ export class EntitySpeech implements IEntitySpeech{
             static addPitch(pitch:number) : NextMethodsAddPitch {
                 return me.addPitch(pitch); 
             }
-            static async speech(words: string) : Promise<void>{
-                await me.speech(words);
-            }
         }                
     }
 
@@ -123,9 +111,6 @@ export class EntitySpeech implements IEntitySpeech{
             static addPitch(pitch:number) : NextMethodsAddPitch {
                 return me.addPitch(pitch); 
             }
-            static async speech(words: string) : Promise<void>{
-                await me.speech(words);
-            }
         }
     }
     public volume(volume: number): NextMethodsVolume {
@@ -140,9 +125,6 @@ export class EntitySpeech implements IEntitySpeech{
             }
             static addPitch(pitch:number) : NextMethodsAddPitch {
                 return me.addPitch(pitch); 
-            }
-            static async speech(words: string) : Promise<void>{
-                await me.speech(words);
             }
         }
     }

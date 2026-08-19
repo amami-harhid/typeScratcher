@@ -197,7 +197,8 @@ apple.Event.flagPresser().func = async function*(this: Sprite){
         // this.Speech
         this.Speech.type(Ts.SpeechVoiceType.ALTO).typeCopyTo('test').gender(Ts.SpeechGender.FEMALE).volume(50).pitch(20);
         this.Speech.typeCopyTo('test').gender(Ts.SpeechGender.FEMALE).volume(50).pitch(20);
-        this.Speech.type('test').addPitch(5).addVolume(5).speech('Teeeest');
+        this.Speech.type('test').addPitch(5).addVolume(5);
+        await this.Speech.speech('Teeeeest');
         // this.name
         const _name = this.name;
         console.log(_name);

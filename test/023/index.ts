@@ -43,7 +43,7 @@ const attribute: SvgImageAttributes = {
 const moji = new Ts.Sprite('moji');
 const helloImage = new Ts.FontImage(attribute);
 moji.Costume.add( helloImage );
-await helloImage.textToSvg(HELLO);
+await helloImage.Text.textToSvg(HELLO);
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
@@ -65,14 +65,16 @@ cat.Event.flagPresser().func = async function*(this:Sprite){
         if(_touch()){
             // スピーチする
             if(speechFlag){
-                await helloImage.textToSvg("FEMAIL");
+                await helloImage.Text.textToSvg("FEMAIL");
                 // ピッチ加工したFEMAILの声
-                await this.Speech.type("001").speech(speechText.text);
+                this.Speech.type("001")
+                await this.Speech.speech(speechText.text);
 
             }else{
-                await helloImage.textToSvg("MAIL");
+                await helloImage.Text.textToSvg("MAIL");
                 // ピッチ加工したMAILの声
-                await this.Speech.type("002").speech(speechText.text);
+                this.Speech.type("002");
+                await this.Speech.speech(speechText.text);
 
             }
             speechFlag = !speechFlag;

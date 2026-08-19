@@ -6,7 +6,21 @@ export interface SFontImage {
     new (attributes: createSvgImageAttributes): IFontImage;
 }
 
+type text = {
+    /**
+     * text to svg image
+     * 
+     * ---
+     * 文字列をSVGイメージに変換する
+     * 
+     * @param text 
+     */
+    textToSvg: (text:string) => Promise<void>
+};
+
 export interface IFontImage extends IImage{
+
+    readonly Text: text;
 
     /**
      * text to svg image
@@ -16,6 +30,6 @@ export interface IFontImage extends IImage{
      * 
      * @param text 
      */
-    textToSvg( text: string ) : Promise<void>;
+    //textToSvg( text: string ) : Promise<void>;
 
 }

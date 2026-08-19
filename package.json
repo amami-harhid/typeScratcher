@@ -1,6 +1,6 @@
 {
   "name": "@tscratch3/typescratcher",
-  "version": "0.1.10",
+  "version": "0.1.14",
   "description": "TypeScript library that generates Scratch3-style drawings",
   "repository": {
     "type": "git",
@@ -13,6 +13,7 @@
     "build",
     "src/type",
     "src/lib",
+    "src/vite",
     "eslint-plugin",
     "index.ts"
   ],

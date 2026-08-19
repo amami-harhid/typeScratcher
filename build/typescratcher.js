@@ -15022,7 +15022,7 @@ function wAA() {
   return nP || (nP = 1, rl = EAA()), rl;
 }
 wAA();
-const uAA = "0.1.10", lAA = {
+const uAA = "0.1.14", lAA = {
   version: uAA
 }, IAA = lAA.version, Dt = {
   main_id: "main",
@@ -47216,9 +47216,6 @@ class JAA {
       static type(r) {
         return e.type(r);
       }
-      static async speech(r) {
-        await e.speech(r);
-      }
     };
   }
   type(A) {
@@ -47239,9 +47236,6 @@ class JAA {
       }
       static addPitch(r) {
         return e.addPitch(r);
-      }
-      static async speech(r) {
-        await e.speech(r);
       }
     };
   }
@@ -47271,9 +47265,6 @@ class JAA {
       static addPitch(n) {
         return r.addPitch(n);
       }
-      static async speech(n) {
-        await r.speech(n);
-      }
     };
   }
   gender(A) {
@@ -47292,9 +47283,6 @@ class JAA {
       static addPitch(r) {
         return e.addPitch(r);
       }
-      static async speech(r) {
-        await e.speech(r);
-      }
     };
   }
   pitch(A) {
@@ -47310,9 +47298,6 @@ class JAA {
       static addPitch(r) {
         return e.addPitch(r);
       }
-      static async speech(r) {
-        await e.speech(r);
-      }
     };
   }
   volume(A) {
@@ -47327,9 +47312,6 @@ class JAA {
       }
       static addPitch(r) {
         return e.addPitch(r);
-      }
-      static async speech(r) {
-        await e.speech(r);
       }
     };
   }
@@ -55001,6 +54983,11 @@ class inA extends r9 {
     for (const e of we.getFonts())
       A.push(e.load());
     await Promise.all(A);
+  }
+  get Text() {
+    return {
+      textToSvg: this.textToSvg.bind(this)
+    };
   }
   async textToSvg(A) {
     if (this._text == A)

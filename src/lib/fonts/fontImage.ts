@@ -28,7 +28,13 @@ export class FontImage extends Image implements IFontImage {
         }
         await Promise.all(_promiseArr);
     }
+    get Text() {
 
+        return {
+            textToSvg: this.textToSvg.bind(this),
+        }
+
+    }
     async textToSvg( text: string ) : Promise<void>{
 
         if(this._text == text) {

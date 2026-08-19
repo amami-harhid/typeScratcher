@@ -21,6 +21,8 @@
     "skipLibCheck": true,       /* Skip type checking all .d.ts files. */
     
     "allowJs": true,
+    "allowImportingTsExtensions" : true,
+    "noEmit": true, 
     "maxNodeModuleJsDepth": 1,
     
     "resolveJsonModule": true

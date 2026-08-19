@@ -57,15 +57,6 @@ export interface NextMethodsLocale {
      * スピーチのタイプ
      */
     type(type:string): NextMethodsType;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 }
 export interface NextMethodsCopyTo {
     /** 
@@ -103,15 +94,6 @@ export interface NextMethodsCopyTo {
      * スピーチのピッチを指定量、変える 
      */
     addPitch(pitch: number): NextMethodsAddPitch;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 }
 export interface NextMethodsGender {
     /** 
@@ -142,15 +124,6 @@ export interface NextMethodsGender {
      * スピーチのピッチを指定量、変える 
      */
     addPitch(pitch: number): NextMethodsAddPitch;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 
 }
 export interface NextMethodsType {
@@ -189,15 +162,6 @@ export interface NextMethodsType {
      * スピーチのピッチを指定量、変える 
      */
     addPitch(pitch: number): NextMethodsAddPitch;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 }
 export interface NextMethodsPitch {
     /** 
@@ -221,15 +185,6 @@ export interface NextMethodsPitch {
      * スピーチのピッチを指定量、変える 
      */
     addPitch(pitch: number): NextMethodsAddPitch;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 }
 export interface NextMethodsVolume {
     /** 
@@ -253,15 +208,6 @@ export interface NextMethodsVolume {
      * スピーチのピッチを指定量、変える 
      */
     addPitch(pitch: number): NextMethodsAddPitch;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 }
 export interface NextMethodsAddVolume {
     /** 
@@ -285,15 +231,6 @@ export interface NextMethodsAddVolume {
      * スピーチのピッチを指定量、変える 
      */
     addPitch(pitch: number): NextMethodsAddPitch;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 }
 export interface NextMethodsAddPitch {
     /** 
@@ -317,15 +254,6 @@ export interface NextMethodsAddPitch {
      * スピーチの音量を指定量、変える 
      */
     addVolume(volume:number): NextMethodsAddVolume;
-    /**
-     * Speech text
-     * 
-     * ---
-     * テキストをスピーチする
-     * 
-     * @param text 
-     */
-    speech( words: string): Promise<void>;
 }
 
 
