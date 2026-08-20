@@ -59,7 +59,7 @@ import type { IImage } from './type/image';
 import type { ISprite, SSprite } from './type/entity/sprite';
 import type { IStage, SStage } from './type/entity/stage';
 import type { SImage } from './type/image';
-import type { SLoop } from './lib/engine/loop';
+import type { SLoop } from './type/engine/loop';
 import type { SSound } from './type/sound';
 import type { SVariable } from './type/entity/monitor/SVariable';
 import { SPEECH_LOCALE } from './type/speech/IVoice';
@@ -67,6 +67,7 @@ import { SPEECH_VOICE_ID } from './type/speech/IVoice';
 import { FontImage } from './lib/fonts/fontImage';
 import { SFontImage } from './type/font/fontImage';
 import { VirtualPad } from './lib/gui/virtualPad';
+
 /**
  * 【2026/06/06】
  *  scratch-render@2.0.356 では、グローバルのBufferを使っていない（様子）
@@ -124,7 +125,17 @@ export const Typescratcher: ExportType = {
  * スプライト
  */
 export type Sprite = ISprite;
+/**
+ * Stage
+ * ---
+ * ステージ
+ */
 export type Stage = IStage;
+/**
+ * Image
+ * ---
+ * イメージ
+ */
 export type Image = IImage;
 export type Bounds = TBoundsEx;
 export type SvgImageAttributes = createSvgImageAttributes;

@@ -1,5 +1,3 @@
-import { IEntity } from ".";
-
 /**
  * Entity Control
  */

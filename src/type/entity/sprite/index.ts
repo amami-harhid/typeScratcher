@@ -2,7 +2,6 @@ import type { IEntity } from '../entity';
 import type { TEntityOptions } from '../entity/TEntityOptions';
 import type { ISpriteControl } from './ISpriteControl';
 import type { ISpriteCostume } from './ISpriteCostume';
-import type { ISpriteDragMode } from './ISpriteDragMode';
 import type { ISpriteEvent } from './ISpriteEvent';
 import type { ISpriteLooks } from './ISpriteLooks';
 import type { ISpriteMotion } from './ISpriteMotion';

@@ -1,4 +1,4 @@
-import { IImage } from "src/type/image";
+import { IImage } from "../../image";
 
 /** 
  * Backdrop

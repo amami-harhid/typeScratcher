@@ -3,7 +3,6 @@ import { textToSvg } from "../svgText";
 import { Utils } from "../utils/utils";
 import type { createSvgImageAttributes, IImage } from "../../type/image";
 import type { TextAttributes } from "../../type/svgText";
-import { text } from "node:stream/consumers";
 
 
 const ScratchFontFamily = {
@@ -74,9 +73,14 @@ export class Image implements IImage{
     private _skinId = -1;
 
     constructor( image: ImageArgStringObject ) {
-        const info = Utils.varNameValues(image);
-        this._name = info[0];
-        this._imagePath = info[1];
+        if(typeof image == 'string') {
+            this._name = image;
+            this._imagePath = image;
+        }else{
+            const info = Utils.varNameValues(image);
+            this._name = info[0];
+            this._imagePath = info[1];
+        }
     }
     async load() {
         //await Timer.wait(2); // For Debug

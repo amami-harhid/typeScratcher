@@ -6,7 +6,7 @@ export interface SSound{
     /**
      * @param image {SoundArgStringObject}
      */
-    new(image:SoundArgStringObject):ISound;
+    new(image:SoundArgStringObject | string):ISound;
 
 };
 export interface ISound {

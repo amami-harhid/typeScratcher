@@ -15022,7 +15022,7 @@ function wAA() {
   return nP || (nP = 1, rl = EAA()), rl;
 }
 wAA();
-const uAA = "0.1.15", lAA = {
+const uAA = "0.1.20", lAA = {
   version: uAA
 }, IAA = lAA.version, Dt = {
   main_id: "main",
@@ -46653,11 +46653,14 @@ class Qr extends ng {
   //private _volume: number = 100;
   //private _pitch: number = 0;
   constructor(A, e = !1) {
-    super();
-    const r = et.varNameValues(A);
-    this._name = r[0];
-    const n = r[1];
-    this._ready_audio_engine = !1, e === !0 ? (this._ready_audio_engine = !0, this._soundPath = "", this._data = n) : this._soundPath = n;
+    if (super(), this._ready_audio_engine = !1, typeof A == "string")
+      this._name = A, e === !0 ? (this._ready_audio_engine = !0, this._soundPath = "", this._data = A) : this._soundPath = A;
+    else {
+      const r = et.varNameValues(A);
+      this._name = r[0];
+      const n = r[1];
+      e === !0 ? (this._ready_audio_engine = !0, this._soundPath = "", this._data = n) : this._soundPath = n;
+    }
   }
   /**
    * ロード処理が実行される都度、soundPlayerを生成する
@@ -52159,8 +52162,12 @@ let r9 = class i9 {
   _loadCompleted = !1;
   _skinId = -1;
   constructor(A) {
-    const e = et.varNameValues(A);
-    this._name = e[0], this._imagePath = e[1];
+    if (typeof A == "string")
+      this._name = A, this._imagePath = A;
+    else {
+      const e = et.varNameValues(A);
+      this._name = e[0], this._imagePath = e[1];
+    }
   }
   async load() {
     if (this.loadCompleted === !0)

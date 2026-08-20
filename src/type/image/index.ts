@@ -20,7 +20,7 @@ export interface SImage{
     /**
      * @param image {ImageArgStringObject}
      */
-    new(image:ImageArgStringObject):IImage;
+    new(image:ImageArgStringObject | string):IImage;
     /**
      * 
      * @param image

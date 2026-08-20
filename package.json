@@ -1,6 +1,6 @@
 {
   "name": "@tscratch3/typescratcher",
-  "version": "0.1.15",
+  "version": "0.1.20",
   "description": "TypeScript library that generates Scratch3-style drawings",
   "repository": {
     "type": "git",
@@ -11,9 +11,8 @@
   },
   "files": [
     "build",
-    "src/type",
     "src/lib",
-    "src/vite",
+    "src/type",
     "eslint-plugin",
     "index.ts"
   ],
@@ -24,7 +23,7 @@
   "scripts": {
     "dev": "vite --open",
     "check": "tsc --noEmit",
-    "build": "vite build --config ./vite.config-build.js --emptyOutDir  && copy public\\typescratcher.d.ts build\\"
+    "build": "vite build --config ./vite.config-build.js --emptyOutDir && copy public\\typescratcher.d.ts build\\"
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",

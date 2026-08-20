@@ -3,7 +3,7 @@ import type { IMonitorSkin } from '../entity/monitor/IMonitorSkin';
 import type { TPenAttributes } from '../pen';
 import type { ISkin } from './ISkin';
 import type { IDrawable } from './IDrawable';
-import type { TBounds, TPosition, TPositionArray, TScaleArr, TScaleCanEmpty, TSizeXY } from '../common/typeCommon';
+import type { TBounds, TPositionArray, TScaleArr } from '../common/typeCommon';
 import type { RGBColorArray } from '../util/cast';
 
 export declare type ScratchRenderProperties = {

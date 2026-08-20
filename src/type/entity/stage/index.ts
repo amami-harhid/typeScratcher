@@ -8,7 +8,6 @@ import type { IStageControl } from './IStageControl';
 import type { IStageSensing } from './IStageSensing';
 import type { IStageEvent } from './IStageEvent';
 import type { IStageSound } from './IStageSound';
-import type { IStageProperties } from './IStageProperties';
 import type { IStageBackdrop } from './IStageBackdrop';
 
 export type TStage = IStage;

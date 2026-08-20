@@ -29,16 +29,27 @@ export class Sound extends EventEmitter implements ISound {
     //private _pitch: number = 0;
     constructor(sound: SoundArgStringObject, reuse:boolean = false) {
         super();
-        const info = Utils.varNameValues(sound);
-        this._name = info[0];
-        const data = info[1];
         this._ready_audio_engine = false;
-        if(reuse === true) {
-            this._ready_audio_engine = true;
-            this._soundPath = '';
-            this._data = data;
+        if(typeof sound == 'string') {
+            this._name = sound;
+            if(reuse === true) {
+                this._ready_audio_engine = true;
+                this._soundPath = '';
+                this._data = sound;
+            }else{
+                this._soundPath = sound;
+            }
         }else{
-            this._soundPath = data;
+            const info = Utils.varNameValues(sound);
+            this._name = info[0];
+            const data = info[1];
+            if(reuse === true) {
+                this._ready_audio_engine = true;
+                this._soundPath = '';
+                this._data = data;            
+            }else{
+                this._soundPath = data;
+            }
         }
     }
     /**
