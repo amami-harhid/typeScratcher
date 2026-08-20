@@ -32,7 +32,7 @@ export interface SVariable {
      * 
      * @param variable 
      */
-    monitoring( variable: MonitoringVars): void
+    monitoring( variable: MonitoringVars | NumberProxy | StringProxy): void
 
     /**
      * reposition monitors

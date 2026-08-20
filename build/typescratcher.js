@@ -15022,7 +15022,7 @@ function wAA() {
   return nP || (nP = 1, rl = EAA()), rl;
 }
 wAA();
-const uAA = "0.1.20", lAA = {
+const uAA = "0.1.21", lAA = {
   version: uAA
 }, IAA = lAA.version, Dt = {
   main_id: "main",
@@ -54970,7 +54970,7 @@ class rnA {
     return i8.string(A);
   }
   static monitoring(A) {
-    Rr.addVar(A);
+    "value" in A || "text" in A || Rr.addVar(A);
   }
   static reposition() {
     Rr.allReposition();
