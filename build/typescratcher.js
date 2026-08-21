@@ -15022,7 +15022,7 @@ function wAA() {
   return nP || (nP = 1, rl = EAA()), rl;
 }
 wAA();
-const uAA = "0.1.21", lAA = {
+const uAA = "0.1.22", lAA = {
   version: uAA
 }, IAA = lAA.version, Dt = {
   main_id: "main",
