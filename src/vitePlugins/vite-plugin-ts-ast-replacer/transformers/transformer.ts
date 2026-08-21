@@ -1,7 +1,7 @@
 import ts from 'typescript';
 import { isTarget, createYieldStatement, hasSkipComment, isTargetEventAssignment, isAwaitTargetCall, isArgumentObjectWrapTarget } from '../utils/ast-helpers.ts';
 
-export interface PluginError extends Error {
+interface PluginError extends Error {
     loc?: {
         file: string;
         line: number;

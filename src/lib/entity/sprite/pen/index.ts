@@ -132,13 +132,13 @@ export class PenSprite implements IPenSprite {
                 console.log('fail in createPen')
             }
         }
-        this.penClear();
+        //this.penClear();
         this._prepareDone = true;
     }
 
     penClear() : void {
-        if(this._skinId == -1){
-            console.error(NotPrepareMessage);
+        if(this._skinId == -1 || this._prepareDone == false){
+            //console.error(NotPrepareMessage);
             this.prepare();
             //return;
         }

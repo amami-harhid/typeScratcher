@@ -1,6 +1,6 @@
 {
   "name": "@tscratch3/typescratcher",
-  "version": "0.1.23",
+  "version": "0.1.26",
   "description": "TypeScript library that generates Scratch3-style drawings",
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
   "devDependencies": {
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
-    "@babel/traverse": "^8.0.4",
     "@eslint/js": "^9.26.0",
     "@types/events": "^3.0.3",
     "@types/glob": "^8.1.0",
@@ -53,6 +52,7 @@
     "buffer": "^6.0.3",
     "core-js": "^3.49.0",
     "events": "^3.3.0",
+    "magic-string": "^1.1.1",
     "regenerator-runtime": "^0.14.1",
     "scratch-audio": "^2.0.139",
     "scratch-render": "^2.0.356",

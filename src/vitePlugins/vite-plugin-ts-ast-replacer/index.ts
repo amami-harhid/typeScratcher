@@ -1,5 +1,4 @@
 import { createTransformer } from "./transformers/transformer.ts";
-import { transformObjectWrapping } from "./transformers/transformObjectWrapping.ts";
 import { Plugin } from 'vite';
 import ts from 'typescript';
 
@@ -15,9 +14,9 @@ function isPluginError(error: unknown): error is PluginError {
     return error instanceof Error && 'loc' in error;
 }
 
-export function TsCodeReplacer(): Plugin {
+export function TsAstReplacer(): Plugin {
     return {
-        name: 'vite-plugin-ts-code-replacer',
+        name: 'vite-plugin-ts-ast-replacer',
         enforce: 'pre', 
     
         transform(code, id) {
@@ -25,7 +24,6 @@ export function TsCodeReplacer(): Plugin {
                 return null;
             }
             try {
-                // 1. 先にループ構文のAST変換（yield挿入など）を行う
                 const transpileResult = ts.transpileModule(code, {
                     compilerOptions: {
                         target: ts.ScriptTarget.Latest,
@@ -39,26 +37,26 @@ export function TsCodeReplacer(): Plugin {
                         ]
                     }
                 });
-
-                // 2. TypeScriptが出力した「後」のコードに対して、オブジェクト置換を実行する 
-                const wrappedResult = transformObjectWrapping(transpileResult.outputText, id);
-
+                console.log(transpileResult.outputText)
                 return {
-                    code: wrappedResult.code,
-                    // MagicString側で生成した最新のソースマップを返す
-                    map: wrappedResult.map ? wrappedResult.map : null
+                    code: transpileResult.outputText,
+                    map: transpileResult.sourceMapText ? JSON.parse(transpileResult.sourceMapText) : null
                 };
 
             } catch (error: unknown) {
                 if (isPluginError(error) && error.loc) {
-                    const paddedFrame = error.frame ? `\n\n  > ${error.frame}\n` : '';
+                    // Viteのブラウザオーバーレイに表示するための特殊な形式でエラーを報告
+                    const paddedFrame = error.frame 
+                        ? `\n\n  > ${error.frame}\n` 
+                        : '';
                     this.error({
-                        message: `[vite-plugin-ts-code-replacer] ${error.message}${paddedFrame}`,
+                        message: `[vite-plugin-ts-ast-replacer] ${error.message}${paddedFrame}`,
                         id: error.loc.file,
                         loc: {
                             line: error.loc.line,
                             column: error.loc.column
-                        }
+                        },
+                        frame: error.frame
                     });
                 } else if (error instanceof Error) {
                     this.error(error.message);

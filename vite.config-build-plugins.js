@@ -6,10 +6,10 @@ import { defineConfig } from 'vite'
 import glob from 'glob'
 
 // ルートとするディレクトリー
-const root = resolve(__dirname, './src/vitePlugins/vite-plugin-ts-code-replacer/')
+const root = resolve(__dirname, './src/vitePlugins/')
 
-// ビルド対象のディレクトリーをすべて取得( src の下の index.htmlがあるディレクトリー)
-const entries = glob.sync('./src/vitePlugins/vite-plugin-ts-code-replacer/index.ts');
+// ビルド対象のディレクトリーをすべて取得( src の下の index.tsがあるディレクトリー)
+const entries = glob.sync('./src/vitePlugins/index.ts');
 const targetDir = []
 for(const entry of entries) {
     const directory = entry
@@ -27,7 +27,7 @@ export default defineConfig({
         target: "esnext",
         ssr: true, // Node.js向けのライブラリビルドであることを明示
         lib:{
-            entry: resolve(__dirname, './src/vitePlugins/vite-plugin-ts-code-replacer/index.ts'),
+            entry: resolve(__dirname, './src/vitePlugins/index.ts'),
             formats: ["es"],
         },
         outDir, // ビルド結果を格納する先
@@ -36,7 +36,7 @@ export default defineConfig({
             external: ['typescript', 'vite', 'path', 'fs'], 
             output: {
                 format:"es",
-                entryFileNames:'vite-plugin-ts-code-replacer.js',
+                entryFileNames:'index.js',
             }
         },
     },
@@ -49,5 +49,5 @@ export default defineConfig({
             target: "esnext",
         }
     },
-    root: resolve(__dirname, './src/vitePlugins/vite-plugin-ts-code-replacer/'),
+    root: resolve(__dirname, './src/vitePlugins/'),
 })
