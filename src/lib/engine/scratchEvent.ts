@@ -7,6 +7,7 @@ import { Sprite } from "../entity/sprite";
 import { SpriteEvent } from "../entity/sprite/spriteEvent";
 import { SpriteControl } from "../entity/sprite/spriteControl";
 import { StageEvent } from "../entity/stage/stageEvent";
+import { InputMedia } from "../utils/inputMedia";
 
 /**
  * Scratch Event
@@ -81,10 +82,22 @@ export class ScratchEvent extends EventEmitter {
             event.stopPropagation();
             main.removeChild(overlay);
             overlay.removeEventListener('pointerdown', f);
-            window.addEventListener('blur', ()=>{
-                // 表示初期化
-                window.location.reload();
-            });
+
+            // タブレット端末であり
+            // URLのパラメーター(?blur=reload)のときに
+            // フォーカス外れたらリロードする
+            if( InputMedia.isCoarse === true ){
+                const params = new URLSearchParams(window.location.search);
+                if(params.has('blur')) {
+                    const value = params.get('blur'); // 例: ?blur=reload → "reload"
+                    if(value == "reload") {
+                        window.addEventListener('blur', ()=>{
+                            // 表示初期化
+                            window.location.reload();
+                        });
+                    }
+                }
+            }
         }
         overlay.addEventListener('pointerdown', f);
 
