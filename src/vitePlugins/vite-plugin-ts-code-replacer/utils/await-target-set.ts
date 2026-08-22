@@ -18,5 +18,6 @@ export const AWAIT_TARGET_METHODS = new Set([
     'Motion.move.glideToMouse',
     'Sensing.askAndWait',
     'Sound.playUntilDone',
-    'Speech.speech'
+    'Speech.speech',
+    'Text.textToSvg',
 ]);

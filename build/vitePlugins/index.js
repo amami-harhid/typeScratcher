@@ -394,7 +394,8 @@ const AWAIT_TARGET_METHODS = /* @__PURE__ */ new Set([
   "Motion.move.glideToMouse",
   "Sensing.askAndWait",
   "Sound.playUntilDone",
-  "Speech.speech"
+  "Speech.speech",
+  "Text.textToSvg"
 ]);
 
 function isTarget(node) {
@@ -701,7 +702,7 @@ const createTransformer = (id, context) => {
 
 function transformObjectWrapping(code, id) {
   const s = new MagicString(code);
-  const targetRegex = /(new\s+xx\.(?:Image|Sound)|xx\.Variable\.monitoring)\(\s*([^{)\s][^)\s]*?)\s*\)/g;
+  const targetRegex = /(new\s+xx\.(?:Image|Sound)|\.Variable\.monitoring)\(\s*([^{)\s][^)\s]*?)\s*\)/g;
   let match;
   while ((match = targetRegex.exec(code)) !== null) {
     const [fullMatch, prefix, argumentText] = match;
