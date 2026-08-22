@@ -1,5 +1,6 @@
 import ts from 'typescript';
 import MagicString from 'magic-string';
+import remapping from '@ampproject/remapping';
 
 const AWAIT_TARGET_METHODS$1 = /* @__PURE__ */ new Set([
   "Looks.backdrop.nextAndWait",
@@ -758,6 +759,19 @@ function TsCodeReplacer$1() {
           }
         });
         const wrappedResult = transformObjectWrapping(transpileResult.outputText, id);
+        if (transpileResult.sourceMapText && wrappedResult.map) {
+          const map1 = JSON.parse(transpileResult.sourceMapText);
+          const map2 = wrappedResult.map;
+          const mergedMap = remapping(
+            [map2, map1],
+            () => null
+          );
+          return {
+            code: wrappedResult.code,
+            map: mergedMap
+            // 結合された正しいソースマップを返す
+          };
+        }
         return {
           code: wrappedResult.code,
           // MagicString側で生成した最新のソースマップを返す

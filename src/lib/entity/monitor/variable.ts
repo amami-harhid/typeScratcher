@@ -2,6 +2,13 @@ import { Var } from "./var";
 import type { MonitoringVars, NumberProxy, StringProxy } from "../../../type/entity/monitor/monitoring";
 import { Monitors } from "./monitors";
 
+interface NumberProxyExt extends NumberProxy {
+    isNumber: boolean;
+}
+interface StringProxyExt extends StringProxy {
+    isNumber: boolean;
+}
+
 export class Variable {
 
     static number( value: number) : NumberProxy {
@@ -15,20 +22,25 @@ export class Variable {
         return _proxy;
     }
     static monitoring( variable: MonitoringVars | NumberProxy | StringProxy): void {
+        if( Variable.isPlainObject(variable) ) {
+            const _variable = variable as unknown as MonitoringVars;
+            Monitors.addVar( _variable );
+            return;
 
-        // NumberProxyのとき 
-        if ('value' in variable) {
-            return; // 何もしない
+        }else{
+            // オブジェクトリテラル形式（MonitoringVars）でない場合は、何もしない。
         }
-        // StringProxyのとき
-        if( 'text' in variable) {
-            return; // 何もしない
-        }
-        // ここで monitorId を決定する。
-        // この時点で show(), hide() が機能する
-        Monitors.addVar( variable );
     }
     static reposition() : void {
         Monitors.allReposition();
+    }
+
+    static isPlainObject( obj: any ) : boolean {
+        if( obj === null || typeof obj !== 'object') {
+            return false;
+        }
+        const proto = Object.getPrototypeOf( obj );
+
+        return proto === Object.prototype || proto === null;
     }
 }

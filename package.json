@@ -1,6 +1,6 @@
 {
   "name": "@tscratch3/typescratcher",
-  "version": "0.1.26",
+  "version": "0.1.30",
   "description": "TypeScript library that generates Scratch3-style drawings",
   "repository": {
     "type": "git",
@@ -22,12 +22,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "npm run buildWithConfig && npm run copyDts && npm run buildPlugins",
+    "build": "npm run buildWithConfig && npm run copyDts && npm run buildPlugins && npm run copyEslint",
     "buildWithConfig": "vite build --config ./vite.config-build.js --emptyOutDir",
-    "copyDts": "copy public\\typescratcher.d.ts build\\",
-    "buildPlugins": "vite build --config ./vite.config-build-plugins.js --emptyOutDir"
+    "copyDts": "copy public\\typescratcher.d.ts build\\ && copy public\\typesscratcher.eslint.config.d.ts build\\",
+    "buildPlugins": "vite build --config ./vite.config-build-plugins.js --emptyOutDir",
+    "copyEslint": "copy public\\typesscratcher.eslint.config.mjs build\\ && copy public\\vitePlugins.d.ts build\\vitePlugins\\"
   },
   "devDependencies": {
+    "@ampproject/remapping": "^2.3.0",
     "@babel/core": "^7.26.9",
     "@babel/preset-env": "^7.26.9",
     "@eslint/js": "^9.26.0",

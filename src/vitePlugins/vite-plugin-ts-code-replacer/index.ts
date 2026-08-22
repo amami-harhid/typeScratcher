@@ -1,6 +1,7 @@
 import { createTransformer } from "./transformers/transformer.ts";
 import { transformObjectWrapping } from "./transformers/transformObjectWrapping.ts";
 import { Plugin } from 'vite';
+import remapping from '@ampproject/remapping'; 
 import ts from 'typescript';
 
 interface PluginError extends Error {
@@ -42,6 +43,27 @@ export function TsCodeReplacer(): Plugin {
 
                 // 2. TypeScriptが出力した「後」のコードに対して、オブジェクト置換を実行する 
                 const wrappedResult = transformObjectWrapping(transpileResult.outputText, id);
+                // --- 2つのソースマップをマージする ---
+                // 【目的】ブラウザのデバッガがオリジナルのコード行にたどりつけるようにするため。
+                // TypeScriptのAST変換=>transformObjectWrappingによるコード変換をしているので
+                // ２つの変換それぞれのソースマップを紐づけないとオリジナルコード行にたどり着かない。
+                if (transpileResult.sourceMapText && wrappedResult.map) {
+                    // TypeScriptが生成したマップをオブジェクトに変換
+                    const map1 = JSON.parse(transpileResult.sourceMapText);
+                    // MagicStringが生成したマップ
+                    const map2 = wrappedResult.map;
+
+                    // 2つを結合（最新のmap2から、過去のmap1へと遡るツリーを作る）
+                    const mergedMap = remapping(
+                        [map2, map1],
+                        () => null
+                    );
+
+                    return {
+                        code: wrappedResult.code,
+                        map: mergedMap as any // 結合された正しいソースマップを返す
+                    };
+                }
 
                 return {
                     code: wrappedResult.code,
