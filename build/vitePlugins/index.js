@@ -394,8 +394,7 @@ const AWAIT_TARGET_METHODS = /* @__PURE__ */ new Set([
   "Motion.move.glideToMouse",
   "Sensing.askAndWait",
   "Sound.playUntilDone",
-  "Speech.speech",
-  "Text.textToSvg"
+  "Speech.speech"
 ]);
 
 function isTarget(node) {
@@ -467,7 +466,7 @@ function isArgumentObjectWrapTarget(node) {
   const expr = node.expression;
   if (ts.isNewExpression(node) && ts.isPropertyAccessExpression(expr)) {
     const className = expr.name.text;
-    return className === "Image" || className === "Sound";
+    return className === "Image" || className === "Sound" || className === "FontImage";
   }
   if (ts.isCallExpression(node) && ts.isPropertyAccessExpression(expr)) {
     const methodName = expr.name.text;

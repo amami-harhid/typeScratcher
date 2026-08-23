@@ -99,10 +99,10 @@ export function isArgumentObjectWrapTarget(node: ts.Node): node is ts.NewExpress
 
     const expr = node.expression;
 
-    // --- ケースA: new xx.Image() / new xx.Sound() の判定 ---
+    // --- ケースA: new xx.Image() / new xx.Sound() / new xx.FontImage() の判定 ---
     if (ts.isNewExpression(node) && ts.isPropertyAccessExpression(expr)) {
         const className = expr.name.text;
-        return className === 'Image' || className === 'Sound';
+        return className === 'Image' || className === 'Sound' || className === 'FontImage';
     }
 
     // --- ケースB: xx.Variable.monitoring() の判定 ---

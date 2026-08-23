@@ -19,5 +19,4 @@ export const AWAIT_TARGET_METHODS = new Set([
     'Sensing.askAndWait',
     'Sound.playUntilDone',
     'Speech.speech',
-    'Text.textToSvg',
 ]);

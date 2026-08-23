@@ -1,24 +1,30 @@
 import { Image } from "../image";
-import type { IImage, ImageArgStringObject } from "../../type/image";
+import type { ImageArgStringObject } from "../../type/image";
 import type { createSvgImageAttributes } from "../../type/font";
 import type { TextAttributes } from "../../type/svgText";
 import { textToSvg } from "../svgText";
 import { Engine, engine } from "../engine";
-import { IFontImage } from "src/type/font/fontImage";
+import { IFontImage, FontImageAttribute, FontImageParams} from "src/type/font/fontImage";
 import { ImageLoader } from "../loader/imageLoader";
+import { Utils } from "../utils/utils";
 
 export class FontImage extends Image implements IFontImage {
 
     private _attributes: createSvgImageAttributes;
-    private _text! : string;
-    constructor(attributes: createSvgImageAttributes) {
-        const image: ImageArgStringObject = {};
-        image['fontImageDummy'] = ''; // ダミー 
-        super(image);
-        this._attributes = attributes;
+    private _text : string;
+    constructor(obj: FontImageParams) {
+        const info = Utils.varNameValues(obj);
+        const _name = info[0];
+        const _attr = info[1] as FontImageAttribute
+        const _image : ImageArgStringObject = {};
+        _image[_name] = _attr.text;
+        super(_image);
+        this._text = _attr.text;
+        this._attributes = _attr.attributes;
         this.skinId = -1;
     }
     async load(): Promise<void>{
+        await this.initText();
         return; 
     }
     async fontLoad(): Promise<void>{
@@ -28,21 +34,13 @@ export class FontImage extends Image implements IFontImage {
         }
         await Promise.all(_promiseArr);
     }
-    get Text() {
-
-        return {
-            textToSvg: this.textToSvg.bind(this),
-        }
-
-    }
-    async textToSvg( text: string ) : Promise<void>{
-
-        if(this._text == text) {
-            return;
-        }
+    private async initText( ) : Promise<void> {
 
         await this.fontLoad();
-        
+        await this.changeText(this._text);
+    }
+    async changeText( text: string ) : Promise<void>{
+
         const _text = text;
         const textAttribute:TextAttributes = {};
         if(this._attributes.scratch_font_family ){

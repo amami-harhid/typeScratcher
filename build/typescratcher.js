@@ -15022,7 +15022,7 @@ function wAA() {
   return BP || (BP = 1, rl = EAA()), rl;
 }
 wAA();
-const uAA = "0.1.30", lAA = {
+const uAA = "0.1.31", lAA = {
   version: uAA
 }, IAA = lAA.version, Dt = {
   main_id: "main",
@@ -55003,10 +55003,11 @@ class inA extends r9 {
   _attributes;
   _text;
   constructor(A) {
-    const e = {};
-    e.fontImageDummy = "", super(e), this._attributes = A, this.skinId = -1;
+    const e = et.varNameValues(A), r = e[0], n = e[1], o = {};
+    o[r] = n.text, super(o), this._text = n.text, this._attributes = n.attributes, this.skinId = -1;
   }
   async load() {
+    await this.initText();
   }
   async fontLoad() {
     const A = [];
@@ -55014,15 +55015,10 @@ class inA extends r9 {
       A.push(e.load());
     await Promise.all(A);
   }
-  get Text() {
-    return {
-      textToSvg: this.textToSvg.bind(this)
-    };
+  async initText() {
+    await this.fontLoad(), await this.changeText(this._text);
   }
-  async textToSvg(A) {
-    if (this._text == A)
-      return;
-    await this.fontLoad();
+  async changeText(A) {
     const e = A, r = {};
     this._attributes.scratch_font_family && (SB.scratchFontFamily = this._attributes.scratch_font_family), this._attributes.fill && (r.fill = this._attributes.fill), this._attributes.font_family && (r.font = this._attributes.font_family), this._attributes.font_size && (r.font_size = this._attributes.font_size), this._attributes.font_weight && (r.font_weight = this._attributes.font_weight), this._attributes.stroke && (r.stroke = this._attributes.stroke), this._attributes.stroke_mode && (r.stroke_mode = this._attributes.stroke_mode), this._attributes.stroke_width && (r.stroke_width = this._attributes.stroke_width);
     const n = await SB.createSvgData(e, r), o = await Ji.loader(n);

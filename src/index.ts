@@ -65,7 +65,7 @@ import type { SVariable } from './type/entity/monitor/SVariable';
 import { SPEECH_LOCALE } from './type/speech/IVoice';
 import { SPEECH_VOICE_ID } from './type/speech/IVoice';
 import { FontImage } from './lib/fonts/fontImage';
-import { SFontImage } from './type/font/fontImage';
+import type { SFontImage, FontImageAttribute as _FontImageAttribute } from './type/font/fontImage';
 import { VirtualPad } from './lib/gui/virtualPad';
 
 /**
@@ -140,3 +140,4 @@ export type Image = IImage;
 export type Bounds = TBoundsEx;
 export type SvgImageAttributes = createSvgImageAttributes;
 export type BubbleProperties = TBubbleProperties;
+export type FontImageAttribute = _FontImageAttribute;

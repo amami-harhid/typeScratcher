@@ -1,39 +1,28 @@
 import type { createSvgImageAttributes } from "../../type/font";
 import { IImage } from "../image";
 
+/** FontImage Attributes */
+export type FontImageAttribute = {
+    text: string,
+    attributes: createSvgImageAttributes,
+}
+/** FontImage 引数 */
+export type FontImageParams = { [key:string]: FontImageAttribute }
+
 export interface SFontImage {
 
-    new (attributes: createSvgImageAttributes): IFontImage;
+    new (attributes: FontImageParams | FontImageAttribute ): IFontImage;
 }
-
-/** 文字列を操作する */
-type text = {
-    /**
-     * text to svg image
-     * 
-     * ---
-     * 文字列をSVGイメージに変換する
-     * 
-     * @param text 
-     */
-    textToSvg: (text:string) => Promise<void>
-};
 
 export interface IFontImage extends IImage{
 
     /**
-     * 文字列を操作する
-     */
-    readonly Text: text;
-
-    /**
-     * text to svg image
+     * change text 
      * 
      * ---
      * 文字列をSVGイメージに変換する
      * 
      * @param text 
      */
-    //textToSvg( text: string ) : Promise<void>;
-
+    changeText( text: string ) : Promise<void>;
 }
