@@ -13,8 +13,12 @@ import BasketballPng from "../assets/Basketball 2.png";
 // 【モニター用の変数を用意】
 const clone = Ts.Variable.number(0); // 変数初期値設定
 const cloneCounterStr = Ts.Variable.string(''); // 変数初期値設定
-Ts.Variable.monitoring({clone}); // モニター開始
-Ts.Variable.monitoring({cloneCounterStr}); // モニター開始
+// モニター開始
+const cloneMonitor = new Ts.VariableMonitoring({clone});
+cloneMonitor.show();
+const cloneCounterStrMonitor = new Ts.VariableMonitoring({cloneCounterStr});
+cloneCounterStrMonitor.show();
+//Ts.Variable.monitoring({cloneCounterStr}); // モニター開始
 //clone.scale = {w: 100, h:100};
 //cloneCounterStr.scale = {w: 100, h:100};
 

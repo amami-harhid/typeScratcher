@@ -1,4 +1,4 @@
-import { MonitoringVars, NumberProxy, StringProxy } from "./monitoring";
+import { NumberProxy, StringProxy } from "./monitoring";
 
 /**
  * Variable-Storing Proxy 
