@@ -1,29 +1,23 @@
 export interface BaseProxy {
     show: CallableFunction;
     hide: CallableFunction;
-}
-
-export interface BaseNumberProxy extends BaseProxy {
-    /** 変数(数値) */
-    value: number,
-}
-export interface BaseStringProxy extends BaseProxy{
-    /** 変数(文字列) */
-    text: string,
+    scale : {w: number, h: number};
 }
 
 /**
  * 数値プロキシ
  */
-export interface NumberProxy extends BaseNumberProxy{
-    scale : {w: number, h: number};
+export interface NumberProxy extends BaseProxy{
+    /** 変数(数値) */
+    value: number,
 }
 
 /**
  * 文字列プロキシ
  */
-export interface StringProxy extends BaseStringProxy{
-    scale : {w: number, h: number};
+export interface StringProxy extends BaseProxy{
+    /** 変数(文字列) */
+    text: string,
 }
 
 /**

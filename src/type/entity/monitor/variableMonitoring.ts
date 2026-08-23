@@ -8,7 +8,7 @@ export interface VariableMonitorParam  {
 
 export interface SVariableMonitoring {
 
-    new( obj : VariableMonitorParam ):IVariableMonitoring;
+    new( obj : VariableMonitorParam | StringProxy | NumberProxy):IVariableMonitoring;
     
 }
 
@@ -17,4 +17,6 @@ export interface IVariableMonitoring {
     show(): void;
     /** 隠す */
     hide(): void;
+    /** スケール */
+    readonly scale : {w: number, h:number};
 }

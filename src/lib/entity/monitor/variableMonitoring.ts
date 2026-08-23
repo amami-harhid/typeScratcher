@@ -24,4 +24,9 @@ export class VariableMonitoring implements IVariableMonitoring {
     hide(): void {
         this._proxy.hide();
     }
+
+    get scale() : {w: number, h: number} {
+
+        return this._proxy.scale;
+    }
 }
