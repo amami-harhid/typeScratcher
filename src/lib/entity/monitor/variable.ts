@@ -2,12 +2,6 @@ import { Var } from "./var";
 import type { MonitoringVars, NumberProxy, StringProxy } from "../../../type/entity/monitor/monitoring";
 import { Monitors } from "./monitors";
 
-interface NumberProxyExt extends NumberProxy {
-    isNumber: boolean;
-}
-interface StringProxyExt extends StringProxy {
-    isNumber: boolean;
-}
 
 export class Variable {
 

@@ -17,9 +17,15 @@ import { SVariable } from './entity/monitor/SVariable';
 import { SFont } from './font';
 import { SFontImage } from './font/fontImage';
 import { SVirtualPad } from './gui/virtualPad';
+import { SVariableMonitoring } from './entity/monitor/variableMonitoring';
 type stageBounds = {w: number, h: number};
 
 export type ExportType = {
+
+    /**
+     * 監視するモニター
+     */
+    VariableMonitoring: SVariableMonitoring,
     /**
      * Sprite
      * ---

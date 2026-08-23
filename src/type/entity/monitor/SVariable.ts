@@ -24,15 +24,15 @@ export interface SVariable {
      */
     string(text:string) : StringProxy;
 
-    /**
-     * monitoring
-     * 
-     * ---
-     * 変数を監視対象にする
-     * 
-     * @param variable 
-     */
-    monitoring( variable: MonitoringVars | NumberProxy | StringProxy): void
+    // /**
+    //  * monitoring
+    //  * 
+    //  * ---
+    //  * 変数を監視対象にする
+    //  * 
+    //  * @param variable 
+    //  */
+    // monitoring( variable: MonitoringVars | NumberProxy | StringProxy): void
 
     /**
      * reposition monitors

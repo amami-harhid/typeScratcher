@@ -6,7 +6,7 @@ export function transformObjectWrapping(code: string, id: string): { code: strin
     
     // 複数行（改行やインデント）に対応した正規表現に変更
     // [^{)]*? で、カッコの開始から引数までの間の改行やスペースを柔軟にキャッチします
-    const targetRegex = /(new\s+xx\.(?:Image|Sound)|\.Variable\.monitoring)\(\s*([^{)\s][^)\s]*?)\s*\)/g;
+    const targetRegex = /(new\s+xx\.(?:Image|Sound|FontImage|Font)|\.Variable\.monitoring)\(\s*([^{)\s][^)\s]*?)\s*\)/g;
 
     let match;
     while ((match = targetRegex.exec(code)) !== null) {

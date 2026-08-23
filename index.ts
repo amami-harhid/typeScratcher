@@ -6,7 +6,7 @@ import type { IImage } from './src/type/image';
 import type { ISprite } from './src/type/entity/sprite';
 import type { IStage } from './src/type/entity/stage';
 import { ScratchFontFamily as _ScratchFontFamily } from './src/type/svgText';
-
+import type { FontImageAttribute as _FontImageAttribute } from './src/type/font/fontImage';
 
 export const Typescratcher: ExportType = Ts as ExportType;
 
@@ -15,3 +15,4 @@ export type Stage = IStage;
 export type Image = IImage;
 export type Bounds = TBoundsEx;
 export type SvgImageAttributes = createSvgImageAttributes;
+export type FontImageAttribute = _FontImageAttribute;

@@ -1,14 +1,15 @@
-export interface BaseNumberProxy {
-    /** 変数(数値) */
-    value: number,
+export interface BaseProxy {
     show: CallableFunction;
     hide: CallableFunction;
 }
-export interface BaseStringProxy {
+
+export interface BaseNumberProxy extends BaseProxy {
+    /** 変数(数値) */
+    value: number,
+}
+export interface BaseStringProxy extends BaseProxy{
     /** 変数(文字列) */
     text: string,
-    show: CallableFunction;
-    hide: CallableFunction;
 }
 
 /**

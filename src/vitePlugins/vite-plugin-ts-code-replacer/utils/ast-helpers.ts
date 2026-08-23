@@ -102,24 +102,28 @@ export function isArgumentObjectWrapTarget(node: ts.Node): node is ts.NewExpress
     // --- ケースA: new xx.Image() / new xx.Sound() / new xx.FontImage() の判定 ---
     if (ts.isNewExpression(node) && ts.isPropertyAccessExpression(expr)) {
         const className = expr.name.text;
-        return className === 'Image' || className === 'Sound' || className === 'FontImage';
+        return className === 'Image' || 
+            className === 'Sound' || 
+            className === 'FontImage'|| 
+            className === 'Font' || 
+            className == 'VariableMonitoring';
     }
 
-    // --- ケースB: xx.Variable.monitoring() の判定 ---
-    // 構造: expression(xx.Variable) . name(monitoring)
-    if (ts.isCallExpression(node) && ts.isPropertyAccessExpression(expr)) {
-        const methodName = expr.name.text;
+    // // --- ケースB: xx.Variable.monitoring() の判定 ---
+    // // 構造: expression(xx.Variable) . name(monitoring)
+    // if (ts.isCallExpression(node) && ts.isPropertyAccessExpression(expr)) {
+    //     const methodName = expr.name.text;
         
-        if (methodName === 'monitoring') {
-            const parentExpr = expr.expression; // xx.Variable の部分
+    //     if (methodName === 'monitoring') {
+    //         const parentExpr = expr.expression; // xx.Variable の部分
             
-            // 2階層目のプロパティアクセス（xx.Variable）をチェック
-            if (ts.isPropertyAccessExpression(parentExpr)) {
-                const subName = parentExpr.name.text;
-                return subName === 'Variable';
-            }
-        }
-    }
+    //         // 2階層目のプロパティアクセス（xx.Variable）をチェック
+    //         if (ts.isPropertyAccessExpression(parentExpr)) {
+    //             const subName = parentExpr.name.text;
+    //             return subName === 'Variable';
+    //         }
+    //     }
+    // }
 
     return false;
 }

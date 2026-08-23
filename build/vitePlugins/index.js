@@ -466,17 +466,7 @@ function isArgumentObjectWrapTarget(node) {
   const expr = node.expression;
   if (ts.isNewExpression(node) && ts.isPropertyAccessExpression(expr)) {
     const className = expr.name.text;
-    return className === "Image" || className === "Sound" || className === "FontImage";
-  }
-  if (ts.isCallExpression(node) && ts.isPropertyAccessExpression(expr)) {
-    const methodName = expr.name.text;
-    if (methodName === "monitoring") {
-      const parentExpr = expr.expression;
-      if (ts.isPropertyAccessExpression(parentExpr)) {
-        const subName = parentExpr.name.text;
-        return subName === "Variable";
-      }
-    }
+    return className === "Image" || className === "Sound" || className === "FontImage" || className === "Font" || className == "VariableMonitoring";
   }
   return false;
 }
@@ -701,7 +691,7 @@ const createTransformer = (id, context) => {
 
 function transformObjectWrapping(code, id) {
   const s = new MagicString(code);
-  const targetRegex = /(new\s+xx\.(?:Image|Sound)|\.Variable\.monitoring)\(\s*([^{)\s][^)\s]*?)\s*\)/g;
+  const targetRegex = /(new\s+xx\.(?:Image|Sound|FontImage|Font)|\.Variable\.monitoring)\(\s*([^{)\s][^)\s]*?)\s*\)/g;
   let match;
   while ((match = targetRegex.exec(code)) !== null) {
     const [fullMatch, prefix, argumentText] = match;
