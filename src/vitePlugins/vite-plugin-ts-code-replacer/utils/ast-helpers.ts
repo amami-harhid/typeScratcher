@@ -105,8 +105,7 @@ export function isArgumentObjectWrapTarget(node: ts.Node): node is ts.NewExpress
         return className === 'Image' || 
             className === 'Sound' || 
             className === 'FontImage'|| 
-            className === 'Font' || 
-            className == 'VariableMonitoring';
+            className === 'Font' ;
     }
 
     // // --- ケースB: xx.Variable.monitoring() の判定 ---

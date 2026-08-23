@@ -4,7 +4,7 @@
  * フォントロード
  */
 import { Typescratcher as Ts } from "../../src";
-import { Sprite, SvgImageAttributes } from "../../src";
+import { Sprite, FontImageAttribute, SvgImageAttributes } from "../../src";
 
 Ts.Env.debugMode = true;
 
@@ -39,20 +39,21 @@ const attribute: SvgImageAttributes = {
     font_family: HarryPotterFont.name,
     //scratch_font_family: Ts.ScratchFontFamily.Handwriting
 };
-
+const fontImageParams : FontImageAttribute = {
+    text: HELLO,
+    attributes: attribute,
+}
 const moji = new Ts.Sprite('moji');
-const helloImage = new Ts.FontImage(attribute);
+const helloImage = new Ts.FontImage({fontImageParams});
 moji.Costume.add( helloImage );
-await helloImage.Text.textToSvg(HELLO);
 
 // 【ステージ】(water)
 const stage = new Ts.Stage();
 stage.Backdrop.add( WaterImage );
 
 // 変数
-const speechText = Ts.Variable.string( 'おーい、触っちゃだめよ' ); // タッチ
-Ts.Variable.monitoring( { text: speechText } );
-
+const speechText = Ts.Variable.string( 'text', '' ); // タッチ
+speechText.text = 'おーい、触っちゃだめよだめよ';
 cat.Event.flagPresser().func = async function*(this:Sprite){
     this.Looks.size.scale = [250, 250];
     this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.SpeechVoiceType.KITTEN).typeCopyTo("001").gender(Ts.SpeechGender.FEMALE).addPitch(100);
@@ -65,13 +66,13 @@ cat.Event.flagPresser().func = async function*(this:Sprite){
         if(_touch()){
             // スピーチする
             if(speechFlag){
-                await helloImage.Text.textToSvg("FEMAIL");
+                helloImage.changeText("FEMAIL");
                 // ピッチ加工したFEMAILの声
                 this.Speech.type("001")
                 await this.Speech.speech(speechText.text);
 
             }else{
-                await helloImage.Text.textToSvg("MAIL");
+                helloImage.changeText("MAIL");
                 // ピッチ加工したMAILの声
                 this.Speech.type("002");
                 await this.Speech.speech(speechText.text);
@@ -85,8 +86,6 @@ cat.Event.flagPresser().func = async function*(this:Sprite){
     }
 
 };
-
-
 
 // 開始
 Ts.engine.start();

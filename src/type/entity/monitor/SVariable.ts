@@ -13,7 +13,7 @@ export interface SVariable {
      * 
      * @param value 
      */
-    number(value:number) : NumberProxy;
+    number(label:string, value?:number) : NumberProxy;
     /**
      * String-type proxy generation
      * 
@@ -22,7 +22,7 @@ export interface SVariable {
      * 
      * @param text
      */
-    string(text:string) : StringProxy;
+    string(label:string, text?:string) : StringProxy;
 
     // /**
     //  * monitoring

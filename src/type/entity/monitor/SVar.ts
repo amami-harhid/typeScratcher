@@ -13,7 +13,7 @@ export interface SVar {
      * 
      * @param value 
      */
-    number(value:number) : NumberProxy;
+    number(label:string, value?:number) : NumberProxy;
 
     /**
      * String-type proxy generation
@@ -23,5 +23,5 @@ export interface SVar {
      * 
      * @param text
      */
-    string(text:string) : StringProxy;
+    string(label:string, text?:string) : StringProxy;
 }

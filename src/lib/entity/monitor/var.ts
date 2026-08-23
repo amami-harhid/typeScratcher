@@ -1,13 +1,12 @@
-import type { NumberProxy, StringProxy, MonitoringNumber, MonitoringString } from "../../../type/entity/monitor/monitoring";
+import type { BaseProxy, NumberProxy, StringProxy, MonitoringNumber, MonitoringString, MonitoringVars } from "../../../type/entity/monitor/monitoring";
+import { Variable } from "./variable";
 /**
  * Var
- * 
- * const counter = Var.from({value: 5}); // 初期値 5 (数値型)を定義
  */
 export class Var {
 
-    static number(value:number) : NumberProxy {
-        const obj : NumberProxy = {value: value, scale: {w:100, h:100}, show:()=>{}, hide:()=>{} };
+    static number(label:string, initValue:number=0) : NumberProxy {
+        const obj : NumberProxy = {label: label, value: initValue, scale: {w:100, h:100}, show:()=>{}, hide:()=>{}};
         const _var = new Proxy(obj, {
 
             get(target:NumberProxy, prop: string) {
@@ -30,8 +29,8 @@ export class Var {
 
     }
 
-    static string(text:string) : StringProxy {
-        const obj : StringProxy = {text: text, scale: {w:100, h:100}, show:()=>{}, hide:()=>{} };
+    static string(label:string, initValue:string='') : StringProxy {
+        const obj : StringProxy = {label: label, text: initValue, scale: {w:100, h:100}, show:()=>{}, hide:()=>{} };
         const _var = new Proxy(obj, {
 
             get(target:StringProxy, prop: string) {
@@ -54,6 +53,12 @@ export class Var {
 
         return _var;
     }
+    static addVar(proxy: NumberProxy|StringProxy) : void {
     
- 
+        const monitorsVar: MonitoringVars = {};
+        const label = proxy.label;
+        monitorsVar[`${label}`] = proxy;
+        Variable.monitoring( monitorsVar );
+    
+    }
 }
