@@ -15,8 +15,12 @@ export type createSvgImageAttributes = {
 /**
  * Image(イメージ)
  */
+declare const FontBrandSymbol: unique symbol;
 export type FontArgStringObject = { [key:string]:string };
 export interface SFont{
+    // ASTから一発で特定するための型ブランド
+    readonly [FontBrandSymbol]?: "Font_CLASS_BRAND";
+    
     /**
      * @param font {FontArgStringObject}
      */

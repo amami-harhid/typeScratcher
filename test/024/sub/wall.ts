@@ -41,10 +41,8 @@ export const Map01: number[][] = [
 ];
 const cagePositionArr:{x:number, y: number}[] = [];
 let y = Math.floor(-Map01[0].length / 2);
-// eslint-disable-next-line loopCheck/s3-loop-plugin
 for(const row of Map01) {
     let x = -Math.floor(-row.length/2);
-    // eslint-disable-next-line loopCheck/s3-loop-plugin
     for(const elem of row) {
         if(elem == 2){
             cagePositionArr.push({x: x, y: y});

@@ -4,6 +4,7 @@ import { Project, SyntaxKind } from 'ts-morph';
 import path from 'path';
 
 const CLASS_BRAND = {
+    FONT_CLASS_BRAND: "FontBrandSymbol",
     IMAGE_CLASS_BRAND: "ImageBrandSymbol",
     SOUND_CLASS_BRAND: "SoundBrandSymbol",
     VARIABLE_CLASS_BRAND: "VariableBrandSymbol"
@@ -24,6 +25,7 @@ function getOrInitProject(rootPath: string): Project {
     const basePackagePath = 'node_modules/@tscratch3/typescratcher/src/type';
 
     const targetFiles = [
+        path.resolve(rootPath, `${basePackagePath}/font/index.ts`), // Font用の型ファイル
         path.resolve(rootPath, `${basePackagePath}/image/index.ts`), // Image用の型ファイル
         path.resolve(rootPath, `${basePackagePath}/sound/index.ts`), // Sound用の型ファイル（環境に合わせて調整してください）
         path.resolve(rootPath, `${basePackagePath}/entity/monitor/SVariable.ts`), // VariableMonitoring用の型ファイル（環境に合わせて調整してください）
@@ -41,8 +43,8 @@ function getOrInitProject(rootPath: string): Project {
 }
 export function transformObjectWrapping(code: string, id: string): { code: string; map: any } {
     // 【超軽量プレフィルター】
-    // コード内に "Image" "Sound" "monitoring" のいずれも無ければ解析すらしない
-    if (!code.includes('Image') && !code.includes('Sound') && !code.includes('monitoring')) {
+    // コード内に "Font" "Image" "Sound" "monitoring" のいずれも無ければ解析すらしない
+    if (!code.includes('Font') && !code.includes('Image') && !code.includes('Sound') && !code.includes('monitoring')) {
         return { code, map: null };
     }
 
@@ -53,7 +55,7 @@ export function transformObjectWrapping(code: string, id: string): { code: strin
     let hasChanges = false;
 
     // ----------------------------------------------------
-    // 処理1: new Ts.Image(), new Ts.Sound() の探索 (NewExpression)
+    // 処理1: new Ts.Font(), new Ts.Image(), new Ts.Sound() の探索 (NewExpression)
     // ----------------------------------------------------
     sourceFile.getDescendantsOfKind(SyntaxKind.NewExpression).forEach((newExpr) => {
         const constructorExpression = newExpr.getExpression();
@@ -62,7 +64,7 @@ export function transformObjectWrapping(code: string, id: string): { code: strin
         // クラスブランドがついている型かを点検する
         const isTargetClass = constructorType.getProperties().some(prop => {
             const name = prop.getName();
-            return name.includes(CLASS_BRAND.IMAGE_CLASS_BRAND) || name.includes(CLASS_BRAND.SOUND_CLASS_BRAND);
+            return  name.includes(CLASS_BRAND.FONT_CLASS_BRAND) || name.includes(CLASS_BRAND.IMAGE_CLASS_BRAND) || name.includes(CLASS_BRAND.SOUND_CLASS_BRAND);
         });
 
         if (isTargetClass) {

@@ -638,6 +638,7 @@ const createTransformer = (id, context) => {
 };
 
 const CLASS_BRAND = {
+  FONT_CLASS_BRAND: "FontBrandSymbol",
   IMAGE_CLASS_BRAND: "ImageBrandSymbol",
   SOUND_CLASS_BRAND: "SoundBrandSymbol",
   VARIABLE_CLASS_BRAND: "VariableBrandSymbol"
@@ -655,6 +656,8 @@ function getOrInitProject(rootPath) {
   });
   const basePackagePath = "node_modules/@tscratch3/typescratcher/src/type";
   const targetFiles = [
+    path.resolve(rootPath, `${basePackagePath}/font/index.ts`),
+    // Font用の型ファイル
     path.resolve(rootPath, `${basePackagePath}/image/index.ts`),
     // Image用の型ファイル
     path.resolve(rootPath, `${basePackagePath}/sound/index.ts`),
@@ -672,7 +675,7 @@ function getOrInitProject(rootPath) {
   return project;
 }
 function transformObjectWrapping(code, id) {
-  if (!code.includes("Image") && !code.includes("Sound") && !code.includes("monitoring")) {
+  if (!code.includes("Font") && !code.includes("Image") && !code.includes("Sound") && !code.includes("monitoring")) {
     return { code, map: null };
   }
   const currentProject = getOrInitProject(process.cwd());
@@ -684,7 +687,7 @@ function transformObjectWrapping(code, id) {
     const constructorType = typeChecker.getTypeAtLocation(constructorExpression);
     const isTargetClass = constructorType.getProperties().some((prop) => {
       const name = prop.getName();
-      return name.includes(CLASS_BRAND.IMAGE_CLASS_BRAND) || name.includes(CLASS_BRAND.SOUND_CLASS_BRAND);
+      return name.includes(CLASS_BRAND.FONT_CLASS_BRAND) || name.includes(CLASS_BRAND.IMAGE_CLASS_BRAND) || name.includes(CLASS_BRAND.SOUND_CLASS_BRAND);
     });
     if (isTargetClass) {
       processArguments(newExpr.getArguments(), newExpr.getText(), id, code, s, () => {
