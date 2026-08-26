@@ -5,16 +5,14 @@ import { Monitors } from "./monitors";
 
 export class Variable {
 
-    static number( label: string, value: number) : NumberProxy {
+    static number( value: number) : NumberProxy {
         // この時点では show(), hide() は機能しない
-        const _proxy = Var.number( label, value );
-        Var.addVar(_proxy);
+        const _proxy = Var.number( value );
         return _proxy;
     }
-    static string( label:string, text: string) : StringProxy {
+    static string( text: string) : StringProxy {
         // この時点では show(), hide() は機能しない
-        const _proxy = Var.string( label, text );
-        Var.addVar(_proxy);
+        const _proxy = Var.string( text );
         return _proxy;
     }
     static monitoring( variable: MonitoringVars | NumberProxy | StringProxy): void {

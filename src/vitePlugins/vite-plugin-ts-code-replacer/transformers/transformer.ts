@@ -1,5 +1,5 @@
 import ts from 'typescript';
-import { isTarget, createYieldStatement, hasSkipComment, isTargetEventAssignment, isAwaitTargetCall, isArgumentObjectWrapTarget } from '../utils/ast-helpers.ts';
+import { isTarget, createYieldStatement, hasSkipComment, isTargetEventAssignment, isAwaitTargetCall } from '../utils/ast-helpers.ts';
 
 export interface PluginError extends Error {
     loc?: {
@@ -170,60 +170,6 @@ export const createTransformer = (id: string, context: ts.TransformationContext)
 
         function visit(node: ts.Node, inLoop = false): ts.Node {
       
-            //【機能：new xx.Image(hoge) や xx.Variable.monitoring(hoge) などの引数を { hoge } に包む処理】
-            if (isArgumentObjectWrapTarget(node)) {
-                // 先に子ノード（引数の内部など）を再帰的に変換
-                const visitedNode  = ts.visitEachChild(node, (n) => visit(n, inLoop), context) as ts.NewExpression;
-                
-                // 型ガードを用いて引数を安全に取得
-                const originalArg = ts.isNewExpression(visitedNode) 
-                    ? visitedNode.arguments![0] 
-                    : (visitedNode as ts.CallExpression).arguments[0];
-                
-                // 引数が変数名（識別子）である場合のみ許可
-                if (!ts.isIdentifier(originalArg)) {
-                    // ソースファイル上の行数・文字位置を取得して分かりやすいエラーにする
-                    const { line, character } = sf.getLineAndCharacterOfPosition(node.getStart(sf));
-                    // 表現の取得（例: "new xx.Image("path/to/img")"）
-                    const nodeText = node.getText(sf);
-
-                    const error = new Error(`Please specify a variable as the argument. [変数を引数にしてください]`) as PluginError;
-                    error.loc = {
-                        file: id,
-                        line: line + 1,
-                        column: character + 1
-                    };
-                    error.frame = nodeText; // エラー箇所のコード断片
-                    throw error;
-                }
-
-                // ショートハンドプロパティ（hoge）を作成
-                const propertyAssignment = ts.factory.createShorthandPropertyAssignment(originalArg);
-
-                // 新しいオブジェクトリテラル { hoge } を作成
-                const newObjectLiteral = ts.factory.createObjectLiteralExpression(
-                    [propertyAssignment],
-                    false
-                );
-                // nodeの種類に応じて適切な更新メソッドを使い分ける
-                if (ts.isNewExpression(visitedNode)) {
-                    return ts.factory.updateNewExpression(
-                        visitedNode,
-                        visitedNode.expression,
-                        visitedNode.typeArguments,
-                        ts.factory.createNodeArray([newObjectLiteral])
-                    );
-                }else{
-                    return ts.factory.updateCallExpression(
-                        visitedNode as ts.CallExpression,
-                        (visitedNode as ts.CallExpression).expression,
-                        (visitedNode as ts.CallExpression).typeArguments,
-                        ts.factory.createNodeArray([newObjectLiteral])
-                    );
-                }
-            }
-            //【機能：特定の命令に await が無ければ付与する処理】
-            // 親ノードがすでに AwaitExpression でないことを確認した上で処理
             if (isAwaitTargetCall(node) && node.parent && !ts.isAwaitExpression(node.parent)) {
                 // 先に子ノード（引数など）の内部変換を再帰処理したノードを作成
                 const visitedCall = ts.visitEachChild(node, (n) => visit(n, inLoop), context) as ts.CallExpression;

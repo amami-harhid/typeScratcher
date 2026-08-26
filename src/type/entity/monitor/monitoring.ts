@@ -1,5 +1,4 @@
 export interface BaseProxy {
-    label: string,
     show: CallableFunction;
     hide: CallableFunction;
     scale : {w: number, h: number};

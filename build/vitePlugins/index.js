@@ -1,5 +1,7 @@
 import ts from 'typescript';
 import MagicString from 'magic-string';
+import { SyntaxKind, Project } from 'ts-morph';
+import path from 'path';
 import remapping from '@ampproject/remapping';
 
 const AWAIT_TARGET_METHODS$1 = /* @__PURE__ */ new Set([
@@ -76,7 +78,7 @@ function isAwaitTargetCall$1(node) {
   const methodPath = parts.join(".");
   return AWAIT_TARGET_METHODS$1.has(methodPath);
 }
-function isArgumentObjectWrapTarget$1(node) {
+function isArgumentObjectWrapTarget(node) {
   if (!ts.isNewExpression(node) && !ts.isCallExpression(node)) {
     return false;
   }
@@ -222,7 +224,7 @@ const createTransformer$1 = (id, context) => {
     }
     preScan(sf);
     function visit(node, inLoop = false) {
-      if (isArgumentObjectWrapTarget$1(node)) {
+      if (isArgumentObjectWrapTarget(node)) {
         const visitedNode = ts.visitEachChild(node, (n) => visit(n, inLoop), context);
         const originalArg = ts.isNewExpression(visitedNode) ? visitedNode.arguments[0] : visitedNode.arguments[0];
         if (!ts.isIdentifier(originalArg)) {
@@ -452,24 +454,6 @@ function isAwaitTargetCall(node) {
   const methodPath = parts.join(".");
   return AWAIT_TARGET_METHODS.has(methodPath);
 }
-function isArgumentObjectWrapTarget(node) {
-  if (!ts.isNewExpression(node) && !ts.isCallExpression(node)) {
-    return false;
-  }
-  if (!node.arguments || node.arguments.length !== 1) {
-    return false;
-  }
-  const firstArg = node.arguments[0];
-  if (ts.isObjectLiteralExpression(firstArg)) {
-    return false;
-  }
-  const expr = node.expression;
-  if (ts.isNewExpression(node) && ts.isPropertyAccessExpression(expr)) {
-    const className = expr.name.text;
-    return className === "Image" || className === "Sound" || className === "FontImage" || className === "Font";
-  }
-  return false;
-}
 
 function transformLoopBody(node, visit, id) {
   const sourceFile = node.getSourceFile();
@@ -588,42 +572,6 @@ const createTransformer = (id, context) => {
     }
     preScan(sf);
     function visit(node, inLoop = false) {
-      if (isArgumentObjectWrapTarget(node)) {
-        const visitedNode = ts.visitEachChild(node, (n) => visit(n, inLoop), context);
-        const originalArg = ts.isNewExpression(visitedNode) ? visitedNode.arguments[0] : visitedNode.arguments[0];
-        if (!ts.isIdentifier(originalArg)) {
-          const { line, character } = sf.getLineAndCharacterOfPosition(node.getStart(sf));
-          const nodeText = node.getText(sf);
-          const error = new Error(`Please specify a variable as the argument. [変数を引数にしてください]`);
-          error.loc = {
-            file: id,
-            line: line + 1,
-            column: character + 1
-          };
-          error.frame = nodeText;
-          throw error;
-        }
-        const propertyAssignment = ts.factory.createShorthandPropertyAssignment(originalArg);
-        const newObjectLiteral = ts.factory.createObjectLiteralExpression(
-          [propertyAssignment],
-          false
-        );
-        if (ts.isNewExpression(visitedNode)) {
-          return ts.factory.updateNewExpression(
-            visitedNode,
-            visitedNode.expression,
-            visitedNode.typeArguments,
-            ts.factory.createNodeArray([newObjectLiteral])
-          );
-        } else {
-          return ts.factory.updateCallExpression(
-            visitedNode,
-            visitedNode.expression,
-            visitedNode.typeArguments,
-            ts.factory.createNodeArray([newObjectLiteral])
-          );
-        }
-      }
       if (isAwaitTargetCall(node) && node.parent && !ts.isAwaitExpression(node.parent)) {
         const visitedCall = ts.visitEachChild(node, (n) => visit(n, inLoop), context);
         return ts.factory.createAwaitExpression(visitedCall);
@@ -689,31 +637,107 @@ const createTransformer = (id, context) => {
   };
 };
 
-function transformObjectWrapping(code, id) {
-  const s = new MagicString(code);
-  const targetRegex = /(new\s+xx\.(?:Image|Sound|FontImage|Font))\(\s*([^{)\s][^)\s]*?)\s*\)/g;
-  let match;
-  while ((match = targetRegex.exec(code)) !== null) {
-    const [fullMatch, prefix, argumentText] = match;
-    const matchIndex = match.index;
-    const cleanArg = argumentText.trim();
-    const isIdentifier = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(cleanArg);
-    if (!isIdentifier) {
-      const { line, column } = getLineAndColumn(code, matchIndex);
-      const error = new Error(`Please specify a variable as the argument. Automatic object conversion is not supported.`);
-      error.loc = { file: id, line, column };
-      error.frame = fullMatch;
-      throw error;
+const CLASS_BRAND = {
+  IMAGE_CLASS_BRAND: "ImageBrandSymbol",
+  SOUND_CLASS_BRAND: "SoundBrandSymbol",
+  VARIABLE_CLASS_BRAND: "VariableBrandSymbol"
+};
+let project = null;
+function getOrInitProject(rootPath) {
+  if (project) return project;
+  project = new Project({
+    compilerOptions: {
+      target: 99
+      /* ESNext */
+    },
+    skipAddingFilesFromTsConfig: true
+    // 高速化
+  });
+  const basePackagePath = "node_modules/@tscratch3/typescratcher/src/type";
+  const targetFiles = [
+    path.resolve(rootPath, `${basePackagePath}/image/index.ts`),
+    // Image用の型ファイル
+    path.resolve(rootPath, `${basePackagePath}/sound/index.ts`),
+    // Sound用の型ファイル（環境に合わせて調整してください）
+    path.resolve(rootPath, `${basePackagePath}/entity/monitor/SVariable.ts`)
+    // VariableMonitoring用の型ファイル（環境に合わせて調整してください）
+  ];
+  targetFiles.forEach((filePath) => {
+    try {
+      project.addSourceFileAtPath(filePath);
+    } catch (e) {
+      console.warn(`[vite-plugin-ts-code-replacer] Failed to load type definition file: ${filePath}`);
     }
-    const startIndex = matchIndex;
-    const endIndex = startIndex + fullMatch.length;
-    const replacement = `${prefix}({ ${argumentText} })`;
-    s.overwrite(startIndex, endIndex, replacement);
+  });
+  return project;
+}
+function transformObjectWrapping(code, id) {
+  if (!code.includes("Image") && !code.includes("Sound") && !code.includes("monitoring")) {
+    return { code, map: null };
   }
+  const currentProject = getOrInitProject(process.cwd());
+  const sourceFile = currentProject.createSourceFile(id, code, { overwrite: true });
+  const typeChecker = currentProject.getTypeChecker();
+  const s = new MagicString(code);
+  sourceFile.getDescendantsOfKind(SyntaxKind.NewExpression).forEach((newExpr) => {
+    const constructorExpression = newExpr.getExpression();
+    const constructorType = typeChecker.getTypeAtLocation(constructorExpression);
+    const isTargetClass = constructorType.getProperties().some((prop) => {
+      const name = prop.getName();
+      return name.includes(CLASS_BRAND.IMAGE_CLASS_BRAND) || name.includes(CLASS_BRAND.SOUND_CLASS_BRAND);
+    });
+    if (isTargetClass) {
+      processArguments(newExpr.getArguments(), newExpr.getText(), id, code, s, () => {
+      });
+    }
+  });
+  sourceFile.getDescendantsOfKind(SyntaxKind.CallExpression).forEach((callExpr) => {
+    const expression = callExpr.getExpression();
+    if (expression.getKind() === SyntaxKind.PropertyAccessExpression) {
+      const propAccess = expression;
+      const methodName = propAccess.getName();
+      if (methodName === "monitoring") {
+        const objectExpression = propAccess.getExpression();
+        const objectType = typeChecker.getTypeAtLocation(objectExpression);
+        const isTargetMethod = objectType.getProperties().some((prop) => {
+          const name = prop.getName();
+          return name.includes(CLASS_BRAND.VARIABLE_CLASS_BRAND);
+        });
+        if (isTargetMethod) {
+          processArguments(callExpr.getArguments(), callExpr.getText(), id, code, s, () => {
+          });
+        }
+      }
+    }
+  });
+  currentProject.removeSourceFile(sourceFile);
+  currentProject._cachedProgram = void 0;
   return {
     code: s.toString(),
     map: s.generateMap({ hires: true })
   };
+}
+function processArguments(args, fullMatchText, id, code, s, onChanged) {
+  if (args.length !== 1) return;
+  const firstArg = args[0];
+  if (firstArg.getKind() === SyntaxKind.ObjectLiteralExpression) {
+    return;
+  }
+  const argumentText = firstArg.getText();
+  const cleanArg = argumentText.trim();
+  const isIdentifier = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(cleanArg);
+  if (!isIdentifier) {
+    const startPos = firstArg.getStart();
+    const { line, column } = getLineAndColumn(code, startPos);
+    const error = new Error(`Please specify a variable as the argument. Automatic object conversion is not supported.`);
+    error.loc = { file: id, line, column };
+    error.frame = fullMatchText;
+    throw error;
+  }
+  const start = firstArg.getStart();
+  const end = firstArg.getEnd();
+  s.overwrite(start, end, `{ ${argumentText} }`);
+  onChanged();
 }
 function getLineAndColumn(code, index) {
   const lines = code.substring(0, index).split("\n");

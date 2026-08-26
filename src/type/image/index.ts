@@ -15,8 +15,13 @@ export type createSvgImageAttributes = {
 /**
  * Image(イメージ)
  */
+declare const ImageBrandSymbol: unique symbol;
 export type ImageArgStringObject = { [key:string]:string };
 export interface SImage{
+
+    // ASTから一発で特定するための型ブランド
+    readonly [ImageBrandSymbol]?: "IMAGE_CLASS_BRAND";
+    
     /**
      * @param image {ImageArgStringObject}
      */

@@ -30,9 +30,8 @@ const stage = new TS.Stage();
 stage.Backdrop.add( BlueskyImage, BasketballImage );
 
 const BackDropName = TS.Variable.string(BlueskyImage.name)
-//TS.Variable.monitor({BackDropName});
-const monitor = new TS.VariableMonitoring({BackDropName});
-monitor.show();
+TS.Variable.monitoring({BackDropName});
+BackDropName.show();
 
 cat.Event.flagPresser().func=async function*(this:Sprite) {
     this.Sound.setVolume(CatSound, 50);

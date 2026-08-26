@@ -5,8 +5,8 @@ import { Variable } from "./variable";
  */
 export class Var {
 
-    static number(label:string, initValue:number=0) : NumberProxy {
-        const obj : NumberProxy = {label: label, value: initValue, scale: {w:100, h:100}, show:()=>{}, hide:()=>{}};
+    static number(initValue:number) : NumberProxy {
+        const obj : NumberProxy = {value: initValue, scale: {w:100, h:100}, show:()=>{}, hide:()=>{}};
         const _var = new Proxy(obj, {
 
             get(target:NumberProxy, prop: string) {
@@ -29,8 +29,8 @@ export class Var {
 
     }
 
-    static string(label:string, initValue:string='') : StringProxy {
-        const obj : StringProxy = {label: label, text: initValue, scale: {w:100, h:100}, show:()=>{}, hide:()=>{} };
+    static string(initValue:string) : StringProxy {
+        const obj : StringProxy = {text: initValue, scale: {w:100, h:100}, show:()=>{}, hide:()=>{} };
         const _var = new Proxy(obj, {
 
             get(target:StringProxy, prop: string) {
@@ -52,13 +52,5 @@ export class Var {
         });
 
         return _var;
-    }
-    static addVar(proxy: NumberProxy|StringProxy) : void {
-    
-        const monitorsVar: MonitoringVars = {};
-        const label = proxy.label;
-        monitorsVar[`${label}`] = proxy;
-        Variable.monitoring( monitorsVar );
-    
     }
 }

@@ -1,8 +1,13 @@
 /**
  * Sound
  */
+declare const SoundBrandSymbol: unique symbol;
 export type SoundArgStringObject = { [key:string]:string };
 export interface SSound{
+    
+    // ASTから一発で特定するための型ブランド
+    readonly [SoundBrandSymbol]?: "SOUND_CLASS_BRAND";
+
     /**
      * @param image {SoundArgStringObject}
      */

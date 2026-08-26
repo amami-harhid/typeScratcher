@@ -12,6 +12,7 @@ interface PluginError extends Error {
     };
     frame?: string;
 }
+
 function isPluginError(error: unknown): error is PluginError {
     return error instanceof Error && 'loc' in error;
 }
@@ -45,7 +46,7 @@ export function TsCodeReplacer(): Plugin {
                 const wrappedResult = transformObjectWrapping(transpileResult.outputText, id);
                 // --- 2つのソースマップをマージする ---
                 // 【目的】ブラウザのデバッガがオリジナルのコード行にたどりつけるようにするため。
-                // TypeScriptのAST変換=>transformObjectWrappingによるコード変換をしているので
+                // TypeScriptのAST変換=>transformObjectWrappingの順番でコード変換をしているので
                 // ２つの変換それぞれのソースマップを紐づけないとオリジナルコード行にたどり着かない。
                 if (transpileResult.sourceMapText && wrappedResult.map) {
                     // TypeScriptが生成したマップをオブジェクトに変換

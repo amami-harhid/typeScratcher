@@ -52,8 +52,10 @@ const stage = new Ts.Stage();
 stage.Backdrop.add( WaterImage );
 
 // 変数
-const speechText = Ts.Variable.string( 'text', '' ); // タッチ
+const speechText = Ts.Variable.string( '' ); // タッチ
 speechText.text = 'おーい、触っちゃだめよだめよ';
+Ts.Variable.monitoring( {'タッチ': speechText });
+
 cat.Event.flagPresser().func = async function*(this:Sprite){
     this.Looks.size.scale = [250, 250];
     this.Speech.locale(Ts.SpeechLocale.JAPANESE).type(Ts.SpeechVoiceType.KITTEN).typeCopyTo("001").gender(Ts.SpeechGender.FEMALE).addPitch(100);

@@ -67,8 +67,6 @@ import { SPEECH_VOICE_ID } from './type/speech/IVoice';
 import { FontImage } from './lib/fonts/fontImage';
 import type { SFontImage, FontImageAttribute as _FontImageAttribute } from './type/font/fontImage';
 import { VirtualPad } from './lib/gui/virtualPad';
-import { VariableMonitoring as _VariableMonitoring } from './lib/entity/monitor/variableMonitoring';
-import { SVariableMonitoring } from './type/entity/monitor/variableMonitoring';
 
 /**
  * 【2026/06/06】
@@ -117,7 +115,6 @@ export const Typescratcher: ExportType = {
     //textToSvg: textToSvg as ITextToSvg,
     Variable: Variable as SVariable,
     SpeechVoiceType: SPEECH_VOICE_ID,
-    VariableMonitoring: _VariableMonitoring as SVariableMonitoring,
     VirtualPad: VirtualPad,
     
 } as const;

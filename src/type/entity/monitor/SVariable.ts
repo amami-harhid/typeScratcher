@@ -1,9 +1,13 @@
-import { NumberProxy, StringProxy } from "./monitoring";
+import { NumberProxy, StringProxy, MonitoringVars } from "./monitoring";
 
+declare const VariableBrandSymbol: unique symbol;
 /**
  * Variable-Storing Proxy 
  */
 export interface SVariable {
+
+    // ASTから一発で特定するための型ブランド
+    readonly [VariableBrandSymbol]?: "VARIABLE_CLASS_BRAND";
 
     /**
      * Numeric-type Proxy Generation
@@ -13,7 +17,7 @@ export interface SVariable {
      * 
      * @param value 
      */
-    number(label:string, value?:number) : NumberProxy;
+    number(value:number) : NumberProxy;
     /**
      * String-type proxy generation
      * 
@@ -22,17 +26,17 @@ export interface SVariable {
      * 
      * @param text
      */
-    string(label:string, text?:string) : StringProxy;
+    string(text:string) : StringProxy;
 
-    // /**
-    //  * monitoring
-    //  * 
-    //  * ---
-    //  * 変数を監視対象にする
-    //  * 
-    //  * @param variable 
-    //  */
-    // monitoring( variable: MonitoringVars | NumberProxy | StringProxy): void
+    /**
+     * monitoring
+     * 
+     * ---
+     * 変数を監視対象にする
+     * 
+     * @param variable 
+     */
+    monitoring( variable: MonitoringVars | NumberProxy | StringProxy): void
 
     /**
      * reposition monitors
