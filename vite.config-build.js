@@ -3,55 +3,28 @@
  */
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import glob from 'glob'
-//import topLevelAwait from 'vite-plugin-top-level-await';
-import pkg from './package.json';
-const name = JSON.stringify(pkg.name);
 
-// ルートとするディレクトリー
-const root = resolve(__dirname, './src/')
-
-// ビルド対象のディレクトリーをすべて取得( src の下の index.htmlがあるディレクトリー)
-const entries = glob.sync('./src/index.ts');
-const targetDir = []
-for(const entry of entries) {
-    const directory = entry
-    targetDir.push(directory)
-}
-const rollupOpsionsInput = {}
-for(const target of targetDir){
-    rollupOpsionsInput[target] = resolve(root, 'index.ts')
-}
 // ビルド結果を出力する先
 const outDir = resolve(__dirname, 'build');
 
 export default defineConfig({
+    root: resolve(__dirname, './src'),
     build: {
         target: "esnext",
-        lib:{
+        outDir,
+        minify: false,
+        sourcemap: true, 
+        lib: {
             entry: resolve(__dirname, 'src/index.ts'),
             formats: ["es"],
+            // 出力ファイル名を固定で 'typescratcher.js' に指定
+            fileName: () => `typescratcher.js`,
         },
-        outDir, // ビルド結果を格納する先
-        rollupOptions: {
+        rolldownOptions: {
             output: {
-                format:"es",
-                // 強制単一チャンク
-                manualChunks: () => `${name}.js`
+                // インライン展開（動的インポートを含めすべて1つのチャンクにまとめる）
+                inlineDynamicImports: true,
             }
         },
     },
-    esbuild: {
-        supported: {
-//            'top-level-await': true
-        },
-        target: "esnext",
-
-    },
-    optimizeDeps:{
-        esbuildOptions: {
-            target: "esnext",
-        }
-    },
-    root: resolve(__dirname, './src'),
 })

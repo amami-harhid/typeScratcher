@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 import glob from 'glob'
 
 // ルートとするディレクトリー
-const root = resolve(__dirname, './test/')
+const root = resolve(import.meta.dirname, './test/')
 
 // ビルド対象のディレクトリーをすべて取得( src の下の index.htmlがあるディレクトリー)
 const entries = glob.sync('./test/**/index.html');
@@ -20,7 +20,7 @@ for(const target of targetDir){
     rollupOpsionsInput[target] = resolve(root, target, 'index.html')
 }
 // ビルド結果を出力する先
-const outDir = resolve(__dirname, 'docs');
+const outDir = resolve(import.meta.dirname, 'docs');
 
 export default defineConfig({
     build: {
@@ -38,9 +38,9 @@ export default defineConfig({
 
     },
     optimizeDeps:{
-        esbuildOptions: {
+        rolldownOptions: {
             target: "esnext",
         }
     },
-    root: resolve(__dirname, './test'),
+    root: resolve(import.meta.dirname, './test'),
 })

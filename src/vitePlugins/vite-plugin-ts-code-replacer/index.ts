@@ -1,6 +1,7 @@
 import { createTransformer } from "./transformers/transformer.ts";
 import { transformObjectWrapping } from "./transformers/transformObjectWrapping.ts";
-import { Plugin } from 'vite';
+import { type Plugin } from 'vite/dist/node';
+
 import remapping from '@ampproject/remapping'; 
 import ts from 'typescript';
 

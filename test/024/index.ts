@@ -71,10 +71,8 @@ cage.Event.flagPresser().func = async function*(this:IWall){
 
 wall.Event.flagPresser().func = async function*(this:IWall){
     let y = - Math.floor( Map01.length/2 );
-    // eslint-disable-next-line loopCheck/s3-loop-plugin
     for(const _row of Map01) {
         let x = - Math.floor( _row.length / 2 ); 
-        // eslint-disable-next-line loopCheck/s3-loop-plugin
         for(const _elem of _row) {
             if(0 < _elem ) {
                 if(_elem == 9){
@@ -96,10 +94,8 @@ wall.Event.flagPresser().func = async function*(this:IWall){
 }
 cage.Event.flagPresser().func = async function*(this:IWall){
     let y = - Math.floor( Map01.length/2 );
-    // eslint-disable-next-line loopCheck/s3-loop-plugin
     for(const _row of Map01) {
         let x = - Math.floor( _row.length / 2 ); 
-        // eslint-disable-next-line loopCheck/s3-loop-plugin
         for(const _elem of _row) {
             if(_elem==2){
                 cage.Motion.position.xy = [ w*x, -h*y];

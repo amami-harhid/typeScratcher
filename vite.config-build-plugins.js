@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 import glob from 'glob'
 
 // ルートとするディレクトリー
-const root = resolve(__dirname, './src/vitePlugins/')
+const root = resolve(import.meta.dirname, './src/vitePlugins/')
 
 // ビルド対象のディレクトリーをすべて取得( src の下の index.tsがあるディレクトリー)
 const entries = glob.sync('./src/vitePlugins/index.ts');
@@ -20,34 +20,33 @@ for(const target of targetDir){
     rollupOpsionsInput[target] = resolve(root, 'index.ts')
 }
 // ビルド結果を出力する先
-const outDir = resolve(__dirname, 'build/vitePlugins');
+const outDir = resolve(import.meta.dirname, 'build/vitePlugins');
+
 
 export default defineConfig({
+    root, 
     build: {
         target: "esnext",
         ssr: true, // Node.js向けのライブラリビルドであることを明示
-        lib:{
-            entry: resolve(__dirname, './src/vitePlugins/index.ts'),
+        outDir,
+        minify: false,
+        sourcemap: true,
+        lib: {
+            entry: resolve(import.meta.dirname, './src/vitePlugins/index.ts'),
             formats: ["es"],
+            // 出力ファイル名を固定で 'typescratcher.js' に指定
+            fileName: () => `index.js`,
         },
-        outDir, // ビルド結果を格納する先
-        rollupOptions: {
-            // typescript モジュールをビルド結果に含めず、外部依存にする設定
-            external: ['typescript', 'vite', 'path', 'fs'], 
+        rolldownOptions: {
             output: {
-                format:"es",
-                entryFileNames:'index.js',
+                // インライン展開（動的インポートを含めすべて1つのチャンクにまとめる）
+                inlineDynamicImports: true,
             }
         },
     },
-    esbuild: {
-        target: "esnext",
-
-    },
-    optimizeDeps:{
-        esbuildOptions: {
-            target: "esnext",
+    optimizeDeps: {
+        rolldownOptions: {
+            platform: 'browser'
         }
-    },
-    root: resolve(__dirname, './src/vitePlugins/'),
+    }
 })
