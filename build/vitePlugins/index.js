@@ -399,6 +399,8 @@ const AWAIT_TARGET_METHODS = /* @__PURE__ */ new Set([
   "Speech.speech"
 ]);
 
+const LOOP_YIELD_SKIP_COMMENT = "@ts-loop-yield-skip";
+
 function isTarget(node) {
   return ts.isBreakStatement(node) || ts.isContinueStatement(node);
 }
@@ -412,7 +414,7 @@ function hasSkipComment(node, sourceFile) {
   if (!leadingComments) return false;
   for (const commentRange of leadingComments) {
     const commentText = sourceFile.text.substring(commentRange.pos, commentRange.end);
-    if (commentText.includes("@ts-loop-yield-skip")) {
+    if (commentText.includes(LOOP_YIELD_SKIP_COMMENT)) {
       return true;
     }
   }
@@ -637,12 +639,29 @@ const createTransformer = (id, context) => {
   };
 };
 
-const CLASS_BRAND = {
+const CLASS_SYMBOL = {
   FONT_CLASS_BRAND: "FontBrandSymbol",
+  FONT_IMAGE_CLASS_BRAND: "FontIMageBrandSymbol",
   IMAGE_CLASS_BRAND: "ImageBrandSymbol",
   SOUND_CLASS_BRAND: "SoundBrandSymbol",
   VARIABLE_CLASS_BRAND: "VariableBrandSymbol"
 };
+const basePackagePath = "node_modules/@tscratch3/typescratcher/src/type";
+const type_definition_files = function(rootPath) {
+  return [
+    path.resolve(rootPath, `${basePackagePath}/font/index.ts`),
+    // Font用の型ファイル
+    path.resolve(rootPath, `${basePackagePath}/font/fontImage.ts`),
+    // FontImage用の型ファイル
+    path.resolve(rootPath, `${basePackagePath}/image/index.ts`),
+    // Image用の型ファイル
+    path.resolve(rootPath, `${basePackagePath}/sound/index.ts`),
+    // Sound用の型ファイル（環境に合わせて調整してください）
+    path.resolve(rootPath, `${basePackagePath}/entity/monitor/SVariable.ts`)
+    // VariableMonitoring用の型ファイル（環境に合わせて調整してください）
+  ];
+};
+
 let project = null;
 function getOrInitProject(rootPath) {
   if (project) return project;
@@ -654,17 +673,7 @@ function getOrInitProject(rootPath) {
     skipAddingFilesFromTsConfig: true
     // 高速化
   });
-  const basePackagePath = "node_modules/@tscratch3/typescratcher/src/type";
-  const targetFiles = [
-    path.resolve(rootPath, `${basePackagePath}/font/index.ts`),
-    // Font用の型ファイル
-    path.resolve(rootPath, `${basePackagePath}/image/index.ts`),
-    // Image用の型ファイル
-    path.resolve(rootPath, `${basePackagePath}/sound/index.ts`),
-    // Sound用の型ファイル（環境に合わせて調整してください）
-    path.resolve(rootPath, `${basePackagePath}/entity/monitor/SVariable.ts`)
-    // VariableMonitoring用の型ファイル（環境に合わせて調整してください）
-  ];
+  const targetFiles = type_definition_files(rootPath);
   targetFiles.forEach((filePath) => {
     try {
       project.addSourceFileAtPath(filePath);
@@ -675,7 +684,7 @@ function getOrInitProject(rootPath) {
   return project;
 }
 function transformObjectWrapping(code, id) {
-  if (!code.includes("Font") && !code.includes("Image") && !code.includes("Sound") && !code.includes("monitoring")) {
+  if (!code.includes("Font") && !code.includes("FontImage") && !code.includes("Image") && !code.includes("Sound") && !code.includes("monitoring")) {
     return { code, map: null };
   }
   const currentProject = getOrInitProject(process.cwd());
@@ -687,7 +696,7 @@ function transformObjectWrapping(code, id) {
     const constructorType = typeChecker.getTypeAtLocation(constructorExpression);
     const isTargetClass = constructorType.getProperties().some((prop) => {
       const name = prop.getName();
-      return name.includes(CLASS_BRAND.FONT_CLASS_BRAND) || name.includes(CLASS_BRAND.IMAGE_CLASS_BRAND) || name.includes(CLASS_BRAND.SOUND_CLASS_BRAND);
+      return name.includes(CLASS_SYMBOL.FONT_CLASS_BRAND) || name.includes(CLASS_SYMBOL.FONT_IMAGE_CLASS_BRAND) || name.includes(CLASS_SYMBOL.IMAGE_CLASS_BRAND) || name.includes(CLASS_SYMBOL.SOUND_CLASS_BRAND);
     });
     if (isTargetClass) {
       processArguments(newExpr.getArguments(), newExpr.getText(), id, code, s, () => {
@@ -704,7 +713,7 @@ function transformObjectWrapping(code, id) {
         const objectType = typeChecker.getTypeAtLocation(objectExpression);
         const isTargetMethod = objectType.getProperties().some((prop) => {
           const name = prop.getName();
-          return name.includes(CLASS_BRAND.VARIABLE_CLASS_BRAND);
+          return name.includes(CLASS_SYMBOL.VARIABLE_CLASS_BRAND);
         });
         if (isTargetMethod) {
           processArguments(callExpr.getArguments(), callExpr.getText(), id, code, s, () => {

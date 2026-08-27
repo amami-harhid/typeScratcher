@@ -24,7 +24,7 @@ export interface SFont{
     /**
      * @param font {FontArgStringObject}
      */
-    new(font:FontArgStringObject):IFont;
+    new(font:FontArgStringObject | string ):IFont;
 
 };
 export interface IFont {

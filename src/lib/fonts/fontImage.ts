@@ -4,7 +4,7 @@ import type { createSvgImageAttributes } from "../../type/font";
 import type { TextAttributes } from "../../type/svgText";
 import { textToSvg } from "../svgText";
 import { Engine, engine } from "../engine";
-import { IFontImage, FontImageAttribute, FontImageParams} from "src/type/font/fontImage";
+import { IFontImage, FontImageAttribute, FontImageParams} from "../../type/font/fontImage";
 import { ImageLoader } from "../loader/imageLoader";
 import { Utils } from "../utils/utils";
 

@@ -1,5 +1,6 @@
 import ts from 'typescript';
 import { AWAIT_TARGET_METHODS } from './await-target-set.ts';
+import { LOOP_YIELD_SKIP_COMMENT } from './loopYieldSkipMark.ts';
 
 export function isTarget(node: ts.Node): boolean {
     return ts.isBreakStatement(node) || ts.isContinueStatement(node);
@@ -17,7 +18,7 @@ export function hasSkipComment(node: ts.Node, sourceFile: ts.SourceFile): boolea
 
     for (const commentRange of leadingComments) {
         const commentText = sourceFile.text.substring(commentRange.pos, commentRange.end);
-        if (commentText.includes('@ts-loop-yield-skip')) {
+        if (commentText.includes( LOOP_YIELD_SKIP_COMMENT )) {
             return true;
         }
     }

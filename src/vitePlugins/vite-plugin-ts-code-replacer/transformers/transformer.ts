@@ -1,5 +1,5 @@
 import ts from 'typescript';
-import { isTarget, createYieldStatement, hasSkipComment, isTargetEventAssignment, isAwaitTargetCall } from '../utils/ast-helpers.ts';
+import { isTarget, createYieldStatement, hasSkipComment, isTargetEventAssignment, isAwaitTargetCall } from '../utils/plugins-helpers.ts';
 
 export interface PluginError extends Error {
     loc?: {

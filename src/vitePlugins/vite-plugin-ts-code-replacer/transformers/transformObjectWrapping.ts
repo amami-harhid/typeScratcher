@@ -1,14 +1,7 @@
 import MagicString from 'magic-string';
 import { PluginError } from './transformer';
 import { Project, SyntaxKind } from 'ts-morph';
-import path from 'path';
-
-const CLASS_BRAND = {
-    FONT_CLASS_BRAND: "FontBrandSymbol",
-    IMAGE_CLASS_BRAND: "ImageBrandSymbol",
-    SOUND_CLASS_BRAND: "SoundBrandSymbol",
-    VARIABLE_CLASS_BRAND: "VariableBrandSymbol"
-}
+import { CLASS_SYMBOL, type_definition_files } from '../utils/typeDefineSymbolSet';
 
 // パフォーマンス向上のため、Projectインスタンスはファイル間で使い回す（シングルトン）
 let project: Project | null = null;
@@ -21,15 +14,8 @@ function getOrInitProject(rootPath: string): Project {
         skipAddingFilesFromTsConfig: true, // 高速化
     });
 
-    // 型ファイルをそれぞれ絶対パスで定義
-    const basePackagePath = 'node_modules/@tscratch3/typescratcher/src/type';
+    const targetFiles = type_definition_files(rootPath);
 
-    const targetFiles = [
-        path.resolve(rootPath, `${basePackagePath}/font/index.ts`), // Font用の型ファイル
-        path.resolve(rootPath, `${basePackagePath}/image/index.ts`), // Image用の型ファイル
-        path.resolve(rootPath, `${basePackagePath}/sound/index.ts`), // Sound用の型ファイル（環境に合わせて調整してください）
-        path.resolve(rootPath, `${basePackagePath}/entity/monitor/SVariable.ts`), // VariableMonitoring用の型ファイル（環境に合わせて調整してください）
-    ];
     // 型ファイルをループでプロジェクトに一括登録
     targetFiles.forEach(filePath => {
         try {
@@ -44,7 +30,11 @@ function getOrInitProject(rootPath: string): Project {
 export function transformObjectWrapping(code: string, id: string): { code: string; map: any } {
     // 【超軽量プレフィルター】
     // コード内に "Font" "Image" "Sound" "monitoring" のいずれも無ければ解析すらしない
-    if (!code.includes('Font') && !code.includes('Image') && !code.includes('Sound') && !code.includes('monitoring')) {
+    if (!code.includes('Font') 
+        && !code.includes('FontImage') 
+        && !code.includes('Image') 
+        && !code.includes('Sound') 
+        && !code.includes('monitoring')) {
         return { code, map: null };
     }
 
@@ -64,7 +54,10 @@ export function transformObjectWrapping(code: string, id: string): { code: strin
         // クラスブランドがついている型かを点検する
         const isTargetClass = constructorType.getProperties().some(prop => {
             const name = prop.getName();
-            return  name.includes(CLASS_BRAND.FONT_CLASS_BRAND) || name.includes(CLASS_BRAND.IMAGE_CLASS_BRAND) || name.includes(CLASS_BRAND.SOUND_CLASS_BRAND);
+            return  name.includes(CLASS_SYMBOL.FONT_CLASS_BRAND) 
+                || name.includes(CLASS_SYMBOL.FONT_IMAGE_CLASS_BRAND) 
+                || name.includes(CLASS_SYMBOL.IMAGE_CLASS_BRAND) 
+                || name.includes(CLASS_SYMBOL.SOUND_CLASS_BRAND);
         });
 
         if (isTargetClass) {
@@ -94,7 +87,7 @@ export function transformObjectWrapping(code: string, id: string): { code: strin
                 // 持ち主の型が「VARIABLE_CLASS_BRAND」を持っているか判定
                 const isTargetMethod = objectType.getProperties().some((prop) => {
                     const name = prop.getName();
-                    return name.includes( CLASS_BRAND.VARIABLE_CLASS_BRAND );
+                    return name.includes( CLASS_SYMBOL.VARIABLE_CLASS_BRAND );
                 });
                 if (isTargetMethod) {
                     processArguments(callExpr.getArguments(), callExpr.getText(), id, code, s, () => {

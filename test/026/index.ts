@@ -6,6 +6,13 @@
 import { Typescratcher as Ts, type Sprite } from "../../src";
 import type { SvgImageAttributes, FontImageAttribute } from "../../src";
 
+// 【FONT読み込み】
+const HarryPotter =
+    "https://amami-harhid.github.io/tscratch3assets/assets/fonts/HarryPotter-ov4z.woff";
+const HarryPotterFont = new Ts.Font( {
+    HarryPotter 
+} );
+
 // 【画像読み込み】
 // import catSvg from '../assets/cat.svg';
 // const CatAImage = new Ts.Image( {catSvg} );
@@ -28,7 +35,7 @@ stage.Backdrop.add( BlueSkyImage );
 const HELLO = "Ohoo my typescratcher";
 const attribute : SvgImageAttributes = {
     fill: "#f00000", // 文字色
-    font_family: Ts.ScratchFontFamily.Scratch,
+    font_family: HarryPotterFont.name,
 };
 const attr : FontImageAttribute = {
     text: HELLO,
