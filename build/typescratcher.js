@@ -23070,7 +23070,7 @@ require_core_js();
 */
 var Version = {
 	name: "@tscratch3/typescratcher",
-	version: "0.1.46",
+	version: "0.1.48",
 	description: "TypeScript library that generates Scratch3-style drawings",
 	repository: {
 		"type": "git",
