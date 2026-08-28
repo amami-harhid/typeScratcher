@@ -3,7 +3,7 @@
  */
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import glob from 'glob'
+import { glob } from 'glob'
 
 // ルートとするディレクトリー
 const root = resolve(import.meta.dirname, './test/')

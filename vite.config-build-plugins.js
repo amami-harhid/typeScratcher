@@ -3,7 +3,8 @@
  */
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import glob from 'glob'
+import dts from 'vite-plugin-dts';
+import { glob } from 'glob'
 
 // ルートとするディレクトリー
 const root = resolve(import.meta.dirname, './src/vitePlugins/')
@@ -25,6 +26,11 @@ const outDir = resolve(import.meta.dirname, 'build/vitePlugins');
 
 export default defineConfig({
     root, 
+    plugins: [
+        dts({
+            insertTypesEntry: true, // パッケージのルート等に型のエントリを自動生成
+        })
+    ],
     build: {
         target: "esnext",
         ssr: true, // Node.js向けのライブラリビルドであることを明示
@@ -32,7 +38,9 @@ export default defineConfig({
         minify: false,
         sourcemap: true,
         lib: {
-            entry: resolve(import.meta.dirname, './src/vitePlugins/index.ts'),
+            entry: {
+                'vite-plugins': 'index.ts',
+            },
             formats: ["es"],
             // 出力ファイル名を固定で 'typescratcher.js' に指定
             fileName: () => `index.js`,
@@ -40,7 +48,8 @@ export default defineConfig({
         rolldownOptions: {
             output: {
                 // インライン展開（動的インポートを含めすべて1つのチャンクにまとめる）
-                inlineDynamicImports: true,
+                // inlineDynamicImports: true,
+                codeSplitting: false,
             }
         },
     },
