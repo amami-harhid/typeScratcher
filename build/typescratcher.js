@@ -23070,7 +23070,7 @@ require_core_js();
 */
 var Version = {
 	name: "@tscratch3/typescratcher",
-	version: "0.1.44",
+	version: "0.1.46",
 	description: "TypeScript library that generates Scratch3-style drawings",
 	repository: {
 		"type": "git",
@@ -23081,6 +23081,7 @@ var Version = {
 		"build",
 		"src/lib",
 		"src/type",
+		"eslint",
 		"eslint-plugin",
 		"index.ts"
 	],
@@ -23090,11 +23091,11 @@ var Version = {
 	type: "module",
 	scripts: {
 		"dev": "vite --open",
-		"build": "npm run buildWithConfig && npm run copyDts && npm run buildPlugins && npm run copyEslint",
+		"build": "npm run buildWithConfig && npm run copyDts && npm run buildPlugins && npm run copyVitePluginDts",
 		"buildWithConfig": "vite build --config ./vite.config-build.js --emptyOutDir",
-		"copyDts": "copy public\\index.d.ts build\\",
+		"copyDts": "copy public\\typescratcher.d.ts build\\",
 		"buildPlugins": "vite build --config ./vite.config-build-plugins.js --emptyOutDir",
-		"copyEslint": "mkdir build\\eslint && copy public\\eslint\\* build\\eslint && copy public\\vitePlugins\\index.d.ts build\\vitePlugins\\index.d.ts"
+		"copyVitePluginDts": "copy public\\vitePlugins\\index.d.ts build\\vitePlugins\\index.d.ts"
 	},
 	dependencies: {
 		"@ampproject/remapping": "^2.3.0",

@@ -37,7 +37,7 @@ const typescracher_eslint_config = [
             // セミコロン強制
             "semi": [ "error", "always" ],
             //  改行コードをLFに強制
-            "linebreak-style": [ "error", "unix" ],
+            //"linebreak-style": [ "error", "unix" ],
             // 1行の最大文字数を80文字に制限（コメントやURLは除外）
             //"max-len": ["error", { "code": 80, "ignoreComments": true, "ignoreUrls": true }],
             // 丸括弧の内側のスペースを禁止
