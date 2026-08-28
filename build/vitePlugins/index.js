@@ -664,4 +664,4 @@ var TsCodeReplacer = TsCodeReplacer$1;
 //#endregion
 export { TsAstReplacer, TsCodeReplacer };
 
-//# sourceMappingURL=vite-plugins.js.map
+//# sourceMappingURL=index.js.map

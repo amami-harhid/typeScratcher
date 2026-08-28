@@ -3,7 +3,6 @@
  */
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts';
 import { glob } from 'glob'
 
 // ルートとするディレクトリー
@@ -26,11 +25,6 @@ const outDir = resolve(import.meta.dirname, 'build/vitePlugins');
 
 export default defineConfig({
     root, 
-    plugins: [
-        dts({
-            insertTypesEntry: true, // パッケージのルート等に型のエントリを自動生成
-        })
-    ],
     build: {
         target: "esnext",
         ssr: true, // Node.js向けのライブラリビルドであることを明示
@@ -39,7 +33,7 @@ export default defineConfig({
         sourcemap: true,
         lib: {
             entry: {
-                'vite-plugins': 'index.ts',
+                'index': 'index.ts',
             },
             formats: ["es"],
             // 出力ファイル名を固定で 'typescratcher.js' に指定
